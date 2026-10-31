@@ -20,7 +20,8 @@ ancestors. Both parse only content changes. Foreign keys and FTS triggers remove
 stale extraction and search records together. Source access stays under the
 pinned project directory.
 
-`src/graph.rs` resolves the stored extraction metadata and provides exploration,
+`src/graph.rs` resolves the stored extraction metadata and provides a bounded
+file overview (`src/graph/overview.rs`), exploration,
 impact, paths, implementation hierarchies, and affected test candidates. Import,
 scope, and receiver evidence precedes uncertain name matching. Relationship
 responses retain resolution method, confidence, and ambiguity. Analysis has

@@ -51,6 +51,26 @@ Rust hosts call `Engine::explore(query, &GraphOptions)` or
 call `refresh` or `sync` first when freshness is required. CLI and MCP entry
 points refresh automatically.
 
+Rust hosts can also call `Engine::overview()` for a file-level map without a
+query. It returns `generation`, `files` (`path`, `language`, indexed `symbols`
+count), directed `edges` (`from` and `to` file paths, `count`, `uncertain`), and
+`truncated`. Cross-file resolved symbol relationships are aggregated by ordered
+file pair; same-file and unresolved relationships are excluded. `count` counts
+static relationships, not runtime calls. `uncertain` is true if any contributing
+relationship is ambiguous or has low/unknown confidence. Medium-confidence
+relationships remain static candidates even when this flag is false.
+
+Overview uses the same committed snapshot and generation cache as exploration.
+It returns files and edges in lexical path order, bounded to 1,000 files,
+4,000 edges, and 512 KiB of serialized JSON. Truncation at these limits or during
+graph construction is explicit; omitted files or relationships are not absent
+code. Every returned edge refers to a returned file. `Engine::status()` supplies
+the complete indexed file/symbol counts; its separately read generation can
+differ if another client commits between calls. Hosts call `refresh` before a
+fresh overview or `sync` for an explicit full-content reconciliation. Overview
+does not change CLI/MCP tools or the cache schema. `tests/overview.rs` covers
+aggregation, evidence, concurrent updates, and response bounds.
+
 ## Resolution
 
 Qualified names use `::` between enclosing scopes. A file path plus qualified

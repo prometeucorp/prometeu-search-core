@@ -9,6 +9,9 @@ use std::cell::Cell;
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet, VecDeque};
 use std::path::{Component, Path};
 
+mod overview;
+pub use overview::{Overview, OverviewEdge, OverviewFile};
+
 const MAX_METADATA_BYTES: usize = 64 * 1024 * 1024;
 const MAX_NODES: usize = 100_000;
 const MAX_EDGES: usize = 200_000;

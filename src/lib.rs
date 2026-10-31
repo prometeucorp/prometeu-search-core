@@ -7,6 +7,9 @@ mod source;
 mod sync;
 mod watch;
 
-pub use graph::{ContextFile, ContextSymbol, GraphEdge, GraphMode, GraphOptions, GraphResult};
+pub use graph::{
+    ContextFile, ContextSymbol, GraphEdge, GraphMode, GraphOptions, GraphResult, Overview,
+    OverviewEdge, OverviewFile,
+};
 pub use index::*;
 pub use watch::WatchHandle;
