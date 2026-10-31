@@ -42,12 +42,12 @@ a legal notice, here is a blessing:
 
 ## Scope of the native artifacts
 
-The binary matrix covers macOS arm64/x86_64, Linux arm64/x86_64 GNU, and Windows
-x86_64 MSVC. The following lockfile packages are not used by those artifacts:
+The binary matrix covers macOS arm64/x86_64 and Linux arm64/x86_64 GNU.
+The following lockfile packages are not used by those artifacts:
 
 - `rsqlite-vfs` 0.1.1: Only used by the WebAssembly SQLite backend; no WebAssembly target is distributed.
-- `winapi-i686-pc-windows-gnu` 0.4.0: Windows GNU import library; the Windows artifact targets MSVC.
-- `winapi-x86_64-pc-windows-gnu` 0.4.0: Windows GNU import library; the Windows artifact targets MSVC.
+- `winapi-i686-pc-windows-gnu` 0.4.0: Windows GNU import library; no native Windows target is distributed.
+- `winapi-x86_64-pc-windows-gnu` 0.4.0: Windows GNU import library; no native Windows target is distributed.
 
 Reassess these exclusions before distributing other targets. Other unused
 platform and development dependencies are included below as a conservative
