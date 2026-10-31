@@ -1,8 +1,8 @@
 # Third-party notices
 
 These notices accompany Prometeu Search 0.1.0 and its bundled native binaries.
-They record the dependencies resolved in `Cargo.lock`, including development,
-build-time, and platform-specific packages. Inclusion here does not mean that
+They record the dependencies resolved in the engine's standalone `Cargo.lock`,
+including development, build-time, and platform-specific packages. Inclusion here does not mean that
 every package is linked into every binary. Where a dependency offers alternative
 licenses, the selected license below is the option used for this distribution.
 Additional Unicode and other accompanying notices are retained separately.
@@ -25,7 +25,7 @@ Search source files. Keep this notice and source link with binary distributions.
 
 ## Bundled SQLite
 
-The `bundled` feature of `libsqlite3-sys` 0.36.0 compiles SQLite 3.51.1 into the
+The `bundled` feature of `libsqlite3-sys` 0.38.2 compiles SQLite 3.53.2 into the
 native binary. SQLite is in the public domain. Its source dedication is retained
 below; the Rust bindings have their own MIT license, listed separately.
 SQLCipher and the WebAssembly SQLite implementation are not compiled into the
@@ -362,11 +362,11 @@ Declared license: `MIT OR Apache-2.0`. Selected: `MIT`.
 
 - `LICENSE-MIT`: [Notice 23](#notice-23)
 
-### hashlink 0.11.1
+### hashlink 0.12.2
 
 Declared license: `MIT OR Apache-2.0`. Selected: `MIT`.
 
-[Crate and source](https://crates.io/crates/hashlink/0.11.1) · [Source archive](https://crates.io/api/v1/crates/hashlink/0.11.1/download)
+[Crate and source](https://crates.io/crates/hashlink/0.12.2) · [Source archive](https://crates.io/api/v1/crates/hashlink/0.12.2/download)
 
 - `LICENSE-MIT`: [Notice 24](#notice-24)
 
@@ -467,11 +467,11 @@ Declared license: `MIT`. Selected: `MIT`.
 
 - `LICENSE`: [Notice 29](#notice-29)
 
-### libsqlite3-sys 0.36.0
+### libsqlite3-sys 0.38.2
 
 Declared license: `MIT`. Selected: `MIT`.
 
-[Crate and source](https://crates.io/crates/libsqlite3-sys/0.36.0) · [Source archive](https://crates.io/api/v1/crates/libsqlite3-sys/0.36.0/download)
+[Crate and source](https://crates.io/crates/libsqlite3-sys/0.38.2) · [Source archive](https://crates.io/api/v1/crates/libsqlite3-sys/0.38.2/download)
 
 - `LICENSE`: [Notice 30](#notice-30)
 
@@ -631,11 +631,11 @@ Declared license: `MIT OR Apache-2.0`. Selected: `MIT`.
 - `LICENSE-MIT`: [Notice 6](#notice-6)
 - `src/unicode_tables/LICENSE-UNICODE`: [Notice 39](#notice-39)
 
-### rusqlite 0.38.0
+### rusqlite 0.40.2
 
 Declared license: `MIT`. Selected: `MIT`.
 
-[Crate and source](https://crates.io/crates/rusqlite/0.38.0) · [Source archive](https://crates.io/api/v1/crates/rusqlite/0.38.0/download)
+[Crate and source](https://crates.io/crates/rusqlite/0.40.2) · [Source archive](https://crates.io/api/v1/crates/rusqlite/0.40.2/download)
 
 - `LICENSE`: [Notice 30](#notice-30)
 
@@ -785,11 +785,11 @@ Declared license: `MIT`. Selected: `MIT`.
 
 - `LICENSE`: [Notice 49](#notice-49)
 
-### tree-sitter-language 0.1.9
+### tree-sitter-language 0.1.7
 
 Declared license: `MIT`. Selected: `MIT`.
 
-[Crate and source](https://crates.io/crates/tree-sitter-language/0.1.9) · [Source archive](https://crates.io/api/v1/crates/tree-sitter-language/0.1.9/download)
+[Crate and source](https://crates.io/crates/tree-sitter-language/0.1.7) · [Source archive](https://crates.io/api/v1/crates/tree-sitter-language/0.1.7/download)
 
 - `LICENSE`: [Notice 50](#notice-50)
 
