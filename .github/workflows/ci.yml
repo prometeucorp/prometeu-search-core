@@ -2,6 +2,7 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 permissions:
@@ -12,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [ubuntu-22.04, macos-15, windows-2022]
+        runner: [ubuntu-22.04, macos-15]
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 20
     steps:
@@ -22,6 +23,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
         with:
           components: clippy, rustfmt
-      - run: cargo fmt --check
+      - run: cargo fmt --all --check
+        if: runner.os == 'Linux'
       - run: cargo clippy --locked --all-targets -- -D warnings
       - run: cargo test --locked

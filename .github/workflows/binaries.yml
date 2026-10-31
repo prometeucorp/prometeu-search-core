@@ -1,8 +1,6 @@
 name: Binaries
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -22,8 +20,6 @@ jobs:
             target: aarch64-apple-darwin
           - runner: macos-15-intel
             target: x86_64-apple-darwin
-          - runner: windows-2022
-            target: x86_64-pc-windows-msvc
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 30
     steps:
@@ -47,8 +43,7 @@ jobs:
           import subprocess
 
           target = os.environ["SEARCH_TARGET"]
-          windows = target.endswith("windows-msvc")
-          executable = "prometeu-search.exe" if windows else "prometeu-search"
+          executable = "prometeu-search"
           binary = Path("target") / target / "release" / executable
           version = subprocess.check_output([str(binary), "--version"], text=True).strip()
           print(version)
@@ -60,7 +55,7 @@ jobs:
           Path("dist").mkdir()
           archive = Path(shutil.make_archive(
               str(Path("dist") / directory.name),
-              "zip" if windows else "gztar",
+              "gztar",
               root_dir=directory.parent,
               base_dir=directory.name,
           ))

@@ -17,11 +17,12 @@ application. Include `LICENSE` and `THIRD_PARTY_NOTICES.md`. The engine does not
 download runtimes, parsers, models, or dependencies at launch. Do not run
 `cargo install` on an end user's machine.
 
-CI produces macOS Apple Silicon and Intel, GNU/Linux x86_64 and ARM64, and Windows
-x86_64 archives with SHA-256 checksums. GNU/Linux targets require a compatible
-system C runtime. Prometeu's WSL execution host uses a Linux binary, not the
-Windows executable. The enclosing application remains responsible for platform
-signing/notarization and checking the pinned artifact digest.
+The manually dispatched **Binaries** workflow produces macOS Apple Silicon and
+Intel and GNU/Linux x86_64 and ARM64 tar.gz archives with SHA-256 checksums.
+Native Windows builds are not supported. GNU/Linux targets require a compatible
+system C runtime. Prometeu's WSL execution host uses a Linux binary. The enclosing
+application remains responsible for platform signing/notarization and checking
+the pinned artifact digest.
 
 ## Process contract
 
