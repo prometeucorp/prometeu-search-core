@@ -38,7 +38,7 @@ impl WatchHandle {
         {
             use std::fs;
             use std::os::unix::fs::PermissionsExt;
-            fs::set_permissions(&lock_path, fs::Permissions::from_mode(0o600))?;
+            lock.set_permissions(fs::Permissions::from_mode(0o600))?;
         }
         let session = if acquire(&lock)? {
             Some(Session::open(root, database)?)

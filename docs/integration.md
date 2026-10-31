@@ -59,6 +59,8 @@ transactions. Restart the process and reconcile on workspace reactivation.
 - Stop all clients before deleting its derived database or removing the worktree.
 - If schema compatibility fails, choose a fresh cache path or deliberately remove
   the stopped engine's cache. Never point the engine at Prometeu's application DB.
+- Schema version 2 rejects version 1 caches so unchanged source receives the new
+  file-level entries and calls after a rebuild. Version 1 data is not modified.
 
 For direct Rust linking, `Engine::open` owns a connection, `sync` reconciles,
 `search`/`related` read a snapshot, and `watch` returns a handle whose lifetime

@@ -80,14 +80,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
     let ruby = name == "ruby";
     // Ruby scripts and build files often consist entirely of executable DSL calls.
     let file_scope = if ruby {
-        result.symbols.push(Symbol {
-            name: path.file_name().unwrap().to_string_lossy().into_owned(),
-            kind: "file".into(),
-            start_line: 1,
-            end_line: source.lines().count().max(1),
-            start_byte: 0,
-            end_byte: source.len(),
-        });
+        result.symbols.push(file_symbol(path, source));
         Some(0)
     } else {
         None
@@ -185,7 +178,42 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             });
         }
     }
+    if !ruby {
+        let root = tree.root_node();
+        let uncovered = (0..root.named_child_count()).any(|index| {
+            let node = root.named_child(index).unwrap();
+            node.kind() != "comment"
+                && !result.symbols.iter().any(|symbol| {
+                    symbol.start_byte <= node.start_byte() && symbol.end_byte >= node.end_byte()
+                })
+        });
+        if uncovered
+            || result
+                .references
+                .iter()
+                .any(|reference| reference.caller.is_none())
+        {
+            let file_scope = result.symbols.len();
+            result.symbols.push(file_symbol(path, source));
+            for reference in &mut result.references {
+                if reference.caller.is_none() {
+                    reference.caller = Some(file_scope);
+                }
+            }
+        }
+    }
     Ok(result)
+}
+
+fn file_symbol(path: &Path, source: &str) -> Symbol {
+    Symbol {
+        name: path.file_name().unwrap().to_string_lossy().into_owned(),
+        kind: "file".into(),
+        start_line: 1,
+        end_line: source.lines().count().max(1),
+        start_byte: 0,
+        end_byte: source.len(),
+    }
 }
 
 fn ruby_bare_call(node: Node<'_>) -> bool {

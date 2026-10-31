@@ -8,6 +8,7 @@ embedding service, or separately installed SQLite is required.
 
 - Tree-sitter parsing of TypeScript, TSX, JavaScript/JSX, Rust, and Ruby.
 - SQLite FTS5 search over names, source, and paths, with source snippets and locations.
+- File entries for imports and top-level source outside named declarations.
 - Candidate callers and callees, including unresolved and ambiguous names.
 - A separate persistent index for each canonical worktree directory.
 - Content-hash reconciliation: only changed files are parsed again; deleted and renamed files disappear from the graph.
@@ -92,10 +93,14 @@ modified. `--database /path/to/index.sqlite` lets an embedding host own storage.
 Each database records its root and refuses a different worktree. Unsupported
 schema versions and unrelated SQLite databases are rejected without adopting
 them. Stop all clients before removing a derived index to rebuild it.
+Schema version 2 requires a fresh index when upgrading from version 1 so unchanged
+files gain their file-level search entries and calls.
 
 The scanner honors `.gitignore`, `.ignore`, and `.prometeu-searchignore`, including
 nested rules. It also excludes `.git`, dependency/build/cache directories,
 symlinks, non-UTF-8 files, unsupported languages, and files larger than 1 MiB.
+Source reads reject symlinks at every path component through opened directory
+handles, including when paths change after enumeration.
 The hard directory exclusions are listed in `src/index.rs`. Generated code in
 other locations must be excluded by an ignore file.
 

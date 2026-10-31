@@ -199,6 +199,24 @@ fn unrelated_or_incompatible_databases_are_rejected_without_mutation() {
 }
 
 #[test]
+fn previous_extraction_cache_requires_rebuild_without_mutation() {
+    let (temp, mut engine) = project();
+    fs::write(temp.path().join("project/main.ts"), "bootstrap();").unwrap();
+    engine.sync().unwrap();
+    drop(engine);
+    let database = temp.path().join("cache/index.sqlite");
+    let connection = rusqlite::Connection::open(&database).unwrap();
+    connection.pragma_update(None, "user_version", 1).unwrap();
+    drop(connection);
+    let before = fs::read(&database).unwrap();
+    let error = Engine::open(&temp.path().join("project"), Some(&database))
+        .err()
+        .unwrap();
+    assert!(error.to_string().contains("unsupported database schema 1"));
+    assert_eq!(fs::read(&database).unwrap(), before);
+}
+
+#[test]
 fn concurrent_clients_serialize_index_writes() {
     let (temp, engine) = project();
     let root = temp.path().join("project");

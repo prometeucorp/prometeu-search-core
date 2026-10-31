@@ -9,6 +9,8 @@ repository = "https://github.com/prometeucorp/prometeu-search-core"
 [dependencies]
 anyhow = "1"
 blake3 = "1"
+cap-fs-ext = "4"
+cap-std = "4"
 clap = { version = "4", features = ["derive"] }
 dirs = "6"
 fs2 = "0.4"

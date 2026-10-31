@@ -1,4 +1,4 @@
-use crate::{WatchHandle, parser};
+use crate::{WatchHandle, parser, source};
 use anyhow::{Context, Result, bail, ensure};
 use ignore::WalkBuilder;
 use rusqlite::{Connection, OptionalExtension, params};
@@ -9,7 +9,7 @@ use std::io::Read;
 use std::path::{Path, PathBuf};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
-pub const SCHEMA_VERSION: u32 = 1;
+pub const SCHEMA_VERSION: u32 = 2;
 const MAX_FILE_BYTES: u64 = 1024 * 1024;
 const EXCLUDED: &[&str] = &[
     ".git",
@@ -29,6 +29,7 @@ const EXCLUDED: &[&str] = &[
 pub struct Engine {
     pub(crate) root: PathBuf,
     pub(crate) database: PathBuf,
+    source_root: cap_std::fs::Dir,
     connection: Connection,
 }
 
@@ -107,6 +108,7 @@ impl Engine {
     pub fn open(root: &Path, database: Option<&Path>) -> Result<Self> {
         let root = root.canonicalize().context("cannot resolve project root")?;
         ensure!(root.is_dir(), "project root must be a directory");
+        let source_root = source::open_root(&root).context("cannot open project root")?;
         let database = match database {
             Some(path) => std::path::absolute(path)?,
             None => {
@@ -171,6 +173,7 @@ impl Engine {
         Ok(Self {
             root,
             database,
+            source_root,
             connection,
         })
     }
@@ -217,27 +220,21 @@ impl Engine {
             {
                 continue;
             }
-            if entry.metadata()?.len() > MAX_FILE_BYTES {
-                continue;
-            }
-            let canonical = entry.path().canonicalize()?;
-            ensure!(
-                canonical.starts_with(&self.root),
-                "source escaped project root"
-            );
-            if entry.path().is_symlink() {
-                continue;
-            }
             let relative = entry.path().strip_prefix(&self.root)?;
             let Some(path) = relative.to_str() else {
                 continue;
             };
             let path = path.replace(std::path::MAIN_SEPARATOR, "/");
+            // Resolve each component through directory handles so replacements
+            // cannot redirect this read through a symlink after enumeration.
+            let file = source::open(&self.source_root, relative)
+                .with_context(|| format!("cannot read {path}"))?;
+            let metadata = file.metadata()?;
+            if !metadata.is_file() || metadata.len() > MAX_FILE_BYTES {
+                continue;
+            }
             let mut bytes = Vec::new();
-            fs::File::open(entry.path())
-                .with_context(|| format!("cannot read {path}"))?
-                .take(MAX_FILE_BYTES + 1)
-                .read_to_end(&mut bytes)?;
+            file.take(MAX_FILE_BYTES + 1).read_to_end(&mut bytes)?;
             if bytes.len() as u64 > MAX_FILE_BYTES {
                 continue;
             }
