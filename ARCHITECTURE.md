@@ -22,10 +22,11 @@ includes its generation. Files can still change during or after reconciliation;
 the index is not a filesystem snapshot or a compiler authority. Callers must read
 live source before applying edits that depend on exact content.
 
-`src/source.rs` pins the project directory and opens each source path component
-relative to directory handles, rejecting symlinks throughout the path. File type
-and size checks use the opened handle. A replaced source or ancestor cannot
-redirect reads outside the selected tree; a failed open rolls back reconciliation.
+`src/source.rs` pins the project directory for each reconciliation and opens each
+source path component relative to directory handles, rejecting symlinks throughout
+the path. File type and size checks use the opened handle. A replaced source or
+ancestor cannot redirect reads outside the selected tree; a failed open rolls back
+reconciliation.
 
 `src/watch.rs` uses native notifications with a 250 ms quiet period and a 2 s
 maximum burst delay. A filesystem lock elects one watcher per database. Followers

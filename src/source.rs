@@ -101,7 +101,7 @@ mod tests {
         assert!(open(&root, Path::new("nested/file.ts")).is_err());
         assert!(open_root(&root_path.join("nested")).is_err());
 
-        // A root handle stays bound to the directory selected at startup.
+        // A root handle stays bound during a reconciliation.
         fs::write(project.join("file.ts"), "original();").unwrap();
         fs::rename(&project, temp.path().join("original")).unwrap();
         symlink(&outside, &project).unwrap();

@@ -199,6 +199,42 @@ fn unrelated_or_incompatible_databases_are_rejected_without_mutation() {
 }
 
 #[test]
+fn replacing_the_project_directory_reconciles_the_current_tree() {
+    let (temp, mut engine) = project();
+    let root = temp.path().join("project");
+    fs::write(root.join("file.ts"), "function original() {}").unwrap();
+    engine.sync().unwrap();
+    fs::rename(&root, temp.path().join("original")).unwrap();
+    fs::create_dir(&root).unwrap();
+    fs::write(root.join("file.ts"), "function replacement() {}").unwrap();
+    assert_eq!(engine.sync().unwrap().indexed, 1);
+    assert!(
+        engine
+            .search("original", 10, 12000)
+            .unwrap()
+            .results
+            .is_empty()
+    );
+    assert_eq!(
+        engine
+            .search("replacement", 10, 12000)
+            .unwrap()
+            .results
+            .len(),
+        1
+    );
+
+    #[cfg(unix)]
+    {
+        fs::rename(&root, temp.path().join("replacement")).unwrap();
+        std::os::unix::fs::symlink(temp.path().join("original"), &root).unwrap();
+        let generation = engine.status().unwrap().generation;
+        assert!(engine.sync().is_err());
+        assert_eq!(engine.status().unwrap().generation, generation);
+    }
+}
+
+#[test]
 fn previous_extraction_cache_requires_rebuild_without_mutation() {
     let (temp, mut engine) = project();
     fs::write(temp.path().join("project/main.ts"), "bootstrap();").unwrap();

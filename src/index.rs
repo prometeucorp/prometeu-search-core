@@ -29,7 +29,6 @@ const EXCLUDED: &[&str] = &[
 pub struct Engine {
     pub(crate) root: PathBuf,
     pub(crate) database: PathBuf,
-    source_root: cap_std::fs::Dir,
     connection: Connection,
 }
 
@@ -108,7 +107,6 @@ impl Engine {
     pub fn open(root: &Path, database: Option<&Path>) -> Result<Self> {
         let root = root.canonicalize().context("cannot resolve project root")?;
         ensure!(root.is_dir(), "project root must be a directory");
-        let source_root = source::open_root(&root).context("cannot open project root")?;
         let database = match database {
             Some(path) => std::path::absolute(path)?,
             None => {
@@ -173,7 +171,6 @@ impl Engine {
         Ok(Self {
             root,
             database,
-            source_root,
             connection,
         })
     }
@@ -181,7 +178,7 @@ impl Engine {
     /// Reconcile additions, edits, removals and changed ignore rules in one transaction.
     /// Unchanged content is never parsed again. Failed reads leave the previous snapshot intact.
     pub fn sync(&mut self) -> Result<SyncReport> {
-        ensure!(self.root.is_dir(), "project root no longer exists");
+        let source_root = source::open_root(&self.root).context("cannot open project root")?;
         let transaction = self
             .connection
             .transaction_with_behavior(rusqlite::TransactionBehavior::Immediate)?;
@@ -227,7 +224,7 @@ impl Engine {
             let path = path.replace(std::path::MAIN_SEPARATOR, "/");
             // Resolve each component through directory handles so replacements
             // cannot redirect this read through a symlink after enumeration.
-            let file = source::open(&self.source_root, relative)
+            let file = source::open(&source_root, relative)
                 .with_context(|| format!("cannot read {path}"))?;
             let metadata = file.metadata()?;
             if !metadata.is_file() || metadata.len() > MAX_FILE_BYTES {
