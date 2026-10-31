@@ -1,11 +1,14 @@
 //! Syntax extraction only: call names are candidates, not type-resolved graph edges.
 use anyhow::{Context, Result, bail};
+use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
 use std::ops::Range;
 use std::path::Path;
 use tree_sitter::{Language, Node, Parser};
 
-#[derive(Debug, Clone)]
+mod semantic;
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Symbol {
     pub name: String,
     pub kind: String,
@@ -13,21 +16,41 @@ pub struct Symbol {
     pub end_line: usize,
     pub start_byte: usize,
     pub end_byte: usize,
+    pub qualified_name: String,
+    pub container: Option<String>,
+    pub exports: Vec<String>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Reference {
     /// Index into this file's symbols, or `None` outside an indexed scope.
     pub caller: Option<usize>,
     pub target: String,
     pub line: usize,
+    pub qualifier: Option<String>,
+    pub kind: String,
+    pub receiver_type: Option<String>,
+    /// A local binding hides this bare call name without identifying a callable.
+    pub shadowed: bool,
+    /// Logical owner of an inheritance declaration, including an imported impl type.
+    pub owner: Option<String>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Import {
+    pub local: String,
+    pub imported: String,
+    pub module: String,
+    pub scope: String,
+    pub reexport: bool,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct ParsedFile {
     pub language: String,
     pub symbols: Vec<Symbol>,
     pub references: Vec<Reference>,
+    pub imports: Vec<Import>,
     pub has_errors: bool,
 }
 
@@ -75,6 +98,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
         language: name.into(),
         symbols: Vec::new(),
         references: Vec::new(),
+        imports: Vec::new(),
         has_errors: tree.root_node().has_error(),
     };
     let ruby = name == "ruby";
@@ -88,6 +112,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
     let mut locals: HashMap<Option<usize>, Vec<RubyBinding>> = HashMap::new();
     let mut bindings = HashSet::new();
     let mut bare_calls = Vec::new();
+    let mut call_nodes = Vec::new();
     // An explicit stack also handles deeply nested, partially edited source files.
     let mut pending = vec![(tree.root_node(), file_scope)];
     while let Some((node, inherited_caller)) = pending.pop() {
@@ -97,6 +122,9 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             let start_line = node.start_position().row + 1;
             let end = node.end_position();
             result.symbols.push(Symbol {
+                qualified_name: symbol_name.clone(),
+                container: None,
+                exports: Vec::new(),
                 name: symbol_name,
                 kind: kind.into(),
                 start_line,
@@ -124,10 +152,16 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             {
                 target.push('=');
             }
+            call_nodes.push((result.references.len(), node));
             result.references.push(Reference {
                 caller,
                 target,
                 line: node.start_position().row + 1,
+                qualifier: None,
+                kind: "calls".into(),
+                receiver_type: None,
+                shadowed: false,
+                owner: None,
             });
         }
         if ruby {
@@ -175,6 +209,11 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
                 caller,
                 target,
                 line,
+                qualifier: None,
+                kind: "calls".into(),
+                receiver_type: None,
+                shadowed: false,
+                owner: None,
             });
         }
     }
@@ -211,12 +250,17 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             }
         }
     }
+    semantic::enrich(tree.root_node(), source, &mut result, &call_nodes);
     Ok(result)
 }
 
 fn file_symbol(path: &Path, source: &str) -> Symbol {
+    let name = path.file_name().unwrap().to_string_lossy().into_owned();
     Symbol {
-        name: path.file_name().unwrap().to_string_lossy().into_owned(),
+        qualified_name: name.clone(),
+        name,
+        container: None,
+        exports: Vec::new(),
         kind: "file".into(),
         start_line: 1,
         end_line: source.lines().count().max(1),
@@ -296,6 +340,23 @@ fn declaration(
     outside_function: bool,
     ruby: bool,
 ) -> Option<(String, &'static str)> {
+    if node.parent().is_some_and(|parent| {
+        parent.kind() == "export_statement" && text(parent, source).starts_with("export default")
+    }) && matches!(
+        node.kind(),
+        "function_expression" | "arrow_function" | "class"
+    ) {
+        return Some((
+            node.child_by_field_name("name")
+                .map(|name| text(name, source))
+                .unwrap_or_else(|| "default".into()),
+            if node.kind() == "class" {
+                "class"
+            } else {
+                "function"
+            },
+        ));
+    }
     let kind = match node.kind() {
         "function_declaration"
         | "generator_function_declaration"
@@ -380,6 +441,229 @@ fn call_name(mut node: Node<'_>, source: &str) -> Option<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn typescript_imports_scopes_exports_and_typed_receivers() {
+        let parsed = parse(
+            Path::new("app.ts"),
+            r#"
+import DefaultStore, { Store as LocalStore, write as persist } from './store';
+import * as disk from './disk';
+export { persist as save };
+export { Store as ExportedStore } from './store';
+export * from './other';
+export default class App extends Base implements Runnable {
+  run(input: LocalStore) {
+    const local = new DefaultStore();
+    local.save(); input.save(); this.finish(); disk.write(); persist();
+  }
+  finish() {}
+}
+export function separate(input) { input.save(); }
+"#,
+        )
+        .unwrap();
+        assert!(!parsed.has_errors);
+        let imports: Vec<_> = parsed
+            .imports
+            .iter()
+            .map(|import| {
+                (
+                    import.local.as_str(),
+                    import.imported.as_str(),
+                    import.module.as_str(),
+                    import.reexport,
+                )
+            })
+            .collect();
+        assert!(imports.contains(&("DefaultStore", "default", "./store", false)));
+        assert!(imports.contains(&("LocalStore", "Store", "./store", false)));
+        assert!(imports.contains(&("disk", "*", "./disk", false)));
+        assert!(imports.contains(&("save", "write", "./store", true)));
+        assert!(imports.contains(&("ExportedStore", "Store", "./store", true)));
+        assert!(imports.contains(&("*", "*", "./other", true)));
+        let app = parsed
+            .symbols
+            .iter()
+            .find(|symbol| symbol.name == "App")
+            .unwrap();
+        assert_eq!(app.exports, ["default"]);
+        let run = parsed
+            .symbols
+            .iter()
+            .find(|symbol| symbol.name == "run")
+            .unwrap();
+        assert_eq!(run.qualified_name, "App::run");
+        assert_eq!(run.container.as_deref(), Some("App"));
+        let refs: Vec<_> = parsed
+            .references
+            .iter()
+            .map(|reference| {
+                (
+                    reference.target.as_str(),
+                    reference.qualifier.as_deref(),
+                    reference.receiver_type.as_deref(),
+                    reference.kind.as_str(),
+                )
+            })
+            .collect();
+        assert!(refs.contains(&("save", Some("local"), Some("DefaultStore"), "calls")));
+        assert!(refs.contains(&("save", Some("input"), Some("LocalStore"), "calls")));
+        assert!(refs.contains(&("save", Some("input"), None, "calls")));
+        assert!(refs.contains(&("finish", Some("this"), Some("App"), "calls")));
+        assert!(refs.contains(&("write", Some("disk"), None, "calls")));
+        assert!(refs.contains(&("Base", None, None, "extends")));
+        assert!(refs.contains(&("Runnable", None, None, "implements")));
+    }
+
+    #[test]
+    fn rust_use_aliases_impl_scopes_and_receivers() {
+        let parsed = parse(Path::new("lib.rs"), r#"
+pub mod store;
+use crate::disk::{self, write as persist, nested::{Store, load}};
+pub use crate::store::Store as PublicStore;
+struct Worker;
+trait Runnable { fn run(&self); }
+impl Runnable for Worker {
+  fn run(&self) { self.finish(); }
+}
+impl Worker {
+  fn finish(&self) { persist(); }
+}
+fn start(worker: &Worker) { let local = Worker::new(); worker.run(); local.finish(); disk::write(); }
+"#).unwrap();
+        assert!(!parsed.has_errors);
+        let imports: Vec<_> = parsed
+            .imports
+            .iter()
+            .map(|import| {
+                (
+                    import.local.as_str(),
+                    import.imported.as_str(),
+                    import.module.as_str(),
+                    import.reexport,
+                )
+            })
+            .collect();
+        assert!(imports.contains(&("store", "*", "self::store", true)));
+        assert!(imports.contains(&("persist", "write", "crate::disk", false)));
+        assert!(imports.contains(&("Store", "Store", "crate::disk::nested", false)));
+        assert!(imports.contains(&("disk", "disk", "crate", false)));
+        assert!(imports.contains(&("PublicStore", "Store", "crate::store", true)));
+        assert!(
+            parsed
+                .symbols
+                .iter()
+                .any(|symbol| symbol.qualified_name == "Worker::finish")
+        );
+        let refs: Vec<_> = parsed
+            .references
+            .iter()
+            .map(|reference| {
+                (
+                    reference.target.as_str(),
+                    reference.qualifier.as_deref(),
+                    reference.receiver_type.as_deref(),
+                    reference.kind.as_str(),
+                )
+            })
+            .collect();
+        assert!(refs.contains(&("Runnable", None, None, "implements")));
+        assert!(refs.contains(&("run", Some("worker"), Some("Worker"), "calls")));
+        assert!(refs.contains(&("finish", Some("self"), Some("Worker"), "calls")));
+        assert!(refs.contains(&("finish", Some("local"), Some("Worker"), "calls")));
+        assert!(refs.contains(&("write", Some("disk"), None, "calls")));
+    }
+
+    #[test]
+    fn ruby_requires_inheritance_and_receivers_keep_scopes() {
+        let parsed = parse(
+            Path::new("app.rb"),
+            r#"
+require_relative 'store'
+module Admin
+  class Worker < Base
+    def run
+      store = Store.new
+      store.save!
+      self.finish
+    end
+    def finish; end
+  end
+end
+"#,
+        )
+        .unwrap();
+        assert!(!parsed.has_errors);
+        assert_eq!(parsed.imports[0].module, "./store");
+        assert!(
+            parsed
+                .symbols
+                .iter()
+                .any(|symbol| symbol.qualified_name == "Admin::Worker::run")
+        );
+        assert!(
+            parsed
+                .references
+                .iter()
+                .any(|reference| reference.target == "Base" && reference.kind == "extends")
+        );
+        assert!(
+            parsed
+                .references
+                .iter()
+                .any(|reference| reference.target == "save!"
+                    && reference.receiver_type.as_deref() == Some("Store"))
+        );
+        assert!(
+            parsed
+                .references
+                .iter()
+                .any(|reference| reference.target == "finish"
+                    && reference.receiver_type.as_deref() == Some("Admin::Worker"))
+        );
+    }
+
+    #[test]
+    fn receiver_inference_respects_shadowing_and_assignments() {
+        let parsed = parse(
+            Path::new("app.ts"),
+            r#"
+function run(value: Store) {
+  value.save();
+  { const value = unknown(); value.save(); }
+  value.save();
+  value = unknown(); value.save();
+}
+"#,
+        )
+        .unwrap();
+        let receivers: Vec<_> = parsed
+            .references
+            .iter()
+            .filter(|reference| reference.target == "save")
+            .map(|reference| reference.receiver_type.as_deref())
+            .collect();
+        assert_eq!(receivers, [Some("Store"), None, Some("Store"), None]);
+    }
+
+    #[test]
+    fn anonymous_default_exports_remain_addressable() {
+        for source in [
+            "export default function () { work(); }",
+            "export default () => work();",
+            "export default class { run() { work(); } }",
+        ] {
+            let parsed = parse(Path::new("default.ts"), source).unwrap();
+            assert!(!parsed.has_errors);
+            assert!(
+                parsed
+                    .symbols
+                    .iter()
+                    .any(|symbol| symbol.name == "default" && symbol.exports == ["default"])
+            );
+        }
+    }
 
     #[test]
     fn typescript_methods_and_nested_arrows_keep_their_callers() {

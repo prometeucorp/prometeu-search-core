@@ -1,17 +1,14 @@
-use crate::{WatchHandle, parser, source};
+use crate::{WatchHandle, parser};
 use anyhow::{Context, Result, bail, ensure};
-use ignore::WalkBuilder;
 use rusqlite::{Connection, OptionalExtension, params};
 use serde::Serialize;
-use std::collections::{HashMap, HashSet};
 use std::fs;
-use std::io::Read;
 use std::path::{Path, PathBuf};
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use std::time::Duration;
 
-pub const SCHEMA_VERSION: u32 = 2;
-const MAX_FILE_BYTES: u64 = 1024 * 1024;
-const EXCLUDED: &[&str] = &[
+pub const SCHEMA_VERSION: u32 = 4;
+pub(crate) const MAX_FILE_BYTES: u64 = 1024 * 1024;
+pub(crate) const EXCLUDED: &[&str] = &[
     ".git",
     "node_modules",
     "target",
@@ -29,11 +26,15 @@ const EXCLUDED: &[&str] = &[
 pub struct Engine {
     pub(crate) root: PathBuf,
     pub(crate) database: PathBuf,
-    connection: Connection,
+    pub(crate) connection: Connection,
+    pub(crate) graph_cache: std::cell::RefCell<Option<crate::graph::Graph>>,
+    pub(crate) last_full_sync: Option<std::time::Instant>,
 }
 
 #[derive(Debug, Serialize)]
 pub struct SyncReport {
+    /// Number of source files whose contents were hashed during reconciliation.
+    pub hashed: usize,
     pub indexed: usize,
     pub removed: usize,
     pub unchanged: usize,
@@ -81,6 +82,8 @@ pub enum Direction {
 
 #[derive(Debug, Serialize)]
 pub struct SymbolLocation {
+    pub id: i64,
+    pub qualified_name: String,
     pub name: String,
     pub path: String,
     pub start_line: usize,
@@ -88,11 +91,14 @@ pub struct SymbolLocation {
 
 #[derive(Debug, Serialize)]
 pub struct Relation {
+    pub kind: String,
+    pub confidence: &'static str,
+    pub ambiguous: bool,
     pub caller: SymbolLocation,
     pub target: String,
     pub call_line: usize,
     pub candidate: Option<SymbolLocation>,
-    /// These are lexical candidates, not compiler-resolved call edges.
+    /// Static evidence remains heuristic, not compiler proof.
     pub resolution: &'static str,
 }
 
@@ -172,121 +178,9 @@ impl Engine {
             root,
             database,
             connection,
+            graph_cache: std::cell::RefCell::new(None),
+            last_full_sync: None,
         })
-    }
-
-    /// Reconcile additions, edits, removals and changed ignore rules in one transaction.
-    /// Unchanged content is never parsed again. Failed reads leave the previous snapshot intact.
-    pub fn sync(&mut self) -> Result<SyncReport> {
-        let source_root = source::open_root(&self.root).context("cannot open project root")?;
-        let transaction = self
-            .connection
-            .transaction_with_behavior(rusqlite::TransactionBehavior::Immediate)?;
-        let known: HashMap<String, String> = {
-            let mut statement = transaction.prepare("SELECT path, hash FROM files")?;
-            statement
-                .query_map([], |r| Ok((r.get(0)?, r.get(1)?)))?
-                .collect::<rusqlite::Result<_>>()?
-        };
-        let root = self.root.clone();
-        let database = self.database.clone();
-        let walker = WalkBuilder::new(&root)
-            .hidden(false)
-            .follow_links(false)
-            .require_git(false)
-            .add_custom_ignore_filename(".prometeu-searchignore")
-            .filter_entry(move |entry| {
-                entry.depth() == 0
-                    || (!EXCLUDED.iter().any(|name| entry.file_name() == *name)
-                        && entry.path() != database)
-            })
-            .build();
-        let mut seen = HashSet::new();
-        let mut report = SyncReport {
-            indexed: 0,
-            removed: 0,
-            unchanged: 0,
-            syntax_errors: 0,
-            generation: 0,
-        };
-        // ponytail: reconciliation hashes all eligible files; use event-path batches if scanning becomes a measured bottleneck.
-        for entry in walker {
-            let entry = entry.context("cannot enumerate project files")?;
-            if !entry.file_type().is_some_and(|kind| kind.is_file())
-                || !parser::supports(entry.path())
-            {
-                continue;
-            }
-            let relative = entry.path().strip_prefix(&self.root)?;
-            let Some(path) = relative.to_str() else {
-                continue;
-            };
-            let path = path.replace(std::path::MAIN_SEPARATOR, "/");
-            // Resolve each component through directory handles so replacements
-            // cannot redirect this read through a symlink after enumeration.
-            let file = source::open(&source_root, relative)
-                .with_context(|| format!("cannot read {path}"))?;
-            let metadata = file.metadata()?;
-            if !metadata.is_file() || metadata.len() > MAX_FILE_BYTES {
-                continue;
-            }
-            let mut bytes = Vec::new();
-            file.take(MAX_FILE_BYTES + 1).read_to_end(&mut bytes)?;
-            if bytes.len() as u64 > MAX_FILE_BYTES {
-                continue;
-            }
-            let Ok(source) = std::str::from_utf8(&bytes) else {
-                continue;
-            };
-            let hash = blake3::hash(&bytes).to_hex().to_string();
-            seen.insert(path.clone());
-            if known.get(&path) == Some(&hash) {
-                report.unchanged += 1;
-                continue;
-            }
-            let parsed = parser::parse(entry.path(), source)?;
-            report.syntax_errors += usize::from(parsed.has_errors);
-            transaction.execute("DELETE FROM files WHERE path = ?1", [&path])?;
-            transaction.execute(
-                "INSERT INTO files(path, hash, language, syntax_errors) VALUES (?1, ?2, ?3, ?4)",
-                params![path, hash, parsed.language, parsed.has_errors],
-            )?;
-            let mut ids = Vec::with_capacity(parsed.symbols.len());
-            for symbol in &parsed.symbols {
-                let code = source
-                    .get(symbol.start_byte..symbol.end_byte)
-                    .context("parser returned invalid source offsets")?;
-                transaction.execute("INSERT INTO symbols(path, name, terms, kind, start_line, end_line, code) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)", params![path, symbol.name, words(&symbol.name).join(" "), symbol.kind, symbol.start_line as i64, symbol.end_line as i64, code])?;
-                ids.push(transaction.last_insert_rowid());
-            }
-            for reference in &parsed.references {
-                if let Some(caller) = reference.caller.and_then(|index| ids.get(index)) {
-                    transaction.execute(
-                        "INSERT OR IGNORE INTO refs(caller, target, line) VALUES (?1, ?2, ?3)",
-                        params![caller, reference.target, reference.line as i64],
-                    )?;
-                }
-            }
-            report.indexed += 1;
-        }
-        for path in known.keys().filter(|path| !seen.contains(*path)) {
-            transaction.execute("DELETE FROM files WHERE path = ?1", [path])?;
-            report.removed += 1;
-        }
-        if report.indexed + report.removed > 0 {
-            transaction.execute(
-                "UPDATE metadata SET value = CAST(value AS INTEGER) + 1 WHERE key = 'generation'",
-                [],
-            )?;
-        }
-        let now = SystemTime::now().duration_since(UNIX_EPOCH)?.as_secs();
-        transaction.execute(
-            "INSERT OR REPLACE INTO metadata(key,value) VALUES ('last_indexed', ?1)",
-            [now.to_string()],
-        )?;
-        report.generation = generation(&transaction)?;
-        transaction.commit()?;
-        Ok(report)
     }
 
     pub fn status(&self) -> Result<Status> {
@@ -382,7 +276,7 @@ impl Engine {
         Ok(result)
     }
 
-    /// Resolve by name at query time so newly indexed targets can satisfy old references.
+    /// Resolve static candidates against one snapshot, retaining uncertainty.
     pub fn related(
         &self,
         symbol: &str,
@@ -390,65 +284,7 @@ impl Engine {
         limit: usize,
         max_bytes: usize,
     ) -> Result<RelationsResult> {
-        let snapshot = self.connection.unchecked_transaction()?;
-        validate_limits(limit, max_bytes)?;
-        ensure!(
-            !symbol.is_empty() && symbol.len() <= 1024,
-            "symbol must contain 1 to 1024 bytes"
-        );
-        let predicate = match direction {
-            Direction::Callers => "r.target = ?1",
-            Direction::Callees => "s.name = ?1",
-        };
-        let sql = format!(
-            "SELECT s.name, s.path, s.start_line, r.target, r.line, t.name, t.path, t.start_line FROM refs r JOIN symbols s ON s.id = r.caller LEFT JOIN symbols t ON t.name = r.target WHERE {predicate} ORDER BY s.path, r.line, t.path, t.start_line LIMIT ?2"
-        );
-        let mut statement = snapshot.prepare(&sql)?;
-        let rows = statement.query_map(params![symbol, (limit + 1) as i64], |row| {
-            let name: Option<String> = row.get(5)?;
-            let candidate = name
-                .map(|name| {
-                    Ok::<_, rusqlite::Error>(SymbolLocation {
-                        name,
-                        path: row.get(6)?,
-                        start_line: row.get::<_, i64>(7)? as usize,
-                    })
-                })
-                .transpose()?;
-            Ok(Relation {
-                caller: SymbolLocation {
-                    name: row.get(0)?,
-                    path: row.get(1)?,
-                    start_line: row.get::<_, i64>(2)? as usize,
-                },
-                target: row.get(3)?,
-                call_line: row.get::<_, i64>(4)? as usize,
-                resolution: if candidate.is_some() {
-                    "name_match"
-                } else {
-                    "unresolved"
-                },
-                candidate,
-            })
-        })?;
-        let mut result = RelationsResult {
-            generation: generation(&snapshot)?,
-            relations: Vec::new(),
-            truncated: false,
-        };
-        for row in rows {
-            if result.relations.len() == limit {
-                result.truncated = true;
-                break;
-            }
-            result.relations.push(row?);
-            if serde_json::to_vec(&result)?.len() > max_bytes {
-                result.relations.pop();
-                result.truncated = true;
-                break;
-            }
-        }
-        Ok(result)
+        crate::graph::related(self, symbol, direction, limit, max_bytes)
     }
 
     pub fn watch(&self) -> Result<WatchHandle> {
@@ -473,8 +309,9 @@ fn initialize(connection: &Connection, root: &Path) -> Result<()> {
             "refusing to initialize an unrelated SQLite database"
         );
         connection.execute_batch("CREATE TABLE metadata(key TEXT PRIMARY KEY, value TEXT NOT NULL);
-            CREATE TABLE files(path TEXT PRIMARY KEY, hash TEXT NOT NULL, language TEXT NOT NULL, syntax_errors INTEGER NOT NULL);
-            CREATE TABLE symbols(id INTEGER PRIMARY KEY, path TEXT NOT NULL REFERENCES files(path) ON DELETE CASCADE, name TEXT NOT NULL, terms TEXT NOT NULL, kind TEXT NOT NULL, start_line INTEGER NOT NULL, end_line INTEGER NOT NULL, code TEXT NOT NULL);
+            CREATE TABLE files(path TEXT PRIMARY KEY, hash TEXT NOT NULL, language TEXT NOT NULL, syntax_errors INTEGER NOT NULL, analysis TEXT NOT NULL);
+            CREATE TABLE file_state(path TEXT PRIMARY KEY REFERENCES files(path) ON DELETE CASCADE, signature TEXT NOT NULL);
+            CREATE TABLE symbols(id INTEGER PRIMARY KEY, path TEXT NOT NULL REFERENCES files(path) ON DELETE CASCADE, name TEXT NOT NULL, ordinal INTEGER NOT NULL, terms TEXT NOT NULL, kind TEXT NOT NULL, start_line INTEGER NOT NULL, end_line INTEGER NOT NULL, code TEXT NOT NULL);
             CREATE INDEX symbols_name ON symbols(name);
             CREATE INDEX symbols_path ON symbols(path);
             CREATE TABLE refs(caller INTEGER NOT NULL REFERENCES symbols(id) ON DELETE CASCADE, target TEXT NOT NULL, line INTEGER NOT NULL, UNIQUE(caller,target,line));
@@ -499,7 +336,7 @@ fn initialize(connection: &Connection, root: &Path) -> Result<()> {
     Ok(())
 }
 
-fn generation(connection: &Connection) -> Result<u64> {
+pub(crate) fn generation(connection: &Connection) -> Result<u64> {
     let value: String = connection.query_row(
         "SELECT value FROM metadata WHERE key='generation'",
         [],
@@ -508,7 +345,7 @@ fn generation(connection: &Connection) -> Result<u64> {
     Ok(value.parse()?)
 }
 
-fn validate_limits(limit: usize, max_bytes: usize) -> Result<()> {
+pub(crate) fn validate_limits(limit: usize, max_bytes: usize) -> Result<()> {
     ensure!((1..=50).contains(&limit), "limit must be between 1 and 50");
     ensure!(
         (1024..=65536).contains(&max_bytes),
@@ -517,7 +354,7 @@ fn validate_limits(limit: usize, max_bytes: usize) -> Result<()> {
     Ok(())
 }
 
-fn clip(value: &str, max: usize) -> &str {
+pub(crate) fn clip(value: &str, max: usize) -> &str {
     let mut end = value.len().min(max);
     while !value.is_char_boundary(end) {
         end -= 1;
@@ -525,7 +362,7 @@ fn clip(value: &str, max: usize) -> &str {
     &value[..end]
 }
 
-fn words(text: &str) -> Vec<String> {
+pub(crate) fn words(text: &str) -> Vec<String> {
     let mut split = String::new();
     let mut lower = false;
     for ch in text.chars() {
@@ -540,4 +377,45 @@ fn words(text: &str) -> Vec<String> {
         .filter(|word| !word.is_empty())
         .map(str::to_lowercase)
         .collect()
+}
+
+/// Persist one parsed file atomically with its searchable source and extraction metadata.
+pub(crate) fn store_file(
+    transaction: &rusqlite::Transaction<'_>,
+    path: &str,
+    source: &str,
+    hash: &str,
+    parsed: &parser::ParsedFile,
+) -> Result<()> {
+    transaction.execute("DELETE FROM files WHERE path = ?1", [path])?;
+    transaction.execute(
+        "INSERT INTO files(path,hash,language,syntax_errors,analysis) VALUES (?1,?2,?3,?4,?5)",
+        params![
+            path,
+            hash,
+            parsed.language,
+            parsed.has_errors,
+            serde_json::to_string(parsed)?
+        ],
+    )?;
+    let mut ids = Vec::with_capacity(parsed.symbols.len());
+    for (ordinal, symbol) in parsed.symbols.iter().enumerate() {
+        let code = source
+            .get(symbol.start_byte..symbol.end_byte)
+            .context("parser returned invalid source offsets")?;
+        transaction.execute(
+            "INSERT INTO symbols(path,name,ordinal,terms,kind,start_line,end_line,code) VALUES (?1,?2,?3,?4,?5,?6,?7,?8)",
+            params![path, symbol.name, ordinal as i64, words(&symbol.name).join(" "), symbol.kind, symbol.start_line as i64, symbol.end_line as i64, code],
+        )?;
+        ids.push(transaction.last_insert_rowid());
+    }
+    for reference in &parsed.references {
+        if let Some(caller) = reference.caller.and_then(|index| ids.get(index)) {
+            transaction.execute(
+                "INSERT OR IGNORE INTO refs(caller,target,line) VALUES (?1,?2,?3)",
+                params![caller, reference.target, reference.line as i64],
+            )?;
+        }
+    }
+    Ok(())
 }

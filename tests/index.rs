@@ -241,15 +241,23 @@ fn previous_extraction_cache_requires_rebuild_without_mutation() {
     engine.sync().unwrap();
     drop(engine);
     let database = temp.path().join("cache/index.sqlite");
-    let connection = rusqlite::Connection::open(&database).unwrap();
-    connection.pragma_update(None, "user_version", 1).unwrap();
-    drop(connection);
-    let before = fs::read(&database).unwrap();
-    let error = Engine::open(&temp.path().join("project"), Some(&database))
-        .err()
-        .unwrap();
-    assert!(error.to_string().contains("unsupported database schema 1"));
-    assert_eq!(fs::read(&database).unwrap(), before);
+    for version in [1, 2, 3] {
+        let connection = rusqlite::Connection::open(&database).unwrap();
+        connection
+            .pragma_update(None, "user_version", version)
+            .unwrap();
+        drop(connection);
+        let before = fs::read(&database).unwrap();
+        let error = Engine::open(&temp.path().join("project"), Some(&database))
+            .err()
+            .unwrap();
+        assert!(
+            error
+                .to_string()
+                .contains(&format!("unsupported database schema {version}"))
+        );
+        assert_eq!(fs::read(&database).unwrap(), before);
+    }
 }
 
 #[test]

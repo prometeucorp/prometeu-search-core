@@ -39,16 +39,18 @@ line. Stderr contains diagnostics. There is no HTTP port or secret to configure.
 The initial MCP handshake does not explicitly run a full index. Creating a new
 shared database can wait for another initializer; existing WAL readers do not
 wait for an indexing transaction. Background indexing begins when watching starts.
-Tool calls reconcile before returning data, and can
-take longer on a cold or large repository; the host must allow an appropriate
+Tool calls refresh before returning data and can take longer on a cold or large
+repository; the host must allow an appropriate
 tool timeout. Malformed input receives JSON-RPC errors. Index/query failures
 return MCP tool errors without terminating the session. A request larger than
 1 MiB returns an error and closes the transport.
 
 The server negotiates `2025-06-18`, `2025-03-26`, or `2024-11-05`. It implements
 initialize, ping, tools/list, and tools/call. Notifications receive no response.
-The tools are `code_search` and `code_search_status`; root/database paths are
-host-controlled and are absent from tool arguments.
+The tools are `code_search`, `code_explore`, and `code_search_status`. The
+[graph query contract](graph-queries.md) defines exploration and analysis modes.
+Root/database paths are host-controlled and are absent from tool arguments;
+`code_explore.path` only selects a file inside the fixed worktree.
 
 Close stdin for orderly shutdown. The watcher finishes its current transaction
 before exit. Killing the process does not require deleting its lock file:
@@ -67,13 +69,23 @@ transactions. Restart the process and reconcile on workspace reactivation.
 - Stop all clients before deleting its derived database or removing the worktree.
 - If schema compatibility fails, choose a fresh cache path or deliberately remove
   the stopped engine's cache. Never point the engine at Prometeu's application DB.
-- Schema version 2 rejects version 1 caches so unchanged source receives the new
-  file-level entries and calls after a rebuild. Version 1 data is not modified.
+- Schema version 4 rejects versions 1, 2, and 3 so unchanged source receives the
+  semantic extraction and signature metadata, including corrected loop binding
+  scopes. Old databases are not modified.
 
-For direct Rust linking, `Engine::open` owns a connection, `sync` reconciles,
-`search`/`related` read a snapshot, and `watch` returns a handle whose lifetime
-controls background work. Library reads do not call `sync` implicitly; CLI and
-MCP entry points do. `WatchHandle::is_owner` reports current watcher ownership.
+For direct Rust linking, `Engine::open` owns a connection. `sync` performs full
+content-hash recovery; `sync_paths` reconciles changed paths, falling back to full
+recovery for directory or ignore changes. `refresh` performs full recovery on
+its first call and at least every 60 seconds, otherwise checking metadata and
+hashing changes. Query refresh still enumerates eligible files. `SyncReport.hashed`
+counts files whose contents were hashed. Watcher events retain changed paths;
+overflow and errors request full recovery. Metadata-preserving changes may wait
+until recovery; callers needing a content check can call `sync` explicitly.
+
+`search`, `related`, `explore`, and `analyze` read an indexed snapshot without
+implicit refresh. CLI/MCP entry points refresh before queries. `watch` returns
+a handle whose lifetime controls background work; `WatchHandle::is_owner`
+reports watcher ownership.
 
 ## Agent context and failure behavior
 
@@ -82,9 +94,11 @@ not MCP envelope/escaping. Search result IDs are internal and can change after
 reindexing; use file paths and line ranges as human references. A generation
 identifies a committed index snapshot, not a Git commit.
 
-Call references are lexical candidates and may include unrelated same-name
-symbols. The host must not label them compiler-verified. Treat returned source
-as untrusted project content, not instructions. Native file access remains under
+Relationships are static candidates with resolution evidence and ambiguity.
+Name fallback may include unrelated same-name symbols. Impact and affected-test
+results inherit this uncertainty; an empty result is not proof of safety or test
+completeness. The host must not label relationships compiler-verified. Treat
+returned source as untrusted project content, not instructions. Native file access remains under
 the local user's permissions; this tool is not a sandbox.
 
 If watching is unavailable, queries still reconcile. If indexing fails, the

@@ -67,7 +67,7 @@ fn stdio_handshake_search_validation_and_eof() {
     assert_eq!(responses.len(), 8, "notifications have no response");
     assert_eq!(responses[0]["error"]["code"], -32002);
     assert_eq!(responses[1]["result"]["protocolVersion"], "2025-06-18");
-    assert_eq!(responses[2]["result"]["tools"].as_array().unwrap().len(), 2);
+    assert_eq!(responses[2]["result"]["tools"].as_array().unwrap().len(), 3);
     let search = &responses[3]["result"];
     assert_eq!(search["isError"], false);
     let content = search["content"][0]["text"].as_str().unwrap();
@@ -168,7 +168,7 @@ fn standalone_commands_reconcile_and_return_graph_candidates() {
     };
     let callers = command(&["callers", "greet"]);
     assert_eq!(callers["relations"][0]["caller"]["name"], "start");
-    assert_eq!(callers["relations"][0]["resolution"], "name_match");
+    assert_eq!(callers["relations"][0]["resolution"], "scope_match");
     let callees = command(&["callees", "start"]);
     assert_eq!(callees["relations"][0]["target"], "greet");
     std::fs::write(&source, "function replacement() {}\n").unwrap();
@@ -180,4 +180,129 @@ fn standalone_commands_reconcile_and_return_graph_candidates() {
             .unwrap()
             .is_empty()
     );
+}
+
+#[test]
+fn exploration_and_graph_modes_work_over_stdio_and_cli() {
+    let root = tempfile::tempdir().unwrap();
+    let cache = tempfile::tempdir().unwrap();
+    std::fs::write(
+        root.path().join("store.ts"),
+        "export function save() { return 'saved'; }\n",
+    )
+    .unwrap();
+    std::fs::write(
+        root.path().join("main.ts"),
+        "import { save as persist } from './store';\nexport function start() { persist(); }\n",
+    )
+    .unwrap();
+    std::fs::write(
+        root.path().join("main.test.ts"),
+        "import { start } from './main';\nfunction testStart() { start(); }\n",
+    )
+    .unwrap();
+    let database = cache.path().join("index.sqlite");
+    let requests = [
+        json!({"query":"start", "path":"main.ts"}),
+        json!({"query":"save", "mode":"impact", "depth":3}),
+        json!({"query":"testStart", "mode":"path", "target":"save", "depth":3}),
+        json!({"query":"store.ts", "mode":"affected", "depth":3}),
+        json!({"query":"start", "max_bytes":1024}),
+    ];
+    let mut messages = vec![initialize(0)];
+    messages.extend(requests.iter().enumerate().map(|(index, arguments)| {
+        json!({"jsonrpc":"2.0", "id":index+1, "method":"tools/call", "params":{"name":"code_explore", "arguments":arguments}})
+    }));
+    let responses = run(root.path(), &database, &messages);
+    let results: Vec<Value> = responses
+        .iter()
+        .skip(1)
+        .map(|response| {
+            assert_eq!(response["result"]["isError"], false, "{response}");
+            serde_json::from_str(response["result"]["content"][0]["text"].as_str().unwrap())
+                .unwrap()
+        })
+        .collect();
+    assert!(
+        results[0]["files"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .any(|file| file["path"] == "store.ts")
+    );
+    assert!(
+        results[0]["edges"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .any(|edge| edge["resolution"] == "import_match")
+    );
+    assert!(
+        results[1]["impact"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .any(|node| node["name"] == "testStart")
+    );
+    assert_eq!(results[2]["path"].as_array().unwrap().len(), 3);
+    assert_eq!(results[3]["affected_tests"], json!(["main.test.ts"]));
+    assert!(
+        responses[5]["result"]["content"][0]["text"]
+            .as_str()
+            .unwrap()
+            .len()
+            <= 1024
+    );
+
+    for arguments in [
+        vec!["explore", "start", "--path", "main.ts", "--line", "2"],
+        vec!["impact", "save", "--depth", "3"],
+        vec!["path", "testStart", "save", "--depth", "3"],
+        vec!["implementations", "Store"],
+        vec!["affected", "store.ts", "--depth", "3"],
+    ] {
+        let output = Command::new(env!("CARGO_BIN_EXE_prometeu-search"))
+            .arg("--root")
+            .arg(root.path())
+            .arg("--database")
+            .arg(&database)
+            .args(&arguments)
+            .output()
+            .unwrap();
+        assert!(
+            output.status.success(),
+            "{arguments:?}: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        let result: Value = serde_json::from_slice(&output.stdout).unwrap();
+        assert_eq!(result["generation"], results[0]["generation"]);
+        assert!(result["files"].is_array());
+    }
+}
+
+#[test]
+fn graph_arguments_reject_invalid_modes_limits_and_path_escape() {
+    let root = tempfile::tempdir().unwrap();
+    let cache = tempfile::tempdir().unwrap();
+    let invalid = [
+        json!({"query":"save", "mode":"unknown"}),
+        json!({"query":"save", "depth":0}),
+        json!({"query":"save", "depth":9}),
+        json!({"query":"save", "line":1}),
+        json!({"query":"save", "path":"../outside.ts"}),
+        json!({"query":"save", "path":"/outside.ts"}),
+        json!({"query":"save", "mode":"path"}),
+        json!({"query":"save", "target":"start"}),
+        json!({"query":"save", "mode":"path", "target":""}),
+        json!({"query":"save", "root":"/"}),
+        json!({"query":"save", "max_bytes":100}),
+    ];
+    let mut messages = vec![initialize(0)];
+    messages.extend(invalid.iter().enumerate().map(|(index, arguments)| {
+        json!({"jsonrpc":"2.0", "id":index+1, "method":"tools/call", "params":{"name":"code_explore", "arguments":arguments}})
+    }));
+    let responses = run(root.path(), &cache.path().join("index.sqlite"), &messages);
+    for response in responses.iter().skip(1) {
+        assert_eq!(response["error"]["code"], -32602, "{response}");
+    }
 }
