@@ -12,8 +12,9 @@ installer and session-launch integration are not implemented here.
 
 ## Distribution
 
-Pin an engine version/commit and package its matching platform binary with the
-application. Include `LICENSE` and `THIRD_PARTY_NOTICES.md`. The engine does not
+Pin an engine version/commit and either package its matching platform binary or
+link its Rust library into the application. Include `LICENSE` and
+`THIRD_PARTY_NOTICES.md` in either case. The engine does not
 download runtimes, parsers, models, or dependencies at launch. Do not run
 `cargo install` on an end user's machine.
 
@@ -86,6 +87,21 @@ until recovery; callers needing a content check can call `sync` explicitly.
 implicit refresh. CLI/MCP entry points refresh before queries. `watch` returns
 a handle whose lifetime controls background work; `WatchHandle::is_owner`
 reports watcher ownership.
+
+`prometeu_search::mcp::serve(&mut engine, input, output)` exposes the same server
+used by the standalone `serve` command. It accepts a `BufRead` input and a `Write`
+output, flushes each JSON-RPC response, and returns at EOF or a transport error.
+It does not create a watcher: an embedding host retains an `Engine::watch` handle
+for the desired background lifetime. Tool queries still refresh when watching is
+unavailable. The host must route its executable's MCP mode before starting any
+UI or writing non-protocol output to stdout.
+
+The linked and standalone server have identical negotiation, tool definitions,
+validation, query refresh, and response budgets. `tests/mcp.rs` compares their
+handshake, discovery, and search responses against the same database. The library
+uses bundled SQLite through `rusqlite` 0.40.2; hosts linking another SQLite user
+must select a compatible `libsqlite3-sys` dependency. Rust 1.88 is the minimum
+toolchain; the repository lockfile retains compatible dependency versions.
 
 ## Agent context and failure behavior
 

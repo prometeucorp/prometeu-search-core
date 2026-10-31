@@ -1,6 +1,6 @@
 //! A deliberately small stdio MCP surface. All source access stays in the engine.
+use crate::{Direction, Engine, GraphMode, GraphOptions};
 use anyhow::Result;
-use prometeu_search::{Direction, Engine, GraphMode, GraphOptions};
 use serde::Deserialize;
 use serde_json::{Value, json};
 use std::io::{BufRead, Write};
@@ -8,6 +8,8 @@ use std::io::{BufRead, Write};
 const PROTOCOL_VERSION: &str = "2025-06-18";
 const MAX_FRAME_BYTES: usize = 1024 * 1024;
 
+/// Serve newline-delimited MCP until EOF using the engine's fixed root and database.
+/// The caller owns background watching; every tool query refreshes independently.
 pub fn serve(engine: &mut Engine, mut input: impl BufRead, mut output: impl Write) -> Result<()> {
     let mut initialized = false;
     let mut frame = Vec::new();

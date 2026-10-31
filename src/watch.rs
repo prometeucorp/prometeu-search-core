@@ -25,7 +25,9 @@ struct Session {
 
 impl WatchHandle {
     pub(crate) fn start(root: &Path, database: &Path) -> Result<Self> {
-        let lock_path = database.with_added_extension("watch.lock");
+        let mut lock_name = database.as_os_str().to_os_string();
+        lock_name.push(".watch.lock");
+        let lock_path = PathBuf::from(lock_name);
         anyhow::ensure!(
             !lock_path.is_symlink(),
             "watcher lock must not be a symlink"
@@ -114,11 +116,8 @@ impl Session {
         let overflow = Arc::new(AtomicBool::new(false));
         let needs_scan = overflow.clone();
         let root_owned = root.to_path_buf();
-        let mut cache_paths = vec![
-            database.to_path_buf(),
-            database.with_added_extension("watch.lock"),
-        ];
-        for suffix in ["-wal", "-shm", "-journal"] {
+        let mut cache_paths = vec![database.to_path_buf()];
+        for suffix in [".watch.lock", "-wal", "-shm", "-journal"] {
             let mut name = database.as_os_str().to_os_string();
             name.push(suffix);
             cache_paths.push(PathBuf::from(name));

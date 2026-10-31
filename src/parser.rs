@@ -233,7 +233,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             {
                 covered_until = Some(covered_until.unwrap_or(0).max(symbol.end_byte));
             }
-            !covered_until.is_some_and(|end| end >= node.end_byte())
+            covered_until.is_none_or(|end| end < node.end_byte())
         });
         if uncovered
             || result

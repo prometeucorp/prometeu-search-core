@@ -865,8 +865,8 @@ impl Graph {
                     continue;
                 }
                 let local = self.nodes[owner].path == path;
-                if !local
-                    && !(self.files[&path].analysis.language == "rust" && method != "name_match")
+                if !(local
+                    || self.files[&path].analysis.language == "rust" && method != "name_match")
                 {
                     continue;
                 }

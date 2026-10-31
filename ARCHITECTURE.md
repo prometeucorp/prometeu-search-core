@@ -60,7 +60,9 @@ it again. Metadata-preserving changes can wait until full recovery. Explicit
 `src/main.rs` provides the CLI. `src/mcp.rs` provides newline-delimited JSON-RPC
 over stdio, with a fixed worktree root, bounded requests and strict tool inputs.
 MCP stdout carries only protocol messages. Closing stdin stops the process and
-joins its watcher. The library exposes `Engine` for direct Rust embedding.
+joins its watcher. The library exposes `Engine` for direct Rust embedding and
+`mcp::serve` for hosts that embed the same protocol in their own executable.
+The standalone command calls this public server implementation.
 
 There is no daemon discovery, TCP listener, authentication system, async runtime,
 plugin framework, or provider-specific adapter. The embedding host owns process

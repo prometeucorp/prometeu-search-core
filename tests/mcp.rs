@@ -44,6 +44,42 @@ fn run(root: &Path, database: &Path, messages: &[Value]) -> Vec<Value> {
 }
 
 #[test]
+fn linked_server_matches_standalone_protocol_and_search() {
+    let root = tempfile::tempdir().unwrap();
+    let cache = tempfile::tempdir().unwrap();
+    std::fs::write(root.path().join("main.rs"), "fn greeting() {}\n").unwrap();
+    let database = cache.path().join("index.sqlite");
+    let messages = [
+        initialize(1),
+        json!({"jsonrpc":"2.0", "method":"notifications/initialized"}),
+        json!({"jsonrpc":"2.0", "id":2, "method":"tools/list"}),
+        json!({"jsonrpc":"2.0", "id":3, "method":"tools/call", "params":{"name":"code_search", "arguments":{"query":"greeting", "max_bytes":1024}}}),
+    ];
+    let standalone = run(root.path(), &database, &messages);
+    let mut engine = prometeu_search::Engine::open(root.path(), Some(&database)).unwrap();
+    let mut input = Vec::new();
+    for message in messages {
+        writeln!(input, "{message}").unwrap();
+    }
+    let mut output = Vec::new();
+    prometeu_search::mcp::serve(&mut engine, input.as_slice(), &mut output).unwrap();
+    let linked: Vec<Value> = String::from_utf8(output)
+        .unwrap()
+        .lines()
+        .map(|line| serde_json::from_str(line).unwrap())
+        .collect();
+    assert_eq!(linked, standalone);
+    assert_eq!(linked.len(), 3, "notifications have no response");
+    assert_eq!(linked[2]["result"]["isError"], false);
+    assert!(
+        linked[2]["result"]["content"][0]["text"]
+            .as_str()
+            .unwrap()
+            .contains("greeting")
+    );
+}
+
+#[test]
 fn stdio_handshake_search_validation_and_eof() {
     let root = tempfile::tempdir().unwrap();
     let cache = tempfile::tempdir().unwrap();

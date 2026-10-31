@@ -1,8 +1,6 @@
-mod mcp;
-
 use anyhow::Result;
 use clap::{Args, Parser, Subcommand};
-use prometeu_search::{Direction, Engine, GraphMode, GraphOptions};
+use prometeu_search::{Direction, Engine, GraphMode, GraphOptions, mcp};
 use serde::Serialize;
 use std::io::{self, Write};
 use std::path::PathBuf;
