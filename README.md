@@ -49,8 +49,9 @@ complete serialized result, including escaped source and metadata. Limits are
 `snippet_truncated` and the response's `truncated` distinguish clipped source
 from omitted matches. `start_line` and `end_line` describe the complete symbol.
 
-Prebuilt binaries are produced as artifacts by the **Binaries** GitHub Actions
-workflow for macOS Apple Silicon/Intel, Linux x86_64/ARM64, and Windows x86_64.
+Prebuilt binaries are produced as artifacts by manually running the **Binaries**
+GitHub Actions workflow for macOS Apple Silicon/Intel and Linux x86_64/ARM64.
+Native Windows builds are not supported.
 They contain the executable, this README, and license notices. GNU/Linux builds
 use their documented runner's glibc baseline; they are not fully static binaries.
 There is no release or package-registry publication yet.
@@ -123,7 +124,9 @@ cargo build --release --locked
 
 Tests exercise parser offsets, incremental graph changes, ignore rules, worktree
 isolation, concurrent clients, byte budgets, native watcher handoff, and real
-stdio MCP subprocesses. CI runs on Linux, macOS, and Windows.
+stdio MCP subprocesses. CI runs on Linux and macOS for pull requests and pushes
+to `main`. Formatting is checked once on Linux; Clippy and tests run on both
+platforms. Binary builds run only on manual dispatch.
 
 Current limits: TypeScript/JavaScript/Rust/Ruby only; no import/type resolution,
 cross-language bridges, framework routing, embeddings, or graph UI. Each

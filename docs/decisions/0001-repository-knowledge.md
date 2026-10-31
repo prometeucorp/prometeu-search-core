@@ -55,7 +55,7 @@ the existence of an external deployment.
 - [Bundle map](../README.md) and [contracts index](../contracts/README.md) provide navigation.
 - [Integration contract](../contracts/integration.md) distinguishes engine behavior from host work still to be implemented.
 - [Documentation checks](../../tests/docs.rs) validate metadata, local paths, and rendered index links through `cargo test --locked --test docs`.
-- [CI](../../.github/workflows/ci.yml) runs the Cargo test suite on Linux, macOS, and Windows.
+- [CI](../../.github/workflows/ci.yml) runs the Cargo test suite on Linux and macOS.
 
 No application protocol or persisted format changes are part of this decision;
 compatibility concerns documentation paths and navigation.
