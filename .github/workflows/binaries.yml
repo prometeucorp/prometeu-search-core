@@ -1,0 +1,75 @@
+name: Binaries
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+          - runner: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+          - runner: macos-15
+            target: aarch64-apple-darwin
+          - runner: macos-15-intel
+            target: x86_64-apple-darwin
+          - runner: windows-2022
+            target: x86_64-pc-windows-msvc
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          targets: ${{ matrix.target }}
+      - run: cargo test --locked --target ${{ matrix.target }}
+      - run: cargo build --locked --release --target ${{ matrix.target }}
+      - name: Smoke test and package
+        shell: python
+        env:
+          SEARCH_TARGET: ${{ matrix.target }}
+        run: |
+          import hashlib
+          import os
+          from pathlib import Path
+          import shutil
+          import subprocess
+
+          target = os.environ["SEARCH_TARGET"]
+          windows = target.endswith("windows-msvc")
+          executable = "prometeu-search.exe" if windows else "prometeu-search"
+          binary = Path("target") / target / "release" / executable
+          version = subprocess.check_output([str(binary), "--version"], text=True).strip()
+          print(version)
+          directory = Path("package") / (version.replace(" ", "-") + "-" + target)
+          directory.mkdir(parents=True)
+          shutil.copy2(binary, directory / executable)
+          for filename in ["LICENSE", "README.md", "THIRD_PARTY_NOTICES.md"]:
+              shutil.copy2(filename, directory / filename)
+          Path("dist").mkdir()
+          archive = Path(shutil.make_archive(
+              str(Path("dist") / directory.name),
+              "zip" if windows else "gztar",
+              root_dir=directory.parent,
+              base_dir=directory.name,
+          ))
+          digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+          Path(str(archive) + ".sha256").write_text(digest + "  " + archive.name + "\n", encoding="utf-8")
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: prometeu-search-${{ matrix.target }}-${{ github.sha }}
+          path: dist/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
