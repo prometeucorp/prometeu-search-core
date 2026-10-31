@@ -83,7 +83,7 @@ go to stderr; explicit reconciliation remains available.
 
 Prometeu will supply this configuration automatically when integrating the
 engine. Its app-side lifecycle and installer wiring are separate from this
-repository; see [the bundling contract](docs/integration.md).
+repository; see [the bundling contract](docs/contracts/integration.md).
 
 ## Index location and exclusions
 
@@ -110,6 +110,9 @@ that host's settings. The final cache directory created by the engine uses mode
 `0700` on Unix; its database and lock files use mode `0600`.
 
 ## Development
+
+Start at the [documentation map](docs/README.md) for contracts and decisions.
+Documentation-only changes can run `cargo test --locked --test docs`.
 
 ```sh
 cargo fmt --all --check

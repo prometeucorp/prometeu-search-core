@@ -1,3 +1,10 @@
+---
+type: Contract
+title: "Bundling with Prometeu"
+description: "Distribution, MCP, cache ownership, and host lifecycle responsibilities."
+status: stable
+---
+
 # Bundling with Prometeu
 
 This contract describes the engine delivered by this repository. Prometeu's

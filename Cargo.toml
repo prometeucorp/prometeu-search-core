@@ -26,6 +26,7 @@ tree-sitter-rust = "0.24"
 tree-sitter-typescript = "0.23"
 
 [dev-dependencies]
+pulldown-cmark = { version = "0.13.6", default-features = false }
 tempfile = "3"
 
 [profile.release]

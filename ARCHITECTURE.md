@@ -3,6 +3,10 @@
 Prometeu Search is a local search engine, independent of any desktop shell,
 agent provider, account, or model API.
 
+The [knowledge bundle](docs/README.md) indexes detailed guidance; the
+[integration contract](docs/contracts/integration.md) defines executable, MCP,
+distribution, and host lifecycle responsibilities.
+
 `src/parser.rs` converts Tree-sitter syntax into symbol ranges and lexical call
 references. It uses an iterative traversal and retains a syntax-error flag for
 incomplete files. It does not pretend to perform compiler name resolution.
