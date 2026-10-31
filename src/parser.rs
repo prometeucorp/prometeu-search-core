@@ -180,12 +180,21 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
     }
     if !ruby {
         let root = tree.root_node();
-        let uncovered = (0..root.named_child_count()).any(|index| {
-            let node = root.named_child(index).unwrap();
-            node.kind() != "comment"
-                && !result.symbols.iter().any(|symbol| {
-                    symbol.start_byte <= node.start_byte() && symbol.end_byte >= node.end_byte()
-                })
+        let mut cursor = root.walk();
+        let mut symbols = result.symbols.iter().peekable();
+        let mut covered_until: Option<usize> = None;
+        // Symbols follow source order, but nested declarations can end earlier.
+        // Consume each once and retain the furthest end of eligible ranges.
+        let uncovered = root.named_children(&mut cursor).any(|node| {
+            if node.kind() == "comment" {
+                return false;
+            }
+            while let Some(symbol) =
+                symbols.next_if(|symbol| symbol.start_byte <= node.start_byte())
+            {
+                covered_until = Some(covered_until.unwrap_or(0).max(symbol.end_byte));
+            }
+            !covered_until.is_some_and(|end| end >= node.end_byte())
         });
         if uncovered
             || result

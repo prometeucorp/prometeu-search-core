@@ -63,6 +63,56 @@ fn fallback_preserves_global_declarations_arrows_and_named_callers() {
 }
 
 #[test]
+fn ordered_coverage_preserves_nested_declarations_and_export_wrappers() {
+    for filename in ["nested.ts", "nested.js"] {
+        let source = "class Store { save() { function nested() {} nested(); } }\n// Between declarations.\nfunction start() { function inner() {} inner(); }";
+        let parsed = parser::parse(Path::new(filename), source).unwrap();
+        assert!(!parsed.has_errors);
+        assert_eq!(parsed.symbols.len(), 5);
+        assert!(!parsed.symbols.iter().any(|symbol| symbol.kind == "file"));
+
+        let exported = format!("{source}\nexport function launch() {{ start(); }}");
+        let parsed = parser::parse(Path::new(filename), &exported).unwrap();
+        assert!(!parsed.has_errors);
+        assert_eq!(
+            parsed
+                .symbols
+                .iter()
+                .filter(|symbol| symbol.kind == "file")
+                .count(),
+            1
+        );
+        let call = parsed
+            .references
+            .iter()
+            .find(|reference| reference.target == "start")
+            .unwrap();
+        assert_eq!(parsed.symbols[call.caller.unwrap()].name, "launch");
+    }
+}
+
+#[test]
+fn large_declaration_files_retain_trailing_entrypoint_calls() {
+    let count = 20_000;
+    let mut source: String = (0..count)
+        .map(|index| format!("function f{index}() {{}}\n"))
+        .collect();
+    assert!(source.len() < 1024 * 1024);
+    let parsed = parser::parse(Path::new("large.ts"), &source).unwrap();
+    assert!(!parsed.has_errors);
+    assert_eq!(parsed.symbols.len(), count);
+    assert!(!parsed.symbols.iter().any(|symbol| symbol.kind == "file"));
+
+    source.push_str("f19999();\n");
+    let parsed = parser::parse(Path::new("large.ts"), &source).unwrap();
+    assert!(!parsed.has_errors);
+    assert_eq!(parsed.symbols.len(), count + 1);
+    let call = parsed.references.last().unwrap();
+    assert_eq!(call.target, "f19999");
+    assert_eq!(parsed.symbols[call.caller.unwrap()].kind, "file");
+}
+
+#[test]
 fn index_searches_imports_and_resolves_entrypoint_calls() {
     let temp = TempDir::new().unwrap();
     let root = temp.path().join("project");
