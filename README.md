@@ -9,16 +9,19 @@ embedding service, or separately installed SQLite is required.
 - Tree-sitter parsing of TypeScript, TSX, JavaScript/JSX, Rust, and Ruby.
 - SQLite FTS5 search over names, source, and paths, with source snippets and locations.
 - File entries for imports and top-level source outside named declarations.
-- Candidate callers and callees, including unresolved and ambiguous names.
+- Import-, scope-, and receiver-aware candidate relationships, with explicit uncertainty.
+- Bounded exploration that assembles source and graph context in one request.
+- Multi-hop impact, symbol paths, implementation hierarchies, and affected test candidates.
 - A separate persistent index for each canonical worktree directory.
-- Content-hash reconciliation: only changed files are parsed again; deleted and renamed files disappear from the graph.
+- Content-hash recovery and targeted file updates; deleted and renamed files disappear from the graph.
 - Automatic background updates while the MCP server runs, including watcher handoff between sessions.
-- Automatic reconciliation before CLI searches and MCP tool queries.
-- Bounded JSON results and a two-tool MCP surface.
+- Reconciliation before CLI searches and MCP tool queries; repeated queries skip hashing unchanged file metadata.
+- Bounded JSON results and a three-tool MCP surface.
 - A Rust library for hosts that prefer linking instead of running a subprocess.
 
-Call relationships use name matching, not compiler type resolution. Results can
-contain multiple candidates. Search is lexical, not semantic embedding search.
+Relationships use static import, scope, and receiver evidence, with name matching
+as an uncertain fallback. They are not compiler proof and can contain multiple
+candidates. Search is lexical, not semantic embedding search.
 No token savings are claimed without comparative agent evaluations.
 
 Ruby support includes `.rb`, `.rake`, `.gemspec`, `.ru`, `Gemfile`, `Rakefile`, and
@@ -36,6 +39,11 @@ cargo install --path . --locked
 prometeu-search --root /path/to/project search 'session launch'
 prometeu-search --root /path/to/project callers save
 prometeu-search --root /path/to/project callees start
+prometeu-search --root /path/to/project explore 'session launch'
+prometeu-search --root /path/to/project impact save --depth 3
+prometeu-search --root /path/to/project path start save --depth 4
+prometeu-search --root /path/to/project implementations Store
+prometeu-search --root /path/to/project affected src/store.ts --depth 5
 prometeu-search --root /path/to/project status
 ```
 
@@ -72,7 +80,14 @@ Configure any stdio MCP host to run:
 ```
 
 `code_search` accepts `query`, optional `mode` (`search`, `callers`, `callees`),
-`limit`, and `max_bytes`. `code_search_status` takes no arguments and reconciles
+`limit`, and `max_bytes`. `code_explore` accepts a query and optional mode
+(`explore`, `impact`, `path`, `implementations`, or `affected`), worktree-relative
+`path`, positive `line` (requires `path`), `depth` (1–8, default 2), `limit`, and
+`max_bytes`. Path mode requires `target`; other modes reject it. The CLI exposes
+the same graph modes as commands, with `--path` and `--line` for disambiguation.
+See [graph queries](docs/contracts/graph-queries.md) for result semantics and limits.
+
+`code_search_status` takes no arguments and reconciles
 before reporting index counts. The root is fixed by the host; tools cannot
 switch to another directory. MCP transport framing adds bytes beyond the result
 budget. A result is a source snapshot, not proof that a file cannot change again.
@@ -94,8 +109,9 @@ modified. `--database /path/to/index.sqlite` lets an embedding host own storage.
 Each database records its root and refuses a different worktree. Unsupported
 schema versions and unrelated SQLite databases are rejected without adopting
 them. Stop all clients before removing a derived index to rebuild it.
-Schema version 2 requires a fresh index when upgrading from version 1 so unchanged
-files gain their file-level search entries and calls.
+Schema version 3 requires a fresh index when upgrading from versions 1 or 2.
+Unchanged files must be extracted again to populate scopes, imports, receivers,
+and inheritance metadata. Old databases are rejected without modification.
 
 The scanner honors `.gitignore`, `.ignore`, and `.prometeu-searchignore`, including
 nested rules. It also excludes `.git`, dependency/build/cache directories,
@@ -128,8 +144,10 @@ stdio MCP subprocesses. CI runs on Linux and macOS for pull requests and pushes
 to `main`. Formatting is checked once on Linux; Clippy and tests run on both
 platforms. Binary builds run only on manual dispatch.
 
-Current limits: TypeScript/JavaScript/Rust/Ruby only; no import/type resolution,
-cross-language bridges, framework routing, embeddings, or graph UI. Each
-reconciliation enumerates and hashes eligible files, while parsing only changes.
-Event-targeted reconciliation is the next performance step if profiling warrants
-it. See [architecture](ARCHITECTURE.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
+Current limits: TypeScript/JavaScript/Rust/Ruby only; heuristic static resolution,
+no compiler authority, cross-language bridges, framework routing, embeddings, or
+graph UI. Watcher updates retain changed paths and skip unrelated subtrees. Query
+refresh still enumerates file metadata; unchanged source is not read or hashed.
+The first refresh per connection, explicit `index`, and recovery checks at least
+every 60 seconds hash all eligible files. Only content changes are parsed again.
+See [architecture](ARCHITECTURE.md) and [third-party notices](THIRD_PARTY_NOTICES.md).

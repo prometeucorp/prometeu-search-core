@@ -2,7 +2,7 @@ mod mcp;
 
 use anyhow::Result;
 use clap::{Args, Parser, Subcommand};
-use prometeu_search::{Direction, Engine};
+use prometeu_search::{Direction, Engine, GraphMode, GraphOptions};
 use serde::Serialize;
 use std::io::{self, Write};
 use std::path::PathBuf;
@@ -26,10 +26,24 @@ enum Command {
     Index,
     /// Find symbols and source with a bounded JSON response.
     Search(Query),
-    /// Find candidate callers of a symbol by static name matching.
+    /// Find candidate callers using static resolution evidence.
     Callers(Query),
-    /// Find candidate callees of a symbol by static name matching.
+    /// Find candidate callees using static resolution evidence.
     Callees(Query),
+    /// Assemble relevant source, relationships, and impact in one bounded response.
+    Explore(GraphQuery),
+    /// Find directly and indirectly affected symbols.
+    Impact(GraphQuery),
+    /// Find a candidate directed path between two symbols.
+    Path {
+        #[command(flatten)]
+        query: GraphQuery,
+        target: String,
+    },
+    /// Find types that extend or implement a type.
+    Implementations(GraphQuery),
+    /// Find candidate test files affected through import dependencies.
+    Affected(GraphQuery),
     /// Show the last committed index state without changing it.
     Status,
     /// Serve a worktree-scoped MCP server over newline-delimited stdio.
@@ -51,17 +65,41 @@ struct Query {
     max_bytes: u32,
 }
 
+#[derive(Args)]
+struct GraphQuery {
+    #[command(flatten)]
+    search: Query,
+    /// Restrict symbol selection to this worktree-relative file.
+    #[arg(long)]
+    path: Option<String>,
+    /// Select the symbol containing this line; requires --path.
+    #[arg(long, requires = "path", value_parser = clap::value_parser!(u32).range(1..))]
+    line: Option<u32>,
+    /// Maximum graph traversal depth.
+    #[arg(long, default_value_t = 2, value_parser = clap::value_parser!(u8).range(1..=8))]
+    depth: u8,
+}
+
 fn main() -> Result<()> {
     let cli = Cli::parse();
     let mut engine = Engine::open(&cli.root, cli.database.as_deref())?;
     match cli.command {
         Command::Index => output(&engine.sync()?),
         Command::Search(query) => {
-            engine.sync()?;
+            engine.refresh()?;
             output(&engine.search(&query.query, query.limit.into(), query.max_bytes as usize)?)
         }
         Command::Callers(query) => relations(&mut engine, query, Direction::Callers),
         Command::Callees(query) => relations(&mut engine, query, Direction::Callees),
+        Command::Explore(query) => graph(&mut engine, query, None, None),
+        Command::Impact(query) => graph(&mut engine, query, Some(GraphMode::Impact), None),
+        Command::Path { query, target } => {
+            graph(&mut engine, query, Some(GraphMode::Path), Some(target))
+        }
+        Command::Implementations(query) => {
+            graph(&mut engine, query, Some(GraphMode::Implementations), None)
+        }
+        Command::Affected(query) => graph(&mut engine, query, Some(GraphMode::Affected), None),
         Command::Status => output(&engine.status()?),
         Command::Serve { no_watch } => {
             let _watcher = if no_watch {
@@ -83,13 +121,34 @@ fn main() -> Result<()> {
 }
 
 fn relations(engine: &mut Engine, query: Query, direction: Direction) -> Result<()> {
-    engine.sync()?;
+    engine.refresh()?;
     output(&engine.related(
         &query.query,
         direction,
         query.limit.into(),
         query.max_bytes as usize,
     )?)
+}
+
+fn graph(
+    engine: &mut Engine,
+    query: GraphQuery,
+    mode: Option<GraphMode>,
+    target: Option<String>,
+) -> Result<()> {
+    let options = GraphOptions {
+        path: query.path,
+        line: query.line.map(|line| line as usize),
+        target,
+        depth: query.depth.into(),
+        limit: query.search.limit.into(),
+        max_bytes: query.search.max_bytes as usize,
+    };
+    engine.refresh()?;
+    match mode {
+        Some(mode) => output(&engine.analyze(&query.search.query, mode, &options)?),
+        None => output(&engine.explore(&query.search.query, &options)?),
+    }
 }
 
 fn output(value: &impl Serialize) -> Result<()> {

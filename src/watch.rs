@@ -1,6 +1,7 @@
-use crate::Engine;
+use crate::{Engine, sync::RECOVERY_INTERVAL};
 use anyhow::{Context, Result};
 use notify::{Event, EventKind, RecommendedWatcher, RecursiveMode, Watcher, event::ModifyKind};
+use std::collections::HashSet;
 use std::fs::{File, OpenOptions};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -18,7 +19,8 @@ pub struct WatchHandle {
 struct Session {
     engine: Engine,
     _watcher: RecommendedWatcher,
-    receiver: mpsc::Receiver<()>,
+    receiver: mpsc::Receiver<Event>,
+    overflow: Arc<AtomicBool>,
 }
 
 impl WatchHandle {
@@ -108,7 +110,9 @@ fn acquire(lock: &File) -> Result<bool> {
 impl Session {
     fn open(root: &Path, database: &Path) -> Result<Self> {
         let engine = Engine::open(root, Some(database))?;
-        let (sender, receiver) = mpsc::sync_channel(1);
+        let (sender, receiver) = mpsc::sync_channel(1024);
+        let overflow = Arc::new(AtomicBool::new(false));
+        let needs_scan = overflow.clone();
         let root_owned = root.to_path_buf();
         let mut cache_paths = vec![
             database.to_path_buf(),
@@ -122,12 +126,14 @@ impl Session {
         let mut watcher =
             notify::recommended_watcher(move |event: notify::Result<Event>| match event {
                 Ok(event) if relevant(&event, &root_owned, &cache_paths) => {
-                    let _ = sender.try_send(());
+                    if sender.try_send(event).is_err() {
+                        needs_scan.store(true, Ordering::Release);
+                    }
                 }
                 Ok(_) => {}
                 Err(error) => {
                     eprintln!("prometeu-search: watcher error; queries still reconcile: {error}");
-                    let _ = sender.try_send(());
+                    needs_scan.store(true, Ordering::Release);
                 }
             })
             .context("cannot create file watcher")?;
@@ -138,6 +144,7 @@ impl Session {
             engine,
             _watcher: watcher,
             receiver,
+            overflow,
         })
     }
 
@@ -145,30 +152,58 @@ impl Session {
         if let Err(error) = self.engine.sync() {
             eprintln!("prometeu-search: initial index failed: {error:#}");
         }
+        let mut recovery = Instant::now();
         while !stopping.load(Ordering::Acquire) {
-            if self
-                .receiver
-                .recv_timeout(Duration::from_millis(100))
-                .is_err()
-            {
+            let event = self.receiver.recv_timeout(Duration::from_millis(100)).ok();
+            let mut full_scan = self.overflow.swap(false, Ordering::AcqRel)
+                || recovery.elapsed() >= RECOVERY_INTERVAL;
+            if event.is_none() && !full_scan {
                 continue;
+            }
+            let mut paths = HashSet::new();
+            if let Some(event) = event {
+                collect(event, &mut paths, &mut full_scan);
             }
             let burst = Instant::now();
             while burst.elapsed() < Duration::from_secs(2) && !stopping.load(Ordering::Acquire) {
-                if self
-                    .receiver
-                    .recv_timeout(Duration::from_millis(250))
-                    .is_err()
-                {
-                    break;
+                match self.receiver.recv_timeout(Duration::from_millis(250)) {
+                    Ok(event) => collect(event, &mut paths, &mut full_scan),
+                    Err(_) => break,
                 }
             }
+            full_scan |= self.overflow.swap(false, Ordering::AcqRel);
             if stopping.load(Ordering::Acquire) {
                 break;
             }
-            if let Err(error) = self.engine.sync() {
+            let result = if full_scan {
+                recovery = Instant::now();
+                self.engine.sync()
+            } else {
+                self.engine
+                    .sync_paths(&paths.into_iter().collect::<Vec<_>>())
+            };
+            if let Err(error) = result {
                 eprintln!("prometeu-search: index update failed; queries retry: {error:#}");
             }
+        }
+    }
+}
+
+fn collect(event: Event, paths: &mut HashSet<PathBuf>, full_scan: &mut bool) {
+    *full_scan |= event.need_rescan()
+        || event.paths.is_empty()
+        || matches!(
+            event.kind,
+            EventKind::Any
+                | EventKind::Other
+                | EventKind::Create(notify::event::CreateKind::Folder)
+                | EventKind::Remove(notify::event::RemoveKind::Folder)
+        );
+    if !*full_scan {
+        paths.extend(event.paths);
+        if paths.len() > 4096 {
+            *full_scan = true;
+            paths.clear();
         }
     }
 }
