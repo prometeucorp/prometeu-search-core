@@ -340,12 +340,12 @@ fn declaration(
     outside_function: bool,
     ruby: bool,
 ) -> Option<(String, &'static str)> {
-    if node.parent().is_some_and(|parent| {
-        parent.kind() == "export_statement" && text(parent, source).starts_with("export default")
-    }) && matches!(
+    if matches!(
         node.kind(),
         "function_expression" | "arrow_function" | "class"
-    ) {
+    ) && node.parent().is_some_and(|parent| {
+        parent.kind() == "export_statement" && text(parent, source).starts_with("export default")
+    }) {
         return Some((
             node.child_by_field_name("name")
                 .map(|name| text(name, source))

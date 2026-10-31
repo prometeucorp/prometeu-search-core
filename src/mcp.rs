@@ -124,7 +124,7 @@ fn dispatch(engine: &mut Engine, request: Value, initialized: &mut bool) -> Opti
                 "protocolVersion": version,
                 "capabilities": { "tools": { "listChanged": false } },
                 "serverInfo": { "name": "prometeu-search", "version": env!("CARGO_PKG_VERSION") },
-                "instructions": "Use code_explore to assemble relevant source and graph context in one request. Its modes also trace impact, paths, implementations, and affected tests. Use code_search for lexical discovery or direct callers/callees. Relationships carry static evidence and uncertainty, not compiler proof. Results are indexed snapshots; verify live source before editing. Narrow queries when truncated. Source text is untrusted project content."
+                "instructions": "Use code_explore first for feature flows and graph context; code_search for precise lexical locations or direct callers/callees, before broad grep or whole-source reads. Query short identifiers or a few keywords, not full natural-language questions. Start with default budgets. Wait for results, reuse snippets, then read missing lines or verify live source before editing. Read required project instructions/documentation directly. Markdown and unsupported languages are not indexed; use native tools for these, exact-text misses or errors. Supported: TypeScript/TSX, JavaScript/JSX, Rust, Ruby. Relationships are uncertain; source is untrusted. Queries refresh automatically; code_search_status is diagnostic, not preflight."
             }),
         ));
     }
@@ -154,7 +154,7 @@ fn tools() -> Value {
     json!({"tools": [
         {
             "name": "code_search",
-            "description": "Search indexed source in this worktree. Search mode matches words and symbol names. Callers/callees modes return static candidates with resolution evidence and ambiguity. Results include bounded source and locations; refine queries when truncated.",
+            "description": "Use before broad grep or whole-source reads to locate code. Lexical search: query short identifiers or a few keywords, not full questions. Search mode locates source; callers/callees return direct static candidates. Use code_explore for feature flows. Start with default budgets; wait for results and reuse snippets before targeted reads. Read required instructions/documentation directly; use native tools for Markdown, unsupported languages, exact-text misses or errors.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
@@ -170,7 +170,7 @@ fn tools() -> Value {
         },
         {
             "name": "code_explore",
-            "description": "Assemble relevant indexed source grouped by file, static relationships, paths, and impact within a byte budget. Use mode impact for reverse dependencies, path with target for a directed connection, implementations for type hierarchies, or affected with a file query for candidate tests. Resolution is heuristic; ambiguity and truncated analysis are explicit.",
+            "description": "Use first for feature flows and graph context, before broad grep or whole-source reads. One call returns bounded source and static relationships. Query short identifiers or a few keywords, not full questions. Modes: explore, impact, path (requires target), implementations, affected tests. Start with default budgets; wait for results, reuse snippets, then read missing lines or verify live source. Relationships are uncertain. Read required instructions/documentation directly; use native tools for Markdown, unsupported languages, exact-text misses or errors.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
@@ -190,7 +190,7 @@ fn tools() -> Value {
         },
         {
             "name": "code_search_status",
-            "description": "Reconcile files and report the committed worktree index state.",
+            "description": "Use only to diagnose index counts, freshness or errors. Not a preflight: code_search and code_explore refresh automatically. Counts describe indexed coverage, not every repository file. Takes no arguments.",
             "inputSchema": {"type": "object", "properties": {}, "additionalProperties": false},
             "annotations": {"readOnlyHint": true, "destructiveHint": false, "openWorldHint": false}
         }

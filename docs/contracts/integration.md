@@ -105,7 +105,22 @@ toolchain; the repository lockfile retains compatible dependency versions.
 
 ## Agent context and failure behavior
 
-Keep response budgets small. `max_bytes` caps the serialized result content,
+The MCP handshake instructions and tool descriptions direct agents to use
+`code_explore` first for feature flows and graph context, or `code_search` for
+precise lexical locations and direct callers/callees, before broad grep or whole
+source reads. Queries should contain short identifiers or a few keywords, not
+full natural-language questions. Start with default response budgets, wait for
+the result and reuse its snippets before reading missing lines or verifying live
+source for an edit. This is tool-selection guidance, not enforced agent behavior.
+
+Required project instructions and documentation still need direct reads.
+Markdown and unsupported languages are not indexed. Native file tools remain
+the fallback for those files, exact-text misses and tool errors.
+`code_search_status` is diagnostic only; no preflight is needed because queries
+refresh automatically. The supported source languages are TypeScript/TSX,
+JavaScript/JSX, Rust and Ruby.
+
+`max_bytes` caps the serialized result content,
 not MCP envelope/escaping. Search result IDs are internal and can change after
 reindexing; use file paths and line ranges as human references. A generation
 identifies a committed index snapshot, not a Git commit.

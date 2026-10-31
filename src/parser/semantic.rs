@@ -29,9 +29,10 @@ pub(super) fn enrich(
     let mut bindings: HashMap<String, Vec<Binding>> = HashMap::new();
     let mut exports = Vec::new();
     let mut inheritance = Vec::new();
-    let mut pending = vec![root];
-    while let Some(node) = pending.pop() {
-        let scope = scope(node, source);
+    let mut pending = vec![(root, None)];
+    while let Some((node, parent)) = pending.pop() {
+        // Most syntax nodes never need an enclosing semantic scope.
+        let scope = std::cell::LazyCell::new(|| scope(node, source));
         if let Some(&index) = symbols.get(&(node.start_byte(), node.end_byte())) {
             let symbol = &mut parsed.symbols[index];
             symbol.qualified_name = qualify(&scope, &symbol.name);
@@ -142,13 +143,18 @@ pub(super) fn enrich(
             }
             _ => {}
         }
-        for binding in bindings_at(node, source) {
+        for binding in bindings_at(node, parent, source) {
             bindings
                 .entry(binding.name.clone())
                 .or_default()
                 .push(binding);
         }
-        pending.extend(children(node).into_iter().rev());
+        pending.extend(
+            children(node)
+                .into_iter()
+                .rev()
+                .map(|child| (child, Some(node))),
+        );
     }
     let mut qualified: HashMap<String, Vec<usize>> = HashMap::new();
     for (index, symbol) in parsed.symbols.iter().enumerate() {
@@ -582,12 +588,12 @@ fn constructed_type(node: Node<'_>, source: &str) -> Option<String> {
     }
 }
 
-fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
+fn bindings_at(node: Node<'_>, parent: Option<Node<'_>>, source: &str) -> Vec<Binding> {
     let loop_declaration = node.kind() == "for_in_statement"
         && node
             .child_by_field_name("kind")
             .is_some_and(|kind| matches!(kind.kind(), "let" | "const" | "var"));
-    let plain_parameter = node.parent().is_some_and(|parent| {
+    let plain_parameter = parent.is_some_and(|parent| {
         parent.kind() == "formal_parameters"
             && !matches!(node.kind(), "required_parameter" | "optional_parameter")
             || parent.kind() == "arrow_function"
@@ -658,9 +664,7 @@ fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
         || plain_parameter
         || matches!(node.kind(), "required_parameter" | "optional_parameter");
     let function_scoped = (node.kind() == "variable_declarator"
-        && node
-            .parent()
-            .is_some_and(|parent| parent.kind() == "variable_declaration"))
+        && parent.is_some_and(|parent| parent.kind() == "variable_declaration"))
         || (loop_declaration
             && node
                 .child_by_field_name("kind")

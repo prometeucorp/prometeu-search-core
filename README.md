@@ -87,8 +87,16 @@ Configure any stdio MCP host to run:
 the same graph modes as commands, with `--path` and `--line` for disambiguation.
 See [graph queries](docs/contracts/graph-queries.md) for result semantics and limits.
 
+For code discovery, start with `code_explore` for feature flows and graph context,
+or `code_search` for precise lexical locations and direct relationships. Use
+short identifiers or a few keywords, wait for results and reuse returned snippets
+before broad grep or whole source reads. Read required project instructions and
+documentation directly; Markdown, unsupported languages, exact-text misses and
+tool errors need native file tools. Start with default response budgets.
+
 `code_search_status` takes no arguments and reconciles
-before reporting index counts. The root is fixed by the host; tools cannot
+before reporting index counts. It is diagnostic, not a required preflight;
+queries already refresh automatically. The root is fixed by the host; tools cannot
 switch to another directory. MCP transport framing adds bytes beyond the result
 budget. A result is a source snapshot, not proof that a file cannot change again.
 
