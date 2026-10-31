@@ -109,9 +109,10 @@ modified. `--database /path/to/index.sqlite` lets an embedding host own storage.
 Each database records its root and refuses a different worktree. Unsupported
 schema versions and unrelated SQLite databases are rejected without adopting
 them. Stop all clients before removing a derived index to rebuild it.
-Schema version 3 requires a fresh index when upgrading from versions 1 or 2.
+Schema version 4 requires a fresh index when upgrading from versions 1, 2, or 3.
 Unchanged files must be extracted again to populate scopes, imports, receivers,
-and inheritance metadata. Old databases are rejected without modification.
+and inheritance metadata, including corrected loop binding scopes. Old databases
+are rejected without modification.
 
 The scanner honors `.gitignore`, `.ignore`, and `.prometeu-searchignore`, including
 nested rules. It also excludes `.git`, dependency/build/cache directories,

@@ -59,10 +59,14 @@ change after indexing. JavaScript/TypeScript imports retain named aliases,
 default imports, namespace imports, and reexports. Rust retains module paths and
 `use` aliases. Ruby retains `require_relative` dependencies and enclosing scopes.
 Simple receiver annotations and construction expressions provide type evidence.
+TypeScript interface methods and types imported through a namespace participate
+in receiver resolution, subject to the same scope and export boundaries.
 Inheritance and implementation declarations create candidate type relationships.
 Local bindings, including destructuring and catch parameters, hide imported
 values within their scopes. Calls through unknown bindings that hide imports
 remain unresolved; known receiver types retain their static evidence.
+JavaScript/TypeScript `let` and `const` bindings declared in a loop header hide
+imports only within that loop; `var` bindings retain function scope.
 
 Resolution methods describe evidence, not proof:
 

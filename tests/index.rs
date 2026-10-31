@@ -241,7 +241,7 @@ fn previous_extraction_cache_requires_rebuild_without_mutation() {
     engine.sync().unwrap();
     drop(engine);
     let database = temp.path().join("cache/index.sqlite");
-    for version in [1, 2] {
+    for version in [1, 2, 3] {
         let connection = rusqlite::Connection::open(&database).unwrap();
         connection
             .pragma_update(None, "user_version", version)

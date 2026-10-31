@@ -6,7 +6,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::Duration;
 
-pub const SCHEMA_VERSION: u32 = 3;
+pub const SCHEMA_VERSION: u32 = 4;
 pub(crate) const MAX_FILE_BYTES: u64 = 1024 * 1024;
 pub(crate) const EXCLUDED: &[&str] = &[
     ".git",

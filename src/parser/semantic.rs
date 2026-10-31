@@ -583,6 +583,10 @@ fn constructed_type(node: Node<'_>, source: &str) -> Option<String> {
 }
 
 fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
+    let loop_declaration = node.kind() == "for_in_statement"
+        && node
+            .child_by_field_name("kind")
+            .is_some_and(|kind| matches!(kind.kind(), "let" | "const" | "var"));
     let plain_parameter = node.parent().is_some_and(|parent| {
         parent.kind() == "formal_parameters"
             && !matches!(node.kind(), "required_parameter" | "optional_parameter")
@@ -590,6 +594,7 @@ fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
                 && parent.child_by_field_name("parameter") == Some(node)
     });
     if !plain_parameter
+        && !loop_declaration
         && !matches!(
             node.kind(),
             "variable_declarator"
@@ -619,9 +624,13 @@ fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
     if names.is_empty() {
         return Vec::new();
     }
-    let value = node
-        .child_by_field_name("value")
-        .or_else(|| node.child_by_field_name("right"));
+    // The iterable is not the initializer of each loop binding.
+    let value = (!loop_declaration)
+        .then(|| {
+            node.child_by_field_name("value")
+                .or_else(|| node.child_by_field_name("right"))
+        })
+        .flatten();
     // A pattern's annotation/initializer describes the container, not every member.
     let annotation = (pattern.kind() == "identifier")
         .then(|| {
@@ -645,14 +654,25 @@ fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
             )
         });
     let hoisted = node.kind() == "variable_declarator"
+        || loop_declaration
         || plain_parameter
         || matches!(node.kind(), "required_parameter" | "optional_parameter");
-    let function_scoped = node.kind() == "variable_declarator"
+    let function_scoped = (node.kind() == "variable_declarator"
         && node
             .parent()
-            .is_some_and(|parent| parent.kind() == "variable_declaration");
+            .is_some_and(|parent| parent.kind() == "variable_declaration"))
+        || (loop_declaration
+            && node
+                .child_by_field_name("kind")
+                .is_some_and(|kind| kind.kind() == "var"));
     let mut parent = node;
     let region = loop {
+        if !function_scoped
+            && (loop_declaration || node.kind() == "variable_declarator")
+            && matches!(parent.kind(), "for_statement" | "for_in_statement")
+        {
+            break parent.byte_range();
+        }
         if matches!(
             parent.kind(),
             "statement_block"

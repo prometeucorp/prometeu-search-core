@@ -528,6 +528,31 @@ impl Graph {
             {
                 return (self.imported(path, import, name), "import_match");
             }
+            if let Some((namespace, member)) = name.split_once("::")
+                && let Some(import) = self
+                    .visible_import(path, current, namespace)
+                    .filter(|import| import.scope == current)
+            {
+                if import.imported == "*" {
+                    return (self.imported(path, import, member), "import_match");
+                }
+                let mut found = Vec::new();
+                for target in self.module_files(path, &import.module) {
+                    found.extend(self.namespace_member(
+                        &target,
+                        &import.imported,
+                        member,
+                        &mut HashSet::new(),
+                    ));
+                }
+                found.sort_unstable();
+                found.dedup();
+                if found.len() > MAX_CANDIDATES {
+                    self.resolution_truncated.set(true);
+                }
+                found.truncate(MAX_CANDIDATES);
+                return (found, "import_match");
+            }
             if current.is_empty() {
                 break;
             }
@@ -835,7 +860,7 @@ impl Graph {
             for owner in owners {
                 if !matches!(
                     self.nodes[owner].symbol.kind.as_str(),
-                    "class" | "struct" | "trait" | "enum"
+                    "class" | "interface" | "struct" | "trait" | "enum"
                 ) {
                     continue;
                 }

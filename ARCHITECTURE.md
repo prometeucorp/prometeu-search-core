@@ -67,14 +67,15 @@ plugin framework, or provider-specific adapter. The embedding host owns process
 lifecycle. Separate agent processes can share the same worktree database and
 watcher election without sharing writable indexes across worktrees.
 
-Schema version 3 stores root ownership, generation, reconciliation time, files,
+Schema version 4 stores root ownership, generation, reconciliation time, files,
 file signatures, serialized extraction metadata, symbol ordinals and source,
 raw references, and an FTS5 index. The format is derived cache data, not a public
 interchange format. Increment the version when extraction or storage changes
 require rebuilding unchanged files. Unknown versions are rejected instead of
-silently destroying or migrating another engine's data. Versions 1 and 2 are
-rejected without modification; stop clients and use a fresh cache or deliberately
-remove the derived index before retrying.
+silently destroying or migrating another engine's data. Versions 1, 2, and 3 are
+rejected without modification; version 3 extraction can retain incorrect loop
+binding scopes in unchanged files. Stop clients and use a fresh cache or
+deliberately remove the derived index before retrying.
 
 Native Tree-sitter grammars and bundled SQLite keep the executable independent
 of external runtimes.
