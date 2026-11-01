@@ -21,6 +21,8 @@ pub use hierarchy_adapter::HierarchyResult;
 mod graph_query_adapter;
 #[path = "resolution.rs"]
 mod resolution;
+#[path = "viewer.rs"]
+pub mod viewer;
 pub use analysis::{
     CyclesResult, DeadCodeEntry, DeadCodeExclusions, DeadCodeOptions, DeadCodeReport,
     DeadCodeResult, MetricsResult, NodeMetrics,
@@ -221,6 +223,7 @@ pub(crate) struct Graph {
     aliases: resolution::Aliases,
     python_modules: Option<PythonModules>,
     cpp_imports: resolution::cpp_imports::CppImports,
+    viewer_project: std::cell::OnceCell<&'static str>,
     manifests: BTreeMap<String, String>,
     workspace_directories: Vec<String>,
     auxiliary_sources: BTreeMap<String, String>,
@@ -311,6 +314,7 @@ impl Graph {
             aliases: resolution::Aliases::new(&manifests, &root)?,
             python_modules: None,
             cpp_imports: Default::default(),
+            viewer_project: Default::default(),
             manifests: BTreeMap::new(),
             workspace_directories: resolution::cargo_workspace::load_directories(connection)?,
             auxiliary_sources: crate::auxiliary_sources::load(connection)?,

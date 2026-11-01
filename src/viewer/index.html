@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><title>Prometeu Search</title><link rel="stylesheet" href="/viewer.css"><script src="/viewer.js" defer></script></head>
+<body>
+<header><div><strong>Prometeu Search</strong><span id="project"></span></div><span id="status" role="status">Reading index…</span><button id="refresh">Refresh</button></header>
+<nav aria-label="Views"><button data-view="map">Modules</button><button data-view="graph" aria-current="page">Graph</button><button data-view="files">Files</button><button data-view="routes">Routes</button><button data-view="screens">Screens</button><button data-view="steps">Steps</button><button data-view="flow">Flow</button><button data-view="deadcode">Dead code</button><button data-view="trails">Trails</button></nav>
+<div id="notice" role="alert" hidden></div>
+<div class="workspace">
+<aside class="search"><form id="search-form"><label for="query">Find a symbol</label><div class="input-row"><input id="query" type="search" placeholder="Name or kind:class Cache" autocomplete="off"><button>Find</button></div></form><p class="muted">Search names, signatures, and documentation.</p><div id="results" aria-live="polite"></div><section id="trail"><h2>Current trail <span id="trail-count">0</span></h2><ol id="trail-hops"></ol><button id="save-trail">Save trail</button><button id="clear-trail">Clear</button></section></aside>
+<main><div class="toolbar"><h1 id="title">Graph</h1><div id="filters"><label>Path <input id="path" placeholder="src"></label><label>Kind <select id="kind"><option value="">All kinds</option></select></label><label>Language <select id="language"><option value="">All languages</option></select></label><button id="apply">Apply</button></div></div><p id="summary" class="muted" aria-live="polite"></p><section id="content" aria-label="Graph view"></section></main>
+<aside id="detail" aria-label="Symbol details"><p class="muted">Select a symbol to read its source and relationships.</p></aside>
+</div>
+<footer>Relationships are static candidates. Dashed edges retain uncertain resolution. Source comes from the indexed snapshot.</footer>
+</body></html>

@@ -177,3 +177,4 @@ of external runtimes.
 
 Pure graph traversal and hierarchy functions accept host-owned canonical records.
 Engine adapters expose graph traversal, hierarchy, task context, and analysis over one committed generation.
+The viewer library binds only loopback and serves embedded browser assets through a host-owned server lifecycle.

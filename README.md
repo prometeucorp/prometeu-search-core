@@ -55,6 +55,11 @@ canonical records. Library reads never implicitly refresh live source.
 query the same committed graph generation. Context supports structured records
 and Markdown; analysis retains explicit uncertainty and truncation.
 
+The `viewer` library module provides a loopback-only HTTP server and embedded
+browser assets for source, routes, dependency exploration, flows, and saved
+trails. Hosts control its lifecycle through `ViewerServer`; no Node process is
+required. The CLI still uses the commands listed above.
+
 See [architecture](ARCHITECTURE.md), [host integration](docs/contracts/integration.md),
 [graph queries](docs/contracts/graph-queries.md), and [project configuration](docs/contracts/project-configuration.md).
 Run `cargo fmt --all --check`, `cargo clippy --all-targets --locked -- -D warnings`,
