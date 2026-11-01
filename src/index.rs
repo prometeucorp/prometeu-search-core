@@ -6,21 +6,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::Duration;
 
-pub const SCHEMA_VERSION: u32 = 4;
+pub const SCHEMA_VERSION: u32 = 6;
 pub(crate) const MAX_FILE_BYTES: u64 = 1024 * 1024;
-pub(crate) const EXCLUDED: &[&str] = &[
-    ".git",
-    "node_modules",
-    "target",
-    "dist",
-    "build",
-    "vendor",
-    ".venv",
-    "venv",
-    ".next",
-    "coverage",
-    ".prometeu-search",
-];
 
 /// A connection is bound permanently to one canonical worktree root.
 pub struct Engine {
@@ -57,6 +44,7 @@ pub struct Status {
 #[derive(Debug, Serialize)]
 pub struct SearchHit {
     pub id: i64,
+    pub score: f64,
     pub name: String,
     pub kind: String,
     pub path: String,
@@ -211,53 +199,64 @@ impl Engine {
 
     /// Search an indexed snapshot. Hosts call `sync` before queries when freshness is required.
     pub fn search(&self, query: &str, limit: usize, max_bytes: usize) -> Result<SearchResult> {
+        self.search_with_options(
+            query,
+            &crate::search::SearchOptions {
+                limit,
+                offset: 0,
+                max_bytes: Some(max_bytes),
+            },
+        )
+    }
+
+    /// Search with offsets after ranking and an optional host-selected response budget.
+    pub fn search_with_options(
+        &self,
+        query: &str,
+        options: &crate::search::SearchOptions,
+    ) -> Result<SearchResult> {
         let snapshot = self.connection.unchecked_transaction()?;
+        let limit = options.limit;
+        let max_bytes = options.max_bytes.unwrap_or(usize::MAX);
         validate_limits(limit, max_bytes)?;
-        ensure!(query.len() <= 1024, "query must be at most 1024 bytes");
-        let terms: Vec<String> = words(query)
-            .into_iter()
-            .filter(|word| {
-                ![
-                    "the", "a", "an", "how", "does", "what", "where", "is", "in", "of", "to", "and",
-                ]
-                .contains(&word.as_str())
-            })
-            .take(16)
-            .collect();
-        ensure!(!terms.is_empty(), "query must contain searchable words");
-        let expression = terms
-            .iter()
-            .map(|word| format!("\"{}\"*", word.replace('"', "\"\"")))
-            .collect::<Vec<_>>()
-            .join(" OR ");
-        let mut statement = snapshot.prepare("SELECT s.id, s.name, s.kind, s.path, s.start_line, s.end_line, s.code, f.syntax_errors FROM symbols_fts JOIN symbols s ON s.id = symbols_fts.rowid JOIN files f ON f.path = s.path WHERE symbols_fts MATCH ?1 ORDER BY CASE WHEN lower(s.name) = lower(?2) THEN 0 ELSE 1 END, bm25(symbols_fts, 10.0, 8.0, 2.0, 0.5, 1.0), s.path, s.start_line LIMIT ?3")?;
-        let rows = statement.query_map(params![expression, query, (limit + 1) as i64], |row| {
-            let code: String = row.get(6)?;
-            let snippet = clip(&code, 1600).to_string();
-            Ok(SearchHit {
-                id: row.get(0)?,
-                name: row.get(1)?,
-                kind: row.get(2)?,
-                path: row.get(3)?,
-                start_line: row.get::<_, i64>(4)? as usize,
-                end_line: row.get::<_, i64>(5)? as usize,
-                snippet_truncated: snippet.len() < code.len(),
-                snippet,
-                syntax_errors: row.get(7)?,
-            })
-        })?;
+        ensure!(
+            limit <= MAX_QUERY_COUNT && options.offset <= MAX_QUERY_COUNT,
+            "limit or offset exceeds the supported integer range"
+        );
+        let hits =
+            crate::search::ranked_page(&snapshot, &self.root, query, limit, options.offset, &[])?;
+        let mut statement = snapshot.prepare("SELECT s.id,s.name,s.kind,s.path,s.start_line,s.end_line,s.code,f.syntax_errors FROM symbols s JOIN files f ON f.path=s.path WHERE s.id=?")?;
+        let result_limit = if query.is_empty() { limit * 5 } else { limit };
         let mut result = SearchResult {
             generation: generation(&snapshot)?,
             results: Vec::new(),
             truncated: false,
         };
-        'hits: for row in rows {
-            if result.results.len() == limit {
+        'hits: for ranked in hits {
+            if result.results.len() == result_limit {
                 result.truncated = true;
                 break;
             }
-            result.results.push(row?);
+            result.results.push(statement.query_row([ranked.id], |row| {
+                let code: String = row.get(6)?;
+                let snippet = clip(&code, 1600).to_string();
+                Ok(SearchHit {
+                    id: row.get(0)?,
+                    score: ranked.score,
+                    name: row.get(1)?,
+                    kind: row.get(2)?,
+                    path: row.get(3)?,
+                    start_line: row.get::<_, i64>(4)? as usize,
+                    end_line: row.get::<_, i64>(5)? as usize,
+                    snippet_truncated: snippet.len() < code.len(),
+                    snippet,
+                    syntax_errors: row.get(7)?,
+                })
+            })?);
             loop {
+                if max_bytes == usize::MAX {
+                    break;
+                }
                 let bytes = serde_json::to_vec(&result)?.len();
                 if bytes <= max_bytes {
                     break;
@@ -309,9 +308,9 @@ fn initialize(connection: &Connection, root: &Path) -> Result<()> {
             "refusing to initialize an unrelated SQLite database"
         );
         connection.execute_batch("CREATE TABLE metadata(key TEXT PRIMARY KEY, value TEXT NOT NULL);
-            CREATE TABLE files(path TEXT PRIMARY KEY, hash TEXT NOT NULL, language TEXT NOT NULL, syntax_errors INTEGER NOT NULL, analysis TEXT NOT NULL);
+            CREATE TABLE files(path TEXT PRIMARY KEY, hash TEXT NOT NULL, language TEXT NOT NULL, syntax_errors INTEGER NOT NULL, analysis TEXT NOT NULL, deprioritized INTEGER NOT NULL DEFAULT 0);
             CREATE TABLE file_state(path TEXT PRIMARY KEY REFERENCES files(path) ON DELETE CASCADE, signature TEXT NOT NULL);
-            CREATE TABLE symbols(id INTEGER PRIMARY KEY, path TEXT NOT NULL REFERENCES files(path) ON DELETE CASCADE, name TEXT NOT NULL, ordinal INTEGER NOT NULL, terms TEXT NOT NULL, kind TEXT NOT NULL, start_line INTEGER NOT NULL, end_line INTEGER NOT NULL, code TEXT NOT NULL);
+            CREATE TABLE symbols(id INTEGER PRIMARY KEY AUTOINCREMENT, path TEXT NOT NULL REFERENCES files(path) ON DELETE CASCADE, name TEXT NOT NULL, ordinal INTEGER NOT NULL, terms TEXT NOT NULL, kind TEXT NOT NULL, start_line INTEGER NOT NULL, end_line INTEGER NOT NULL, code TEXT NOT NULL);
             CREATE INDEX symbols_name ON symbols(name);
             CREATE INDEX symbols_path ON symbols(path);
             CREATE TABLE refs(caller INTEGER NOT NULL REFERENCES symbols(id) ON DELETE CASCADE, target TEXT NOT NULL, line INTEGER NOT NULL, UNIQUE(caller,target,line));
@@ -319,6 +318,12 @@ fn initialize(connection: &Connection, root: &Path) -> Result<()> {
             CREATE VIRTUAL TABLE symbols_fts USING fts5(name,terms,path,kind,code,content='symbols',content_rowid='id',tokenize='unicode61');
             CREATE TRIGGER symbols_insert AFTER INSERT ON symbols BEGIN INSERT INTO symbols_fts(rowid,name,terms,path,kind,code) VALUES(new.id,new.name,new.terms,new.path,new.kind,new.code); END;
             CREATE TRIGGER symbols_delete AFTER DELETE ON symbols BEGIN INSERT INTO symbols_fts(symbols_fts,rowid,name,terms,path,kind,code) VALUES('delete',old.id,old.name,old.terms,old.path,old.kind,old.code); END;
+            CREATE TABLE canonical_search(symbol_id INTEGER PRIMARY KEY REFERENCES symbols(id) ON DELETE CASCADE, id TEXT NOT NULL, name TEXT NOT NULL, qualified_name TEXT NOT NULL, docstring TEXT, signature TEXT, kind TEXT NOT NULL, language TEXT NOT NULL, path TEXT NOT NULL);
+            CREATE INDEX canonical_search_name ON canonical_search(name);
+            CREATE INDEX canonical_search_lower_name ON canonical_search(lower(name));
+            CREATE VIRTUAL TABLE canonical_fts USING fts5(id,name,qualified_name,docstring,signature,content='canonical_search',content_rowid='symbol_id',tokenize='unicode61');
+            CREATE TRIGGER canonical_insert AFTER INSERT ON canonical_search BEGIN INSERT INTO canonical_fts(rowid,id,name,qualified_name,docstring,signature) VALUES(new.symbol_id,new.id,new.name,new.qualified_name,new.docstring,new.signature); END;
+            CREATE TRIGGER canonical_delete AFTER DELETE ON canonical_search BEGIN INSERT INTO canonical_fts(canonical_fts,rowid,id,name,qualified_name,docstring,signature) VALUES('delete',old.symbol_id,old.id,old.name,old.qualified_name,old.docstring,old.signature); END;
             INSERT INTO metadata VALUES('generation','0');")?;
         connection.execute(
             "INSERT INTO metadata VALUES('root',?1)",
@@ -333,6 +338,16 @@ fn initialize(connection: &Connection, root: &Path) -> Result<()> {
     if Path::new(&stored) != root {
         bail!("database belongs to a different project root: {stored}");
     }
+    connection.execute_batch(
+        "CREATE TRIGGER IF NOT EXISTS symbols_update AFTER UPDATE ON symbols BEGIN
+            INSERT INTO symbols_fts(symbols_fts,rowid,name,terms,path,kind,code) VALUES('delete',old.id,old.name,old.terms,old.path,old.kind,old.code);
+            INSERT INTO symbols_fts(rowid,name,terms,path,kind,code) VALUES(new.id,new.name,new.terms,new.path,new.kind,new.code);
+         END;
+         CREATE TRIGGER IF NOT EXISTS canonical_update AFTER UPDATE ON canonical_search BEGIN
+            INSERT INTO canonical_fts(canonical_fts,rowid,id,name,qualified_name,docstring,signature) VALUES('delete',old.symbol_id,old.id,old.name,old.qualified_name,old.docstring,old.signature);
+            INSERT INTO canonical_fts(rowid,id,name,qualified_name,docstring,signature) VALUES(new.symbol_id,new.id,new.name,new.qualified_name,new.docstring,new.signature);
+         END;",
+    )?;
     Ok(())
 }
 
@@ -346,13 +361,12 @@ pub(crate) fn generation(connection: &Connection) -> Result<u64> {
 }
 
 pub(crate) fn validate_limits(limit: usize, max_bytes: usize) -> Result<()> {
-    ensure!((1..=50).contains(&limit), "limit must be between 1 and 50");
-    ensure!(
-        (1024..=65536).contains(&max_bytes),
-        "max_bytes must be between 1024 and 65536"
-    );
+    ensure!(limit > 0, "limit must be positive");
+    ensure!(max_bytes >= 1024, "max_bytes must be at least 1024");
     Ok(())
 }
+
+const MAX_QUERY_COUNT: usize = 9_007_199_254_740_991;
 
 pub(crate) fn clip(value: &str, max: usize) -> &str {
     let mut end = value.len().min(max);
@@ -407,7 +421,15 @@ pub(crate) fn store_file(
             "INSERT INTO symbols(path,name,ordinal,terms,kind,start_line,end_line,code) VALUES (?1,?2,?3,?4,?5,?6,?7,?8)",
             params![path, symbol.name, ordinal as i64, words(&symbol.name).join(" "), symbol.kind, symbol.start_line as i64, symbol.end_line as i64, code],
         )?;
-        ids.push(transaction.last_insert_rowid());
+        let id = transaction.last_insert_rowid();
+        if let Some(node) = parsed
+            .extraction
+            .as_ref()
+            .and_then(|extraction| extraction.nodes.get(ordinal))
+        {
+            transaction.execute("INSERT INTO canonical_search(symbol_id,id,name,qualified_name,docstring,signature,kind,language,path) VALUES(?1,?2,?3,?4,?5,?6,?7,?8,?9)", params![id,node.id,node.name,node.qualified_name,node.docstring,node.signature,node.kind,node.language,path])?;
+        }
+        ids.push(id);
     }
     for reference in &parsed.references {
         if let Some(caller) = reference.caller.and_then(|index| ids.get(index)) {

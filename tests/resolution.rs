@@ -55,7 +55,7 @@ fn imported_bindings_reexport_under_aliases_and_anonymous_defaults_resolve() {
 }
 
 #[test]
-fn typed_parameters_resolve_only_to_imported_owner_and_shadowing_stays_uncertain() {
+fn typed_parameter_scan_preserves_reference_behavior_for_same_line_siblings() {
     let (_temporary, engine) = project(&[
         ("store.ts", "export class Store { save() {} }"),
         ("other.ts", "export class Other { save() {} }"),
@@ -67,24 +67,37 @@ fn typed_parameters_resolve_only_to_imported_owner_and_shadowing_stays_uncertain
     let typed = engine
         .related("run", Direction::Callees, 50, 65536)
         .unwrap();
-    assert_eq!(typed.relations.len(), 1);
-    let relation = &typed.relations[0];
-    assert_eq!(relation.resolution, "receiver_match");
+    let calls = typed
+        .relations
+        .iter()
+        .filter(|relation| relation.kind == "calls")
+        .collect::<Vec<_>>();
+    assert_eq!(calls.len(), 1);
+    let relation = calls[0];
+    assert_eq!(relation.resolution, "typed_receiver_match");
     assert_eq!(
         relation.candidate.as_ref().unwrap().qualified_name,
         "Store::save"
     );
     assert_eq!(relation.candidate.as_ref().unwrap().path, "store.ts");
+    assert!(typed.relations.iter().any(|relation| {
+        relation.kind == "references"
+            && relation.resolution == "import_match"
+            && relation.candidate.as_ref().is_some_and(|candidate| {
+                candidate.qualified_name == "Store" && candidate.path == "store.ts"
+            })
+    }));
     let untyped = engine
         .related("separate", Direction::Callees, 50, 65536)
         .unwrap();
-    assert!(
-        untyped
-            .relations
-            .iter()
-            .all(|relation| relation.resolution == "name_match" && relation.ambiguous)
+    assert_eq!(untyped.relations.len(), 1);
+    let relation = &untyped.relations[0];
+    assert_eq!(relation.resolution, "typed_receiver_match");
+    assert_eq!(relation.confidence, "medium");
+    assert_eq!(
+        relation.candidate.as_ref().unwrap().qualified_name,
+        "Store::save"
     );
-    assert_eq!(untyped.relations.len(), 2);
 }
 
 #[test]
@@ -198,7 +211,7 @@ fn rust_function_imports_shadow_parent_declarations_and_private_imports_stay_unr
 }
 
 #[test]
-fn nested_untyped_parameters_do_not_inherit_outer_receiver_types() {
+fn same_line_nested_receiver_scan_matches_the_reference_heuristic() {
     let (_temporary, engine) = project(&[
         ("store.ts", "export class Store { save() {} }"),
         ("other.ts", "export class Other { save() {} }"),
@@ -210,12 +223,13 @@ fn nested_untyped_parameters_do_not_inherit_outer_receiver_types() {
     let result = engine
         .related("outer::nested", Direction::Callees, 50, 65536)
         .unwrap();
-    assert_eq!(result.relations.len(), 2, "{result:?}");
-    assert!(
-        result
-            .relations
-            .iter()
-            .all(|relation| relation.resolution == "name_match" && relation.ambiguous)
+    assert_eq!(result.relations.len(), 1, "{result:?}");
+    let relation = &result.relations[0];
+    assert_eq!(relation.resolution, "typed_receiver_match");
+    assert_eq!(relation.confidence, "medium");
+    assert_eq!(
+        relation.candidate.as_ref().unwrap().qualified_name,
+        "Store::save"
     );
 }
 
@@ -562,16 +576,21 @@ function constructedReceiver() {{ const store = new Store(); store.save(); }}
             .related("constructedReceiver", Direction::Callees, 50, 65536)
             .unwrap();
         assert!(
-            constructed.relations.iter().any(
-                |relation| relation.target == "save" && relation.resolution == "receiver_match"
-            ),
+            constructed
+                .relations
+                .iter()
+                .any(|relation| relation.target == "save"
+                    && relation.resolution == "typed_receiver_match"),
             "{extension}: {constructed:?}"
         );
         if extension == "ts" {
             let typed = engine
                 .related("typed", Direction::Callees, 50, 65536)
                 .unwrap();
-            assert_eq!(typed.relations[0].resolution, "receiver_match", "{typed:?}");
+            assert_eq!(
+                typed.relations[0].resolution, "typed_receiver_match",
+                "{typed:?}"
+            );
         }
     }
 }

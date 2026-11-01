@@ -117,13 +117,23 @@ pub(super) fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
 }
 
 pub(super) fn parse_as(path: &Path, source: &str, language: &str) -> Result<ParsedFile> {
-    parse_with_additions(path, source, language, &[], &[])
+    parse_with_frameworks(path, source, language, &[])
+}
+
+pub(super) fn parse_with_frameworks(
+    path: &Path,
+    source: &str,
+    language: &str,
+    frameworks: &[String],
+) -> Result<ParsedFile> {
+    parse_with_additions(path, source, language, frameworks, &[], &[])
 }
 
 pub(crate) fn parse_with_additions(
     path: &Path,
     source: &str,
     language: &str,
+    frameworks: &[String],
     nodes: &[prometeu_extract::Node],
     references: &[prometeu_extract::UnresolvedReference],
 ) -> Result<ParsedFile> {
@@ -137,6 +147,7 @@ pub(crate) fn parse_with_additions(
         (extract_as(path, source, language)?, None)
     };
     let original_count = extraction.nodes.len();
+    crate::frameworks::append(path, source, language, frameworks, &mut extraction)?;
     extraction.nodes.extend_from_slice(nodes);
     extraction
         .unresolved_references

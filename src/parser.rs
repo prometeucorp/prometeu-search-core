@@ -11,6 +11,7 @@ mod components;
 mod formats;
 pub(crate) mod javascript_regex;
 mod native;
+pub(crate) use native::{parse_with_additions, recover_owned_call_sites};
 mod preprocess;
 mod razor;
 mod semantic;
@@ -110,7 +111,6 @@ pub struct ParsedFile {
     pub imports: Vec<Import>,
     pub has_errors: bool,
     /// The complete upstream extraction, including metadata not used by graph queries yet.
-    #[serde(default)]
     pub extraction: Option<ExtractionResult>,
 }
 
@@ -142,11 +142,11 @@ fn language(path: &Path) -> Option<(&'static str, Language)> {
 }
 
 pub fn supports(path: &Path) -> bool {
-    language(path).is_some()
+    native::language(path).is_some()
 }
 
 pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
-    parse_legacy(path, source)
+    native::parse(path, source)
 }
 
 /// Detect source using an optional extension mapping, retaining filename and content rules.
@@ -164,9 +164,6 @@ pub fn parse_with_override(
     source: &str,
     extension_override: Option<&str>,
 ) -> Result<ParsedFile> {
-    if extension_override.is_none() {
-        return native::parse(path, source);
-    }
     let language = detect_language(path, source, extension_override)?;
     native::parse_as(path, source, language)
 }
@@ -179,6 +176,28 @@ pub fn extract(path: &Path, source: &str) -> Result<ExtractionResult> {
 /// Extract a known language explicitly, for host-owned extension mappings and templates.
 pub fn extract_as(path: &Path, source: &str, language: &str) -> Result<ExtractionResult> {
     native::extract_as(path, source, language)
+}
+
+/// Extract canonical declarations with explicitly selected framework extensions.
+pub fn extract_with_frameworks(
+    path: &Path,
+    source: &str,
+    language: &str,
+    frameworks: &[String],
+) -> Result<ExtractionResult> {
+    let mut extraction = native::extract_as(path, source, language)?;
+    crate::frameworks::append(path, source, language, frameworks, &mut extraction)?;
+    Ok(extraction)
+}
+
+/// Project canonical extraction and selected framework declarations into search records.
+pub fn parse_with_frameworks(
+    path: &Path,
+    source: &str,
+    language: &str,
+    frameworks: &[String],
+) -> Result<ParsedFile> {
+    native::parse_with_frameworks(path, source, language, frameworks)
 }
 
 fn parse_legacy(path: &Path, source: &str) -> Result<ParsedFile> {
@@ -241,6 +260,7 @@ fn parse_legacy(path: &Path, source: &str) -> Result<ParsedFile> {
             _ => None,
         };
         if let Some(mut target) = target.and_then(|target| call_name(target, source)) {
+            let constructor = node.kind() == "new_expression";
             if ruby
                 && node.parent().is_some_and(|parent| {
                     parent.kind() == "assignment"
@@ -251,12 +271,15 @@ fn parse_legacy(path: &Path, source: &str) -> Result<ParsedFile> {
             }
             call_nodes.push((result.references.len(), node));
             result.references.push(Reference {
-                column: None,
+                column: constructor.then(|| {
+                    let start = node.start_byte() - node.start_position().column;
+                    source[start..node.start_byte()].encode_utf16().count()
+                }),
                 caller,
                 target,
                 line: node.start_position().row + 1,
                 qualifier: None,
-                kind: "calls".into(),
+                kind: if constructor { "instantiates" } else { "calls" }.into(),
                 receiver_type: None,
                 shadowed: false,
                 owner: None,
@@ -350,6 +373,13 @@ fn parse_legacy(path: &Path, source: &str) -> Result<ParsedFile> {
         }
     }
     semantic::enrich(tree.root_node(), source, &mut result, &call_nodes);
+    for (index, node) in call_nodes {
+        if result.references[index].qualifier.as_deref() == Some("this") {
+            let start = node.start_byte() - node.start_position().column;
+            result.references[index].column =
+                Some(source[start..node.start_byte()].encode_utf16().count());
+        }
+    }
     Ok(result)
 }
 
@@ -810,7 +840,9 @@ function run(value: Store) {
             )
             .unwrap();
             assert!(!js.has_errors);
-            assert_eq!(js.symbols[0].name, "render");
+            assert_eq!(js.symbols[0].kind, "file");
+            assert_eq!(js.symbols[1].name, "render");
+            assert_eq!(js.symbols[1].kind, "function");
         }
     }
 

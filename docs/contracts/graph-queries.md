@@ -82,10 +82,10 @@ unresolved references. Each relationship reports its own ambiguity. Known import
 or receiver evidence is not replaced with an unrelated same-name target merely
 because the expected target is missing.
 
-Resolution is heuristic. Package configuration aliases, external dependencies,
-macros, metaprogramming, runtime dispatch, and complete compiler visibility/type
-rules are not implemented. Unsupported patterns remain unresolved or low-confidence
-candidates. Results from files with syntax errors retain `syntax_errors`.
+Resolution is heuristic. Native workspace/package aliases, framework bindings,
+and synthesized relationships supplement import and receiver evidence, without
+claiming complete compiler visibility or runtime dispatch. Unsupported patterns
+remain unresolved or low-confidence candidates. Results from files with syntax errors retain `syntax_errors`.
 
 ## Analysis semantics
 
@@ -121,13 +121,11 @@ generation, including invalidation after another client commits an update. Sourc
 snippets come from that same indexed snapshot, never from live files at old
 byte offsets. Read live source before making edits that depend on exact content.
 
-Graph construction bounds serialized extraction metadata at 64 MiB, symbols at
-100,000, edges at 200,000, and resolution candidates at 50. Traversals visit at
-most 1,000 symbols and collect at most 4,000 traversal edges. Depth, collection,
-graph construction, and serialized-byte limits can all truncate results.
-The serialized budget includes JSON escaping and metadata. Source and collections
-are shortened to fit; every omitted result is signaled with `truncated`.
+Graph construction has no fixed cap on aggregate source bytes, node count,
+or edge count. Resolution keeps bounded candidate sets and explicit uncertainty.
+Native `GraphOptions` defaults to depth 2, 200 entries, and no byte ceiling;
+callers can choose explicit positive limits and byte budgets of at least 1024.
+CLI/MCP retain the transport limits in the table above.
 
-The graph cache is rebuilt after a changed generation. Targeted source updates
-avoid hashing unrelated files, but rebuilding graph metadata still depends on
-indexed graph size. This is separate from source synchronization costs.
+The pure `graph_query` and `hierarchy` modules accept canonical records supplied
+by an embedding host. Their results remain static evidence, not compiler proof.

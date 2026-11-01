@@ -1,4 +1,9 @@
 //! JavaScript regular-expression character classes used by upstream extraction.
+/// Preserve ECMAScript character classes with the linear engine's ASCII boundary.
+pub(crate) fn linear_pattern(source: &str) -> String {
+    pattern(source).replace(&pattern(r"\b"), r"(?-u:\b)")
+}
+
 pub(crate) fn pattern(pattern: &str) -> String {
     const SPACE: &str = r"\x09-\x0D\x20\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}";
     let mut out = String::new();

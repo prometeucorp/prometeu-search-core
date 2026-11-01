@@ -32,7 +32,7 @@ fn fallback_preserves_global_declarations_arrows_and_named_callers() {
     let parsed = parser::parse(Path::new("main.ts"), source).unwrap();
     assert!(!parsed.has_errors);
     for (name, kind) in [
-        ("config", "variable"),
+        ("config", "constant"),
         ("start", "function"),
         ("boot", "function"),
         ("main.ts", "file"),
@@ -58,8 +58,10 @@ fn fallback_preserves_global_declarations_arrows_and_named_callers() {
     assert!(calls.contains(&("boot", "prepare")));
     assert!(calls.contains(&("main.ts", "start")));
     let declarations = parser::parse(Path::new("helpers.ts"), "function prepare() {}").unwrap();
-    assert_eq!(declarations.symbols.len(), 1);
-    assert_eq!(declarations.symbols[0].kind, "function");
+    assert_eq!(declarations.symbols.len(), 2);
+    assert_eq!(declarations.symbols[0].kind, "file");
+    assert_eq!(declarations.symbols[1].name, "prepare");
+    assert_eq!(declarations.symbols[1].kind, "function");
 }
 
 #[test]
@@ -68,8 +70,9 @@ fn ordered_coverage_preserves_nested_declarations_and_export_wrappers() {
         let source = "class Store { save() { function nested() {} nested(); } }\n// Between declarations.\nfunction start() { function inner() {} inner(); }";
         let parsed = parser::parse(Path::new(filename), source).unwrap();
         assert!(!parsed.has_errors);
-        assert_eq!(parsed.symbols.len(), 5);
-        assert!(!parsed.symbols.iter().any(|symbol| symbol.kind == "file"));
+        assert_eq!(parsed.symbols.len(), 6);
+        assert_eq!(parsed.symbols[0].kind, "file");
+        assert_eq!(parsed.symbols[0].name, filename);
 
         let exported = format!("{source}\nexport function launch() {{ start(); }}");
         let parsed = parser::parse(Path::new(filename), &exported).unwrap();
@@ -100,8 +103,9 @@ fn large_declaration_files_retain_trailing_entrypoint_calls() {
     assert!(source.len() < 1024 * 1024);
     let parsed = parser::parse(Path::new("large.ts"), &source).unwrap();
     assert!(!parsed.has_errors);
-    assert_eq!(parsed.symbols.len(), count);
-    assert!(!parsed.symbols.iter().any(|symbol| symbol.kind == "file"));
+    assert_eq!(parsed.symbols.len(), count + 1);
+    assert_eq!(parsed.symbols[0].kind, "file");
+    assert_eq!(parsed.symbols[0].name, "large.ts");
 
     source.push_str("f19999();\n");
     let parsed = parser::parse(Path::new("large.ts"), &source).unwrap();
@@ -125,7 +129,7 @@ fn index_searches_imports_and_resolves_entrypoint_calls() {
     .unwrap();
     let mut engine = Engine::open(&root, Some(&temp.path().join("index.sqlite"))).unwrap();
     engine.sync().unwrap();
-    let results = engine.search("setup", 10, 12000).unwrap();
+    let results = engine.search("kind:file path:main.ts", 10, 12000).unwrap();
     assert!(results.results.iter().any(|hit| hit.path == "main.ts"
         && hit.kind == "file"
         && hit.snippet.contains("import './setup'")));

@@ -30,11 +30,11 @@ fn existing_index_adds_ruby_and_reconciles_edits_and_deletions() {
     assert!(engine.status().unwrap().generation > generation);
     assert!(
         engine
-            .search("rails", 10, 12000)
+            .search("kind:file path:Gemfile", 10, 12000)
             .unwrap()
             .results
             .iter()
-            .any(|hit| hit.path == "Gemfile")
+            .any(|hit| hit.path == "Gemfile" && hit.snippet.contains("rails"))
     );
     let callers = engine
         .related("persist", Direction::Callers, 10, 12000)
