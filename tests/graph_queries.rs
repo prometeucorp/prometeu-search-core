@@ -1,5 +1,6 @@
 use prometeu_extract::{Edge, Node};
 use prometeu_search::graph_query::{Direction, GraphSnapshot, TraversalOptions};
+use prometeu_search::{Engine, GraphOperation, GraphQueryOptions};
 use serde_json::{Value, json};
 use std::collections::HashMap;
 
@@ -180,6 +181,180 @@ fn graph_operations_match_independent_sqlite_queries_and_traversals() {
 }
 
 #[test]
+fn graph_queries_keep_committed_sources_and_follow_dependency_lifecycle() {
+    let temp = tempfile::tempdir().unwrap();
+    let root = temp.path().join("project");
+    std::fs::create_dir(&root).unwrap();
+    std::fs::write(root.join("go.mod"), "module fixture\n\ngo 1.22\n").unwrap();
+    std::fs::write(
+        root.join("worker.go"),
+        "package fixture\nfunc Worker() {}\n",
+    )
+    .unwrap();
+    std::fs::write(
+        root.join("worker_test.go"),
+        "package fixture\nfunc TestWorker() { Worker(); Worker() }\n",
+    )
+    .unwrap();
+    let database = temp.path().join("cache.sqlite");
+    let mut engine = Engine::open(&root, Some(&database)).unwrap();
+    engine.sync().unwrap();
+    let query = GraphQueryOptions {
+        operation: GraphOperation::Dependents,
+        path: Some("worker.go".into()),
+        ..Default::default()
+    };
+    let before = engine.graph_query(&query).unwrap();
+    assert_eq!(before.data, json!(["worker_test.go"]));
+    let affected = engine
+        .analyze(
+            "worker.go",
+            prometeu_search::GraphMode::Affected,
+            &Default::default(),
+        )
+        .unwrap();
+    assert_eq!(affected.affected_tests, ["worker_test.go"]);
+    let id = engine
+        .search("Worker", 50, 65536)
+        .unwrap()
+        .results
+        .into_iter()
+        .find(|n| n.name == "Worker")
+        .unwrap()
+        .id;
+    let sites = engine
+        .graph_query(&GraphQueryOptions {
+            operation: GraphOperation::CallSites,
+            id: Some(id),
+            traversal: TraversalOptions {
+                direction: Direction::Incoming,
+                ..Default::default()
+            },
+            ..Default::default()
+        })
+        .unwrap();
+    assert!(
+        sites
+            .data
+            .as_array()
+            .unwrap()
+            .iter()
+            .any(|row| row["node"]["name"] == "TestWorker"
+                && row["edges"].as_array().unwrap().len() == 2)
+    );
+    drop(engine);
+    std::fs::write(
+        root.join("worker_test.go"),
+        "package fixture\nfunc TestWorker() {}\n",
+    )
+    .unwrap();
+    let mut engine = Engine::open(&root, Some(&database)).unwrap();
+    assert_eq!(engine.graph_query(&query).unwrap().data, before.data);
+    engine.sync().unwrap();
+    assert_eq!(engine.graph_query(&query).unwrap().data, json!([]));
+    std::fs::rename(root.join("worker_test.go"), root.join("renamed_test.go")).unwrap();
+    std::fs::write(
+        root.join("renamed_test.go"),
+        "package fixture\nfunc TestWorker() { Worker() }\n",
+    )
+    .unwrap();
+    engine.sync().unwrap();
+    assert_eq!(
+        engine.graph_query(&query).unwrap().data,
+        json!(["renamed_test.go"])
+    );
+    std::fs::remove_file(root.join("renamed_test.go")).unwrap();
+    engine.sync().unwrap();
+    assert_eq!(engine.graph_query(&query).unwrap().data, json!([]));
+    let bad = GraphQueryOptions {
+        path: Some("../worker.go".into()),
+        ..query
+    };
+    assert!(engine.graph_query(&bad).is_err());
+}
+
+#[test]
+fn module_budgets_preserve_directory_names_and_bound_many_entries() {
+    let temporary = tempfile::tempdir().unwrap();
+    let root = temporary.path().join("project");
+    for path in [
+        "nodes/a.ts",
+        "nodes/b.ts",
+        "nodes/c.ts",
+        "edges/one.ts",
+        "roots/one.ts",
+    ] {
+        let file = root.join(path);
+        std::fs::create_dir_all(file.parent().unwrap()).unwrap();
+        std::fs::write(file, "export function run() {}\n").unwrap();
+    }
+    let mut engine = Engine::open(&root, Some(&temporary.path().join("index.sqlite"))).unwrap();
+    engine.sync().unwrap();
+    let result = engine
+        .graph_query(&GraphQueryOptions {
+            operation: GraphOperation::Modules,
+            traversal: TraversalOptions {
+                limit: 2,
+                ..Default::default()
+            },
+            ..Default::default()
+        })
+        .unwrap();
+    assert!(result.truncated);
+    assert_eq!(
+        result.data,
+        json!({"edges":["edges/one.ts"],"nodes":["nodes/a.ts","nodes/b.ts"]})
+    );
+    std::fs::create_dir_all(root.join("focal")).unwrap();
+    for index in 0..5 {
+        std::fs::write(
+            root.join(format!("focal/{index}.ts")),
+            "export function focus() {}\n",
+        )
+        .unwrap();
+    }
+    engine.sync().unwrap();
+    let result = engine
+        .graph_query(&GraphQueryOptions {
+            operation: GraphOperation::Modules,
+            traversal: TraversalOptions {
+                limit: 4,
+                ..Default::default()
+            },
+            ..Default::default()
+        })
+        .unwrap();
+    assert!(result.truncated);
+    assert_eq!(result.data["focal"].as_array().unwrap().len(), 4);
+    for index in 0..80 {
+        let directory = root.join(format!("module_{index:03}_{}", "long_name_".repeat(8)));
+        std::fs::create_dir_all(&directory).unwrap();
+        std::fs::write(directory.join("main.ts"), "export function start() {}\n").unwrap();
+    }
+    engine.sync().unwrap();
+    let result = engine
+        .graph_query(&GraphQueryOptions {
+            operation: GraphOperation::Modules,
+            max_bytes: 1024,
+            ..Default::default()
+        })
+        .unwrap();
+    assert!(result.truncated);
+    assert!(serde_json::to_vec(&result).unwrap().len() <= 1024);
+    let modules = result.data.as_object().unwrap();
+    assert!(modules.len() < 83);
+    for (directory, files) in modules {
+        assert!(
+            files
+                .as_array()
+                .unwrap()
+                .iter()
+                .all(|file| file.as_str().unwrap().starts_with(&format!("{directory}/")))
+        );
+    }
+}
+
+#[test]
 fn depth_first_marks_a_limit_reached_on_the_last_pending_branch() {
     let nodes: Vec<Node> = ["a", "b", "c"].into_iter().map(|id| serde_json::from_value(json!({
         "id":id,"name":id,"qualifiedName":id,"kind":"function","filePath":"main.rs","language":"rust",
@@ -265,4 +440,75 @@ fn large_snapshots_and_explicit_traversal_budgets_are_not_artificially_capped() 
     assert_eq!(impact.nodes.len(), 30_001);
     assert!(impact.edges.len() > 50_000);
     assert!(!impact.truncated);
+}
+
+#[test]
+fn operation_defaults_preserve_explicit_overrides_and_large_complete_results() {
+    for (operation, depth, limit) in [
+        ("bfs", usize::MAX, 1000),
+        ("dfs", usize::MAX, 1000),
+        ("callers", 1, usize::MAX),
+        ("callees", 1, usize::MAX),
+        ("call_graph", 2, usize::MAX),
+        ("impact", 3, 10000),
+        ("filtered", usize::MAX, usize::MAX),
+    ] {
+        let options: GraphQueryOptions = serde_json::from_value(json!({
+            "operation":operation,"traversal":{"direction":"incoming"}
+        }))
+        .unwrap();
+        assert_eq!(
+            (options.traversal.max_depth, options.traversal.limit),
+            (depth, limit),
+            "{operation}"
+        );
+        assert_eq!(options.max_bytes, usize::MAX);
+    }
+    let options: GraphQueryOptions = serde_json::from_value(json!({
+        "operation":"impact","id":1,"traversal":{"max_depth":2048,"limit":12000},
+        "max_edges":60000,"max_bytes":100000
+    }))
+    .unwrap();
+    options.validate().unwrap();
+    assert_eq!(
+        (options.traversal.max_depth, options.traversal.limit),
+        (2048, 12000)
+    );
+    assert_eq!((options.max_edges, options.max_bytes), (60000, 100000));
+
+    let temporary = tempfile::tempdir().unwrap();
+    let root = temporary.path().join("project");
+    std::fs::create_dir(&root).unwrap();
+    let mut source = (0..1100)
+        .map(|index| format!("export function task{index}() {{}}\n"))
+        .collect::<String>();
+    source.push_str("export function launch() {\n");
+    source.push_str(&"task0();\n".repeat(1200));
+    source.push_str("}\n");
+    std::fs::write(root.join("tasks.ts"), source).unwrap();
+    let mut engine = Engine::open(&root, Some(&temporary.path().join("index.sqlite"))).unwrap();
+    engine.sync().unwrap();
+    let options = GraphQueryOptions::for_operation(GraphOperation::Filtered);
+    let result = engine.graph_query(&options).unwrap();
+    assert!(result.data["nodes"].as_array().unwrap().len() > 1000);
+    assert!(serde_json::to_vec(&result).unwrap().len() > 65536);
+    assert!(!result.truncated);
+    let id = engine.search("launch", 10, 12000).unwrap().results[0].id;
+    let calls = engine
+        .graph_query(&GraphQueryOptions {
+            id: Some(id),
+            ..Default::default()
+        })
+        .unwrap();
+    assert_eq!(calls.data["nodes"].as_array().unwrap().len(), 2);
+    assert_eq!(calls.data["edges"].as_array().unwrap().len(), 1200);
+    assert!(!calls.truncated);
+    let clipped = engine
+        .graph_query(&GraphQueryOptions {
+            max_bytes: 1024,
+            ..options
+        })
+        .unwrap();
+    assert!(clipped.truncated);
+    assert!(serde_json::to_vec(&clipped).unwrap().len() <= 1024);
 }

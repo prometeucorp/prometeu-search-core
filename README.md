@@ -51,6 +51,10 @@ identifiers, explicit extension mappings, and framework-aware extraction.
 Pure `graph_query::GraphSnapshot` and `hierarchy` functions accept host-owned
 canonical records. Library reads never implicitly refresh live source.
 
+`Engine::graph_query`, `hierarchy`, `context`, `metrics`, `cycles`, and `dead_code`
+query the same committed graph generation. Context supports structured records
+and Markdown; analysis retains explicit uncertainty and truncation.
+
 See [architecture](ARCHITECTURE.md), [host integration](docs/contracts/integration.md),
 [graph queries](docs/contracts/graph-queries.md), and [project configuration](docs/contracts/project-configuration.md).
 Run `cargo fmt --all --check`, `cargo clippy --all-targets --locked -- -D warnings`,

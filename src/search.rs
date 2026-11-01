@@ -243,6 +243,16 @@ fn project_names(db: &Connection, root: &Path) -> Result<HashSet<String>> {
     }
     Ok(tokens)
 }
+pub(crate) fn ranked_kinds(
+    db: &Connection,
+    root: &Path,
+    query: &str,
+    limit: usize,
+    kinds: &[String],
+) -> Result<Vec<RankedHit>> {
+    ranked_page(db, root, query, limit, 0, kinds)
+}
+
 pub(crate) fn ranked_page(
     db: &Connection,
     root: &Path,

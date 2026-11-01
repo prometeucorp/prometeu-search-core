@@ -105,6 +105,23 @@ records remain unchanged. All 50 registered synthesis passes have Rust
 counterparts. The parity record distinguishes their captured evidence from
 complete equivalence of every resolution and synthesis branch.
 
+`src/analysis.rs` measures resolved graph edges and computes circular import
+groups with an iterative traversal. Its conservative dead-code report removes
+candidates when exports, declarations, framework evidence, unresolved names,
+source mentions, or missing reachability cast doubt on a negative claim. It
+refuses incomplete graph construction and reads only committed source.
+
+`src/hierarchy.rs` derives type ancestry, subtype fans, and member override
+matches from canonical records. `src/hierarchy_adapter.rs` applies public byte
+budgets over one committed graph generation, retaining direct fan counts and
+explicit truncation when detailed entries do not fit.
+
+`src/context.rs` combines ranked search channels with bounded graph expansion,
+source blocks, and structured or Markdown context. The pure builder accepts
+host-owned canonical records and query callbacks. `src/context_adapter.rs` binds
+it to one committed graph generation and SQLite search, applies response byte
+limits, and removes dangling relationships when trimming the selected context.
+
 Search reads source stored with the indexed symbol. It never slices a changed
 file using old byte offsets. Each response reads one database snapshot and
 includes its generation. Files can still change during or after reconciliation;
@@ -159,3 +176,4 @@ Native Tree-sitter grammars and bundled SQLite keep the executable independent
 of external runtimes.
 
 Pure graph traversal and hierarchy functions accept host-owned canonical records.
+Engine adapters expose graph traversal, hierarchy, task context, and analysis over one committed generation.
