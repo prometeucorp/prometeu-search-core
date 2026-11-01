@@ -14,7 +14,7 @@ preprocessing, component, and custom-format modules port the surrounding source
 transformations and template extraction. Canonical records preserve identifiers,
 positions, signatures, documentation, metadata, typed edges, and unresolved
 references. Independent oracle fixtures exercise these extraction boundaries;
-the committed fixture descriptions define their scope.
+the [parity record](docs/quality/parity.md) defines their scope.
 
 `src/parser/native.rs` projects those records into the bounded search engine.
 UTF-16 source positions are mapped to UTF-8 byte boundaries before slicing.
@@ -157,6 +157,13 @@ joins its watcher. The library exposes `Engine` for direct Rust embedding.
 `src/inspect.rs` supplies bounded file listing, symbol metadata, and file-line
 reads from committed SQLite snapshots; it never reads live source for a query.
 
+The optional `ui` command runs a loopback-only HTTP viewer with bundled assets.
+It does not change the stdio MCP process contract or require an external runtime.
+`src/graph_query.rs` supplies reusable canonical graph traversals; its adapter
+reads the same committed graph generation. Native callers can override traversal
+budgets and opt into response byte limits; MCP adds operation-specific character
+budgets, and the viewer retains endpoint-specific limits without a shared byte cap.
+
 There is no daemon discovery, remote listener, authentication system, async runtime,
 plugin framework, or provider-specific adapter. The embedding host owns process
 lifecycle. Separate agent processes can share the same worktree database and
@@ -174,7 +181,3 @@ deliberately remove the derived index before retrying.
 
 Native Tree-sitter grammars and bundled SQLite keep the executable independent
 of external runtimes.
-
-Pure graph traversal and hierarchy functions accept host-owned canonical records.
-Engine adapters expose graph traversal, hierarchy, task context, and analysis over one committed generation.
-The viewer library binds only loopback and serves embedded browser assets through a host-owned server lifecycle.

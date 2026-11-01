@@ -132,6 +132,35 @@ pub struct GraphQueryResult {
     pub truncated: bool,
 }
 
+impl GraphQueryResult {
+    /// Trim an already computed response to a UTF-16 transport budget.
+    /// Graph edges and roots remain consistent with retained nodes.
+    pub fn limit_utf16(&mut self, max_chars: usize) -> Result<()> {
+        ensure!(max_chars >= 1024, "character budget must be at least 1024");
+        while serde_json::to_string(self)?.encode_utf16().count() > max_chars {
+            self.shrink_once();
+        }
+        Ok(())
+    }
+
+    fn shrink_once(&mut self) {
+        use GraphOperation::*;
+        self.truncated = true;
+        let graph_shape = matches!(
+            self.operation,
+            Bfs | Dfs | CallGraph | TypeGraph | Impact | Filtered
+        );
+        let reduced = if self.operation == Modules {
+            shrink_modules(&mut self.data)
+        } else {
+            self.operation != Path && shrink(&mut self.data, graph_shape)
+        };
+        if !reduced {
+            self.data = Value::Null;
+        }
+    }
+}
+
 impl GraphQueryOptions {
     pub fn validate(&self) -> Result<()> {
         let options = self;
@@ -326,15 +355,7 @@ impl Engine {
             while options.max_bytes != usize::MAX
                 && serde_json::to_vec(&result)?.len() > options.max_bytes
             {
-                result.truncated = true;
-                let reduced = if options.operation == Modules {
-                    shrink_modules(&mut result.data)
-                } else {
-                    options.operation != Path && shrink(&mut result.data, graph_shape)
-                };
-                if !reduced {
-                    result.data = Value::Null;
-                }
+                result.shrink_once();
             }
             Ok(result)
         })

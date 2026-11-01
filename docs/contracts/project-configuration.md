@@ -149,4 +149,4 @@ trees at 64 MiB each and 128 MiB total, with bounded path storage and nesting.
 The independent traversal corpus records the pinned reference's actual file
 lists and Git index/object fixtures. Configuration matching and persistent
 index/watch tests cover the atomic behavior above; see the
-committed parity fixtures for remaining application migration work.
+[parity record](../quality/parity.md) for remaining application migration work.
