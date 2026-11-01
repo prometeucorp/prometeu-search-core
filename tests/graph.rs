@@ -17,6 +17,28 @@ fn project(files: &[(&str, &str)]) -> (TempDir, Engine) {
 }
 
 #[test]
+fn lexical_exploration_uses_the_requested_candidate_budget() {
+    let source = (0..130)
+        .map(|i| format!("export function feature_{i}() {{ return {i}; }}\n"))
+        .collect::<String>();
+    let (_temporary, engine) = project(&[("many.ts", &source)]);
+    let limited = engine
+        .explore(
+            "feature",
+            &GraphOptions {
+                limit: 120,
+                ..Default::default()
+            },
+        )
+        .unwrap();
+    assert_eq!(limited.roots.len(), 120);
+    assert!(limited.truncated);
+    let complete = engine.explore("feature", &GraphOptions::default()).unwrap();
+    assert!(complete.roots.len() >= 130);
+    assert!(!complete.truncated);
+}
+
+#[test]
 fn imports_aliases_reexports_and_receivers_disambiguate_calls() {
     let (_temp, engine) = project(&[
         (
@@ -60,7 +82,7 @@ fn imports_aliases_reexports_and_receivers_disambiguate_calls() {
 }
 
 #[test]
-fn known_receivers_and_missing_imports_never_resolve_to_unrelated_methods() {
+fn unvalidated_receiver_fallbacks_stay_low_confidence_and_missing_imports_stay_unresolved() {
     let (_temp, engine) = project(&[
         (
             "entry.ts",
@@ -74,13 +96,36 @@ fn known_receivers_and_missing_imports_never_resolve_to_unrelated_methods() {
     let result = engine
         .related("run", Direction::Callees, 50, 65536)
         .unwrap();
-    assert_eq!(result.relations.len(), 2);
-    assert!(
-        result
-            .relations
-            .iter()
-            .all(|relation| relation.candidate.is_none() && relation.resolution == "unresolved")
+    let calls = result
+        .relations
+        .iter()
+        .filter(|relation| relation.kind == "calls")
+        .collect::<Vec<_>>();
+    assert_eq!(calls.len(), 2);
+    let fallback = calls
+        .iter()
+        .find(|relation| relation.target == "save")
+        .unwrap();
+    assert_eq!(fallback.resolution, "name_match");
+    assert_eq!(fallback.confidence, "low");
+    assert_eq!(
+        fallback.candidate.as_ref().unwrap().qualified_name,
+        "Other::save"
     );
+    let absent = calls
+        .iter()
+        .find(|relation| relation.target == "absent")
+        .unwrap();
+    assert!(absent.candidate.is_none());
+    assert_eq!(absent.resolution, "unresolved");
+    assert!(result.relations.iter().any(|relation| {
+        relation.kind == "references"
+            && relation.target == "Empty"
+            && relation
+                .candidate
+                .as_ref()
+                .is_some_and(|candidate| candidate.path == "entry.ts")
+    }));
 }
 
 #[test]
@@ -265,10 +310,6 @@ fn selectors_and_invalid_bounds_are_explicit() {
     for options in [
         GraphOptions {
             depth: 0,
-            ..GraphOptions::default()
-        },
-        GraphOptions {
-            depth: 9,
             ..GraphOptions::default()
         },
         GraphOptions {

@@ -1,0 +1,1826 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "name": "no-workspace",
+      "files": {
+        "package.json": "{\"name\":\"solo\"}"
+      },
+      "directories": [
+        ""
+      ],
+      "expected": null,
+      "attempts": [],
+      "membership": []
+    },
+    {
+      "name": "glob-precedence",
+      "files": {
+        "package.json": "{\"workspaces\":[\"packages/**/*\",\"!**/example\",\"packages/.hidden\",\"packages/tests/explicit\"]}",
+        "packages/near/package.json": "{\"name\":\"dup\"}",
+        "packages/deep/far/package.json": "{\"name\":\"dup\"}",
+        "packages/example/package.json": "{\"name\":\"excluded\"}",
+        "packages/tests/hidden/package.json": "{\"name\":\"test-hidden\"}",
+        "packages/tests/explicit/package.json": "{\"name\":\"test-explicit\"}",
+        "packages/.hidden/package.json": "{\"name\":\"hidden\"}",
+        "packages/node_modules/bad/package.json": "{\"name\":\"bad\"}"
+      },
+      "directories": [
+        "",
+        "packages",
+        "packages/.hidden",
+        "packages/deep",
+        "packages/deep/far",
+        "packages/example",
+        "packages/near",
+        "packages/node_modules",
+        "packages/node_modules/bad",
+        "packages/tests",
+        "packages/tests/explicit",
+        "packages/tests/hidden"
+      ],
+      "expected": {
+        "byName": {
+          "dup": "packages/near",
+          "hidden": "packages/.hidden",
+          "test-explicit": "packages/tests/explicit"
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "dup",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "packages/near",
+            "packageDir": "packages/near"
+          },
+          "resolved": "packages/near"
+        },
+        {
+          "importPath": "hidden",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "packages/.hidden",
+            "packageDir": "packages/.hidden"
+          },
+          "resolved": "packages/.hidden"
+        },
+        {
+          "importPath": "excluded",
+          "fromFile": "main.ts",
+          "targets": null,
+          "resolved": null
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/near/source.ts",
+          "packageDir": "packages/near",
+          "leaves": []
+        },
+        {
+          "file": "packages/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/deep/far/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/deep/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/example/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/tests/hidden/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/tests/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/tests/explicit/source.ts",
+          "packageDir": "packages/tests/explicit",
+          "leaves": []
+        },
+        {
+          "file": "packages/.hidden/source.ts",
+          "packageDir": "packages/.hidden",
+          "leaves": []
+        },
+        {
+          "file": "packages/node_modules/bad/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/node_modules/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "brace-question-and-literal",
+      "files": {
+        "package.json": "{\"workspaces\":{\"packages\":[\"{apps,libs}/pkg-?\",\"tools/**\",\"bower_components/literal\"],\"nohoist\":[\"*\"]}}",
+        "apps/pkg-a/package.json": "{\"name\":\"app\"}",
+        "libs/pkg-b/package.json": "{\"name\":\"lib\"}",
+        "libs/pkg-😀/package.json": "{\"name\":\"astral\"}",
+        "tools/package.json": "{\"name\":\"tools\"}",
+        "tools/deep/package.json": "{\"name\":\"deep\"}",
+        "bower_components/literal/package.json": "{\"name\":\"literal\"}"
+      },
+      "directories": [
+        "",
+        "apps",
+        "apps/pkg-a",
+        "bower_components",
+        "bower_components/literal",
+        "libs",
+        "libs/pkg-b",
+        "libs/pkg-😀",
+        "tools",
+        "tools/deep"
+      ],
+      "expected": {
+        "byName": {
+          "app": "apps/pkg-a",
+          "lib": "libs/pkg-b",
+          "tools": "tools",
+          "deep": "tools/deep",
+          "literal": "bower_components/literal"
+        }
+      },
+      "attempts": [],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "apps/pkg-a/source.ts",
+          "packageDir": "apps/pkg-a",
+          "leaves": []
+        },
+        {
+          "file": "apps/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "libs/pkg-b/source.ts",
+          "packageDir": "libs/pkg-b",
+          "leaves": []
+        },
+        {
+          "file": "libs/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "libs/pkg-😀/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "tools/source.ts",
+          "packageDir": "tools",
+          "leaves": []
+        },
+        {
+          "file": "tools/deep/source.ts",
+          "packageDir": "tools",
+          "leaves": []
+        },
+        {
+          "file": "bower_components/literal/source.ts",
+          "packageDir": "bower_components/literal",
+          "leaves": []
+        },
+        {
+          "file": "bower_components/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "pnpm-minimal-list",
+      "files": {
+        "pnpm-workspace.yaml": "packages:\n  - 'packages/*'\n  - \"apps/*\"\n  # comment\n  - '!**/excluded'\ncatalog:\n - nope/*\n",
+        "packages/a/package.json": "{\"name\":\"a\"}",
+        "apps/b/package.json": "{\"name\":\"b\"}",
+        "apps/excluded/package.json": "{\"name\":\"excluded\"}",
+        "nope/x/package.json": "{\"name\":\"x\"}"
+      },
+      "directories": [
+        "",
+        "apps",
+        "apps/b",
+        "apps/excluded",
+        "nope",
+        "nope/x",
+        "packages",
+        "packages/a"
+      ],
+      "expected": {
+        "byName": {
+          "a": "packages/a",
+          "b": "apps/b"
+        }
+      },
+      "attempts": [],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/a/source.ts",
+          "packageDir": "packages/a",
+          "leaves": []
+        },
+        {
+          "file": "packages/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "apps/b/source.ts",
+          "packageDir": "apps/b",
+          "leaves": []
+        },
+        {
+          "file": "apps/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "apps/excluded/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "nope/x/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "nope/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "exports-conditions",
+      "files": {
+        "package.json": "{\"workspaces\":[\"packages/*\"]}",
+        "packages/ui/package.json": "{\"name\":\"@scope/ui\",\"exports\":{\".\":{\"types\":\"./dist/index.d.ts\",\"custom\":\"./custom.ts\",\"browser\":\"./browser.ts\",\"import\":[\"./dist/index.js\",\"./src/alternate.ts\"],\"default\":\"./src/index.ts\"},\"./widgets\":{\"require\":\"./widgets.cjs\",\"browser\":{\"import\":\"./widgets.browser.js\",\"types\":\"./widgets.d.ts\"}},\"./schema/*\":\"./src/schema/*.ts\",\"./schema/private/*\":\"./private/*.ts\",\"./null\":null},\"source\":\"src/source.ts\",\"module\":\"dist/index.js\",\"main\":\"dist/main.cjs\",\"types\":\"dist/index.d.ts\",\"typings\":\"dist/index.d.ts\"}"
+      },
+      "directories": [
+        "",
+        "packages",
+        "packages/ui"
+      ],
+      "expected": {
+        "byName": {
+          "@scope/ui": "packages/ui"
+        },
+        "entriesByDir": {
+          "packages/ui": {
+            "exports": [
+              [
+                ".",
+                [
+                  "packages/ui/dist/index.js",
+                  "packages/ui/src/alternate.ts",
+                  "packages/ui/src/index.ts",
+                  "packages/ui/custom.ts",
+                  "packages/ui/browser.ts",
+                  "packages/ui/dist/index.d.ts"
+                ]
+              ],
+              [
+                "./widgets",
+                [
+                  "packages/ui/widgets.cjs",
+                  "packages/ui/widgets.browser.js",
+                  "packages/ui/widgets.d.ts"
+                ]
+              ],
+              [
+                "./schema/*",
+                [
+                  "packages/ui/src/schema/*.ts"
+                ]
+              ],
+              [
+                "./schema/private/*",
+                [
+                  "packages/ui/private/*.ts"
+                ]
+              ],
+              [
+                "./null",
+                []
+              ]
+            ],
+            "browser": [
+              [
+                ".",
+                [
+                  "packages/ui/browser.ts"
+                ]
+              ],
+              [
+                "./widgets",
+                [
+                  "packages/ui/widgets.browser.js",
+                  "packages/ui/widgets.d.ts"
+                ]
+              ]
+            ],
+            "main": [
+              "packages/ui/src/source.ts",
+              "packages/ui/dist/index.js",
+              "packages/ui/dist/main.cjs",
+              "packages/ui/dist/index.d.ts"
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "@scope/ui",
+          "fromFile": "app.ts",
+          "targets": {
+            "declared": [
+              "packages/ui/dist/index.js",
+              "packages/ui/src/alternate.ts",
+              "packages/ui/src/index.ts",
+              "packages/ui/custom.ts",
+              "packages/ui/browser.ts",
+              "packages/ui/dist/index.d.ts",
+              "packages/ui/src/source.ts",
+              "packages/ui/dist/main.cjs"
+            ],
+            "browser": [
+              "packages/ui/browser.ts"
+            ],
+            "directory": "packages/ui",
+            "packageDir": "packages/ui"
+          },
+          "resolved": "packages/ui"
+        },
+        {
+          "importPath": "@scope/ui/widgets",
+          "fromFile": "app.ts",
+          "targets": {
+            "declared": [
+              "packages/ui/widgets.cjs",
+              "packages/ui/widgets.browser.js",
+              "packages/ui/widgets.d.ts"
+            ],
+            "browser": [
+              "packages/ui/widgets.browser.js",
+              "packages/ui/widgets.d.ts"
+            ],
+            "directory": "packages/ui/widgets",
+            "packageDir": "packages/ui"
+          },
+          "resolved": "packages/ui/widgets"
+        },
+        {
+          "importPath": "@scope/ui/schema/foo",
+          "fromFile": "app.ts",
+          "targets": {
+            "declared": [
+              "packages/ui/src/schema/foo.ts"
+            ],
+            "browser": [],
+            "directory": "packages/ui/schema/foo",
+            "packageDir": "packages/ui"
+          },
+          "resolved": "packages/ui/schema/foo"
+        },
+        {
+          "importPath": "@scope/ui/schema/private/inner",
+          "fromFile": "app.ts",
+          "targets": {
+            "declared": [
+              "packages/ui/private/inner.ts"
+            ],
+            "browser": [],
+            "directory": "packages/ui/schema/private/inner",
+            "packageDir": "packages/ui"
+          },
+          "resolved": "packages/ui/schema/private/inner"
+        },
+        {
+          "importPath": "@scope/ui/null",
+          "fromFile": "app.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "packages/ui/null",
+            "packageDir": "packages/ui"
+          },
+          "resolved": "packages/ui/null"
+        },
+        {
+          "importPath": "@scope/uix",
+          "fromFile": "app.ts",
+          "targets": null,
+          "resolved": null
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/ui/source.ts",
+          "packageDir": "packages/ui",
+          "leaves": []
+        },
+        {
+          "file": "packages/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "export-numeric-key-order",
+      "files": {
+        "package.json": "{\"workspaces\":[\"p\"]}",
+        "p/package.json": "{\"name\":\"x\",\"exports\":{\"z\":\"./z.ts\",\"9\":\"./nine.ts\",\"2\":\"./two.ts\",\"import\":\"./in.ts\",\"types\":\"./types.ts\"}}"
+      },
+      "directories": [
+        "",
+        "p"
+      ],
+      "expected": {
+        "byName": {
+          "x": "p"
+        },
+        "entriesByDir": {
+          "p": {
+            "exports": [
+              [
+                ".",
+                [
+                  "p/in.ts",
+                  "p/two.ts",
+                  "p/nine.ts",
+                  "p/z.ts",
+                  "p/types.ts"
+                ]
+              ]
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "x",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [
+              "p/in.ts",
+              "p/two.ts",
+              "p/nine.ts",
+              "p/z.ts",
+              "p/types.ts"
+            ],
+            "browser": [],
+            "directory": "p",
+            "packageDir": "p"
+          },
+          "resolved": "p"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "p/source.ts",
+          "packageDir": "p",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "package-target-bounds",
+      "files": {
+        "package.json": "{\"workspaces\":[\"p\"]}",
+        "p/package.json": "{\"name\":\"x\",\"exports\":[\"../bad.ts\",\"./..hidden.ts\",\"$ROOT/p/absolute.ts\",\" /outside.ts \",\"./nested/../good.ts\",\"\"],\"main\":\"./\"}"
+      },
+      "directories": [
+        "",
+        "p"
+      ],
+      "expected": {
+        "byName": {
+          "x": "p"
+        },
+        "entriesByDir": {
+          "p": {
+            "exports": [
+              [
+                ".",
+                [
+                  "p/absolute.ts",
+                  "p/good.ts"
+                ]
+              ]
+            ],
+            "main": [
+              "p"
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "x",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [
+              "p/absolute.ts",
+              "p/good.ts",
+              "p"
+            ],
+            "browser": [],
+            "directory": "p",
+            "packageDir": "p"
+          },
+          "resolved": "p"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "p/source.ts",
+          "packageDir": "p",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "root-path-dependencies",
+      "files": {
+        "package.json": "{\"dependencies\":{\"alias\":\"file:common\",\"tar\":\"file:archive.tgz\",\"empty\":\"link:empty\",\"outside\":\"file:../outside\",\"self\":\"file:.\",\"installed\":\"file:node_modules/lib\"},\"devDependencies\":{\"alias\":\"portal:other\"},\"peerDependencies\":{\"peer\":\"file:common\"}}",
+        "common/package.json": "{\"name\":\"actual\",\"main\":\"src/main.ts\"}",
+        "other/package.json": "{\"name\":\"other\"}",
+        "archive.tgz": "not a directory",
+        "node_modules/lib/package.json": "{\"name\":\"lib\"}"
+      },
+      "directories": [
+        "",
+        "common",
+        "empty",
+        "node_modules",
+        "node_modules/lib",
+        "other"
+      ],
+      "expected": {
+        "byName": {
+          "alias": "other",
+          "empty": "empty",
+          "peer": "common"
+        },
+        "entriesByDir": {
+          "common": {
+            "main": [
+              "common/src/main.ts"
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "alias",
+          "fromFile": "src/main.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "other",
+            "packageDir": "other"
+          },
+          "resolved": "other"
+        },
+        {
+          "importPath": "empty",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "empty",
+            "packageDir": "empty"
+          },
+          "resolved": "empty"
+        },
+        {
+          "importPath": "peer",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [
+              "common/src/main.ts"
+            ],
+            "browser": [],
+            "directory": "common",
+            "packageDir": "common"
+          },
+          "resolved": "common"
+        },
+        {
+          "importPath": "actual",
+          "fromFile": "main.ts",
+          "targets": null,
+          "resolved": null
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "empty/source.ts",
+          "packageDir": "empty",
+          "leaves": []
+        },
+        {
+          "file": "common/source.ts",
+          "packageDir": "common",
+          "leaves": []
+        },
+        {
+          "file": "other/source.ts",
+          "packageDir": "other",
+          "leaves": []
+        },
+        {
+          "file": "node_modules/lib/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "node_modules/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "scoped-dependencies",
+      "files": {
+        "package.json": "{\"dependencies\":{\"stub\":\"file:global\"}}",
+        "fixture/package.json": "{\"dependencies\":{\"stub\":\"file:local\",\"@scope/ui\":\"link:local\"}}",
+        "fixture/nested/package.json": "{\"dependencies\":{\"stub\":\"portal:deep\",\"@scope/ui/core\":\"file:deep\"}}",
+        "global/package.json": "{\"main\":\"global.ts\"}",
+        "fixture/local/package.json": "{\"exports\":\"./local.ts\"}",
+        "fixture/nested/deep/package.json": "{\"main\":\"deep.ts\"}"
+      },
+      "directories": [
+        "",
+        "fixture",
+        "fixture/local",
+        "fixture/nested",
+        "fixture/nested/deep",
+        "global"
+      ],
+      "expected": {
+        "byName": {
+          "stub": "global"
+        },
+        "scopedByName": {
+          "fixture": {
+            "stub": "fixture/local",
+            "@scope/ui": "fixture/local"
+          },
+          "fixture/nested": {
+            "stub": "fixture/nested/deep",
+            "@scope/ui/core": "fixture/nested/deep"
+          }
+        },
+        "entriesByDir": {
+          "global": {
+            "main": [
+              "global/global.ts"
+            ]
+          },
+          "fixture/local": {
+            "exports": [
+              [
+                ".",
+                [
+                  "fixture/local/local.ts"
+                ]
+              ]
+            ]
+          },
+          "fixture/nested/deep": {
+            "main": [
+              "fixture/nested/deep/deep.ts"
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "stub",
+          "fromFile": "src/main.ts",
+          "targets": {
+            "declared": [
+              "global/global.ts"
+            ],
+            "browser": [],
+            "directory": "global",
+            "packageDir": "global"
+          },
+          "resolved": "global"
+        },
+        {
+          "importPath": "stub",
+          "fromFile": "fixture/file.ts",
+          "targets": {
+            "declared": [
+              "fixture/local/local.ts"
+            ],
+            "browser": [],
+            "directory": "fixture/local",
+            "packageDir": "fixture/local"
+          },
+          "resolved": "fixture/local"
+        },
+        {
+          "importPath": "stub",
+          "fromFile": "fixture/nested/file.ts",
+          "targets": {
+            "declared": [
+              "fixture/nested/deep/deep.ts"
+            ],
+            "browser": [],
+            "directory": "fixture/nested/deep",
+            "packageDir": "fixture/nested/deep"
+          },
+          "resolved": "fixture/nested/deep"
+        },
+        {
+          "importPath": "@scope/ui/core/x",
+          "fromFile": "fixture/nested/file.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "fixture/nested/deep/x",
+            "packageDir": "fixture/nested/deep"
+          },
+          "resolved": "fixture/nested/deep/x"
+        },
+        {
+          "importPath": "@scope/ui",
+          "fromFile": "fixture/nested/file.ts",
+          "targets": {
+            "declared": [
+              "fixture/local/local.ts"
+            ],
+            "browser": [],
+            "directory": "fixture/local",
+            "packageDir": "fixture/local"
+          },
+          "resolved": "fixture/local"
+        },
+        {
+          "importPath": "stub",
+          "targets": {
+            "declared": [
+              "global/global.ts"
+            ],
+            "browser": [],
+            "directory": "global",
+            "packageDir": "global"
+          },
+          "resolved": "global"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "fixture/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "fixture/nested/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "global/source.ts",
+          "packageDir": "global",
+          "leaves": []
+        },
+        {
+          "file": "fixture/local/source.ts",
+          "packageDir": "fixture/local",
+          "leaves": []
+        },
+        {
+          "file": "fixture/nested/deep/source.ts",
+          "packageDir": "fixture/nested/deep",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "nested-workspace-roots",
+      "files": {
+        "package.json": "{\"workspaces\":[\"packages/*\"]}",
+        "packages/react/package.json": "{\"name\":\"react\"}",
+        "compiler/package.json": "{\"workspaces\":[\"packages/*\"]}",
+        "compiler/packages/react/package.json": "{\"name\":\"react\"}",
+        "compiler/pnpm-workspace.yaml": "packages:\n - packages/*\n",
+        "compiler/app/package.json": "{\"dependencies\":{\"local\":\"file:../../packages/react\"}}"
+      },
+      "directories": [
+        "",
+        "compiler",
+        "compiler/app",
+        "compiler/packages",
+        "compiler/packages/react",
+        "packages",
+        "packages/react"
+      ],
+      "expected": {
+        "byName": {
+          "react": "packages/react"
+        },
+        "scopedByName": {
+          "compiler/app": {
+            "local": "packages/react"
+          }
+        },
+        "nestedRoots": [
+          "compiler"
+        ]
+      },
+      "attempts": [
+        {
+          "importPath": "react",
+          "fromFile": "src/app.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "packages/react",
+            "packageDir": "packages/react"
+          },
+          "resolved": "packages/react"
+        },
+        {
+          "importPath": "react",
+          "fromFile": "compiler/src/app.ts",
+          "targets": null,
+          "resolved": null
+        },
+        {
+          "importPath": "local",
+          "fromFile": "compiler/app/main.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "packages/react",
+            "packageDir": "packages/react"
+          },
+          "resolved": "packages/react"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/react/source.ts",
+          "packageDir": "packages/react",
+          "leaves": []
+        },
+        {
+          "file": "packages/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "compiler/source.ts",
+          "packageDir": null,
+          "leaves": [
+            "",
+            "packages/react",
+            "packages"
+          ]
+        },
+        {
+          "file": "compiler/packages/react/source.ts",
+          "packageDir": null,
+          "leaves": [
+            "",
+            "packages/react",
+            "packages"
+          ]
+        },
+        {
+          "file": "compiler/packages/source.ts",
+          "packageDir": null,
+          "leaves": [
+            "",
+            "packages/react",
+            "packages"
+          ]
+        },
+        {
+          "file": "compiler/app/source.ts",
+          "packageDir": null,
+          "leaves": [
+            "",
+            "packages/react",
+            "packages"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "member-is-not-nested",
+      "files": {
+        "package.json": "{\"workspaces\":[\"packages/*\"]}",
+        "packages/ui/package.json": "{\"name\":\"ui\",\"workspaces\":[\"nested/*\"]}",
+        "packages/core/package.json": "{\"name\":\"core\"}"
+      },
+      "directories": [
+        "",
+        "packages",
+        "packages/core",
+        "packages/ui"
+      ],
+      "expected": {
+        "byName": {
+          "core": "packages/core",
+          "ui": "packages/ui"
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "core",
+          "fromFile": "packages/ui/app.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "packages/core",
+            "packageDir": "packages/core"
+          },
+          "resolved": "packages/core"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/ui/source.ts",
+          "packageDir": "packages/ui",
+          "leaves": []
+        },
+        {
+          "file": "packages/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "packages/core/source.ts",
+          "packageDir": "packages/core",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "invalid-nested-json-pnpm",
+      "files": {
+        "root/package.json": "not-json",
+        "root/pnpm-workspace.yaml": "packages:\n - lib/*\n"
+      },
+      "directories": [
+        "",
+        "root"
+      ],
+      "expected": {
+        "byName": {},
+        "nestedRoots": [
+          "root"
+        ]
+      },
+      "attempts": [
+        {
+          "importPath": "anything",
+          "fromFile": "root/app.ts",
+          "targets": null,
+          "resolved": null
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "root/source.ts",
+          "packageDir": null,
+          "leaves": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ohpm-comments",
+      "files": {
+        "entry/oh-package.json5": "{ // local modules\n \"dependencies\": {\"data\":\"file:../core/data\", \"registry\":\"^2.0\", \"dev\":\" file:../dev\",},}",
+        "core/data/oh-package.json5": "{/* entry */ \"main\": \"Index.ets\",}",
+        "core/data/package.json": "{\"exports\":\"./other.ts\"}"
+      },
+      "directories": [
+        "",
+        "core",
+        "core/data",
+        "entry"
+      ],
+      "expected": {
+        "byName": {
+          "data": "core/data"
+        },
+        "entryByName": {
+          "data": "core/data/Index.ets"
+        },
+        "entriesByDir": {
+          "core/data": {
+            "exports": [
+              [
+                ".",
+                [
+                  "core/data/other.ts"
+                ]
+              ]
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "data",
+          "fromFile": "entry/main.ets",
+          "targets": {
+            "declared": [
+              "core/data/Index.ets"
+            ],
+            "browser": [],
+            "directory": "core/data",
+            "packageDir": "core/data"
+          },
+          "resolved": "core/data/Index.ets"
+        },
+        {
+          "importPath": "data/detail",
+          "fromFile": "entry/main.ets",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "core/data/detail",
+            "packageDir": "core/data"
+          },
+          "resolved": "core/data/detail"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "entry/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "core/data/source.ts",
+          "packageDir": "core/data",
+          "leaves": []
+        },
+        {
+          "file": "core/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "ohpm-ambiguous",
+      "files": {
+        "a/oh-package.json5": "{\"dependencies\":{\"common\":\"file:shared\",\"okay\":\"file:../same\"}}",
+        "b/oh-package.json5": "{\"dependencies\":{\"common\":\"file:shared\",\"okay\":\"file:../same\"}}",
+        "c/oh-package.json5": "{\"dependencies\":{\"common\":\"file:../a/shared\"}}"
+      },
+      "directories": [
+        "",
+        "a",
+        "b",
+        "c"
+      ],
+      "expected": {
+        "byName": {
+          "okay": "same"
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "common",
+          "fromFile": "main.ets",
+          "targets": null,
+          "resolved": null
+        },
+        {
+          "importPath": "okay",
+          "fromFile": "main.ets",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "same",
+            "packageDir": "same"
+          },
+          "resolved": "same"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "a/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "b/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "c/source.ts",
+          "packageDir": null,
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "ohpm-root-and-escaping-main",
+      "files": {
+        "a/oh-package.json5": "{\"dependencies\":{\"root\":\"file:..\",\"peer\":\"file:../b\",\"outside\":\"file:../../outside\"}}",
+        "oh-package.json5": "{\"main\":\"Index.ets\"}",
+        "b/oh-package.json5": "{\"main\":\"../Elsewhere.ets\"}"
+      },
+      "directories": [
+        "",
+        "a",
+        "b"
+      ],
+      "expected": {
+        "byName": {
+          "root": "",
+          "peer": "b"
+        },
+        "entryByName": {
+          "root": "Index.ets",
+          "peer": "Elsewhere.ets"
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "root",
+          "fromFile": "a/main.ets",
+          "targets": {
+            "declared": [
+              "Index.ets"
+            ],
+            "browser": [],
+            "directory": "",
+            "packageDir": ""
+          },
+          "resolved": "Index.ets"
+        },
+        {
+          "importPath": "peer",
+          "fromFile": "a/main.ets",
+          "targets": {
+            "declared": [
+              "Elsewhere.ets"
+            ],
+            "browser": [],
+            "directory": "b",
+            "packageDir": "b"
+          },
+          "resolved": "Elsewhere.ets"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "a/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "b/source.ts",
+          "packageDir": "b",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "ohpm-malformed-recovery",
+      "files": {
+        "oh-package.json5": "{\"dependencies\":{\"a\":\"file:a\",broken:\"file:bad\",\"b\":\"file:b\"},\"main\":\"Index.ets\",",
+        "a/oh-package.json5": "{\"main\":\"unterminated.ets",
+        "b/package.json": "{\"main\":\"index.ts\"}"
+      },
+      "directories": [
+        "",
+        "a",
+        "b"
+      ],
+      "expected": {
+        "byName": {
+          "a": "a",
+          "b": "b"
+        },
+        "entryByName": {
+          "a": "a/unterminated.ets"
+        },
+        "entriesByDir": {
+          "b": {
+            "main": [
+              "b/index.ts"
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "a",
+          "fromFile": "main.ets",
+          "targets": {
+            "declared": [
+              "a/unterminated.ets"
+            ],
+            "browser": [],
+            "directory": "a",
+            "packageDir": "a"
+          },
+          "resolved": "a/unterminated.ets"
+        },
+        {
+          "importPath": "b",
+          "fromFile": "main.ets",
+          "targets": {
+            "declared": [
+              "b/index.ts"
+            ],
+            "browser": [],
+            "directory": "b",
+            "packageDir": "b"
+          },
+          "resolved": "b"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "b/source.ts",
+          "packageDir": "b",
+          "leaves": []
+        },
+        {
+          "file": "a/source.ts",
+          "packageDir": "a",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "workspace-wins-over-deps",
+      "files": {
+        "package.json": "{\"workspaces\":[\"pkg\"],\"dependencies\":{\"same\":\"file:npm\"}}",
+        "pkg/package.json": "{\"name\":\"same\"}",
+        "oh-package.json5": "{\"dependencies\":{\"same\":\"file:ohpm\"}}"
+      },
+      "directories": [
+        "",
+        "npm",
+        "ohpm",
+        "pkg"
+      ],
+      "expected": {
+        "byName": {
+          "same": "pkg"
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "same",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "pkg",
+            "packageDir": "pkg"
+          },
+          "resolved": "pkg"
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "npm/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "ohpm/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "pkg/source.ts",
+          "packageDir": "pkg",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "globstar-depth",
+      "files": {
+        "package.json": "{\"workspaces\":[\"p/**\"]}",
+        "p/x/package.json": "{\"name\":\"depth1\"}",
+        "p/x/x/package.json": "{\"name\":\"depth2\"}",
+        "p/x/x/x/package.json": "{\"name\":\"depth3\"}",
+        "p/x/x/x/x/package.json": "{\"name\":\"depth4\"}",
+        "p/x/x/x/x/x/package.json": "{\"name\":\"depth5\"}",
+        "p/x/x/x/x/x/x/package.json": "{\"name\":\"depth6\"}",
+        "p/x/x/x/x/x/x/x/package.json": "{\"name\":\"depth7\"}",
+        "p/x/x/x/x/x/x/x/x/package.json": "{\"name\":\"depth8\"}",
+        "p/x/x/x/x/x/x/x/x/x/package.json": "{\"name\":\"depth9\"}",
+        "p/x/x/x/x/x/x/x/x/x/x/package.json": "{\"name\":\"depth10\"}",
+        "p/x/x/x/x/x/x/x/x/x/x/x/package.json": "{\"name\":\"depth11\"}",
+        "p/x/x/x/x/x/x/x/x/x/x/x/x/package.json": "{\"name\":\"depth12\"}"
+      },
+      "directories": [
+        "",
+        "p",
+        "p/x",
+        "p/x/x",
+        "p/x/x/x",
+        "p/x/x/x/x",
+        "p/x/x/x/x/x",
+        "p/x/x/x/x/x/x",
+        "p/x/x/x/x/x/x/x",
+        "p/x/x/x/x/x/x/x/x",
+        "p/x/x/x/x/x/x/x/x/x",
+        "p/x/x/x/x/x/x/x/x/x/x",
+        "p/x/x/x/x/x/x/x/x/x/x/x",
+        "p/x/x/x/x/x/x/x/x/x/x/x/x"
+      ],
+      "expected": {
+        "byName": {
+          "depth1": "p/x",
+          "depth2": "p/x/x",
+          "depth3": "p/x/x/x",
+          "depth4": "p/x/x/x/x",
+          "depth5": "p/x/x/x/x/x",
+          "depth6": "p/x/x/x/x/x/x",
+          "depth7": "p/x/x/x/x/x/x/x",
+          "depth8": "p/x/x/x/x/x/x/x/x",
+          "depth9": "p/x/x/x/x/x/x/x/x/x"
+        }
+      },
+      "attempts": [],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "p/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        },
+        {
+          "file": "p/x/x/x/x/x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "p/x",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "scan-depth",
+      "files": {
+        "x/oh-package.json5": "{\"dependencies\":{\"depth1\":\"file:.\"}}",
+        "x/x/oh-package.json5": "{\"dependencies\":{\"depth2\":\"file:.\"}}",
+        "x/x/x/oh-package.json5": "{\"dependencies\":{\"depth3\":\"file:.\"}}",
+        "x/x/x/x/oh-package.json5": "{\"dependencies\":{\"depth4\":\"file:.\"}}",
+        "x/x/x/x/x/oh-package.json5": "{\"dependencies\":{\"depth5\":\"file:.\"}}",
+        "x/x/x/x/x/x/oh-package.json5": "{\"dependencies\":{\"depth6\":\"file:.\"}}",
+        "x/x/x/x/x/x/x/oh-package.json5": "{\"dependencies\":{\"depth7\":\"file:.\"}}",
+        "x/x/x/x/x/x/x/x/oh-package.json5": "{\"dependencies\":{\"depth8\":\"file:.\"}}",
+        "x/x/x/x/x/x/x/x/x/oh-package.json5": "{\"dependencies\":{\"depth9\":\"file:.\"}}"
+      },
+      "directories": [
+        "",
+        "x",
+        "x/x",
+        "x/x/x",
+        "x/x/x/x",
+        "x/x/x/x/x",
+        "x/x/x/x/x/x",
+        "x/x/x/x/x/x/x",
+        "x/x/x/x/x/x/x/x",
+        "x/x/x/x/x/x/x/x/x"
+      ],
+      "expected": {
+        "byName": {
+          "depth1": "x",
+          "depth2": "x/x",
+          "depth3": "x/x/x",
+          "depth4": "x/x/x/x",
+          "depth5": "x/x/x/x/x",
+          "depth6": "x/x/x/x/x/x"
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "depth6",
+          "fromFile": "x/main.ets",
+          "targets": {
+            "declared": [],
+            "browser": [],
+            "directory": "x/x/x/x/x/x",
+            "packageDir": "x/x/x/x/x/x"
+          },
+          "resolved": "x/x/x/x/x/x"
+        },
+        {
+          "importPath": "depth7",
+          "fromFile": "x/main.ets",
+          "targets": null,
+          "resolved": null
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/x/x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        },
+        {
+          "file": "x/x/x/x/x/x/x/x/x/source.ts",
+          "packageDir": "x",
+          "leaves": []
+        }
+      ]
+    },
+    {
+      "name": "glob-root-member",
+      "files": {
+        "package.json": "{\"name\":\"root\",\"workspaces\":[\"**\"],\"main\":\"src/root.ts\"}",
+        "child/package.json": "{\"name\":\"child\"}"
+      },
+      "directories": [
+        "",
+        "child"
+      ],
+      "expected": {
+        "byName": {
+          "root": ".",
+          "child": "child"
+        },
+        "entriesByDir": {
+          ".": {
+            "main": [
+              "src/root.ts"
+            ]
+          }
+        }
+      },
+      "attempts": [
+        {
+          "importPath": "root",
+          "fromFile": "main.ts",
+          "targets": {
+            "declared": [
+              "src/root.ts"
+            ],
+            "browser": [],
+            "directory": ".",
+            "packageDir": "."
+          },
+          "resolved": "."
+        }
+      ],
+      "membership": [
+        {
+          "file": "source.ts",
+          "packageDir": null,
+          "leaves": []
+        },
+        {
+          "file": "child/source.ts",
+          "packageDir": "child",
+          "leaves": []
+        }
+      ]
+    }
+  ],
+  "jsonCases": [
+    {
+      "source": "",
+      "expected": null
+    },
+    {
+      "source": "null",
+      "expected": null
+    },
+    {
+      "source": "{}",
+      "expected": {}
+    },
+    {
+      "source": "{\"a\":1,}",
+      "expected": {
+        "a": 1
+      }
+    },
+    {
+      "source": "{\"a\":1 \"b\":2}",
+      "expected": {
+        "a": 1,
+        "b": 2
+      }
+    },
+    {
+      "source": "{\"dependencies\":{\"x\":\"file:x\"},",
+      "expected": {
+        "dependencies": {
+          "x": "file:x"
+        }
+      }
+    },
+    {
+      "source": "{\"bad\":nope,\"dependencies\":{\"x\":\"file:x\"}}",
+      "expected": {
+        "dependencies": {
+          "x": "file:x"
+        }
+      }
+    },
+    {
+      "source": "{\"dependencies\":{unquoted:\"file:x\",\"good\":\"file:y\"}}",
+      "expected": {
+        "dependencies": {
+          "good": "file:y"
+        }
+      }
+    },
+    {
+      "source": "// a\n{\"main\":\"Index.ets\"}",
+      "expected": {
+        "main": "Index.ets"
+      }
+    },
+    {
+      "source": "{\"main\":\"bad\\qgood.ets\"}",
+      "expected": {
+        "main": "badgood.ets"
+      }
+    },
+    {
+      "source": "{\"main\":\"bad\\u00xx.ets\"}",
+      "expected": {
+        "main": "badxx.ets"
+      }
+    },
+    {
+      "source": "{\"main\":\"unfinished",
+      "expected": {
+        "main": "unfinished"
+      }
+    },
+    {
+      "source": "{\"main\":\"line\nbreak\"}",
+      "expected": {
+        "main": "line"
+      }
+    },
+    {
+      "source": "[1,,2,]",
+      "expected": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "{\"a\":1e,\"b\":02,\"c\":3.}",
+      "expected": {
+        "a": 1,
+        "b": 0,
+        "c": 3
+      }
+    },
+    {
+      "source": "{\"x\":truefalse,\"y\":true}",
+      "expected": {
+        "y": true
+      }
+    },
+    {
+      "source": "{\"a\":{\"b\":1]}}",
+      "expected": {
+        "a": {
+          "b": 1
+        }
+      }
+    },
+    {
+      "source": "{\"main\":\"a\",\"main\":\"b\"}",
+      "expected": {
+        "main": "b"
+      }
+    },
+    {
+      "source": "[{} junk {\"a\":2}]",
+      "expected": [
+        {},
+        {
+          "a": 2
+        }
+      ]
+    }
+  ]
+}

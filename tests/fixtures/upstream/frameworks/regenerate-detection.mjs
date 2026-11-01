@@ -1,0 +1,51 @@
+// Development-only complete framework registry detection capture.
+import {createRequire} from 'node:module';
+import {execFileSync} from 'node:child_process';
+import {writeFileSync,mkdirSync,mkdtempSync,rmSync} from 'node:fs';
+import {dirname,join,resolve} from 'node:path';
+import {tmpdir} from 'node:os';
+import {fileURLToPath} from 'node:url';
+const root=resolve(process.argv[2]),revision='6aa358ccbae30fbf27318f79ee183212f726f9ba';
+if(execFileSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'}).trim()!==revision)throw Error('Wrong reference revision');
+const require=createRequire(join(root,'package.json'));
+const Project=Object.values(require('./dist/index.js')).find(value=>typeof value==='function'&&typeof value.init==='function'&&typeof value.open==='function');
+const {getAllFrameworkResolvers,detectFrameworks}=require('./dist/resolution/frameworks/index.js');
+const cases=[];
+const add=(id,files)=>cases.push({id,files});
+for(const dependency of ['express','@nestjs/core','react','react-router-dom','@tanstack/react-router','next','svelte','@sveltejs/kit','vue','nuxt','vue-router','@angular/core','astro','react-native','expo-modules-core','expo-router'])add('dependency-'+dependency,{'package.json':JSON.stringify({dependencies:{[dependency]:'*'}}),'probe.ts':'export function probe() {}\n'});
+for(const dependency of ['react-router-native','@tanstack/solid-router','nuxt3','@angular/router'])add('workspace-'+dependency,{'packages/app/package.json':JSON.stringify({dependencies:{[dependency]:'*'}}),'packages/app/probe.ts':'export function probe() {}\n'});
+add('laravel',{'artisan':'<?php\n','app/Http/Kernel.php':'<?php class Kernel {}\n'});
+add('drupal',{'composer.json':'{"require":{"drupal/core":"*"}}','src/Worker.php':'<?php class Worker {}\n'});
+add('codeigniter',{'application/config/routes.php':"<?php $route['default_controller']='welcome';\n"});
+add('django',{'manage.py':'','app/views.py':'def view(): return 1\n'});
+add('flask',{'requirements.txt':'flask\n','app.py':'from flask import Flask\napp=Flask(__name__)\n'});
+add('fastapi',{'requirements.txt':'fastapi\n','main.py':'from fastapi import FastAPI\napp=FastAPI()\n'});
+add('rails',{'Gemfile':"gem 'rails'\n",'app/controllers/application_controller.rb':'class ApplicationController < ActionController::Base\nend\n'});
+add('spring',{'pom.xml':'<project><dependency>spring-boot</dependency></project>','src/Worker.java':'class Worker {}\n'});
+add('play',{'build.sbt':'enablePlugins(PlayScala)\n','conf/routes':'GET / controllers.Home.index\n','controllers/Home.scala':'object Home { def index = "hello" }\n'});
+add('go',{'go.mod':'module example.local/app\n','main.go':'package main\nfunc main() {}\n'});
+add('goframe',{'go.mod':'module example.local/app\nrequire github.com/gogf/gf/v2 v2.0.0\n','main.go':'package main\nfunc main() {}\n'});
+add('rust',{'Cargo.toml':'[package]\nname="fixture"\nversion="0.1.0"\n','src/lib.rs':'pub fn work() {}\n'});
+add('aspnet',{'App.csproj':'<Project Sdk="Microsoft.NET.Sdk.Web"></Project>','Controller.cs':'class Controller {}\n'});
+add('aspnet-program',{'Program.cs':'class Program { static void Main() { WebApplication.CreateBuilder(); } }\n'});
+add('swiftui',{'View.swift':'import SwiftUI\nstruct Screen: View { var body: some View { Text("hello") } }\n'});
+add('uikit',{'Screen.swift':'import UIKit\nclass Screen: UIViewController {}\n'});
+add('vapor',{'Package.swift':'import PackageDescription\nlet package = Package(name: "App", dependencies: [.package(url: "https://github.com/vapor/vapor.git", from: "4.0.0")])\n','routes.swift':'import Vapor\nfunc routes(_ app: Application) {}\n'});
+add('swift-objc',{'Screen.swift':'class Screen {}\n','Bridge.m':'@interface Bridge\n@end\n'});
+add('cics',{'main.cbl':'       IDENTIFICATION DIVISION.\n       PROGRAM-ID. MAIN.\n       PROCEDURE DIVISION.\n           EXEC CICS RETURN END-EXEC.\n           STOP RUN.\n'});
+add('terraform',{'main.tf':'resource "example" "main" {}\n'});
+add('source-vue',{'Screen.vue':'<template><div>Hello</div></template>\n'});
+add('source-svelte',{'Screen.svelte':'<h1>Hello</h1>\n'});
+add('source-astro',{'Screen.astro':'<h1>Hello</h1>\n'});
+add('empty',{});
+add('malformed-package',{'package.json':'{"dependencies":','probe.ts':'export function probe() {}\n'});
+add('ordinary-python',{'worker.py':'def work(): return 1\n'});
+const covered=new Set();
+for(const project of cases){const directory=mkdtempSync(join(tmpdir(),'prometeu-detection-'));let indexed;try{
+ for(const[path,source]of Object.entries(project.files)){mkdirSync(dirname(join(directory,path)),{recursive:true});writeFileSync(join(directory,path),source);}
+ indexed=await Project.init(directory,{silent:true,config:{exclude:[]}});const result=await indexed.indexAll();if(!result.success)throw Error('Index failed '+project.id);
+ project.expected=detectFrameworks(indexed.resolver.context).map(f=>f.name);for(const name of project.expected)covered.add(name);
+ console.log(project.id,project.expected.join(','));
+}finally{indexed?.close();rmSync(directory,{recursive:true,force:true});}}
+const registered=getAllFrameworkResolvers().map(f=>f.name);const missing=registered.filter(name=>!covered.has(name));if(missing.length)throw Error('Uncovered framework detectors: '+missing.join(','));
+writeFileSync(join(dirname(fileURLToPath(import.meta.url)),'detection.json'),JSON.stringify({revision,registered,cases},null,2)+'\n');

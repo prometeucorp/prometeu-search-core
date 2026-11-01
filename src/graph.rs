@@ -9,11 +9,93 @@ use std::cell::Cell;
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet, VecDeque};
 use std::path::{Component, Path};
 
-const MAX_METADATA_BYTES: usize = 64 * 1024 * 1024;
-const MAX_NODES: usize = 100_000;
-const MAX_EDGES: usize = 200_000;
+#[path = "analysis.rs"]
+mod analysis;
+#[path = "context_adapter.rs"]
+mod context_adapter;
+pub use context_adapter::ContextResult;
+#[path = "hierarchy_adapter.rs"]
+mod hierarchy_adapter;
+pub use hierarchy_adapter::HierarchyResult;
+#[path = "graph_query_adapter.rs"]
+mod graph_query_adapter;
+#[path = "resolution.rs"]
+mod resolution;
+#[path = "viewer.rs"]
+pub mod viewer;
+pub use analysis::{
+    CyclesResult, DeadCodeEntry, DeadCodeExclusions, DeadCodeOptions, DeadCodeReport,
+    DeadCodeResult, MetricsResult, NodeMetrics,
+};
+pub use graph_query_adapter::{GraphOperation, GraphQueryOptions, GraphQueryResult};
+pub(crate) use resolution::{
+    ProjectModules, PythonModules, is_project_manifest, js_import_mappings, js_imports,
+    type_parameters, workspace_snapshot,
+};
+
 const MAX_CANDIDATES: usize = 50;
-const MAX_VISITED: usize = 1_000;
+
+#[cfg(test)]
+mod snapshot_limits {
+    use super::*;
+
+    #[test]
+    fn complete_committed_graph_survives_previous_snapshot_ceilings() -> Result<()> {
+        let temporary = tempfile::tempdir()?;
+        let root = temporary.path().join("project");
+        std::fs::create_dir(&root)?;
+        let mut engine = Engine::open(&root, Some(&temporary.path().join("index.sqlite")))?;
+        let source = "key: value\n";
+        let mut parsed = crate::parser::parse(Path::new("bulk.yaml"), source)?;
+        parsed.extraction = None;
+        let qualified = "q".repeat(640);
+        for index in 0..100_001 {
+            parsed.symbols.push(Symbol {
+                name: format!("marker_{index}"),
+                kind: "variable".into(),
+                start_line: 1,
+                end_line: 1,
+                start_byte: 0,
+                end_byte: 0,
+                qualified_name: qualified.clone(),
+                container: None,
+                exports: Vec::new(),
+            });
+        }
+        let transaction = engine.connection.transaction()?;
+        crate::index::store_file(&transaction, "bulk.yaml", source, "fixture", &parsed)?;
+        transaction.commit()?;
+        drop(parsed);
+        let metadata_bytes: i64 = engine.connection.query_row(
+            "SELECT length(analysis) FROM files WHERE path='bulk.yaml'",
+            [],
+            |row| row.get(0),
+        )?;
+        assert!(metadata_bytes > 64 * 1024 * 1024);
+        let mut graph = Graph::load(&engine.connection, 0)?;
+        assert_eq!(graph.nodes.len(), 100_002);
+        let last = graph.names["marker_100000"][0];
+        assert_eq!(graph.nodes[last].symbol.name, "marker_100000");
+        assert!(!graph.truncated);
+        for column in 0..200_001 {
+            graph.push_edge(Edge {
+                column: Some(column),
+                from: 0,
+                to: Some(last),
+                target: "marker_100000".into(),
+                line: 1,
+                kind: "calls".into(),
+                method: "syntax",
+                confidence: "high",
+                ambiguous: false,
+            });
+        }
+        assert_eq!(graph.outgoing[0].len(), 200_001);
+        assert_eq!(graph.incoming[last].len(), 200_001);
+        assert!(!graph.truncated);
+        Ok(())
+    }
+}
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(default, deny_unknown_fields)]
@@ -33,8 +115,8 @@ impl Default for GraphOptions {
             line: None,
             target: None,
             depth: 2,
-            limit: 10,
-            max_bytes: 12_000,
+            limit: 200,
+            max_bytes: usize::MAX,
         }
     }
 }
@@ -69,6 +151,8 @@ pub struct ContextFile {
 
 #[derive(Debug, Serialize)]
 pub struct GraphEdge {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub column: Option<u32>,
     pub from: i64,
     pub to: Option<i64>,
     pub target: String,
@@ -77,6 +161,10 @@ pub struct GraphEdge {
     pub resolution: &'static str,
     pub confidence: &'static str,
     pub ambiguous: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub metadata: Option<serde_json::Value>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub provenance: Option<String>,
 }
 
 #[derive(Debug, Serialize)]
@@ -95,16 +183,22 @@ pub struct GraphResult {
 
 struct File {
     analysis: ParsedFile,
+    source: String,
+    bindings: resolution::Bindings,
+    browser: bool,
+    script_imports: Vec<resolution::ScriptImport>,
     nodes: Vec<usize>,
     qualified: HashMap<String, Vec<usize>>,
     exports: HashMap<String, Vec<usize>>,
 }
 struct Node {
     id: i64,
+    ordinal: usize,
     path: String,
     symbol: Symbol,
 }
 struct Edge {
+    column: Option<u32>,
     from: usize,
     to: Option<usize>,
     target: String,
@@ -121,8 +215,27 @@ pub(crate) struct Graph {
     nodes: Vec<Node>,
     ids: HashMap<i64, usize>,
     names: HashMap<String, Vec<usize>>,
+    folded_names: HashMap<String, Vec<usize>>,
     members: HashMap<(usize, String), Vec<usize>>,
+    go_modules: resolution::GoModules,
+    workspaces: Option<resolution::WorkspacePackages>,
+    packages: resolution::PackageScopes,
+    aliases: resolution::Aliases,
+    python_modules: Option<PythonModules>,
+    cpp_imports: resolution::cpp_imports::CppImports,
+    viewer_project: std::cell::OnceCell<&'static str>,
+    manifests: BTreeMap<String, String>,
+    workspace_directories: Vec<String>,
+    auxiliary_sources: BTreeMap<String, String>,
+    frameworks: Vec<String>,
+    react_bindings: resolution::ReactBindings,
+    cics_transactions: HashMap<String, usize>,
+    infrastructure_work: Cell<usize>,
+    reference_spellings: HashMap<(usize, String, String, usize, usize), usize>,
+    framework_bindings: resolution::FrameworkBindings,
+    go_packages: HashMap<String, Vec<String>>,
     edges: Vec<Edge>,
+    canonical_edges: Vec<Option<prometeu_extract::Edge>>,
     outgoing: Vec<Vec<usize>>,
     incoming: Vec<Vec<usize>>,
     dependents: BTreeMap<String, Vec<String>>,
@@ -134,13 +247,10 @@ impl GraphOptions {
     pub fn validate(&self, query: &str) -> Result<()> {
         validate_limits(self.limit, self.max_bytes)?;
         ensure!(
-            !query.trim().is_empty() && query.len() <= 1024,
-            "query must contain 1 to 1024 bytes"
+            !query.trim().is_empty() && query.encode_utf16().count() <= 10_000,
+            "query must contain 1 to 10000 UTF-16 units"
         );
-        ensure!(
-            (1..=8).contains(&self.depth),
-            "depth must be between 1 and 8"
-        );
+        ensure!(self.depth > 0, "depth must be positive");
         ensure!(
             self.line
                 .is_none_or(|line| line > 0 && line <= i64::MAX as usize)
@@ -150,7 +260,7 @@ impl GraphOptions {
         if let Some(path) = &self.path {
             ensure!(
                 !path.is_empty()
-                    && path.len() <= 1024
+                    && path.encode_utf16().count() <= 4096
                     && Path::new(path)
                         .components()
                         .all(|part| matches!(part, Component::Normal(_) | Component::CurDir)),
@@ -159,8 +269,8 @@ impl GraphOptions {
         }
         if let Some(target) = &self.target {
             ensure!(
-                !target.trim().is_empty() && target.len() <= 1024,
-                "target must contain 1 to 1024 bytes"
+                !target.trim().is_empty() && target.encode_utf16().count() <= 10_000,
+                "target must contain 1 to 10000 UTF-16 units"
             );
         }
         Ok(())
@@ -185,39 +295,66 @@ fn with_graph<T>(
 
 impl Graph {
     fn load(connection: &Connection, generation: u64) -> Result<Self> {
+        let manifests = resolution::load_manifests(connection)?;
+        let root: String =
+            connection.query_row("SELECT value FROM metadata WHERE key='root'", [], |row| {
+                row.get(0)
+            })?;
         let mut graph = Self {
             generation,
             files: BTreeMap::new(),
             nodes: Vec::new(),
             ids: HashMap::new(),
             names: HashMap::new(),
+            folded_names: HashMap::new(),
             members: HashMap::new(),
+            go_modules: resolution::GoModules::load(connection)?,
+            workspaces: resolution::WorkspacePackages::load(connection, &manifests)?,
+            packages: resolution::PackageScopes::new(&manifests)?,
+            aliases: resolution::Aliases::new(&manifests, &root)?,
+            python_modules: None,
+            cpp_imports: Default::default(),
+            viewer_project: Default::default(),
+            manifests: BTreeMap::new(),
+            workspace_directories: resolution::cargo_workspace::load_directories(connection)?,
+            auxiliary_sources: crate::auxiliary_sources::load(connection)?,
+            frameworks: crate::frameworks::active(connection)?,
+            react_bindings: Default::default(),
+            cics_transactions: HashMap::new(),
+            infrastructure_work: Cell::new(0),
+            reference_spellings: HashMap::new(),
+            framework_bindings: resolution::FrameworkBindings::default(),
+            go_packages: HashMap::new(),
             edges: Vec::new(),
+            canonical_edges: Vec::new(),
             outgoing: Vec::new(),
             incoming: Vec::new(),
             dependents: BTreeMap::new(),
             truncated: false,
             resolution_truncated: Cell::new(false),
         };
-        // ponytail: metadata is cached per generation with fixed memory/work ceilings;
-        // use indexed persisted edges if rebuild cost becomes a measured bottleneck.
-        let mut bytes = 0;
+        // Cache the complete committed graph; query budgets apply after resolution.
         let mut statement = connection.prepare("SELECT path, analysis FROM files ORDER BY path")?;
         let mut rows = statement.query([])?;
         while let Some(row) = rows.next()? {
             let path: String = row.get(0)?;
             let metadata: String = row.get(1)?;
-            bytes += metadata.len();
-            if bytes > MAX_METADATA_BYTES {
-                graph.truncated = true;
-                break;
-            }
-            let analysis: ParsedFile =
+            let mut analysis: ParsedFile =
                 serde_json::from_str(&metadata).context("invalid cached syntax metadata")?;
-            if graph.nodes.len() + analysis.symbols.len() > MAX_NODES {
-                graph.truncated = true;
-                break;
-            }
+            let source: String = connection.query_row(
+                "SELECT code FROM symbols WHERE path=?1 AND kind='file' ORDER BY ordinal LIMIT 1",
+                [&path],
+                |row| row.get(0),
+            )?;
+            crate::parser::recover_owned_call_sites(
+                std::path::Path::new(&path),
+                &source,
+                &mut analysis,
+            )?;
+            let bindings = resolution::Bindings::read(&analysis.language, &source)?;
+            let script_imports = resolution::script_imports(&analysis.language, &source)?;
+            let browser = graph.workspaces.is_some()
+                && resolution::browser_source(&analysis.language, &source)?;
             let mut symbols = connection
                 .prepare("SELECT id, ordinal FROM symbols WHERE path=?1 ORDER BY ordinal")?;
             let pairs = symbols.query_map([&path], |row| {
@@ -239,6 +376,12 @@ impl Graph {
                     .entry(symbol.name.clone())
                     .or_default()
                     .push(index);
+                for name in [&symbol.name, &symbol.qualified_name] {
+                    let found = graph.folded_names.entry(name.to_lowercase()).or_default();
+                    if found.last() != Some(&index) {
+                        found.push(index);
+                    }
+                }
                 if symbol.qualified_name != symbol.name {
                     graph
                         .names
@@ -248,6 +391,7 @@ impl Graph {
                 }
                 graph.nodes.push(Node {
                     id,
+                    ordinal,
                     path: path.clone(),
                     symbol,
                 });
@@ -262,7 +406,10 @@ impl Graph {
             for &index in &nodes {
                 let symbol = &graph.nodes[index].symbol;
                 qualified
-                    .entry(symbol.qualified_name.clone())
+                    .entry(resolution::name_key(
+                        &analysis.language,
+                        &symbol.qualified_name,
+                    ))
                     .or_default()
                     .push(index);
                 for name in &symbol.exports {
@@ -276,10 +423,73 @@ impl Graph {
                         .push(index);
                 }
             }
+            if source.contains("export")
+                && matches!(
+                    analysis.language.as_str(),
+                    "typescript"
+                        | "tsx"
+                        | "javascript"
+                        | "jsx"
+                        | "arkts"
+                        | "vue"
+                        | "svelte"
+                        | "astro"
+                )
+            {
+                let aliases = crate::frameworks::frontend::react_exports::local(&source)?;
+                let mut local_names = HashMap::new();
+                let priority = |index: usize| {
+                    let node = &graph.nodes[index];
+                    let metadata = analysis
+                        .extraction
+                        .as_ref()
+                        .and_then(|extraction| extraction.nodes.get(node.ordinal));
+                    (
+                        metadata.is_none_or(|node| node.qualified_name != node.name),
+                        node.symbol.start_line,
+                        metadata.map(|node| node.id.as_str()),
+                    )
+                };
+                if !aliases.is_empty() {
+                    for &index in &nodes {
+                        local_names
+                            .entry(graph.nodes[index].symbol.name.as_str())
+                            .and_modify(|current| {
+                                if priority(index) < priority(*current) {
+                                    *current = index;
+                                }
+                            })
+                            .or_insert(index);
+                    }
+                }
+                for alias in aliases {
+                    if exports.contains_key(&alias.exported_name) {
+                        continue;
+                    }
+                    if let Some(&target) = local_names.get(alias.local_name.as_str()) {
+                        exports.insert(alias.exported_name, vec![target]);
+                    }
+                }
+            }
+            if analysis.language == "go" {
+                graph
+                    .go_packages
+                    .entry(
+                        path.rsplit_once('/')
+                            .map_or("", |(directory, _)| directory)
+                            .into(),
+                    )
+                    .or_default()
+                    .push(path.clone());
+            }
             graph.files.insert(
                 path,
                 File {
                     analysis,
+                    source,
+                    bindings,
+                    browser,
+                    script_imports,
                     nodes,
                     qualified,
                     exports,
@@ -288,8 +498,63 @@ impl Graph {
         }
         graph.outgoing.resize_with(graph.nodes.len(), Vec::new);
         graph.incoming.resize_with(graph.nodes.len(), Vec::new);
-        graph.build_edges();
-        graph.truncated |= graph.resolution_truncated.get();
+        graph.cpp_imports = resolution::cpp_imports::CppImports::new(graph.files.keys().cloned());
+        graph
+            .cpp_imports
+            .configure(&root, &manifests, &graph.workspace_directories);
+        graph.python_modules = Some(PythonModules::new(
+            graph.files.keys().cloned(),
+            &manifests,
+            &graph
+                .files
+                .values()
+                .flat_map(|file| {
+                    file.analysis
+                        .extraction
+                        .iter()
+                        .flat_map(|extraction| extraction.nodes.iter().cloned())
+                })
+                .collect::<Vec<_>>(),
+            graph
+                .files
+                .iter()
+                .filter(|(_, file)| file.analysis.language == "python")
+                .map(|(path, file)| (path.clone(), file.analysis.imports.clone()))
+                .collect(),
+        )?);
+        graph.manifests = manifests;
+        graph.initialize_import_bindings();
+        graph.initialize_reference_spellings()?;
+        graph.initialize_cics()?;
+        graph.initialize_react()?;
+        graph.build_edges()?;
+        graph.retain_canonical_edges();
+        graph.apply_navigation()?;
+        graph.apply_synthesis()?;
+        // File impact follows resolved cross-file relationships, including
+        // implicit package calls and synthesized runtime wiring.
+        for edge in &graph.edges {
+            if edge.kind == "contains" {
+                continue;
+            }
+            if let Some(to) = edge.to {
+                let from = &graph.nodes[edge.from].path;
+                let target = &graph.nodes[to].path;
+                if from != target {
+                    graph
+                        .dependents
+                        .entry(target.clone())
+                        .or_default()
+                        .push(from.clone());
+                }
+            }
+        }
+        for dependents in graph.dependents.values_mut() {
+            dependents.sort();
+            dependents.dedup();
+        }
+        graph.truncated |= graph.resolution_truncated.get()
+            || graph.files.values().any(|file| file.bindings.truncated());
         Ok(graph)
     }
 
@@ -305,10 +570,40 @@ impl Graph {
     }
 
     fn module_files(&self, from: &str, module: &str) -> Vec<String> {
-        let language = &self.files[from].analysis.language;
+        self.module_files_as(from, module, &self.files[from].analysis.language)
+    }
+
+    fn module_files_as(&self, from: &str, module: &str, language: &str) -> Vec<String> {
+        if matches!(language, "c" | "cpp") {
+            return self
+                .cpp_imports
+                .resolve_as(module, from, language)
+                .into_iter()
+                .collect();
+        }
+        if let Some(found) = self.esm_module(from, module, language) {
+            return found;
+        }
         let parent = from.rsplit_once('/').map_or("", |(parent, _)| parent);
+        if language == "go" {
+            let Some(directory) = self.go_modules.package(from, module) else {
+                return Vec::new();
+            };
+            return self
+                .go_packages
+                .get(&directory)
+                .cloned()
+                .unwrap_or_default();
+        }
         let mut stems = Vec::new();
-        if module.starts_with('.') {
+        if language == "python" {
+            return self
+                .python_modules
+                .as_ref()
+                .and_then(|modules| modules.resolve(module, from))
+                .into_iter()
+                .collect();
+        } else if module.starts_with('.') {
             if let Some(path) = normalize_path(&format!("{parent}/{module}")) {
                 stems.push(path);
             }
@@ -348,6 +643,24 @@ impl Graph {
             && let Some(path) = normalize_path(&format!("{parent}/{module}"))
         {
             stems.push(path);
+        } else if matches!(language, "java" | "kotlin" | "scala" | "csharp") {
+            let stem = module.replace('.', "/");
+            // A package's source root varies; only accept a complete path suffix.
+            for candidate in self.files.keys() {
+                let without_extension = candidate
+                    .rsplit_once('.')
+                    .map_or(candidate.as_str(), |(p, _)| p);
+                if without_extension == stem || without_extension.ends_with(&format!("/{stem}")) {
+                    stems.push(candidate.clone());
+                }
+            }
+        } else if matches!(language, "c" | "cpp" | "php" | "lua" | "luau" | "r") {
+            if let Some(path) = normalize_path(&format!("{parent}/{module}")) {
+                stems.push(path);
+            }
+            if let Some(path) = normalize_path(module) {
+                stems.push(path);
+            }
         }
         let mut found = BTreeSet::new();
         for stem in stems {
@@ -365,12 +678,15 @@ impl Graph {
                 ]);
             }
             for extension in [
-                "ts", "tsx", "js", "jsx", "mjs", "cjs", "mts", "cts", "rs", "rb",
+                "ts", "tsx", "js", "jsx", "mjs", "cjs", "mts", "cts", "rs", "rb", "py", "pyw",
+                "go", "java", "cs", "php", "swift", "kt", "kts", "scala", "sc", "dart", "c", "h",
+                "cpp", "hpp", "lua", "luau", "r", "R",
             ] {
                 candidates.push(format!("{stem}.{extension}"));
                 candidates.push(format!("{stem}/index.{extension}"));
             }
             candidates.push(format!("{stem}/mod.rs"));
+            candidates.push(format!("{stem}/__init__.py"));
             for candidate in candidates {
                 if self.files.contains_key(&candidate) {
                     found.insert(candidate);
@@ -396,6 +712,14 @@ impl Graph {
         visited.insert((path.to_owned(), name.to_owned()));
         let file = &self.files[path];
         let mut found = file.exports.get(name).cloned().unwrap_or_default();
+        if name == "default"
+            && found.is_empty()
+            && let Some(&component) = file.nodes.iter().find(|&&i| {
+                self.nodes[i].symbol.kind == "component" && !self.nodes[i].symbol.exports.is_empty()
+            })
+        {
+            found.push(component);
+        }
         for import in &file.analysis.imports {
             let star = import.local == "*" && import.imported == "*" && name != "default";
             if import.reexport && (star || (import.local == name && import.imported != "*")) {
@@ -515,7 +839,11 @@ impl Graph {
             } else {
                 format!("{current}::{name}")
             };
-            let found = file.qualified.get(&qualified).cloned().unwrap_or_default();
+            let found = file
+                .qualified
+                .get(&resolution::name_key(&file.analysis.language, &qualified))
+                .cloned()
+                .unwrap_or_default();
             if !found.is_empty() {
                 return (
                     found.into_iter().take(MAX_CANDIDATES).collect(),
@@ -571,12 +899,9 @@ impl Graph {
             return (required, "import_match");
         }
         let found = self
-            .names
-            .get(name)
-            .cloned()
-            .unwrap_or_default()
+            .named(path, name)
             .into_iter()
-            .filter(|&index| self.nodes[index].symbol.kind != "file")
+            .filter(|&index| !matches!(self.nodes[index].symbol.kind.as_str(), "file" | "import"))
             .take(MAX_CANDIDATES)
             .collect();
         (found, "name_match")
@@ -593,7 +918,10 @@ impl Graph {
         visited.insert(owner);
         let direct = self
             .members
-            .get(&(owner, name.to_owned()))
+            .get(&(
+                owner,
+                resolution::name_key(&self.files[&self.nodes[owner].path].analysis.language, name),
+            ))
             .cloned()
             .unwrap_or_default();
         if !direct.is_empty() {
@@ -623,11 +951,22 @@ impl Graph {
         if reference.shadowed {
             return (Vec::new(), "unresolved");
         }
+        if let Some(result) = self.resolve_evidence(path, caller, reference) {
+            return result;
+        }
         let node = &self.nodes[caller];
         let scope = reference
             .owner
             .as_deref()
             .unwrap_or(&node.symbol.qualified_name);
+        let bare_instance = reference.qualifier.as_deref() == Some("this")
+            && matches!(
+                self.files[path].analysis.language.as_str(),
+                "typescript" | "tsx" | "javascript" | "jsx"
+            )
+            && self
+                .canonical_reference(caller, reference)
+                .is_some_and(|raw| raw.reference_name == reference.target);
         if let Some(receiver) = &reference.receiver_type {
             let (owners, owner_method) = self.lookup(path, scope, receiver);
             let uncertain_owner = owner_method == "name_match" || owners.len() > 1;
@@ -642,6 +981,8 @@ impl Graph {
                 members,
                 if uncertain_owner {
                     "name_match"
+                } else if bare_instance {
+                    "scope_match"
                 } else {
                     "receiver_match"
                 },
@@ -672,7 +1013,12 @@ impl Graph {
                                 &mut HashSet::new(),
                             ));
                         }
-                        return (found, "receiver_match");
+                        let method = if bare_instance {
+                            "scope_match"
+                        } else {
+                            "receiver_match"
+                        };
+                        return (found, method);
                     }
                     container = name.rsplit_once("::").map(|(parent, _)| parent);
                 }
@@ -680,9 +1026,21 @@ impl Graph {
             }
             if let Some(import) = self.visible_import(path, scope, qualifier) {
                 if import.imported == "*" {
+                    let constructor = reference.kind == "instantiates"
+                        && matches!(
+                            self.files[path].analysis.language.as_str(),
+                            "typescript" | "tsx" | "javascript" | "jsx"
+                        )
+                        && self
+                            .canonical_reference(caller, reference)
+                            .is_some_and(|raw| raw.reference_name == reference.target);
                     return (
                         self.imported(path, import, &reference.target),
-                        "import_match",
+                        if constructor {
+                            "scope_match"
+                        } else {
+                            "import_match"
+                        },
                     );
                 }
                 let mut found = Vec::new();
@@ -764,10 +1122,7 @@ impl Graph {
             }
             // Unknown dynamic receivers retain only low-confidence name candidates.
             return (
-                self.names
-                    .get(&reference.target)
-                    .cloned()
-                    .unwrap_or_default()
+                self.named(path, &reference.target)
                     .into_iter()
                     .take(MAX_CANDIDATES)
                     .collect(),
@@ -778,10 +1133,6 @@ impl Graph {
     }
 
     fn push_edge(&mut self, edge: Edge) {
-        if self.edges.len() == MAX_EDGES {
-            self.truncated = true;
-            return;
-        }
         let index = self.edges.len();
         self.outgoing[edge.from].push(index);
         if let Some(to) = edge.to {
@@ -790,34 +1141,57 @@ impl Graph {
         self.edges.push(edge);
     }
 
-    fn build_edges(&mut self) {
+    fn build_edges(&mut self) -> Result<()> {
         let paths: Vec<_> = self.files.keys().cloned().collect();
+        let canonical: HashMap<String, usize> = self
+            .files
+            .values()
+            .flat_map(|file| {
+                file.analysis
+                    .extraction
+                    .iter()
+                    .flat_map(|extraction| extraction.nodes.iter().zip(&file.nodes))
+                    .map(|(node, &index)| (node.id.clone(), index))
+            })
+            .collect();
         for path in &paths {
-            let imports: Vec<_> = self.files[path]
+            let edges: Vec<_> = self.files[path]
                 .analysis
-                .imports
+                .extraction
                 .iter()
-                .map(|import| import.module.clone())
+                .flat_map(|extraction| extraction.edges.iter())
+                .filter_map(|edge| {
+                    Some((
+                        *canonical.get(&edge.source)?,
+                        *canonical.get(&edge.target)?,
+                        edge.kind.clone(),
+                        edge.line,
+                    ))
+                })
                 .collect();
-            for module in imports {
-                for target in self.module_files(path, &module) {
-                    self.dependents
-                        .entry(target)
-                        .or_default()
-                        .push(path.clone());
-                }
+            for (from, to, kind, line) in edges {
+                self.push_edge(Edge {
+                    column: None,
+                    from,
+                    to: Some(to),
+                    target: self.nodes[to].symbol.name.clone(),
+                    line: line.map_or(self.nodes[from].symbol.start_line, |line| line as usize),
+                    kind,
+                    method: "syntax",
+                    confidence: "high",
+                    ambiguous: false,
+                });
             }
-        }
-        for dependents in self.dependents.values_mut() {
-            dependents.sort();
-            dependents.dedup();
         }
         for index in 0..self.nodes.len() {
             let node = &self.nodes[index];
             if let Some(container) = &node.symbol.container {
                 let owners: Vec<_> = self.files[&node.path]
                     .qualified
-                    .get(container)
+                    .get(&resolution::name_key(
+                        &self.files[&node.path].analysis.language,
+                        container,
+                    ))
                     .into_iter()
                     .flatten()
                     .copied()
@@ -825,11 +1199,30 @@ impl Graph {
                     .take(MAX_CANDIDATES)
                     .collect();
                 for owner in owners {
-                    if self.edges.len() == MAX_EDGES {
-                        self.truncated = true;
-                        return;
+                    // Canonical JS ownership excludes object-literal functions
+                    // that merely occur inside another callable's source range.
+                    if matches!(
+                        self.files[&self.nodes[index].path]
+                            .analysis
+                            .language
+                            .as_str(),
+                        "typescript" | "tsx" | "javascript" | "jsx"
+                    ) && self.metadata(index).is_some()
+                        && self.metadata(owner).is_some()
+                        && !self.outgoing[owner].iter().any(|&edge| {
+                            self.edges[edge].to == Some(index)
+                                && self.edges[edge].kind == "contains"
+                        })
+                    {
+                        continue;
+                    }
+                    if self.outgoing[owner].iter().any(|&edge| {
+                        self.edges[edge].to == Some(index) && self.edges[edge].kind == "contains"
+                    }) {
+                        continue;
                     }
                     self.push_edge(Edge {
+                        column: None,
                         from: owner,
                         to: Some(index),
                         target: self.nodes[index].symbol.name.clone(),
@@ -871,15 +1264,18 @@ impl Graph {
                     continue;
                 }
                 self.members
-                    .entry((owner, self.nodes[index].symbol.name.clone()))
+                    .entry((
+                        owner,
+                        resolution::name_key(
+                            &self.files[&path].analysis.language,
+                            &self.nodes[index].symbol.name,
+                        ),
+                    ))
                     .or_default()
                     .push(index);
                 if !local {
-                    if self.edges.len() == MAX_EDGES {
-                        self.truncated = true;
-                        return;
-                    }
                     self.push_edge(Edge {
+                        column: None,
                         from: owner,
                         to: Some(index),
                         target: self.nodes[index].symbol.name.clone(),
@@ -892,21 +1288,24 @@ impl Graph {
                 }
             }
         }
+        self.initialize_go_members();
+        self.initialize_framework_bindings(true)?;
         // Inheritance must exist before resolving calls to inherited members.
         for inheritance in [true, false] {
+            if !inheritance {
+                self.initialize_framework_bindings(false)?;
+                self.build_import_edges();
+            }
+            let type_targets = self.visible_type_targets(inheritance)?;
             for path in &paths {
-                let references: Vec<_> = self.files[path]
-                    .analysis
-                    .references
-                    .iter()
-                    .filter(|reference| (reference.kind != "calls") == inheritance)
-                    .cloned()
+                let references: Vec<_> = self
+                    .resolution_references(path)
+                    .into_iter()
+                    .filter(|reference| {
+                        matches!(reference.kind.as_str(), "extends" | "implements") == inheritance
+                    })
                     .collect();
                 for reference in references {
-                    if self.edges.len() == MAX_EDGES {
-                        self.truncated = true;
-                        return;
-                    }
                     let (callers, owner_method) = if let Some(from) = reference
                         .caller
                         .and_then(|ordinal| self.files[path].nodes.get(ordinal).copied())
@@ -920,23 +1319,56 @@ impl Graph {
                     };
                     let owner_ambiguous = callers.len() > 1;
                     for from in callers {
-                        if self.edges.len() == MAX_EDGES {
-                            self.truncated = true;
-                            return;
-                        }
                         let (mut candidates, mut method) = self.resolve(path, from, &reference);
+                        Self::apply_type_visibility(
+                            &type_targets,
+                            from,
+                            &reference,
+                            &mut candidates,
+                        );
+                        candidates
+                            .retain(|&to| self.compatible_reference(path, from, &reference, to));
                         if owner_method == "name_match" {
                             method = "name_match";
                         }
                         candidates.sort_unstable();
                         candidates.dedup();
-                        let ambiguous = owner_ambiguous || candidates.len() > 1;
+                        let multiple_binding = self
+                            .canonical_reference(from, &reference)
+                            .and_then(|raw| {
+                                self.cached_framework_reference(
+                                    from,
+                                    &raw.reference_name,
+                                    &raw.reference_kind,
+                                    raw.line as usize,
+                                    Some(raw.column as usize),
+                                )
+                            })
+                            .is_some_and(|targets| {
+                                targets.len() > 1
+                                    && targets.iter().all(|&to| {
+                                        self.canonical_reference(from, &reference)
+                                            .and_then(|raw| {
+                                                self.cached_framework_metadata(
+                                                    from,
+                                                    to,
+                                                    &raw.reference_name,
+                                                    raw.line as usize,
+                                                    Some(raw.column),
+                                                )
+                                            })
+                                            .is_none_or(|answer| !answer.uncertain)
+                                    })
+                            });
+                        let ambiguous =
+                            owner_ambiguous || (candidates.len() > 1 && !multiple_binding);
                         if candidates.len() >= MAX_CANDIDATES {
                             self.truncated = true;
                             candidates.truncate(MAX_CANDIDATES);
                         }
                         if candidates.is_empty() {
                             self.push_edge(Edge {
+                                column: reference.column.map(|column| column as u32),
                                 from,
                                 to: None,
                                 target: reference.target.clone(),
@@ -949,13 +1381,34 @@ impl Graph {
                         } else {
                             for to in candidates {
                                 self.push_edge(Edge {
+                                    column: reference.column.map(|column| column as u32),
                                     from,
                                     to: Some(to),
                                     target: reference.target.clone(),
                                     line: reference.line,
-                                    kind: reference.kind.clone(),
+                                    kind: self.resolved_kind(path, from, to, &reference).into(),
                                     method,
-                                    confidence: if method == "name_match" || ambiguous {
+                                    confidence: if ambiguous {
+                                        "low"
+                                    } else if let Some(answer) =
+                                        self.canonical_reference(from, &reference).and_then(|raw| {
+                                            self.cached_framework_metadata(
+                                                from,
+                                                to,
+                                                &raw.reference_name,
+                                                raw.line as usize,
+                                                Some(raw.column),
+                                            )
+                                        })
+                                    {
+                                        if answer.by_name {
+                                            "low"
+                                        } else if answer.confidence >= 0.7 {
+                                            "medium"
+                                        } else {
+                                            "low"
+                                        }
+                                    } else if method == "name_match" {
                                         "low"
                                     } else {
                                         "medium"
@@ -968,6 +1421,7 @@ impl Graph {
                 }
             }
         }
+        Ok(())
     }
 
     fn select(
@@ -1030,9 +1484,14 @@ impl Graph {
                     .map(|word| format!("\"{}\"*", word.replace('"', "\"\"")))
                     .collect::<Vec<_>>()
                     .join(" OR ");
-                let mut statement = connection.prepare("SELECT s.id FROM symbols_fts JOIN symbols s ON s.id=symbols_fts.rowid WHERE symbols_fts MATCH ?1 AND (?2 IS NULL OR s.path=?2) AND (?3 IS NULL OR (s.start_line<=?3 AND s.end_line>=?3)) ORDER BY bm25(symbols_fts,10.0,8.0,2.0,0.5,1.0),s.path,s.start_line LIMIT 51")?;
+                let mut statement = connection.prepare("SELECT s.id FROM symbols_fts JOIN symbols s ON s.id=symbols_fts.rowid WHERE symbols_fts MATCH ?1 AND (?2 IS NULL OR s.path=?2) AND (?3 IS NULL OR (s.start_line<=?3 AND s.end_line>=?3)) ORDER BY bm25(symbols_fts,10.0,8.0,2.0,0.5,1.0),s.path,s.start_line LIMIT ?4")?;
                 let ids = statement.query_map(
-                    params![expression, path, options.line.map(|line| line as i64)],
+                    params![
+                        expression,
+                        path,
+                        options.line.map(|line| line as i64),
+                        options.limit.saturating_add(1).min(i64::MAX as usize) as i64
+                    ],
                     |row| row.get::<_, i64>(0),
                 )?;
                 for id in ids {
@@ -1049,6 +1508,10 @@ impl Graph {
     fn edge(&self, index: usize) -> GraphEdge {
         let edge = &self.edges[index];
         GraphEdge {
+            column: self.canonical_edges[index]
+                .as_ref()
+                .and_then(|edge| edge.column)
+                .or(edge.column),
             from: self.nodes[edge.from].id,
             to: edge.to.map(|to| self.nodes[to].id),
             target: edge.target.clone(),
@@ -1057,6 +1520,12 @@ impl Graph {
             resolution: edge.method,
             confidence: edge.confidence,
             ambiguous: edge.ambiguous,
+            metadata: self.canonical_edges[index]
+                .as_ref()
+                .and_then(|edge| edge.metadata.clone()),
+            provenance: self.canonical_edges[index]
+                .as_ref()
+                .and_then(|edge| edge.provenance.clone()),
         }
     }
 
@@ -1066,6 +1535,7 @@ impl Graph {
         depth: usize,
         reverse: bool,
         kinds: &[&str],
+        limit: usize,
     ) -> (Vec<usize>, Vec<usize>, bool) {
         let mut seen: HashSet<_> = roots.iter().copied().collect();
         let mut queue: VecDeque<_> = roots.iter().map(|&node| (node, 0)).collect();
@@ -1090,15 +1560,11 @@ impl Graph {
                     }
                     continue;
                 }
-                if edges.len() == MAX_VISITED * 4 {
-                    truncated = true;
-                    return (nodes, edges, truncated);
-                }
                 edges.push(index);
                 if let Some(target) = target
                     && seen.insert(target)
                 {
-                    if seen.len() > MAX_VISITED {
+                    if seen.len() > limit {
                         truncated = true;
                         return (nodes, edges, truncated);
                     }
@@ -1123,7 +1589,6 @@ impl Graph {
         let mut previous: HashMap<usize, (usize, usize)> = HashMap::new();
         let mut queue: VecDeque<_> = roots.iter().map(|&node| (node, 0)).collect();
         let mut truncated = false;
-        let mut visited_edges = 0;
         while let Some((node, distance)) = queue.pop_front() {
             if targets.contains(&node) {
                 let mut nodes = vec![node];
@@ -1139,14 +1604,7 @@ impl Graph {
                 return (nodes, edges, truncated);
             }
             for &index in &self.outgoing[node] {
-                visited_edges += 1;
-                if visited_edges > MAX_VISITED * 4 {
-                    return (Vec::new(), Vec::new(), true);
-                }
                 let edge = &self.edges[index];
-                if edge.kind != "calls" {
-                    continue;
-                }
                 let Some(target) = edge.to else {
                     continue;
                 };
@@ -1156,9 +1614,6 @@ impl Graph {
                 if distance == depth {
                     truncated = true;
                     continue;
-                }
-                if seen.len() == MAX_VISITED {
-                    return (Vec::new(), Vec::new(), true);
                 }
                 seen.insert(target);
                 previous.insert(target, (node, index));
@@ -1172,24 +1627,14 @@ impl Graph {
         let mut seen: BTreeSet<_> = paths.iter().cloned().collect();
         let mut queue: VecDeque<_> = paths.iter().map(|path| (path.clone(), 0)).collect();
         let mut truncated = false;
-        let mut visited_edges = 0;
-        'walk: while let Some((path, distance)) = queue.pop_front() {
+        while let Some((path, distance)) = queue.pop_front() {
             for dependent in self.dependents.get(&path).into_iter().flatten() {
-                visited_edges += 1;
-                if visited_edges > MAX_VISITED * 4 {
-                    truncated = true;
-                    break 'walk;
-                }
                 if seen.contains(dependent) {
                     continue;
                 }
                 if distance == depth {
                     truncated = true;
                     continue;
-                }
-                if seen.len() == MAX_VISITED {
-                    truncated = true;
-                    break 'walk;
                 }
                 seen.insert(dependent.clone());
                 queue.push_back((dependent.clone(), distance + 1));
@@ -1199,6 +1644,71 @@ impl Graph {
             seen.into_iter().filter(|path| test_path(path)).collect(),
             truncated,
         )
+    }
+
+    fn impact_walk(&self, roots: &[usize], depth: usize) -> (Vec<usize>, Vec<usize>, bool) {
+        let mut distance: HashMap<_, _> = roots.iter().map(|&node| (node, 0)).collect();
+        let mut queue: VecDeque<_> = roots.iter().map(|&node| (node, 0)).collect();
+        let mut nodes = Vec::new();
+        let mut edges = Vec::new();
+        let mut seen_edges = HashSet::new();
+        let mut truncated = false;
+        while let Some((node, level)) = queue.pop_front() {
+            if distance.get(&node).is_some_and(|&nearer| nearer < level) {
+                continue;
+            }
+            let container = matches!(
+                self.nodes[node].symbol.kind.as_str(),
+                "class"
+                    | "interface"
+                    | "struct"
+                    | "union"
+                    | "trait"
+                    | "protocol"
+                    | "module"
+                    | "enum"
+            );
+            let contained = if container {
+                self.outgoing[node].as_slice()
+            } else {
+                &[]
+            };
+            let children = contained
+                .iter()
+                .copied()
+                .filter(|&i| self.edges[i].kind == "contains")
+                .filter_map(|i| self.edges[i].to.map(|node| (i, node, level)));
+            let incoming = self.incoming[node]
+                .iter()
+                .copied()
+                .filter(|&i| self.edges[i].kind != "contains")
+                .map(|i| (i, self.edges[i].from, level + 1));
+            for (edge, next, next_level) in children.chain(incoming) {
+                if level >= depth {
+                    truncated |= !distance.contains_key(&next);
+                    continue;
+                }
+                if !distance.contains_key(&next) && distance.len() >= 10_000
+                    || edges.len() >= 50_000
+                {
+                    return (nodes, edges, true);
+                }
+                if seen_edges.insert(edge) {
+                    edges.push(edge);
+                }
+                if distance.get(&next).is_none_or(|&old| next_level < old) {
+                    if distance.insert(next, next_level).is_none() {
+                        nodes.push(next);
+                    }
+                    if next_level == level {
+                        queue.push_front((next, next_level));
+                    } else {
+                        queue.push_back((next, next_level));
+                    }
+                }
+            }
+        }
+        (nodes, edges, truncated)
     }
 }
 
@@ -1290,25 +1800,17 @@ impl Graph {
                 result.affected_tests = tests.into_iter().take(options.limit).collect();
             }
             Some(GraphMode::Impact | GraphMode::Implementations) | None => {
-                let kinds: &[&str] = if mode == Some(GraphMode::Implementations) {
-                    &["extends", "implements"]
+                let (impacted, edges, truncated) = if mode == Some(GraphMode::Implementations) {
+                    self.walk(
+                        &roots,
+                        options.depth,
+                        true,
+                        &["extends", "implements"],
+                        options.limit.max(1000),
+                    )
                 } else {
-                    &["calls", "extends", "implements"]
+                    self.impact_walk(&roots, options.depth)
                 };
-                let mut impact_roots = roots.clone();
-                if mode != Some(GraphMode::Implementations) {
-                    for &root in &roots {
-                        for &edge in &self.outgoing[root] {
-                            if self.edges[edge].kind == "contains"
-                                && let Some(child) = self.edges[edge].to
-                            {
-                                impact_roots.push(child);
-                            }
-                        }
-                    }
-                }
-                let (impacted, edges, truncated) =
-                    self.walk(&impact_roots, options.depth, true, kinds);
                 result.truncated |= truncated || impacted.len() > options.limit;
                 result.impact = impacted
                     .iter()
@@ -1321,7 +1823,17 @@ impl Graph {
                         &roots,
                         options.depth,
                         false,
-                        &["calls", "extends", "implements", "contains"],
+                        &[
+                            "calls",
+                            "references",
+                            "imports",
+                            "instantiates",
+                            "navigates",
+                            "extends",
+                            "implements",
+                            "contains",
+                        ],
+                        options.limit.max(1000),
                     );
                     included.extend(neighbors);
                     selected_edges.extend(edges);
@@ -1434,7 +1946,7 @@ pub(crate) fn related(
             truncated: graph.truncated,
         };
         for edge in &graph.edges {
-            if edge.kind != "calls" {
+            if !resolution::call_edge(&edge.kind) {
                 continue;
             }
             let matches = match direction {
@@ -1461,7 +1973,7 @@ pub(crate) fn related(
                 confidence: edge.confidence,
                 ambiguous: edge.ambiguous,
             });
-            if serde_json::to_vec(&result)?.len() > max_bytes {
+            if max_bytes != usize::MAX && serde_json::to_vec(&result)?.len() > max_bytes {
                 result.relations.pop();
                 result.truncated = true;
                 break;
@@ -1536,6 +2048,9 @@ fn snippet(
     )
 }
 fn fit(result: &mut GraphResult, max: usize) -> Result<()> {
+    if max == usize::MAX {
+        return Ok(());
+    }
     loop {
         let length = serde_json::to_vec(result)?.len();
         if length <= max {

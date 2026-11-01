@@ -9,6 +9,7 @@ relevant concept and follow its dependencies. Open known paths directly.
 
 - [Contracts](contracts/README.md) — Interfaces and responsibilities between the engine and its host.
 - [Decisions](decisions/README.md) — Architectural choices, rationale, and documentation conventions.
+- [Quality](quality/README.md) — Executable evidence and the limits of compatibility claims.
 
 ## Maintenance
 

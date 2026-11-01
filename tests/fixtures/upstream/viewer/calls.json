@@ -1,0 +1,272 @@
+[
+  {
+    "language": "typescript",
+    "source": "class Api { constructor(private owners: OwnerRepository) {}\n run() { this.owners.save(user); Promise.all([fetch(url), fetch(other)]);\n res.status(202); res.json(user);\n return Response.json(user, {status: 201});\n } }",
+    "sites": [
+      {
+        "line": 2,
+        "column": 9,
+        "call": {
+          "callee": "this.owners.save",
+          "args": "user",
+          "argList": [
+            "user"
+          ],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 9
+            },
+            "end": {
+              "line": 2,
+              "column": 31
+            }
+          }
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      },
+      {
+        "line": 2,
+        "column": 46,
+        "call": {
+          "callee": "fetch",
+          "args": "url",
+          "argList": [
+            "url"
+          ],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 46
+            },
+            "end": {
+              "line": 2,
+              "column": 56
+            }
+          },
+          "within": "Promise.all"
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      },
+      {
+        "line": 2,
+        "column": 58,
+        "call": {
+          "callee": "fetch",
+          "args": "other",
+          "argList": [
+            "other"
+          ],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 58
+            },
+            "end": {
+              "line": 2,
+              "column": 70
+            }
+          },
+          "within": "Promise.all"
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      },
+      {
+        "line": 3,
+        "column": 18,
+        "call": {
+          "callee": "res.json",
+          "args": "user",
+          "argList": [
+            "user"
+          ],
+          "span": {
+            "start": {
+              "line": 3,
+              "column": 18
+            },
+            "end": {
+              "line": 3,
+              "column": 32
+            }
+          },
+          "status": 202
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      },
+      {
+        "line": 4,
+        "column": 8,
+        "call": {
+          "callee": "Response.json",
+          "args": "user, { status }",
+          "argList": [
+            "user",
+            "{ status }"
+          ],
+          "span": {
+            "start": {
+              "line": 4,
+              "column": 8
+            },
+            "end": {
+              "line": 4,
+              "column": 42
+            }
+          },
+          "status": 201
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      }
+    ]
+  },
+  {
+    "language": "java",
+    "source": "class Api { private OwnerRepository owners;\n void run() { owners.save(user); } }",
+    "sites": [
+      {
+        "line": 2,
+        "column": 14,
+        "call": {
+          "callee": "owners.save",
+          "args": "user",
+          "argList": [
+            "user"
+          ],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 14
+            },
+            "end": {
+              "line": 2,
+              "column": 31
+            }
+          }
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      }
+    ]
+  },
+  {
+    "language": "csharp",
+    "source": "class Api { OwnerRepository owners;\n void Run() { owners.Save(user); } }",
+    "sites": [
+      {
+        "line": 2,
+        "column": 14,
+        "call": {
+          "callee": "owners.Save",
+          "args": "user",
+          "argList": [
+            "user"
+          ],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 14
+            },
+            "end": {
+              "line": 2,
+              "column": 31
+            }
+          }
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      }
+    ]
+  },
+  {
+    "language": "kotlin",
+    "source": "class Api(val owners: OwnerRepository) {\n fun run() { owners.save(user) } }",
+    "sites": [
+      {
+        "line": 2,
+        "column": 13,
+        "call": {
+          "callee": "owners.save",
+          "args": "user",
+          "argList": [
+            "user"
+          ],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 13
+            },
+            "end": {
+              "line": 2,
+              "column": 30
+            }
+          }
+        },
+        "members": {
+          "owners": "OwnerRepository"
+        }
+      }
+    ]
+  },
+  {
+    "language": "typescript",
+    "source": "function run(ok) { if (ok) res.status(400); res.json(user);\n res.statusCode = 204; res.end(); }",
+    "sites": [
+      {
+        "line": 1,
+        "column": 44,
+        "call": {
+          "callee": "res.json",
+          "args": "user",
+          "argList": [
+            "user"
+          ],
+          "span": {
+            "start": {
+              "line": 1,
+              "column": 44
+            },
+            "end": {
+              "line": 1,
+              "column": 58
+            }
+          }
+        },
+        "members": {}
+      },
+      {
+        "line": 2,
+        "column": 23,
+        "call": {
+          "callee": "res.end",
+          "args": "",
+          "argList": [],
+          "span": {
+            "start": {
+              "line": 2,
+              "column": 23
+            },
+            "end": {
+              "line": 2,
+              "column": 32
+            }
+          },
+          "status": 204
+        },
+        "members": {}
+      }
+    ]
+  }
+]

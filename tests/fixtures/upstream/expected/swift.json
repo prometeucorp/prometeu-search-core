@@ -1,0 +1,2457 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.swift",
+      "kind": "file",
+      "name": "torture.swift",
+      "qualifiedName": "torture.swift",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 1,
+      "endLine": 214,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:116708a702380f8bfc06030ba3964d77",
+      "kind": "import",
+      "name": "Foundation",
+      "qualifiedName": "Foundation",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 17,
+      "signature": "import Foundation"
+    },
+    {
+      "id": "import:496c7acecff43a423f89191b95cddcce",
+      "kind": "import",
+      "name": "UIKit.UIView",
+      "qualifiedName": "UIKit.UIView",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 19,
+      "signature": "import UIKit.UIView"
+    },
+    {
+      "id": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "kind": "class",
+      "name": "Session",
+      "qualifiedName": "Session",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 6,
+      "endLine": 37,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Class doc line one\nClass doc line two",
+      "visibility": "public"
+    },
+    {
+      "id": "field:41b76bf1c5ec73d81bd6e1b0d1b80e26",
+      "kind": "field",
+      "name": "rootQueue",
+      "qualifiedName": "Session::rootQueue",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 2,
+      "endColumn": 61,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "field:bc4d5f167c7b2067e067da75f388cd26",
+      "kind": "field",
+      "name": "mutable",
+      "qualifiedName": "Session::mutable",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 2,
+      "endColumn": 17,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "constant:48a4b90850e760164e1a2d8c20240c05",
+      "kind": "constant",
+      "name": "SHARED_MAX",
+      "qualifiedName": "Session::SHARED_MAX",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 2,
+      "endColumn": 32,
+      "visibility": "internal",
+      "isStatic": true
+    },
+    {
+      "id": "variable:b0140d6f939baa22cf37e9ceb649296a",
+      "kind": "variable",
+      "name": "counter",
+      "qualifiedName": "Session::counter",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 2,
+      "endColumn": 24,
+      "visibility": "internal",
+      "isStatic": true
+    },
+    {
+      "id": "field:887231b4813f5c13293a20c6fb704fad",
+      "kind": "field",
+      "name": "expensive",
+      "qualifiedName": "Session::expensive",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 2,
+      "endColumn": 43,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "field:44e71c277f6d5b1a6708563d18526b0c",
+      "kind": "field",
+      "name": "wrapped",
+      "qualifiedName": "Session::wrapped",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 2,
+      "endColumn": 46,
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:d7c2f172d98e1be2062ece802dcdc4e5",
+      "kind": "field",
+      "name": "delegate",
+      "qualifiedName": "Session::delegate",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 2,
+      "endColumn": 37,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "field:2c0c798b861d4f52b6fffbd2f3361853",
+      "kind": "field",
+      "name": "observed",
+      "qualifiedName": "Session::observed",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 14,
+      "endLine": 17,
+      "startColumn": 2,
+      "endColumn": 3,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "property:5adda8060392b1c87de026284998ff38",
+      "kind": "property",
+      "name": "isCloudProxy",
+      "qualifiedName": "Session::isCloudProxy",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 2,
+      "endColumn": 53,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "method:17ab262472e1d06bbe20faf7c5d6b6ce",
+      "kind": "method",
+      "name": "classFunc",
+      "qualifiedName": "Session::classFunc",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 19,
+      "endLine": 19,
+      "startColumn": 2,
+      "endColumn": 32,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "kind": "method",
+      "name": "request",
+      "qualifiedName": "Session::request",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 22,
+      "endLine": 30,
+      "startColumn": 2,
+      "endColumn": 3,
+      "docstring": "method doc",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "DataRequest"
+    },
+    {
+      "id": "struct:6d96b486579cf3fdd66718872215294c",
+      "kind": "struct",
+      "name": "HTTPMethod",
+      "qualifiedName": "HTTPMethod",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 39,
+      "endLine": 42,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "field:81b9c56215cb5a70857091431b97bd1a",
+      "kind": "field",
+      "name": "rawValue",
+      "qualifiedName": "HTTPMethod::rawValue",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 40,
+      "endLine": 40,
+      "startColumn": 2,
+      "endColumn": 22,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "constant:03a7deca3c8e64b747972d99b0c1bcdc",
+      "kind": "constant",
+      "name": "get",
+      "qualifiedName": "HTTPMethod::get",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 41,
+      "endLine": 41,
+      "startColumn": 2,
+      "endColumn": 46,
+      "visibility": "internal",
+      "isStatic": true
+    },
+    {
+      "id": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "kind": "enum",
+      "name": "AFError",
+      "qualifiedName": "AFError",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 44,
+      "endLine": 50,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "enum_member:46968634b306fc0b82eab61099ef1ecf",
+      "kind": "enum_member",
+      "name": "invalidURL",
+      "qualifiedName": "AFError::invalidURL",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 45,
+      "endLine": 45,
+      "startColumn": 2,
+      "endColumn": 38
+    },
+    {
+      "id": "enum_member:fb8f2e100e4cd5ff76e6734c9da15ed7",
+      "kind": "enum_member",
+      "name": "explicitlyCancelled",
+      "qualifiedName": "AFError::explicitlyCancelled",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 46,
+      "endLine": 46,
+      "startColumn": 2,
+      "endColumn": 48
+    },
+    {
+      "id": "enum_member:d4c10b3b5d571f5424ed73030c053433",
+      "kind": "enum_member",
+      "name": "wrapped",
+      "qualifiedName": "AFError::wrapped",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 47,
+      "endLine": 47,
+      "startColumn": 2,
+      "endColumn": 32
+    },
+    {
+      "id": "property:3f76120a6d12e45f619241f30c648d15",
+      "kind": "property",
+      "name": "description",
+      "qualifiedName": "AFError::description",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 48,
+      "endLine": 48,
+      "startColumn": 2,
+      "endColumn": 49,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "method:84b1066798bf4890531cf6d4cd0b61b2",
+      "kind": "method",
+      "name": "make",
+      "qualifiedName": "AFError::make",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 2,
+      "endColumn": 56,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": true,
+      "returnType": "AFError"
+    },
+    {
+      "id": "interface:7423d683e426467682cab43a0f65b9a1",
+      "kind": "interface",
+      "name": "RequestDelegate",
+      "qualifiedName": "RequestDelegate",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 52,
+      "endLine": 56,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "property:23ed107148c12d05a3a6e675933995a4",
+      "kind": "property",
+      "name": "sessionState",
+      "qualifiedName": "RequestDelegate::sessionState",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 53,
+      "endLine": 53,
+      "startColumn": 2,
+      "endColumn": 31,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "class:9e6d12929ca25230717fd7c737416ba5",
+      "kind": "class",
+      "name": "Session",
+      "qualifiedName": "Session",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 58,
+      "endLine": 60,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "method:d1671f257e4e4d7ac2394b765a146ec7",
+      "kind": "method",
+      "name": "heard",
+      "qualifiedName": "Session::heard",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 59,
+      "endLine": 59,
+      "startColumn": 2,
+      "endColumn": 44,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:12b0fc1a5b8916f4876df49d6cd78ad7",
+      "kind": "class",
+      "name": "Builder",
+      "qualifiedName": "Builder",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 62,
+      "endLine": 64,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "method:2482c6a39c7a71c514ac4eda10980efa",
+      "kind": "method",
+      "name": "done",
+      "qualifiedName": "Builder::done",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 63,
+      "endLine": 63,
+      "startColumn": 2,
+      "endColumn": 36,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Builder"
+    },
+    {
+      "id": "class:129f932b07791059905bc786775e5dff",
+      "kind": "class",
+      "name": "Array",
+      "qualifiedName": "Array",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 66,
+      "endLine": 68,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "method:846b59388a77b469427475c32a0d11a3",
+      "kind": "method",
+      "name": "dedup",
+      "qualifiedName": "Array::dedup",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 67,
+      "endLine": 67,
+      "startColumn": 2,
+      "endColumn": 36,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:2fbf1c8797ac810ae0b9a0e775344419",
+      "kind": "class",
+      "name": "Counter",
+      "qualifiedName": "Counter",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 70,
+      "endLine": 73,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "field:661e861b2ab2babf3cee5a6db2ef905b",
+      "kind": "field",
+      "name": "n",
+      "qualifiedName": "Counter::n",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 71,
+      "endLine": 71,
+      "startColumn": 2,
+      "endColumn": 11,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "method:34cf38d9598d94501860964788105cef",
+      "kind": "method",
+      "name": "bump",
+      "qualifiedName": "Counter::bump",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 72,
+      "endLine": 72,
+      "startColumn": 2,
+      "endColumn": 24,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "type_alias:4eac8834dd1ceb7059cdc0ebd6a23f96",
+      "kind": "type_alias",
+      "name": "Handler",
+      "qualifiedName": "Handler",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 75,
+      "endLine": 75,
+      "startColumn": 0,
+      "endColumn": 34
+    },
+    {
+      "id": "type_alias:8d09bbd71ebfe2d1aa557e0e79aaab99",
+      "kind": "type_alias",
+      "name": "BuilderAlias",
+      "qualifiedName": "BuilderAlias",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 76,
+      "endLine": 76,
+      "startColumn": 0,
+      "endColumn": 35
+    },
+    {
+      "id": "constant:e400c32e94629da31bbd3b0d7f36ed66",
+      "kind": "constant",
+      "name": "TOP_LEVEL_MAX",
+      "qualifiedName": "TOP_LEVEL_MAX",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 78,
+      "endLine": 78,
+      "startColumn": 0,
+      "endColumn": 21,
+      "isExported": false
+    },
+    {
+      "id": "variable:48293e66164889b3a4e90f4d7f9d02f8",
+      "kind": "variable",
+      "name": "topVar",
+      "qualifiedName": "topVar",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 79,
+      "endLine": 79,
+      "startColumn": 0,
+      "endColumn": 27,
+      "isExported": false
+    },
+    {
+      "id": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "kind": "function",
+      "name": "freeFn",
+      "qualifiedName": "freeFn",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 81,
+      "endLine": 107,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Session"
+    },
+    {
+      "id": "function:262df8cc0bb3d2bff4ad563022b44561",
+      "kind": "function",
+      "name": "onFire",
+      "qualifiedName": "onFire",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 109,
+      "endLine": 109,
+      "startColumn": 0,
+      "endColumn": 16,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:510392b0722e8898090560466c5a5ec5",
+      "kind": "function",
+      "name": "handler",
+      "qualifiedName": "handler",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 110,
+      "endLine": 110,
+      "startColumn": 0,
+      "endColumn": 17,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:1762c7fa1f3cd4e18196d93c05883108",
+      "kind": "function",
+      "name": "cbA",
+      "qualifiedName": "cbA",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 111,
+      "endLine": 111,
+      "startColumn": 0,
+      "endColumn": 13,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:5856f8137240d29ffd5ec6ced63378bc",
+      "kind": "function",
+      "name": "cbB",
+      "qualifiedName": "cbB",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 112,
+      "endLine": 112,
+      "startColumn": 0,
+      "endColumn": 13,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "enum:62b26973d47047974a3723ff3d5d23ee",
+      "kind": "enum",
+      "name": "Suit",
+      "qualifiedName": "Suit",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 116,
+      "endLine": 119,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "-- extension rows (checklist inventory) ----\nnon-ASCII line before a symbol: café ünïcode 😀",
+      "visibility": "internal"
+    },
+    {
+      "id": "enum_member:537013a17ec1da68d643a657f36e95f9",
+      "kind": "enum_member",
+      "name": "hearts",
+      "qualifiedName": "Suit::hearts",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 117,
+      "endLine": 117,
+      "startColumn": 2,
+      "endColumn": 17
+    },
+    {
+      "id": "enum_member:46df5d002790f5e6b3f08846684dd9c3",
+      "kind": "enum_member",
+      "name": "spades",
+      "qualifiedName": "Suit::spades",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 118,
+      "endLine": 118,
+      "startColumn": 2,
+      "endColumn": 13
+    },
+    {
+      "id": "struct:487d89e7a287a16bb02adabeb6c061a0",
+      "kind": "struct",
+      "name": "MainApp",
+      "qualifiedName": "MainApp",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 121,
+      "endLine": 123,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "property:13da6cd7fb88d8425ef100ac799b81ef",
+      "kind": "property",
+      "name": "body",
+      "qualifiedName": "MainApp::body",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 122,
+      "endLine": 122,
+      "startColumn": 2,
+      "endColumn": 48,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "function:e010f23dfe81de4817786493db300945",
+      "kind": "function",
+      "name": "blockDoc",
+      "qualifiedName": "blockDoc",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 126,
+      "endLine": 126,
+      "startColumn": 0,
+      "endColumn": 18,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:d462abbd6321ff43ca557c0c82e26cfc",
+      "kind": "function",
+      "name": "attributed",
+      "qualifiedName": "attributed",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 129,
+      "endLine": 129,
+      "startColumn": 0,
+      "endColumn": 26,
+      "docstring": "kept over attribute",
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:071bd15751854933bac820b5850a2641",
+      "kind": "function",
+      "name": "<+>",
+      "qualifiedName": "<+>",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 131,
+      "endLine": 131,
+      "startColumn": 0,
+      "endColumn": 56,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "kind": "class",
+      "name": "Visi",
+      "qualifiedName": "Visi",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 133,
+      "endLine": 138,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "field:80067db1e7f32069d7001087568db903",
+      "kind": "field",
+      "name": "setterGated",
+      "qualifiedName": "Visi::setterGated",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 134,
+      "endLine": 134,
+      "startColumn": 2,
+      "endColumn": 41,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "constant:98c3f1793577a1032b2c3b4496219c42",
+      "kind": "constant",
+      "name": "A_B",
+      "qualifiedName": "Visi::A_B",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 135,
+      "endLine": 135,
+      "startColumn": 2,
+      "endColumn": 25,
+      "visibility": "internal",
+      "isStatic": true
+    },
+    {
+      "id": "field:ee24bb4e94c361a6ea0a8bd21d61e20c",
+      "kind": "field",
+      "name": "tup",
+      "qualifiedName": "Visi::tup",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 136,
+      "endLine": 136,
+      "startColumn": 2,
+      "endColumn": 30,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "field:fc3a6156eef9a13269b422fae5ff7dd7",
+      "kind": "field",
+      "name": "siblings",
+      "qualifiedName": "Visi::siblings",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 137,
+      "endLine": 137,
+      "startColumn": 2,
+      "endColumn": 67,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "interface:7101ee1e3e068d01630d3b0128a15b2d",
+      "kind": "interface",
+      "name": "Inherited",
+      "qualifiedName": "Inherited",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 140,
+      "endLine": 143,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "property:beb5e1a8fd1d9ea9b8af4b67ce292937",
+      "kind": "property",
+      "name": "reqComputed",
+      "qualifiedName": "Inherited::reqComputed",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 141,
+      "endLine": 141,
+      "startColumn": 2,
+      "endColumn": 37,
+      "visibility": "internal",
+      "isStatic": false
+    },
+    {
+      "id": "property:29504b99e9cc6f02e270e9cbd71ab750",
+      "kind": "property",
+      "name": "reqStatic",
+      "qualifiedName": "Inherited::reqStatic",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 142,
+      "endLine": 142,
+      "startColumn": 2,
+      "endColumn": 35,
+      "visibility": "internal",
+      "isStatic": true
+    },
+    {
+      "id": "class:8534b13d6fd2bccbb80c98d8ef013354",
+      "kind": "class",
+      "name": "[ServerTrustEvaluating]",
+      "qualifiedName": "[ServerTrustEvaluating]",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 145,
+      "endLine": 147,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "method:bb1ff2793f1d0d639644bc1bb6dc0f6b",
+      "kind": "method",
+      "name": "sugarExt",
+      "qualifiedName": "[ServerTrustEvaluating]::sugarExt",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 146,
+      "endLine": 146,
+      "startColumn": 2,
+      "endColumn": 20,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "kind": "function",
+      "name": "voidParamProof",
+      "qualifiedName": "voidParamProof",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 149,
+      "endLine": 152,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Result"
+    },
+    {
+      "id": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "kind": "function",
+      "name": "nestedGenericRet",
+      "qualifiedName": "nestedGenericRet",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 154,
+      "endLine": 154,
+      "startColumn": 0,
+      "endColumn": 61,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:6587eb6d3ce9f83526f39edb278e0edb",
+      "kind": "function",
+      "name": "voidRet",
+      "qualifiedName": "voidRet",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 155,
+      "endLine": 155,
+      "startColumn": 0,
+      "endColumn": 33,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:58cc4881761cc60fc8688b7b929434dc",
+      "kind": "function",
+      "name": "tupleRet",
+      "qualifiedName": "tupleRet",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 156,
+      "endLine": 156,
+      "startColumn": 0,
+      "endColumn": 44,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:4aa354cbc553ba55f917cade5de1b419",
+      "kind": "function",
+      "name": "fnRet",
+      "qualifiedName": "fnRet",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 157,
+      "endLine": 157,
+      "startColumn": 0,
+      "endColumn": 47,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:676efed68fe8c7f7281531530ae6ae6f",
+      "kind": "function",
+      "name": "optRet",
+      "qualifiedName": "optRet",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 158,
+      "endLine": 158,
+      "startColumn": 0,
+      "endColumn": 33,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Session"
+    },
+    {
+      "id": "function:ca44325ee884ced19dd402cc3e104bc4",
+      "kind": "function",
+      "name": "builderRet",
+      "qualifiedName": "builderRet",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 159,
+      "endLine": 159,
+      "startColumn": 0,
+      "endColumn": 48,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Builder"
+    },
+    {
+      "id": "function:24b796590d26da68a2429579e2f10a68",
+      "kind": "function",
+      "name": "callZooExtra",
+      "qualifiedName": "callZooExtra",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 161,
+      "endLine": 175,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:80c7293664161116a029e8aa43f2becf",
+      "kind": "function",
+      "name": "staticReads",
+      "qualifiedName": "staticReads",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 177,
+      "endLine": 184,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:33b106031d5d73f4a78ba89e261b883e",
+      "kind": "function",
+      "name": "insideDirective",
+      "qualifiedName": "insideDirective",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 187,
+      "endLine": 187,
+      "startColumn": 0,
+      "endColumn": 42,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:cba49cc6e0698fde6fd64936b541824f",
+      "kind": "constant",
+      "name": "laterAssigned",
+      "qualifiedName": "laterAssigned",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 192,
+      "endLine": 192,
+      "startColumn": 0,
+      "endColumn": 22,
+      "docstring": "declared-then-assigned: the assignment-prune case (kernel-sweep-caught) —\nlaterAssigned MUST be pruned as a value-ref target.",
+      "isExported": false
+    },
+    {
+      "id": "constant:50a159fca69ad0a9d7ec617a78f84113",
+      "kind": "constant",
+      "name": "readsLater",
+      "qualifiedName": "readsLater",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 198,
+      "endLine": 198,
+      "startColumn": 0,
+      "endColumn": 46,
+      "isExported": false
+    },
+    {
+      "id": "function:73eee5ec6b1c94268a4d9c40ef7f662f",
+      "kind": "function",
+      "name": "guardNoPrune",
+      "qualifiedName": "guardNoPrune",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 200,
+      "endLine": 203,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:9d0b5cf639ecbd60bfec25961cf971c9",
+      "kind": "function",
+      "name": "fnRefExtras",
+      "qualifiedName": "fnRefExtras",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 205,
+      "endLine": 210,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "import:3507f565c67e2ebfd3296d7d9b2393da",
+      "kind": "import",
+      "name": "Darwin.FILE",
+      "qualifiedName": "Darwin.FILE",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 212,
+      "endLine": 212,
+      "startColumn": 0,
+      "endColumn": 24,
+      "signature": "import class Darwin.FILE"
+    },
+    {
+      "id": "import:1ad47f5036bb3218aae8320b3a04147b",
+      "kind": "import",
+      "name": "TortureKit",
+      "qualifiedName": "TortureKit",
+      "filePath": "torture.swift",
+      "language": "swift",
+      "startLine": 213,
+      "endLine": 213,
+      "startColumn": 0,
+      "endColumn": 27,
+      "signature": "@testable import TortureKit"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.swift",
+      "target": "import:116708a702380f8bfc06030ba3964d77",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "import:496c7acecff43a423f89191b95cddcce",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "field:41b76bf1c5ec73d81bd6e1b0d1b80e26",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "field:bc4d5f167c7b2067e067da75f388cd26",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "constant:48a4b90850e760164e1a2d8c20240c05",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "variable:b0140d6f939baa22cf37e9ceb649296a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "field:887231b4813f5c13293a20c6fb704fad",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "field:44e71c277f6d5b1a6708563d18526b0c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "field:d7c2f172d98e1be2062ece802dcdc4e5",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "field:2c0c798b861d4f52b6fffbd2f3361853",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "property:5adda8060392b1c87de026284998ff38",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "method:17ab262472e1d06bbe20faf7c5d6b6ce",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "target": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "struct:6d96b486579cf3fdd66718872215294c",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:6d96b486579cf3fdd66718872215294c",
+      "target": "field:81b9c56215cb5a70857091431b97bd1a",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:6d96b486579cf3fdd66718872215294c",
+      "target": "constant:03a7deca3c8e64b747972d99b0c1bcdc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "target": "enum_member:46968634b306fc0b82eab61099ef1ecf",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "target": "enum_member:fb8f2e100e4cd5ff76e6734c9da15ed7",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "target": "enum_member:d4c10b3b5d571f5424ed73030c053433",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "target": "property:3f76120a6d12e45f619241f30c648d15",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "target": "method:84b1066798bf4890531cf6d4cd0b61b2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "interface:7423d683e426467682cab43a0f65b9a1",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:7423d683e426467682cab43a0f65b9a1",
+      "target": "property:23ed107148c12d05a3a6e675933995a4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:9e6d12929ca25230717fd7c737416ba5",
+      "kind": "contains"
+    },
+    {
+      "source": "class:9e6d12929ca25230717fd7c737416ba5",
+      "target": "method:d1671f257e4e4d7ac2394b765a146ec7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:12b0fc1a5b8916f4876df49d6cd78ad7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:12b0fc1a5b8916f4876df49d6cd78ad7",
+      "target": "method:2482c6a39c7a71c514ac4eda10980efa",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:129f932b07791059905bc786775e5dff",
+      "kind": "contains"
+    },
+    {
+      "source": "class:129f932b07791059905bc786775e5dff",
+      "target": "method:846b59388a77b469427475c32a0d11a3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:2fbf1c8797ac810ae0b9a0e775344419",
+      "kind": "contains"
+    },
+    {
+      "source": "class:2fbf1c8797ac810ae0b9a0e775344419",
+      "target": "field:661e861b2ab2babf3cee5a6db2ef905b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:2fbf1c8797ac810ae0b9a0e775344419",
+      "target": "method:34cf38d9598d94501860964788105cef",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "type_alias:4eac8834dd1ceb7059cdc0ebd6a23f96",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "type_alias:8d09bbd71ebfe2d1aa557e0e79aaab99",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "constant:e400c32e94629da31bbd3b0d7f36ed66",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "variable:48293e66164889b3a4e90f4d7f9d02f8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:262df8cc0bb3d2bff4ad563022b44561",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:510392b0722e8898090560466c5a5ec5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:1762c7fa1f3cd4e18196d93c05883108",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:5856f8137240d29ffd5ec6ced63378bc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "enum:62b26973d47047974a3723ff3d5d23ee",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:62b26973d47047974a3723ff3d5d23ee",
+      "target": "enum_member:537013a17ec1da68d643a657f36e95f9",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:62b26973d47047974a3723ff3d5d23ee",
+      "target": "enum_member:46df5d002790f5e6b3f08846684dd9c3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "struct:487d89e7a287a16bb02adabeb6c061a0",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:487d89e7a287a16bb02adabeb6c061a0",
+      "target": "property:13da6cd7fb88d8425ef100ac799b81ef",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:e010f23dfe81de4817786493db300945",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:d462abbd6321ff43ca557c0c82e26cfc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:071bd15751854933bac820b5850a2641",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "kind": "contains"
+    },
+    {
+      "source": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "target": "field:80067db1e7f32069d7001087568db903",
+      "kind": "contains"
+    },
+    {
+      "source": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "target": "constant:98c3f1793577a1032b2c3b4496219c42",
+      "kind": "contains"
+    },
+    {
+      "source": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "target": "field:ee24bb4e94c361a6ea0a8bd21d61e20c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "target": "field:fc3a6156eef9a13269b422fae5ff7dd7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "interface:7101ee1e3e068d01630d3b0128a15b2d",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:7101ee1e3e068d01630d3b0128a15b2d",
+      "target": "property:beb5e1a8fd1d9ea9b8af4b67ce292937",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:7101ee1e3e068d01630d3b0128a15b2d",
+      "target": "property:29504b99e9cc6f02e270e9cbd71ab750",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "class:8534b13d6fd2bccbb80c98d8ef013354",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8534b13d6fd2bccbb80c98d8ef013354",
+      "target": "method:bb1ff2793f1d0d639644bc1bb6dc0f6b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:6587eb6d3ce9f83526f39edb278e0edb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:58cc4881761cc60fc8688b7b929434dc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:4aa354cbc553ba55f917cade5de1b419",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:676efed68fe8c7f7281531530ae6ae6f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:ca44325ee884ced19dd402cc3e104bc4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:24b796590d26da68a2429579e2f10a68",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:80c7293664161116a029e8aa43f2becf",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:33b106031d5d73f4a78ba89e261b883e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "constant:cba49cc6e0698fde6fd64936b541824f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "constant:50a159fca69ad0a9d7ec617a78f84113",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:73eee5ec6b1c94268a4d9c40ef7f662f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "function:9d0b5cf639ecbd60bfec25961cf971c9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "import:3507f565c67e2ebfd3296d7d9b2393da",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.swift",
+      "target": "import:1ad47f5036bb3218aae8320b3a04147b",
+      "kind": "contains"
+    },
+    {
+      "source": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "target": "constant:48a4b90850e760164e1a2d8c20240c05",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "constant:50a159fca69ad0a9d7ec617a78f84113",
+      "target": "constant:e400c32e94629da31bbd3b0d7f36ed66",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:73eee5ec6b1c94268a4d9c40ef7f662f",
+      "target": "constant:e400c32e94629da31bbd3b0d7f36ed66",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.swift",
+      "referenceName": "Foundation",
+      "referenceKind": "imports",
+      "line": 1,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.swift",
+      "referenceName": "UIKit.UIView",
+      "referenceKind": "imports",
+      "line": 2,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "NSObject",
+      "referenceKind": "extends",
+      "line": 6,
+      "column": 28
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "RequestDelegate",
+      "referenceKind": "extends",
+      "line": 6,
+      "column": 38
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "DispatchQueue",
+      "referenceKind": "references",
+      "line": 7,
+      "column": 17
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "DispatchQueue",
+      "referenceKind": "calls",
+      "line": 7,
+      "column": 33
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "Cache",
+      "referenceKind": "references",
+      "line": 11,
+      "column": 22
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "Cache.build",
+      "referenceKind": "calls",
+      "line": 11,
+      "column": 30
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "Published",
+      "referenceKind": "decorates",
+      "line": 12,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "Bool",
+      "referenceKind": "references",
+      "line": 12,
+      "column": 34
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "SessionDelegate",
+      "referenceKind": "references",
+      "line": 13,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "prepare",
+      "referenceKind": "calls",
+      "line": 15,
+      "column": 14
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "react",
+      "referenceKind": "calls",
+      "line": 16,
+      "column": 13
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "Bool",
+      "referenceKind": "references",
+      "line": 18,
+      "column": 20
+    },
+    {
+      "fromNodeId": "property:5adda8060392b1c87de026284998ff38",
+      "referenceName": "check",
+      "referenceKind": "calls",
+      "line": 18,
+      "column": 34
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "DataRequest",
+      "referenceKind": "references",
+      "line": 22,
+      "column": 76
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "DataRequest.make().validate",
+      "referenceKind": "calls",
+      "line": 23,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "DataRequest.make",
+      "referenceKind": "calls",
+      "line": 23,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "HTTPMethod",
+      "referenceKind": "references",
+      "line": 24,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "Session",
+      "referenceKind": "references",
+      "line": 25,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "own",
+      "referenceKind": "calls",
+      "line": 26,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "retain",
+      "referenceKind": "calls",
+      "line": 27,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "rootQueue.async",
+      "referenceKind": "calls",
+      "line": 28,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:5066dc69ba3ae94e164d9fc751bbc008",
+      "referenceName": "perform",
+      "referenceKind": "calls",
+      "line": 28,
+      "column": 22
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "setupMonitor",
+      "referenceKind": "calls",
+      "line": 33,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "cleanup",
+      "referenceKind": "calls",
+      "line": 35,
+      "column": 11
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "store",
+      "referenceKind": "calls",
+      "line": 36,
+      "column": 39
+    },
+    {
+      "fromNodeId": "class:89a6327dc2e1da4b990c740c891aaa96",
+      "referenceName": "store",
+      "referenceKind": "calls",
+      "line": 36,
+      "column": 60
+    },
+    {
+      "fromNodeId": "struct:6d96b486579cf3fdd66718872215294c",
+      "referenceName": "RawRepresentable",
+      "referenceKind": "extends",
+      "line": 39,
+      "column": 19
+    },
+    {
+      "fromNodeId": "struct:6d96b486579cf3fdd66718872215294c",
+      "referenceName": "Equatable",
+      "referenceKind": "extends",
+      "line": 39,
+      "column": 37
+    },
+    {
+      "fromNodeId": "struct:6d96b486579cf3fdd66718872215294c",
+      "referenceName": "HTTPMethod",
+      "referenceKind": "calls",
+      "line": 41,
+      "column": 19
+    },
+    {
+      "fromNodeId": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "referenceName": "Error",
+      "referenceKind": "extends",
+      "line": 44,
+      "column": 14
+    },
+    {
+      "fromNodeId": "enum:1bea39061b126572ffb641ee6a98eab8",
+      "referenceName": "CustomStringConvertible",
+      "referenceKind": "extends",
+      "line": 44,
+      "column": 21
+    },
+    {
+      "fromNodeId": "property:3f76120a6d12e45f619241f30c648d15",
+      "referenceName": "renderDescription",
+      "referenceKind": "calls",
+      "line": 48,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:84b1066798bf4890531cf6d4cd0b61b2",
+      "referenceName": "AFError",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 24
+    },
+    {
+      "fromNodeId": "interface:7423d683e426467682cab43a0f65b9a1",
+      "referenceName": "AnyObject",
+      "referenceKind": "extends",
+      "line": 52,
+      "column": 26
+    },
+    {
+      "fromNodeId": "class:9e6d12929ca25230717fd7c737416ba5",
+      "referenceName": "EventMonitor",
+      "referenceKind": "extends",
+      "line": 58,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:d1671f257e4e4d7ac2394b765a146ec7",
+      "referenceName": "record",
+      "referenceKind": "calls",
+      "line": 59,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:2482c6a39c7a71c514ac4eda10980efa",
+      "referenceName": "KF",
+      "referenceKind": "references",
+      "line": 63,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:2482c6a39c7a71c514ac4eda10980efa",
+      "referenceName": "Builder",
+      "referenceKind": "references",
+      "line": 63,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:846b59388a77b469427475c32a0d11a3",
+      "referenceName": "Element",
+      "referenceKind": "references",
+      "line": 67,
+      "column": 19
+    },
+    {
+      "fromNodeId": "type_alias:4eac8834dd1ceb7059cdc0ebd6a23f96",
+      "referenceName": "Data",
+      "referenceKind": "references",
+      "line": 75,
+      "column": 21
+    },
+    {
+      "fromNodeId": "type_alias:4eac8834dd1ceb7059cdc0ebd6a23f96",
+      "referenceName": "Void",
+      "referenceKind": "references",
+      "line": 75,
+      "column": 30
+    },
+    {
+      "fromNodeId": "type_alias:8d09bbd71ebfe2d1aa557e0e79aaab99",
+      "referenceName": "KF",
+      "referenceKind": "references",
+      "line": 76,
+      "column": 25
+    },
+    {
+      "fromNodeId": "type_alias:8d09bbd71ebfe2d1aa557e0e79aaab99",
+      "referenceName": "Builder",
+      "referenceKind": "references",
+      "line": 76,
+      "column": 28
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "Session",
+      "referenceKind": "references",
+      "line": 81,
+      "column": 52
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 82,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "Foo",
+      "referenceKind": "calls",
+      "line": 83,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "obj.method",
+      "referenceKind": "calls",
+      "line": 84,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "deep",
+      "referenceKind": "calls",
+      "line": 85,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "x.optCall",
+      "referenceKind": "calls",
+      "line": 86,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "forced",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "Foo.make().draw",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "Foo.make",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "API.PackageController.GetRoute.query",
+      "referenceKind": "calls",
+      "line": 89,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "API",
+      "referenceKind": "references",
+      "line": 89,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "API.PackageController.GetRoute.query",
+      "referenceKind": "calls",
+      "line": 90,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "API",
+      "referenceKind": "references",
+      "line": 90,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "API.Model",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "make",
+      "referenceKind": "calls",
+      "line": 93,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "Self",
+      "referenceKind": "references",
+      "line": 93,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "call",
+      "referenceKind": "calls",
+      "line": 94,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "App",
+      "referenceKind": "references",
+      "line": 94,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "query",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "API",
+      "referenceKind": "references",
+      "line": 95,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "baz",
+      "referenceKind": "calls",
+      "line": 96,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "foo.bar",
+      "referenceKind": "calls",
+      "line": 96,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "arr.map",
+      "referenceKind": "calls",
+      "line": 98,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "reg2",
+      "referenceKind": "calls",
+      "line": 101,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "forward",
+      "referenceKind": "calls",
+      "line": 102,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "Holder",
+      "referenceKind": "references",
+      "line": 103,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "defer",
+      "referenceKind": "calls",
+      "line": 104,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "cleanup",
+      "referenceKind": "calls",
+      "line": 104,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "dict",
+      "referenceKind": "calls",
+      "line": 105,
+      "column": 10
+    },
+    {
+      "fromNodeId": "enum:62b26973d47047974a3723ff3d5d23ee",
+      "referenceName": "Int",
+      "referenceKind": "extends",
+      "line": 116,
+      "column": 17
+    },
+    {
+      "fromNodeId": "struct:487d89e7a287a16bb02adabeb6c061a0",
+      "referenceName": "View",
+      "referenceKind": "references",
+      "line": 122,
+      "column": 17
+    },
+    {
+      "fromNodeId": "property:13da6cd7fb88d8425ef100ac799b81ef",
+      "referenceName": "VStack",
+      "referenceKind": "calls",
+      "line": 122,
+      "column": 24
+    },
+    {
+      "fromNodeId": "property:13da6cd7fb88d8425ef100ac799b81ef",
+      "referenceName": "Text",
+      "referenceKind": "calls",
+      "line": 122,
+      "column": 33
+    },
+    {
+      "fromNodeId": "function:d462abbd6321ff43ca557c0c82e26cfc",
+      "referenceName": "objc",
+      "referenceKind": "decorates",
+      "line": 129,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:071bd15751854933bac820b5850a2641",
+      "referenceName": "Session",
+      "referenceKind": "references",
+      "line": 131,
+      "column": 41
+    },
+    {
+      "fromNodeId": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "referenceName": "makePair",
+      "referenceKind": "calls",
+      "line": 136,
+      "column": 20
+    },
+    {
+      "fromNodeId": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "referenceName": "Siblings",
+      "referenceKind": "decorates",
+      "line": 137,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "referenceName": "Tag",
+      "referenceKind": "references",
+      "line": 137,
+      "column": 63
+    },
+    {
+      "fromNodeId": "class:77ec7a7edf4f57481c5fc62a5deb42f5",
+      "referenceName": "Pivot",
+      "referenceKind": "references",
+      "line": 137,
+      "column": 21
+    },
+    {
+      "fromNodeId": "interface:7101ee1e3e068d01630d3b0128a15b2d",
+      "referenceName": "AnyObject",
+      "referenceKind": "extends",
+      "line": 140,
+      "column": 20
+    },
+    {
+      "fromNodeId": "interface:7101ee1e3e068d01630d3b0128a15b2d",
+      "referenceName": "Identifiable",
+      "referenceKind": "extends",
+      "line": 140,
+      "column": 31
+    },
+    {
+      "fromNodeId": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 149,
+      "column": 43
+    },
+    {
+      "fromNodeId": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 149,
+      "column": 50
+    },
+    {
+      "fromNodeId": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "referenceName": "Err",
+      "referenceKind": "references",
+      "line": 149,
+      "column": 55
+    },
+    {
+      "fromNodeId": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "referenceName": "callMe",
+      "referenceKind": "calls",
+      "line": 150,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "referenceName": ".success",
+      "referenceKind": "calls",
+      "line": 151,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:71ad84ec0bb16713b93a617012eb5ac3",
+      "referenceName": "Foo",
+      "referenceKind": "calls",
+      "line": 151,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 154,
+      "column": 27
+    },
+    {
+      "fromNodeId": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "referenceName": "Array",
+      "referenceKind": "references",
+      "line": 154,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 154,
+      "column": 40
+    },
+    {
+      "fromNodeId": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "referenceName": "Err",
+      "referenceKind": "references",
+      "line": 154,
+      "column": 46
+    },
+    {
+      "fromNodeId": "function:f5457d2ff2cc26a720336e1d0b45dc3b",
+      "referenceName": "fail",
+      "referenceKind": "calls",
+      "line": 154,
+      "column": 53
+    },
+    {
+      "fromNodeId": "function:6587eb6d3ce9f83526f39edb278e0edb",
+      "referenceName": "Void",
+      "referenceKind": "references",
+      "line": 155,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:6587eb6d3ce9f83526f39edb278e0edb",
+      "referenceName": "noop",
+      "referenceKind": "calls",
+      "line": 155,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:58cc4881761cc60fc8688b7b929434dc",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 156,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:58cc4881761cc60fc8688b7b929434dc",
+      "referenceName": "Foo",
+      "referenceKind": "calls",
+      "line": 156,
+      "column": 36
+    },
+    {
+      "fromNodeId": "function:4aa354cbc553ba55f917cade5de1b419",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 157,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:4aa354cbc553ba55f917cade5de1b419",
+      "referenceName": "Foo",
+      "referenceKind": "calls",
+      "line": 157,
+      "column": 38
+    },
+    {
+      "fromNodeId": "function:676efed68fe8c7f7281531530ae6ae6f",
+      "referenceName": "Session",
+      "referenceKind": "references",
+      "line": 158,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:ca44325ee884ced19dd402cc3e104bc4",
+      "referenceName": "KF",
+      "referenceKind": "references",
+      "line": 159,
+      "column": 21
+    },
+    {
+      "fromNodeId": "function:ca44325ee884ced19dd402cc3e104bc4",
+      "referenceName": "Builder",
+      "referenceKind": "references",
+      "line": 159,
+      "column": 24
+    },
+    {
+      "fromNodeId": "function:ca44325ee884ced19dd402cc3e104bc4",
+      "referenceName": "KF.Builder",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "Foo.init",
+      "referenceKind": "calls",
+      "line": 162,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "trimmed",
+      "referenceKind": "calls",
+      "line": 163,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "lookup",
+      "referenceKind": "calls",
+      "line": 166,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "f",
+      "referenceKind": "calls",
+      "line": 167,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "arr",
+      "referenceKind": "calls",
+      "line": 168,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "make",
+      "referenceKind": "calls",
+      "line": 169,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "m[1]",
+      "referenceKind": "calls",
+      "line": 169,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "m",
+      "referenceKind": "calls",
+      "line": 169,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "thrower",
+      "referenceKind": "calls",
+      "line": 171,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "Task",
+      "referenceKind": "calls",
+      "line": 172,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "asyncFn",
+      "referenceKind": "calls",
+      "line": 172,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:24b796590d26da68a2429579e2f10a68",
+      "referenceName": "counter.next",
+      "referenceKind": "calls",
+      "line": 173,
+      "column": 21
+    },
+    {
+      "fromNodeId": "function:80c7293664161116a029e8aa43f2becf",
+      "referenceName": "Color",
+      "referenceKind": "references",
+      "line": 178,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:80c7293664161116a029e8aa43f2becf",
+      "referenceName": "Suit",
+      "referenceKind": "references",
+      "line": 179,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:80c7293664161116a029e8aa43f2becf",
+      "referenceName": "UserModel",
+      "referenceKind": "references",
+      "line": 180,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:80c7293664161116a029e8aa43f2becf",
+      "referenceName": "Deep",
+      "referenceKind": "references",
+      "line": 181,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:33b106031d5d73f4a78ba89e261b883e",
+      "referenceName": "directiveCall",
+      "referenceKind": "calls",
+      "line": 187,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:73eee5ec6b1c94268a4d9c40ef7f662f",
+      "referenceName": "optSource",
+      "referenceKind": "calls",
+      "line": 201,
+      "column": 28
+    },
+    {
+      "fromNodeId": "function:73eee5ec6b1c94268a4d9c40ef7f662f",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 202,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:9d0b5cf639ecbd60bfec25961cf971c9",
+      "referenceName": "reg",
+      "referenceKind": "calls",
+      "line": 206,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:9d0b5cf639ecbd60bfec25961cf971c9",
+      "referenceName": "onNote",
+      "referenceKind": "calls",
+      "line": 208,
+      "column": 23
+    },
+    {
+      "fromNodeId": "file:torture.swift",
+      "referenceName": "Darwin.FILE",
+      "referenceKind": "imports",
+      "line": 212,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.swift",
+      "referenceName": "TortureKit",
+      "referenceKind": "imports",
+      "line": 213,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "cbA",
+      "referenceKind": "function_ref",
+      "line": 99,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "cbB",
+      "referenceKind": "function_ref",
+      "line": 99,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "handler",
+      "referenceKind": "function_ref",
+      "line": 100,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:92e7a37a37fcdd1233f2060dcaa08d46",
+      "referenceName": "onFire",
+      "referenceKind": "function_ref",
+      "line": 101,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:9d0b5cf639ecbd60bfec25961cf971c9",
+      "referenceName": "onFire",
+      "referenceKind": "function_ref",
+      "line": 206,
+      "column": 10
+    }
+  ],
+  "errors": []
+}

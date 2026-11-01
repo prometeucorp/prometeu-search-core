@@ -1,0 +1,180 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": "python: strips line comments",
+      "language": "python",
+      "source": "x = 1  # path('/fake/', View)\nreal = 2",
+      "expected": "x = 1                        \nreal = 2",
+      "byteExpected": "x = 1                        \nreal = 2"
+    },
+    {
+      "id": "python: strips triple-quoted docstrings",
+      "language": "python",
+      "source": "\"\"\"\npath('/in-docstring/', View)\n\"\"\"\nreal = 1\n",
+      "expected": "   \n                            \n   \nreal = 1\n",
+      "byteExpected": "   \n                            \n   \nreal = 1\n"
+    },
+    {
+      "id": "python: keeps # inside strings",
+      "language": "python",
+      "source": "path('#/fragment/', View)\n",
+      "expected": "path('#/fragment/', View)\n",
+      "byteExpected": "path('#/fragment/', View)\n"
+    },
+    {
+      "id": "python: handles triple-single-quoted docstrings",
+      "language": "python",
+      "source": "'''\npath('/fake/')\n'''\nreal = 1\n",
+      "expected": "   \n              \n   \nreal = 1\n",
+      "byteExpected": "   \n              \n   \nreal = 1\n"
+    },
+    {
+      "id": "typescript: strips //, /* */",
+      "language": "typescript",
+      "source": "// app.get('/fake', x)\n/* app.get('/also-fake', y) */\napp.get('/real', z)",
+      "expected": "                      \n                              \napp.get('/real', z)",
+      "byteExpected": "                      \n                              \napp.get('/real', z)"
+    },
+    {
+      "id": "typescript: keeps // inside strings",
+      "language": "typescript",
+      "source": "const url = \"https://example.com/path\";\n",
+      "expected": "const url = \"https://example.com/path\";\n",
+      "byteExpected": "const url = \"https://example.com/path\";\n"
+    },
+    {
+      "id": "php: strips //, #, and /* */",
+      "language": "php",
+      "source": "// Route::get('/a', X::class)\n# Route::get('/b', Y::class)\n/* Route::get('/c', Z::class) */\nReal::go();",
+      "expected": "                             \n                            \n                                \nReal::go();",
+      "byteExpected": "                             \n                            \n                                \nReal::go();"
+    },
+    {
+      "id": "ruby: strips =begin/=end",
+      "language": "ruby",
+      "source": "=begin\nget '/fake', to: 'x#y'\n=end\nget '/real', to: 'a#b'\n",
+      "expected": "      \n                      \n    \nget '/real', to: 'a#b'\n",
+      "byteExpected": "      \n                      \n    \nget '/real', to: 'a#b'\n"
+    },
+    {
+      "id": "ruby: strips # comments",
+      "language": "ruby",
+      "source": "# get '/fake', to: 'x#y'\nget '/real', to: 'a#b'\n",
+      "expected": "                        \nget '/real', to: 'a#b'\n",
+      "byteExpected": "                        \nget '/real', to: 'a#b'\n"
+    },
+    {
+      "id": "rust: handles nested block comments",
+      "language": "rust",
+      "source": "/* outer /* inner */ still in outer */ .route(\"/real\", get(h))",
+      "expected": "                                       .route(\"/real\", get(h))",
+      "byteExpected": "                                       .route(\"/real\", get(h))"
+    },
+    {
+      "id": "go: keeps backtick raw strings intact, strips // comments",
+      "language": "go",
+      "source": "// r.GET(\"/fake\", h)\nr.GET(`/real`, h2)\n",
+      "expected": "                    \nr.GET(`/real`, h2)\n",
+      "byteExpected": "                    \nr.GET(`/real`, h2)\n"
+    },
+    {
+      "id": "go: strips block comments containing route-shaped text",
+      "language": "go",
+      "source": "/* r.GET(\"/fake\", h) */\nr.GET(\"/real\", h2)\n",
+      "expected": "                       \nr.GET(\"/real\", h2)\n",
+      "byteExpected": "                       \nr.GET(\"/real\", h2)\n"
+    },
+    {
+      "id": "java: strips // and /* */ comments",
+      "language": "java",
+      "source": "// @GetMapping(\"/fake\")\n/* @PostMapping(\"/also-fake\") */\n@GetMapping(\"/real\")\n",
+      "expected": "                       \n                                \n@GetMapping(\"/real\")\n",
+      "byteExpected": "                       \n                                \n@GetMapping(\"/real\")\n"
+    },
+    {
+      "id": "csharp: strips // and /* */ comments",
+      "language": "csharp",
+      "source": "// [HttpGet(\"/fake\")]\n/* [HttpPost(\"/also-fake\")] */\n[HttpGet(\"/real\")]\n",
+      "expected": "                     \n                              \n[HttpGet(\"/real\")]\n",
+      "byteExpected": "                     \n                              \n[HttpGet(\"/real\")]\n"
+    },
+    {
+      "id": "swift: strips // and /* */ comments",
+      "language": "swift",
+      "source": "// app.get(\"fake\", use: x)\n/* app.get(\"also-fake\", use: y) */\napp.get(\"real\", use: z)\n",
+      "expected": "                          \n                                  \napp.get(\"real\", use: z)\n",
+      "byteExpected": "                          \n                                  \napp.get(\"real\", use: z)\n"
+    },
+    {
+      "id": "preserves line numbers (newlines retained)",
+      "language": "python",
+      "source": "line1\n# comment with path('/fake/')\nline3",
+      "expected": "line1\n                             \nline3",
+      "byteExpected": "line1\n                             \nline3"
+    },
+    {
+      "id": "preserves overall length so source offsets stay valid",
+      "language": "python",
+      "source": "x = 1  # path('/fake/', View)\nreal = 2",
+      "expected": "x = 1                        \nreal = 2",
+      "byteExpected": "x = 1                        \nreal = 2"
+    },
+    {
+      "id": "a block comment across lines",
+      "language": "cpp",
+      "source": "int a; /* one\r\n two\n */ int b;",
+      "expected": "int a;        \n    \n    int b;",
+      "byteExpected": "int a;        \n    \n    int b;"
+    },
+    {
+      "id": "a comment that runs off the end",
+      "language": "typescript",
+      "source": "const a = 1; /* open\nstill",
+      "expected": "const a = 1;        \n     ",
+      "byteExpected": "const a = 1;        \n     "
+    },
+    {
+      "id": "a line comment at the very end",
+      "language": "java",
+      "source": "int a; // last",
+      "expected": "int a;        ",
+      "byteExpected": "int a;        "
+    },
+    {
+      "id": "a docstring across lines",
+      "language": "python",
+      "source": "x = 1\n\"\"\"doc\n\nmore\"\"\"\ny = 2\n",
+      "expected": "x = 1\n      \n\n       \ny = 2\n",
+      "byteExpected": "x = 1\n      \n\n       \ny = 2\n"
+    },
+    {
+      "id": "a comment first in the file",
+      "language": "go",
+      "source": "// top\npackage a\n",
+      "expected": "      \npackage a\n",
+      "byteExpected": "      \npackage a\n"
+    },
+    {
+      "id": "nested block comments",
+      "language": "rust",
+      "source": "fn a() {} /* x /* y */ z */ fn b() {}",
+      "expected": "fn a() {}                   fn b() {}",
+      "byteExpected": "fn a() {}                   fn b() {}"
+    },
+    {
+      "id": "a wide character in a comment",
+      "language": "c",
+      "source": "int a; /* 😀 é */ int b;",
+      "expected": "int a;            int b;",
+      "byteExpected": "int a;               int b;"
+    },
+    {
+      "id": "Erlang atoms and character literals",
+      "language": "erlang",
+      "source": "call() -> \"$%\", 'quoted%atom', $%, $\\%, ok. % removed 🌍\n",
+      "expected": "call() -> \"$%\", 'quoted%atom', $%, $\\%, ok.             \n",
+      "byteExpected": "call() -> \"$%\", 'quoted%atom', $%, $\\%, ok.               \n"
+    }
+  ]
+}

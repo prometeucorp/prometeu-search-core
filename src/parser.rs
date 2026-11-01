@@ -6,7 +6,62 @@ use std::ops::Range;
 use std::path::Path;
 use tree_sitter::{Language, Node, Parser};
 
+mod cfml;
+mod components;
+mod formats;
+pub(crate) mod javascript_regex;
+mod native;
+pub(crate) use native::{parse_with_additions, recover_owned_call_sites};
+mod preprocess;
+mod razor;
 mod semantic;
+
+pub use prometeu_extract::ExtractionResult;
+
+/// Source language identifiers accepted by `extract_as` and project extension mappings.
+pub const LANGUAGES: &[&str] = &[
+    "typescript",
+    "tsx",
+    "javascript",
+    "jsx",
+    "python",
+    "go",
+    "rust",
+    "java",
+    "c",
+    "cpp",
+    "csharp",
+    "php",
+    "ruby",
+    "swift",
+    "kotlin",
+    "scala",
+    "dart",
+    "lua",
+    "luau",
+    "r",
+    "arkts",
+    "objc",
+    "solidity",
+    "vbnet",
+    "nix",
+    "erlang",
+    "cobol",
+    "terraform",
+    "pascal",
+    "vue",
+    "svelte",
+    "astro",
+    "liquid",
+    "xml",
+    "yaml",
+    "twig",
+    "properties",
+    "razor",
+    "cfml",
+    "cfscript",
+    "cfquery",
+];
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Symbol {
@@ -23,6 +78,9 @@ pub struct Symbol {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Reference {
+    /// Zero-based canonical UTF-16 column when available.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub column: Option<usize>,
     /// Index into this file's symbols, or `None` outside an indexed scope.
     pub caller: Option<usize>,
     pub target: String,
@@ -52,6 +110,8 @@ pub struct ParsedFile {
     pub references: Vec<Reference>,
     pub imports: Vec<Import>,
     pub has_errors: bool,
+    /// The complete upstream extraction, including metadata not used by graph queries yet.
+    pub extraction: Option<ExtractionResult>,
 }
 
 struct RubyBinding {
@@ -82,10 +142,65 @@ fn language(path: &Path) -> Option<(&'static str, Language)> {
 }
 
 pub fn supports(path: &Path) -> bool {
-    language(path).is_some()
+    native::language(path).is_some()
 }
 
 pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
+    native::parse(path, source)
+}
+
+/// Detect source using an optional extension mapping, retaining filename and content rules.
+pub fn detect_language(
+    path: &Path,
+    source: &str,
+    extension_override: Option<&str>,
+) -> Result<&'static str> {
+    native::detect_language(path, source, extension_override)
+}
+
+/// Parse with an optional project extension mapping before content-based detection.
+pub fn parse_with_override(
+    path: &Path,
+    source: &str,
+    extension_override: Option<&str>,
+) -> Result<ParsedFile> {
+    let language = detect_language(path, source, extension_override)?;
+    native::parse_as(path, source, language)
+}
+
+/// Extract the upstream data model without projecting it into search results.
+pub fn extract(path: &Path, source: &str) -> Result<ExtractionResult> {
+    native::extract(path, source)
+}
+
+/// Extract a known language explicitly, for host-owned extension mappings and templates.
+pub fn extract_as(path: &Path, source: &str, language: &str) -> Result<ExtractionResult> {
+    native::extract_as(path, source, language)
+}
+
+/// Extract canonical declarations with explicitly selected framework extensions.
+pub fn extract_with_frameworks(
+    path: &Path,
+    source: &str,
+    language: &str,
+    frameworks: &[String],
+) -> Result<ExtractionResult> {
+    let mut extraction = native::extract_as(path, source, language)?;
+    crate::frameworks::append(path, source, language, frameworks, &mut extraction)?;
+    Ok(extraction)
+}
+
+/// Project canonical extraction and selected framework declarations into search records.
+pub fn parse_with_frameworks(
+    path: &Path,
+    source: &str,
+    language: &str,
+    frameworks: &[String],
+) -> Result<ParsedFile> {
+    native::parse_with_frameworks(path, source, language, frameworks)
+}
+
+fn parse_legacy(path: &Path, source: &str) -> Result<ParsedFile> {
     let Some((name, grammar)) = language(path) else {
         bail!("unsupported language: {}", path.display());
     };
@@ -100,6 +215,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
         references: Vec::new(),
         imports: Vec::new(),
         has_errors: tree.root_node().has_error(),
+        extraction: None,
     };
     let ruby = name == "ruby";
     // Ruby scripts and build files often consist entirely of executable DSL calls.
@@ -144,6 +260,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             _ => None,
         };
         if let Some(mut target) = target.and_then(|target| call_name(target, source)) {
+            let constructor = node.kind() == "new_expression";
             if ruby
                 && node.parent().is_some_and(|parent| {
                     parent.kind() == "assignment"
@@ -154,11 +271,15 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             }
             call_nodes.push((result.references.len(), node));
             result.references.push(Reference {
+                column: constructor.then(|| {
+                    let start = node.start_byte() - node.start_position().column;
+                    source[start..node.start_byte()].encode_utf16().count()
+                }),
                 caller,
                 target,
                 line: node.start_position().row + 1,
                 qualifier: None,
-                kind: "calls".into(),
+                kind: if constructor { "instantiates" } else { "calls" }.into(),
                 receiver_type: None,
                 shadowed: false,
                 owner: None,
@@ -206,6 +327,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             })
         {
             result.references.push(Reference {
+                column: None,
                 caller,
                 target,
                 line,
@@ -251,6 +373,13 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
         }
     }
     semantic::enrich(tree.root_node(), source, &mut result, &call_nodes);
+    for (index, node) in call_nodes {
+        if result.references[index].qualifier.as_deref() == Some("this") {
+            let start = node.start_byte() - node.start_position().column;
+            result.references[index].column =
+                Some(source[start..node.start_byte()].encode_utf16().count());
+        }
+    }
     Ok(result)
 }
 
@@ -711,7 +840,9 @@ function run(value: Store) {
             )
             .unwrap();
             assert!(!js.has_errors);
-            assert_eq!(js.symbols[0].name, "render");
+            assert_eq!(js.symbols[0].kind, "file");
+            assert_eq!(js.symbols[1].name, "render");
+            assert_eq!(js.symbols[1].kind, "function");
         }
     }
 

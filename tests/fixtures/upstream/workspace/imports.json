@@ -1,0 +1,1034 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "builtins": [
+    "_http_agent",
+    "_http_client",
+    "_http_common",
+    "_http_incoming",
+    "_http_outgoing",
+    "_http_server",
+    "_stream_duplex",
+    "_stream_passthrough",
+    "_stream_readable",
+    "_stream_transform",
+    "_stream_wrap",
+    "_stream_writable",
+    "_tls_common",
+    "_tls_wrap",
+    "assert",
+    "assert/strict",
+    "async_hooks",
+    "buffer",
+    "child_process",
+    "cluster",
+    "console",
+    "constants",
+    "crypto",
+    "dgram",
+    "diagnostics_channel",
+    "dns",
+    "dns/promises",
+    "domain",
+    "events",
+    "fs",
+    "fs/promises",
+    "http",
+    "http2",
+    "https",
+    "inspector",
+    "inspector/promises",
+    "module",
+    "net",
+    "os",
+    "path",
+    "path/posix",
+    "path/win32",
+    "perf_hooks",
+    "process",
+    "punycode",
+    "querystring",
+    "readline",
+    "readline/promises",
+    "repl",
+    "stream",
+    "stream/consumers",
+    "stream/promises",
+    "stream/web",
+    "string_decoder",
+    "sys",
+    "timers",
+    "timers/promises",
+    "tls",
+    "trace_events",
+    "tty",
+    "url",
+    "util",
+    "util/types",
+    "v8",
+    "vm",
+    "wasi",
+    "worker_threads",
+    "zlib",
+    "node:sea",
+    "node:sqlite",
+    "node:test",
+    "node:test/reporters"
+  ],
+  "imports": [
+    {
+      "source": "const Default = require(\"x\").default; const {default: Named, default} = require(\"y\");",
+      "expected": [
+        {
+          "localName": "Default",
+          "exportedName": "default",
+          "source": "x",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "Named",
+          "exportedName": "default",
+          "source": "y",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "default",
+          "exportedName": "default",
+          "source": "y",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import Default, {name, item as local, default as Other} from \"pkg\";",
+      "expected": [
+        {
+          "localName": "Default",
+          "exportedName": "default",
+          "source": "pkg",
+          "isDefault": true,
+          "isNamespace": false
+        },
+        {
+          "localName": "name",
+          "exportedName": "name",
+          "source": "pkg",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "local",
+          "exportedName": "item",
+          "source": "pkg",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "Other",
+          "exportedName": "default",
+          "source": "pkg",
+          "isDefault": true,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import type {Type, type Other, typeof Flow as F} from \"typed\";",
+      "expected": [
+        {
+          "localName": "Type",
+          "exportedName": "Type",
+          "source": "typed",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "Other",
+          "exportedName": "Other",
+          "source": "typed",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "F",
+          "exportedName": "Flow",
+          "source": "typed",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import type from \"types\"; import defer * as ns from \"deferred\";",
+      "expected": [
+        {
+          "localName": "type",
+          "exportedName": "default",
+          "source": "types",
+          "isDefault": true,
+          "isNamespace": false
+        },
+        {
+          "localName": "ns",
+          "exportedName": "*",
+          "source": "deferred",
+          "isDefault": false,
+          "isNamespace": true
+        }
+      ]
+    },
+    {
+      "source": "import typeof Thing from \"flow\"; import type\tThing from \"types\";",
+      "expected": [
+        {
+          "localName": "Thing",
+          "exportedName": "default",
+          "source": "flow",
+          "isDefault": true,
+          "isNamespace": false
+        },
+        {
+          "localName": "Thing",
+          "exportedName": "default",
+          "source": "types",
+          "isDefault": true,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import*as ns from \"x\";import{a,b}from\"y\";",
+      "expected": [
+        {
+          "localName": "ns",
+          "exportedName": "*",
+          "source": "x",
+          "isDefault": false,
+          "isNamespace": true
+        },
+        {
+          "localName": "a",
+          "exportedName": "a",
+          "source": "y",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "b",
+          "exportedName": "b",
+          "source": "y",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import {\"a,b\" as comma, \"line\\nname\" as line, \"\\u{1f600}\" as emoji, \"\\ud83d\\ude00\" as surrogate} from \"strings\";",
+      "expected": []
+    },
+    {
+      "source": "import {\"\\x41\" as a, \"\\q\" as q, \"\\u{110000}\" as tooLarge, \"\\u\" as broken} from \"escapes\";",
+      "expected": []
+    },
+    {
+      "source": "import {a /* ignore , */ as b, // comment\nc, \"/*x*/\" as string} from \"lists\";",
+      "expected": [
+        {
+          "localName": "b",
+          "exportedName": "a",
+          "source": "lists",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "c",
+          "exportedName": "c",
+          "source": "lists",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "string",
+          "exportedName": "/*x*/",
+          "source": "lists",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "/** @import {\n * A,\n * B as Other\n * } from \"docs\" */",
+      "expected": [
+        {
+          "localName": "A",
+          "exportedName": "A",
+          "source": "docs",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "Other",
+          "exportedName": "B",
+          "source": "docs",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "const text = `import ${name} from \"${source}\"`; import actual from \"module\";",
+      "expected": [
+        {
+          "localName": "actual",
+          "exportedName": "default",
+          "source": "module",
+          "isDefault": true,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "const text = \"import Visible from 'text'\"; // import Comment from \"comment\";",
+      "expected": [
+        {
+          "localName": "Visible",
+          "exportedName": "default",
+          "source": "text",
+          "isDefault": true,
+          "isNamespace": false
+        },
+        {
+          "localName": "Comment",
+          "exportedName": "default",
+          "source": "comment",
+          "isDefault": true,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import {名前 as 別名, π, $dollar, _under, é as accented} from \"unicode\";",
+      "expected": [
+        {
+          "localName": "別名",
+          "exportedName": "名前",
+          "source": "unicode",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "π",
+          "exportedName": "π",
+          "source": "unicode",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "$dollar",
+          "exportedName": "$dollar",
+          "source": "unicode",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "_under",
+          "exportedName": "_under",
+          "source": "unicode",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "accented",
+          "exportedName": "é",
+          "source": "unicode",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import﻿X from \"spaces\"; importBad from \"control\";",
+      "expected": [
+        {
+          "localName": "X",
+          "exportedName": "default",
+          "source": "spaces",
+          "isDefault": true,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "foo.import Nope from \"property\"; $import Nope from \"identifier\"; αimport Nope from \"unicode\";",
+      "expected": []
+    },
+    {
+      "source": "import {type, type as t, typeof as f, type type, typeof Thing} from \"inline\";",
+      "expected": [
+        {
+          "localName": "type",
+          "exportedName": "type",
+          "source": "inline",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "t",
+          "exportedName": "type",
+          "source": "inline",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "f",
+          "exportedName": "typeof",
+          "source": "inline",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "type",
+          "exportedName": "type",
+          "source": "inline",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "Thing",
+          "exportedName": "Thing",
+          "source": "inline",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import * as ns from \"all\"; export {thing} from \"reexport\"; import \"side\";",
+      "expected": [
+        {
+          "localName": "ns",
+          "exportedName": "*",
+          "source": "all",
+          "isDefault": false,
+          "isNamespace": true
+        }
+      ]
+    },
+    {
+      "source": "import { broken { nested } from \"x\"; import {ok} from \"good\";",
+      "expected": [
+        {
+          "localName": "ok",
+          "exportedName": "ok",
+          "source": "good",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "const a = require(\"first\"), b = require(\"second\").member; var {x, y: z} = require(\"third\");",
+      "expected": [
+        {
+          "localName": "a",
+          "exportedName": "default",
+          "source": "first",
+          "isDefault": true,
+          "isNamespace": false
+        },
+        {
+          "localName": "b",
+          "exportedName": "member",
+          "source": "second",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "x",
+          "exportedName": "x",
+          "source": "third",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "z",
+          "exportedName": "y",
+          "source": "third",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "const {x = 1, nested: local, ...rest} = require(\"destructure\");",
+      "expected": [
+        {
+          "localName": "x = 1",
+          "exportedName": "x = 1",
+          "source": "destructure",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "local",
+          "exportedName": "nested",
+          "source": "destructure",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "...rest",
+          "exportedName": "...rest",
+          "source": "destructure",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "<script>import Name from \"first\";</script><template>Don't parse whole source as JS</template><script>import {Other} from \"second\";</script>",
+      "expected": [
+        {
+          "localName": "Name",
+          "exportedName": "default",
+          "source": "first",
+          "isDefault": true,
+          "isNamespace": false
+        },
+        {
+          "localName": "Other",
+          "exportedName": "Other",
+          "source": "second",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "---\nimport Thing from \"frontmatter\";\n---\n<Thing />",
+      "expected": [
+        {
+          "localName": "Thing",
+          "exportedName": "default",
+          "source": "frontmatter",
+          "isDefault": true,
+          "isNamespace": false
+        }
+      ]
+    },
+    {
+      "source": "import {\"a\\\"b\" as escaped, \"slash\\\\name\" as slash} from \"escapes\";",
+      "expected": [
+        {
+          "localName": "escaped",
+          "exportedName": "a\"b",
+          "source": "escapes",
+          "isDefault": false,
+          "isNamespace": false
+        },
+        {
+          "localName": "slash",
+          "exportedName": "slash\\name",
+          "source": "escapes",
+          "isDefault": false,
+          "isNamespace": false
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "name": "undeclared",
+      "files": {},
+      "from": [
+        "main.ts"
+      ],
+      "sources": [
+        "random",
+        "fs",
+        "fs/promises",
+        "node:sqlite",
+        "bun:test",
+        "https://host/x",
+        "@std/path",
+        "astro:content",
+        "$app/navigation",
+        "$env/static/private",
+        "$service-worker",
+        "@/alias",
+        "./local"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "random",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "fs",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "fs/promises",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "node:sqlite",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "bun:test",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "https://host/x",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "@std/path",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "astro:content",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "$app/navigation",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "$env/static/private",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "$service-worker",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "@/alias",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "./local",
+          "external": false
+        }
+      ]
+    },
+    {
+      "name": "ancestor-ownership",
+      "files": {
+        "package.json": "{\"name\":\"self\",\"dependencies\":{\"external\":\"^1\",\"local\":\"file:lib\",\"space\":\" file:lib\",\"collision\":\"^2\"},\"devDependencies\":{\"dev\":\"~2\"},\"peerDependencies\":{\"peer\":null},\"optionalDependencies\":{\"optional\":3}}",
+        "nested/package.json": "{\"name\":\"nested\",\"dependencies\":{\"collision\":\"workspace:*\",\"self\":\"^2\",\"other\":\"portal:lib\"}}"
+      },
+      "from": [
+        "main.ts",
+        "nested/main.ts",
+        "nested/deep/main.ts"
+      ],
+      "sources": [
+        "self",
+        "nested",
+        "external/sub",
+        "local",
+        "space",
+        "collision",
+        "dev",
+        "peer",
+        "optional",
+        "other",
+        "@scope/unknown"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "self",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "nested",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "external/sub",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "local",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "space",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "collision",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "dev",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "peer",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "optional",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "other",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "@scope/unknown",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "self",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "nested",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "external/sub",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "local",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "space",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "collision",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "dev",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "peer",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "optional",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "other",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "@scope/unknown",
+          "external": false
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "self",
+          "external": false
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "nested",
+          "external": false
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "external/sub",
+          "external": true
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "local",
+          "external": false
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "space",
+          "external": true
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "collision",
+          "external": false
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "dev",
+          "external": true
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "peer",
+          "external": true
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "optional",
+          "external": true
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "other",
+          "external": false
+        },
+        {
+          "from": "nested/deep/main.ts",
+          "source": "@scope/unknown",
+          "external": false
+        }
+      ]
+    },
+    {
+      "name": "deno-jsonc",
+      "files": {
+        "deno.jsonc": "{// imports\n\"imports\":{\"alias/\":\"npm:library@1/\",\"@scope/pkg\":\"jsr:@scope/pkg@2\",\"local\":\"./local.ts\",\"remote\":\"https://host/x\",},}",
+        "nested/deno.json": "{\"imports\":{\"alias\":\"./own.ts\",\"child\":\"npm:child\"}}"
+      },
+      "from": [
+        "main.ts",
+        "nested/main.ts"
+      ],
+      "sources": [
+        "alias",
+        "alias/sub",
+        "@scope/pkg/sub",
+        "local",
+        "remote",
+        "child",
+        "npm:pkg",
+        "http:thing"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "alias",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "alias/sub",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "@scope/pkg/sub",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "local",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "remote",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "child",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "npm:pkg",
+          "external": true
+        },
+        {
+          "from": "main.ts",
+          "source": "http:thing",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "alias",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "alias/sub",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "@scope/pkg/sub",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "local",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "remote",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "child",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "npm:pkg",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "http:thing",
+          "external": true
+        }
+      ]
+    },
+    {
+      "name": "provider-repositories",
+      "files": {
+        "package.json": "{\"name\":\"astro\",\"workspaces\":[\"framework\"]}",
+        "framework/package.json": "{\"name\":\"@sveltejs/kit\"}"
+      },
+      "from": [
+        "main.ts",
+        "framework/main.ts"
+      ],
+      "sources": [
+        "astro:content",
+        "$app/navigation",
+        "$env/x",
+        "$service-worker"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "astro:content",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "$app/navigation",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "$env/x",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "$service-worker",
+          "external": false
+        },
+        {
+          "from": "framework/main.ts",
+          "source": "astro:content",
+          "external": false
+        },
+        {
+          "from": "framework/main.ts",
+          "source": "$app/navigation",
+          "external": false
+        },
+        {
+          "from": "framework/main.ts",
+          "source": "$env/x",
+          "external": false
+        },
+        {
+          "from": "framework/main.ts",
+          "source": "$service-worker",
+          "external": false
+        }
+      ]
+    },
+    {
+      "name": "malformed-and-array",
+      "files": {
+        "package.json": "broken",
+        "nested/package.json": "{\"dependencies\":[\"0\",\"1\"]}"
+      },
+      "from": [
+        "main.ts",
+        "nested/main.ts"
+      ],
+      "sources": [
+        "0",
+        "1",
+        "2"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "0",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "1",
+          "external": false
+        },
+        {
+          "from": "main.ts",
+          "source": "2",
+          "external": false
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "0",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "1",
+          "external": true
+        },
+        {
+          "from": "nested/main.ts",
+          "source": "2",
+          "external": false
+        }
+      ]
+    }
+  ]
+}

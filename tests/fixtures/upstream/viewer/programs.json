@@ -1,0 +1,3249 @@
+[
+  {
+    "name": "typescript-0",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 3,
+            "column": 11,
+            "end": {
+              "line": 3,
+              "column": 16
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 3,
+            "column": 27,
+            "end": {
+              "line": 3,
+              "column": 32
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 4,
+            "column": 7,
+            "end": {
+              "line": 4,
+              "column": 12
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "and",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 5,
+            "column": 7,
+            "end": {
+              "line": 5,
+              "column": 12
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "or",
+              "line": 5,
+              "branch": "5:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 6,
+            "column": 5,
+            "end": {
+              "line": 6,
+              "column": 10
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x",
+              "negated": false,
+              "form": "ternary",
+              "line": 6,
+              "branch": "6:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s5",
+          "link": "e5",
+          "at": {
+            "line": 6,
+            "column": 13,
+            "end": {
+              "line": 6,
+              "column": 18
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x",
+              "negated": true,
+              "form": "ternary",
+              "line": 6,
+              "branch": "6:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s6",
+          "link": "e6",
+          "at": {
+            "line": 7,
+            "column": 21,
+            "end": {
+              "line": 7,
+              "column": 26
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x === 1",
+              "negated": false,
+              "form": "case",
+              "line": 7,
+              "branch": "7:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s7",
+          "link": "e7",
+          "at": {
+            "line": 7,
+            "column": 44,
+            "end": {
+              "line": 7,
+              "column": 49
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: default",
+              "negated": false,
+              "form": "case",
+              "line": 7,
+              "branch": "7:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s8",
+          "link": "e8",
+          "at": {
+            "line": 8,
+            "column": 25,
+            "end": {
+              "line": 8,
+              "column": 30
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "item of x",
+              "kind": "each",
+              "branch": "8:1"
+            }
+          ]
+        },
+        {
+          "step": "s9",
+          "link": "e9",
+          "at": {
+            "line": 9,
+            "column": 7,
+            "end": {
+              "line": 9,
+              "column": 12
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s10",
+          "link": "e10",
+          "at": {
+            "line": 9,
+            "column": 27,
+            "end": {
+              "line": 9,
+              "column": 32
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "on error",
+              "negated": false,
+              "form": "catch",
+              "line": 0,
+              "branch": "9:16"
+            }
+          ],
+          "loops": []
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      },
+      "s5": {
+        "reply": false,
+        "into": null
+      },
+      "s6": {
+        "reply": false,
+        "into": null
+      },
+      "s7": {
+        "reply": true,
+        "into": null
+      },
+      "s8": {
+        "reply": false,
+        "into": null
+      },
+      "s9": {
+        "reply": false,
+        "into": null
+      },
+      "s10": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": null,
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "ternary",
+                  "arms": [
+                    {
+                      "when": "x",
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s4",
+                          "link": "e4"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!x",
+                      "not": true,
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s5",
+                          "link": "e5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x === 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s6",
+                          "link": "e6"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: default",
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s7",
+                          "link": "e7"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "item of x",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s8",
+                      "link": "e8"
+                    }
+                  ]
+                },
+                {
+                  "kind": "step",
+                  "step": "s9",
+                  "link": "e9"
+                },
+                {
+                  "kind": "fork",
+                  "on": "on error",
+                  "form": "try",
+                  "arms": [
+                    {
+                      "when": "on error",
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s10",
+                          "link": "e10"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "typescript-1",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 1,
+            "column": 55,
+            "end": {
+              "line": 1,
+              "column": 60
+            }
+          },
+          "guards": [
+            {
+              "text": "a",
+              "negated": false,
+              "form": "if",
+              "line": 1,
+              "branch": "1:21"
+            },
+            {
+              "text": "!b",
+              "negated": true,
+              "form": "guard",
+              "line": 1,
+              "branch": "1:29",
+              "exit": "throw"
+            }
+          ],
+          "loops": []
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "a",
+          "form": "if",
+          "arms": [
+            {
+              "when": "a",
+              "ends": null,
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "!b",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "!b",
+                      "ends": "throw",
+                      "body": []
+                    },
+                    {
+                      "when": "b",
+                      "not": true,
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "typescript-2",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 1,
+            "column": 45,
+            "end": {
+              "line": 1,
+              "column": 50
+            }
+          },
+          "guards": [
+            {
+              "text": "a",
+              "negated": false,
+              "form": "if",
+              "line": 1,
+              "branch": "1:19"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 1,
+            "column": 69,
+            "end": {
+              "line": 1,
+              "column": 74
+            }
+          },
+          "guards": [],
+          "loops": []
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "a",
+          "form": "if",
+          "arms": [
+            {
+              "when": "a",
+              "ends": null,
+              "body": [
+                {
+                  "kind": "step",
+                  "step": "s0",
+                  "link": "e0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "step",
+          "step": "s1",
+          "link": "e1"
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "python-3",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 5,
+            "column": 8,
+            "end": {
+              "line": 5,
+              "column": 13
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 4,
+              "branch": "4:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 7,
+            "column": 8,
+            "end": {
+              "line": 7,
+              "column": 13
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 4,
+              "branch": "4:4"
+            },
+            {
+              "text": "x",
+              "negated": false,
+              "form": "if",
+              "line": 6,
+              "branch": "6:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 9,
+            "column": 8,
+            "end": {
+              "line": 9,
+              "column": 13
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "x",
+              "negated": true,
+              "form": "else",
+              "line": 6,
+              "branch": "4:4"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 4,
+              "branch": "4:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 10,
+            "column": 11,
+            "end": {
+              "line": 10,
+              "column": 16
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "and",
+              "line": 10,
+              "branch": "10:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 11,
+            "column": 10,
+            "end": {
+              "line": 11,
+              "column": 15
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "or",
+              "line": 11,
+              "branch": "11:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s5",
+          "link": "e5",
+          "at": {
+            "line": 12,
+            "column": 4,
+            "end": {
+              "line": 12,
+              "column": 9
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "ternary",
+              "line": 12,
+              "branch": "12:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s6",
+          "link": "e6",
+          "at": {
+            "line": 12,
+            "column": 21,
+            "end": {
+              "line": 12,
+              "column": 26
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "ternary",
+              "line": 12,
+              "branch": "12:4"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s7",
+          "link": "e7",
+          "at": {
+            "line": 14,
+            "column": 8,
+            "end": {
+              "line": 14,
+              "column": 13
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "item in x",
+              "kind": "each",
+              "branch": "13:4"
+            }
+          ]
+        },
+        {
+          "step": "s8",
+          "link": "e8",
+          "at": {
+            "line": 16,
+            "column": 8,
+            "end": {
+              "line": 16,
+              "column": 13
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s9",
+          "link": "e9",
+          "at": {
+            "line": 18,
+            "column": 8,
+            "end": {
+              "line": 18,
+              "column": 13
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:4",
+              "exit": "return"
+            },
+            {
+              "text": "on error",
+              "negated": false,
+              "form": "catch",
+              "line": 0,
+              "branch": "17:4"
+            }
+          ],
+          "loops": []
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      },
+      "s5": {
+        "reply": false,
+        "into": null
+      },
+      "s6": {
+        "reply": false,
+        "into": null
+      },
+      "s7": {
+        "reply": true,
+        "into": null
+      },
+      "s8": {
+        "reply": false,
+        "into": null
+      },
+      "s9": {
+        "reply": false,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": null,
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "fork",
+                          "on": "x",
+                          "form": "if",
+                          "arms": [
+                            {
+                              "when": "x",
+                              "ends": "reply",
+                              "body": [
+                                {
+                                  "kind": "step",
+                                  "step": "s1",
+                                  "link": "e1"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!x",
+                      "not": true,
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "fork",
+                          "on": "ok",
+                          "form": "if",
+                          "arms": [
+                            {
+                              "when": "!ok",
+                              "not": true,
+                              "ends": null,
+                              "body": [
+                                {
+                                  "kind": "step",
+                                  "step": "s2",
+                                  "link": "e2"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s4",
+                          "link": "e4"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "ternary",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s5",
+                          "link": "e5"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s6",
+                          "link": "e6"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "item in x",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s7",
+                      "link": "e7"
+                    }
+                  ]
+                },
+                {
+                  "kind": "step",
+                  "step": "s8",
+                  "link": "e8"
+                },
+                {
+                  "kind": "fork",
+                  "on": "on error",
+                  "form": "try",
+                  "arms": [
+                    {
+                      "when": "on error",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s9",
+                          "link": "e9"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "go-4",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 4,
+            "column": 9,
+            "end": {
+              "line": 4,
+              "column": 14
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 3,
+              "branch": "3:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 4,
+            "column": 24,
+            "end": {
+              "line": 4,
+              "column": 29
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 3,
+              "branch": "3:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 5,
+            "column": 20,
+            "end": {
+              "line": 5,
+              "column": 25
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 3,
+              "branch": "3:1",
+              "exit": "return"
+            },
+            {
+              "text": "x == 1",
+              "negated": false,
+              "form": "case",
+              "line": 5,
+              "branch": "5:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 5,
+            "column": 36,
+            "end": {
+              "line": 5,
+              "column": 41
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 3,
+              "branch": "3:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: default",
+              "negated": false,
+              "form": "case",
+              "line": 5,
+              "branch": "5:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 6,
+            "column": 20,
+            "end": {
+              "line": 6,
+              "column": 25
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 3,
+              "branch": "3:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "i:=0;i<4;i++",
+              "kind": "each",
+              "branch": "6:1"
+            }
+          ]
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": "reply",
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x == 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: default",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "i:=0;i<4;i++",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s4",
+                      "link": "e4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "java-5",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 3,
+            "column": 11,
+            "end": {
+              "line": 3,
+              "column": 16
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 3,
+            "column": 27,
+            "end": {
+              "line": 3,
+              "column": 32
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 4,
+            "column": 21,
+            "end": {
+              "line": 4,
+              "column": 26
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x == 1",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 4,
+            "column": 44,
+            "end": {
+              "line": 4,
+              "column": 49
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: default",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 5,
+            "column": 25,
+            "end": {
+              "line": 5,
+              "column": 30
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "int i=0;i<4;i++",
+              "kind": "each",
+              "branch": "5:1"
+            }
+          ]
+        },
+        {
+          "step": "s5",
+          "link": "e5",
+          "at": {
+            "line": 6,
+            "column": 7,
+            "end": {
+              "line": 6,
+              "column": 12
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s6",
+          "link": "e6",
+          "at": {
+            "line": 6,
+            "column": 37,
+            "end": {
+              "line": 6,
+              "column": 42
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "on error",
+              "negated": false,
+              "form": "catch",
+              "line": 0,
+              "branch": "6:16"
+            }
+          ],
+          "loops": []
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      },
+      "s5": {
+        "reply": false,
+        "into": null
+      },
+      "s6": {
+        "reply": false,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": null,
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x == 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: default",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "int i=0;i<4;i++",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s4",
+                      "link": "e4"
+                    }
+                  ]
+                },
+                {
+                  "kind": "step",
+                  "step": "s5",
+                  "link": "e5"
+                },
+                {
+                  "kind": "fork",
+                  "on": "on error",
+                  "form": "try",
+                  "arms": [
+                    {
+                      "when": "on error",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s6",
+                          "link": "e6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "csharp-6",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 3,
+            "column": 11,
+            "end": {
+              "line": 3,
+              "column": 16
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 3,
+            "column": 27,
+            "end": {
+              "line": 3,
+              "column": 32
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 4,
+            "column": 21,
+            "end": {
+              "line": 4,
+              "column": 26
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x == 1",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 4,
+            "column": 44,
+            "end": {
+              "line": 4,
+              "column": 49
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: default",
+              "negated": false,
+              "form": "case",
+              "line": 0,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 5,
+            "column": 24,
+            "end": {
+              "line": 5,
+              "column": 29
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "int i=0;i<4;i++",
+              "kind": "each",
+              "branch": "5:1"
+            }
+          ]
+        },
+        {
+          "step": "s5",
+          "link": "e5",
+          "at": {
+            "line": 6,
+            "column": 7,
+            "end": {
+              "line": 6,
+              "column": 12
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s6",
+          "link": "e6",
+          "at": {
+            "line": 6,
+            "column": 37,
+            "end": {
+              "line": 6,
+              "column": 42
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "on error",
+              "negated": false,
+              "form": "catch",
+              "line": 0,
+              "branch": "6:16"
+            }
+          ],
+          "loops": []
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      },
+      "s5": {
+        "reply": false,
+        "into": null
+      },
+      "s6": {
+        "reply": false,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": null,
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x == 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: default",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "int i=0;i<4;i++",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s4",
+                      "link": "e4"
+                    }
+                  ]
+                },
+                {
+                  "kind": "step",
+                  "step": "s5",
+                  "link": "e5"
+                },
+                {
+                  "kind": "fork",
+                  "on": "on error",
+                  "form": "try",
+                  "arms": [
+                    {
+                      "when": "on error",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s6",
+                          "link": "e6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "c-7",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 3,
+            "column": 10,
+            "end": {
+              "line": 3,
+              "column": 15
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 3,
+            "column": 26,
+            "end": {
+              "line": 3,
+              "column": 31
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 4,
+            "column": 20,
+            "end": {
+              "line": 4,
+              "column": 25
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x == 1",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 4,
+            "column": 40,
+            "end": {
+              "line": 4,
+              "column": 45
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: default",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 5,
+            "column": 24,
+            "end": {
+              "line": 5,
+              "column": 29
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "int i=0;i<4;i++",
+              "kind": "each",
+              "branch": "5:1"
+            }
+          ]
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": "reply",
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x == 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: default",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "int i=0;i<4;i++",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s4",
+                      "link": "e4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "swift-8",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 3,
+            "column": 9,
+            "end": {
+              "line": 3,
+              "column": 14
+            }
+          },
+          "guards": [
+            {
+              "text": "!blocked",
+              "negated": false,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 3,
+            "column": 24,
+            "end": {
+              "line": 3,
+              "column": 29
+            }
+          },
+          "guards": [
+            {
+              "text": "!blocked",
+              "negated": false,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 4,
+            "column": 20,
+            "end": {
+              "line": 4,
+              "column": 25
+            }
+          },
+          "guards": [
+            {
+              "text": "!blocked",
+              "negated": false,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x == 1",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 4,
+            "column": 36,
+            "end": {
+              "line": 4,
+              "column": 41
+            }
+          },
+          "guards": [
+            {
+              "text": "!blocked",
+              "negated": false,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: default",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 5,
+            "column": 18,
+            "end": {
+              "line": 5,
+              "column": 23
+            }
+          },
+          "guards": [
+            {
+              "text": "!blocked",
+              "negated": false,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "i in 0..<4",
+              "kind": "each",
+              "branch": "5:1"
+            }
+          ]
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "!blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "!blocked",
+              "ends": "reply",
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x == 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: default",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "i in 0..<4",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s4",
+                      "link": "e4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "kotlin-9",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "step": "s0",
+          "link": "e0",
+          "at": {
+            "line": 3,
+            "column": 11,
+            "end": {
+              "line": 3,
+              "column": 16
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": false,
+              "form": "if",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s1",
+          "link": "e1",
+          "at": {
+            "line": 3,
+            "column": 26,
+            "end": {
+              "line": 3,
+              "column": 31
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "ok",
+              "negated": true,
+              "form": "else",
+              "line": 3,
+              "branch": "3:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s2",
+          "link": "e2",
+          "at": {
+            "line": 4,
+            "column": 16,
+            "end": {
+              "line": 4,
+              "column": 21
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x == 1",
+              "negated": false,
+              "form": "case",
+              "line": 4,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s3",
+          "link": "e3",
+          "at": {
+            "line": 4,
+            "column": 31,
+            "end": {
+              "line": 4,
+              "column": 36
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            },
+            {
+              "text": "x: else",
+              "negated": false,
+              "form": "case",
+              "line": 0,
+              "branch": "4:1"
+            }
+          ],
+          "loops": []
+        },
+        {
+          "step": "s4",
+          "link": "e4",
+          "at": {
+            "line": 5,
+            "column": 18,
+            "end": {
+              "line": 5,
+              "column": 23
+            }
+          },
+          "guards": [
+            {
+              "text": "blocked",
+              "negated": true,
+              "form": "guard",
+              "line": 2,
+              "branch": "2:1",
+              "exit": "return"
+            }
+          ],
+          "loops": [
+            {
+              "text": "i in 0..4",
+              "kind": "each",
+              "branch": "5:1"
+            }
+          ]
+        }
+      ]
+    },
+    "nodes": {},
+    "steps": {
+      "s0": {
+        "reply": false,
+        "into": null
+      },
+      "s1": {
+        "reply": true,
+        "into": null
+      },
+      "s2": {
+        "reply": false,
+        "into": null
+      },
+      "s3": {
+        "reply": false,
+        "into": null
+      },
+      "s4": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "fork",
+          "on": "blocked",
+          "form": "if",
+          "arms": [
+            {
+              "when": "blocked",
+              "ends": "return",
+              "body": []
+            },
+            {
+              "when": "!blocked",
+              "not": true,
+              "ends": "reply",
+              "body": [
+                {
+                  "kind": "fork",
+                  "on": "ok",
+                  "form": "if",
+                  "arms": [
+                    {
+                      "when": "ok",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s0",
+                          "link": "e0"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "!ok",
+                      "not": true,
+                      "ends": "reply",
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s1",
+                          "link": "e1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "fork",
+                  "on": "x",
+                  "form": "switch",
+                  "arms": [
+                    {
+                      "when": "x == 1",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s2",
+                          "link": "e2"
+                        }
+                      ]
+                    },
+                    {
+                      "when": "x: else",
+                      "ends": null,
+                      "body": [
+                        {
+                          "kind": "step",
+                          "step": "s3",
+                          "link": "e3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "block": "loop",
+                  "by": "i in 0..4",
+                  "loop": "each",
+                  "body": [
+                    {
+                      "kind": "step",
+                      "step": "s4",
+                      "link": "e4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "truncated": 0
+    }
+  },
+  {
+    "name": "inline-and-deferred",
+    "root": "root",
+    "sites": {
+      "root": [
+        {
+          "into": "helper",
+          "at": {
+            "line": 1,
+            "column": 0,
+            "end": {
+              "line": 1,
+              "column": 20
+            }
+          },
+          "guards": []
+        },
+        {
+          "step": "a",
+          "trigger": {
+            "kind": "callback",
+            "name": "setTimeout"
+          },
+          "at": {
+            "line": 2,
+            "column": 0,
+            "end": {
+              "line": 2,
+              "column": 20
+            }
+          },
+          "guards": []
+        },
+        {
+          "step": "b",
+          "within": "Promise.all",
+          "at": {
+            "line": 3,
+            "column": 0,
+            "end": {
+              "line": 3,
+              "column": 20
+            }
+          },
+          "guards": []
+        },
+        {
+          "into": "helper",
+          "at": {
+            "line": 4,
+            "column": 0,
+            "end": {
+              "line": 4,
+              "column": 20
+            }
+          },
+          "guards": []
+        }
+      ],
+      "helper": [
+        {
+          "step": "a",
+          "at": {
+            "line": 1,
+            "column": 0,
+            "end": {
+              "line": 1,
+              "column": 20
+            }
+          },
+          "guards": []
+        }
+      ]
+    },
+    "nodes": {
+      "helper": {
+        "id": "helper",
+        "name": "helper"
+      }
+    },
+    "steps": {
+      "a": {
+        "reply": false,
+        "into": null
+      },
+      "b": {
+        "reply": true,
+        "into": null
+      }
+    },
+    "expected": {
+      "root": [
+        {
+          "kind": "block",
+          "block": "inline",
+          "via": {
+            "id": "helper",
+            "name": "helper"
+          },
+          "body": [
+            {
+              "kind": "step",
+              "step": "a"
+            }
+          ]
+        },
+        {
+          "kind": "block",
+          "block": "later",
+          "by": "setTimeout",
+          "body": [
+            {
+              "kind": "step",
+              "step": "a"
+            }
+          ]
+        },
+        {
+          "kind": "block",
+          "block": "together",
+          "by": "Promise.all",
+          "body": [
+            {
+              "kind": "step",
+              "step": "b",
+              "within": "Promise.all"
+            }
+          ]
+        },
+        {
+          "kind": "block",
+          "block": "inline",
+          "via": {
+            "id": "helper",
+            "name": "helper"
+          },
+          "body": [],
+          "again": true
+        }
+      ],
+      "truncated": 0
+    }
+  }
+]

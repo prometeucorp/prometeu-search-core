@@ -1,0 +1,248 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "oracle": "TypeScript/WASM TreeSitterExtractor, bypassing native addon routing",
+  "cases": [
+    {
+      "id": "typescript",
+      "language": "typescript",
+      "filePath": "loader.ts",
+      "upstreamSource": "src/extraction/kernel/loader.ts",
+      "source": "source/typescript-loader.ts",
+      "input": "source/typescript-loader.ts",
+      "expected": "expected/typescript.json",
+      "sourceSha256": "2dea55b745aa6c677d8c2fde3813dc122b32ff6703669508d6a340110803305b",
+      "inputSha256": "2dea55b745aa6c677d8c2fde3813dc122b32ff6703669508d6a340110803305b"
+    },
+    {
+      "id": "tsx",
+      "language": "tsx",
+      "filePath": "torture.tsx",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.tsx",
+      "source": "source/tsx-torture.tsx",
+      "input": "source/tsx-torture.tsx",
+      "expected": "expected/tsx.json",
+      "sourceSha256": "3964f9ea108d5544a1eae978a0643bbff66c5fed9d2f56cb4848418f4885434a",
+      "inputSha256": "3964f9ea108d5544a1eae978a0643bbff66c5fed9d2f56cb4848418f4885434a"
+    },
+    {
+      "id": "javascript",
+      "language": "javascript",
+      "filePath": "torture.js",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.js",
+      "source": "source/javascript-torture.js",
+      "input": "source/javascript-torture.js",
+      "expected": "expected/javascript.json",
+      "sourceSha256": "081ef268492261696e9d37a9b10c3806d8e7f7cf3c1488a7b8d38cb6866dddd9",
+      "inputSha256": "081ef268492261696e9d37a9b10c3806d8e7f7cf3c1488a7b8d38cb6866dddd9"
+    },
+    {
+      "id": "jsx",
+      "language": "jsx",
+      "filePath": "torture.js",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.js",
+      "source": "source/jsx-torture.js",
+      "input": "source/jsx-torture.js",
+      "expected": "expected/jsx.json",
+      "sourceSha256": "081ef268492261696e9d37a9b10c3806d8e7f7cf3c1488a7b8d38cb6866dddd9",
+      "inputSha256": "081ef268492261696e9d37a9b10c3806d8e7f7cf3c1488a7b8d38cb6866dddd9"
+    },
+    {
+      "id": "java",
+      "language": "java",
+      "filePath": "Torture.java",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/Torture.java",
+      "source": "source/java-Torture.java",
+      "input": "source/java-Torture.java",
+      "expected": "expected/java.json",
+      "sourceSha256": "3f2f4de2c7d624218d6127c673f922bd65db3d93ef617c3edb944f810f526479",
+      "inputSha256": "3f2f4de2c7d624218d6127c673f922bd65db3d93ef617c3edb944f810f526479"
+    },
+    {
+      "id": "python",
+      "language": "python",
+      "filePath": "torture.py",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.py",
+      "source": "source/python-torture.py",
+      "input": "source/python-torture.py",
+      "expected": "expected/python.json",
+      "sourceSha256": "49b8923584b23ae7c4b82768ed7a3af7063706e0ef3bc956236ceda63ab06e17",
+      "inputSha256": "49b8923584b23ae7c4b82768ed7a3af7063706e0ef3bc956236ceda63ab06e17"
+    },
+    {
+      "id": "go",
+      "language": "go",
+      "filePath": "torture.go",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.go",
+      "source": "source/go-torture.go",
+      "input": "source/go-torture.go",
+      "expected": "expected/go.json",
+      "sourceSha256": "817370a09149d61927459399b63c56cf3d1a179c0a36837da5f319b2dfe4529a",
+      "inputSha256": "817370a09149d61927459399b63c56cf3d1a179c0a36837da5f319b2dfe4529a"
+    },
+    {
+      "id": "c",
+      "language": "c",
+      "filePath": "torture.c",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.c",
+      "source": "source/c-torture.c",
+      "input": "prepared/c-torture.c",
+      "expected": "expected/c.json",
+      "sourceSha256": "72e51b37c26fda34e90c3d11774747973287740d0183bff3385dce6a3c040ee9",
+      "inputSha256": "e625cfe6e6fd52680762ad3a6dce5928b3d69b70d23e3c203d15c4a65c12e11f"
+    },
+    {
+      "id": "cpp",
+      "language": "cpp",
+      "filePath": "torture.cpp",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.cpp",
+      "source": "source/cpp-torture.cpp",
+      "input": "prepared/cpp-torture.cpp",
+      "expected": "expected/cpp.json",
+      "sourceSha256": "74a24c7c338be3cf22cd05c10d6f71b3cc19e086126aa767862209ea62fe68f8",
+      "inputSha256": "9fa9d671c19d25a427bff9579e338b6cf75b59e1720c9f564bfa87e4e4cca084"
+    },
+    {
+      "id": "rust",
+      "language": "rust",
+      "filePath": "torture.rs",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.rs",
+      "source": "source/rust-torture.rs",
+      "input": "source/rust-torture.rs",
+      "expected": "expected/rust.json",
+      "sourceSha256": "d18d41301745ef236d2f19fea2d25029bc631519b1e2e941f4966421c80771a1",
+      "inputSha256": "d18d41301745ef236d2f19fea2d25029bc631519b1e2e941f4966421c80771a1"
+    },
+    {
+      "id": "csharp",
+      "language": "csharp",
+      "filePath": "Torture.cs",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/Torture.cs",
+      "source": "source/csharp-Torture.cs",
+      "input": "source/csharp-Torture.cs",
+      "expected": "expected/csharp.json",
+      "sourceSha256": "178f3e57cabe581d4f435088657d6b49360266b1f0ee9109aa57102f6ffda9be",
+      "inputSha256": "178f3e57cabe581d4f435088657d6b49360266b1f0ee9109aa57102f6ffda9be"
+    },
+    {
+      "id": "ruby",
+      "language": "ruby",
+      "filePath": "torture.rb",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.rb",
+      "source": "source/ruby-torture.rb",
+      "input": "source/ruby-torture.rb",
+      "expected": "expected/ruby.json",
+      "sourceSha256": "846da38911e408f2a4a9a5c1bf463c5048966ab9f44f49f5b2ff3d7c341c2432",
+      "inputSha256": "846da38911e408f2a4a9a5c1bf463c5048966ab9f44f49f5b2ff3d7c341c2432"
+    },
+    {
+      "id": "php",
+      "language": "php",
+      "filePath": "torture.php",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.php",
+      "source": "source/php-torture.php",
+      "input": "source/php-torture.php",
+      "expected": "expected/php.json",
+      "sourceSha256": "11c95981a3f992a9d1881a34fc29f3b10622a866b7fd93cbc986e62882c735d8",
+      "inputSha256": "11c95981a3f992a9d1881a34fc29f3b10622a866b7fd93cbc986e62882c735d8"
+    },
+    {
+      "id": "swift",
+      "language": "swift",
+      "filePath": "torture.swift",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.swift",
+      "source": "source/swift-torture.swift",
+      "input": "source/swift-torture.swift",
+      "expected": "expected/swift.json",
+      "sourceSha256": "165349fff00ae6abef4c09f58be18a74cc5abe82e662d71fdf347ba7c41ec217",
+      "inputSha256": "165349fff00ae6abef4c09f58be18a74cc5abe82e662d71fdf347ba7c41ec217"
+    },
+    {
+      "id": "kotlin",
+      "language": "kotlin",
+      "filePath": "torture.kt",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.kt",
+      "source": "source/kotlin-torture.kt",
+      "input": "source/kotlin-torture.kt",
+      "expected": "expected/kotlin.json",
+      "sourceSha256": "641da8b886beb513a399cbed2b40c372b8a39ec971a872c47f8e19d3a7b90f89",
+      "inputSha256": "641da8b886beb513a399cbed2b40c372b8a39ec971a872c47f8e19d3a7b90f89"
+    },
+    {
+      "id": "r",
+      "language": "r",
+      "filePath": "torture.R",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.R",
+      "source": "source/r-torture.R",
+      "input": "source/r-torture.R",
+      "expected": "expected/r.json",
+      "sourceSha256": "5401b6ca8f9a42b2f2f40c89d5be650b1a055e58f0d3951adb96fb5bbeb6ea11",
+      "inputSha256": "5401b6ca8f9a42b2f2f40c89d5be650b1a055e58f0d3951adb96fb5bbeb6ea11"
+    },
+    {
+      "id": "lua",
+      "language": "lua",
+      "filePath": "torture.lua",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.lua",
+      "source": "source/lua-torture.lua",
+      "input": "source/lua-torture.lua",
+      "expected": "expected/lua.json",
+      "sourceSha256": "f61bd96fc5553f16af94919c44e411116cecc63d4224ce9d6a1b2a23afdbca0f",
+      "inputSha256": "f61bd96fc5553f16af94919c44e411116cecc63d4224ce9d6a1b2a23afdbca0f"
+    },
+    {
+      "id": "luau",
+      "language": "luau",
+      "filePath": "torture.luau",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.luau",
+      "source": "source/luau-torture.luau",
+      "input": "source/luau-torture.luau",
+      "expected": "expected/luau.json",
+      "sourceSha256": "aac81d5c1b47036eeaff4d8c68358f70ff8ab8e4b60ceb2bd93c4ffcc829b50f",
+      "inputSha256": "aac81d5c1b47036eeaff4d8c68358f70ff8ab8e4b60ceb2bd93c4ffcc829b50f"
+    },
+    {
+      "id": "scala",
+      "language": "scala",
+      "filePath": "torture.scala",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.scala",
+      "source": "source/scala-torture.scala",
+      "input": "source/scala-torture.scala",
+      "expected": "expected/scala.json",
+      "sourceSha256": "0adcba5e965079bb3d750de9ac45a9833f1bc1e2ed7643b7f19aeba86a0e7b66",
+      "inputSha256": "0adcba5e965079bb3d750de9ac45a9833f1bc1e2ed7643b7f19aeba86a0e7b66"
+    },
+    {
+      "id": "dart",
+      "language": "dart",
+      "filePath": "torture.dart",
+      "upstreamSource": "__tests__/fixtures/kernel-parity/torture.dart",
+      "source": "source/dart-torture.dart",
+      "input": "source/dart-torture.dart",
+      "expected": "expected/dart.json",
+      "sourceSha256": "5922427c19f6746d7193e9ce2aba0ffd9b904e1e718c61223298255d0a69bbc4",
+      "inputSha256": "5922427c19f6746d7193e9ce2aba0ffd9b904e1e718c61223298255d0a69bbc4"
+    },
+    {
+      "id": "typescript-unicode-lf",
+      "language": "typescript",
+      "filePath": "literal.ts",
+      "upstreamSource": "__tests__/kernel-tsjs-parity.test.ts",
+      "source": "source/typescript-unicode-lf-literal.ts",
+      "input": "source/typescript-unicode-lf-literal.ts",
+      "expected": "expected/typescript-unicode-lf.json",
+      "sourceSha256": "16b5c1a626077a064d5dc0207af05522dbca9863b50e68d8220171e7fbc9cc7e",
+      "inputSha256": "16b5c1a626077a064d5dc0207af05522dbca9863b50e68d8220171e7fbc9cc7e"
+    },
+    {
+      "id": "typescript-unicode-crlf",
+      "language": "typescript",
+      "filePath": "literal.ts",
+      "upstreamSource": "__tests__/kernel-tsjs-parity.test.ts",
+      "source": "source/typescript-unicode-crlf-literal.ts",
+      "input": "source/typescript-unicode-crlf-literal.ts",
+      "expected": "expected/typescript-unicode-crlf.json",
+      "sourceSha256": "4c87aec12f37cdd4e4b744dc9a79aac5e8e0e2a7972534aca828596d34626d82",
+      "inputSha256": "4c87aec12f37cdd4e4b744dc9a79aac5e8e0e2a7972534aca828596d34626d82"
+    }
+  ]
+}

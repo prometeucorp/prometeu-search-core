@@ -1,0 +1,3451 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.tsx",
+      "kind": "file",
+      "name": "torture.tsx",
+      "qualifiedName": "torture.tsx",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 1,
+      "endLine": 298,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:d3f11476b3c70d68f9f9724f3e6ab699",
+      "kind": "import",
+      "name": "react",
+      "qualifiedName": "react",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 75,
+      "signature": "import React, { forwardRef, memo, useState as useStateAlias } from 'react';"
+    },
+    {
+      "id": "import:7bff5cb286a60587ad04b8eed5de0e67",
+      "kind": "import",
+      "name": "./namespace-module",
+      "qualifiedName": "./namespace-module",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 41,
+      "signature": "import * as NS from './namespace-module';"
+    },
+    {
+      "id": "import:4935bc32d5f33e8f95c3cb009bf0935d",
+      "kind": "import",
+      "name": "./default-module",
+      "qualifiedName": "./default-module",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 0,
+      "endColumn": 44,
+      "signature": "import DefaultThing from './default-module';"
+    },
+    {
+      "id": "import:29c3cc32eeee07c3c2b96bf6f1b275d2",
+      "kind": "import",
+      "name": "./side-effect",
+      "qualifiedName": "./side-effect",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 23,
+      "signature": "import './side-effect';"
+    },
+    {
+      "id": "import:92cf06e18d12ccca19cc4fcd24ce1065",
+      "kind": "import",
+      "name": "./helpers",
+      "qualifiedName": "./helpers",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 51,
+      "signature": "import { helperFn, CONFIG_TABLE } from './helpers';"
+    },
+    {
+      "id": "import:98bb06445772756486c947f90b53b571",
+      "kind": "import",
+      "name": "./barrel-source",
+      "qualifiedName": "./barrel-source",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 62,
+      "signature": "export { reExported, orig as aliased } from './barrel-source';"
+    },
+    {
+      "id": "import:c4aa3756e11681aadead3ec870085b66",
+      "kind": "import",
+      "name": "./star-source",
+      "qualifiedName": "./star-source",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "export * from './star-source';"
+    },
+    {
+      "id": "constant:7af11b36e8d4ddbbdc72a75e5d163a1f",
+      "kind": "constant",
+      "name": "RETRY_LIMITS",
+      "qualifiedName": "RETRY_LIMITS",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 14,
+      "endLine": 14,
+      "startColumn": 6,
+      "endColumn": 35,
+      "docstring": "A documented constant table (value-ref target).",
+      "signature": "= { a: 1, b: 2 }",
+      "isExported": false
+    },
+    {
+      "id": "constant:4d2266cb0f452fd0233976ec146c28eb",
+      "kind": "constant",
+      "name": "API_BASE",
+      "qualifiedName": "API_BASE",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 15,
+      "endLine": 15,
+      "startColumn": 13,
+      "endColumn": 46,
+      "signature": "= 'https://example.test'",
+      "isExported": true
+    },
+    {
+      "id": "variable:3cd4d572d8ccf445444d6889213b6b1e",
+      "kind": "variable",
+      "name": "plainLet",
+      "qualifiedName": "plainLet",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 16,
+      "endLine": 16,
+      "startColumn": 4,
+      "endColumn": 17,
+      "signature": "= 42",
+      "isExported": false
+    },
+    {
+      "id": "variable:b407274307e5fc2fbd0b898576240140",
+      "kind": "variable",
+      "name": "oldVar",
+      "qualifiedName": "oldVar",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 17,
+      "endLine": 17,
+      "startColumn": 4,
+      "endColumn": 16,
+      "signature": "= 'x'",
+      "isExported": false
+    },
+    {
+      "id": "class:addcf598d6e590538ddf583221f35a77",
+      "kind": "class",
+      "name": "BaseService",
+      "qualifiedName": "BaseService",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 24,
+      "endLine": 56,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Class docs.\nMulti-line.",
+      "isExported": true
+    },
+    {
+      "id": "property:874fe82da8aa6ae0f475c3e68daa5eaa",
+      "kind": "property",
+      "name": "instances",
+      "qualifiedName": "BaseService::instances",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "instances",
+      "isStatic": true
+    },
+    {
+      "id": "property:6c744c9a2bb0ba520787f304c27c371c",
+      "kind": "property",
+      "name": "handlers",
+      "qualifiedName": "BaseService::handlers",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 2,
+      "endColumn": 62,
+      "signature": "handlers",
+      "isStatic": true
+    },
+    {
+      "id": "property:18a57a62819b4ea4b951980a3b24d928",
+      "kind": "property",
+      "name": "cache",
+      "qualifiedName": "BaseService::cache",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 27,
+      "endLine": 27,
+      "startColumn": 2,
+      "endColumn": 57,
+      "signature": "Map<string, Config> cache",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "property:3c5b5ba31d75180419c773473a58c22d",
+      "kind": "property",
+      "name": "fonts",
+      "qualifiedName": "BaseService::fonts",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "FontConfig fonts",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:03e3305423fa43758a0919d8a183b978",
+      "kind": "property",
+      "name": "count",
+      "qualifiedName": "BaseService::count",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 29,
+      "endLine": 29,
+      "startColumn": 2,
+      "endColumn": 11,
+      "signature": "count",
+      "isStatic": false
+    },
+    {
+      "id": "method:4eb171259a1cf6aa577f38da4a9656df",
+      "kind": "method",
+      "name": "onScroll",
+      "qualifiedName": "BaseService::onScroll",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 30,
+      "endLine": 32,
+      "startColumn": 2,
+      "endColumn": 9,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:6726ab5ee5bc36c38b7eb1582fe884f9",
+      "kind": "method",
+      "name": "handleClick",
+      "qualifiedName": "BaseService::handleClick",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 33,
+      "endLine": 36,
+      "startColumn": 2,
+      "endColumn": 3,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:55c965988d68dfd2ea56b765f472bc76",
+      "kind": "method",
+      "name": "list",
+      "qualifiedName": "BaseService::list",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 39,
+      "endLine": 43,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(query: QueryOpts): Promise<Result<Item>>",
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "method:2c88a78272b8b0ed3f813073253fcd5a",
+      "kind": "method",
+      "name": "compute",
+      "qualifiedName": "BaseService::compute",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 45,
+      "endLine": 47,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(n: number): number",
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "method:47464520d9f42264345fde1b666099bd",
+      "kind": "method",
+      "name": "size",
+      "qualifiedName": "BaseService::size",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 49,
+      "endLine": 51,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(): number",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:9387862214d35425903df7e230fa4d1c",
+      "kind": "method",
+      "name": "dispose",
+      "qualifiedName": "BaseService::dispose",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 53,
+      "endLine": 55,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(): void",
+      "visibility": "protected",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:ff817de9bc05890dab662f7ddb3ea325",
+      "kind": "class",
+      "name": "Plain",
+      "qualifiedName": "Plain",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 58,
+      "endLine": 65,
+      "startColumn": 0,
+      "endColumn": 1,
+      "isExported": false
+    },
+    {
+      "id": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "kind": "method",
+      "name": "constructor",
+      "qualifiedName": "Plain::constructor",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 59,
+      "endLine": 62,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(private svc: BaseService)",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:e214294df5af47980e7f51befd642cb9",
+      "kind": "method",
+      "name": "onEvent",
+      "qualifiedName": "Plain::onEvent",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 63,
+      "endLine": 63,
+      "startColumn": 2,
+      "endColumn": 14,
+      "signature": "()",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:3e7823ac6bb99fc6abf638e36cea7e3d",
+      "kind": "method",
+      "name": "handleClick",
+      "qualifiedName": "Plain::handleClick",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 64,
+      "endLine": 64,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "()",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "kind": "interface",
+      "name": "Shape",
+      "qualifiedName": "Shape",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 67,
+      "endLine": 71,
+      "startColumn": 7,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "property:12cb01cb647cfdc7b0bca660072cbd57",
+      "kind": "property",
+      "name": "area",
+      "qualifiedName": "Shape::area",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 68,
+      "endLine": 68,
+      "startColumn": 2,
+      "endColumn": 14,
+      "signature": "number area",
+      "isStatic": false
+    },
+    {
+      "id": "method:555776dff335b0d5f4a585a6a8985ec6",
+      "kind": "method",
+      "name": "resize",
+      "qualifiedName": "Shape::resize",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 69,
+      "endLine": 69,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "(f: number): Shape",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "property:4d3264084e7c43e0f47e74bbcd41ac83",
+      "kind": "property",
+      "name": "onchange",
+      "qualifiedName": "Shape::onchange",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 70,
+      "endLine": 70,
+      "startColumn": 2,
+      "endColumn": 30,
+      "signature": "(s: Shape) => void onchange",
+      "isStatic": false
+    },
+    {
+      "id": "enum:802b3cd8fe749f5a971a3d8a8bba805f",
+      "kind": "enum",
+      "name": "Direction",
+      "qualifiedName": "Direction",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 73,
+      "endLine": 77,
+      "startColumn": 7,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "enum_member:3b4f65d920c3de8556c7da2af42dc6c1",
+      "kind": "enum_member",
+      "name": "Up",
+      "qualifiedName": "Direction::Up",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 74,
+      "endLine": 74,
+      "startColumn": 2,
+      "endColumn": 4
+    },
+    {
+      "id": "enum_member:a19eeb9fe9dc6c4367ce6c82138ccf2f",
+      "kind": "enum_member",
+      "name": "Down",
+      "qualifiedName": "Direction::Down",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 75,
+      "endLine": 75,
+      "startColumn": 2,
+      "endColumn": 10
+    },
+    {
+      "id": "enum_member:bab53efcd0664a529e0a37f0dcdda4fb",
+      "kind": "enum_member",
+      "name": "Left",
+      "qualifiedName": "Direction::Left",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 76,
+      "endLine": 76,
+      "startColumn": 2,
+      "endColumn": 6
+    },
+    {
+      "id": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "kind": "type_alias",
+      "name": "Handle",
+      "qualifiedName": "Handle",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 79,
+      "endLine": 83,
+      "startColumn": 7,
+      "endColumn": 2,
+      "isExported": true
+    },
+    {
+      "id": "method:866351b97f12ade842f1b4b6766ad57e",
+      "kind": "method",
+      "name": "stop",
+      "qualifiedName": "Handle::stop",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 80,
+      "endLine": 80,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "stop: () => void"
+    },
+    {
+      "id": "property:f646a2a4d79c4afe62d96ca024806e5a",
+      "kind": "property",
+      "name": "id",
+      "qualifiedName": "Handle::id",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 81,
+      "endLine": 81,
+      "startColumn": 2,
+      "endColumn": 12,
+      "signature": "id: string"
+    },
+    {
+      "id": "method:9371066ce9a26cc3a0d33c5c1f20bb65",
+      "kind": "method",
+      "name": "refresh",
+      "qualifiedName": "Handle::refresh",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 82,
+      "endLine": 82,
+      "startColumn": 2,
+      "endColumn": 40,
+      "signature": "refresh(force: boolean): Promise<void>"
+    },
+    {
+      "id": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "kind": "type_alias",
+      "name": "ServiceList",
+      "qualifiedName": "ServiceList",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 85,
+      "endLine": 88,
+      "startColumn": 7,
+      "endColumn": 2,
+      "isExported": true
+    },
+    {
+      "id": "method:d5996b7ea447db3c9a9cbe78ad8c4d59",
+      "kind": "method",
+      "name": "query_apply_record",
+      "qualifiedName": "ServiceList::query_apply_record",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 86,
+      "endLine": 86,
+      "startColumn": 2,
+      "endColumn": 42,
+      "signature": "Service<'query_apply_record', Req, Resp>"
+    },
+    {
+      "id": "method:7acb43107677aaa303b3c27f709112e2",
+      "kind": "method",
+      "name": "apply_confirm",
+      "qualifiedName": "ServiceList::apply_confirm",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 87,
+      "endLine": 87,
+      "startColumn": 2,
+      "endColumn": 37,
+      "signature": "Service<'apply_confirm', Req, Resp>"
+    },
+    {
+      "id": "type_alias:0e07bacf694d4756f240c8275c7f09c5",
+      "kind": "type_alias",
+      "name": "MaybeShape",
+      "qualifiedName": "MaybeShape",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 7,
+      "endColumn": 38,
+      "isExported": true
+    },
+    {
+      "id": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "kind": "function",
+      "name": "topLevel",
+      "qualifiedName": "topLevel",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 92,
+      "endLine": 99,
+      "startColumn": 7,
+      "endColumn": 1,
+      "signature": "(a: ShapeConfig): Shape",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:7d4eb4a87cad38c3065f979bf1ec33fa",
+      "kind": "function",
+      "name": "inner",
+      "qualifiedName": "topLevel::inner",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 93,
+      "endLine": 93,
+      "startColumn": 16,
+      "endColumn": 34,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:d7310ea98edf1fe05b545dbf3168dd44",
+      "kind": "function",
+      "name": "namedInner",
+      "qualifiedName": "topLevel::namedInner",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 94,
+      "endLine": 96,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(): void",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:2d33bb3cbf2c5da5fae0a17d31c690d6",
+      "kind": "function",
+      "name": "generatorFn",
+      "qualifiedName": "generatorFn",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 101,
+      "endLine": 103,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(items: Item[])",
+      "isExported": false,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:b58aedf57cd50502d9b4ff357bb9259f",
+      "kind": "function",
+      "name": "arrowConst",
+      "qualifiedName": "arrowConst",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 105,
+      "endLine": 107,
+      "startColumn": 26,
+      "endColumn": 1,
+      "signature": "(x: number)",
+      "isExported": true,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "constant:c5ea1329776d069448eb329e28d24da3",
+      "kind": "constant",
+      "name": "AnonClassHolder",
+      "qualifiedName": "AnonClassHolder",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 109,
+      "endLine": 111,
+      "startColumn": 6,
+      "endColumn": 1,
+      "signature": "= class {\n  method() {}\n}",
+      "isExported": false
+    },
+    {
+      "id": "component:bfb4f95962b4735b3c4999e55c18801f",
+      "kind": "component",
+      "name": "Button",
+      "qualifiedName": "Button",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 114,
+      "endLine": 120,
+      "startColumn": 13,
+      "endColumn": 2,
+      "docstring": "React components (#841).",
+      "signature": "= forwardRef((props: ButtonProps, ref) => {\n  const [state, setState] = useStateAlias(0);\n  useEffect(...",
+      "isExported": true
+    },
+    {
+      "id": "component:a571bc223ec65a4bdce9334550b43348",
+      "kind": "component",
+      "name": "MemoRow",
+      "qualifiedName": "MemoRow",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 122,
+      "endLine": 124,
+      "startColumn": 13,
+      "endColumn": 2,
+      "signature": "= memo(function Row(props: RowProps) {\n  return <tr className={props.cls}>{props.children}</tr>;\n})",
+      "isExported": true
+    },
+    {
+      "id": "component:f7d381dd5cc9864733a83ac30b53cfef",
+      "kind": "component",
+      "name": "Wrapped",
+      "qualifiedName": "Wrapped",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 126,
+      "endLine": 126,
+      "startColumn": 13,
+      "endColumn": 52,
+      "signature": "= React.memo(ImportedComponent)",
+      "isExported": true
+    },
+    {
+      "id": "component:5bdf7d8ee7b0c5f79a346f4e6420c04d",
+      "kind": "component",
+      "name": "Styled",
+      "qualifiedName": "Styled",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 127,
+      "endLine": 129,
+      "startColumn": 13,
+      "endColumn": 1,
+      "signature": "= styled.button`\n  color: red;\n`",
+      "isExported": true
+    },
+    {
+      "id": "constant:5b7390655615e1962cf9c5a17ae6361a",
+      "kind": "constant",
+      "name": "memoCache",
+      "qualifiedName": "memoCache",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 130,
+      "endLine": 130,
+      "startColumn": 6,
+      "endColumn": 36,
+      "signature": "= memo(computeThing)",
+      "isExported": false
+    },
+    {
+      "id": "constant:b7d92f2644127f839473eecedcb0554d",
+      "kind": "constant",
+      "name": "BASE_MIXIN",
+      "qualifiedName": "BASE_MIXIN",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 136,
+      "endLine": 136,
+      "startColumn": 6,
+      "endColumn": 35,
+      "docstring": "lowercase — stays a constant\nWrappers with no render function: the initializer is walked under the\ncomponent — interpolations, `.attrs()` / `.withConfig()` / options\narguments, a style function, a comparator — but not the wrapper's own chain,\nand the wrapped component is no fn-ref (a typed tag's type is not walked).",
+      "signature": "= css`color: red;`",
+      "isExported": false
+    },
+    {
+      "id": "component:7502d8553bee6cd48d1607e96ac706ed",
+      "kind": "component",
+      "name": "StyledBase",
+      "qualifiedName": "StyledBase",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 137,
+      "endLine": 141,
+      "startColumn": 13,
+      "endColumn": 1,
+      "signature": "= styled(Button)`\n  color: ${(p) => themeColor(p, 'accent')};\n  ${BASE_MIXIN}\n  ${breakpoint('tablet')...",
+      "isExported": true
+    },
+    {
+      "id": "component:315b93ae10fdf1290486a06250d12e8b",
+      "kind": "component",
+      "name": "AttrsWrapped",
+      "qualifiedName": "AttrsWrapped",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 142,
+      "endLine": 144,
+      "startColumn": 13,
+      "endColumn": 1,
+      "signature": "= styled(ImportedComponent).attrs((props: ButtonProps) => ({ title: labelFor(props) }))<ButtonProps>`\n...",
+      "isExported": true
+    },
+    {
+      "id": "component:925438313d767eaba9737df78e0ef361",
+      "kind": "component",
+      "name": "Configured",
+      "qualifiedName": "Configured",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 145,
+      "endLine": 147,
+      "startColumn": 13,
+      "endColumn": 70,
+      "signature": "= styled(MemoRow)\n  .withConfig({ shouldForwardProp: (prop) => !isInternalProp(prop) })\n  .attrs<RowPr...",
+      "isExported": true
+    },
+    {
+      "id": "component:2ffc028d75cefa97e37c6289697d19a7",
+      "kind": "component",
+      "name": "TypedTag",
+      "qualifiedName": "TypedTag",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 148,
+      "endLine": 148,
+      "startColumn": 13,
+      "endColumn": 86,
+      "signature": "= styled.section<ButtonProps | RowProps>`margin: ${spacing(2)};`",
+      "isExported": true
+    },
+    {
+      "id": "component:eec210b611b05b777ac6a85aecf3adfe",
+      "kind": "component",
+      "name": "MuiStyled",
+      "qualifiedName": "MuiStyled",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 149,
+      "endLine": 152,
+      "startColumn": 13,
+      "endColumn": 3,
+      "signature": "= styled(ImportedComponent, { shouldForwardProp: helperFn })(({ theme }) => ({\n  padding: theme.spacin...",
+      "isExported": true
+    },
+    {
+      "id": "component:00eb216dd3c64f9ed97672e0a23db071",
+      "kind": "component",
+      "name": "MemoCompared",
+      "qualifiedName": "MemoCompared",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 153,
+      "endLine": 153,
+      "startColumn": 13,
+      "endColumn": 61,
+      "signature": "= memo(ImportedComponent, helperFn)",
+      "isExported": true
+    },
+    {
+      "id": "component:e39d0f9ce637b1ca7cec39a8e3fb589e",
+      "kind": "component",
+      "name": "MemoForward",
+      "qualifiedName": "MemoForward",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 154,
+      "endLine": 154,
+      "startColumn": 13,
+      "endColumn": 56,
+      "signature": "= memo(forwardRef(RenderInput))",
+      "isExported": true
+    },
+    {
+      "id": "component:0bf9326b9499c5335f0a32a6f70b1d9b",
+      "kind": "component",
+      "name": "RefForwarded",
+      "qualifiedName": "RefForwarded",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 155,
+      "endLine": 155,
+      "startColumn": 13,
+      "endColumn": 57,
+      "signature": "= React.forwardRef(RenderInput)",
+      "isExported": true
+    },
+    {
+      "id": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "kind": "function",
+      "name": "calleeShapes",
+      "qualifiedName": "calleeShapes",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 158,
+      "endLine": 170,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Callees that name nothing, and the wrappers that keep one.",
+      "signature": "(handlers: Record<string, () => void>, fn: () => void, load: () => Promise<() => void>)",
+      "isExported": true,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:5c761789b1b5cdf4d1f480cd96665f07",
+      "kind": "function",
+      "name": "App",
+      "qualifiedName": "App",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 172,
+      "endLine": 183,
+      "startColumn": 7,
+      "endColumn": 1,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:974c7e732fc04b621d1a867049a77577",
+      "kind": "constant",
+      "name": "actionsMap",
+      "qualifiedName": "actionsMap",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 186,
+      "endLine": 194,
+      "startColumn": 13,
+      "endColumn": 1,
+      "docstring": "Object-of-functions (SvelteKit-style actions map).",
+      "signature": "= {\n  create: async (input: CreateInput) => {\n    return persistNew(input);\n  },\n  update(input: Updat...",
+      "isExported": true
+    },
+    {
+      "id": "function:d408342540c579b58a64aba78e83d581",
+      "kind": "function",
+      "name": "create",
+      "qualifiedName": "actionsMap::create",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 187,
+      "endLine": 189,
+      "startColumn": 10,
+      "endColumn": 3,
+      "signature": "(input: CreateInput)",
+      "isExported": true,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:063dd01277e8bc6fd395914aca8cb466",
+      "kind": "function",
+      "name": "update",
+      "qualifiedName": "actionsMap::update",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 190,
+      "endLine": 192,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(input: UpdateInput)",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:b1025f3b46e5c450119dd7b5eea157af",
+      "kind": "constant",
+      "name": "useStore",
+      "qualifiedName": "useStore",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 197,
+      "endLine": 208,
+      "startColumn": 13,
+      "endColumn": 1,
+      "docstring": "Zustand-style store through middleware wrappers.",
+      "signature": "= create(\n  persist(\n    (set, get) => ({\n      fetchUser: async (id: string) => {\n        const user ...",
+      "isExported": true
+    },
+    {
+      "id": "function:2bd21f1a2e9ef0005e284753dba1e690",
+      "kind": "function",
+      "name": "fetchUser",
+      "qualifiedName": "fetchUser",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 200,
+      "endLine": 203,
+      "startColumn": 17,
+      "endColumn": 7,
+      "signature": "(id: string)",
+      "isExported": true,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:3094a6e6d6458f3f2ef56e74f3642de4",
+      "kind": "function",
+      "name": "reset",
+      "qualifiedName": "reset",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 204,
+      "endLine": 204,
+      "startColumn": 13,
+      "endColumn": 38,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:f4b81990a55031a0d2db76595a41d30e",
+      "kind": "constant",
+      "name": "widgetApi",
+      "qualifiedName": "widgetApi",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 211,
+      "endLine": 224,
+      "startColumn": 13,
+      "endColumn": 2,
+      "docstring": "RTK Query.",
+      "signature": "= createApi({\n  reducerPath: 'widgets',\n  endpoints: (build) => ({\n    getWidget: build.query({\n      ...",
+      "isExported": true
+    },
+    {
+      "id": "function:155a61d1a483519ef995661a76c1d6b0",
+      "kind": "function",
+      "name": "getWidget",
+      "qualifiedName": "getWidget",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 215,
+      "endLine": 215,
+      "startColumn": 13,
+      "endColumn": 44,
+      "signature": "(id: string)",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:2703550e40d7b0d4005a366c57fd6577",
+      "kind": "function",
+      "name": "updateWidget",
+      "qualifiedName": "updateWidget",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 218,
+      "endLine": 220,
+      "startColumn": 15,
+      "endColumn": 7,
+      "signature": "(patch)",
+      "isExported": true,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:dca7512343219ba19a7bd8481b5e9ad0",
+      "kind": "function",
+      "name": "prebuilt",
+      "qualifiedName": "prebuilt",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 222,
+      "endLine": 222,
+      "startColumn": 14,
+      "endColumn": 47,
+      "signature": "build.query(makeEndpointConfig())"
+    },
+    {
+      "id": "function:0b040da149a3aff3d112e287363324a1",
+      "kind": "function",
+      "name": "useGetWidgetQuery",
+      "qualifiedName": "useGetWidgetQuery",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 226,
+      "endLine": 226,
+      "startColumn": 15,
+      "endColumn": 32,
+      "isExported": true,
+      "signature": "= RTK Query generated hook"
+    },
+    {
+      "id": "function:7b649b34c3c37bddf8bfb3476cc3e9e6",
+      "kind": "function",
+      "name": "useUpdateWidgetMutation",
+      "qualifiedName": "useUpdateWidgetMutation",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 226,
+      "endLine": 226,
+      "startColumn": 34,
+      "endColumn": 57,
+      "isExported": true,
+      "signature": "= RTK Query generated hook"
+    },
+    {
+      "id": "constant:7a22103f79dd06dcffbdf8ea4fd537c2",
+      "kind": "constant",
+      "name": "SHADOWED_LIMIT",
+      "qualifiedName": "SHADOWED_LIMIT",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 230,
+      "endLine": 230,
+      "startColumn": 6,
+      "endColumn": 25,
+      "docstring": "Value-ref shadowing: SHADOWED_LIMIT re-bound locally must be pruned.",
+      "signature": "= 10",
+      "isExported": false
+    },
+    {
+      "id": "function:6fb845a1fd126101b6349f181bd7381c",
+      "kind": "function",
+      "name": "readsShadowed",
+      "qualifiedName": "readsShadowed",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 231,
+      "endLine": 234,
+      "startColumn": 7,
+      "endColumn": 1,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:f87ccbfcf57116825e74c83c47d1225a",
+      "kind": "function",
+      "name": "readsTable",
+      "qualifiedName": "readsTable",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 235,
+      "endLine": 237,
+      "startColumn": 7,
+      "endColumn": 1,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:6a59180fa0aeeadc6780cce52b779989",
+      "kind": "constant",
+      "name": "routeTable",
+      "qualifiedName": "routeTable",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 242,
+      "endLine": 242,
+      "startColumn": 6,
+      "endColumn": 66,
+      "signature": "= { home: topLevel, missing: notDefinedAnywhere }",
+      "isExported": false
+    },
+    {
+      "id": "constant:ecc4c52856620b7e381bb56fc0998019",
+      "kind": "constant",
+      "name": "handlerList",
+      "qualifiedName": "handlerList",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 243,
+      "endLine": 243,
+      "startColumn": 6,
+      "endColumn": 44,
+      "signature": "= [helperFn, DefaultThing]",
+      "isExported": false
+    },
+    {
+      "id": "constant:4edf103f95a89d5933deacd9b5b14f0b",
+      "kind": "constant",
+      "name": "aliasFn",
+      "qualifiedName": "aliasFn",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 245,
+      "endLine": 245,
+      "startColumn": 6,
+      "endColumn": 24,
+      "signature": "= topLevel",
+      "isExported": false
+    },
+    {
+      "id": "class:c381b8419ed83d75d0b965763e69663c",
+      "kind": "class",
+      "name": "FieldDelegator",
+      "qualifiedName": "FieldDelegator",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 259,
+      "endLine": 264,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "- call through a field of the enclosing class (#1496) ---------------------",
+      "isExported": true
+    },
+    {
+      "id": "method:0d3721176caaeca6b8f04311252af445",
+      "kind": "method",
+      "name": "constructor",
+      "qualifiedName": "FieldDelegator::constructor",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 260,
+      "endLine": 260,
+      "startColumn": 2,
+      "endColumn": 95,
+      "signature": "(private readonly mailer: { send(m: string): string }, private items: string[])",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:cdb7bd4cba2e19a464779e436839df6d",
+      "kind": "method",
+      "name": "send",
+      "qualifiedName": "FieldDelegator::send",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 261,
+      "endLine": 261,
+      "startColumn": 2,
+      "endColumn": 61,
+      "signature": "(msg: string): string",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:f81fcd090f7f12cd2132f4a25ca21711",
+      "kind": "method",
+      "name": "push",
+      "qualifiedName": "FieldDelegator::push",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 262,
+      "endLine": 262,
+      "startColumn": 2,
+      "endColumn": 81,
+      "signature": "(msg: string): void",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:2a12d08f43c3297aa8eb811e59b0a923",
+      "kind": "method",
+      "name": "direct",
+      "qualifiedName": "FieldDelegator::direct",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 263,
+      "endLine": 263,
+      "startColumn": 2,
+      "endColumn": 54,
+      "signature": "(): void",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:a17a3191bc14ffd3be1ae060ad0dc575",
+      "kind": "class",
+      "name": "PrivateDelegator",
+      "qualifiedName": "PrivateDelegator",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 267,
+      "endLine": 272,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "- call through an ES private field (#1987) --------------------------------",
+      "isExported": true
+    },
+    {
+      "id": "property:8ebe2d87fd2be6031aa1f5ce4c7a44f4",
+      "kind": "property",
+      "name": "#mailer",
+      "qualifiedName": "PrivateDelegator::#mailer",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 268,
+      "endLine": 268,
+      "startColumn": 2,
+      "endColumn": 62,
+      "signature": "#mailer",
+      "isStatic": false
+    },
+    {
+      "id": "property:2579911e2254adb95a542c72e8d6c35b",
+      "kind": "property",
+      "name": "#items",
+      "qualifiedName": "PrivateDelegator::#items",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 269,
+      "endLine": 269,
+      "startColumn": 2,
+      "endColumn": 28,
+      "signature": "#items",
+      "isStatic": false
+    },
+    {
+      "id": "method:0ba074a0a8db65df9ddccf3591401b09",
+      "kind": "method",
+      "name": "send",
+      "qualifiedName": "PrivateDelegator::send",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 270,
+      "endLine": 270,
+      "startColumn": 2,
+      "endColumn": 62,
+      "signature": "(msg: string): string",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:3f4cd6762515e6b476b58abe617815a0",
+      "kind": "method",
+      "name": "add",
+      "qualifiedName": "PrivateDelegator::add",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 271,
+      "endLine": 271,
+      "startColumn": 2,
+      "endColumn": 46,
+      "signature": "(x: string): void",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:ecfa0ca353b73c570389190ec726900b",
+      "kind": "function",
+      "name": "NestedHandlers",
+      "qualifiedName": "NestedHandlers",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 275,
+      "endLine": 282,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "- const-bound functions inside a body (#1669) -----------------------------",
+      "signature": "({ items, onPick }: { items: string[]; onPick: (a: unknown, b: unknown) => void })",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:55f12bb35f1d40b7c74131b8efbf50b6",
+      "kind": "function",
+      "name": "handleClear",
+      "qualifiedName": "NestedHandlers::handleClear",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 276,
+      "endLine": 276,
+      "startColumn": 22,
+      "endColumn": 51,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:f9c4a8537ce2bbd45b2b7d77e5d2288a",
+      "kind": "function",
+      "name": "describe",
+      "qualifiedName": "NestedHandlers::describe",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 277,
+      "endLine": 277,
+      "startColumn": 19,
+      "endColumn": 72,
+      "signature": "(item: string)",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:069f1b652d9f5f1a5bcd4aa11dbf09a9",
+      "kind": "function",
+      "name": "later",
+      "qualifiedName": "NestedHandlers::later",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 278,
+      "endLine": 278,
+      "startColumn": 14,
+      "endColumn": 42,
+      "signature": "(x: string)",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "kind": "function",
+      "name": "defaultsOf",
+      "qualifiedName": "defaultsOf",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 285,
+      "endLine": 285,
+      "startColumn": 7,
+      "endColumn": 259,
+      "docstring": "- parameter defaults are the function's code (#2588) ----------------------",
+      "signature": "(note = formatLabel('x'), { a = parseLabel('a'), b: { c = new FieldDelegator({}, []) } = {} as any }: any = {}, [first = formatLabel('f')]: string[] = [], { [parseLabel('k')]: keyed }: any = {})",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:344ac02416f408bd99fde4fae2780447",
+      "kind": "function",
+      "name": "defaultArrow",
+      "qualifiedName": "defaultArrow",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 286,
+      "endLine": 286,
+      "startColumn": 28,
+      "endColumn": 142,
+      "signature": "(cb = (e: unknown) => formatLabel(String(e)), typed: ReturnType<typeof parseLabel> = parseLabel('t'))",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:76c2260445df350e487a7361f9c59701",
+      "kind": "class",
+      "name": "DefaultsHolder",
+      "qualifiedName": "DefaultsHolder",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 287,
+      "endLine": 292,
+      "startColumn": 7,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "method:14e1487000a398ea4943b300761e4af8",
+      "kind": "method",
+      "name": "constructor",
+      "qualifiedName": "DefaultsHolder::constructor",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 288,
+      "endLine": 288,
+      "startColumn": 2,
+      "endColumn": 96,
+      "signature": "(private readonly delegate = new FieldDelegator({ send: (m: string) => m }, []))",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:e9b9a87d83c252f3055d3388b601d1b8",
+      "kind": "method",
+      "name": "pick",
+      "qualifiedName": "DefaultsHolder::pick",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 289,
+      "endLine": 289,
+      "startColumn": 2,
+      "endColumn": 48,
+      "signature": "(item = formatLabel('i'))",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:89886211a049333ea7b2b2d00bc79c98",
+      "kind": "method",
+      "name": "onPick",
+      "qualifiedName": "DefaultsHolder::onPick",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 290,
+      "endLine": 290,
+      "startColumn": 2,
+      "endColumn": 43,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:8e387ea5a4c33ae7a7de0a7a418759f8",
+      "kind": "method",
+      "name": "wrappedPick",
+      "qualifiedName": "DefaultsHolder::wrappedPick",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 291,
+      "endLine": 291,
+      "startColumn": 2,
+      "endColumn": 69,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:981aa1cf4a525f1f834a12dd3fb159bf",
+      "kind": "constant",
+      "name": "DefaultsApi",
+      "qualifiedName": "DefaultsApi",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 293,
+      "endLine": 293,
+      "startColumn": 13,
+      "endColumn": 117,
+      "signature": "= { load(note = formatLabel('l')) { return note; }, save: (note = parseLabel('s')) => note }",
+      "isExported": true
+    },
+    {
+      "id": "function:a1f632b9c89b03d06ffdf215e713a9c6",
+      "kind": "function",
+      "name": "load",
+      "qualifiedName": "DefaultsApi::load",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 293,
+      "endLine": 293,
+      "startColumn": 29,
+      "endColumn": 75,
+      "signature": "(note = formatLabel('l'))",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:c9a55bb2ec4d459cdb702ac76a435cfa",
+      "kind": "function",
+      "name": "save",
+      "qualifiedName": "DefaultsApi::save",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 293,
+      "endLine": 293,
+      "startColumn": 83,
+      "endColumn": 115,
+      "signature": "(note = parseLabel('s'))",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "component:2413e8687570de7f6bf4dff338ca876c",
+      "kind": "component",
+      "name": "DefaultsRef",
+      "qualifiedName": "DefaultsRef",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 294,
+      "endLine": 294,
+      "startColumn": 13,
+      "endColumn": 138,
+      "signature": "= forwardRef(function DefaultsRef({ size = parseLabel('z') }: any, ref: any) { return <b ref={ref}>{si...",
+      "isExported": true
+    },
+    {
+      "id": "component:3900aea2eb3b73e6b361d38a162a09f6",
+      "kind": "component",
+      "name": "DefaultsBox",
+      "qualifiedName": "DefaultsBox",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 295,
+      "endLine": 295,
+      "startColumn": 13,
+      "endColumn": 91,
+      "signature": "= styled.div.attrs((p = formatLabel('b')) => ({ p }))`color: red;`",
+      "isExported": true
+    },
+    {
+      "id": "function:7670eb538d9a0c9c94de24364be2f0d5",
+      "kind": "function",
+      "name": "overloadedDefault",
+      "qualifiedName": "overloadedDefault",
+      "filePath": "torture.tsx",
+      "language": "tsx",
+      "startLine": 297,
+      "endLine": 297,
+      "startColumn": 7,
+      "endColumn": 85,
+      "signature": "(x: string = formatLabel('o')): string",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.tsx",
+      "target": "import:d3f11476b3c70d68f9f9724f3e6ab699",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "import:7bff5cb286a60587ad04b8eed5de0e67",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "import:4935bc32d5f33e8f95c3cb009bf0935d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "import:29c3cc32eeee07c3c2b96bf6f1b275d2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "import:92cf06e18d12ccca19cc4fcd24ce1065",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "import:98bb06445772756486c947f90b53b571",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "import:c4aa3756e11681aadead3ec870085b66",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:7af11b36e8d4ddbbdc72a75e5d163a1f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:4d2266cb0f452fd0233976ec146c28eb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "variable:3cd4d572d8ccf445444d6889213b6b1e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "variable:b407274307e5fc2fbd0b898576240140",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "class:addcf598d6e590538ddf583221f35a77",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "property:874fe82da8aa6ae0f475c3e68daa5eaa",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "property:6c744c9a2bb0ba520787f304c27c371c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "property:18a57a62819b4ea4b951980a3b24d928",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "property:3c5b5ba31d75180419c773473a58c22d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "property:03e3305423fa43758a0919d8a183b978",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "method:4eb171259a1cf6aa577f38da4a9656df",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "method:6726ab5ee5bc36c38b7eb1582fe884f9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "method:55c965988d68dfd2ea56b765f472bc76",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "method:2c88a78272b8b0ed3f813073253fcd5a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "method:47464520d9f42264345fde1b666099bd",
+      "kind": "contains"
+    },
+    {
+      "source": "class:addcf598d6e590538ddf583221f35a77",
+      "target": "method:9387862214d35425903df7e230fa4d1c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "class:ff817de9bc05890dab662f7ddb3ea325",
+      "kind": "contains"
+    },
+    {
+      "source": "class:ff817de9bc05890dab662f7ddb3ea325",
+      "target": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "kind": "contains"
+    },
+    {
+      "source": "class:ff817de9bc05890dab662f7ddb3ea325",
+      "target": "method:e214294df5af47980e7f51befd642cb9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:ff817de9bc05890dab662f7ddb3ea325",
+      "target": "method:3e7823ac6bb99fc6abf638e36cea7e3d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "target": "property:12cb01cb647cfdc7b0bca660072cbd57",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "target": "method:555776dff335b0d5f4a585a6a8985ec6",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "target": "property:4d3264084e7c43e0f47e74bbcd41ac83",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "enum:802b3cd8fe749f5a971a3d8a8bba805f",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:802b3cd8fe749f5a971a3d8a8bba805f",
+      "target": "enum_member:3b4f65d920c3de8556c7da2af42dc6c1",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:802b3cd8fe749f5a971a3d8a8bba805f",
+      "target": "enum_member:a19eeb9fe9dc6c4367ce6c82138ccf2f",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:802b3cd8fe749f5a971a3d8a8bba805f",
+      "target": "enum_member:bab53efcd0664a529e0a37f0dcdda4fb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "kind": "contains"
+    },
+    {
+      "source": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "target": "method:866351b97f12ade842f1b4b6766ad57e",
+      "kind": "contains"
+    },
+    {
+      "source": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "target": "property:f646a2a4d79c4afe62d96ca024806e5a",
+      "kind": "contains"
+    },
+    {
+      "source": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "target": "method:9371066ce9a26cc3a0d33c5c1f20bb65",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "kind": "contains"
+    },
+    {
+      "source": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "target": "method:d5996b7ea447db3c9a9cbe78ad8c4d59",
+      "kind": "contains"
+    },
+    {
+      "source": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "target": "method:7acb43107677aaa303b3c27f709112e2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "type_alias:0e07bacf694d4756f240c8275c7f09c5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "kind": "contains"
+    },
+    {
+      "source": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "target": "function:7d4eb4a87cad38c3065f979bf1ec33fa",
+      "kind": "contains"
+    },
+    {
+      "source": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "target": "function:d7310ea98edf1fe05b545dbf3168dd44",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:2d33bb3cbf2c5da5fae0a17d31c690d6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:b58aedf57cd50502d9b4ff357bb9259f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:c5ea1329776d069448eb329e28d24da3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:bfb4f95962b4735b3c4999e55c18801f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:a571bc223ec65a4bdce9334550b43348",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:f7d381dd5cc9864733a83ac30b53cfef",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:5bdf7d8ee7b0c5f79a346f4e6420c04d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:5b7390655615e1962cf9c5a17ae6361a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:b7d92f2644127f839473eecedcb0554d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:7502d8553bee6cd48d1607e96ac706ed",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:315b93ae10fdf1290486a06250d12e8b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:925438313d767eaba9737df78e0ef361",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:2ffc028d75cefa97e37c6289697d19a7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:eec210b611b05b777ac6a85aecf3adfe",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:00eb216dd3c64f9ed97672e0a23db071",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:e39d0f9ce637b1ca7cec39a8e3fb589e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:0bf9326b9499c5335f0a32a6f70b1d9b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:5c761789b1b5cdf4d1f480cd96665f07",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:974c7e732fc04b621d1a867049a77577",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:974c7e732fc04b621d1a867049a77577",
+      "target": "function:d408342540c579b58a64aba78e83d581",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:974c7e732fc04b621d1a867049a77577",
+      "target": "function:063dd01277e8bc6fd395914aca8cb466",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:b1025f3b46e5c450119dd7b5eea157af",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:2bd21f1a2e9ef0005e284753dba1e690",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:3094a6e6d6458f3f2ef56e74f3642de4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:f4b81990a55031a0d2db76595a41d30e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:155a61d1a483519ef995661a76c1d6b0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:2703550e40d7b0d4005a366c57fd6577",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:dca7512343219ba19a7bd8481b5e9ad0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:0b040da149a3aff3d112e287363324a1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:7b649b34c3c37bddf8bfb3476cc3e9e6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:7a22103f79dd06dcffbdf8ea4fd537c2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:6fb845a1fd126101b6349f181bd7381c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:f87ccbfcf57116825e74c83c47d1225a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:6a59180fa0aeeadc6780cce52b779989",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:ecc4c52856620b7e381bb56fc0998019",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:4edf103f95a89d5933deacd9b5b14f0b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "class:c381b8419ed83d75d0b965763e69663c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c381b8419ed83d75d0b965763e69663c",
+      "target": "method:0d3721176caaeca6b8f04311252af445",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c381b8419ed83d75d0b965763e69663c",
+      "target": "method:cdb7bd4cba2e19a464779e436839df6d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c381b8419ed83d75d0b965763e69663c",
+      "target": "method:f81fcd090f7f12cd2132f4a25ca21711",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c381b8419ed83d75d0b965763e69663c",
+      "target": "method:2a12d08f43c3297aa8eb811e59b0a923",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "class:a17a3191bc14ffd3be1ae060ad0dc575",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a17a3191bc14ffd3be1ae060ad0dc575",
+      "target": "property:8ebe2d87fd2be6031aa1f5ce4c7a44f4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a17a3191bc14ffd3be1ae060ad0dc575",
+      "target": "property:2579911e2254adb95a542c72e8d6c35b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a17a3191bc14ffd3be1ae060ad0dc575",
+      "target": "method:0ba074a0a8db65df9ddccf3591401b09",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a17a3191bc14ffd3be1ae060ad0dc575",
+      "target": "method:3f4cd6762515e6b476b58abe617815a0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:ecfa0ca353b73c570389190ec726900b",
+      "kind": "contains"
+    },
+    {
+      "source": "function:ecfa0ca353b73c570389190ec726900b",
+      "target": "function:55f12bb35f1d40b7c74131b8efbf50b6",
+      "kind": "contains"
+    },
+    {
+      "source": "function:ecfa0ca353b73c570389190ec726900b",
+      "target": "function:f9c4a8537ce2bbd45b2b7d77e5d2288a",
+      "kind": "contains"
+    },
+    {
+      "source": "function:ecfa0ca353b73c570389190ec726900b",
+      "target": "function:069f1b652d9f5f1a5bcd4aa11dbf09a9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:344ac02416f408bd99fde4fae2780447",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "class:76c2260445df350e487a7361f9c59701",
+      "kind": "contains"
+    },
+    {
+      "source": "class:76c2260445df350e487a7361f9c59701",
+      "target": "method:14e1487000a398ea4943b300761e4af8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:76c2260445df350e487a7361f9c59701",
+      "target": "method:e9b9a87d83c252f3055d3388b601d1b8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:76c2260445df350e487a7361f9c59701",
+      "target": "method:89886211a049333ea7b2b2d00bc79c98",
+      "kind": "contains"
+    },
+    {
+      "source": "class:76c2260445df350e487a7361f9c59701",
+      "target": "method:8e387ea5a4c33ae7a7de0a7a418759f8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "constant:981aa1cf4a525f1f834a12dd3fb159bf",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:981aa1cf4a525f1f834a12dd3fb159bf",
+      "target": "function:a1f632b9c89b03d06ffdf215e713a9c6",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:981aa1cf4a525f1f834a12dd3fb159bf",
+      "target": "function:c9a55bb2ec4d459cdb702ac76a435cfa",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:2413e8687570de7f6bf4dff338ca876c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "component:3900aea2eb3b73e6b361d38a162a09f6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.tsx",
+      "target": "function:7670eb538d9a0c9c94de24364be2f0d5",
+      "kind": "contains"
+    },
+    {
+      "source": "method:55c965988d68dfd2ea56b765f472bc76",
+      "target": "constant:7af11b36e8d4ddbbdc72a75e5d163a1f",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:2c88a78272b8b0ed3f813073253fcd5a",
+      "target": "constant:7af11b36e8d4ddbbdc72a75e5d163a1f",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:b58aedf57cd50502d9b4ff357bb9259f",
+      "target": "variable:3cd4d572d8ccf445444d6889213b6b1e",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "component:7502d8553bee6cd48d1607e96ac706ed",
+      "target": "constant:b7d92f2644127f839473eecedcb0554d",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:f87ccbfcf57116825e74c83c47d1225a",
+      "target": "constant:4d2266cb0f452fd0233976ec146c28eb",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:f87ccbfcf57116825e74c83c47d1225a",
+      "target": "constant:7af11b36e8d4ddbbdc72a75e5d163a1f",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "react",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "React",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 7
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "forwardRef",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 16
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "memo",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 28
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "useStateAlias",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 46
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "./namespace-module",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "NS",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 12
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "./default-module",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "DefaultThing",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 7
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "./side-effect",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "./helpers",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "helperFn",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 9
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "CONFIG_TABLE",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 19
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "./barrel-source",
+      "referenceKind": "imports",
+      "line": 10,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "reExported",
+      "referenceKind": "imports",
+      "line": 10,
+      "column": 9
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "orig",
+      "referenceKind": "imports",
+      "line": 10,
+      "column": 21
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "./star-source",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "Injectable",
+      "referenceKind": "calls",
+      "line": 22,
+      "column": 1
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "scoped.Registry",
+      "referenceKind": "calls",
+      "line": 23,
+      "column": 1
+    },
+    {
+      "fromNodeId": "class:addcf598d6e590538ddf583221f35a77",
+      "referenceName": "EventTarget",
+      "referenceKind": "extends",
+      "line": 24,
+      "column": 42
+    },
+    {
+      "fromNodeId": "class:addcf598d6e590538ddf583221f35a77",
+      "referenceName": "Disposable",
+      "referenceKind": "implements",
+      "line": 24,
+      "column": 65
+    },
+    {
+      "fromNodeId": "class:addcf598d6e590538ddf583221f35a77",
+      "referenceName": "Serializable",
+      "referenceKind": "implements",
+      "line": 24,
+      "column": 77
+    },
+    {
+      "fromNodeId": "class:addcf598d6e590538ddf583221f35a77",
+      "referenceName": "Registry",
+      "referenceKind": "decorates",
+      "line": 23,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:addcf598d6e590538ddf583221f35a77",
+      "referenceName": "Injectable",
+      "referenceKind": "decorates",
+      "line": 22,
+      "column": 0
+    },
+    {
+      "fromNodeId": "property:18a57a62819b4ea4b951980a3b24d928",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 27,
+      "column": 26
+    },
+    {
+      "fromNodeId": "property:18a57a62819b4ea4b951980a3b24d928",
+      "referenceName": "Config",
+      "referenceKind": "references",
+      "line": 27,
+      "column": 38
+    },
+    {
+      "fromNodeId": "property:18a57a62819b4ea4b951980a3b24d928",
+      "referenceName": "Map",
+      "referenceKind": "instantiates",
+      "line": 27,
+      "column": 48
+    },
+    {
+      "fromNodeId": "property:3c5b5ba31d75180419c773473a58c22d",
+      "referenceName": "FontConfig",
+      "referenceKind": "references",
+      "line": 28,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:4eb171259a1cf6aa577f38da4a9656df",
+      "referenceName": "handleScroll",
+      "referenceKind": "calls",
+      "line": 31,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:6726ab5ee5bc36c38b7eb1582fe884f9",
+      "referenceName": "emitTelemetry",
+      "referenceKind": "calls",
+      "line": 34,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:6726ab5ee5bc36c38b7eb1582fe884f9",
+      "referenceName": "AbortController",
+      "referenceKind": "instantiates",
+      "line": 35,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:addcf598d6e590538ddf583221f35a77",
+      "referenceName": "Get",
+      "referenceKind": "calls",
+      "line": 38,
+      "column": 3
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "QueryOpts",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Promise",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 32
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 40
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 47
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Promise",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 32
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 40
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 47
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "Get",
+      "referenceKind": "decorates",
+      "line": 38,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "ItemMapper",
+      "referenceKind": "references",
+      "line": 40,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "makeMapper",
+      "referenceKind": "calls",
+      "line": 40,
+      "column": 30
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "this.cache.get",
+      "referenceKind": "calls",
+      "line": 42,
+      "column": 11
+    },
+    {
+      "fromNodeId": "method:55c965988d68dfd2ea56b765f472bc76",
+      "referenceName": "helperFn",
+      "referenceKind": "calls",
+      "line": 42,
+      "column": 40
+    },
+    {
+      "fromNodeId": "method:9387862214d35425903df7e230fa4d1c",
+      "referenceName": "listeners.forEach",
+      "referenceKind": "calls",
+      "line": 54,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:9387862214d35425903df7e230fa4d1c",
+      "referenceName": "unregister",
+      "referenceKind": "calls",
+      "line": 54,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "referenceName": "BaseService",
+      "referenceKind": "references",
+      "line": 59,
+      "column": 27
+    },
+    {
+      "fromNodeId": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 60,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "referenceName": "btn.on",
+      "referenceKind": "calls",
+      "line": 61,
+      "column": 4
+    },
+    {
+      "fromNodeId": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "referenceName": "Named",
+      "referenceKind": "extends",
+      "line": 67,
+      "column": 31
+    },
+    {
+      "fromNodeId": "interface:f6649b42411e75fd13d08ff56659c7b0",
+      "referenceName": "Sized",
+      "referenceKind": "extends",
+      "line": 67,
+      "column": 38
+    },
+    {
+      "fromNodeId": "method:555776dff335b0d5f4a585a6a8985ec6",
+      "referenceName": "Shape",
+      "referenceKind": "references",
+      "line": 69,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:555776dff335b0d5f4a585a6a8985ec6",
+      "referenceName": "Shape",
+      "referenceKind": "references",
+      "line": 69,
+      "column": 21
+    },
+    {
+      "fromNodeId": "property:4d3264084e7c43e0f47e74bbcd41ac83",
+      "referenceName": "Shape",
+      "referenceKind": "references",
+      "line": 70,
+      "column": 16
+    },
+    {
+      "fromNodeId": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "referenceName": "Promise",
+      "referenceKind": "references",
+      "line": 82,
+      "column": 27
+    },
+    {
+      "fromNodeId": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "referenceName": "Promise",
+      "referenceKind": "references",
+      "line": 82,
+      "column": 27
+    },
+    {
+      "fromNodeId": "type_alias:3ac321de5e4d4b2287e7e856a9c810e7",
+      "referenceName": "Promise",
+      "referenceKind": "references",
+      "line": 82,
+      "column": 27
+    },
+    {
+      "fromNodeId": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "referenceName": "Service",
+      "referenceKind": "references",
+      "line": 86,
+      "column": 2
+    },
+    {
+      "fromNodeId": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "referenceName": "Req",
+      "referenceKind": "references",
+      "line": 86,
+      "column": 32
+    },
+    {
+      "fromNodeId": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "referenceName": "Resp",
+      "referenceKind": "references",
+      "line": 86,
+      "column": 37
+    },
+    {
+      "fromNodeId": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "referenceName": "Service",
+      "referenceKind": "references",
+      "line": 87,
+      "column": 2
+    },
+    {
+      "fromNodeId": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "referenceName": "Req",
+      "referenceKind": "references",
+      "line": 87,
+      "column": 27
+    },
+    {
+      "fromNodeId": "type_alias:c9e2a69a7499e057380d2f9b9a110905",
+      "referenceName": "Resp",
+      "referenceKind": "references",
+      "line": 87,
+      "column": 32
+    },
+    {
+      "fromNodeId": "type_alias:0e07bacf694d4756f240c8275c7f09c5",
+      "referenceName": "Shape",
+      "referenceKind": "references",
+      "line": 90,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "referenceName": "ShapeConfig",
+      "referenceKind": "references",
+      "line": 92,
+      "column": 28
+    },
+    {
+      "fromNodeId": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "referenceName": "Shape",
+      "referenceKind": "references",
+      "line": 92,
+      "column": 42
+    },
+    {
+      "fromNodeId": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "referenceName": "Shape",
+      "referenceKind": "references",
+      "line": 92,
+      "column": 42
+    },
+    {
+      "fromNodeId": "function:7d4eb4a87cad38c3065f979bf1ec33fa",
+      "referenceName": "reallyDeep",
+      "referenceKind": "calls",
+      "line": 93,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:d7310ea98edf1fe05b545dbf3168dd44",
+      "referenceName": "chained",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "referenceName": "namedInner",
+      "referenceKind": "calls",
+      "line": 97,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a3c49912fb45e9ff5895faef31a8349e",
+      "referenceName": "makeShape",
+      "referenceKind": "calls",
+      "line": 98,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:2d33bb3cbf2c5da5fae0a17d31c690d6",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 101,
+      "column": 35
+    },
+    {
+      "fromNodeId": "function:2d33bb3cbf2c5da5fae0a17d31c690d6",
+      "referenceName": "items.map",
+      "referenceKind": "calls",
+      "line": 102,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:2d33bb3cbf2c5da5fae0a17d31c690d6",
+      "referenceName": "transform",
+      "referenceKind": "calls",
+      "line": 102,
+      "column": 26
+    },
+    {
+      "fromNodeId": "component:bfb4f95962b4735b3c4999e55c18801f",
+      "referenceName": "useStateAlias",
+      "referenceKind": "calls",
+      "line": 115,
+      "column": 28
+    },
+    {
+      "fromNodeId": "component:bfb4f95962b4735b3c4999e55c18801f",
+      "referenceName": "useEffect",
+      "referenceKind": "calls",
+      "line": 116,
+      "column": 2
+    },
+    {
+      "fromNodeId": "component:bfb4f95962b4735b3c4999e55c18801f",
+      "referenceName": "trackRender",
+      "referenceKind": "calls",
+      "line": 117,
+      "column": 4
+    },
+    {
+      "fromNodeId": "component:bfb4f95962b4735b3c4999e55c18801f",
+      "referenceName": "setState",
+      "referenceKind": "calls",
+      "line": 119,
+      "column": 46
+    },
+    {
+      "fromNodeId": "constant:5b7390655615e1962cf9c5a17ae6361a",
+      "referenceName": "memo",
+      "referenceKind": "calls",
+      "line": 130,
+      "column": 18
+    },
+    {
+      "fromNodeId": "constant:b7d92f2644127f839473eecedcb0554d",
+      "referenceName": "css",
+      "referenceKind": "calls",
+      "line": 136,
+      "column": 19
+    },
+    {
+      "fromNodeId": "component:7502d8553bee6cd48d1607e96ac706ed",
+      "referenceName": "themeColor",
+      "referenceKind": "calls",
+      "line": 138,
+      "column": 18
+    },
+    {
+      "fromNodeId": "component:7502d8553bee6cd48d1607e96ac706ed",
+      "referenceName": "breakpoint",
+      "referenceKind": "calls",
+      "line": 140,
+      "column": 4
+    },
+    {
+      "fromNodeId": "component:315b93ae10fdf1290486a06250d12e8b",
+      "referenceName": "labelFor",
+      "referenceKind": "calls",
+      "line": 142,
+      "column": 94
+    },
+    {
+      "fromNodeId": "component:315b93ae10fdf1290486a06250d12e8b",
+      "referenceName": "sizeOf",
+      "referenceKind": "calls",
+      "line": 143,
+      "column": 22
+    },
+    {
+      "fromNodeId": "component:925438313d767eaba9737df78e0ef361",
+      "referenceName": "isInternalProp",
+      "referenceKind": "calls",
+      "line": 146,
+      "column": 46
+    },
+    {
+      "fromNodeId": "component:925438313d767eaba9737df78e0ef361",
+      "referenceName": "alignOf",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 40
+    },
+    {
+      "fromNodeId": "component:2ffc028d75cefa97e37c6289697d19a7",
+      "referenceName": "spacing",
+      "referenceKind": "calls",
+      "line": 148,
+      "column": 73
+    },
+    {
+      "fromNodeId": "component:eec210b611b05b777ac6a85aecf3adfe",
+      "referenceName": "theme.spacing",
+      "referenceKind": "calls",
+      "line": 150,
+      "column": 11
+    },
+    {
+      "fromNodeId": "component:eec210b611b05b777ac6a85aecf3adfe",
+      "referenceName": "pickColor",
+      "referenceKind": "calls",
+      "line": 151,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "Record",
+      "referenceKind": "references",
+      "line": 158,
+      "column": 45
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "Promise",
+      "referenceKind": "references",
+      "line": 158,
+      "column": 101
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "helperFn",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "create",
+      "referenceKind": "calls",
+      "line": 160,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "fn",
+      "referenceKind": "calls",
+      "line": 163,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "fn",
+      "referenceKind": "calls",
+      "line": 164,
+      "column": 3
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "load",
+      "referenceKind": "calls",
+      "line": 165,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "helperFn",
+      "referenceKind": "calls",
+      "line": 166,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "helperFn",
+      "referenceKind": "calls",
+      "line": 167,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "NS.helper.deep",
+      "referenceKind": "calls",
+      "line": 168,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "create",
+      "referenceKind": "calls",
+      "line": 169,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "create",
+      "referenceKind": "calls",
+      "line": 169,
+      "column": 58
+    },
+    {
+      "fromNodeId": "function:5c761789b1b5cdf4d1f480cd96665f07",
+      "referenceName": "GraphNode",
+      "referenceKind": "references",
+      "line": 173,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:5c761789b1b5cdf4d1f480cd96665f07",
+      "referenceName": "nodes.map",
+      "referenceKind": "calls",
+      "line": 178,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:d408342540c579b58a64aba78e83d581",
+      "referenceName": "CreateInput",
+      "referenceKind": "references",
+      "line": 187,
+      "column": 24
+    },
+    {
+      "fromNodeId": "function:d408342540c579b58a64aba78e83d581",
+      "referenceName": "persistNew",
+      "referenceKind": "calls",
+      "line": 188,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:063dd01277e8bc6fd395914aca8cb466",
+      "referenceName": "UpdateInput",
+      "referenceKind": "references",
+      "line": 190,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:063dd01277e8bc6fd395914aca8cb466",
+      "referenceName": "persistExisting",
+      "referenceKind": "calls",
+      "line": 191,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:2bd21f1a2e9ef0005e284753dba1e690",
+      "referenceName": "api.load",
+      "referenceKind": "calls",
+      "line": 201,
+      "column": 27
+    },
+    {
+      "fromNodeId": "function:2bd21f1a2e9ef0005e284753dba1e690",
+      "referenceName": "set",
+      "referenceKind": "calls",
+      "line": 202,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:3094a6e6d6458f3f2ef56e74f3642de4",
+      "referenceName": "set",
+      "referenceKind": "calls",
+      "line": 204,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:155a61d1a483519ef995661a76c1d6b0",
+      "referenceName": "fetchWidget",
+      "referenceKind": "calls",
+      "line": 215,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:2703550e40d7b0d4005a366c57fd6577",
+      "referenceName": "applyPatch",
+      "referenceKind": "calls",
+      "line": 219,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:dca7512343219ba19a7bd8481b5e9ad0",
+      "referenceName": "build.query",
+      "referenceKind": "calls",
+      "line": 222,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:dca7512343219ba19a7bd8481b5e9ad0",
+      "referenceName": "makeEndpointConfig",
+      "referenceKind": "calls",
+      "line": 222,
+      "column": 26
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "registerHandler",
+      "referenceKind": "calls",
+      "line": 240,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "queueMicrotask",
+      "referenceKind": "calls",
+      "line": 241,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "topLevel",
+      "referenceKind": "calls",
+      "line": 248,
+      "column": 2
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "NS.helper.deep",
+      "referenceKind": "calls",
+      "line": 249,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "obj.optMethod",
+      "referenceKind": "calls",
+      "line": 252,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "import",
+      "referenceKind": "calls",
+      "line": 253,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 254,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "makeArg",
+      "referenceKind": "calls",
+      "line": 254,
+      "column": 14
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "Map",
+      "referenceKind": "instantiates",
+      "line": 255,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "super_weird",
+      "referenceKind": "calls",
+      "line": 256,
+      "column": 0
+    },
+    {
+      "fromNodeId": "method:cdb7bd4cba2e19a464779e436839df6d",
+      "referenceName": "this.mailer.send",
+      "referenceKind": "calls",
+      "line": 261,
+      "column": 37
+    },
+    {
+      "fromNodeId": "method:f81fcd090f7f12cd2132f4a25ca21711",
+      "referenceName": "this.items.push",
+      "referenceKind": "calls",
+      "line": 262,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:f81fcd090f7f12cd2132f4a25ca21711",
+      "referenceName": "this.mailer.send().trim",
+      "referenceKind": "calls",
+      "line": 262,
+      "column": 50
+    },
+    {
+      "fromNodeId": "method:f81fcd090f7f12cd2132f4a25ca21711",
+      "referenceName": "this.mailer.send",
+      "referenceKind": "calls",
+      "line": 262,
+      "column": 50
+    },
+    {
+      "fromNodeId": "method:2a12d08f43c3297aa8eb811e59b0a923",
+      "referenceName": "send",
+      "referenceKind": "calls",
+      "line": 263,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:2a12d08f43c3297aa8eb811e59b0a923",
+      "referenceName": "toString",
+      "referenceKind": "calls",
+      "line": 263,
+      "column": 35
+    },
+    {
+      "fromNodeId": "property:8ebe2d87fd2be6031aa1f5ce4c7a44f4",
+      "referenceName": "FieldDelegator",
+      "referenceKind": "instantiates",
+      "line": 268,
+      "column": 12
+    },
+    {
+      "fromNodeId": "property:2579911e2254adb95a542c72e8d6c35b",
+      "referenceName": "Set",
+      "referenceKind": "instantiates",
+      "line": 269,
+      "column": 11
+    },
+    {
+      "fromNodeId": "method:0ba074a0a8db65df9ddccf3591401b09",
+      "referenceName": "this.#mailer.send",
+      "referenceKind": "calls",
+      "line": 270,
+      "column": 37
+    },
+    {
+      "fromNodeId": "method:3f4cd6762515e6b476b58abe617815a0",
+      "referenceName": "this.#items.add",
+      "referenceKind": "calls",
+      "line": 271,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:55f12bb35f1d40b7c74131b8efbf50b6",
+      "referenceName": "onPick",
+      "referenceKind": "calls",
+      "line": 276,
+      "column": 30
+    },
+    {
+      "fromNodeId": "function:f9c4a8537ce2bbd45b2b7d77e5d2288a",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 277,
+      "column": 52
+    },
+    {
+      "fromNodeId": "function:069f1b652d9f5f1a5bcd4aa11dbf09a9",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 278,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:ecfa0ca353b73c570389190ec726900b",
+      "referenceName": "items.map",
+      "referenceKind": "calls",
+      "line": 281,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:ecfa0ca353b73c570389190ec726900b",
+      "referenceName": "describe",
+      "referenceKind": "calls",
+      "line": 281,
+      "column": 77
+    },
+    {
+      "fromNodeId": "function:ecfa0ca353b73c570389190ec726900b",
+      "referenceName": "later",
+      "referenceKind": "calls",
+      "line": 281,
+      "column": 91
+    },
+    {
+      "fromNodeId": "function:ecfa0ca353b73c570389190ec726900b",
+      "referenceName": "a",
+      "referenceKind": "calls",
+      "line": 281,
+      "column": 108
+    },
+    {
+      "fromNodeId": "function:ecfa0ca353b73c570389190ec726900b",
+      "referenceName": "b",
+      "referenceKind": "calls",
+      "line": 281,
+      "column": 113
+    },
+    {
+      "fromNodeId": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 285,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 285,
+      "column": 58
+    },
+    {
+      "fromNodeId": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "referenceName": "FieldDelegator",
+      "referenceKind": "instantiates",
+      "line": 285,
+      "column": 84
+    },
+    {
+      "fromNodeId": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 285,
+      "column": 147
+    },
+    {
+      "fromNodeId": "function:6f9c50ecd5d297ec55cbbd98851c9399",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 285,
+      "column": 184
+    },
+    {
+      "fromNodeId": "function:344ac02416f408bd99fde4fae2780447",
+      "referenceName": "ReturnType",
+      "referenceKind": "references",
+      "line": 286,
+      "column": 81
+    },
+    {
+      "fromNodeId": "function:344ac02416f408bd99fde4fae2780447",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 286,
+      "column": 50
+    },
+    {
+      "fromNodeId": "function:344ac02416f408bd99fde4fae2780447",
+      "referenceName": "String",
+      "referenceKind": "calls",
+      "line": 286,
+      "column": 62
+    },
+    {
+      "fromNodeId": "function:344ac02416f408bd99fde4fae2780447",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 286,
+      "column": 113
+    },
+    {
+      "fromNodeId": "function:344ac02416f408bd99fde4fae2780447",
+      "referenceName": "cb",
+      "referenceKind": "calls",
+      "line": 286,
+      "column": 133
+    },
+    {
+      "fromNodeId": "method:14e1487000a398ea4943b300761e4af8",
+      "referenceName": "FieldDelegator",
+      "referenceKind": "instantiates",
+      "line": 288,
+      "column": 42
+    },
+    {
+      "fromNodeId": "method:e9b9a87d83c252f3055d3388b601d1b8",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 289,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:89886211a049333ea7b2b2d00bc79c98",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 290,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:8e387ea5a4c33ae7a7de0a7a418759f8",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 291,
+      "column": 43
+    },
+    {
+      "fromNodeId": "function:a1f632b9c89b03d06ffdf215e713a9c6",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 293,
+      "column": 41
+    },
+    {
+      "fromNodeId": "function:c9a55bb2ec4d459cdb702ac76a435cfa",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 293,
+      "column": 91
+    },
+    {
+      "fromNodeId": "component:2413e8687570de7f6bf4dff338ca876c",
+      "referenceName": "parseLabel",
+      "referenceKind": "calls",
+      "line": 294,
+      "column": 68
+    },
+    {
+      "fromNodeId": "component:3900aea2eb3b73e6b361d38a162a09f6",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 295,
+      "column": 49
+    },
+    {
+      "fromNodeId": "function:7670eb538d9a0c9c94de24364be2f0d5",
+      "referenceName": "formatLabel",
+      "referenceKind": "calls",
+      "line": 297,
+      "column": 46
+    },
+    {
+      "fromNodeId": "property:6c744c9a2bb0ba520787f304c27c371c",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 26,
+      "column": 31
+    },
+    {
+      "fromNodeId": "property:6c744c9a2bb0ba520787f304c27c371c",
+      "referenceName": "CONFIG_TABLE",
+      "referenceKind": "function_ref",
+      "line": 26,
+      "column": 48
+    },
+    {
+      "fromNodeId": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "referenceName": "this.onEvent",
+      "referenceKind": "function_ref",
+      "line": 60,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:a3d895a2b289b9aaa03f44e0ac5e6735",
+      "referenceName": "this.handleClick",
+      "referenceKind": "function_ref",
+      "line": 61,
+      "column": 25
+    },
+    {
+      "fromNodeId": "component:eec210b611b05b777ac6a85aecf3adfe",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 149,
+      "column": 72
+    },
+    {
+      "fromNodeId": "component:eec210b611b05b777ac6a85aecf3adfe",
+      "referenceName": "CONFIG_TABLE",
+      "referenceKind": "function_ref",
+      "line": 151,
+      "column": 26
+    },
+    {
+      "fromNodeId": "component:00eb216dd3c64f9ed97672e0a23db071",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 153,
+      "column": 52
+    },
+    {
+      "fromNodeId": "function:72fcbd96ecaa03dc0457ca310ec473e2",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 160,
+      "column": 24
+    },
+    {
+      "fromNodeId": "constant:974c7e732fc04b621d1a867049a77577",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 193,
+      "column": 12
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 240,
+      "column": 16
+    },
+    {
+      "fromNodeId": "file:torture.tsx",
+      "referenceName": "topLevel",
+      "referenceKind": "function_ref",
+      "line": 241,
+      "column": 15
+    },
+    {
+      "fromNodeId": "constant:6a59180fa0aeeadc6780cce52b779989",
+      "referenceName": "topLevel",
+      "referenceKind": "function_ref",
+      "line": 242,
+      "column": 27
+    },
+    {
+      "fromNodeId": "constant:ecc4c52856620b7e381bb56fc0998019",
+      "referenceName": "helperFn",
+      "referenceKind": "function_ref",
+      "line": 243,
+      "column": 21
+    },
+    {
+      "fromNodeId": "constant:ecc4c52856620b7e381bb56fc0998019",
+      "referenceName": "DefaultThing",
+      "referenceKind": "function_ref",
+      "line": 243,
+      "column": 31
+    },
+    {
+      "fromNodeId": "function:ecfa0ca353b73c570389190ec726900b",
+      "referenceName": "handleClear",
+      "referenceKind": "function_ref",
+      "line": 281,
+      "column": 43
+    },
+    {
+      "fromNodeId": "component:2413e8687570de7f6bf4dff338ca876c",
+      "referenceName": "size",
+      "referenceKind": "function_ref",
+      "line": 294,
+      "column": 125
+    }
+  ],
+  "errors": []
+}

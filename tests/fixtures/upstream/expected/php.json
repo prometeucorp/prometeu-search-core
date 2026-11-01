@@ -1,0 +1,1801 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.php",
+      "kind": "file",
+      "name": "torture.php",
+      "qualifiedName": "torture.php",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 1,
+      "endLine": 220,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "kind": "namespace",
+      "name": "App\\Services",
+      "qualifiedName": "App\\Services",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 23
+    },
+    {
+      "id": "import:90939c1411d263592bb7839786897d5e",
+      "kind": "import",
+      "name": "App\\Contracts\\Logger",
+      "qualifiedName": "App\\Services::App\\Contracts\\Logger",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "use App\\Contracts\\Logger;"
+    },
+    {
+      "id": "import:b9ff610e03df9a920aee3ea37414fa5a",
+      "kind": "import",
+      "name": "App\\Contracts\\Cache",
+      "qualifiedName": "App\\Services::App\\Contracts\\Cache",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 38,
+      "signature": "use App\\Contracts\\Cache as CacheAlias;"
+    },
+    {
+      "id": "import:87559b992adcbc8c4e75e7af9a36b7d1",
+      "kind": "import",
+      "name": "Countable",
+      "qualifiedName": "App\\Services::Countable",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 14,
+      "signature": "use Countable;"
+    },
+    {
+      "id": "import:665b4f8cb3e48b037ba5706a043c8437",
+      "kind": "import",
+      "name": "App\\Helpers\\format_id",
+      "qualifiedName": "App\\Services::App\\Helpers\\format_id",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 35,
+      "signature": "use function App\\Helpers\\format_id;"
+    },
+    {
+      "id": "import:91e3564cef5807a03e1eab31b5f907cc",
+      "kind": "import",
+      "name": "App\\Config\\MAX_TRIES",
+      "qualifiedName": "App\\Services::App\\Config\\MAX_TRIES",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "use const App\\Config\\MAX_TRIES;"
+    },
+    {
+      "id": "import:07f3b1eb833afe5e3b5bc05c26b2a67a",
+      "kind": "import",
+      "name": "App\\Models\\User",
+      "qualifiedName": "App\\Services::App\\Models\\User",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 0,
+      "endColumn": 51,
+      "signature": "use App\\Models\\{User, Post as PostAlias, Sub\\Deep};"
+    },
+    {
+      "id": "import:793625dbf9ddecb677dd0b9b5ccdef89",
+      "kind": "import",
+      "name": "App\\Models\\Post",
+      "qualifiedName": "App\\Services::App\\Models\\Post",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 0,
+      "endColumn": 51,
+      "signature": "use App\\Models\\{User, Post as PostAlias, Sub\\Deep};"
+    },
+    {
+      "id": "import:c3d526b9bc42c3eefafcdd6dad4898e6",
+      "kind": "import",
+      "name": "lib/plain.php",
+      "qualifiedName": "App\\Services::lib/plain.php",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 14,
+      "endLine": 14,
+      "startColumn": 0,
+      "endColumn": 23,
+      "signature": "require 'lib/plain.php'"
+    },
+    {
+      "id": "import:fc6fa417c9423804655dd03cff293bec",
+      "kind": "import",
+      "name": "lib/parens.php",
+      "qualifiedName": "App\\Services::lib/parens.php",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 15,
+      "endLine": 15,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "require_once('lib/parens.php')"
+    },
+    {
+      "id": "import:5ead781c4f0afe780e9020b43b85a201",
+      "kind": "import",
+      "name": "lib/inc.php",
+      "qualifiedName": "App\\Services::lib/inc.php",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 16,
+      "endLine": 16,
+      "startColumn": 0,
+      "endColumn": 21,
+      "signature": "include 'lib/inc.php'"
+    },
+    {
+      "id": "import:b7e98607645a4c99fd55ec50bd8e2b20",
+      "kind": "import",
+      "name": "lib/inc_once.php",
+      "qualifiedName": "App\\Services::lib/inc_once.php",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 17,
+      "endLine": 17,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "include_once 'lib/inc_once.php'"
+    },
+    {
+      "id": "constant:a548f766c7e42019978350d86e05f0bf",
+      "kind": "constant",
+      "name": "TOP_LEVEL_MAX",
+      "qualifiedName": "App\\Services::TOP_LEVEL_MAX",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 20,
+      "endLine": 20,
+      "startColumn": 6,
+      "endColumn": 24
+    },
+    {
+      "id": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "kind": "function",
+      "name": "top_helper",
+      "qualifiedName": "App\\Services::top_helper",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 23,
+      "endLine": 27,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "non-ASCII before a symbol: café ünïcode line",
+      "visibility": "public",
+      "isStatic": false,
+      "returnType": "UserModel"
+    },
+    {
+      "id": "class:8748345347c1e156f8dd97f354442ad9",
+      "kind": "class",
+      "name": "Documented",
+      "qualifiedName": "App\\Services::Documented",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 30,
+      "endLine": 178,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Doc for Documented.",
+      "visibility": "public"
+    },
+    {
+      "id": "constant:982828f7063851da1daed05dd9ce6fb8",
+      "kind": "constant",
+      "name": "MULTI_A",
+      "qualifiedName": "App\\Services::Documented::MULTI_A",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 39,
+      "endLine": 39,
+      "startColumn": 10,
+      "endColumn": 21
+    },
+    {
+      "id": "constant:5292c335a70f2276a90410702d11de02",
+      "kind": "constant",
+      "name": "MULTI_B",
+      "qualifiedName": "App\\Services::Documented::MULTI_B",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 39,
+      "endLine": 39,
+      "startColumn": 23,
+      "endColumn": 34
+    },
+    {
+      "id": "constant:b2683a0639a19afdb0ab67a998fe223f",
+      "kind": "constant",
+      "name": "TYPED_MAX",
+      "qualifiedName": "App\\Services::Documented::TYPED_MAX",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 40,
+      "endLine": 40,
+      "startColumn": 27,
+      "endColumn": 40
+    },
+    {
+      "id": "field:6a6573ddc7048c1ac0e0b040e3aabd05",
+      "kind": "field",
+      "name": "logger",
+      "qualifiedName": "App\\Services::Documented::logger",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 42,
+      "endLine": 42,
+      "startColumn": 19,
+      "endColumn": 26,
+      "signature": "?Logger $logger",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "field:fc6ff929767306b7b944dd6d0dc8f6e7",
+      "kind": "field",
+      "name": "fallback",
+      "qualifiedName": "App\\Services::Documented::fallback",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 42,
+      "endLine": 42,
+      "startColumn": 28,
+      "endColumn": 37,
+      "signature": "?Logger $fallback",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "field:a66fed9dd017e05df3a3c5a7fb23da2c",
+      "kind": "field",
+      "name": "union",
+      "qualifiedName": "App\\Services::Documented::union",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 43,
+      "endLine": 43,
+      "startColumn": 30,
+      "endColumn": 36,
+      "signature": "CacheAlias|string $union",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:4c7392b1611a12202e8bde94eee5a571",
+      "kind": "field",
+      "name": "registry",
+      "qualifiedName": "App\\Services::Documented::registry",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 44,
+      "endLine": 44,
+      "startColumn": 30,
+      "endColumn": 39,
+      "signature": "iterable $registry",
+      "visibility": "protected",
+      "isStatic": true
+    },
+    {
+      "id": "field:d0559487d0cc404bd15f014e7a5a0e5d",
+      "kind": "field",
+      "name": "count",
+      "qualifiedName": "App\\Services::Documented::count",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 45,
+      "endLine": 45,
+      "startColumn": 24,
+      "endColumn": 30,
+      "signature": "int $count",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "field:2c5169014fcafe68bb23d18b5975bf30",
+      "kind": "field",
+      "name": "legacy",
+      "qualifiedName": "App\\Services::Documented::legacy",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 46,
+      "endLine": 46,
+      "startColumn": 8,
+      "endColumn": 15,
+      "signature": "$legacy",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "field:dd287f8abbeb14c6b00aa747df3aa271",
+      "kind": "field",
+      "name": "finalTyped",
+      "qualifiedName": "App\\Services::Documented::finalTyped",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 47,
+      "endLine": 47,
+      "startColumn": 21,
+      "endColumn": 32,
+      "signature": "final $finalTyped",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:657476865c1d18e13cef7d2249fab0e5",
+      "kind": "method",
+      "name": "__construct",
+      "qualifiedName": "App\\Services::Documented::__construct",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 49,
+      "endLine": 51,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:261cf5d3288538e27e14129aabbdd8dc",
+      "kind": "method",
+      "name": "withAttr",
+      "qualifiedName": "App\\Services::Documented::withAttr",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 54,
+      "endLine": 57,
+      "startColumn": 4,
+      "endColumn": 5,
+      "docstring": "Doc over attribute.",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:37155702b538615b6c9464a514ed2165",
+      "kind": "method",
+      "name": "make",
+      "qualifiedName": "App\\Services::Documented::make",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 59,
+      "endLine": 62,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": true,
+      "returnType": "self"
+    },
+    {
+      "id": "method:24f4495de2244cb913781f4fb1a18226",
+      "kind": "method",
+      "name": "selfRet",
+      "qualifiedName": "App\\Services::Documented::selfRet",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 64,
+      "endLine": 67,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false,
+      "returnType": "self"
+    },
+    {
+      "id": "method:82adb1cbfc3c80610480c9b3b622adf3",
+      "kind": "method",
+      "name": "nullableRet",
+      "qualifiedName": "App\\Services::Documented::nullableRet",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 69,
+      "endLine": 72,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false,
+      "returnType": "Logger"
+    },
+    {
+      "id": "method:f3482e937ba1d2aedef0d9ec82048058",
+      "kind": "method",
+      "name": "unionRet",
+      "qualifiedName": "App\\Services::Documented::unionRet",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 74,
+      "endLine": 77,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "kind": "method",
+      "name": "callsZoo",
+      "qualifiedName": "App\\Services::Documented::callsZoo",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 79,
+      "endLine": 138,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "protected",
+      "isStatic": false
+    },
+    {
+      "id": "method:428993208ba5fed0978e8f14b3570982",
+      "kind": "method",
+      "name": "nester",
+      "qualifiedName": "App\\Services::Documented::nester",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 140,
+      "endLine": 169,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "function:4bf4951461e55d75b34a7d6cab1ffd46",
+      "kind": "function",
+      "name": "innerNamed",
+      "qualifiedName": "App\\Services::Documented::nester::innerNamed",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 142,
+      "endLine": 145,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "class:2569530b05ad7b76a90c8344a700cb28",
+      "kind": "class",
+      "name": "Poly",
+      "qualifiedName": "App\\Services::Documented::nester::Poly",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 147,
+      "endLine": 155,
+      "startColumn": 12,
+      "endColumn": 13,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:32876d815d54303433349c7e035668af",
+      "kind": "constant",
+      "name": "POLY_MAX",
+      "qualifiedName": "App\\Services::Documented::nester::Poly::POLY_MAX",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 149,
+      "endLine": 149,
+      "startColumn": 22,
+      "endColumn": 34
+    },
+    {
+      "id": "method:a718dbc13c2e00a42febe0fbdce991be",
+      "kind": "method",
+      "name": "pm",
+      "qualifiedName": "App\\Services::Documented::nester::Poly::pm",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 151,
+      "endLine": 154,
+      "startColumn": 16,
+      "endColumn": 17,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:25e274d9c7802c2b22b557764145e15f",
+      "kind": "method",
+      "name": "reader",
+      "qualifiedName": "App\\Services::Documented::reader",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 171,
+      "endLine": 177,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "interface:24159e084fc50d320c624ae5b6655041",
+      "kind": "interface",
+      "name": "Shape",
+      "qualifiedName": "App\\Services::Shape",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 180,
+      "endLine": 185,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:def1d5aea454ef9901acfcaf7964e646",
+      "kind": "method",
+      "name": "area",
+      "qualifiedName": "App\\Services::Shape::area",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 182,
+      "endLine": 182,
+      "startColumn": 4,
+      "endColumn": 34,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "constant:fb9e37e5fcc4a7b9c8eb331327e95331",
+      "kind": "constant",
+      "name": "SHAPE_KIND",
+      "qualifiedName": "App\\Services::Shape::SHAPE_KIND",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 184,
+      "endLine": 184,
+      "startColumn": 10,
+      "endColumn": 28
+    },
+    {
+      "id": "trait:d6d080de82c3c4e169209dc75843f8c8",
+      "kind": "trait",
+      "name": "SoftDeletes",
+      "qualifiedName": "App\\Services::SoftDeletes",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 187,
+      "endLine": 195,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:a9c4dc9c4a3ffd46b6dad2e5f1db2d56",
+      "kind": "constant",
+      "name": "TRAIT_CONST",
+      "qualifiedName": "App\\Services::SoftDeletes::TRAIT_CONST",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 189,
+      "endLine": 189,
+      "startColumn": 10,
+      "endColumn": 25
+    },
+    {
+      "id": "method:fde5b2ebc8acca19e2a337eb83fb7678",
+      "kind": "method",
+      "name": "restore",
+      "qualifiedName": "App\\Services::SoftDeletes::restore",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 191,
+      "endLine": 194,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "enum:f20e15cb271bf122063fc98641681a0b",
+      "kind": "enum",
+      "name": "Suit",
+      "qualifiedName": "App\\Services::Suit",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 197,
+      "endLine": 208,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:70e27729e1009948e20e3d59b9f582f7",
+      "kind": "enum_member",
+      "name": "Hearts",
+      "qualifiedName": "App\\Services::Suit::Hearts",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 199,
+      "endLine": 199,
+      "startColumn": 4,
+      "endColumn": 22
+    },
+    {
+      "id": "enum_member:17ebaae6b442c2923863fae61642f931",
+      "kind": "enum_member",
+      "name": "Spades",
+      "qualifiedName": "App\\Services::Suit::Spades",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 200,
+      "endLine": 200,
+      "startColumn": 4,
+      "endColumn": 22
+    },
+    {
+      "id": "constant:7182a108948c92de692a2bf09a40b807",
+      "kind": "constant",
+      "name": "ENUM_MAX",
+      "qualifiedName": "App\\Services::Suit::ENUM_MAX",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 202,
+      "endLine": 202,
+      "startColumn": 10,
+      "endColumn": 22
+    },
+    {
+      "id": "method:c226448f9903a610ae764b0916837387",
+      "kind": "method",
+      "name": "color",
+      "qualifiedName": "App\\Services::Suit::color",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 204,
+      "endLine": 207,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "enum:68abcec6794081694e2afa25188c8bb2",
+      "kind": "enum",
+      "name": "Pure",
+      "qualifiedName": "App\\Services::Pure",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 210,
+      "endLine": 214,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:0940adadd7b43e314e860b65bb589a62",
+      "kind": "enum_member",
+      "name": "A",
+      "qualifiedName": "App\\Services::Pure::A",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 212,
+      "endLine": 212,
+      "startColumn": 4,
+      "endColumn": 11
+    },
+    {
+      "id": "enum_member:0305b32b224c43e7b4bf3a48f3c1ad37",
+      "kind": "enum_member",
+      "name": "B",
+      "qualifiedName": "App\\Services::Pure::B",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 213,
+      "endLine": 213,
+      "startColumn": 4,
+      "endColumn": 11
+    },
+    {
+      "id": "class:27e3e57d8686543cf7435d75096d2c90",
+      "kind": "class",
+      "name": "AbstractBase",
+      "qualifiedName": "App\\Services::AbstractBase",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 216,
+      "endLine": 219,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:72cb204a2502f0fc52da51fc83084ef6",
+      "kind": "method",
+      "name": "hook",
+      "qualifiedName": "App\\Services::AbstractBase::hook",
+      "filePath": "torture.php",
+      "language": "php",
+      "startLine": 218,
+      "endLine": 218,
+      "startColumn": 4,
+      "endColumn": 45,
+      "visibility": "protected",
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.php",
+      "target": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:90939c1411d263592bb7839786897d5e",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:b9ff610e03df9a920aee3ea37414fa5a",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:87559b992adcbc8c4e75e7af9a36b7d1",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:665b4f8cb3e48b037ba5706a043c8437",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:91e3564cef5807a03e1eab31b5f907cc",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:07f3b1eb833afe5e3b5bc05c26b2a67a",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:793625dbf9ddecb677dd0b9b5ccdef89",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:c3d526b9bc42c3eefafcdd6dad4898e6",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:fc6fa417c9423804655dd03cff293bec",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:5ead781c4f0afe780e9020b43b85a201",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "import:b7e98607645a4c99fd55ec50bd8e2b20",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "constant:a548f766c7e42019978350d86e05f0bf",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "class:8748345347c1e156f8dd97f354442ad9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "constant:982828f7063851da1daed05dd9ce6fb8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "constant:5292c335a70f2276a90410702d11de02",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "constant:b2683a0639a19afdb0ab67a998fe223f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:6a6573ddc7048c1ac0e0b040e3aabd05",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:fc6ff929767306b7b944dd6d0dc8f6e7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:a66fed9dd017e05df3a3c5a7fb23da2c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:4c7392b1611a12202e8bde94eee5a571",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:d0559487d0cc404bd15f014e7a5a0e5d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:2c5169014fcafe68bb23d18b5975bf30",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "field:dd287f8abbeb14c6b00aa747df3aa271",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:657476865c1d18e13cef7d2249fab0e5",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:261cf5d3288538e27e14129aabbdd8dc",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:37155702b538615b6c9464a514ed2165",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:24f4495de2244cb913781f4fb1a18226",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:82adb1cbfc3c80610480c9b3b622adf3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:f3482e937ba1d2aedef0d9ec82048058",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:428993208ba5fed0978e8f14b3570982",
+      "kind": "contains"
+    },
+    {
+      "source": "method:428993208ba5fed0978e8f14b3570982",
+      "target": "function:4bf4951461e55d75b34a7d6cab1ffd46",
+      "kind": "contains"
+    },
+    {
+      "source": "method:428993208ba5fed0978e8f14b3570982",
+      "target": "class:2569530b05ad7b76a90c8344a700cb28",
+      "kind": "contains"
+    },
+    {
+      "source": "class:2569530b05ad7b76a90c8344a700cb28",
+      "target": "constant:32876d815d54303433349c7e035668af",
+      "kind": "contains"
+    },
+    {
+      "source": "class:2569530b05ad7b76a90c8344a700cb28",
+      "target": "method:a718dbc13c2e00a42febe0fbdce991be",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8748345347c1e156f8dd97f354442ad9",
+      "target": "method:25e274d9c7802c2b22b557764145e15f",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "interface:24159e084fc50d320c624ae5b6655041",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:24159e084fc50d320c624ae5b6655041",
+      "target": "method:def1d5aea454ef9901acfcaf7964e646",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:24159e084fc50d320c624ae5b6655041",
+      "target": "constant:fb9e37e5fcc4a7b9c8eb331327e95331",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "trait:d6d080de82c3c4e169209dc75843f8c8",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:d6d080de82c3c4e169209dc75843f8c8",
+      "target": "constant:a9c4dc9c4a3ffd46b6dad2e5f1db2d56",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:d6d080de82c3c4e169209dc75843f8c8",
+      "target": "method:fde5b2ebc8acca19e2a337eb83fb7678",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "enum:f20e15cb271bf122063fc98641681a0b",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:f20e15cb271bf122063fc98641681a0b",
+      "target": "enum_member:70e27729e1009948e20e3d59b9f582f7",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:f20e15cb271bf122063fc98641681a0b",
+      "target": "enum_member:17ebaae6b442c2923863fae61642f931",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:f20e15cb271bf122063fc98641681a0b",
+      "target": "constant:7182a108948c92de692a2bf09a40b807",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:f20e15cb271bf122063fc98641681a0b",
+      "target": "method:c226448f9903a610ae764b0916837387",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "enum:68abcec6794081694e2afa25188c8bb2",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:68abcec6794081694e2afa25188c8bb2",
+      "target": "enum_member:0940adadd7b43e314e860b65bb589a62",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:68abcec6794081694e2afa25188c8bb2",
+      "target": "enum_member:0305b32b224c43e7b4bf3a48f3c1ad37",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "target": "class:27e3e57d8686543cf7435d75096d2c90",
+      "kind": "contains"
+    },
+    {
+      "source": "class:27e3e57d8686543cf7435d75096d2c90",
+      "target": "method:72cb204a2502f0fc52da51fc83084ef6",
+      "kind": "contains"
+    },
+    {
+      "source": "method:428993208ba5fed0978e8f14b3570982",
+      "target": "constant:32876d815d54303433349c7e035668af",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:25e274d9c7802c2b22b557764145e15f",
+      "target": "constant:b2683a0639a19afdb0ab67a998fe223f",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:25e274d9c7802c2b22b557764145e15f",
+      "target": "constant:982828f7063851da1daed05dd9ce6fb8",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Contracts\\Logger",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Contracts::Logger",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Contracts\\Cache",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Contracts::Cache",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "Countable",
+      "referenceKind": "imports",
+      "line": 9,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Helpers\\format_id",
+      "referenceKind": "imports",
+      "line": 10,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Helpers::format_id",
+      "referenceKind": "imports",
+      "line": 10,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Config\\MAX_TRIES",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Config::MAX_TRIES",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Models::User",
+      "referenceKind": "imports",
+      "line": 12,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "App\\Models::Post",
+      "referenceKind": "imports",
+      "line": 12,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "lib/plain.php",
+      "referenceKind": "imports",
+      "line": 14,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "lib/parens.php",
+      "referenceKind": "imports",
+      "line": 15,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "lib/inc.php",
+      "referenceKind": "imports",
+      "line": 16,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:3baf9c91466e4a5e6aba9db27cf8a1fd",
+      "referenceName": "lib/inc_once.php",
+      "referenceKind": "imports",
+      "line": 17,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "Logger",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 21
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "User",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "PostAlias",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 39
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "Logger",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 53
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "Countable",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 60
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 76
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "Bar",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 80
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "Baz",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 85
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "User",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 95
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "UserModel",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 145
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "top_body_call",
+      "referenceKind": "calls",
+      "line": 25,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:aee1461f73c1e2bb71b7e5bdc23fefb5",
+      "referenceName": "UserModel",
+      "referenceKind": "instantiates",
+      "line": 26,
+      "column": 11
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "BaseThing",
+      "referenceKind": "extends",
+      "line": 31,
+      "column": 25
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "HasColor",
+      "referenceKind": "implements",
+      "line": 31,
+      "column": 46
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "\\JsonSerializable",
+      "referenceKind": "implements",
+      "line": 31,
+      "column": 56
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "SoftDeletes",
+      "referenceKind": "implements",
+      "filePath": "torture.php",
+      "line": 33,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "Notify\\Deeper",
+      "referenceKind": "implements",
+      "filePath": "torture.php",
+      "line": 33,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "ConflictA",
+      "referenceKind": "implements",
+      "filePath": "torture.php",
+      "line": 34,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:8748345347c1e156f8dd97f354442ad9",
+      "referenceName": "ConflictB",
+      "referenceKind": "implements",
+      "filePath": "torture.php",
+      "line": 34,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:657476865c1d18e13cef7d2249fab0e5",
+      "referenceName": "Logger",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 40
+    },
+    {
+      "fromNodeId": "method:657476865c1d18e13cef7d2249fab0e5",
+      "referenceName": "ICache",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 88
+    },
+    {
+      "fromNodeId": "method:37155702b538615b6c9464a514ed2165",
+      "referenceName": "static",
+      "referenceKind": "instantiates",
+      "line": 61,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:82adb1cbfc3c80610480c9b3b622adf3",
+      "referenceName": "Logger",
+      "referenceKind": "references",
+      "line": 69,
+      "column": 36
+    },
+    {
+      "fromNodeId": "method:f3482e937ba1d2aedef0d9ec82048058",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 74,
+      "column": 32
+    },
+    {
+      "fromNodeId": "method:f3482e937ba1d2aedef0d9ec82048058",
+      "referenceName": "Bar",
+      "referenceKind": "references",
+      "line": 74,
+      "column": 36
+    },
+    {
+      "fromNodeId": "method:f3482e937ba1d2aedef0d9ec82048058",
+      "referenceName": "Foo",
+      "referenceKind": "instantiates",
+      "line": 76,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "User",
+      "referenceKind": "references",
+      "line": 79,
+      "column": 36
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 81,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "\\App\\Helpers\\format_id",
+      "referenceKind": "calls",
+      "line": 82,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "App\\Helpers\\other",
+      "referenceKind": "calls",
+      "line": 83,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "x.m1",
+      "referenceKind": "calls",
+      "line": 84,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "m2",
+      "referenceKind": "calls",
+      "line": 85,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "this->prop.m3",
+      "referenceKind": "calls",
+      "line": 86,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "this->a->b.m4",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "obj->prop.m5",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "UserModel.query",
+      "referenceKind": "calls",
+      "line": 89,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "sHelper",
+      "referenceKind": "calls",
+      "line": 90,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "sHelper",
+      "referenceKind": "calls",
+      "line": 91,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "pHelper",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "var.vm",
+      "referenceKind": "calls",
+      "line": 93,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "\\Qual\\Cls.qm",
+      "referenceKind": "calls",
+      "line": 94,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "UserModel::factory().where",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "UserModel.factory",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "this->factory($x).go",
+      "referenceKind": "calls",
+      "line": 96,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "factory",
+      "referenceKind": "calls",
+      "line": 96,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "foo().fluent",
+      "referenceKind": "calls",
+      "line": 97,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "foo",
+      "referenceKind": "calls",
+      "line": 97,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "a?->maybe().chained",
+      "referenceKind": "calls",
+      "line": 98,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "\"chain\".upper",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "$fn",
+      "referenceKind": "calls",
+      "line": 101,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "($x)",
+      "referenceKind": "calls",
+      "line": 102,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "strlen",
+      "referenceKind": "calls",
+      "line": 103,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "m2",
+      "referenceKind": "calls",
+      "line": 104,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "Cls.sm",
+      "referenceKind": "calls",
+      "line": 105,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "UserModel",
+      "referenceKind": "instantiates",
+      "line": 106,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "\\App\\Models\\User",
+      "referenceKind": "instantiates",
+      "line": 107,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "Models\\User",
+      "referenceKind": "instantiates",
+      "line": 108,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "static",
+      "referenceKind": "instantiates",
+      "line": 109,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "self",
+      "referenceKind": "instantiates",
+      "line": 110,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "parent",
+      "referenceKind": "instantiates",
+      "line": 111,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "$cls",
+      "referenceKind": "instantiates",
+      "line": 112,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "class extends BaseAnon implements IAnon {\n            public function anonMethod(): void\n            {\n                inner_anon_call();\n            }\n        }",
+      "referenceKind": "instantiates",
+      "line": 113,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "inner_anon_call",
+      "referenceKind": "calls",
+      "line": 116,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 119,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "make_arg",
+      "referenceKind": "calls",
+      "line": 119,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "one_case",
+      "referenceKind": "calls",
+      "line": 121,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "other_case",
+      "referenceKind": "calls",
+      "line": 122,
+      "column": 23
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "SomeCls",
+      "referenceKind": "references",
+      "line": 132,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "UserModel",
+      "referenceKind": "references",
+      "line": 133,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "UserModel",
+      "referenceKind": "references",
+      "line": 134,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:9929f3843a6ba7abd6ea209fd32f08c6",
+      "referenceName": "Suit",
+      "referenceKind": "references",
+      "line": 137,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:4bf4951461e55d75b34a7d6cab1ffd46",
+      "referenceName": "inner_call",
+      "referenceKind": "calls",
+      "line": 144,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "class_exists",
+      "referenceKind": "calls",
+      "line": 146,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:a718dbc13c2e00a42febe0fbdce991be",
+      "referenceName": "poly_call",
+      "referenceKind": "calls",
+      "line": 153,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "closure_call",
+      "referenceKind": "calls",
+      "line": 158,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "arrow_call",
+      "referenceKind": "calls",
+      "line": 160,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "usort",
+      "referenceKind": "calls",
+      "line": 161,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "array_map",
+      "referenceKind": "calls",
+      "line": 162,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "call_user_func",
+      "referenceKind": "calls",
+      "line": 163,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "call_user_func",
+      "referenceKind": "calls",
+      "line": 164,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "UserModel",
+      "referenceKind": "references",
+      "line": 164,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "call_user_func",
+      "referenceKind": "calls",
+      "line": 165,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "register_shutdown_function",
+      "referenceKind": "calls",
+      "line": 166,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "x.map",
+      "referenceKind": "calls",
+      "line": 167,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "plain_call",
+      "referenceKind": "calls",
+      "line": 168,
+      "column": 8
+    },
+    {
+      "fromNodeId": "interface:24159e084fc50d320c624ae5b6655041",
+      "referenceName": "Base1",
+      "referenceKind": "extends",
+      "line": 180,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:fde5b2ebc8acca19e2a337eb83fb7678",
+      "referenceName": "doRestore",
+      "referenceKind": "calls",
+      "line": 193,
+      "column": 8
+    },
+    {
+      "fromNodeId": "enum:f20e15cb271bf122063fc98641681a0b",
+      "referenceName": "HasColor",
+      "referenceKind": "implements",
+      "line": 197,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:c226448f9903a610ae764b0916837387",
+      "referenceName": "enum_color",
+      "referenceKind": "calls",
+      "line": 206,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "cmp_items",
+      "referenceKind": "function_ref",
+      "line": 161,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "this.m2",
+      "referenceKind": "function_ref",
+      "line": 163,
+      "column": 31
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "UserModel::sm",
+      "referenceKind": "function_ref",
+      "line": 164,
+      "column": 42
+    },
+    {
+      "fromNodeId": "method:428993208ba5fed0978e8f14b3570982",
+      "referenceName": "Cls::shutdown",
+      "referenceKind": "function_ref",
+      "line": 166,
+      "column": 35
+    }
+  ],
+  "errors": []
+}

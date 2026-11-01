@@ -1,0 +1,2055 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "paths": [
+    {
+      "source": "/",
+      "expected": "/"
+    },
+    {
+      "source": "/login",
+      "expected": "/login"
+    },
+    {
+      "source": "/posts/$postId",
+      "expected": "/posts/:postId"
+    },
+    {
+      "source": "/_auth/profile",
+      "expected": "/profile"
+    },
+    {
+      "source": "/_pathlessLayout/route-a",
+      "expected": "/route-a"
+    },
+    {
+      "source": "/(this-folder-is-not-in-the-url)/route-group",
+      "expected": "/route-group"
+    },
+    {
+      "source": "/dashboard/",
+      "expected": "/dashboard"
+    },
+    {
+      "source": "/posts_/$postId/edit",
+      "expected": "/posts/:postId/edit"
+    },
+    {
+      "source": "/files/$",
+      "expected": "/files/:splat*"
+    },
+    {
+      "source": "posts",
+      "expected": null
+    }
+  ],
+  "parse": [
+    {
+      "source": "import { createFileRoute } from '@tanstack/react-router'\nexport const Route = createFileRoute('/dashboard/invoices/$invoiceId')({\n  params: { parse: (p) => ({ invoiceId: Number(p.invoiceId) }) },\n  component: InvoiceComponent,\n})\n",
+      "expected": [
+        {
+          "path": "/dashboard/invoices/:invoiceId",
+          "component": "InvoiceComponent",
+          "index": false,
+          "fileBased": true,
+          "line": 2
+        }
+      ]
+    },
+    {
+      "source": "export const Route = createFileRoute('/login')({\n  validateSearch: z.object({ redirect: z.string().optional() }),\n}).update({\n  component: LoginComponent,\n})\n",
+      "expected": [
+        {
+          "path": "/login",
+          "component": "LoginComponent",
+          "index": false,
+          "fileBased": true,
+          "line": 1
+        }
+      ]
+    },
+    {
+      "source": "createFileRoute('/dashboard/')({ component: X })",
+      "expected": [
+        {
+          "path": "/dashboard",
+          "component": "X",
+          "index": true,
+          "fileBased": true,
+          "line": 1
+        }
+      ]
+    },
+    {
+      "source": "createFileRoute('/_auth')({ component: X })",
+      "expected": []
+    },
+    {
+      "source": "createFileRoute('/_layout/')({ component: Home })",
+      "expected": [
+        {
+          "path": "/",
+          "component": "Home",
+          "index": true,
+          "fileBased": true,
+          "line": 1
+        }
+      ]
+    },
+    {
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": [
+        {
+          "path": "/",
+          "component": "IndexComponent",
+          "index": true,
+          "fileBased": false,
+          "line": 3
+        },
+        {
+          "path": "/posts",
+          "component": "PostsIndexComponent",
+          "index": true,
+          "fileBased": false,
+          "line": 13
+        },
+        {
+          "path": "/posts/:postId",
+          "component": "PostComponent",
+          "index": false,
+          "fileBased": false,
+          "line": 18
+        },
+        {
+          "path": "/route-a",
+          "component": "RouteAComponent",
+          "index": false,
+          "fileBased": false,
+          "line": 28
+        }
+      ]
+    },
+    {
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": [
+        {
+          "path": "/",
+          "component": "IndexComponent",
+          "index": true,
+          "fileBased": false,
+          "line": 3
+        },
+        {
+          "path": "/posts",
+          "component": "PostsIndexComponent",
+          "index": true,
+          "fileBased": false,
+          "line": 13
+        },
+        {
+          "path": "/posts/:postId",
+          "component": "PostComponent",
+          "index": false,
+          "fileBased": false,
+          "line": 18
+        },
+        {
+          "path": "/route-a",
+          "component": "RouteAComponent",
+          "index": false,
+          "fileBased": false,
+          "line": 28
+        }
+      ]
+    }
+  ],
+  "destinations": [
+    {
+      "source": "{ to: '/posts/$postId' }",
+      "expected": {
+        "path": "/posts/:postId",
+        "display": "/posts/:postId"
+      }
+    },
+    {
+      "source": "{ to: '/login', search: { redirect } }",
+      "expected": {
+        "path": "/login",
+        "display": "/login"
+      }
+    },
+    {
+      "source": "'/posts/$postId'",
+      "expected": {
+        "path": "/posts/:postId",
+        "display": "/posts/:postId"
+      }
+    },
+    {
+      "source": "{ search: (old) => ({ ...old, page: 2 }) }",
+      "expected": null
+    }
+  ],
+  "extraction": [
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "import { createFileRoute } from '@tanstack/react-router'\nexport const Route = createFileRoute('/dashboard/invoices/$invoiceId')({\n  params: { parse: (p) => ({ invoiceId: Number(p.invoiceId) }) },\n  component: InvoiceComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:2:/dashboard/invoices/:invoiceId:tanstack",
+            "kind": "route",
+            "name": "/dashboard/invoices/:invoiceId",
+            "qualifiedName": "src/routes/posts.tsx::route:/dashboard/invoices/:invoiceId",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:2:/dashboard/invoices/:invoiceId:tanstack",
+            "referenceName": "InvoiceComponent",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "InvoiceComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "import { createFileRoute } from '@tanstack/react-router'\nexport const Route = createFileRoute('/dashboard/invoices/$invoiceId')({\n  params: { parse: (p) => ({ invoiceId: Number(p.invoiceId) }) },\n  component: InvoiceComponent,\n})\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "import { createFileRoute } from '@tanstack/react-router'\nexport const Route = createFileRoute('/dashboard/invoices/$invoiceId')({\n  params: { parse: (p) => ({ invoiceId: Number(p.invoiceId) }) },\n  component: InvoiceComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:2:/dashboard/invoices/:invoiceId:tanstack",
+            "kind": "route",
+            "name": "/dashboard/invoices/:invoiceId",
+            "qualifiedName": "src/routes/posts.index.ts::route:/dashboard/invoices/:invoiceId",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:2:/dashboard/invoices/:invoiceId:tanstack",
+            "referenceName": "InvoiceComponent",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "InvoiceComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "import { createFileRoute } from '@tanstack/react-router'\nexport const Route = createFileRoute('/dashboard/invoices/$invoiceId')({\n  params: { parse: (p) => ({ invoiceId: Number(p.invoiceId) }) },\n  component: InvoiceComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:2:/dashboard/invoices/:invoiceId:tanstack",
+            "kind": "route",
+            "name": "/dashboard/invoices/:invoiceId",
+            "qualifiedName": "src/routes/root.jsx::route:/dashboard/invoices/:invoiceId",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:2:/dashboard/invoices/:invoiceId:tanstack",
+            "referenceName": "InvoiceComponent",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "InvoiceComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "import { createFileRoute } from '@tanstack/react-router'\nexport const Route = createFileRoute('/dashboard/invoices/$invoiceId')({\n  params: { parse: (p) => ({ invoiceId: Number(p.invoiceId) }) },\n  component: InvoiceComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:2:/dashboard/invoices/:invoiceId:tanstack",
+            "kind": "route",
+            "name": "/dashboard/invoices/:invoiceId",
+            "qualifiedName": "src/routes/a.mts::route:/dashboard/invoices/:invoiceId",
+            "filePath": "src/routes/a.mts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:2:/dashboard/invoices/:invoiceId:tanstack",
+            "referenceName": "InvoiceComponent",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "InvoiceComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "export const Route = createFileRoute('/login')({\n  validateSearch: z.object({ redirect: z.string().optional() }),\n}).update({\n  component: LoginComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:1:/login:tanstack",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/routes/posts.tsx::route:/login",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:1:/login:tanstack",
+            "referenceName": "LoginComponent",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "LoginComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "export const Route = createFileRoute('/login')({\n  validateSearch: z.object({ redirect: z.string().optional() }),\n}).update({\n  component: LoginComponent,\n})\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "export const Route = createFileRoute('/login')({\n  validateSearch: z.object({ redirect: z.string().optional() }),\n}).update({\n  component: LoginComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:1:/login:tanstack",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/routes/posts.index.ts::route:/login",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:1:/login:tanstack",
+            "referenceName": "LoginComponent",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "LoginComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "export const Route = createFileRoute('/login')({\n  validateSearch: z.object({ redirect: z.string().optional() }),\n}).update({\n  component: LoginComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:1:/login:tanstack",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/routes/root.jsx::route:/login",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:1:/login:tanstack",
+            "referenceName": "LoginComponent",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "LoginComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "export const Route = createFileRoute('/login')({\n  validateSearch: z.object({ redirect: z.string().optional() }),\n}).update({\n  component: LoginComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:1:/login:tanstack",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/routes/a.mts::route:/login",
+            "filePath": "src/routes/a.mts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:1:/login:tanstack",
+            "referenceName": "LoginComponent",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "LoginComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "createFileRoute('/dashboard/')({ component: X })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:1:/dashboard:tanstack",
+            "kind": "route",
+            "name": "/dashboard",
+            "qualifiedName": "src/routes/posts.tsx::route:/dashboard",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:1:/dashboard:tanstack",
+            "referenceName": "X",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "X"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "createFileRoute('/dashboard/')({ component: X })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "createFileRoute('/dashboard/')({ component: X })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:1:/dashboard:tanstack",
+            "kind": "route",
+            "name": "/dashboard",
+            "qualifiedName": "src/routes/posts.index.ts::route:/dashboard",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:1:/dashboard:tanstack",
+            "referenceName": "X",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "X"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "createFileRoute('/dashboard/')({ component: X })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:1:/dashboard:tanstack",
+            "kind": "route",
+            "name": "/dashboard",
+            "qualifiedName": "src/routes/root.jsx::route:/dashboard",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:1:/dashboard:tanstack",
+            "referenceName": "X",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "X"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "createFileRoute('/dashboard/')({ component: X })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:1:/dashboard:tanstack",
+            "kind": "route",
+            "name": "/dashboard",
+            "qualifiedName": "src/routes/a.mts::route:/dashboard",
+            "filePath": "src/routes/a.mts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:1:/dashboard:tanstack",
+            "referenceName": "X",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "X"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "createFileRoute('/_auth')({ component: X })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "createFileRoute('/_auth')({ component: X })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "createFileRoute('/_auth')({ component: X })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "createFileRoute('/_auth')({ component: X })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "createFileRoute('/_auth')({ component: X })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "createFileRoute('/_layout/')({ component: Home })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:1:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/posts.tsx::route:/",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:1:/:tanstack",
+            "referenceName": "Home",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "Home"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "createFileRoute('/_layout/')({ component: Home })",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "createFileRoute('/_layout/')({ component: Home })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:1:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/posts.index.ts::route:/",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:1:/:tanstack",
+            "referenceName": "Home",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "Home"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "createFileRoute('/_layout/')({ component: Home })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:1:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/root.jsx::route:/",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:1:/:tanstack",
+            "referenceName": "Home",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "Home"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "createFileRoute('/_layout/')({ component: Home })",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:1:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/a.mts::route:/",
+            "filePath": "src/routes/a.mts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:1:/:tanstack",
+            "referenceName": "Home",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "Home"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:3:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/posts.tsx::route:/",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.tsx:13:/posts:tanstack",
+            "kind": "route",
+            "name": "/posts",
+            "qualifiedName": "src/routes/posts.tsx::route:/posts",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 13,
+            "endLine": 13,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.tsx:18:/posts/:postId:tanstack",
+            "kind": "route",
+            "name": "/posts/:postId",
+            "qualifiedName": "src/routes/posts.tsx::route:/posts/:postId",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 18,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.tsx:28:/route-a:tanstack",
+            "kind": "route",
+            "name": "/route-a",
+            "qualifiedName": "src/routes/posts.tsx::route:/route-a",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 28,
+            "endLine": 28,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:3:/:tanstack",
+            "referenceName": "IndexComponent",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "IndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:13:/posts:tanstack",
+            "referenceName": "PostsIndexComponent",
+            "referenceKind": "calls",
+            "line": 13,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "PostsIndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:18:/posts/:postId:tanstack",
+            "referenceName": "PostComponent",
+            "referenceKind": "calls",
+            "line": 18,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "PostComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:28:/route-a:tanstack",
+            "referenceName": "RouteAComponent",
+            "referenceKind": "calls",
+            "line": 28,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "RouteAComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.route.tsx:3:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.route.tsx:13:/posts:tanstack",
+            "kind": "route",
+            "name": "/posts",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/posts",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 13,
+            "endLine": 13,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.route.tsx:18:/posts/:postId:tanstack",
+            "kind": "route",
+            "name": "/posts/:postId",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/posts/:postId",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 18,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.route.tsx:28:/route-a:tanstack",
+            "kind": "route",
+            "name": "/route-a",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/route-a",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 28,
+            "endLine": 28,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.route.tsx:3:/:tanstack",
+            "referenceName": "IndexComponent",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 0,
+            "filePath": "src/routes/posts.route.tsx",
+            "language": "tsx",
+            "candidates": [
+              "IndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.route.tsx:13:/posts:tanstack",
+            "referenceName": "PostsIndexComponent",
+            "referenceKind": "calls",
+            "line": 13,
+            "column": 0,
+            "filePath": "src/routes/posts.route.tsx",
+            "language": "tsx",
+            "candidates": [
+              "PostsIndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.route.tsx:18:/posts/:postId:tanstack",
+            "referenceName": "PostComponent",
+            "referenceKind": "calls",
+            "line": 18,
+            "column": 0,
+            "filePath": "src/routes/posts.route.tsx",
+            "language": "tsx",
+            "candidates": [
+              "PostComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.route.tsx:28:/route-a:tanstack",
+            "referenceName": "RouteAComponent",
+            "referenceKind": "calls",
+            "line": 28,
+            "column": 0,
+            "filePath": "src/routes/posts.route.tsx",
+            "language": "tsx",
+            "candidates": [
+              "RouteAComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:3:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/posts.index.ts::route:/",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/posts.index.ts:13:/posts:tanstack",
+            "kind": "route",
+            "name": "/posts",
+            "qualifiedName": "src/routes/posts.index.ts::route:/posts",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 13,
+            "endLine": 13,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/posts.index.ts:18:/posts/:postId:tanstack",
+            "kind": "route",
+            "name": "/posts/:postId",
+            "qualifiedName": "src/routes/posts.index.ts::route:/posts/:postId",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 18,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/posts.index.ts:28:/route-a:tanstack",
+            "kind": "route",
+            "name": "/route-a",
+            "qualifiedName": "src/routes/posts.index.ts::route:/route-a",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 28,
+            "endLine": 28,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:3:/:tanstack",
+            "referenceName": "IndexComponent",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "IndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:13:/posts:tanstack",
+            "referenceName": "PostsIndexComponent",
+            "referenceKind": "calls",
+            "line": 13,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "PostsIndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:18:/posts/:postId:tanstack",
+            "referenceName": "PostComponent",
+            "referenceKind": "calls",
+            "line": 18,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "PostComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:28:/route-a:tanstack",
+            "referenceName": "RouteAComponent",
+            "referenceKind": "calls",
+            "line": 28,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "RouteAComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:3:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/root.jsx::route:/",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          },
+          {
+            "id": "route:src/routes/root.jsx:13:/posts:tanstack",
+            "kind": "route",
+            "name": "/posts",
+            "qualifiedName": "src/routes/root.jsx::route:/posts",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 13,
+            "endLine": 13,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          },
+          {
+            "id": "route:src/routes/root.jsx:18:/posts/:postId:tanstack",
+            "kind": "route",
+            "name": "/posts/:postId",
+            "qualifiedName": "src/routes/root.jsx::route:/posts/:postId",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 18,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          },
+          {
+            "id": "route:src/routes/root.jsx:28:/route-a:tanstack",
+            "kind": "route",
+            "name": "/route-a",
+            "qualifiedName": "src/routes/root.jsx::route:/route-a",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 28,
+            "endLine": 28,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:3:/:tanstack",
+            "referenceName": "IndexComponent",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "IndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/root.jsx:13:/posts:tanstack",
+            "referenceName": "PostsIndexComponent",
+            "referenceKind": "calls",
+            "line": 13,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "PostsIndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/root.jsx:18:/posts/:postId:tanstack",
+            "referenceName": "PostComponent",
+            "referenceKind": "calls",
+            "line": 18,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "PostComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/root.jsx:28:/route-a:tanstack",
+            "referenceName": "RouteAComponent",
+            "referenceKind": "calls",
+            "line": 28,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "RouteAComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "import { createRootRoute, createRoute } from '@tanstack/react-router'\nconst rootRoute = createRootRoute({ component: RootComponent })\nconst indexRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: '/',\n  component: IndexComponent,\n})\nconst postsLayoutRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  path: 'posts',\n  component: PostsLayoutComponent,\n})\nconst postsIndexRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '/',\n  component: PostsIndexComponent,\n})\nconst postRoute = createRoute({\n  getParentRoute: () => postsLayoutRoute,\n  path: '$postId',\n  component: PostComponent,\n})\nconst pathlessRoute = createRoute({\n  getParentRoute: () => rootRoute,\n  id: 'pathless',\n  component: PathlessComponent,\n})\nconst routeARoute = createRoute({\n  getParentRoute: () => pathlessRoute,\n  path: '/route-a',\n  component: RouteAComponent,\n})\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:3:/:tanstack",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/a.mts::route:/",
+            "filePath": "src/routes/a.mts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/a.mts:13:/posts:tanstack",
+            "kind": "route",
+            "name": "/posts",
+            "qualifiedName": "src/routes/a.mts::route:/posts",
+            "filePath": "src/routes/a.mts",
+            "startLine": 13,
+            "endLine": 13,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/a.mts:18:/posts/:postId:tanstack",
+            "kind": "route",
+            "name": "/posts/:postId",
+            "qualifiedName": "src/routes/a.mts::route:/posts/:postId",
+            "filePath": "src/routes/a.mts",
+            "startLine": 18,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/a.mts:28:/route-a:tanstack",
+            "kind": "route",
+            "name": "/route-a",
+            "qualifiedName": "src/routes/a.mts::route:/route-a",
+            "filePath": "src/routes/a.mts",
+            "startLine": 28,
+            "endLine": 28,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:3:/:tanstack",
+            "referenceName": "IndexComponent",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "IndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/a.mts:13:/posts:tanstack",
+            "referenceName": "PostsIndexComponent",
+            "referenceKind": "calls",
+            "line": 13,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "PostsIndexComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/a.mts:18:/posts/:postId:tanstack",
+            "referenceName": "PostComponent",
+            "referenceKind": "calls",
+            "line": 18,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "PostComponent"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/a.mts:28:/route-a:tanstack",
+            "referenceName": "RouteAComponent",
+            "referenceKind": "calls",
+            "line": 28,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "RouteAComponent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "/* 🌍 */\r\nexport const Route = createLazyFileRoute('/(group)/users/$id')({ component: X }).lazy(() => import('./Lazy.tsx'));\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:2:/users/:id:tanstack",
+            "kind": "route",
+            "name": "/users/:id",
+            "qualifiedName": "src/routes/posts.tsx::route:/users/:id",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:2:/users/:id:tanstack",
+            "referenceName": "Lazy",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "Lazy"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "/* 🌍 */\r\nexport const Route = createLazyFileRoute('/(group)/users/$id')({ component: X }).lazy(() => import('./Lazy.tsx'));\r\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "/* 🌍 */\r\nexport const Route = createLazyFileRoute('/(group)/users/$id')({ component: X }).lazy(() => import('./Lazy.tsx'));\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:2:/users/:id:tanstack",
+            "kind": "route",
+            "name": "/users/:id",
+            "qualifiedName": "src/routes/posts.index.ts::route:/users/:id",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:2:/users/:id:tanstack",
+            "referenceName": "Lazy",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "Lazy"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "/* 🌍 */\r\nexport const Route = createLazyFileRoute('/(group)/users/$id')({ component: X }).lazy(() => import('./Lazy.tsx'));\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:2:/users/:id:tanstack",
+            "kind": "route",
+            "name": "/users/:id",
+            "qualifiedName": "src/routes/root.jsx::route:/users/:id",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:2:/users/:id:tanstack",
+            "referenceName": "Lazy",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "Lazy"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "/* 🌍 */\r\nexport const Route = createLazyFileRoute('/(group)/users/$id')({ component: X }).lazy(() => import('./Lazy.tsx'));\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:2:/users/:id:tanstack",
+            "kind": "route",
+            "name": "/users/:id",
+            "qualifiedName": "src/routes/a.mts::route:/users/:id",
+            "filePath": "src/routes/a.mts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:2:/users/:id:tanstack",
+            "referenceName": "Lazy",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "Lazy"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "const root = createRootRoute({component:Root});\nconst a = createRoute({path:'a',getParentRoute:()=>b});\nconst b = createRoute({path:'b',getParentRoute:()=>a});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:2:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a:tanstack",
+            "kind": "route",
+            "name": "/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "qualifiedName": "src/routes/posts.tsx::route:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.tsx:3:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b:tanstack",
+            "kind": "route",
+            "name": "/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "qualifiedName": "src/routes/posts.tsx::route:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "const root = createRootRoute({component:Root});\nconst a = createRoute({path:'a',getParentRoute:()=>b});\nconst b = createRoute({path:'b',getParentRoute:()=>a});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.route.tsx:2:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a:tanstack",
+            "kind": "route",
+            "name": "/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          },
+          {
+            "id": "route:src/routes/posts.route.tsx:3:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b:tanstack",
+            "kind": "route",
+            "name": "/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "const root = createRootRoute({component:Root});\nconst a = createRoute({path:'a',getParentRoute:()=>b});\nconst b = createRoute({path:'b',getParentRoute:()=>a});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:2:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a:tanstack",
+            "kind": "route",
+            "name": "/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "qualifiedName": "src/routes/posts.index.ts::route:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/posts.index.ts:3:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b:tanstack",
+            "kind": "route",
+            "name": "/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "qualifiedName": "src/routes/posts.index.ts::route:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "const root = createRootRoute({component:Root});\nconst a = createRoute({path:'a',getParentRoute:()=>b});\nconst b = createRoute({path:'b',getParentRoute:()=>a});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:2:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a:tanstack",
+            "kind": "route",
+            "name": "/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "qualifiedName": "src/routes/root.jsx::route:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          },
+          {
+            "id": "route:src/routes/root.jsx:3:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b:tanstack",
+            "kind": "route",
+            "name": "/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "qualifiedName": "src/routes/root.jsx::route:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "const root = createRootRoute({component:Root});\nconst a = createRoute({path:'a',getParentRoute:()=>b});\nconst b = createRoute({path:'b',getParentRoute:()=>a});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:2:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a:tanstack",
+            "kind": "route",
+            "name": "/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "qualifiedName": "src/routes/a.mts::route:/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a",
+            "filePath": "src/routes/a.mts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/a.mts:3:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b:tanstack",
+            "kind": "route",
+            "name": "/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "qualifiedName": "src/routes/a.mts::route:/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b/a/b",
+            "filePath": "src/routes/a.mts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "const route=createRoute({path:'/first',path:'/second',component: First,component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:1:/first:tanstack",
+            "kind": "route",
+            "name": "/first",
+            "qualifiedName": "src/routes/posts.tsx::route:/first",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:1:/first:tanstack",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "const route=createRoute({path:'/first',path:'/second',component: First,component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.route.tsx:1:/first:tanstack",
+            "kind": "route",
+            "name": "/first",
+            "qualifiedName": "src/routes/posts.route.tsx::route:/first",
+            "filePath": "src/routes/posts.route.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.route.tsx:1:/first:tanstack",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.route.tsx",
+            "language": "tsx",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "const route=createRoute({path:'/first',path:'/second',component: First,component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:1:/first:tanstack",
+            "kind": "route",
+            "name": "/first",
+            "qualifiedName": "src/routes/posts.index.ts::route:/first",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:1:/first:tanstack",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "const route=createRoute({path:'/first',path:'/second',component: First,component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:1:/first:tanstack",
+            "kind": "route",
+            "name": "/first",
+            "qualifiedName": "src/routes/root.jsx::route:/first",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:1:/first:tanstack",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "const route=createRoute({path:'/first',path:'/second',component: First,component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:1:/first:tanstack",
+            "kind": "route",
+            "name": "/first",
+            "qualifiedName": "src/routes/a.mts::route:/first",
+            "filePath": "src/routes/a.mts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:1:/first:tanstack",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "createFileRoute('/a')({component: First});\ncreateFileRoute('/a/')({component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:2:/a:tanstack",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/routes/posts.tsx::route:/a",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.tsx:2:/a:tanstack",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/posts.tsx",
+            "language": "tsx",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "createFileRoute('/a')({component: First});\ncreateFileRoute('/a/')({component:Second});\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "createFileRoute('/a')({component: First});\ncreateFileRoute('/a/')({component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:2:/a:tanstack",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/routes/posts.index.ts::route:/a",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/posts.index.ts:2:/a:tanstack",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/posts.index.ts",
+            "language": "typescript",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "createFileRoute('/a')({component: First});\ncreateFileRoute('/a/')({component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:2:/a:tanstack",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/routes/root.jsx::route:/a",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/root.jsx:2:/a:tanstack",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/root.jsx",
+            "language": "jsx",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "createFileRoute('/a')({component: First});\ncreateFileRoute('/a/')({component:Second});\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:2:/a:tanstack",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/routes/a.mts::route:/a",
+            "filePath": "src/routes/a.mts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/a.mts:2:/a:tanstack",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/a.mts",
+            "language": "typescript",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/posts.tsx",
+      "source": "createFileRoute('/missing')({component: X\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.tsx:1:/missing:tanstack",
+            "kind": "route",
+            "name": "/missing",
+            "qualifiedName": "src/routes/posts.tsx::route:/missing",
+            "filePath": "src/routes/posts.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "tsx"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.route.tsx",
+      "source": "createFileRoute('/missing')({component: X\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/posts.index.ts",
+      "source": "createFileRoute('/missing')({component: X\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/posts.index.ts:1:/missing:tanstack",
+            "kind": "route",
+            "name": "/missing",
+            "qualifiedName": "src/routes/posts.index.ts::route:/missing",
+            "filePath": "src/routes/posts.index.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/root.jsx",
+      "source": "createFileRoute('/missing')({component: X\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/root.jsx:1:/missing:tanstack",
+            "kind": "route",
+            "name": "/missing",
+            "qualifiedName": "src/routes/root.jsx::route:/missing",
+            "filePath": "src/routes/root.jsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "jsx"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/a.mts",
+      "source": "createFileRoute('/missing')({component: X\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/a.mts:1:/missing:tanstack",
+            "kind": "route",
+            "name": "/missing",
+            "qualifiedName": "src/routes/a.mts::route:/missing",
+            "filePath": "src/routes/a.mts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    }
+  ]
+}

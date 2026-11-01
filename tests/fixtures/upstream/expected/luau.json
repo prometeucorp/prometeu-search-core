@@ -1,0 +1,490 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.luau",
+      "kind": "file",
+      "name": "torture.luau",
+      "qualifiedName": "torture.luau",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 1,
+      "endLine": 62,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:65b3742482f31f555f5fa9d555728828",
+      "kind": "import",
+      "name": "app.core",
+      "qualifiedName": "app.core",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 13,
+      "endColumn": 32,
+      "signature": "require(\"app.core\")"
+    },
+    {
+      "id": "variable:3e0e73251b80b2c57244a337e1df5cc6",
+      "kind": "variable",
+      "name": "core",
+      "qualifiedName": "core",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 6,
+      "endColumn": 10,
+      "docstring": "!strict\nheader comment for torture.luau",
+      "signature": "= require(\"app.core\")",
+      "isExported": false
+    },
+    {
+      "id": "import:672addb559b4c2fd375a17b33a573dfd",
+      "kind": "import",
+      "name": "Signal",
+      "qualifiedName": "Signal",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 15,
+      "endColumn": 44,
+      "signature": "require(script.Parent.Signal)"
+    },
+    {
+      "id": "variable:150a636395ceb800837ea1ef750c2979",
+      "kind": "variable",
+      "name": "Signal",
+      "qualifiedName": "Signal",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 6,
+      "endColumn": 12,
+      "signature": "= require(script.Parent.Signal)",
+      "isExported": false
+    },
+    {
+      "id": "type_alias:7af544d97a5a08e375d93b8c948094a3",
+      "kind": "type_alias",
+      "name": "Point",
+      "qualifiedName": "Point",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 37,
+      "docstring": "doc for Point",
+      "isExported": false
+    },
+    {
+      "id": "type_alias:5cd4631080c4eec3535487f74a11a6e5",
+      "kind": "type_alias",
+      "name": "Handler",
+      "qualifiedName": "Handler",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 41,
+      "docstring": "- doc for exported Handler",
+      "isExported": true
+    },
+    {
+      "id": "type_alias:f11a5d6472370edc6684dfe077359e68",
+      "kind": "type_alias",
+      "name": "Generic<T>",
+      "qualifiedName": "Generic<T>",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 37,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:a4b2f4669bb9b6a430127b2bd835436f",
+      "kind": "type_alias",
+      "name": "FromTypeof",
+      "qualifiedName": "FromTypeof",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 55,
+      "isExported": false
+    },
+    {
+      "id": "import:ff41135c2cec39441d276072d4dbd64a",
+      "kind": "import",
+      "name": "Config",
+      "qualifiedName": "Config",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 25,
+      "endColumn": 54,
+      "signature": "require(script.Parent.Config)"
+    },
+    {
+      "id": "function:63b208e91625fe221279f7ec440a9c27",
+      "kind": "function",
+      "name": "typedTop",
+      "qualifiedName": "typedTop",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 14,
+      "endLine": 16,
+      "startColumn": 0,
+      "endColumn": 3,
+      "docstring": "- doc for typedTop",
+      "signature": "(a: number, b: string?): boolean",
+      "isExported": false
+    },
+    {
+      "id": "function:a6b241930489a440e4bc3a5a7f47d98a",
+      "kind": "function",
+      "name": "genericFn",
+      "qualifiedName": "genericFn",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 18,
+      "endLine": 20,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(v: T): T",
+      "isExported": false
+    },
+    {
+      "id": "function:00b2d8219547c7844062cc5b8250525f",
+      "kind": "function",
+      "name": "multiRet",
+      "qualifiedName": "multiRet",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 22,
+      "endLine": 24,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(): (number, string)",
+      "isExported": false
+    },
+    {
+      "id": "function:44e0799f2e3ecf8082015aba83b4d391",
+      "kind": "function",
+      "name": "emptyOneLiner",
+      "qualifiedName": "emptyOneLiner",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 34,
+      "signature": "()",
+      "isExported": false
+    },
+    {
+      "id": "variable:2b85d20c9edbebff0ae38458cafcdee2",
+      "kind": "variable",
+      "name": "M",
+      "qualifiedName": "M",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 6,
+      "endColumn": 7,
+      "signature": "= {}",
+      "isExported": false
+    },
+    {
+      "id": "variable:27ec9bbbab400f41caf30a5180e555d4",
+      "kind": "variable",
+      "name": "CONST_N",
+      "qualifiedName": "CONST_N",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 29,
+      "endLine": 29,
+      "startColumn": 6,
+      "endColumn": 13,
+      "signature": "= 7",
+      "isExported": false
+    },
+    {
+      "id": "method:88ffc3aaa954a3c718fb1e44d5363c19",
+      "kind": "method",
+      "name": "make",
+      "qualifiedName": "M::make",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 31,
+      "endLine": 33,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(n: number): Point"
+    },
+    {
+      "id": "method:a319bc6adc6252512958aface1838336",
+      "kind": "method",
+      "name": "update",
+      "qualifiedName": "M::update",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 35,
+      "endLine": 51,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(p: Point, cb: Handler)"
+    },
+    {
+      "id": "variable:7b87f33408ea977593aa88e51a783e75",
+      "kind": "variable",
+      "name": "préfixe",
+      "qualifiedName": "préfixe",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 59,
+      "endLine": 59,
+      "startColumn": 6,
+      "endColumn": 13,
+      "signature": "= \"café\"",
+      "isExported": false
+    },
+    {
+      "id": "function:c9d81b20158326ba20ea1f0fa623d6c2",
+      "kind": "function",
+      "name": "after_unicode",
+      "qualifiedName": "after_unicode",
+      "filePath": "torture.luau",
+      "language": "luau",
+      "startLine": 60,
+      "endLine": 60,
+      "startColumn": 0,
+      "endColumn": 28,
+      "signature": "()",
+      "isExported": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.luau",
+      "target": "import:65b3742482f31f555f5fa9d555728828",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "variable:3e0e73251b80b2c57244a337e1df5cc6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "import:672addb559b4c2fd375a17b33a573dfd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "variable:150a636395ceb800837ea1ef750c2979",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "type_alias:7af544d97a5a08e375d93b8c948094a3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "type_alias:5cd4631080c4eec3535487f74a11a6e5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "type_alias:f11a5d6472370edc6684dfe077359e68",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "type_alias:a4b2f4669bb9b6a430127b2bd835436f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "import:ff41135c2cec39441d276072d4dbd64a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "function:63b208e91625fe221279f7ec440a9c27",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "function:a6b241930489a440e4bc3a5a7f47d98a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "function:00b2d8219547c7844062cc5b8250525f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "function:44e0799f2e3ecf8082015aba83b4d391",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "variable:2b85d20c9edbebff0ae38458cafcdee2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "variable:27ec9bbbab400f41caf30a5180e555d4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "method:88ffc3aaa954a3c718fb1e44d5363c19",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "method:a319bc6adc6252512958aface1838336",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "variable:7b87f33408ea977593aa88e51a783e75",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.luau",
+      "target": "function:c9d81b20158326ba20ea1f0fa623d6c2",
+      "kind": "contains"
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "app.core",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 13
+    },
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "Signal",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 15
+    },
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "Config",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 25
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "require",
+      "referenceKind": "calls",
+      "line": 37,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "Config.total",
+      "referenceKind": "calls",
+      "line": 38,
+      "column": 30
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "cb",
+      "referenceKind": "calls",
+      "line": 39,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "self:redraw",
+      "referenceKind": "calls",
+      "line": 40,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "self.canvas.flush",
+      "referenceKind": "calls",
+      "line": 41,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "M.make",
+      "referenceKind": "calls",
+      "line": 42,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "bump",
+      "referenceKind": "calls",
+      "line": 43,
+      "column": 27
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "drop",
+      "referenceKind": "calls",
+      "line": 43,
+      "column": 39
+    },
+    {
+      "fromNodeId": "method:a319bc6adc6252512958aface1838336",
+      "referenceName": "grow",
+      "referenceKind": "calls",
+      "line": 44,
+      "column": 6
+    },
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "typedTop",
+      "referenceKind": "calls",
+      "line": 55,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "M.make",
+      "referenceKind": "calls",
+      "line": 56,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "M:update",
+      "referenceKind": "calls",
+      "line": 57,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.luau",
+      "referenceName": "typedTop",
+      "referenceKind": "function_ref",
+      "line": 53,
+      "column": 41
+    }
+  ],
+  "errors": []
+}

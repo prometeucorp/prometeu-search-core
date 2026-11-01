@@ -143,6 +143,13 @@ fn byte_budgets_include_json_escaping_and_preserve_first_match() {
     engine.sync().unwrap();
     let result = engine.search("quoted", 10, 1024).unwrap();
     assert_eq!(result.results.len(), 1);
+    assert_eq!(result.results[0].name, "quoted");
+    assert_eq!(result.results[0].kind, "function");
+    let file = engine.search("kind:file path:quotes.ts", 10, 1024).unwrap();
+    assert_eq!(file.results.len(), 1);
+    assert_eq!(file.results[0].kind, "file");
+    assert!(file.results[0].snippet_truncated);
+    assert!(serde_json::to_vec(&file).unwrap().len() <= 1024);
     assert!(result.results[0].snippet_truncated);
     assert!(serde_json::to_vec(&result).unwrap().len() <= 1024);
     assert!(engine.search("\" OR * ()", 10, 1024).is_ok());
@@ -215,14 +222,13 @@ fn replacing_the_project_directory_reconciles_the_current_tree() {
             .results
             .is_empty()
     );
-    assert_eq!(
-        engine
-            .search("replacement", 10, 12000)
-            .unwrap()
-            .results
-            .len(),
-        1
-    );
+    let replacement = engine.search("replacement", 10, 12000).unwrap();
+    assert_eq!(replacement.results.len(), 1);
+    assert_eq!(replacement.results[0].name, "replacement");
+    assert_eq!(replacement.results[0].kind, "function");
+    let file = engine.search("kind:file path:file.ts", 10, 12000).unwrap();
+    assert_eq!(file.results.len(), 1);
+    assert!(file.results[0].snippet.contains("replacement"));
 
     #[cfg(unix)]
     {
@@ -241,7 +247,7 @@ fn previous_extraction_cache_requires_rebuild_without_mutation() {
     engine.sync().unwrap();
     drop(engine);
     let database = temp.path().join("cache/index.sqlite");
-    for version in [1, 2, 3] {
+    for version in [1, 2, 3, 4, 5] {
         let connection = rusqlite::Connection::open(&database).unwrap();
         connection
             .pragma_update(None, "user_version", version)
@@ -273,17 +279,19 @@ fn concurrent_clients_serialize_index_writes() {
             std::thread::spawn(move || {
                 let mut client = Engine::open(&root, Some(&database)).unwrap();
                 client.sync().unwrap();
-                assert_eq!(
-                    client.search("example", 10, 12000).unwrap().results.len(),
-                    1
-                );
+                let result = client.search("example", 10, 12000).unwrap();
+                assert_eq!(result.results.len(), 1);
+                assert_eq!(result.results[0].name, "example");
+                assert_eq!(result.results[0].kind, "function");
+                let file = client.search("kind:file path:file.ts", 10, 12000).unwrap();
+                assert!(file.results[0].snippet.contains("example"));
             })
         })
         .collect();
     for thread in threads {
         thread.join().unwrap();
     }
-    assert_eq!(engine.status().unwrap().symbols, 1);
+    assert_eq!(engine.status().unwrap().symbols, 2);
     assert_eq!(engine.status().unwrap().generation, 1);
 }
 

@@ -1,0 +1,2609 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.dart",
+      "kind": "file",
+      "name": "torture.dart",
+      "qualifiedName": "torture.dart",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 1,
+      "endLine": 232,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:8448620207572732989ab6f50375b10a",
+      "kind": "import",
+      "name": "dart:async",
+      "qualifiedName": "dart:async",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 20,
+      "signature": "import 'dart:async';"
+    },
+    {
+      "id": "import:c1f5e9c54d0621a52704c17df0c9f464",
+      "kind": "import",
+      "name": "package:torture/other.dart",
+      "qualifiedName": "package:torture/other.dart",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 0,
+      "endColumn": 61,
+      "signature": "import 'package:torture/other.dart' as other show OtherClass;"
+    },
+    {
+      "id": "import:8c956677944354fa2f3ae11a96fa8e56",
+      "kind": "import",
+      "name": "src/reexported.dart",
+      "qualifiedName": "src/reexported.dart",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 41,
+      "signature": "export 'src/reexported.dart' hide Hidden;"
+    },
+    {
+      "id": "import:450d5be5bdb27ec0b1d88712a6231411",
+      "kind": "import",
+      "name": "torture_part.dart",
+      "qualifiedName": "torture_part.dart",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "part 'torture_part.dart';"
+    },
+    {
+      "id": "function:e4aabfa896d12d328d860b0b6db8b41f",
+      "kind": "function",
+      "name": "topLevel",
+      "qualifiedName": "topLevel",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 9,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 38,
+      "docstring": "Doc line one.\nDoc line two.",
+      "signature": "void (int count, String label)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:e47ec30588abc2975d100ed00651ad8a",
+      "kind": "function",
+      "name": "blockDoc",
+      "qualifiedName": "blockDoc",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 14,
+      "endLine": 14,
+      "startColumn": 0,
+      "endColumn": 14,
+      "docstring": "Block dartdoc kept.",
+      "signature": "int ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "int"
+    },
+    {
+      "id": "function:a4b908646a5315f4505eec1514c9da0a",
+      "kind": "function",
+      "name": "plainDoc",
+      "qualifiedName": "plainDoc",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 17,
+      "endLine": 17,
+      "startColumn": 0,
+      "endColumn": 17,
+      "docstring": "Plain comment doc.",
+      "signature": "String ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "function:a946d3f4be94fcb7a892061e107ac66a",
+      "kind": "function",
+      "name": "annotated",
+      "qualifiedName": "annotated",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 21,
+      "endLine": 21,
+      "startColumn": 0,
+      "endColumn": 16,
+      "docstring": "Kept past the annotation.",
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:5e11e2f2f13fc49082f194406a604caa",
+      "kind": "function",
+      "name": "doubleAnno",
+      "qualifiedName": "doubleAnno",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 0,
+      "endColumn": 17,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:e75db0b69c824ca669e58e103a593bbd",
+      "kind": "constant",
+      "name": "SHARED_MAX",
+      "qualifiedName": "SHARED_MAX",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 27,
+      "endLine": 27,
+      "startColumn": 6,
+      "endColumn": 21,
+      "signature": "= 10"
+    },
+    {
+      "id": "constant:123256b71396a225b330e3b55bea89a6",
+      "kind": "constant",
+      "name": "DERIVED_VAL",
+      "qualifiedName": "DERIVED_VAL",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 6,
+      "endColumn": 34,
+      "signature": "= SHARED_MAX + 1"
+    },
+    {
+      "id": "constant:f5f93afda7b3a5c47e9f665b31dacd01",
+      "kind": "constant",
+      "name": "lowercase_const",
+      "qualifiedName": "lowercase_const",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 29,
+      "endLine": 29,
+      "startColumn": 6,
+      "endColumn": 25,
+      "signature": "= 1"
+    },
+    {
+      "id": "constant:854e154da6622f59e500dafb4ccaf948",
+      "kind": "constant",
+      "name": "typedTop",
+      "qualifiedName": "typedTop",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 30,
+      "endLine": 30,
+      "startColumn": 6,
+      "endColumn": 26,
+      "signature": "= compute"
+    },
+    {
+      "id": "constant:f60d9b7b2e5ca669244627bc33d9f941",
+      "kind": "constant",
+      "name": "multiA",
+      "qualifiedName": "multiA",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 6,
+      "endColumn": 16,
+      "signature": "= 1"
+    },
+    {
+      "id": "constant:509833baa0cf129c4148cdabd3a50929",
+      "kind": "constant",
+      "name": "multiB",
+      "qualifiedName": "multiB",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 18,
+      "endColumn": 28,
+      "signature": "= 2"
+    },
+    {
+      "id": "function:7f3f5661f75f49c011ea7863efa10bac",
+      "kind": "function",
+      "name": "asyncFn",
+      "qualifiedName": "asyncFn",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 38,
+      "endLine": 38,
+      "startColumn": 0,
+      "endColumn": 24,
+      "signature": "Future ()",
+      "visibility": "public",
+      "isAsync": true,
+      "isStatic": false,
+      "returnType": "Future"
+    },
+    {
+      "id": "function:b37e2f22c8e8740c4b4af7720ef91073",
+      "kind": "function",
+      "name": "genStar",
+      "qualifiedName": "genStar",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 39,
+      "endLine": 41,
+      "startColumn": 0,
+      "endColumn": 21,
+      "signature": "Stream ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Stream"
+    },
+    {
+      "id": "function:665cf0a83ba254ea3108f02ed3ef2308",
+      "kind": "function",
+      "name": "syncStar",
+      "qualifiedName": "syncStar",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 42,
+      "endLine": 44,
+      "startColumn": 0,
+      "endColumn": 24,
+      "signature": "Iterable ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Iterable"
+    },
+    {
+      "id": "function:b2e873527f650881fbc6a4f56fb4e377",
+      "kind": "function",
+      "name": "numback",
+      "qualifiedName": "numback",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 46,
+      "endLine": 46,
+      "startColumn": 0,
+      "endColumn": 18,
+      "signature": "num (num n)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "num"
+    },
+    {
+      "id": "function:8c62596dd6ed2006d996f30cc302456b",
+      "kind": "function",
+      "name": "dyn",
+      "qualifiedName": "dyn",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 47,
+      "endLine": 47,
+      "startColumn": 0,
+      "endColumn": 22,
+      "signature": "dynamic (dynamic d)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "dynamic"
+    },
+    {
+      "id": "function:7aff2a0a16ed21b7561d9fce12e1dbd7",
+      "kind": "function",
+      "name": "obj",
+      "qualifiedName": "obj",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 48,
+      "endLine": 48,
+      "startColumn": 0,
+      "endColumn": 20,
+      "signature": "Object (Object o)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Object"
+    },
+    {
+      "id": "function:b06c2d27fa49d5e97af860ffe032fbdd",
+      "kind": "function",
+      "name": "listRet",
+      "qualifiedName": "listRet",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 0,
+      "endColumn": 45,
+      "signature": "List (Map<String, WidgetT> m)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "List"
+    },
+    {
+      "id": "function:bcafa05abfafe5a4b4bc5c8b3f7e3e0d",
+      "kind": "function",
+      "name": "nullableRet",
+      "qualifiedName": "nullableRet",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 50,
+      "endLine": 50,
+      "startColumn": 0,
+      "endColumn": 22,
+      "signature": "WidgetT ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetT"
+    },
+    {
+      "id": "function:5a7d206b3379379dcd0e8c8ee7fbb2e6",
+      "kind": "function",
+      "name": "prefixedRet",
+      "qualifiedName": "prefixedRet",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 51,
+      "endLine": 51,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "other ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "other"
+    },
+    {
+      "id": "function:49b34d67e6038f90631cab938e6ba5e8",
+      "kind": "function",
+      "name": "generic",
+      "qualifiedName": "generic",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 52,
+      "endLine": 52,
+      "startColumn": 0,
+      "endColumn": 17,
+      "signature": "T (T v)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "T"
+    },
+    {
+      "id": "function:7fb3c550669354724c73d7971e1af78c",
+      "kind": "function",
+      "name": "externalFn",
+      "qualifiedName": "externalFn",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 54,
+      "endLine": 54,
+      "startColumn": 9,
+      "endColumn": 26,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:ca2a58bf9e2fe349053607e85964f54f",
+      "kind": "function",
+      "name": "params",
+      "qualifiedName": "params",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 56,
+      "endLine": 56,
+      "startColumn": 0,
+      "endColumn": 68,
+      "signature": "void ({int? named, required WidgetT child, String note = 'x'})",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:1f9113c1936c681d582e2e8de8a47736",
+      "kind": "function",
+      "name": "optionals",
+      "qualifiedName": "optionals",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 57,
+      "endLine": 57,
+      "startColumn": 0,
+      "endColumn": 41,
+      "signature": "void ([int pos = 0, WidgetT? w])",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:add711513259ef12945a1381c406d8c0",
+      "kind": "function",
+      "name": "fnTyped",
+      "qualifiedName": "fnTyped",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 58,
+      "endLine": 58,
+      "startColumn": 0,
+      "endColumn": 57,
+      "signature": "void (void cb(int x), int Function(String) modern)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "kind": "function",
+      "name": "bodyShapes",
+      "qualifiedName": "bodyShapes",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 60,
+      "endLine": 96,
+      "startColumn": 0,
+      "endColumn": 39,
+      "signature": "void (List<int> xs, Object o)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:de3e7760a8bf304d54651b74e6589aa3",
+      "kind": "function",
+      "name": "localFn",
+      "qualifiedName": "bodyShapes::localFn",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 86,
+      "endLine": 88,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "void (int n)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:de3e7760a8bf304d54651b74e6589aa3",
+      "kind": "function",
+      "name": "localFn",
+      "qualifiedName": "localFn",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 86,
+      "endLine": 88,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "void (int n)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:db861ef0a9e57545fc7c8fe82604448b",
+      "kind": "function",
+      "name": "interpolation",
+      "qualifiedName": "interpolation",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 98,
+      "endLine": 100,
+      "startColumn": 0,
+      "endColumn": 29,
+      "signature": "void (int count)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "kind": "function",
+      "name": "refTaker",
+      "qualifiedName": "refTaker",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 102,
+      "endLine": 110,
+      "startColumn": 0,
+      "endColumn": 15,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:fa355652331eee519e97b9ef15a61b2d",
+      "kind": "class",
+      "name": "WidgetT",
+      "qualifiedName": "WidgetT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 113,
+      "endLine": 151,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Class doc.",
+      "visibility": "public"
+    },
+    {
+      "id": "constant:7c3ccde0c9a76211b187a9b4d337eec3",
+      "kind": "constant",
+      "name": "K_MAX",
+      "qualifiedName": "WidgetT::K_MAX",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 115,
+      "endLine": 115,
+      "startColumn": 19,
+      "endColumn": 28,
+      "signature": "= 9"
+    },
+    {
+      "id": "constant:8cc8e73594e568ebf734697ba06cdd08",
+      "kind": "constant",
+      "name": "sharedInst",
+      "qualifiedName": "WidgetT::sharedInst",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 116,
+      "endLine": 116,
+      "startColumn": 15,
+      "endColumn": 38,
+      "signature": "= WidgetT"
+    },
+    {
+      "id": "method:2ec7b72739446515eb6fa0e9a847d996",
+      "kind": "method",
+      "name": "named",
+      "qualifiedName": "WidgetT::named",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 123,
+      "endLine": 125,
+      "startColumn": 2,
+      "endColumn": 26,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetT"
+    },
+    {
+      "id": "method:bb67c4687a0a444191bcb11e641da818",
+      "kind": "method",
+      "name": "bodilessNamed",
+      "qualifiedName": "WidgetT::bodilessNamed",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 126,
+      "endLine": 126,
+      "startColumn": 2,
+      "endColumn": 25,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetT"
+    },
+    {
+      "id": "method:e721803e0b4da8cdc52d9c909006f907",
+      "kind": "method",
+      "name": "create",
+      "qualifiedName": "WidgetT::create",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 127,
+      "endLine": 127,
+      "startColumn": 2,
+      "endColumn": 26,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetT"
+    },
+    {
+      "id": "method:524f7bbabfd6e2a17d41c9fca5c714b7",
+      "kind": "method",
+      "name": "redir",
+      "qualifiedName": "WidgetT::redir",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 128,
+      "endLine": 128,
+      "startColumn": 2,
+      "endColumn": 42,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetT"
+    },
+    {
+      "id": "method:2e4aeb10e475574338a751e4d0356a88",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "WidgetT::render",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 130,
+      "endLine": 132,
+      "startColumn": 2,
+      "endColumn": 24,
+      "signature": "void (CanvasT c)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:3fd4d3ca878172f4f933189084dfb3f4",
+      "kind": "method",
+      "name": "make",
+      "qualifiedName": "WidgetT::make",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 133,
+      "endLine": 133,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "WidgetT ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": true,
+      "returnType": "WidgetT"
+    },
+    {
+      "id": "method:a7bcf73f9fccb470b39d5f7ab85bef0f",
+      "kind": "method",
+      "name": "area",
+      "qualifiedName": "WidgetT::area",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 134,
+      "endLine": 134,
+      "startColumn": 2,
+      "endColumn": 14,
+      "signature": "int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "int"
+    },
+    {
+      "id": "method:244d36dbb43ca4c9735745f3fe6e28ee",
+      "kind": "method",
+      "name": "area",
+      "qualifiedName": "WidgetT::area",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 135,
+      "endLine": 137,
+      "startColumn": 2,
+      "endColumn": 17,
+      "signature": "(int v)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:dbedc27f10579fd7567f0cbda93fb625",
+      "kind": "method",
+      "name": "privado",
+      "qualifiedName": "WidgetT::privado",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 138,
+      "endLine": 138,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "bool",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "bool"
+    },
+    {
+      "id": "method:4ae22cd4d1a4129053ffee5c71219d2c",
+      "kind": "method",
+      "name": "_check",
+      "qualifiedName": "WidgetT::_check",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 139,
+      "endLine": 139,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "bool ()",
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "bool"
+    },
+    {
+      "id": "method:1aa639bb545c8f8933ba2ea31dacb84c",
+      "kind": "method",
+      "name": "load",
+      "qualifiedName": "WidgetT::load",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 140,
+      "endLine": 142,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "Future ()",
+      "visibility": "public",
+      "isAsync": true,
+      "isStatic": false,
+      "returnType": "Future"
+    },
+    {
+      "id": "method:dfc92724bc8e56ce4fffe93fa68a9d43",
+      "kind": "method",
+      "name": "<anonymous>",
+      "qualifiedName": "WidgetT::<anonymous>",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 143,
+      "endLine": 143,
+      "startColumn": 2,
+      "endColumn": 31,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:8d1fd5f33fcd0da75336879f96ff1396",
+      "kind": "method",
+      "name": "useLocalNew",
+      "qualifiedName": "WidgetT::useLocalNew",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 144,
+      "endLine": 147,
+      "startColumn": 2,
+      "endColumn": 20,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:554c9b2fd11df120a567061a2671400f",
+      "kind": "method",
+      "name": "readsConst",
+      "qualifiedName": "WidgetT::readsConst",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 148,
+      "endLine": 150,
+      "startColumn": 2,
+      "endColumn": 19,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:a689d35e6a3cf7ce25db3ca75198b4e9",
+      "kind": "class",
+      "name": "WidgetT2",
+      "qualifiedName": "WidgetT2",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 153,
+      "endLine": 156,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:e56906659412f1f464fdd82d5518f5de",
+      "kind": "method",
+      "name": "_privateMethod",
+      "qualifiedName": "WidgetT2::_privateMethod",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 155,
+      "endLine": 155,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "void ()",
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:e5944900904dc14294b70173f1c1efa9",
+      "kind": "class",
+      "name": "BaseT",
+      "qualifiedName": "BaseT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 158,
+      "endLine": 158,
+      "startColumn": 0,
+      "endColumn": 14,
+      "visibility": "public"
+    },
+    {
+      "id": "class:eef9d737bd923993abd33de93479edb9",
+      "kind": "class",
+      "name": "DrawT",
+      "qualifiedName": "DrawT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 160,
+      "endLine": 160,
+      "startColumn": 0,
+      "endColumn": 14,
+      "visibility": "public"
+    },
+    {
+      "id": "class:71c34330a79d40c0ab688f3f21639ca2",
+      "kind": "class",
+      "name": "OnlyMix",
+      "qualifiedName": "OnlyMix",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 162,
+      "endLine": 162,
+      "startColumn": 0,
+      "endColumn": 26,
+      "visibility": "public"
+    },
+    {
+      "id": "class:c4f0e331afcf14097a6eeb00f18dc59b",
+      "kind": "class",
+      "name": "AbstractT",
+      "qualifiedName": "AbstractT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 164,
+      "endLine": 167,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "function:0a0fd41add7ee911e628516232e13b88",
+      "kind": "function",
+      "name": "mustImpl",
+      "qualifiedName": "AbstractT::mustImpl",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 165,
+      "endLine": 165,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "void (WidgetT w)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:d826bd49186de137733cb469dcb4790f",
+      "kind": "class",
+      "name": "ShapeT",
+      "qualifiedName": "ShapeT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 169,
+      "endLine": 169,
+      "startColumn": 0,
+      "endColumn": 22,
+      "visibility": "public"
+    },
+    {
+      "id": "class:c8152170cab61b2f6b9a42767e69dc2b",
+      "kind": "class",
+      "name": "CircleT",
+      "qualifiedName": "CircleT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 171,
+      "endLine": 171,
+      "startColumn": 0,
+      "endColumn": 31,
+      "visibility": "public"
+    },
+    {
+      "id": "class:80c517945226d2adf9a4e539931fa2b7",
+      "kind": "class",
+      "name": "MixA",
+      "qualifiedName": "MixA",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 173,
+      "endLine": 177,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:b45db8b9b1051e377f934b4f3880f721",
+      "kind": "method",
+      "name": "mixMethod",
+      "qualifiedName": "MixA::mixMethod",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 174,
+      "endLine": 176,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:3a28eaf257060c9ca775bebcb90ced61",
+      "kind": "class",
+      "name": "MixB",
+      "qualifiedName": "MixB",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 179,
+      "endLine": 181,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:469630de3eb535387238283632ec438a",
+      "kind": "method",
+      "name": "mixGetter",
+      "qualifiedName": "MixB::mixGetter",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 2,
+      "endColumn": 19,
+      "signature": "int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "int"
+    },
+    {
+      "id": "class:6b651502aee682b15d27b25366e9addd",
+      "kind": "class",
+      "name": "WidgetTExt",
+      "qualifiedName": "WidgetTExt",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 183,
+      "endLine": 189,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:c5ebc8a6035cefc1d6ad34e086d7a66f",
+      "kind": "method",
+      "name": "extMethod",
+      "qualifiedName": "WidgetTExt::extMethod",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 184,
+      "endLine": 186,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:90c9a17ee7d5f156fad1f6019f35abf7",
+      "kind": "method",
+      "name": "extGetter",
+      "qualifiedName": "WidgetTExt::extGetter",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 188,
+      "endLine": 188,
+      "startColumn": 2,
+      "endColumn": 19,
+      "signature": "int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "int"
+    },
+    {
+      "id": "class:a943b56b8518b75c9e40c82c8acdb80a",
+      "kind": "class",
+      "name": "String",
+      "qualifiedName": "String",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 191,
+      "endLine": 193,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:cf35001d0df7e3da271058ffe461803e",
+      "kind": "method",
+      "name": "anonExt",
+      "qualifiedName": "String::anonExt",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 192,
+      "endLine": 192,
+      "startColumn": 2,
+      "endColumn": 16,
+      "signature": "void ()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "enum:fcb9d383c69413c946db24cec4719f95",
+      "kind": "enum",
+      "name": "ColorT",
+      "qualifiedName": "ColorT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 0,
+      "endColumn": 32,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:bdd61861adf53750f330772a73a8196b",
+      "kind": "enum_member",
+      "name": "red",
+      "qualifiedName": "ColorT::red",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 14,
+      "endColumn": 17
+    },
+    {
+      "id": "enum_member:c3e0d290164daa99da18461c242250b0",
+      "kind": "enum_member",
+      "name": "green",
+      "qualifiedName": "ColorT::green",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 19,
+      "endColumn": 24
+    },
+    {
+      "id": "enum_member:8341362c754fff305b25adf5c172b6e1",
+      "kind": "enum_member",
+      "name": "blue",
+      "qualifiedName": "ColorT::blue",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 26,
+      "endColumn": 30
+    },
+    {
+      "id": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "kind": "enum",
+      "name": "StatusT",
+      "qualifiedName": "StatusT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 198,
+      "endLine": 206,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Enum doc.",
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:9765fc6aa2b93bbbe0f94b94630f7da5",
+      "kind": "enum_member",
+      "name": "ok",
+      "qualifiedName": "StatusT::ok",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 199,
+      "endLine": 199,
+      "startColumn": 2,
+      "endColumn": 9
+    },
+    {
+      "id": "enum_member:1bfa14b047fd26a8f1470a0ba112d376",
+      "kind": "enum_member",
+      "name": "err",
+      "qualifiedName": "StatusT::err",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 200,
+      "endLine": 200,
+      "startColumn": 2,
+      "endColumn": 10
+    },
+    {
+      "id": "method:a8d51e58bee38bc6f48b4cb02d99e778",
+      "kind": "method",
+      "name": "good",
+      "qualifiedName": "StatusT::good",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 204,
+      "endLine": 204,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "bool",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "bool"
+    },
+    {
+      "id": "method:6febee4cfe85097558083cae10bd506a",
+      "kind": "method",
+      "name": "parse",
+      "qualifiedName": "StatusT::parse",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 205,
+      "endLine": 205,
+      "startColumn": 2,
+      "endColumn": 29,
+      "signature": "StatusT (int c)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": true,
+      "returnType": "StatusT"
+    },
+    {
+      "id": "type_alias:813393b308ca1d8f278ce99d55bf11d7",
+      "kind": "type_alias",
+      "name": "IntFn",
+      "qualifiedName": "IntFn",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 208,
+      "endLine": 208,
+      "startColumn": 0,
+      "endColumn": 34
+    },
+    {
+      "id": "type_alias:0bd2a1055ccaf6d38ca745ac51664b04",
+      "kind": "type_alias",
+      "name": "LegacyCb",
+      "qualifiedName": "LegacyCb",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 209,
+      "endLine": 209,
+      "startColumn": 0,
+      "endColumn": 29
+    },
+    {
+      "id": "type_alias:544f3be472935dfbe579fa190ead63ab",
+      "kind": "type_alias",
+      "name": "MapAlias",
+      "qualifiedName": "MapAlias",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 210,
+      "endLine": 210,
+      "startColumn": 0,
+      "endColumn": 40
+    },
+    {
+      "id": "class:8c95080292bb3e5e19a1000efe9bd9e3",
+      "kind": "class",
+      "name": "MetersT",
+      "qualifiedName": "MetersT",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 212,
+      "endLine": 214,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:13f500e66dbac779413b4cf09749fe0e",
+      "kind": "method",
+      "name": "km",
+      "qualifiedName": "MetersT::km",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 213,
+      "endLine": 213,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "double",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "double"
+    },
+    {
+      "id": "function:975ff1961c427064617a254938d60cd1",
+      "kind": "function",
+      "name": "patternUser",
+      "qualifiedName": "patternUser",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 216,
+      "endLine": 226,
+      "startColumn": 0,
+      "endColumn": 26,
+      "signature": "void (Object o)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:af8adc6844e403aa5c0b7cc93f187a86",
+      "kind": "function",
+      "name": "afterUnicode",
+      "qualifiedName": "afterUnicode",
+      "filePath": "torture.dart",
+      "language": "dart",
+      "startLine": 229,
+      "endLine": 231,
+      "startColumn": 0,
+      "endColumn": 32,
+      "docstring": "π unicode: “smart quotes” précède — column check ☕",
+      "signature": "void (String seance)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.dart",
+      "target": "import:8448620207572732989ab6f50375b10a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "import:c1f5e9c54d0621a52704c17df0c9f464",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "import:8c956677944354fa2f3ae11a96fa8e56",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "import:450d5be5bdb27ec0b1d88712a6231411",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:e4aabfa896d12d328d860b0b6db8b41f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:e47ec30588abc2975d100ed00651ad8a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:a4b908646a5315f4505eec1514c9da0a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:a946d3f4be94fcb7a892061e107ac66a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:5e11e2f2f13fc49082f194406a604caa",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "constant:e75db0b69c824ca669e58e103a593bbd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "constant:123256b71396a225b330e3b55bea89a6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "constant:f5f93afda7b3a5c47e9f665b31dacd01",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "constant:854e154da6622f59e500dafb4ccaf948",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "constant:f60d9b7b2e5ca669244627bc33d9f941",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "constant:509833baa0cf129c4148cdabd3a50929",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:7f3f5661f75f49c011ea7863efa10bac",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:b37e2f22c8e8740c4b4af7720ef91073",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:665cf0a83ba254ea3108f02ed3ef2308",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:b2e873527f650881fbc6a4f56fb4e377",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:8c62596dd6ed2006d996f30cc302456b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:7aff2a0a16ed21b7561d9fce12e1dbd7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:b06c2d27fa49d5e97af860ffe032fbdd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:bcafa05abfafe5a4b4bc5c8b3f7e3e0d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:5a7d206b3379379dcd0e8c8ee7fbb2e6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:49b34d67e6038f90631cab938e6ba5e8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:7fb3c550669354724c73d7971e1af78c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:ca2a58bf9e2fe349053607e85964f54f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:1f9113c1936c681d582e2e8de8a47736",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:add711513259ef12945a1381c406d8c0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "kind": "contains"
+    },
+    {
+      "source": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "target": "function:de3e7760a8bf304d54651b74e6589aa3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:de3e7760a8bf304d54651b74e6589aa3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:db861ef0a9e57545fc7c8fe82604448b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:fa355652331eee519e97b9ef15a61b2d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "constant:7c3ccde0c9a76211b187a9b4d337eec3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "constant:8cc8e73594e568ebf734697ba06cdd08",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:2ec7b72739446515eb6fa0e9a847d996",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:bb67c4687a0a444191bcb11e641da818",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:e721803e0b4da8cdc52d9c909006f907",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:524f7bbabfd6e2a17d41c9fca5c714b7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:2e4aeb10e475574338a751e4d0356a88",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:3fd4d3ca878172f4f933189084dfb3f4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:a7bcf73f9fccb470b39d5f7ab85bef0f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:244d36dbb43ca4c9735745f3fe6e28ee",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:dbedc27f10579fd7567f0cbda93fb625",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:4ae22cd4d1a4129053ffee5c71219d2c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:1aa639bb545c8f8933ba2ea31dacb84c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:dfc92724bc8e56ce4fffe93fa68a9d43",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:8d1fd5f33fcd0da75336879f96ff1396",
+      "kind": "contains"
+    },
+    {
+      "source": "class:fa355652331eee519e97b9ef15a61b2d",
+      "target": "method:554c9b2fd11df120a567061a2671400f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:a689d35e6a3cf7ce25db3ca75198b4e9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a689d35e6a3cf7ce25db3ca75198b4e9",
+      "target": "method:e56906659412f1f464fdd82d5518f5de",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:e5944900904dc14294b70173f1c1efa9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:eef9d737bd923993abd33de93479edb9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:71c34330a79d40c0ab688f3f21639ca2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:c4f0e331afcf14097a6eeb00f18dc59b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c4f0e331afcf14097a6eeb00f18dc59b",
+      "target": "function:0a0fd41add7ee911e628516232e13b88",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:d826bd49186de137733cb469dcb4790f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:c8152170cab61b2f6b9a42767e69dc2b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:80c517945226d2adf9a4e539931fa2b7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:80c517945226d2adf9a4e539931fa2b7",
+      "target": "method:b45db8b9b1051e377f934b4f3880f721",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:3a28eaf257060c9ca775bebcb90ced61",
+      "kind": "contains"
+    },
+    {
+      "source": "class:3a28eaf257060c9ca775bebcb90ced61",
+      "target": "method:469630de3eb535387238283632ec438a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:6b651502aee682b15d27b25366e9addd",
+      "kind": "contains"
+    },
+    {
+      "source": "class:6b651502aee682b15d27b25366e9addd",
+      "target": "method:c5ebc8a6035cefc1d6ad34e086d7a66f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:6b651502aee682b15d27b25366e9addd",
+      "target": "method:90c9a17ee7d5f156fad1f6019f35abf7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:a943b56b8518b75c9e40c82c8acdb80a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a943b56b8518b75c9e40c82c8acdb80a",
+      "target": "method:cf35001d0df7e3da271058ffe461803e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "enum:fcb9d383c69413c946db24cec4719f95",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:fcb9d383c69413c946db24cec4719f95",
+      "target": "enum_member:bdd61861adf53750f330772a73a8196b",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:fcb9d383c69413c946db24cec4719f95",
+      "target": "enum_member:c3e0d290164daa99da18461c242250b0",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:fcb9d383c69413c946db24cec4719f95",
+      "target": "enum_member:8341362c754fff305b25adf5c172b6e1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "target": "enum_member:9765fc6aa2b93bbbe0f94b94630f7da5",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "target": "enum_member:1bfa14b047fd26a8f1470a0ba112d376",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "target": "method:a8d51e58bee38bc6f48b4cb02d99e778",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "target": "method:6febee4cfe85097558083cae10bd506a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "type_alias:813393b308ca1d8f278ce99d55bf11d7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "type_alias:0bd2a1055ccaf6d38ca745ac51664b04",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "type_alias:544f3be472935dfbe579fa190ead63ab",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "class:8c95080292bb3e5e19a1000efe9bd9e3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8c95080292bb3e5e19a1000efe9bd9e3",
+      "target": "method:13f500e66dbac779413b4cf09749fe0e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:975ff1961c427064617a254938d60cd1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.dart",
+      "target": "function:af8adc6844e403aa5c0b7cc93f187a86",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:123256b71396a225b330e3b55bea89a6",
+      "target": "constant:e75db0b69c824ca669e58e103a593bbd",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:db861ef0a9e57545fc7c8fe82604448b",
+      "target": "constant:e75db0b69c824ca669e58e103a593bbd",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:554c9b2fd11df120a567061a2671400f",
+      "target": "constant:7c3ccde0c9a76211b187a9b4d337eec3",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "dart:async",
+      "referenceKind": "imports",
+      "line": 2,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "package:torture/other.dart",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "src/reexported.dart",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "torture_part.dart",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:e4aabfa896d12d328d860b0b6db8b41f",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 10,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:a946d3f4be94fcb7a892061e107ac66a",
+      "referenceName": "deprecated",
+      "referenceKind": "decorates",
+      "line": 20,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:5e11e2f2f13fc49082f194406a604caa",
+      "referenceName": "pragma",
+      "referenceKind": "decorates",
+      "line": 24,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:5e11e2f2f13fc49082f194406a604caa",
+      "referenceName": "Deprecated",
+      "referenceKind": "decorates",
+      "line": 23,
+      "column": 0
+    },
+    {
+      "fromNodeId": "constant:854e154da6622f59e500dafb4ccaf948",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 30,
+      "column": 24
+    },
+    {
+      "fromNodeId": "function:7f3f5661f75f49c011ea7863efa10bac",
+      "referenceName": "Future",
+      "referenceKind": "references",
+      "line": 38,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:b37e2f22c8e8740c4b4af7720ef91073",
+      "referenceName": "Stream",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:665cf0a83ba254ea3108f02ed3ef2308",
+      "referenceName": "Iterable",
+      "referenceKind": "references",
+      "line": 42,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:b2e873527f650881fbc6a4f56fb4e377",
+      "referenceName": "num",
+      "referenceKind": "references",
+      "line": 46,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:b2e873527f650881fbc6a4f56fb4e377",
+      "referenceName": "num",
+      "referenceKind": "references",
+      "line": 46,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:8c62596dd6ed2006d996f30cc302456b",
+      "referenceName": "dynamic",
+      "referenceKind": "references",
+      "line": 47,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:8c62596dd6ed2006d996f30cc302456b",
+      "referenceName": "dynamic",
+      "referenceKind": "references",
+      "line": 47,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:7aff2a0a16ed21b7561d9fce12e1dbd7",
+      "referenceName": "Object",
+      "referenceKind": "references",
+      "line": 48,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:7aff2a0a16ed21b7561d9fce12e1dbd7",
+      "referenceName": "Object",
+      "referenceKind": "references",
+      "line": 48,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:b06c2d27fa49d5e97af860ffe032fbdd",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:b06c2d27fa49d5e97af860ffe032fbdd",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 5
+    },
+    {
+      "fromNodeId": "function:b06c2d27fa49d5e97af860ffe032fbdd",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:b06c2d27fa49d5e97af860ffe032fbdd",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 49,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:bcafa05abfafe5a4b4bc5c8b3f7e3e0d",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 50,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:5a7d206b3379379dcd0e8c8ee7fbb2e6",
+      "referenceName": "other",
+      "referenceKind": "references",
+      "line": 51,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:5a7d206b3379379dcd0e8c8ee7fbb2e6",
+      "referenceName": "OtherClass",
+      "referenceKind": "references",
+      "line": 51,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:5a7d206b3379379dcd0e8c8ee7fbb2e6",
+      "referenceName": "other.OtherClass",
+      "referenceKind": "calls",
+      "line": 51,
+      "column": 50
+    },
+    {
+      "fromNodeId": "function:49b34d67e6038f90631cab938e6ba5e8",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 52,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:49b34d67e6038f90631cab938e6ba5e8",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 52,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:49b34d67e6038f90631cab938e6ba5e8",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 52,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:ca2a58bf9e2fe349053607e85964f54f",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:1f9113c1936c681d582e2e8de8a47736",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 57,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 60,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "Object",
+      "referenceKind": "references",
+      "line": 60,
+      "column": 30
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 67,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "obj.method",
+      "referenceKind": "calls",
+      "line": 68,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "this_like.deep",
+      "referenceKind": "references",
+      "line": 69,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "call3",
+      "referenceKind": "calls",
+      "line": 69,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "ConfigT",
+      "referenceKind": "references",
+      "line": 70,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "ConfigT.load",
+      "referenceKind": "calls",
+      "line": 70,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "ConfigT",
+      "referenceKind": "references",
+      "line": 71,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "ConfigT.setting",
+      "referenceKind": "references",
+      "line": 71,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "w.render",
+      "referenceKind": "calls",
+      "line": 72,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT",
+      "referenceKind": "calls",
+      "line": 74,
+      "column": 20
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT",
+      "referenceKind": "instantiates",
+      "line": 75,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "pad",
+      "referenceKind": "calls",
+      "line": 76,
+      "column": 5
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "EdgeInsetsT.all",
+      "referenceKind": "calls",
+      "line": 76,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "FactoryT",
+      "referenceKind": "references",
+      "line": 77,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "FactoryT.create",
+      "referenceKind": "calls",
+      "line": 77,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "FactoryT.create().run",
+      "referenceKind": "calls",
+      "line": 77,
+      "column": 23
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "lower",
+      "referenceKind": "calls",
+      "line": 78,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "chain",
+      "referenceKind": "calls",
+      "line": 78,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 79,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT.named",
+      "referenceKind": "calls",
+      "line": 79,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT.named().chainTail",
+      "referenceKind": "calls",
+      "line": 79,
+      "column": 28
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "xs.map",
+      "referenceKind": "calls",
+      "line": 80,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "toList",
+      "referenceKind": "calls",
+      "line": 80,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "xs.forEach",
+      "referenceKind": "calls",
+      "line": 81,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 81,
+      "column": 23
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 83,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "lam",
+      "referenceKind": "calls",
+      "line": 85,
+      "column": 5
+    },
+    {
+      "fromNodeId": "function:de3e7760a8bf304d54651b74e6589aa3",
+      "referenceName": "inner",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "inner",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "localFn",
+      "referenceKind": "calls",
+      "line": 89,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 90,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 91,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 93,
+      "column": 20
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 94,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:a1998a5fcada0a95b1aebb30d3f1222c",
+      "referenceName": "StateError",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 18
+    },
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "WidgetT",
+      "referenceKind": "instantiates",
+      "line": 75,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:de3e7760a8bf304d54651b74e6589aa3",
+      "referenceName": "inner",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:db861ef0a9e57545fc7c8fe82604448b",
+      "referenceName": "log",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 5
+    },
+    {
+      "fromNodeId": "function:db861ef0a9e57545fc7c8fe82604448b",
+      "referenceName": "refresh",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 51
+    },
+    {
+      "fromNodeId": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 103,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "referenceName": "reg2",
+      "referenceKind": "calls",
+      "line": 107,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "referenceName": "forward",
+      "referenceKind": "calls",
+      "line": 108,
+      "column": 9
+    },
+    {
+      "fromNodeId": "class:fa355652331eee519e97b9ef15a61b2d",
+      "referenceName": "BaseT",
+      "referenceKind": "extends",
+      "line": 114,
+      "column": 22
+    },
+    {
+      "fromNodeId": "class:fa355652331eee519e97b9ef15a61b2d",
+      "referenceName": "MixA",
+      "referenceKind": "implements",
+      "line": 114,
+      "column": 33
+    },
+    {
+      "fromNodeId": "class:fa355652331eee519e97b9ef15a61b2d",
+      "referenceName": "MixB",
+      "referenceKind": "implements",
+      "line": 114,
+      "column": 39
+    },
+    {
+      "fromNodeId": "class:fa355652331eee519e97b9ef15a61b2d",
+      "referenceName": "DrawT",
+      "referenceKind": "implements",
+      "line": 114,
+      "column": 55
+    },
+    {
+      "fromNodeId": "class:fa355652331eee519e97b9ef15a61b2d",
+      "referenceName": "immutable",
+      "referenceKind": "decorates",
+      "line": 113,
+      "column": 0
+    },
+    {
+      "fromNodeId": "constant:8cc8e73594e568ebf734697ba06cdd08",
+      "referenceName": "WidgetT",
+      "referenceKind": "calls",
+      "line": 116,
+      "column": 35
+    },
+    {
+      "fromNodeId": "method:2ec7b72739446515eb6fa0e9a847d996",
+      "referenceName": "init",
+      "referenceKind": "calls",
+      "line": 124,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:e721803e0b4da8cdc52d9c909006f907",
+      "referenceName": "WidgetT",
+      "referenceKind": "calls",
+      "line": 127,
+      "column": 37
+    },
+    {
+      "fromNodeId": "method:524f7bbabfd6e2a17d41c9fca5c714b7",
+      "referenceName": "WidgetT2",
+      "referenceKind": "references",
+      "line": 128,
+      "column": 34
+    },
+    {
+      "fromNodeId": "method:2e4aeb10e475574338a751e4d0356a88",
+      "referenceName": "CanvasT",
+      "referenceKind": "references",
+      "line": 130,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:2e4aeb10e475574338a751e4d0356a88",
+      "referenceName": "override",
+      "referenceKind": "decorates",
+      "line": 129,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:2e4aeb10e475574338a751e4d0356a88",
+      "referenceName": "c.draw",
+      "referenceKind": "calls",
+      "line": 131,
+      "column": 10
+    },
+    {
+      "fromNodeId": "method:3fd4d3ca878172f4f933189084dfb3f4",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 133,
+      "column": 9
+    },
+    {
+      "fromNodeId": "method:3fd4d3ca878172f4f933189084dfb3f4",
+      "referenceName": "WidgetT",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 34
+    },
+    {
+      "fromNodeId": "method:dbedc27f10579fd7567f0cbda93fb625",
+      "referenceName": "_check",
+      "referenceKind": "calls",
+      "line": 138,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:1aa639bb545c8f8933ba2ea31dacb84c",
+      "referenceName": "Future",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:1aa639bb545c8f8933ba2ea31dacb84c",
+      "referenceName": "fetch",
+      "referenceKind": "calls",
+      "line": 141,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:dfc92724bc8e56ce4fffe93fa68a9d43",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 143,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:dfc92724bc8e56ce4fffe93fa68a9d43",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 143,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:dfc92724bc8e56ce4fffe93fa68a9d43",
+      "referenceName": "WidgetT",
+      "referenceKind": "calls",
+      "line": 143,
+      "column": 42
+    },
+    {
+      "fromNodeId": "method:dfc92724bc8e56ce4fffe93fa68a9d43",
+      "referenceName": "o.size",
+      "referenceKind": "references",
+      "line": 143,
+      "column": 52
+    },
+    {
+      "fromNodeId": "method:8d1fd5f33fcd0da75336879f96ff1396",
+      "referenceName": "HolderT",
+      "referenceKind": "instantiates",
+      "line": 145,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:8d1fd5f33fcd0da75336879f96ff1396",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 146,
+      "column": 7
+    },
+    {
+      "fromNodeId": "class:fa355652331eee519e97b9ef15a61b2d",
+      "referenceName": "HolderT",
+      "referenceKind": "instantiates",
+      "line": 145,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:554c9b2fd11df120a567061a2671400f",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 149,
+      "column": 7
+    },
+    {
+      "fromNodeId": "class:a689d35e6a3cf7ce25db3ca75198b4e9",
+      "referenceName": "WidgetT",
+      "referenceKind": "extends",
+      "line": 153,
+      "column": 23
+    },
+    {
+      "fromNodeId": "class:71c34330a79d40c0ab688f3f21639ca2",
+      "referenceName": "MixA",
+      "referenceKind": "implements",
+      "line": 162,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:0a0fd41add7ee911e628516232e13b88",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 165,
+      "column": 16
+    },
+    {
+      "fromNodeId": "class:c8152170cab61b2f6b9a42767e69dc2b",
+      "referenceName": "ShapeT",
+      "referenceKind": "extends",
+      "line": 171,
+      "column": 22
+    },
+    {
+      "fromNodeId": "method:b45db8b9b1051e377f934b4f3880f721",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 175,
+      "column": 10
+    },
+    {
+      "fromNodeId": "class:3a28eaf257060c9ca775bebcb90ced61",
+      "referenceName": "DrawT",
+      "referenceKind": "implements",
+      "line": 179,
+      "column": 22
+    },
+    {
+      "fromNodeId": "class:6b651502aee682b15d27b25366e9addd",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 183,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:c5ebc8a6035cefc1d6ad34e086d7a66f",
+      "referenceName": "render",
+      "referenceKind": "calls",
+      "line": 185,
+      "column": 10
+    },
+    {
+      "fromNodeId": "method:c5ebc8a6035cefc1d6ad34e086d7a66f",
+      "referenceName": "CanvasT",
+      "referenceKind": "calls",
+      "line": 185,
+      "column": 18
+    },
+    {
+      "fromNodeId": "enum:d7032a8032488d6fb29ba59e778694cc",
+      "referenceName": "DrawT",
+      "referenceKind": "implements",
+      "line": 198,
+      "column": 34
+    },
+    {
+      "fromNodeId": "method:6febee4cfe85097558083cae10bd506a",
+      "referenceName": "StatusT",
+      "referenceKind": "references",
+      "line": 205,
+      "column": 9
+    },
+    {
+      "fromNodeId": "type_alias:544f3be472935dfbe579fa190ead63ab",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 210,
+      "column": 19
+    },
+    {
+      "fromNodeId": "type_alias:544f3be472935dfbe579fa190ead63ab",
+      "referenceName": "WidgetT",
+      "referenceKind": "references",
+      "line": 210,
+      "column": 31
+    },
+    {
+      "fromNodeId": "function:975ff1961c427064617a254938d60cd1",
+      "referenceName": "Object",
+      "referenceKind": "references",
+      "line": 216,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:975ff1961c427064617a254938d60cd1",
+      "referenceName": "ColorT",
+      "referenceKind": "references",
+      "line": 217,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:975ff1961c427064617a254938d60cd1",
+      "referenceName": "ColorT.red",
+      "referenceKind": "references",
+      "line": 217,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:975ff1961c427064617a254938d60cd1",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 220,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:975ff1961c427064617a254938d60cd1",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 225,
+      "column": 5
+    },
+    {
+      "fromNodeId": "function:af8adc6844e403aa5c0b7cc93f187a86",
+      "referenceName": "emit",
+      "referenceKind": "calls",
+      "line": 230,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "referenceName": "topLevel",
+      "referenceKind": "function_ref",
+      "line": 103,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:893e190d6be04144b7ebe001bdd3cdba",
+      "referenceName": "blockDoc",
+      "referenceKind": "function_ref",
+      "line": 105,
+      "column": 27
+    },
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "topLevel",
+      "referenceKind": "function_ref",
+      "line": 103,
+      "column": 11
+    },
+    {
+      "fromNodeId": "file:torture.dart",
+      "referenceName": "blockDoc",
+      "referenceKind": "function_ref",
+      "line": 105,
+      "column": 27
+    }
+  ],
+  "errors": []
+}

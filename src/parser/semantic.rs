@@ -254,6 +254,7 @@ pub(super) fn enrich(
         };
         for caller in callers {
             parsed.references.push(Reference {
+                column: None,
                 caller,
                 target: target.clone(),
                 line,
@@ -643,16 +644,28 @@ fn bindings_at(node: Node<'_>, source: &str) -> Vec<Binding> {
         .flatten();
     let inferred = annotation.is_none() && construction.is_some();
     let receiver_type = annotation.or(construction);
-    let callable = pattern.kind() == "identifier"
-        && value.is_some_and(|value| {
-            matches!(
-                value.kind(),
-                "arrow_function"
-                    | "function_expression"
-                    | "generator_function"
-                    | "closure_expression"
-            )
-        });
+    let imported_value = value.is_some_and(|value| {
+        value.kind() == "call_expression"
+            && value
+                .child_by_field_name("function")
+                .is_some_and(|function| text(function, source) == "require")
+            && value
+                .child_by_field_name("arguments")
+                .and_then(|arguments| arguments.named_child(0))
+                .and_then(|argument| literal(argument, source))
+                .is_some()
+    });
+    let callable = imported_value
+        || pattern.kind() == "identifier"
+            && value.is_some_and(|value| {
+                matches!(
+                    value.kind(),
+                    "arrow_function"
+                        | "function_expression"
+                        | "generator_function"
+                        | "closure_expression"
+                )
+            });
     let hoisted = node.kind() == "variable_declarator"
         || loop_declaration
         || plain_parameter

@@ -1,0 +1,1594 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.cpp",
+      "kind": "file",
+      "name": "torture.cpp",
+      "qualifiedName": "torture.cpp",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 1,
+      "endLine": 206,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:a2f0c695bce42ffcb9754a1074a8d766",
+      "kind": "import",
+      "name": "vector",
+      "qualifiedName": "vector",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 8,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 0,
+      "signature": "#include <vector>"
+    },
+    {
+      "id": "import:b8d8282481de3f7f4404b595216d6bd1",
+      "kind": "import",
+      "name": "widget_base.hpp",
+      "qualifiedName": "widget_base.hpp",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 9,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 0,
+      "signature": "#include \"widget_base.hpp\""
+    },
+    {
+      "id": "class:25244cbdbe3e9bc720df9fc4d54fac0a",
+      "kind": "class",
+      "name": "Config",
+      "qualifiedName": "app::Config",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 14,
+      "endLine": 22,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Engine config (docstring)."
+    },
+    {
+      "id": "method:4a6c7edee173aa89a12ddfe3decea41b",
+      "kind": "method",
+      "name": "helper_count",
+      "qualifiedName": "app::Config::helper_count",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 2,
+      "endColumn": 40,
+      "visibility": "public"
+    },
+    {
+      "id": "method:8ce5cf7b5413599d7a690c53b25e19f4",
+      "kind": "method",
+      "name": "apply",
+      "qualifiedName": "app::Config::apply",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 0,
+      "endColumn": 50
+    },
+    {
+      "id": "struct:c1ae7a1f5526f34c24c26eeaa97abd1b",
+      "kind": "struct",
+      "name": "Counter",
+      "qualifiedName": "app::detail::Counter",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 27,
+      "endLine": 30,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "function:24dd5f880701404acc2e550d14aec24e",
+      "kind": "function",
+      "name": "detail_probe",
+      "qualifiedName": "app::detail_probe",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 0,
+      "endColumn": 32,
+      "docstring": "namespace detail"
+    },
+    {
+      "id": "class:c4eb9752346636d583798c62cda9c1e5",
+      "kind": "class",
+      "name": "Session",
+      "qualifiedName": "app::net::Session",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 38,
+      "endLine": 44,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:2328804ffd8c133163e907a0d7dac30c",
+      "kind": "method",
+      "name": "~Session",
+      "qualifiedName": "app::net::Session::~Session",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 41,
+      "endLine": 41,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "()",
+      "visibility": "public"
+    },
+    {
+      "id": "method:94ed13fe0fe8b913fff4970bdc2f0e6b",
+      "kind": "method",
+      "name": "read",
+      "qualifiedName": "app::net::Session::read",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 43,
+      "endLine": 43,
+      "startColumn": 2,
+      "endColumn": 32,
+      "docstring": "1727 — pure virtual must mint a method node (parity between wasm + kernel).",
+      "visibility": "public",
+      "isAbstract": true
+    },
+    {
+      "id": "method:fd0ed14a068935777a21232d2c24cc81",
+      "kind": "method",
+      "name": "open",
+      "qualifiedName": "app::net::Session::open",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 45,
+      "endLine": 45,
+      "startColumn": 0,
+      "endColumn": 23
+    },
+    {
+      "id": "function:4dddfdeefe0c521c9abf8c6dc95b399b",
+      "kind": "function",
+      "name": "hidden_helper",
+      "qualifiedName": "hidden_helper",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 0,
+      "endColumn": 33
+    },
+    {
+      "id": "class:0939ad4dcc3f8b9686a6f2915ddc27f6",
+      "kind": "class",
+      "name": "Base",
+      "qualifiedName": "Base",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 53,
+      "endLine": 56,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "kind": "class",
+      "name": "Box",
+      "qualifiedName": "Box",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 59,
+      "endLine": 66,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:ca8bb20195aa616a66dba20985a35fe8",
+      "kind": "method",
+      "name": "get",
+      "qualifiedName": "Box::get",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 61,
+      "endLine": 61,
+      "startColumn": 2,
+      "endColumn": 34,
+      "visibility": "public",
+      "returnType": "T"
+    },
+    {
+      "id": "method:d768a3f8cc0fe5ab53663ca7efd83d5f",
+      "kind": "method",
+      "name": "unwrap",
+      "qualifiedName": "Box::unwrap",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 69,
+      "endLine": 71,
+      "startColumn": 0,
+      "endColumn": 1,
+      "returnType": "T"
+    },
+    {
+      "id": "class:5545c7494bbd6c81f0a1d85a3cf99570",
+      "kind": "class",
+      "name": "Derived",
+      "qualifiedName": "Derived",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 73,
+      "endLine": 80,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:3279340c86e9bdc524388fe76f0cf53c",
+      "kind": "method",
+      "name": "Derived",
+      "qualifiedName": "Derived::Derived",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 75,
+      "endLine": 75,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "()",
+      "visibility": "public"
+    },
+    {
+      "id": "method:74ccbc991e3d062e15f1bd6d59f49361",
+      "kind": "method",
+      "name": "total",
+      "qualifiedName": "Derived::total",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 76,
+      "endLine": 76,
+      "startColumn": 2,
+      "endColumn": 38,
+      "visibility": "public"
+    },
+    {
+      "id": "struct:08acded06d18f155491d1e66e44ba80b",
+      "kind": "struct",
+      "name": "Vec2",
+      "qualifiedName": "Vec2",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 82,
+      "endLine": 87,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:9e99d026d7392913333281d68d5365fb",
+      "kind": "method",
+      "name": "operator+",
+      "qualifiedName": "Vec2::operator+",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 84,
+      "endLine": 84,
+      "startColumn": 2,
+      "endColumn": 68,
+      "returnType": "Vec2"
+    },
+    {
+      "id": "method:8e3b4ccb2740ca14891dcbe0d6503ef2",
+      "kind": "method",
+      "name": "operator bool",
+      "qualifiedName": "Vec2::operator bool",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 85,
+      "endLine": 85,
+      "startColumn": 2,
+      "endColumn": 61
+    },
+    {
+      "id": "enum:798a0819d5cb0aa87501a2a59f7147cc",
+      "kind": "enum",
+      "name": "Mode",
+      "qualifiedName": "Mode",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 89,
+      "endLine": 89,
+      "startColumn": 0,
+      "endColumn": 43
+    },
+    {
+      "id": "enum_member:39b37d79c558a03783a121649b82c5a8",
+      "kind": "enum_member",
+      "name": "Off",
+      "qualifiedName": "Mode::Off",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 89,
+      "endLine": 89,
+      "startColumn": 34,
+      "endColumn": 37
+    },
+    {
+      "id": "enum_member:6fac321f2727d4f8729210377d7b0a98",
+      "kind": "enum_member",
+      "name": "On",
+      "qualifiedName": "Mode::On",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 89,
+      "endLine": 89,
+      "startColumn": 39,
+      "endColumn": 41
+    },
+    {
+      "id": "enum:65cd2e59bd0784ea27b56513fc00c775",
+      "kind": "enum",
+      "name": "Legacy",
+      "qualifiedName": "Legacy",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 0,
+      "endColumn": 34
+    },
+    {
+      "id": "enum_member:77cbcfa5924551f2ee4d1c5bd64523c3",
+      "kind": "enum_member",
+      "name": "LEGACY_A",
+      "qualifiedName": "Legacy::LEGACY_A",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 14,
+      "endColumn": 22
+    },
+    {
+      "id": "enum_member:fea7a2ada0f627a5fffa2bd0283b215b",
+      "kind": "enum_member",
+      "name": "LEGACY_B",
+      "qualifiedName": "Legacy::LEGACY_B",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 24,
+      "endColumn": 32
+    },
+    {
+      "id": "struct:8590f547340aeeb50be0e4d16f1a205f",
+      "kind": "struct",
+      "name": "packet_t",
+      "qualifiedName": "packet_t",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 91,
+      "endLine": 93,
+      "startColumn": 0,
+      "endColumn": 11
+    },
+    {
+      "id": "type_alias:1b5eb3ef72c3df6177bec86b60d9b4ab",
+      "kind": "type_alias",
+      "name": "Handle",
+      "qualifiedName": "Handle",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 94,
+      "endLine": 94,
+      "startColumn": 0,
+      "endColumn": 27
+    },
+    {
+      "id": "class:0083dc18baa2b629e8572db20ba2b464",
+      "kind": "class",
+      "name": "Widget",
+      "qualifiedName": "Widget",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 98,
+      "endLine": 104,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "UE-macro shapes — every one below is recovered by the hoisted preParse\n(export macro, reflection markup, inline specifier, API member prefix)."
+    },
+    {
+      "id": "method:0795ac46f5bef3826c20039a05014ebc",
+      "kind": "method",
+      "name": "GetHealth",
+      "qualifiedName": "Widget::GetHealth",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 102,
+      "endLine": 102,
+      "startColumn": 14,
+      "endColumn": 56,
+      "visibility": "public"
+    },
+    {
+      "id": "method:35a476809e2727e80d7f2c8c404180b2",
+      "kind": "method",
+      "name": "Tick",
+      "qualifiedName": "Widget::Tick",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 106,
+      "endLine": 106,
+      "startColumn": 0,
+      "endColumn": 51
+    },
+    {
+      "id": "variable:6bc194c6a17ac46928d714fb50070e52",
+      "kind": "variable",
+      "name": "GlobalConfig",
+      "qualifiedName": "GlobalConfig",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 108,
+      "endLine": 108,
+      "startColumn": 7,
+      "endColumn": 19,
+      "isExported": false
+    },
+    {
+      "id": "function:9941625592508f28273d0020ebb7dcb0",
+      "kind": "function",
+      "name": "on_open",
+      "qualifiedName": "on_open",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 113,
+      "endLine": 113,
+      "startColumn": 0,
+      "endColumn": 17,
+      "docstring": "class/struct/union/enum definitions in a declaration's type — nodes beside\nthe variables; an unnamed one takes its first variable's name"
+    },
+    {
+      "id": "function:46f110a0d62117633ba74019905246aa",
+      "kind": "function",
+      "name": "on_close",
+      "qualifiedName": "on_close",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 114,
+      "endLine": 114,
+      "startColumn": 0,
+      "endColumn": 18
+    },
+    {
+      "id": "struct:2b5cee7ee15906697f79c2d4a7d886a3",
+      "kind": "struct",
+      "name": "Registry",
+      "qualifiedName": "decl_types::Registry",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 117,
+      "endLine": 120,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "The handler registry."
+    },
+    {
+      "id": "method:a0bb2c26488aac1590dead02a7eada05",
+      "kind": "method",
+      "name": "size",
+      "qualifiedName": "decl_types::Registry::size",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 118,
+      "endLine": 118,
+      "startColumn": 2,
+      "endColumn": 32
+    },
+    {
+      "id": "variable:22b3d0c79e49acd27c99460be7977d9e",
+      "kind": "variable",
+      "name": "registry",
+      "qualifiedName": "decl_types::registry",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 120,
+      "endLine": 120,
+      "startColumn": 2,
+      "endColumn": 10,
+      "docstring": "The handler registry.",
+      "isExported": false
+    },
+    {
+      "id": "class:387042d42085710f487ee8d9da163427",
+      "kind": "class",
+      "name": "Bar",
+      "qualifiedName": "decl_types::Bar",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 121,
+      "endLine": 121,
+      "startColumn": 0,
+      "endColumn": 25
+    },
+    {
+      "id": "method:9261c793bb9fc642ab27474918702485",
+      "kind": "method",
+      "name": "g",
+      "qualifiedName": "decl_types::Bar::g",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 121,
+      "endLine": 121,
+      "startColumn": 12,
+      "endColumn": 23
+    },
+    {
+      "id": "variable:a3010762100ceede1704e3bb28ca9968",
+      "kind": "variable",
+      "name": "bar",
+      "qualifiedName": "decl_types::bar",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 121,
+      "endLine": 121,
+      "startColumn": 26,
+      "endColumn": 29,
+      "isExported": false
+    },
+    {
+      "id": "struct:b332a5023d7677bcdc4456c24d9b6be6",
+      "kind": "struct",
+      "name": "settings",
+      "qualifiedName": "decl_types::settings",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 122,
+      "endLine": 122,
+      "startColumn": 7,
+      "endColumn": 30
+    },
+    {
+      "id": "variable:83955e004580e4fe9ea28cb93682940e",
+      "kind": "variable",
+      "name": "settings",
+      "qualifiedName": "decl_types::settings",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 122,
+      "endLine": 122,
+      "startColumn": 31,
+      "endColumn": 39,
+      "isExported": false
+    },
+    {
+      "id": "enum:16208292327cbd3e3a9dfa544786395b",
+      "kind": "enum",
+      "name": "state",
+      "qualifiedName": "decl_types::state",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 0,
+      "endColumn": 21
+    },
+    {
+      "id": "enum_member:6461759789bf7da3f329fd94c37bba7e",
+      "kind": "enum_member",
+      "name": "kIdle",
+      "qualifiedName": "decl_types::state::kIdle",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 7,
+      "endColumn": 12
+    },
+    {
+      "id": "enum_member:5c28bfef6127d0ed461dacf756a45fa7",
+      "kind": "enum_member",
+      "name": "kBusy",
+      "qualifiedName": "decl_types::state::kBusy",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 14,
+      "endColumn": 19
+    },
+    {
+      "id": "variable:efaad7436497114b49f6ec800f159b1e",
+      "kind": "variable",
+      "name": "state",
+      "qualifiedName": "decl_types::state",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 22,
+      "endColumn": 27,
+      "isExported": false
+    },
+    {
+      "id": "function:34e07c5a395b5e82ce171e23483007e1",
+      "kind": "function",
+      "name": "compute_seed",
+      "qualifiedName": "compute_seed",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 127,
+      "endLine": 129,
+      "startColumn": 0,
+      "endColumn": 1,
+      "returnType": "T"
+    },
+    {
+      "id": "function:639a61c71acb265916d056c97f1b22fa",
+      "kind": "function",
+      "name": "drive_helper",
+      "qualifiedName": "drive_helper",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 131,
+      "endLine": 131,
+      "startColumn": 0,
+      "endColumn": 41
+    },
+    {
+      "id": "function:9374676602bba21f257767ff6086419a",
+      "kind": "function",
+      "name": "make_widget",
+      "qualifiedName": "make_widget",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 133,
+      "endLine": 133,
+      "startColumn": 0,
+      "endColumn": 46,
+      "returnType": "Widget"
+    },
+    {
+      "id": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "kind": "function",
+      "name": "drive",
+      "qualifiedName": "drive",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 135,
+      "endLine": 157,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "class:df5d355262c0ec0812e38079e258a733",
+      "kind": "class",
+      "name": "Json",
+      "qualifiedName": "clauses::Json",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 161,
+      "endLine": 168,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:04007538ae3d8168e41985d9bfa9157a",
+      "kind": "method",
+      "name": "Json",
+      "qualifiedName": "clauses::Json::Json",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 164,
+      "endLine": 166,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(T&& val)"
+    },
+    {
+      "id": "method:4176498d3ee0cc34ff766ffc848f355a",
+      "kind": "method",
+      "name": "Reserve",
+      "qualifiedName": "clauses::Json::Reserve",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 167,
+      "endLine": 167,
+      "startColumn": 2,
+      "endColumn": 46,
+      "visibility": "public"
+    },
+    {
+      "id": "function:c0418b70e61cc1a6e250071cd61d011f",
+      "kind": "function",
+      "name": "Twice",
+      "qualifiedName": "clauses::Twice",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 170,
+      "endLine": 172,
+      "startColumn": 0,
+      "endColumn": 1,
+      "returnType": "T"
+    },
+    {
+      "id": "class:519d7ece3902916b1b09072d0a1429d1",
+      "kind": "class",
+      "name": "Slice",
+      "qualifiedName": "members::Slice",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 177,
+      "endLine": 177,
+      "startColumn": 0,
+      "endColumn": 14
+    },
+    {
+      "id": "class:936d317cd3bdb8ccf55683d9a7afaabd",
+      "kind": "class",
+      "name": "Map",
+      "qualifiedName": "members::Map",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 178,
+      "endLine": 178,
+      "startColumn": 34,
+      "endColumn": 46
+    },
+    {
+      "id": "type_alias:612f7e0c131e5ec95f8b21202a29fefc",
+      "kind": "type_alias",
+      "name": "Rows",
+      "qualifiedName": "members::Rows",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 179,
+      "endLine": 179,
+      "startColumn": 0,
+      "endColumn": 33
+    },
+    {
+      "id": "type_alias:ec05b3f5e91ee990df688259deed3a69",
+      "kind": "type_alias",
+      "name": "SliceMap",
+      "qualifiedName": "members::SliceMap",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 0,
+      "endColumn": 33
+    },
+    {
+      "id": "class:e611434a55f97c7d6c63b82c34279264",
+      "kind": "class",
+      "name": "Holder",
+      "qualifiedName": "members::Holder",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 182,
+      "endLine": 204,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:053e567600ef5d082fc3216165400304",
+      "kind": "method",
+      "name": "Scan",
+      "qualifiedName": "members::Holder::Scan",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 185,
+      "endLine": 185,
+      "startColumn": 2,
+      "endColumn": 44,
+      "visibility": "public",
+      "isAbstract": true,
+      "returnType": "Rows"
+    },
+    {
+      "id": "enum:bcb1bcf9e9fd1eb5e3afa40ffd762682",
+      "kind": "enum",
+      "name": "Mode",
+      "qualifiedName": "members::Holder::Mode",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 200,
+      "endLine": 200,
+      "startColumn": 2,
+      "endColumn": 32
+    },
+    {
+      "id": "enum_member:4266847f50a72b2be0771f346f17f6e9",
+      "kind": "enum_member",
+      "name": "A",
+      "qualifiedName": "members::Holder::Mode::A",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 200,
+      "endLine": 200,
+      "startColumn": 26,
+      "endColumn": 27
+    },
+    {
+      "id": "enum_member:2e0f2d851538dce11f19934a83bf6718",
+      "kind": "enum_member",
+      "name": "B",
+      "qualifiedName": "members::Holder::Mode::B",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 200,
+      "endLine": 200,
+      "startColumn": 29,
+      "endColumn": 30
+    },
+    {
+      "id": "union:83a27166cb353ce25ffcc04da4bdb7f4",
+      "kind": "union",
+      "name": "<anonymous>",
+      "qualifiedName": "members::Holder::<anonymous>",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 202,
+      "endLine": 202,
+      "startColumn": 2,
+      "endColumn": 34
+    },
+    {
+      "id": "struct:8c975e42b0cb7ad1fdb3556a35d51020",
+      "kind": "struct",
+      "name": "Node",
+      "qualifiedName": "members::Holder::Node",
+      "filePath": "torture.cpp",
+      "language": "cpp",
+      "startLine": 203,
+      "endLine": 203,
+      "startColumn": 2,
+      "endColumn": 32
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.cpp",
+      "target": "import:a2f0c695bce42ffcb9754a1074a8d766",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "import:b8d8282481de3f7f4404b595216d6bd1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:25244cbdbe3e9bc720df9fc4d54fac0a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:25244cbdbe3e9bc720df9fc4d54fac0a",
+      "target": "method:4a6c7edee173aa89a12ddfe3decea41b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "method:8ce5cf7b5413599d7a690c53b25e19f4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:25244cbdbe3e9bc720df9fc4d54fac0a",
+      "target": "method:8ce5cf7b5413599d7a690c53b25e19f4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "struct:c1ae7a1f5526f34c24c26eeaa97abd1b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:24dd5f880701404acc2e550d14aec24e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:c4eb9752346636d583798c62cda9c1e5",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c4eb9752346636d583798c62cda9c1e5",
+      "target": "method:2328804ffd8c133163e907a0d7dac30c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c4eb9752346636d583798c62cda9c1e5",
+      "target": "method:94ed13fe0fe8b913fff4970bdc2f0e6b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "method:fd0ed14a068935777a21232d2c24cc81",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c4eb9752346636d583798c62cda9c1e5",
+      "target": "method:fd0ed14a068935777a21232d2c24cc81",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:4dddfdeefe0c521c9abf8c6dc95b399b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:0939ad4dcc3f8b9686a6f2915ddc27f6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "target": "method:ca8bb20195aa616a66dba20985a35fe8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "method:d768a3f8cc0fe5ab53663ca7efd83d5f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "target": "method:d768a3f8cc0fe5ab53663ca7efd83d5f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:5545c7494bbd6c81f0a1d85a3cf99570",
+      "kind": "contains"
+    },
+    {
+      "source": "class:5545c7494bbd6c81f0a1d85a3cf99570",
+      "target": "method:3279340c86e9bdc524388fe76f0cf53c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:5545c7494bbd6c81f0a1d85a3cf99570",
+      "target": "method:74ccbc991e3d062e15f1bd6d59f49361",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "struct:08acded06d18f155491d1e66e44ba80b",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:08acded06d18f155491d1e66e44ba80b",
+      "target": "method:9e99d026d7392913333281d68d5365fb",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:08acded06d18f155491d1e66e44ba80b",
+      "target": "method:8e3b4ccb2740ca14891dcbe0d6503ef2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "enum:798a0819d5cb0aa87501a2a59f7147cc",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:798a0819d5cb0aa87501a2a59f7147cc",
+      "target": "enum_member:39b37d79c558a03783a121649b82c5a8",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:798a0819d5cb0aa87501a2a59f7147cc",
+      "target": "enum_member:6fac321f2727d4f8729210377d7b0a98",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "enum:65cd2e59bd0784ea27b56513fc00c775",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:65cd2e59bd0784ea27b56513fc00c775",
+      "target": "enum_member:77cbcfa5924551f2ee4d1c5bd64523c3",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:65cd2e59bd0784ea27b56513fc00c775",
+      "target": "enum_member:fea7a2ada0f627a5fffa2bd0283b215b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "struct:8590f547340aeeb50be0e4d16f1a205f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "type_alias:1b5eb3ef72c3df6177bec86b60d9b4ab",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:0083dc18baa2b629e8572db20ba2b464",
+      "kind": "contains"
+    },
+    {
+      "source": "class:0083dc18baa2b629e8572db20ba2b464",
+      "target": "method:0795ac46f5bef3826c20039a05014ebc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "method:35a476809e2727e80d7f2c8c404180b2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:0083dc18baa2b629e8572db20ba2b464",
+      "target": "method:35a476809e2727e80d7f2c8c404180b2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "variable:6bc194c6a17ac46928d714fb50070e52",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:9941625592508f28273d0020ebb7dcb0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:46f110a0d62117633ba74019905246aa",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "struct:2b5cee7ee15906697f79c2d4a7d886a3",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:2b5cee7ee15906697f79c2d4a7d886a3",
+      "target": "method:a0bb2c26488aac1590dead02a7eada05",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "variable:22b3d0c79e49acd27c99460be7977d9e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:387042d42085710f487ee8d9da163427",
+      "kind": "contains"
+    },
+    {
+      "source": "class:387042d42085710f487ee8d9da163427",
+      "target": "method:9261c793bb9fc642ab27474918702485",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "variable:a3010762100ceede1704e3bb28ca9968",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "struct:b332a5023d7677bcdc4456c24d9b6be6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "variable:83955e004580e4fe9ea28cb93682940e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "enum:16208292327cbd3e3a9dfa544786395b",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:16208292327cbd3e3a9dfa544786395b",
+      "target": "enum_member:6461759789bf7da3f329fd94c37bba7e",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:16208292327cbd3e3a9dfa544786395b",
+      "target": "enum_member:5c28bfef6127d0ed461dacf756a45fa7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "variable:efaad7436497114b49f6ec800f159b1e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:34e07c5a395b5e82ce171e23483007e1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:639a61c71acb265916d056c97f1b22fa",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:9374676602bba21f257767ff6086419a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:df5d355262c0ec0812e38079e258a733",
+      "kind": "contains"
+    },
+    {
+      "source": "class:df5d355262c0ec0812e38079e258a733",
+      "target": "method:04007538ae3d8168e41985d9bfa9157a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:df5d355262c0ec0812e38079e258a733",
+      "target": "method:4176498d3ee0cc34ff766ffc848f355a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "function:c0418b70e61cc1a6e250071cd61d011f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:519d7ece3902916b1b09072d0a1429d1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:936d317cd3bdb8ccf55683d9a7afaabd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "type_alias:612f7e0c131e5ec95f8b21202a29fefc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "type_alias:ec05b3f5e91ee990df688259deed3a69",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.cpp",
+      "target": "class:e611434a55f97c7d6c63b82c34279264",
+      "kind": "contains"
+    },
+    {
+      "source": "class:e611434a55f97c7d6c63b82c34279264",
+      "target": "method:053e567600ef5d082fc3216165400304",
+      "kind": "contains"
+    },
+    {
+      "source": "class:e611434a55f97c7d6c63b82c34279264",
+      "target": "enum:bcb1bcf9e9fd1eb5e3afa40ffd762682",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:bcb1bcf9e9fd1eb5e3afa40ffd762682",
+      "target": "enum_member:4266847f50a72b2be0771f346f17f6e9",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:bcb1bcf9e9fd1eb5e3afa40ffd762682",
+      "target": "enum_member:2e0f2d851538dce11f19934a83bf6718",
+      "kind": "contains"
+    },
+    {
+      "source": "class:e611434a55f97c7d6c63b82c34279264",
+      "target": "union:83a27166cb353ce25ffcc04da4bdb7f4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:e611434a55f97c7d6c63b82c34279264",
+      "target": "struct:8c975e42b0cb7ad1fdb3556a35d51020",
+      "kind": "contains"
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.cpp",
+      "referenceName": "vector",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.cpp",
+      "referenceName": "widget_base.hpp",
+      "referenceKind": "imports",
+      "line": 9,
+      "column": 0
+    },
+    {
+      "fromNodeId": "method:8ce5cf7b5413599d7a690c53b25e19f4",
+      "referenceName": "helper_count",
+      "referenceKind": "calls",
+      "line": 24,
+      "column": 33
+    },
+    {
+      "fromNodeId": "class:0939ad4dcc3f8b9686a6f2915ddc27f6",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 55,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 59,
+      "column": 19
+    },
+    {
+      "fromNodeId": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 62,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:a7b34ad56c9fc903425f501a0cf34383",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 65,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:5545c7494bbd6c81f0a1d85a3cf99570",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 73,
+      "column": 23
+    },
+    {
+      "fromNodeId": "class:5545c7494bbd6c81f0a1d85a3cf99570",
+      "referenceName": "app::Config",
+      "referenceKind": "extends",
+      "line": 73,
+      "column": 42
+    },
+    {
+      "fromNodeId": "type_alias:1b5eb3ef72c3df6177bec86b60d9b4ab",
+      "referenceName": "app::Config",
+      "referenceKind": "references",
+      "line": 94,
+      "column": 15
+    },
+    {
+      "fromNodeId": "class:0083dc18baa2b629e8572db20ba2b464",
+      "referenceName": "app::Config",
+      "referenceKind": "extends",
+      "line": 98,
+      "column": 35
+    },
+    {
+      "fromNodeId": "function:9374676602bba21f257767ff6086419a",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 133,
+      "column": 31
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "Widget::Widget/0",
+      "referenceKind": "calls",
+      "line": 136,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "app::Config::Config/0",
+      "referenceKind": "calls",
+      "line": 137,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "Vec2",
+      "referenceKind": "instantiates",
+      "line": 138,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "Vec2::Vec2/2",
+      "referenceKind": "calls",
+      "line": 138,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "Vec2",
+      "referenceKind": "instantiates",
+      "line": 140,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "Vec2::Vec2/2",
+      "referenceKind": "calls",
+      "line": 140,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "make_widget().Tick",
+      "referenceKind": "calls",
+      "line": 142,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "make_widget",
+      "referenceKind": "calls",
+      "line": 142,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "compute_seed",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "drive_helper",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "GlobalConfig",
+      "referenceKind": "references",
+      "line": 148,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "app::detail_probe",
+      "referenceKind": "calls",
+      "line": 151,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "compute_seed",
+      "referenceKind": "calls",
+      "line": 152,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:04007538ae3d8168e41985d9bfa9157a",
+      "referenceName": "Ser::to_json",
+      "referenceKind": "calls",
+      "line": 165,
+      "column": 4
+    },
+    {
+      "fromNodeId": "type_alias:612f7e0c131e5ec95f8b21202a29fefc",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 179,
+      "column": 25
+    },
+    {
+      "fromNodeId": "type_alias:ec05b3f5e91ee990df688259deed3a69",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 180,
+      "column": 8
+    },
+    {
+      "fromNodeId": "type_alias:ec05b3f5e91ee990df688259deed3a69",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 180,
+      "column": 17
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 184,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Rows",
+      "referenceKind": "references",
+      "line": 185,
+      "column": 10
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 186,
+      "column": 8
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 188,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 189,
+      "column": 8
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "members::Slice",
+      "referenceKind": "references",
+      "line": 190,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "::members::Slice",
+      "referenceKind": "references",
+      "line": 191,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 192,
+      "column": 14
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 193,
+      "column": 18
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 193,
+      "column": 27
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Outer::Inner",
+      "referenceKind": "references",
+      "line": 194,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 194,
+      "column": 8
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 194,
+      "column": 18
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "T::value_type",
+      "referenceKind": "references",
+      "line": 195,
+      "column": 11
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 196,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 197,
+      "column": 25
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Rows",
+      "referenceKind": "references",
+      "line": 197,
+      "column": 37
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 199,
+      "column": 9
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Mode",
+      "referenceKind": "references",
+      "line": 200,
+      "column": 13
+    },
+    {
+      "fromNodeId": "class:e611434a55f97c7d6c63b82c34279264",
+      "referenceName": "Slice",
+      "referenceKind": "references",
+      "line": 202,
+      "column": 10
+    },
+    {
+      "fromNodeId": "struct:8c975e42b0cb7ad1fdb3556a35d51020",
+      "referenceName": "SliceMap",
+      "referenceKind": "references",
+      "line": 203,
+      "column": 16
+    },
+    {
+      "fromNodeId": "struct:2b5cee7ee15906697f79c2d4a7d886a3",
+      "referenceName": "on_open",
+      "referenceKind": "function_ref",
+      "line": 119,
+      "column": 28
+    },
+    {
+      "fromNodeId": "struct:2b5cee7ee15906697f79c2d4a7d886a3",
+      "referenceName": "on_close",
+      "referenceKind": "function_ref",
+      "line": 119,
+      "column": 38
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "drive_helper",
+      "referenceKind": "function_ref",
+      "line": 145,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:a17e01edc91eda2d9ff83f0051193fa3",
+      "referenceName": "app::Config::apply",
+      "referenceKind": "function_ref",
+      "line": 153,
+      "column": 13
+    }
+  ],
+  "errors": []
+}

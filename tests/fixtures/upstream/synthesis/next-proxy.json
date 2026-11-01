@@ -1,0 +1,697 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "compile": [
+    {
+      "source": "/about",
+      "expected": true
+    },
+    {
+      "source": "/about",
+      "expected": true
+    },
+    {
+      "source": "/about",
+      "expected": true
+    },
+    {
+      "source": "/",
+      "expected": true
+    },
+    {
+      "source": "/",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest*",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest*",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest*",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest+",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest+",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest?",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest?",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest?",
+      "expected": true
+    },
+    {
+      "source": "/:rest*",
+      "expected": true
+    },
+    {
+      "source": "/:rest*",
+      "expected": true
+    },
+    {
+      "source": "/:locale/about",
+      "expected": true
+    },
+    {
+      "source": "/blog/:slug",
+      "expected": true
+    },
+    {
+      "source": "/api/:rest*",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+      "expected": true
+    },
+    {
+      "source": "/(api|trpc)(.*)",
+      "expected": true
+    },
+    {
+      "source": "/(api|trpc)(.*)",
+      "expected": true
+    },
+    {
+      "source": "/(api|trpc)(.*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!.*\\..*|_next).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api/|_next/|_static|_vercel|[\\w-]+\\.\\w+).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api/|_next/|_static|_vercel|[\\w-]+\\.\\w+).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api(?:/|$)|_next).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!api(?:/|$)|_next).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!sitemap.xml$).*)",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next).+)",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next).+)",
+      "expected": true
+    },
+    {
+      "source": "/dashboard(.*)",
+      "expected": true
+    },
+    {
+      "source": "/dashboard(.*)",
+      "expected": true
+    },
+    {
+      "source": "/about/(.*)",
+      "expected": true
+    },
+    {
+      "source": "/:locale(en|fr)/about",
+      "expected": true
+    },
+    {
+      "source": "/:locale(en|fr)/about",
+      "expected": true
+    },
+    {
+      "source": "/blog/featured",
+      "expected": true
+    },
+    {
+      "source": "/docs/intro",
+      "expected": true
+    },
+    {
+      "source": "/docs",
+      "expected": true
+    },
+    {
+      "source": "/docs",
+      "expected": true
+    },
+    {
+      "source": "/docs/:p",
+      "expected": true
+    },
+    {
+      "source": "/((?!.*..*|_next).*)",
+      "expected": false
+    },
+    {
+      "source": "/about/:rest(\\d+)",
+      "expected": false
+    },
+    {
+      "source": "/feed-(\\d+)",
+      "expected": false
+    },
+    {
+      "source": "/api/*",
+      "expected": false
+    },
+    {
+      "source": "about",
+      "expected": false
+    },
+    {
+      "source": "/((?!\\d+).*)",
+      "expected": false
+    },
+    {
+      "source": "/(a+)+",
+      "expected": false
+    },
+    {
+      "source": "/(.*)(.*)(.*)",
+      "expected": false
+    },
+    {
+      "source": "/:a*/:b*/:c*",
+      "expected": false
+    },
+    {
+      "source": "/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected": false
+    },
+    {
+      "source": "/(a|a)(a|a)(a|a)(a|a)",
+      "expected": true
+    },
+    {
+      "source": "/((?!(a+)+$).*)",
+      "expected": false
+    },
+    {
+      "source": "/(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*)",
+      "expected": false
+    },
+    {
+      "source": "/(.*)(.*)x",
+      "expected": true
+    },
+    {
+      "source": "/:a*/:b*x",
+      "expected": true
+    }
+  ],
+  "covers": [
+    {
+      "source": "/about",
+      "path": "/about",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about",
+      "path": "/about/team",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/about",
+      "path": "/blog/about",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/",
+      "path": "/",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/",
+      "path": "/about",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/about/:rest",
+      "path": "/about",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/about/:rest",
+      "path": "/about/team",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest",
+      "path": "/about/team/lead",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/about/:rest*",
+      "path": "/about",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest*",
+      "path": "/about/team/lead",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest*",
+      "path": "/aboutus",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/about/:rest+",
+      "path": "/about",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/about/:rest+",
+      "path": "/about/team/lead",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest?",
+      "path": "/about",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest?",
+      "path": "/about/team",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/:rest?",
+      "path": "/about/team/lead",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/:rest*",
+      "path": "/",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/:rest*",
+      "path": "/a/b/c",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/:locale/about",
+      "path": "/en/about",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/blog/:slug",
+      "path": "/blog/:id",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/api/:rest*",
+      "path": "/api/projects/:id",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "path": "/",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "path": "/dashboard/:id",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "path": "/api/users",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "path": "/apikeys",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+      "path": "/dashboard",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+      "path": "/feed.xml",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/(api|trpc)(.*)",
+      "path": "/api/users",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/(api|trpc)(.*)",
+      "path": "/trpc",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/(api|trpc)(.*)",
+      "path": "/users",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!.*\\..*|_next).*)",
+      "path": "/pricing",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!_next|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)",
+      "path": "/pricing",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!api/|_next/|_static|_vercel|[\\w-]+\\.\\w+).*)",
+      "path": "/api/users",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!api/|_next/|_static|_vercel|[\\w-]+\\.\\w+).*)",
+      "path": "/app",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!api(?:/|$)|_next).*)",
+      "path": "/api",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!api(?:/|$)|_next).*)",
+      "path": "/apikeys",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/((?!sitemap.xml$).*)",
+      "path": "/sitemap.xml",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!_next).+)",
+      "path": "/",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/((?!_next).+)",
+      "path": "/x",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/dashboard(.*)",
+      "path": "/dashboard",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/dashboard(.*)",
+      "path": "/dashboard/settings",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/about/(.*)",
+      "path": "/about/team",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/:locale(en|fr)/about",
+      "path": "/en/about",
+      "file": "app/x/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/:locale(en|fr)/about",
+      "path": "/de/about",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/blog/featured",
+      "path": "/blog/:slug",
+      "file": "app/blog/[slug]/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/docs/intro",
+      "path": "/docs/:all*",
+      "file": "app/docs/[...all]/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/docs",
+      "path": "/docs/:all*",
+      "file": "app/docs/[...all]/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/docs",
+      "path": "/docs/:all*",
+      "file": "app/docs/[[...all]]/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/docs/:p",
+      "path": "/docs/:all*",
+      "file": "app/docs/[...all]/page.tsx",
+      "expected": true
+    },
+    {
+      "source": "/(a|a)(a|a)(a|a)(a|a)",
+      "path": "/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/(.*)(.*)x",
+      "path": "/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a",
+      "file": "app/x/page.tsx",
+      "expected": false
+    },
+    {
+      "source": "/:a*/:b*x",
+      "path": "/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a/a",
+      "file": "app/x/page.tsx",
+      "expected": false
+    }
+  ],
+  "read": [
+    {
+      "source": "export function proxy() {}\n",
+      "expected": null
+    },
+    {
+      "source": "export const config = { runtime: 'nodejs' }\n",
+      "expected": null
+    },
+    {
+      "source": "export const config = { matcher: '/about/:rest*' }\n",
+      "expected": [
+        {
+          "source": "/about/:rest*",
+          "at": 33
+        }
+      ]
+    },
+    {
+      "source": "export const config: MiddlewareConfig = {\n  matcher: [\n    '/dashboard/:rest*',\n    { source: '/api/:rest*', missing: [{ type: 'header', key: 'x-internal' }] },\n    `/account`,\n  ],\n}\n",
+      "expected": [
+        {
+          "source": "/dashboard/:rest*",
+          "at": 59
+        },
+        {
+          "source": "/api/:rest*",
+          "at": 94
+        },
+        {
+          "source": "/account",
+          "at": 165
+        }
+      ]
+    },
+    {
+      "source": "export const config = { matcher: ['/((?!.*\\\\..*|_next).*)'] }\n",
+      "expected": [
+        {
+          "source": "/((?!.*\\..*|_next).*)",
+          "at": 34
+        }
+      ]
+    },
+    {
+      "source": "const extra = '/x'\nexport const config = { matcher: ['/kept', extra] }\n",
+      "expected": []
+    },
+    {
+      "source": "export const config = { matcher: ['/kept', ...more] }\n",
+      "expected": []
+    },
+    {
+      "source": "export const config = { matcher: ['/kept', { source: `/u/${id}` }] }\n",
+      "expected": []
+    },
+    {
+      "source": "export const config = { matcher: PROTECTED }\n",
+      "expected": []
+    },
+    {
+      "source": "const matcher = [\"/a\"]\nexport const config = { matcher }\n",
+      "expected": []
+    },
+    {
+      "source": "export const config = makeConfig()\n",
+      "expected": []
+    },
+    {
+      "source": "                                            \nexport const config = {\n                 matcher: '/new',\n}\n",
+      "expected": [
+        {
+          "source": "/new",
+          "at": 95
+        }
+      ]
+    },
+    {
+      "source": "export const config = {\n  matcher: ['/a', '/b'],\n}\n",
+      "expected": [
+        {
+          "source": "/a",
+          "at": 36
+        },
+        {
+          "source": "/b",
+          "at": 42
+        }
+      ]
+    }
+  ],
+  "directories": [
+    {
+      "root": "",
+      "files": [
+        "app/page.tsx"
+      ],
+      "expected": ""
+    },
+    {
+      "root": "",
+      "files": [
+        "src/app/page.tsx"
+      ],
+      "expected": "src/"
+    },
+    {
+      "root": "apps/web/",
+      "files": [
+        "apps/web/src/app/dashboard/page.tsx"
+      ],
+      "expected": "apps/web/src/"
+    },
+    {
+      "root": "",
+      "files": [
+        "pages/index.tsx",
+        "src/app/page.tsx"
+      ],
+      "expected": ""
+    }
+  ]
+}

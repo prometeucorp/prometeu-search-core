@@ -30,24 +30,38 @@ fn interface_receivers_resolve_local_imported_and_inherited_methods() {
              function inherited(value: Child) { value.save(); }",
         ),
     ]);
-    for (caller, path, owner) in [
-        ("local", "entry.ts", "Local::save"),
-        ("imported", "store.ts", "Store::save"),
-        ("inherited", "store.ts", "Store::save"),
+    for (caller, path, owner, declared_type) in [
+        ("local", "entry.ts", "Local::save", "Local"),
+        ("imported", "store.ts", "Store::save", "Store"),
+        ("inherited", "store.ts", "Store::save", "Child"),
     ] {
         let result = engine
             .related(caller, Direction::Callees, 50, 65536)
             .unwrap();
-        assert_eq!(result.relations.len(), 1, "{caller}: {result:?}");
-        let relation = &result.relations[0];
+        assert_eq!(result.relations.len(), 2, "{caller}: {result:?}");
+        let relation = result
+            .relations
+            .iter()
+            .find(|relation| relation.kind == "calls")
+            .unwrap();
         let candidate = relation.candidate.as_ref().expect("interface method");
         assert_eq!(
             (candidate.path.as_str(), candidate.qualified_name.as_str()),
             (path, owner)
         );
-        assert_eq!(relation.resolution, "receiver_match");
+        assert_eq!(relation.resolution, "typed_receiver_match");
         assert_eq!(relation.confidence, "medium");
         assert!(!relation.ambiguous);
+        let declared = result
+            .relations
+            .iter()
+            .find(|relation| relation.kind == "references")
+            .unwrap();
+        assert_eq!(
+            declared.candidate.as_ref().unwrap().qualified_name,
+            declared_type
+        );
+        assert_eq!(declared.candidate.as_ref().unwrap().path, path);
     }
     let path = engine
         .analyze(
@@ -103,8 +117,13 @@ fn namespace_receiver_types_follow_exports_and_keep_private_types_unresolved() {
         let result = engine
             .related(caller, Direction::Callees, 50, 65536)
             .unwrap();
-        assert_eq!(result.relations.len(), 1, "{caller}: {result:?}");
-        let relation = &result.relations[0];
+        let calls: Vec<_> = result
+            .relations
+            .iter()
+            .filter(|relation| relation.kind == "calls")
+            .collect();
+        assert_eq!(calls.len(), 1, "{caller}: {result:?}");
+        let relation = calls[0];
         let candidate = relation
             .candidate
             .as_ref()
@@ -116,13 +135,39 @@ fn namespace_receiver_types_follow_exports_and_keep_private_types_unresolved() {
         assert_eq!(relation.resolution, "receiver_match");
         assert_eq!(relation.confidence, "medium");
         assert!(!relation.ambiguous);
+        let types: Vec<_> = result
+            .relations
+            .iter()
+            .filter(|relation| relation.kind == "references")
+            .collect();
+        assert_eq!(types.len(), 1, "{caller}: {result:?}");
+        let declared = types[0].candidate.as_ref().expect("exported declared type");
+        assert_eq!(
+            (declared.path.as_str(), declared.qualified_name.as_str()),
+            ("model.ts", owner.split_once("::").unwrap().0)
+        );
+        assert_eq!(types[0].resolution, "import_match");
+        assert_eq!(types[0].confidence, "medium");
+        assert!(!types[0].ambiguous);
     }
     for caller in ["privateType", "missingType"] {
         let result = engine
             .related(caller, Direction::Callees, 50, 65536)
             .unwrap();
-        assert_eq!(result.relations.len(), 1, "{caller}: {result:?}");
-        assert!(result.relations[0].candidate.is_none(), "{result:?}");
-        assert_eq!(result.relations[0].resolution, "unresolved");
+        assert_eq!(
+            result
+                .relations
+                .iter()
+                .filter(|relation| relation.kind == "calls")
+                .count(),
+            1,
+            "{caller}: {result:?}"
+        );
+        assert!(
+            result.relations.iter().all(|relation| {
+                relation.candidate.is_none() && relation.resolution == "unresolved"
+            }),
+            "{result:?}"
+        );
     }
 }

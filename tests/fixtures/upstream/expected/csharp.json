@@ -1,0 +1,2174 @@
+{
+  "nodes": [
+    {
+      "id": "file:Torture.cs",
+      "kind": "file",
+      "name": "Torture.cs",
+      "qualifiedName": "Torture.cs",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 1,
+      "endLine": 187,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:7fe90ca7cf093f7c8655550bbf9f3ccf",
+      "kind": "import",
+      "name": "GlobalNs.Thing",
+      "qualifiedName": "GlobalNs.Thing",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 28,
+      "signature": "global using GlobalNs.Thing;"
+    },
+    {
+      "id": "import:f91114ba6491a30860394195df156032",
+      "kind": "import",
+      "name": "System",
+      "qualifiedName": "System",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 0,
+      "endColumn": 13,
+      "signature": "using System;"
+    },
+    {
+      "id": "import:aeddd14ab4777235295a81589c6cfd38",
+      "kind": "import",
+      "name": "System.Collections.Generic",
+      "qualifiedName": "System.Collections.Generic",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 33,
+      "signature": "using System.Collections.Generic;"
+    },
+    {
+      "id": "import:8108c6ecab6fda1a7de7085619d710c8",
+      "kind": "import",
+      "name": "System.Math",
+      "qualifiedName": "System.Math",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "using static System.Math;"
+    },
+    {
+      "id": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "kind": "namespace",
+      "name": "Torture.Alpha",
+      "qualifiedName": "Torture.Alpha",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 7,
+      "endLine": 176,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "import:ad771b0bcbc2ff6d7e01c9c23b88c166",
+      "kind": "import",
+      "name": "System.Text",
+      "qualifiedName": "Torture.Alpha::System.Text",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 4,
+      "endColumn": 22,
+      "signature": "using System.Text;"
+    },
+    {
+      "id": "namespace:001b1b802b654b8b87b9c7d202a0b8ff",
+      "kind": "namespace",
+      "name": "Torture.Alpha.Inner",
+      "qualifiedName": "Torture.Alpha.Inner",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 11,
+      "endLine": 14,
+      "startColumn": 4,
+      "endColumn": 5
+    },
+    {
+      "id": "class:2962f71edd3e8a7955a291e014192feb",
+      "kind": "class",
+      "name": "Deep",
+      "qualifiedName": "Torture.Alpha.Inner::Deep",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 8,
+      "endColumn": 29,
+      "visibility": "public"
+    },
+    {
+      "id": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "kind": "class",
+      "name": "TortureClass",
+      "qualifiedName": "Torture.Alpha::TortureClass",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 18,
+      "endLine": 151,
+      "startColumn": 4,
+      "endColumn": 5,
+      "docstring": "<summary>Doc line.</summary>\n<remarks>Second doc line over an attribute.</remarks>",
+      "visibility": "public"
+    },
+    {
+      "id": "constant:878468d73ab3a497f0c85659f296475e",
+      "kind": "constant",
+      "name": "MaxItems",
+      "qualifiedName": "Torture.Alpha::TortureClass::MaxItems",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 22,
+      "endLine": 22,
+      "startColumn": 25,
+      "endColumn": 38,
+      "signature": "int MaxItems",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "constant:b80ad042b76cc2c5a15bf2e1a5d743c8",
+      "kind": "constant",
+      "name": "DefaultName",
+      "qualifiedName": "Torture.Alpha::TortureClass::DefaultName",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 23,
+      "endLine": 23,
+      "startColumn": 38,
+      "endColumn": 55,
+      "signature": "string DefaultName",
+      "visibility": "public",
+      "isStatic": true
+    },
+    {
+      "id": "constant:4a0b7790c9fba6576175a4b086629695",
+      "kind": "constant",
+      "name": "LOCAL_SHADOWED",
+      "qualifiedName": "Torture.Alpha::TortureClass::LOCAL_SHADOWED",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 26,
+      "endColumn": 44,
+      "signature": "int LOCAL_SHADOWED",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:896a63ba897801cffda189cce8832371",
+      "kind": "field",
+      "name": "A",
+      "qualifiedName": "Torture.Alpha::TortureClass::A",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 23,
+      "endColumn": 24,
+      "signature": "Widget A",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:63efd3049c9d8a720d0c035263fb373c",
+      "kind": "field",
+      "name": "B",
+      "qualifiedName": "Torture.Alpha::TortureClass::B",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 26,
+      "endColumn": 27,
+      "signature": "Widget B",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:faf90fce276ed30dcf57d6e8339fd2d3",
+      "kind": "field",
+      "name": "_count",
+      "qualifiedName": "Torture.Alpha::TortureClass::_count",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 29,
+      "endColumn": 35,
+      "signature": "int _count",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:78d8cc553206429281fd4109577b6259",
+      "kind": "field",
+      "name": "counter",
+      "qualifiedName": "Torture.Alpha::TortureClass::counter",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 27,
+      "endLine": 27,
+      "startColumn": 27,
+      "endColumn": 34,
+      "signature": "int counter",
+      "visibility": "private",
+      "isStatic": true
+    },
+    {
+      "id": "field:1c2a880a9a9f3a515a296919af3f2481",
+      "kind": "field",
+      "name": "_repo",
+      "qualifiedName": "Torture.Alpha::TortureClass::_repo",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 22,
+      "endColumn": 27,
+      "signature": "IRepo _repo",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:5647962eb80030599906960055107839",
+      "kind": "field",
+      "name": "builder",
+      "qualifiedName": "Torture.Alpha::TortureClass::builder",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 29,
+      "endLine": 29,
+      "startColumn": 34,
+      "endColumn": 41,
+      "signature": "ServiceCollection builder",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:e5613c00cb35efd9b622f0dbf92f5ce9",
+      "kind": "field",
+      "name": "status",
+      "qualifiedName": "Torture.Alpha::TortureClass::status",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 30,
+      "endLine": 30,
+      "startColumn": 20,
+      "endColumn": 26,
+      "signature": "int status",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:f55a20c13201bd32369db7de5edde8d0",
+      "kind": "field",
+      "name": "Table",
+      "qualifiedName": "Torture.Alpha::TortureClass::Table",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 31,
+      "endLine": 31,
+      "startColumn": 34,
+      "endColumn": 60,
+      "signature": "List<Action<int>> Table",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "property:65b1321e5f5780223e85efa4869b2dc1",
+      "kind": "property",
+      "name": "Name",
+      "qualifiedName": "Torture.Alpha::TortureClass::Name",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 34,
+      "endLine": 34,
+      "startColumn": 8,
+      "endColumn": 40,
+      "signature": "string Name",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:89ba9c99acdc22d8540e5b4d3d113086",
+      "kind": "property",
+      "name": "Parent",
+      "qualifiedName": "Torture.Alpha::TortureClass::Parent",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 35,
+      "endLine": 35,
+      "startColumn": 8,
+      "endColumn": 43,
+      "signature": "Parent",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:b907b8e69e94f2fd52096df43b482b7b",
+      "kind": "property",
+      "name": "Items",
+      "qualifiedName": "Torture.Alpha::TortureClass::Items",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 36,
+      "endLine": 36,
+      "startColumn": 8,
+      "endColumn": 42,
+      "signature": "List<Widget> Items",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:355bfbff7594fa646780de75c18f2cfd",
+      "kind": "property",
+      "name": "Computed",
+      "qualifiedName": "Torture.Alpha::TortureClass::Computed",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 8,
+      "endColumn": 44,
+      "signature": "int Computed",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:42cbcdbb0dffcc35a50326fe730508ab",
+      "kind": "property",
+      "name": "Made",
+      "qualifiedName": "Torture.Alpha::TortureClass::Made",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 38,
+      "endLine": 38,
+      "startColumn": 8,
+      "endColumn": 44,
+      "signature": "new() Made",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:2eba142ae17bb518a27a2345a0cc2620",
+      "kind": "property",
+      "name": "Accessored",
+      "qualifiedName": "Torture.Alpha::TortureClass::Accessored",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 39,
+      "endLine": 39,
+      "startColumn": 8,
+      "endColumn": 81,
+      "signature": "int Accessored",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "property:20f555c9e314ec2302940348c2df150c",
+      "kind": "property",
+      "name": "A2",
+      "qualifiedName": "Torture.Alpha::TortureClass::A2",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 40,
+      "endLine": 40,
+      "startColumn": 8,
+      "endColumn": 64,
+      "signature": "() => Register(HandleThing) A2",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:80200e91146fd1e5e21c07e28e5de064",
+      "kind": "method",
+      "name": "TortureClass",
+      "qualifiedName": "Torture.Alpha::TortureClass::TortureClass",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 54,
+      "endLine": 54,
+      "startColumn": 8,
+      "endColumn": 75,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:05b6a33a3511f833cbd800ed60548813",
+      "kind": "method",
+      "name": "TortureClass",
+      "qualifiedName": "Torture.Alpha::TortureClass::TortureClass",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 55,
+      "endLine": 55,
+      "startColumn": 8,
+      "endColumn": 41,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:14fb931f9d612796f38d84c71078c9ae",
+      "kind": "method",
+      "name": "Dispose",
+      "qualifiedName": "Torture.Alpha::TortureClass::Dispose",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 57,
+      "endLine": 57,
+      "startColumn": 8,
+      "endColumn": 49,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:32e91b4121fae0263b157656a430a0f2",
+      "kind": "method",
+      "name": "PI",
+      "qualifiedName": "Torture.Alpha::TortureClass::PI",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 59,
+      "endLine": 59,
+      "startColumn": 8,
+      "endColumn": 40,
+      "visibility": "protected",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:7d23fed280253ae0540584261ccad3be",
+      "kind": "method",
+      "name": "PP",
+      "qualifiedName": "Torture.Alpha::TortureClass::PP",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 60,
+      "endLine": 60,
+      "startColumn": 8,
+      "endColumn": 39,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:17ac8db0ba1778f6220a4bdc41c15ef2",
+      "kind": "method",
+      "name": "Waity",
+      "qualifiedName": "Torture.Alpha::TortureClass::Waity",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 62,
+      "endLine": 62,
+      "startColumn": 8,
+      "endColumn": 58,
+      "visibility": "public",
+      "isAsync": true,
+      "isStatic": false,
+      "returnType": "Task"
+    },
+    {
+      "id": "method:49582b3391af850e6cbf9949cb271324",
+      "kind": "method",
+      "name": "Sum",
+      "qualifiedName": "Torture.Alpha::TortureClass::Sum",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 64,
+      "endLine": 64,
+      "startColumn": 8,
+      "endColumn": 43,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:e3a8fd81bee3f156fa7af9c4f66a1329",
+      "kind": "method",
+      "name": "HandleThing",
+      "qualifiedName": "Torture.Alpha::TortureClass::HandleThing",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 66,
+      "endLine": 66,
+      "startColumn": 8,
+      "endColumn": 43,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:6d1eec9ae656dd2a0648d3d0fab88219",
+      "kind": "method",
+      "name": "StaticHandler",
+      "qualifiedName": "Torture.Alpha::TortureClass::StaticHandler",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 67,
+      "endLine": 67,
+      "startColumn": 8,
+      "endColumn": 47,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "method:2d1cac9e976876e98e7c71daeee35f13",
+      "kind": "method",
+      "name": "OnClick",
+      "qualifiedName": "Torture.Alpha::TortureClass::OnClick",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 68,
+      "endLine": 68,
+      "startColumn": 8,
+      "endColumn": 34,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:f27c30fce457488b067159ae25346818",
+      "kind": "method",
+      "name": "Handler",
+      "qualifiedName": "Torture.Alpha::TortureClass::Handler",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 69,
+      "endLine": 69,
+      "startColumn": 8,
+      "endColumn": 34,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:c258a0b05b483c359d1bcdc264fb10b8",
+      "kind": "method",
+      "name": "TargetCb",
+      "qualifiedName": "Torture.Alpha::TortureClass::TargetCb",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 70,
+      "endLine": 70,
+      "startColumn": 8,
+      "endColumn": 47,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "method:50795ff0a13bebd8320c09d5fe8e2698",
+      "kind": "method",
+      "name": "Compute",
+      "qualifiedName": "Torture.Alpha::TortureClass::Compute",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 71,
+      "endLine": 71,
+      "startColumn": 8,
+      "endColumn": 55,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "method:9145cc4f52147e39c58d87e7c518e545",
+      "kind": "method",
+      "name": "Mk",
+      "qualifiedName": "Torture.Alpha::TortureClass::Mk",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 72,
+      "endLine": 72,
+      "startColumn": 8,
+      "endColumn": 51,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": true,
+      "returnType": "Widget"
+    },
+    {
+      "id": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "kind": "method",
+      "name": "Wire",
+      "qualifiedName": "Torture.Alpha::TortureClass::Wire",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 74,
+      "endLine": 83,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:05563fecbba1c0b56629243e3dde6355",
+      "kind": "method",
+      "name": "CallsZoo",
+      "qualifiedName": "Torture.Alpha::TortureClass::CallsZoo",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 85,
+      "endLine": 102,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "kind": "method",
+      "name": "Reads",
+      "qualifiedName": "Torture.Alpha::TortureClass::Reads",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 104,
+      "endLine": 111,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:11f54f87528456445af4a2f406ad49ef",
+      "kind": "method",
+      "name": "News",
+      "qualifiedName": "Torture.Alpha::TortureClass::News",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 113,
+      "endLine": 121,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "kind": "method",
+      "name": "Query",
+      "qualifiedName": "Torture.Alpha::TortureClass::Query",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 123,
+      "endLine": 132,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "IEnumerable"
+    },
+    {
+      "id": "method:aff4cbff9ff5e0d8d44b76d6b40cb120",
+      "kind": "method",
+      "name": "WithLocal",
+      "qualifiedName": "Torture.Alpha::TortureClass::WithLocal",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 134,
+      "endLine": 138,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "kind": "method",
+      "name": "Fetch",
+      "qualifiedName": "Torture.Alpha::TortureClass::Fetch",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 140,
+      "endLine": 140,
+      "startColumn": 8,
+      "endColumn": 186,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:4ded2dad46105109fea4dc9008086e45",
+      "kind": "method",
+      "name": "Single",
+      "qualifiedName": "Torture.Alpha::TortureClass::Single",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 141,
+      "endLine": 141,
+      "startColumn": 8,
+      "endColumn": 53,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Task"
+    },
+    {
+      "id": "method:c95640784c29e17ce4cab5df21da11a4",
+      "kind": "method",
+      "name": "Qual",
+      "qualifiedName": "Torture.Alpha::TortureClass::Qual",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 142,
+      "endLine": 142,
+      "startColumn": 8,
+      "endColumn": 45,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Foo"
+    },
+    {
+      "id": "method:b02eab5f6eaac34cea7b2d8b5f76f0bf",
+      "kind": "method",
+      "name": "Reader",
+      "qualifiedName": "Torture.Alpha::TortureClass::Reader",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 144,
+      "endLine": 148,
+      "startColumn": 8,
+      "endColumn": 9,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:3b1cb571f833b38e29e2b07a5203ff27",
+      "kind": "method",
+      "name": "Reader2",
+      "qualifiedName": "Torture.Alpha::TortureClass::Reader2",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 150,
+      "endLine": 150,
+      "startColumn": 8,
+      "endColumn": 54,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:06e4921c695628f0cdb67d431f40fde0",
+      "kind": "class",
+      "name": "Client",
+      "qualifiedName": "Torture.Alpha::Client",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 153,
+      "endLine": 153,
+      "startColumn": 4,
+      "endColumn": 72,
+      "visibility": "public"
+    },
+    {
+      "id": "class:dbc3425390c5ba58f46fa64ab4a2e9db",
+      "kind": "class",
+      "name": "PartialHost",
+      "qualifiedName": "Torture.Alpha::PartialHost",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 155,
+      "endLine": 155,
+      "startColumn": 4,
+      "endColumn": 61,
+      "visibility": "public"
+    },
+    {
+      "id": "method:a1313e7ea1fe77c22e0a4180b3236586",
+      "kind": "method",
+      "name": "Hook",
+      "qualifiedName": "Torture.Alpha::PartialHost::Hook",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 155,
+      "endLine": 155,
+      "startColumn": 39,
+      "endColumn": 59,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:ec87d23895be154168673f5fb94c15d3",
+      "kind": "class",
+      "name": "PartialHost",
+      "qualifiedName": "Torture.Alpha::PartialHost",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 156,
+      "endLine": 156,
+      "startColumn": 4,
+      "endColumn": 64,
+      "visibility": "public"
+    },
+    {
+      "id": "method:88bfea3c2c3d7faeeffc2b9cb2cba9f9",
+      "kind": "method",
+      "name": "Hook",
+      "qualifiedName": "Torture.Alpha::PartialHost::Hook",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 156,
+      "endLine": 156,
+      "startColumn": 39,
+      "endColumn": 62,
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "interface:ac832273445e5a59ca5679d25afdcdc1",
+      "kind": "interface",
+      "name": "IWidgetRepo",
+      "qualifiedName": "Torture.Alpha::IWidgetRepo",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 158,
+      "endLine": 163,
+      "startColumn": 4,
+      "endColumn": 5
+    },
+    {
+      "id": "method:51810ede1fad470204b7d4bcfe7f1dca",
+      "kind": "method",
+      "name": "Get",
+      "qualifiedName": "Torture.Alpha::IWidgetRepo::Get",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 160,
+      "endLine": 160,
+      "startColumn": 8,
+      "endColumn": 28,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Task"
+    },
+    {
+      "id": "property:41c90a4508dcf7006081c68981b6ae80",
+      "kind": "property",
+      "name": "Label",
+      "qualifiedName": "Torture.Alpha::IWidgetRepo::Label",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 161,
+      "endLine": 161,
+      "startColumn": 8,
+      "endColumn": 29,
+      "signature": "string Label",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:b428c051b0ed88967ff56fb804fe450a",
+      "kind": "method",
+      "name": "Compute",
+      "qualifiedName": "Torture.Alpha::IWidgetRepo::Compute",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 162,
+      "endLine": 162,
+      "startColumn": 8,
+      "endColumn": 36,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "enum:d04eb96f4adcd7f03628e1fe8ae2194d",
+      "kind": "enum",
+      "name": "ReadType",
+      "qualifiedName": "Torture.Alpha::ReadType",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 165,
+      "endLine": 169,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:6597bbf92369786a5610908b8125f640",
+      "kind": "enum_member",
+      "name": "ReadAsInt",
+      "qualifiedName": "Torture.Alpha::ReadType::ReadAsInt",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 167,
+      "endLine": 167,
+      "startColumn": 8,
+      "endColumn": 32
+    },
+    {
+      "id": "enum_member:5f556dd72ea4cd0eac5364d96bdf6cc9",
+      "kind": "enum_member",
+      "name": "ReadAsDouble",
+      "qualifiedName": "Torture.Alpha::ReadType::ReadAsDouble",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 168,
+      "endLine": 168,
+      "startColumn": 8,
+      "endColumn": 20
+    },
+    {
+      "id": "struct:68ba8bd4bb0864aeb77213901028683d",
+      "kind": "struct",
+      "name": "Point3",
+      "qualifiedName": "Torture.Alpha::Point3",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 171,
+      "endLine": 171,
+      "startColumn": 4,
+      "endColumn": 42,
+      "visibility": "public"
+    },
+    {
+      "id": "field:67881ece80318447542caf9c533fa2c9",
+      "kind": "field",
+      "name": "X",
+      "qualifiedName": "Torture.Alpha::Point3::X",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 171,
+      "endLine": 171,
+      "startColumn": 38,
+      "endColumn": 39,
+      "signature": "int X",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "class:6abadfb3feabfa2bc619c95501055033",
+      "kind": "class",
+      "name": "Grouped",
+      "qualifiedName": "Torture.Alpha::Grouped",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 174,
+      "endLine": 174,
+      "startColumn": 4,
+      "endColumn": 28,
+      "visibility": "public"
+    },
+    {
+      "id": "namespace:2884451169a5c2bf8d7be8ea335c7694",
+      "kind": "namespace",
+      "name": "Torture.Beta",
+      "qualifiedName": "Torture.Beta",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 178,
+      "endLine": 181,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "class:9c70f6436e739a6a0595526a52b5d065",
+      "kind": "class",
+      "name": "Other",
+      "qualifiedName": "Torture.Beta::Other",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 4,
+      "endColumn": 26,
+      "visibility": "public"
+    },
+    {
+      "id": "class:d03ce40ee45fad42a1eeb846a26a89e4",
+      "kind": "class",
+      "name": "TopLevelGuard",
+      "qualifiedName": "TopLevelGuard",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 183,
+      "endLine": 186,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "internal"
+    },
+    {
+      "id": "method:07e6a92ad9d19f32ab4670af6bc88385",
+      "kind": "method",
+      "name": "AgainstNull",
+      "qualifiedName": "TopLevelGuard::AgainstNull",
+      "filePath": "Torture.cs",
+      "language": "csharp",
+      "startLine": 185,
+      "endLine": 185,
+      "startColumn": 4,
+      "endColumn": 69,
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": true,
+      "returnType": "T"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:Torture.cs",
+      "target": "import:7fe90ca7cf093f7c8655550bbf9f3ccf",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "import:f91114ba6491a30860394195df156032",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "import:aeddd14ab4777235295a81589c6cfd38",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "import:8108c6ecab6fda1a7de7085619d710c8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "import:ad771b0bcbc2ff6d7e01c9c23b88c166",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "namespace:001b1b802b654b8b87b9c7d202a0b8ff",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:001b1b802b654b8b87b9c7d202a0b8ff",
+      "target": "class:2962f71edd3e8a7955a291e014192feb",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "constant:878468d73ab3a497f0c85659f296475e",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "constant:b80ad042b76cc2c5a15bf2e1a5d743c8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "constant:4a0b7790c9fba6576175a4b086629695",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:896a63ba897801cffda189cce8832371",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:63efd3049c9d8a720d0c035263fb373c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:faf90fce276ed30dcf57d6e8339fd2d3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:78d8cc553206429281fd4109577b6259",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:1c2a880a9a9f3a515a296919af3f2481",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:5647962eb80030599906960055107839",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:e5613c00cb35efd9b622f0dbf92f5ce9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "field:f55a20c13201bd32369db7de5edde8d0",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:65b1321e5f5780223e85efa4869b2dc1",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:89ba9c99acdc22d8540e5b4d3d113086",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:b907b8e69e94f2fd52096df43b482b7b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:355bfbff7594fa646780de75c18f2cfd",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:42cbcdbb0dffcc35a50326fe730508ab",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:2eba142ae17bb518a27a2345a0cc2620",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "property:20f555c9e314ec2302940348c2df150c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:80200e91146fd1e5e21c07e28e5de064",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:05b6a33a3511f833cbd800ed60548813",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:14fb931f9d612796f38d84c71078c9ae",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:32e91b4121fae0263b157656a430a0f2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:7d23fed280253ae0540584261ccad3be",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:17ac8db0ba1778f6220a4bdc41c15ef2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:49582b3391af850e6cbf9949cb271324",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:e3a8fd81bee3f156fa7af9c4f66a1329",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:6d1eec9ae656dd2a0648d3d0fab88219",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:2d1cac9e976876e98e7c71daeee35f13",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:f27c30fce457488b067159ae25346818",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:c258a0b05b483c359d1bcdc264fb10b8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:50795ff0a13bebd8320c09d5fe8e2698",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:9145cc4f52147e39c58d87e7c518e545",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:05563fecbba1c0b56629243e3dde6355",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:11f54f87528456445af4a2f406ad49ef",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:aff4cbff9ff5e0d8d44b76d6b40cb120",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:4ded2dad46105109fea4dc9008086e45",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:c95640784c29e17ce4cab5df21da11a4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:b02eab5f6eaac34cea7b2d8b5f76f0bf",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "target": "method:3b1cb571f833b38e29e2b07a5203ff27",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "class:06e4921c695628f0cdb67d431f40fde0",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "class:dbc3425390c5ba58f46fa64ab4a2e9db",
+      "kind": "contains"
+    },
+    {
+      "source": "class:dbc3425390c5ba58f46fa64ab4a2e9db",
+      "target": "method:a1313e7ea1fe77c22e0a4180b3236586",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "class:ec87d23895be154168673f5fb94c15d3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:ec87d23895be154168673f5fb94c15d3",
+      "target": "method:88bfea3c2c3d7faeeffc2b9cb2cba9f9",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "interface:ac832273445e5a59ca5679d25afdcdc1",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:ac832273445e5a59ca5679d25afdcdc1",
+      "target": "method:51810ede1fad470204b7d4bcfe7f1dca",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:ac832273445e5a59ca5679d25afdcdc1",
+      "target": "property:41c90a4508dcf7006081c68981b6ae80",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:ac832273445e5a59ca5679d25afdcdc1",
+      "target": "method:b428c051b0ed88967ff56fb804fe450a",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "enum:d04eb96f4adcd7f03628e1fe8ae2194d",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d04eb96f4adcd7f03628e1fe8ae2194d",
+      "target": "enum_member:6597bbf92369786a5610908b8125f640",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d04eb96f4adcd7f03628e1fe8ae2194d",
+      "target": "enum_member:5f556dd72ea4cd0eac5364d96bdf6cc9",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "struct:68ba8bd4bb0864aeb77213901028683d",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:68ba8bd4bb0864aeb77213901028683d",
+      "target": "field:67881ece80318447542caf9c533fa2c9",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "target": "class:6abadfb3feabfa2bc619c95501055033",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "namespace:2884451169a5c2bf8d7be8ea335c7694",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:2884451169a5c2bf8d7be8ea335c7694",
+      "target": "class:9c70f6436e739a6a0595526a52b5d065",
+      "kind": "contains"
+    },
+    {
+      "source": "file:Torture.cs",
+      "target": "class:d03ce40ee45fad42a1eeb846a26a89e4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:d03ce40ee45fad42a1eeb846a26a89e4",
+      "target": "method:07e6a92ad9d19f32ab4670af6bc88385",
+      "kind": "contains"
+    },
+    {
+      "source": "method:b02eab5f6eaac34cea7b2d8b5f76f0bf",
+      "target": "constant:878468d73ab3a497f0c85659f296475e",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:3b1cb571f833b38e29e2b07a5203ff27",
+      "target": "constant:b80ad042b76cc2c5a15bf2e1a5d743c8",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:Torture.cs",
+      "referenceName": "GlobalNs.Thing",
+      "referenceKind": "imports",
+      "line": 2,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:Torture.cs",
+      "referenceName": "System",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:Torture.cs",
+      "referenceName": "System.Collections.Generic",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:Torture.cs",
+      "referenceName": "System.Math",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:046ffc3c202aa6130a498705b4301ca0",
+      "referenceName": "System.Text",
+      "referenceKind": "imports",
+      "line": 9,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Widget",
+      "referenceKind": "extends",
+      "line": 19,
+      "column": 32
+    },
+    {
+      "fromNodeId": "field:896a63ba897801cffda189cce8832371",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 25,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:63efd3049c9d8a720d0c035263fb373c",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 25,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:1c2a880a9a9f3a515a296919af3f2481",
+      "referenceName": "IRepo",
+      "referenceKind": "references",
+      "line": 28,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:5647962eb80030599906960055107839",
+      "referenceName": "ServiceCollection",
+      "referenceKind": "references",
+      "line": 29,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:f55a20c13201bd32369db7de5edde8d0",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 31,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:f55a20c13201bd32369db7de5edde8d0",
+      "referenceName": "Action",
+      "referenceKind": "references",
+      "line": 31,
+      "column": 21
+    },
+    {
+      "fromNodeId": "field:f55a20c13201bd32369db7de5edde8d0",
+      "referenceName": "List",
+      "referenceKind": "instantiates",
+      "line": 31,
+      "column": 42
+    },
+    {
+      "fromNodeId": "property:89ba9c99acdc22d8540e5b4d3d113086",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 35,
+      "column": 15
+    },
+    {
+      "fromNodeId": "property:b907b8e69e94f2fd52096df43b482b7b",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 36,
+      "column": 15
+    },
+    {
+      "fromNodeId": "property:b907b8e69e94f2fd52096df43b482b7b",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 36,
+      "column": 20
+    },
+    {
+      "fromNodeId": "property:42cbcdbb0dffcc35a50326fe730508ab",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 38,
+      "column": 15
+    },
+    {
+      "fromNodeId": "property:42cbcdbb0dffcc35a50326fe730508ab",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 38,
+      "column": 38
+    },
+    {
+      "fromNodeId": "property:2eba142ae17bb518a27a2345a0cc2620",
+      "referenceName": "Lookup",
+      "referenceKind": "calls",
+      "line": 39,
+      "column": 45
+    },
+    {
+      "fromNodeId": "property:2eba142ae17bb518a27a2345a0cc2620",
+      "referenceName": "Store",
+      "referenceKind": "calls",
+      "line": 39,
+      "column": 64
+    },
+    {
+      "fromNodeId": "property:20f555c9e314ec2302940348c2df150c",
+      "referenceName": "Action",
+      "referenceKind": "references",
+      "line": 40,
+      "column": 15
+    },
+    {
+      "fromNodeId": "property:20f555c9e314ec2302940348c2df150c",
+      "referenceName": "Register",
+      "referenceKind": "calls",
+      "line": 40,
+      "column": 42
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Register",
+      "referenceKind": "calls",
+      "line": 45,
+      "column": 18
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Unregister",
+      "referenceKind": "calls",
+      "line": 46,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Combine",
+      "referenceKind": "calls",
+      "line": 49,
+      "column": 87
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Score",
+      "referenceKind": "calls",
+      "line": 50,
+      "column": 69
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Lookup",
+      "referenceKind": "calls",
+      "line": 51,
+      "column": 48
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "Cleanup",
+      "referenceKind": "calls",
+      "line": 52,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:80200e91146fd1e5e21c07e28e5de064",
+      "referenceName": "Init",
+      "referenceKind": "calls",
+      "line": 54,
+      "column": 62
+    },
+    {
+      "fromNodeId": "method:05b6a33a3511f833cbd800ed60548813",
+      "referenceName": "Init",
+      "referenceKind": "calls",
+      "line": 55,
+      "column": 33
+    },
+    {
+      "fromNodeId": "method:14fb931f9d612796f38d84c71078c9ae",
+      "referenceName": "Cleanup",
+      "referenceKind": "calls",
+      "line": 57,
+      "column": 37
+    },
+    {
+      "fromNodeId": "method:17ac8db0ba1778f6220a4bdc41c15ef2",
+      "referenceName": "Task",
+      "referenceKind": "references",
+      "line": 62,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:17ac8db0ba1778f6220a4bdc41c15ef2",
+      "referenceName": "Task.Delay",
+      "referenceKind": "calls",
+      "line": 62,
+      "column": 42
+    },
+    {
+      "fromNodeId": "method:49582b3391af850e6cbf9949cb271324",
+      "referenceName": "Compute",
+      "referenceKind": "calls",
+      "line": 64,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:9145cc4f52147e39c58d87e7c518e545",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 72,
+      "column": 23
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 74,
+      "column": 25
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "Register",
+      "referenceKind": "calls",
+      "line": 76,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "Register",
+      "referenceKind": "calls",
+      "line": 77,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "Register",
+      "referenceKind": "calls",
+      "line": 78,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "C",
+      "referenceKind": "references",
+      "line": 78,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "Register",
+      "referenceKind": "calls",
+      "line": 82,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 85,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "MyDel",
+      "referenceKind": "references",
+      "line": 85,
+      "column": 39
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "HttpRequest",
+      "referenceKind": "references",
+      "line": 85,
+      "column": 52
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "Helper",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "Generic<int>",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "this.Run",
+      "referenceKind": "calls",
+      "line": 89,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "base.Method",
+      "referenceKind": "calls",
+      "line": 90,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "_repo.Save",
+      "referenceKind": "calls",
+      "line": 91,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "builder\n                .Services\n                .AddSingleton<IRepo, Repo>",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 23
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "\"lit\".ToUpper",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "request?.Method",
+      "referenceKind": "calls",
+      "line": 96,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "p!.Force",
+      "referenceKind": "calls",
+      "line": 97,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "Foo.Create().Bar",
+      "referenceKind": "calls",
+      "line": 98,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "Foo.Create",
+      "referenceKind": "calls",
+      "line": 98,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "GetThing().Bar",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "GetThing",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "myDel",
+      "referenceKind": "calls",
+      "line": 100,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:05563fecbba1c0b56629243e3dde6355",
+      "referenceName": "nameof",
+      "referenceKind": "calls",
+      "line": 101,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "referenceName": "User",
+      "referenceKind": "references",
+      "line": 104,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "referenceName": "DoThing",
+      "referenceKind": "calls",
+      "line": 106,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "referenceName": "Constants",
+      "referenceKind": "references",
+      "line": 106,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "referenceName": "ReadType",
+      "referenceKind": "references",
+      "line": 107,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "referenceName": "Outer",
+      "referenceKind": "references",
+      "line": 108,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:51d6ebbeee95e3c8b19527e13c10be19",
+      "referenceName": "Console.WriteLine",
+      "referenceKind": "calls",
+      "line": 110,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:11f54f87528456445af4a2f406ad49ef",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 115,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:11f54f87528456445af4a2f406ad49ef",
+      "referenceName": "Mk",
+      "referenceKind": "calls",
+      "line": 115,
+      "column": 43
+    },
+    {
+      "fromNodeId": "method:11f54f87528456445af4a2f406ad49ef",
+      "referenceName": "Foo",
+      "referenceKind": "instantiates",
+      "line": 116,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:11f54f87528456445af4a2f406ad49ef",
+      "referenceName": "Mk",
+      "referenceKind": "calls",
+      "line": 120,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "IEnumerable",
+      "referenceKind": "references",
+      "line": 123,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 123,
+      "column": 38
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "Check",
+      "referenceKind": "calls",
+      "line": 125,
+      "column": 42
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "Map",
+      "referenceKind": "calls",
+      "line": 125,
+      "column": 58
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "One",
+      "referenceKind": "calls",
+      "line": 126,
+      "column": 46
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "Other",
+      "referenceKind": "calls",
+      "line": 126,
+      "column": 58
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "NameOf",
+      "referenceKind": "calls",
+      "line": 127,
+      "column": 31
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "First",
+      "referenceKind": "calls",
+      "line": 130,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:36c81904b74b19113dbe39b7eeb9dfdb",
+      "referenceName": "Second",
+      "referenceKind": "calls",
+      "line": 130,
+      "column": 35
+    },
+    {
+      "fromNodeId": "method:aff4cbff9ff5e0d8d44b76d6b40cb120",
+      "referenceName": "Compute",
+      "referenceKind": "calls",
+      "line": 136,
+      "column": 38
+    },
+    {
+      "fromNodeId": "method:aff4cbff9ff5e0d8d44b76d6b40cb120",
+      "referenceName": "Local",
+      "referenceKind": "calls",
+      "line": 137,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "Task",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 25
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 40
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 55
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 80
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 102
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 107
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "ICloneable",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 121
+    },
+    {
+      "fromNodeId": "method:b0857dfe91cdb9b6241e743372a66cdf",
+      "referenceName": "dynamic",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 139
+    },
+    {
+      "fromNodeId": "method:4ded2dad46105109fea4dc9008086e45",
+      "referenceName": "Task",
+      "referenceKind": "references",
+      "line": 141,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:4ded2dad46105109fea4dc9008086e45",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 141,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:c95640784c29e17ce4cab5df21da11a4",
+      "referenceName": "Foo",
+      "referenceKind": "references",
+      "line": 142,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:3b1cb571f833b38e29e2b07a5203ff27",
+      "referenceName": "DefaultName.Trim",
+      "referenceKind": "calls",
+      "line": 150,
+      "column": 35
+    },
+    {
+      "fromNodeId": "class:06e4921c695628f0cdb67d431f40fde0",
+      "referenceName": "ClientBase",
+      "referenceKind": "extends",
+      "line": 153,
+      "column": 26
+    },
+    {
+      "fromNodeId": "class:06e4921c695628f0cdb67d431f40fde0",
+      "referenceName": "Sys.ICloneable",
+      "referenceKind": "extends",
+      "line": 153,
+      "column": 46
+    },
+    {
+      "fromNodeId": "class:06e4921c695628f0cdb67d431f40fde0",
+      "referenceName": "IThing",
+      "referenceKind": "extends",
+      "line": 153,
+      "column": 62
+    },
+    {
+      "fromNodeId": "method:51810ede1fad470204b7d4bcfe7f1dca",
+      "referenceName": "Task",
+      "referenceKind": "references",
+      "line": 160,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:51810ede1fad470204b7d4bcfe7f1dca",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 160,
+      "column": 13
+    },
+    {
+      "fromNodeId": "enum:d04eb96f4adcd7f03628e1fe8ae2194d",
+      "referenceName": "byte",
+      "referenceKind": "extends",
+      "line": 165,
+      "column": 27
+    },
+    {
+      "fromNodeId": "method:07e6a92ad9d19f32ab4670af6bc88385",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 185,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:07e6a92ad9d19f32ab4670af6bc88385",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 185,
+      "column": 35
+    },
+    {
+      "fromNodeId": "field:f55a20c13201bd32369db7de5edde8d0",
+      "referenceName": "TargetCb",
+      "referenceKind": "function_ref",
+      "line": 31,
+      "column": 50
+    },
+    {
+      "fromNodeId": "property:20f555c9e314ec2302940348c2df150c",
+      "referenceName": "HandleThing",
+      "referenceKind": "function_ref",
+      "line": 40,
+      "column": 51
+    },
+    {
+      "fromNodeId": "class:c5612d8a0e4cc01ff1ebb6299d21d6b3",
+      "referenceName": "HandleThing",
+      "referenceKind": "function_ref",
+      "line": 45,
+      "column": 27
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "HandleThing",
+      "referenceKind": "function_ref",
+      "line": 76,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "OnClick",
+      "referenceKind": "function_ref",
+      "line": 79,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:34b4e9bac4041d23f63cf97d551751a3",
+      "referenceName": "Handler",
+      "referenceKind": "function_ref",
+      "line": 81,
+      "column": 20
+    }
+  ],
+  "errors": []
+}

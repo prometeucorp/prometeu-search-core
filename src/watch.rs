@@ -222,23 +222,8 @@ fn relevant(event: &Event, root: &Path, cache_paths: &[PathBuf]) -> bool {
         let Ok(relative) = path.strip_prefix(root) else {
             return false;
         };
-        if relative.components().any(|part| {
-            [
-                ".git",
-                "node_modules",
-                "target",
-                "dist",
-                "build",
-                "vendor",
-                ".venv",
-                "venv",
-                ".next",
-                "coverage",
-                ".prometeu-search",
-            ]
-            .iter()
-            .any(|skip| part.as_os_str() == *skip)
-        }) {
+        if crate::traversal::hard_excluded(relative) && !crate::traversal::scope_metadata(relative)
+        {
             return false;
         }
         // Renamed or deleted directories may no longer exist, including names such as src.v2.
@@ -251,7 +236,8 @@ fn relevant(event: &Event, root: &Path, cache_paths: &[PathBuf]) -> bool {
                     | EventKind::Any
                     | EventKind::Other
             )
-            || crate::parser::supports(path)
+            // Custom extensions are project configuration, so all file edits must reach reconciliation.
+            || matches!(event.kind, EventKind::Modify(_))
             || path.is_dir()
             || path.file_name().is_some_and(|name| {
                 [".gitignore", ".ignore", ".prometeu-searchignore"]
