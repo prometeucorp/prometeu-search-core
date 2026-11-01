@@ -1,0 +1,2528 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "projects": [
+    {
+      "name": "vue-bindings",
+      "files": {
+        "package.json": "{\"dependencies\":{\"nuxt\":\"*\",\"vue\":\"*\"}}",
+        "tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\".\",\"paths\":{\"#app/*\":[\"src/local/*\"],\"@/*\":[\"src/*\"]}}}",
+        "src/main.ts": "export function main() {}",
+        "src/local/test.ts": "export const local = 1;",
+        "src/layout/index.vue": "<template><div /></template>",
+        "src/ui/Card.vue": "<template><div /></template>",
+        "src/ui/Button.vue": "<template><button /></template>",
+        "src/ui-kit/Button.vue": "<template><button /></template>",
+        "src/own.ts": "export function clearError() {}\nexport function navigateTo() {}",
+        "src/imported.ts": "import {navigateTo} from \"#app\"; export function main() {}",
+        "src/foreign.py": "def QueryFilterBuilder(): pass",
+        "src/QueryFilterBuilder.vue": "<template><div /></template>",
+        "main.ts": "export function main() {}"
+      },
+      "queries": [
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineProps",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineProps",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineEmits",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineEmits",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineExpose",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineExpose",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineOptions",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineOptions",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineSlots",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineSlots",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineModel",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineModel",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "withDefaults",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "withDefaults",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRoute",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRoute",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRouter",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRouter",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "abortNavigation",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "abortNavigation",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useFetch",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useFetch",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useAsyncData",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useAsyncData",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useLazyFetch",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useLazyFetch",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useLazyAsyncData",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useLazyAsyncData",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "refreshNuxtData",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "refreshNuxtData",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useState",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useState",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "clearNuxtState",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "clearNuxtState",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useHead",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useHead",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useSeoMeta",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useSeoMeta",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useServerSeoMeta",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useServerSeoMeta",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRuntimeConfig",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRuntimeConfig",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useAppConfig",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useAppConfig",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useNuxtApp",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useNuxtApp",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useCookie",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useCookie",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useError",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useError",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "createError",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "createError",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "showError",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "showError",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "clearError",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "clearError",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "definePageMeta",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "definePageMeta",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineNuxtConfig",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineNuxtConfig",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineNuxtPlugin",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineNuxtPlugin",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "defineNuxtRouteMiddleware",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "defineNuxtRouteMiddleware",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRequestHeaders",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRequestHeaders",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRequestEvent",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRequestEvent",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRequestFetch",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRequestFetch",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "useRequestURL",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "useRequestURL",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "#imports",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "#imports",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "#components/foo",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "#components/foo",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "#app",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "#app",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "#build/foo",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "#build/foo",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "#head",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "#head",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "#app/test",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "#app/test",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "@/layout",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "@/layout",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/layout/index.vue",
+            "confidence": 0.9,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "@/missing",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "@/missing",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/own.ts",
+          "name": "clearError",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/own.ts",
+            "referenceName": "clearError",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/own.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/ui/Card.vue",
+          "name": "Button",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/ui/Card.vue",
+            "referenceName": "Button",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/ui/Card.vue",
+            "language": "vue"
+          },
+          "expected": {
+            "target": "component:d91eda4088b18fccf7f5360fa5e15323",
+            "confidence": 0.8,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "main.ts",
+          "name": "Button",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:main.ts",
+            "referenceName": "Button",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/main.ts",
+          "name": "QueryFilterBuilder",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "QueryFilterBuilder",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "component:634ac6ee9c4b2f53e161207f675cc1b6",
+            "confidence": 0.8,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "vue",
+          "path": "src/foreign.py",
+          "name": "QueryFilterBuilder",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/foreign.py",
+            "referenceName": "QueryFilterBuilder",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/foreign.py",
+            "language": "python"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "nuxt",
+          "path": "src/main.ts",
+          "name": "navigateTo",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "navigateTo",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": true
+        },
+        {
+          "framework": "nuxt",
+          "path": "src/own.ts",
+          "name": "navigateTo",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/own.ts",
+            "referenceName": "navigateTo",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/own.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "nuxt",
+          "path": "src/imported.ts",
+          "name": "navigateTo",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/imported.ts",
+            "referenceName": "navigateTo",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/imported.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "nuxt",
+          "path": "src/foreign.py",
+          "name": "navigateTo",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/foreign.py",
+            "referenceName": "navigateTo",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/foreign.py",
+            "language": "python"
+          },
+          "expected": null,
+          "owned": false
+        }
+      ]
+    },
+    {
+      "name": "astro-bindings",
+      "files": {
+        "package.json": "{\"dependencies\":{\"astro\":\"*\"}}",
+        "src/pages/index.astro": "<h1>Home</h1>",
+        "src/pages/Card.astro": "<h1>Card</h1>",
+        "src/pages/Button.astro": "<button/>",
+        "src/pages-kit/Button.astro": "<button/>",
+        "src/main.ts": "export function main() {}",
+        "main.astro": "<main/>"
+      },
+      "queries": [
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "Astro",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "Astro",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "Astro.props",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "Astro.props",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "Astro.url",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "Astro.url",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:content",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:content",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:assets",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:assets",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:actions",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:actions",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:env/client",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:env/client",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:i18n",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:i18n",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:middleware",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:middleware",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:transitions",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:transitions",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:components",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:components",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:schema",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:schema",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "file:src/pages/index.astro",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/index.astro",
+          "name": "astro:unknown",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/pages/index.astro",
+            "referenceName": "astro:unknown",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/index.astro",
+            "language": "astro"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/Card.astro",
+          "name": "Button",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/pages/Card.astro",
+            "referenceName": "Button",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/Card.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "component:8ddbd3f66c87cc946e57a311d3d404ce",
+            "confidence": 0.8,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/pages/Card.astro",
+          "name": "Button",
+          "kind": "references",
+          "reference": {
+            "fromNodeId": "file:src/pages/Card.astro",
+            "referenceName": "Button",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/pages/Card.astro",
+            "language": "astro"
+          },
+          "expected": {
+            "target": "component:8ddbd3f66c87cc946e57a311d3d404ce",
+            "confidence": 0.8,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "src/main.ts",
+          "name": "Button",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "Button",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "astro",
+          "path": "main.astro",
+          "name": "Button",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:main.astro",
+            "referenceName": "Button",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "main.astro",
+            "language": "astro"
+          },
+          "expected": null,
+          "owned": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-bindings",
+      "files": {
+        "package.json": "{\"dependencies\":{\"svelte\":\"*\"}}",
+        "src/views/Screen.svelte": "<h1>Home</h1>",
+        "src/views/Card.svelte": "<div/>",
+        "src/views-kit/Card.svelte": "<div/>",
+        "src/lib/store.ts": "export const count = 1;",
+        "src/lib/helpers/index.ts": "export function run() {}",
+        "src/main.ts": "export function main() {}",
+        "main.svelte": "<main/>"
+      },
+      "queries": [
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$state",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$state",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$state",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$state",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$state.raw",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$state.raw",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$state.raw",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$state.raw",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$state.snapshot",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$state.snapshot",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$state.snapshot",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$state.snapshot",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$derived",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$derived",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$derived",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$derived",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$derived.by",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$derived.by",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$derived.by",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$derived.by",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$effect",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$effect",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$effect",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$effect",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$effect.pre",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$effect.pre",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$effect.pre",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$effect.pre",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$effect.root",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$effect.root",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$effect.root",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$effect.root",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$effect.tracking",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$effect.tracking",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$effect.tracking",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$effect.tracking",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$props",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$props",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$props",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$props",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$bindable",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$bindable",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$bindable",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$bindable",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$inspect",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$inspect",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$inspect",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$inspect",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$host",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$host",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "file:src/views/Screen.svelte",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$host",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$host",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$count",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$count",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "constant:3720d09fc1af84f1bd241daeccfe8dc2",
+            "confidence": 0.85,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$count",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$count",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$$count",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$$count",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$$count",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$$count",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "$unknown",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "$unknown",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$unknown",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$unknown",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$app/navigation",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$app/navigation",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$app/stores",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$app/stores",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$app/environment",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$app/environment",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$app/forms",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$app/forms",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$app/paths",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$app/paths",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$env/static/private",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$env/static/private",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$env/static/public",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$env/static/public",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$env/dynamic/private",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$env/dynamic/private",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$env/dynamic/public",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$env/dynamic/public",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/main.ts",
+            "confidence": 1,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$lib/store",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$lib/store",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "constant:3720d09fc1af84f1bd241daeccfe8dc2",
+            "confidence": 0.9,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$lib/helpers",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$lib/helpers",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": {
+            "target": "file:src/lib/helpers/index.ts",
+            "confidence": 0.9,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$lib/missing",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$lib/missing",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/main.ts",
+          "name": "$other",
+          "kind": "imports",
+          "reference": {
+            "fromNodeId": "file:src/main.ts",
+            "referenceName": "$other",
+            "referenceKind": "imports",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/main.ts",
+            "language": "typescript"
+          },
+          "expected": null,
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "src/views/Screen.svelte",
+          "name": "Card",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:src/views/Screen.svelte",
+            "referenceName": "Card",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/views/Screen.svelte",
+            "language": "svelte"
+          },
+          "expected": {
+            "target": "component:c065d99169a70743fc93b0d5d69e6569",
+            "confidence": 0.8,
+            "resolvedBy": "framework",
+            "metadata": {}
+          },
+          "owned": false
+        },
+        {
+          "framework": "svelte",
+          "path": "main.svelte",
+          "name": "Card",
+          "kind": "calls",
+          "reference": {
+            "fromNodeId": "file:main.svelte",
+            "referenceName": "Card",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "main.svelte",
+            "language": "svelte"
+          },
+          "expected": null,
+          "owned": false
+        }
+      ]
+    }
+  ]
+}

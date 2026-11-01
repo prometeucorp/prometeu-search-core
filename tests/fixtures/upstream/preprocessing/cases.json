@@ -1,0 +1,1479 @@
+{
+  "upstream": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:158",
+      "language": "c",
+      "path": "sample.c",
+      "source": "CJSON_PUBLIC(char *) cJSON_Print(const cJSON *item)\n{\n}\n",
+      "prepared": "CJSON_PUBLIC(char *) cJSON_Print(const cJSON *item)\n{\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:158",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "CJSON_PUBLIC(char *) cJSON_Print(const cJSON *item)\n{\n}\n",
+      "prepared": "                     cJSON_Print(const cJSON *item)\n{\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:159",
+      "language": "c",
+      "path": "sample.c",
+      "source": "GIT_EXTERN(int) git_blob_dup(git_blob **out, git_blob *source);\n",
+      "prepared": "GIT_EXTERN(int) git_blob_dup(git_blob **out, git_blob *source);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:159",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "GIT_EXTERN(int) git_blob_dup(git_blob **out, git_blob *source);\n",
+      "prepared": "                git_blob_dup(git_blob **out, git_blob *source);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:160",
+      "language": "c",
+      "path": "sample.c",
+      "source": "GIT_INLINE(void) git_free(void *p)\n{\n}\n",
+      "prepared": "GIT_INLINE(void) git_free(void *p)\n{\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:160",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "GIT_INLINE(void) git_free(void *p)\n{\n}\n",
+      "prepared": "                 git_free(void *p)\n{\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:164",
+      "language": "c",
+      "path": "sample.c",
+      "source": "ATTR_FORMAT(1, 2)\nvoid log_line(const char *fmt, ...);\n",
+      "prepared": "                 \nvoid log_line(const char *fmt, ...);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:164",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "ATTR_FORMAT(1, 2)\nvoid log_line(const char *fmt, ...);\n",
+      "prepared": "                 \nvoid log_line(const char *fmt, ...);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:166",
+      "language": "c",
+      "path": "sample.c",
+      "source": "ATTR(cold) void die(void);\n",
+      "prepared": "           void die(void);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:166",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "ATTR(cold) void die(void);\n",
+      "prepared": "           void die(void);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:167",
+      "language": "c",
+      "path": "sample.c",
+      "source": "size_t JEMALLOC_NOTHROW\nJEMALLOC_ATTR(pure)\nje_sallocx(const void *ptr, int flags) {\n}\n",
+      "prepared": "size_t JEMALLOC_NOTHROW\n                   \nje_sallocx(const void *ptr, int flags) {\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:167",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "size_t JEMALLOC_NOTHROW\nJEMALLOC_ATTR(pure)\nje_sallocx(const void *ptr, int flags) {\n}\n",
+      "prepared": "size_t JEMALLOC_NOTHROW\n                   \nje_sallocx(const void *ptr, int flags) {\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:169",
+      "language": "c",
+      "path": "sample.c",
+      "source": "void f(void) {\n    FOREACH(node) visit(node);\n}\n",
+      "prepared": "void f(void) {\n                  visit(node);\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:169",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "void f(void) {\n    FOREACH(node) visit(node);\n}\n",
+      "prepared": "void f(void) {\n                  visit(node);\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:172",
+      "language": "c",
+      "path": "sample.c",
+      "source": "GIT_EXTERN(int) git_blob_dup(void);\n",
+      "prepared": "GIT_EXTERN(int) git_blob_dup(void);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-macro-return-types.test.ts:172",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "GIT_EXTERN(int) git_blob_dup(void);\n",
+      "prepared": "                git_blob_dup(void);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-statement-macro-names.test.ts:201",
+      "language": "c",
+      "path": "sample.c",
+      "source": "void f(void) {\r\n    EACH(1) {\r\n    }\r\n    ASSERT(2)\r\n    g();\r\n}\r\n",
+      "prepared": "void f(void) {\r\n    EACH;   {\r\n    }\r\n             \r\n    g();\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-statement-macro-names.test.ts:201",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "void f(void) {\r\n    EACH(1) {\r\n    }\r\n    ASSERT(2)\r\n    g();\r\n}\r\n",
+      "prepared": "void f(void) {\r\n    EACH(1) {\r\n    }\r\n             \r\n    g();\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-statement-macro-names.test.ts:203",
+      "language": "c",
+      "path": "sample.c",
+      "source": "void f(void) {\r\n    EACH;   {\r\n    }\r\n    ASSERT;  \r\n    g();\r\n}\r\n",
+      "prepared": "void f(void) {\r\n    EACH;   {\r\n    }\r\n    ASSERT;  \r\n    g();\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/c-statement-macro-names.test.ts:203",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "void f(void) {\r\n    EACH;   {\r\n    }\r\n    ASSERT;  \r\n    g();\r\n}\r\n",
+      "prepared": "void f(void) {\r\n    EACH;   {\r\n    }\r\n    ASSERT;  \r\n    g();\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:59",
+      "language": "c",
+      "path": "sample.c",
+      "source": "template <typename Element>\nclass ABSL_ATTRIBUTE_WARN_UNUSED PROTOBUF_DECLSPEC_EMPTY_BASES\n    RepeatedField final\n    : private internal::RepeatedFieldBase {};",
+      "prepared": "template <typename Element>\nclass ABSL_ATTRIBUTE_WARN_UNUSED PROTOBUF_DECLSPEC_EMPTY_BASES\n    RepeatedField final\n    : private internal::RepeatedFieldBase {};",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:59",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "template <typename Element>\nclass ABSL_ATTRIBUTE_WARN_UNUSED PROTOBUF_DECLSPEC_EMPTY_BASES\n    RepeatedField final\n    : private internal::RepeatedFieldBase {};",
+      "prepared": "template <typename Element>\nclass                                                         \n    RepeatedField final\n    : private internal::RepeatedFieldBase {};",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:64",
+      "language": "c",
+      "path": "sample.c",
+      "source": "template <typename T, bool kOrProxy>\nclass PROTOBUF_DECLSPEC_EMPTY_BASES RepeatedFieldProxyWithSet<\n    T, kOrProxy,\n    std::enable_if_t<IsMessage<T>>> {};",
+      "prepared": "template <typename T, bool kOrProxy>\nclass PROTOBUF_DECLSPEC_EMPTY_BASES RepeatedFieldProxyWithSet<\n    T, kOrProxy,\n    std::enable_if_t<IsMessage<T>>> {};",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:64",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "template <typename T, bool kOrProxy>\nclass PROTOBUF_DECLSPEC_EMPTY_BASES RepeatedFieldProxyWithSet<\n    T, kOrProxy,\n    std::enable_if_t<IsMessage<T>>> {};",
+      "prepared": "template <typename T, bool kOrProxy>\nclass                               RepeatedFieldProxyWithSet<\n    T, kOrProxy,\n    std::enable_if_t<IsMessage<T>>> {};",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:98",
+      "language": "c",
+      "path": "sample.c",
+      "source": "void f(const FieldDescriptor * PROTOBUF_NULLABLE *\n    PROTOBUF_NONNULL field, const T& ABSL_ATTRIBUTE_LIFETIME_BOUND v);",
+      "prepared": "void f(const FieldDescriptor * PROTOBUF_NULLABLE *\n    PROTOBUF_NONNULL field, const T& ABSL_ATTRIBUTE_LIFETIME_BOUND v);",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:98",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "void f(const FieldDescriptor * PROTOBUF_NULLABLE *\n    PROTOBUF_NONNULL field, const T& ABSL_ATTRIBUTE_LIFETIME_BOUND v);",
+      "prepared": "void f(const FieldDescriptor *                   *\n                     field, const T&                               v);",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:103",
+      "language": "c",
+      "path": "sample.c",
+      "source": "static constexpr const EnumDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE\n    file_level_enum_descriptors = nullptr;",
+      "prepared": "static constexpr const EnumDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE\n    file_level_enum_descriptors = nullptr;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:103",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "static constexpr const EnumDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE\n    file_level_enum_descriptors = nullptr;",
+      "prepared": "static constexpr const EnumDescriptor*                 *                  \n    file_level_enum_descriptors = nullptr;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:112",
+      "language": "c",
+      "path": "sample.c",
+      "source": "bool b = flags & FOO_BIT\n    && enabled;",
+      "prepared": "bool b = flags & FOO_BIT\n    && enabled;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:112",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "bool b = flags & FOO_BIT\n    && enabled;",
+      "prepared": "bool b = flags & FOO_BIT\n    && enabled;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:115",
+      "language": "c",
+      "path": "sample.c",
+      "source": "/**\n * NOTE_THIS applies\n * TODO_LATER fix it\n */",
+      "prepared": "/**\n * NOTE_THIS applies\n * TODO_LATER fix it\n */",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:115",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "/**\n * NOTE_THIS applies\n * TODO_LATER fix it\n */",
+      "prepared": "/**\n * NOTE_THIS applies\n * TODO_LATER fix it\n */",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:119",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#define PTR_T int *\nFOO_BAR name;",
+      "prepared": "#define PTR_T int *\nFOO_BAR name;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:119",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#define PTR_T int *\nFOO_BAR name;",
+      "prepared": "#define PTR_T int *\nFOO_BAR name;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:128",
+      "language": "c",
+      "path": "sample.c",
+      "source": "const UnknownFieldSet& unknown_fields() const\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n  return f;\n}",
+      "prepared": "const UnknownFieldSet& unknown_fields() const\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n  return f;\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:128",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "const UnknownFieldSet& unknown_fields() const\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n  return f;\n}",
+      "prepared": "const UnknownFieldSet& unknown_fields() const\n                                    {\n  return f;\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:134",
+      "language": "c",
+      "path": "sample.c",
+      "source": "void Lock() EXCLUSIVE_LOCK_FUNCTION() { mu_.lock(); }\nvoid Wait() LOCKS_EXCLUDED(mu_);",
+      "prepared": "void Lock() EXCLUSIVE_LOCK_FUNCTION() { mu_.lock(); }\nvoid Wait() LOCKS_EXCLUDED(mu_);",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:134",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "void Lock() EXCLUSIVE_LOCK_FUNCTION() { mu_.lock(); }\nvoid Wait() LOCKS_EXCLUDED(mu_);",
+      "prepared": "void Lock()                           { mu_.lock(); }\nvoid Wait()                    ;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:154",
+      "language": "c",
+      "path": "sample.c",
+      "source": "FMT_PRAGMA_CLANG(diagnostic ignored \"-Wbit-int-extension\")\n\nTEST(std_test, bitint) {\n}",
+      "prepared": "                                                          \n\nTEST(std_test, bitint) {\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:154",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "FMT_PRAGMA_CLANG(diagnostic ignored \"-Wbit-int-extension\")\n\nTEST(std_test, bitint) {\n}",
+      "prepared": "                                                          \n\nTEST(std_test, bitint) {\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:159",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#  if FMT_USE_FCNTL && !defined(__MINGW32__)\nTEST(file_test, open_windows_file) {\n}",
+      "prepared": "#  if FMT_USE_FCNTL && !defined(__MINGW32__)\nTEST(file_test, open_windows_file) {\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:159",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#  if FMT_USE_FCNTL && !defined(__MINGW32__)\nTEST(file_test, open_windows_file) {\n}",
+      "prepared": "#  if FMT_USE_FCNTL && !defined(__MINGW32__)\nTEST(file_test, open_windows_file) {\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:160",
+      "language": "c",
+      "path": "sample.c",
+      "source": "if constexpr (POS + 1 == str.size())\n  FMT_THROW(format_error(\"unmatched brace\"));",
+      "prepared": "if constexpr (POS + 1 == str.size())\n  FMT_THROW(format_error(\"unmatched brace\"));",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:160",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "if constexpr (POS + 1 == str.size())\n  FMT_THROW(format_error(\"unmatched brace\"));",
+      "prepared": "if constexpr (POS + 1 == str.size())\n  FMT_THROW(format_error(\"unmatched brace\"));",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:177",
+      "language": "c",
+      "path": "sample.c",
+      "source": "const AnyGlobalsTypeInternal Any_globals_\n    PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);",
+      "prepared": "const AnyGlobalsTypeInternal Any_globals_\n    PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:177",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "const AnyGlobalsTypeInternal Any_globals_\n    PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);",
+      "prepared": "const AnyGlobalsTypeInternal Any_globals_\n                                                  ;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:182",
+      "language": "c",
+      "path": "sample.c",
+      "source": "const ::uint32_t Table::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold) = {1, 2};",
+      "prepared": "const ::uint32_t Table::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold) = {1, 2};",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:182",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "const ::uint32_t Table::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold) = {1, 2};",
+      "prepared": "const ::uint32_t Table::offsets[]                                 \n                    = {1, 2};",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:183",
+      "language": "c",
+      "path": "sample.c",
+      "source": "ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold)",
+      "prepared": "ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold)",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:183",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold)",
+      "prepared": "ABSL_ATTRIBUTE_SECTION_VARIABLE(\n    protodesc_cold)",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:217",
+      "language": "c",
+      "path": "sample.c",
+      "source": "  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD static constexpr size_t\n  kMax = 3;",
+      "prepared": "  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD static constexpr size_t\n  kMax = 3;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:217",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD static constexpr size_t\n  kMax = 3;",
+      "prepared": "                                      static constexpr size_t\n  kMax = 3;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:243",
+      "language": "c",
+      "path": "sample.c",
+      "source": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const AnyGlobals Any_globals_;",
+      "prepared": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const AnyGlobals Any_globals_;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:243",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const AnyGlobals Any_globals_;",
+      "prepared": "                                                \n                                      const AnyGlobals Any_globals_;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:244",
+      "language": "c",
+      "path": "sample.c",
+      "source": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1",
+      "prepared": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n                                     ",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:244",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1",
+      "prepared": "PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT\n                                     ",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:256",
+      "language": "c",
+      "path": "sample.c",
+      "source": "RESULT_T\nGnuStyle(int x) {}",
+      "prepared": "        \nGnuStyle(int x) {}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:256",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "RESULT_T\nGnuStyle(int x) {}",
+      "prepared": "        \nGnuStyle(int x) {}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:257",
+      "language": "c",
+      "path": "sample.c",
+      "source": "int x = a |\n    SOME_CONST\n    | OTHER;",
+      "prepared": "int x = a |\n    SOME_CONST\n    | OTHER;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:257",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "int x = a |\n    SOME_CONST\n    | OTHER;",
+      "prepared": "int x = a |\n    SOME_CONST\n    | OTHER;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:260",
+      "language": "c",
+      "path": "sample.c",
+      "source": "static const char kHelp[] =\n    \"using \" GTEST_NAME_\n    \". You can use the\\n\"\n    \"  --\" GTEST_FLAG_PREFIX_\n    \"list_tests\\n\";\nstatic bool g_help = false;",
+      "prepared": "static const char kHelp[] =\n    \"using \" GTEST_NAME_\n    \". You can use the\\n\"\n    \"  --\" GTEST_FLAG_PREFIX_\n    \"list_tests\\n\";\nstatic bool g_help = false;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:260",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "static const char kHelp[] =\n    \"using \" GTEST_NAME_\n    \". You can use the\\n\"\n    \"  --\" GTEST_FLAG_PREFIX_\n    \"list_tests\\n\";\nstatic bool g_help = false;",
+      "prepared": "static const char kHelp[] =\n    \"using \" GTEST_NAME_\n    \". You can use the\\n\"\n    \"  --\" GTEST_FLAG_PREFIX_\n    \"list_tests\\n\";\nstatic bool g_help = false;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:275",
+      "language": "c",
+      "path": "sample.c",
+      "source": "FMT_BEGIN_EXPORT\n\n// A generic formatting context with custom output iterator and character\n/* (code unit) support. */\ntemplate <typename OutputIt, typename Char> class generic_context {};\n",
+      "prepared": "                \n\n// A generic formatting context with custom output iterator and character\n/* (code unit) support. */\ntemplate <typename OutputIt, typename Char> class generic_context {};\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:275",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "FMT_BEGIN_EXPORT\n\n// A generic formatting context with custom output iterator and character\n/* (code unit) support. */\ntemplate <typename OutputIt, typename Char> class generic_context {};\n",
+      "prepared": "                \n\n// A generic formatting context with custom output iterator and character\n/* (code unit) support. */\ntemplate <typename OutputIt, typename Char> class generic_context {};\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:278",
+      "language": "c",
+      "path": "sample.c",
+      "source": "const char* s =\n  \"x\"\n  FOO_PREFIX\n  // comment\n  \"y\";\n",
+      "prepared": "const char* s =\n  \"x\"\n  FOO_PREFIX\n  // comment\n  \"y\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:278",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "const char* s =\n  \"x\"\n  FOO_PREFIX\n  // comment\n  \"y\";\n",
+      "prepared": "const char* s =\n  \"x\"\n  FOO_PREFIX\n  // comment\n  \"y\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:283",
+      "language": "c",
+      "path": "sample.c",
+      "source": "class PROTOBUF_EXPORT X final : public Y {\n  const D* PROTOBUF_NONNULL d() const ABSL_ATTRIBUTE_LIFETIME_BOUND;\n  int n_ GUARDED_BY(mu_);\n};\r\n",
+      "prepared": "class PROTOBUF_EXPORT X final : public Y {\n  const D* PROTOBUF_NONNULL d() const ABSL_ATTRIBUTE_LIFETIME_BOUND;\n  int n_ GUARDED_BY(mu_);\n};\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:283",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "class PROTOBUF_EXPORT X final : public Y {\n  const D* PROTOBUF_NONNULL d() const ABSL_ATTRIBUTE_LIFETIME_BOUND;\n  int n_ GUARDED_BY(mu_);\n};\r\n",
+      "prepared": "class                 X final : public Y {\n  const D*                  d() const                              ;\n  int n_                ;\n};\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:291",
+      "language": "c",
+      "path": "sample.c",
+      "source": "// Generated by the protocol buffer compiler.  DO NOT EDIT!\n#ifndef GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n#define GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n\n#include \"google/protobuf/message.h\"\n\nnamespace google {\nnamespace protobuf {\n\nclass PROTOBUF_EXPORT  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED Any final : public ::google::protobuf::Message\n/* @@protoc_insertion_point(class_definition:google.protobuf.Any) */ {\n public:\n  Any() : Any(nullptr) {}\n  ~Any() PROTOBUF_FINAL;\n\n  [[nodiscard]] const ::google::protobuf::UnknownFieldSet& unknown_fields() const\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n    return _internal_metadata_.unknown_fields();\n  }\n  [[nodiscard]] ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n    return _internal_metadata_.mutable_unknown_fields();\n  }\n\n  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {\n    return GetDescriptor();\n  }\n  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL\n  GetDescriptor() {\n    return default_instance().GetMetadata().descriptor;\n  }\n  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {\n    return default_instance().GetMetadata().reflection;\n  }\n  void Swap(Any* PROTOBUF_NONNULL other) {\n    InternalSwap(other);\n  }\n  [[nodiscard]] ::std::string* PROTOBUF_NONNULL mutable_type_url();\n\n private:\n  void InternalSwap(Any* PROTOBUF_NONNULL other);\n};\n\ninline ::std::string* PROTOBUF_NONNULL Any::mutable_type_url() {\n  return _impl_.type_url_.Mutable();\n}\n\n}  // namespace protobuf\n}  // namespace google\n\n#endif  // GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n",
+      "prepared": "// Generated by the protocol buffer compiler.  DO NOT EDIT!\n#ifndef GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n#define GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n\n#include \"google/protobuf/message.h\"\n\nnamespace google {\nnamespace protobuf {\n\nclass PROTOBUF_EXPORT  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED Any final : public ::google::protobuf::Message\n/* @@protoc_insertion_point(class_definition:google.protobuf.Any) */ {\n public:\n  Any() : Any(nullptr) {}\n  ~Any() PROTOBUF_FINAL;\n\n  [[nodiscard]] const ::google::protobuf::UnknownFieldSet& unknown_fields() const\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n    return _internal_metadata_.unknown_fields();\n  }\n  [[nodiscard]] ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n    return _internal_metadata_.mutable_unknown_fields();\n  }\n\n  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {\n    return GetDescriptor();\n  }\n  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL\n  GetDescriptor() {\n    return default_instance().GetMetadata().descriptor;\n  }\n  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {\n    return default_instance().GetMetadata().reflection;\n  }\n  void Swap(Any* PROTOBUF_NONNULL other) {\n    InternalSwap(other);\n  }\n  [[nodiscard]] ::std::string* PROTOBUF_NONNULL mutable_type_url();\n\n private:\n  void InternalSwap(Any* PROTOBUF_NONNULL other);\n};\n\ninline ::std::string* PROTOBUF_NONNULL Any::mutable_type_url() {\n  return _impl_.type_url_.Mutable();\n}\n\n}  // namespace protobuf\n}  // namespace google\n\n#endif  // GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:291",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "// Generated by the protocol buffer compiler.  DO NOT EDIT!\n#ifndef GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n#define GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n\n#include \"google/protobuf/message.h\"\n\nnamespace google {\nnamespace protobuf {\n\nclass PROTOBUF_EXPORT  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED Any final : public ::google::protobuf::Message\n/* @@protoc_insertion_point(class_definition:google.protobuf.Any) */ {\n public:\n  Any() : Any(nullptr) {}\n  ~Any() PROTOBUF_FINAL;\n\n  [[nodiscard]] const ::google::protobuf::UnknownFieldSet& unknown_fields() const\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n    return _internal_metadata_.unknown_fields();\n  }\n  [[nodiscard]] ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()\n      ABSL_ATTRIBUTE_LIFETIME_BOUND {\n    return _internal_metadata_.mutable_unknown_fields();\n  }\n\n  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {\n    return GetDescriptor();\n  }\n  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL\n  GetDescriptor() {\n    return default_instance().GetMetadata().descriptor;\n  }\n  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {\n    return default_instance().GetMetadata().reflection;\n  }\n  void Swap(Any* PROTOBUF_NONNULL other) {\n    InternalSwap(other);\n  }\n  [[nodiscard]] ::std::string* PROTOBUF_NONNULL mutable_type_url();\n\n private:\n  void InternalSwap(Any* PROTOBUF_NONNULL other);\n};\n\ninline ::std::string* PROTOBUF_NONNULL Any::mutable_type_url() {\n  return _impl_.type_url_.Mutable();\n}\n\n}  // namespace protobuf\n}  // namespace google\n\n#endif  // GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n",
+      "prepared": "// Generated by the protocol buffer compiler.  DO NOT EDIT!\n#ifndef GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n#define GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n\n#include \"google/protobuf/message.h\"\n\nnamespace google {\nnamespace protobuf {\n\nclass                                                        Any final : public ::google::protobuf::Message\n/* @@protoc_insertion_point(class_definition:google.protobuf.Any) */ {\n public:\n  Any() : Any(nullptr) {}\n  ~Any()               ;\n\n  [[nodiscard]] const ::google::protobuf::UnknownFieldSet& unknown_fields() const\n                                    {\n    return _internal_metadata_.unknown_fields();\n  }\n  [[nodiscard]] ::google::protobuf::UnknownFieldSet*                  mutable_unknown_fields()\n                                    {\n    return _internal_metadata_.mutable_unknown_fields();\n  }\n\n  [[nodiscard]] static const ::google::protobuf::Descriptor*                  descriptor() {\n    return GetDescriptor();\n  }\n  [[nodiscard]] static const ::google::protobuf::Descriptor*                 \n  GetDescriptor() {\n    return default_instance().GetMetadata().descriptor;\n  }\n  [[nodiscard]] static const ::google::protobuf::Reflection*                  GetReflection() {\n    return default_instance().GetMetadata().reflection;\n  }\n  void Swap(Any*                  other) {\n    InternalSwap(other);\n  }\n  [[nodiscard]] ::std::string*                  mutable_type_url();\n\n private:\n  void InternalSwap(Any*                  other);\n};\n\ninline ::std::string*                  Any::mutable_type_url() {\n  return _impl_.type_url_.Mutable();\n}\n\n}  // namespace protobuf\n}  // namespace google\n\n#endif  // GOOGLE_PROTOBUF_INCLUDED_any_2eproto\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:344",
+      "language": "c",
+      "path": "sample.c",
+      "source": "namespace google {\nnamespace protobuf {\n\nclass Message {\n public:\n  virtual ~Message();\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "namespace google {\nnamespace protobuf {\n\nclass Message {\n public:\n  virtual ~Message();\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:344",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "namespace google {\nnamespace protobuf {\n\nclass Message {\n public:\n  virtual ~Message();\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "namespace google {\nnamespace protobuf {\n\nclass Message {\n public:\n  virtual ~Message();\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:356",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#include \"google/protobuf/any.pb.h\"\n\nnamespace google {\nnamespace protobuf {\n\nPROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_EXPORT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const AnyGlobalsTypeInternal Any_globals_\n        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);\n\nvoid Any::InternalSwap(Any* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {\n  _impl_.type_url_.InternalSwap(&other->_impl_.type_url_);\n}\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "#include \"google/protobuf/any.pb.h\"\n\nnamespace google {\nnamespace protobuf {\n\nPROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_EXPORT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const AnyGlobalsTypeInternal Any_globals_\n        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);\n\nvoid Any::InternalSwap(Any* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {\n  _impl_.type_url_.InternalSwap(&other->_impl_.type_url_);\n}\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:356",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#include \"google/protobuf/any.pb.h\"\n\nnamespace google {\nnamespace protobuf {\n\nPROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_EXPORT\n    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const AnyGlobalsTypeInternal Any_globals_\n        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);\n\nvoid Any::InternalSwap(Any* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {\n  _impl_.type_url_.InternalSwap(&other->_impl_.type_url_);\n}\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "#include \"google/protobuf/any.pb.h\"\n\nnamespace google {\nnamespace protobuf {\n\n                                                                \n                                      const AnyGlobalsTypeInternal Any_globals_\n                                                      ;\n\nvoid Any::InternalSwap(Any*                                    other) {\n  _impl_.type_url_.InternalSwap(&other->_impl_.type_url_);\n}\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:373",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#include <cstddef>\n\nnamespace google {\nnamespace protobuf {\n\ntemplate <typename Element>\nclass ABSL_ATTRIBUTE_WARN_UNUSED PROTOBUF_DECLSPEC_EMPTY_BASES\n    RepeatedField final\n    : private internal::RepeatedFieldBase {\n public:\n  int size() const { return size_; }\n\n private:\n  int size_;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "#include <cstddef>\n\nnamespace google {\nnamespace protobuf {\n\ntemplate <typename Element>\nclass ABSL_ATTRIBUTE_WARN_UNUSED PROTOBUF_DECLSPEC_EMPTY_BASES\n    RepeatedField final\n    : private internal::RepeatedFieldBase {\n public:\n  int size() const { return size_; }\n\n private:\n  int size_;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:373",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#include <cstddef>\n\nnamespace google {\nnamespace protobuf {\n\ntemplate <typename Element>\nclass ABSL_ATTRIBUTE_WARN_UNUSED PROTOBUF_DECLSPEC_EMPTY_BASES\n    RepeatedField final\n    : private internal::RepeatedFieldBase {\n public:\n  int size() const { return size_; }\n\n private:\n  int size_;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "#include <cstddef>\n\nnamespace google {\nnamespace protobuf {\n\ntemplate <typename Element>\nclass                                                         \n    RepeatedField final\n    : private internal::RepeatedFieldBase {\n public:\n  int size() const { return size_; }\n\n private:\n  int size_;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:393",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#include <string>\n\nnamespace google {\nnamespace protobuf {\n\nclass PROTOBUF_EXPORT Descriptor : private internal::SymbolBase {\n public:\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD absl::string_view name() const {\n    return all_names_[0];\n  }\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD absl::string_view full_name() const {\n    return all_names_[1];\n  }\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD const FileDescriptor* file() const;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "#include <string>\n\nnamespace google {\nnamespace protobuf {\n\nclass PROTOBUF_EXPORT Descriptor : private internal::SymbolBase {\n public:\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD absl::string_view name() const {\n    return all_names_[0];\n  }\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD absl::string_view full_name() const {\n    return all_names_[1];\n  }\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD const FileDescriptor* file() const;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:393",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#include <string>\n\nnamespace google {\nnamespace protobuf {\n\nclass PROTOBUF_EXPORT Descriptor : private internal::SymbolBase {\n public:\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD absl::string_view name() const {\n    return all_names_[0];\n  }\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD absl::string_view full_name() const {\n    return all_names_[1];\n  }\n  PROTOBUF_FUTURE_ADD_EARLY_NODISCARD const FileDescriptor* file() const;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "prepared": "#include <string>\n\nnamespace google {\nnamespace protobuf {\n\nclass                 Descriptor : private internal::SymbolBase {\n public:\n                                      absl::string_view name() const {\n    return all_names_[0];\n  }\n                                      absl::string_view full_name() const {\n    return all_names_[1];\n  }\n                                      const FileDescriptor* file() const;\n};\n\n}  // namespace protobuf\n}  // namespace google\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:413",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#include <string>\n\n#define FMT_BEGIN_EXPORT\nFMT_BEGIN_NAMESPACE\n\nFMT_BEGIN_EXPORT\n\n// A generic formatting context with custom output iterator and character\n// (code unit) support.\ntemplate <typename OutputIt, typename Char> class generic_context {\n private:\n  OutputIt out_;\n\n public:\n  constexpr auto out() -> OutputIt { return out_; }\n};\n\nFMT_END_EXPORT\nFMT_END_NAMESPACE\n",
+      "prepared": "#include <string>\n\n#define FMT_BEGIN_EXPORT\n                   \n\n                \n\n// A generic formatting context with custom output iterator and character\n// (code unit) support.\ntemplate <typename OutputIt, typename Char> class generic_context {\n private:\n  OutputIt out_;\n\n public:\n  constexpr auto out() -> OutputIt { return out_; }\n};\n\n              \n                 \n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:413",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#include <string>\n\n#define FMT_BEGIN_EXPORT\nFMT_BEGIN_NAMESPACE\n\nFMT_BEGIN_EXPORT\n\n// A generic formatting context with custom output iterator and character\n// (code unit) support.\ntemplate <typename OutputIt, typename Char> class generic_context {\n private:\n  OutputIt out_;\n\n public:\n  constexpr auto out() -> OutputIt { return out_; }\n};\n\nFMT_END_EXPORT\nFMT_END_NAMESPACE\n",
+      "prepared": "#include <string>\n\n#define FMT_BEGIN_EXPORT\n                   \n\n                \n\n// A generic formatting context with custom output iterator and character\n// (code unit) support.\ntemplate <typename OutputIt, typename Char> class generic_context {\n private:\n  OutputIt out_;\n\n public:\n  constexpr auto out() -> OutputIt { return out_; }\n};\n\n              \n                 \n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:434",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#include \"port/port.h\"\n\nnamespace leveldb {\n\nclass Counter {\n public:\n  void IncrementBy(int count) LOCKS_EXCLUDED(mu_) {\n    MutexLock l(&mu_);\n    count_ += count;\n  }\n  void Lock() EXCLUSIVE_LOCK_FUNCTION() { mu_.Lock(); }\n\n private:\n  port::Mutex mu_;\n  int count_ GUARDED_BY(mu_);\n};\n\n}  // namespace leveldb\n",
+      "prepared": "#include \"port/port.h\"\n\nnamespace leveldb {\n\nclass Counter {\n public:\n  void IncrementBy(int count) LOCKS_EXCLUDED(mu_) {\n    MutexLock l(&mu_);\n    count_ += count;\n  }\n  void Lock() EXCLUSIVE_LOCK_FUNCTION() { mu_.Lock(); }\n\n private:\n  port::Mutex mu_;\n  int count_ GUARDED_BY(mu_);\n};\n\n}  // namespace leveldb\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-attribute-macros.test.ts:434",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#include \"port/port.h\"\n\nnamespace leveldb {\n\nclass Counter {\n public:\n  void IncrementBy(int count) LOCKS_EXCLUDED(mu_) {\n    MutexLock l(&mu_);\n    count_ += count;\n  }\n  void Lock() EXCLUSIVE_LOCK_FUNCTION() { mu_.Lock(); }\n\n private:\n  port::Mutex mu_;\n  int count_ GUARDED_BY(mu_);\n};\n\n}  // namespace leveldb\n",
+      "prepared": "#include \"port/port.h\"\n\nnamespace leveldb {\n\nclass Counter {\n public:\n  void IncrementBy(int count)                     {\n    MutexLock l(&mu_);\n    count_ += count;\n  }\n  void Lock()                           { mu_.Lock(); }\n\n private:\n  port::Mutex mu_;\n  int count_                ;\n};\n\n}  // namespace leveldb\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:95",
+      "language": "c",
+      "path": "sample.c",
+      "source": "const char* text = R\"TAG(\nUE_DEPRECATED(1)\nint example;",
+      "prepared": "const char* text = R\"TAG(\nUE_DEPRECATED(1)\nint example;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:95",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "const char* text = R\"TAG(\nUE_DEPRECATED(1)\nint example;",
+      "prepared": "const char* text = R\"TAG(\nUE_DEPRECATED(1)\nint example;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:101",
+      "language": "c",
+      "path": "sample.c",
+      "source": "\nint helper_after() { return 1; }\n",
+      "prepared": "\nint helper_after() { return 1; }\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:101",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "\nint helper_after() { return 1; }\n",
+      "prepared": "\nint helper_after() { return 1; }\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:103",
+      "language": "c",
+      "path": "sample.c",
+      "source": " helper_after(void) {}\n",
+      "prepared": " helper_after(void) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:103",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": " helper_after(void) {}\n",
+      "prepared": " helper_after(void) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:104",
+      "language": "c",
+      "path": "sample.c",
+      "source": " {\n    visit();\n  }\n}\n",
+      "prepared": " {\n    visit();\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:104",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": " {\n    visit();\n  }\n}\n",
+      "prepared": " {\n    visit();\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:115",
+      "language": "c",
+      "path": "sample.c",
+      "source": "\nint helper_after(void) {}\n",
+      "prepared": "\nint helper_after(void) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:115",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "\nint helper_after(void) {}\n",
+      "prepared": "\nint helper_after(void) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:128",
+      "language": "c",
+      "path": "sample.c",
+      "source": "void reset(void) {\n  RESET_THING(",
+      "prepared": "void reset(void) {\n  RESET_THING(",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:128",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "void reset(void) {\n  RESET_THING(",
+      "prepared": "void reset(void) {\n  RESET_THING(",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:145",
+      "language": "c",
+      "path": "sample.c",
+      "source": "const auto* text = u8R\"TAG(\n  for_each_item(item, list) {\n    visit(item);\n  }\nstatic DECLARE_THING(value);\nuse(struct Example);\n  RESET_THING(.field = 1);\nclass EXAMPLE_API Example {\nFORCEINLINE int example() {}\n};\nFMT_BEGIN_NAMESPACE\nint example;\n__section(\n)TAG\";\n",
+      "prepared": "const auto* text = u8R\"TAG(\n  for_each_item(item, list) {\n    visit(item);\n  }\nstatic DECLARE_THING(value);\nuse(struct Example);\n  RESET_THING(.field = 1);\nclass EXAMPLE_API Example {\nFORCEINLINE int example() {}\n};\nFMT_BEGIN_NAMESPACE\nint example;\n__section(\n)TAG\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-raw-string-preparse-1505.test.ts:145",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "const auto* text = u8R\"TAG(\n  for_each_item(item, list) {\n    visit(item);\n  }\nstatic DECLARE_THING(value);\nuse(struct Example);\n  RESET_THING(.field = 1);\nclass EXAMPLE_API Example {\nFORCEINLINE int example() {}\n};\nFMT_BEGIN_NAMESPACE\nint example;\n__section(\n)TAG\";\n",
+      "prepared": "const auto* text = u8R\"TAG(\n  for_each_item(item, list) {\n    visit(item);\n  }\nstatic DECLARE_THING(value);\nuse(struct Example);\n  RESET_THING(.field = 1);\nclass EXAMPLE_API Example {\nFORCEINLINE int example() {}\n};\nFMT_BEGIN_NAMESPACE\nint example;\n__section(\n)TAG\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:23",
+      "language": "c",
+      "path": "sample.c",
+      "source": "#pragma once\n#define JSON_PRIVATE_UNLESS_TESTED private\n#define JSON_HEDLEY_RETURNS_NON_NULL\n#define JSON_HEDLEY_WARN_UNUSED_RESULT\n\ntemplate<typename T>\nclass basic_json\n{\n  JSON_PRIVATE_UNLESS_TESTED:\n    using lexer = int;\n\n    template<typename U, typename... Args>\n    JSON_HEDLEY_RETURNS_NON_NULL\n    static U* create(Args&& ... args)\n    {\n        return nullptr;\n    }\n\n    class nesting_depth_guard\n    {\n      public:\n        nesting_depth_guard() noexcept\n#ifdef JSON_NO_THREAD_LOCAL\n            : m_okay(false)\n#else\n            : m_okay(depth() < 10)\n#endif\n        {\n        }\n      private:\n        bool m_okay;\n    };\n\n  public:\n    /// @brief returns version information on the library\n    /// @sa https://json.nlohmann.me/api/basic_json/meta/\n    JSON_HEDLEY_WARN_UNUSED_RESULT\n    static basic_json meta()\n    {\n        return basic_json();\n    }\n\n    template < typename ValueType >\n#if defined(JSON_HAS_CPP_14)\n    constexpr\n#endif\n    auto get() const -> ValueType\n    {\n        return ValueType();\n    }\n\n    void dump() const {}\n};\n",
+      "prepared": "#pragma once\n#define JSON_PRIVATE_UNLESS_TESTED private\n#define JSON_HEDLEY_RETURNS_NON_NULL\n#define JSON_HEDLEY_WARN_UNUSED_RESULT\n\ntemplate<typename T>\nclass basic_json\n{\n  JSON_PRIVATE_UNLESS_TESTED:\n    using lexer = int;\n\n    template<typename U, typename... Args>\n                                \n    static U* create(Args&& ... args)\n    {\n        return nullptr;\n    }\n\n    class nesting_depth_guard\n    {\n      public:\n        nesting_depth_guard() noexcept\n                           \n            : m_okay(false)\n     \n            : m_okay(depth() < 10)\n      \n        {\n        }\n      private:\n        bool m_okay;\n    };\n\n  public:\n    /// @brief returns version information on the library\n    /// @sa https://json.nlohmann.me/api/basic_json/meta/\n                                  \n    static basic_json meta()\n    {\n        return basic_json();\n    }\n\n    template < typename ValueType >\n#if defined(JSON_HAS_CPP_14)\n    constexpr\n#endif\n    auto get() const -> ValueType\n    {\n        return ValueType();\n    }\n\n    void dump() const {}\n};\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:23",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "#pragma once\n#define JSON_PRIVATE_UNLESS_TESTED private\n#define JSON_HEDLEY_RETURNS_NON_NULL\n#define JSON_HEDLEY_WARN_UNUSED_RESULT\n\ntemplate<typename T>\nclass basic_json\n{\n  JSON_PRIVATE_UNLESS_TESTED:\n    using lexer = int;\n\n    template<typename U, typename... Args>\n    JSON_HEDLEY_RETURNS_NON_NULL\n    static U* create(Args&& ... args)\n    {\n        return nullptr;\n    }\n\n    class nesting_depth_guard\n    {\n      public:\n        nesting_depth_guard() noexcept\n#ifdef JSON_NO_THREAD_LOCAL\n            : m_okay(false)\n#else\n            : m_okay(depth() < 10)\n#endif\n        {\n        }\n      private:\n        bool m_okay;\n    };\n\n  public:\n    /// @brief returns version information on the library\n    /// @sa https://json.nlohmann.me/api/basic_json/meta/\n    JSON_HEDLEY_WARN_UNUSED_RESULT\n    static basic_json meta()\n    {\n        return basic_json();\n    }\n\n    template < typename ValueType >\n#if defined(JSON_HAS_CPP_14)\n    constexpr\n#endif\n    auto get() const -> ValueType\n    {\n        return ValueType();\n    }\n\n    void dump() const {}\n};\n",
+      "prepared": "#pragma once\n#define JSON_PRIVATE_UNLESS_TESTED private\n#define JSON_HEDLEY_RETURNS_NON_NULL\n#define JSON_HEDLEY_WARN_UNUSED_RESULT\n\ntemplate<typename T>\nclass basic_json\n{\n  private                   :\n    using lexer = int;\n\n    template<typename U, typename... Args>\n                                \n    static U* create(Args&& ... args)\n    {\n        return nullptr;\n    }\n\n    class nesting_depth_guard\n    {\n      public:\n        nesting_depth_guard() noexcept\n                           \n            : m_okay(false)\n     \n                                  \n      \n        {\n        }\n      private:\n        bool m_okay;\n    };\n\n  public:\n    /// @brief returns version information on the library\n    /// @sa https://json.nlohmann.me/api/basic_json/meta/\n                                  \n    static basic_json meta()\n    {\n        return basic_json();\n    }\n\n    template < typename ValueType >\n                            \n    constexpr\n      \n    auto get() const -> ValueType\n    {\n        return ValueType();\n    }\n\n    void dump() const {}\n};\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:103",
+      "language": "c",
+      "path": "sample.c",
+      "source": "A() noexcept\n#ifdef X\n  : a(1)\n#else\n  : a(2)\n#endif\n{}\n",
+      "prepared": "A() noexcept\n        \n  : a(1)\n     \n  : a(2)\n      \n{}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:103",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "A() noexcept\n#ifdef X\n  : a(1)\n#else\n  : a(2)\n#endif\n{}\n",
+      "prepared": "A() noexcept\n        \n  : a(1)\n     \n        \n      \n{}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:110",
+      "language": "c",
+      "path": "sample.c",
+      "source": "int a;\n#ifdef X\nint b;\n#endif\n",
+      "prepared": "int a;\n#ifdef X\nint b;\n#endif\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:110",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "int a;\n#ifdef X\nint b;\n#endif\n",
+      "prepared": "int a;\n#ifdef X\nint b;\n#endif\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:115",
+      "language": "c",
+      "path": "sample.c",
+      "source": "typedef enum {\n  CURLE_OK,\n  CURLE_TOO_LARGE, /* 100 */\n  CURL_LAST /* never use! */\n} CURLcode;\n",
+      "prepared": "typedef enum {\n  CURLE_OK,\n  CURLE_TOO_LARGE, /* 100 */\n  CURL_LAST /* never use! */\n} CURLcode;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/cpp-conditional-class.test.ts:115",
+      "language": "cpp",
+      "path": "sample.cpp",
+      "source": "typedef enum {\n  CURLE_OK,\n  CURLE_TOO_LARGE, /* 100 */\n  CURL_LAST /* never use! */\n} CURLcode;\n",
+      "prepared": "typedef enum {\n  CURLE_OK,\n  CURLE_TOO_LARGE, /* 100 */\n  CURL_LAST /* never use! */\n} CURLcode;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/flow-js.test.ts:20",
+      "language": "tsx",
+      "path": "sample.js",
+      "source": "/**\n * @flow strict-local\n * @format\n */\nimport typeof * as React from 'react';\nimport * as React from 'react';\n\ntype Props = $ReadOnly<{|\n  values: ?Array<string>,\n  onChange?: ?(event: {nativeEvent: {value: string}, ...}) => mixed,\n|}>;\n\nopaque type Token = string;\n\nclass SegmentedControl extends React.Component<Props> {\n  render(): React.Node {\n    return this._renderItems();\n  }\n\n  _renderItems(): React.Node {\n    return null;\n  }\n}\n\nmodule.exports = SegmentedControl;\n",
+      "prepared": "/**\n * @flow strict-local\n * @format\n */\nimport        * as React from 'react';\nimport * as React from 'react';\n\ntype Props = $ReadOnly<{ \n  values:  Array<string>,\n  onChange?:  (event: {nativeEvent: {value: string},    }) => mixed,\n }>;\n\n       type Token = string;\n\nclass SegmentedControl extends React.Component<Props> {\n  render(): React.Node {\n    return this._renderItems();\n  }\n\n  _renderItems(): React.Node {\n    return null;\n  }\n}\n\nmodule.exports = SegmentedControl;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/flow-js.test.ts:51",
+      "language": "tsx",
+      "path": "sample.js",
+      "source": "function plain() { return 1; }\nmodule.exports = plain;\n",
+      "prepared": "function plain() { return 1; }\nmodule.exports = plain;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/flow-js.test.ts:64",
+      "language": "tsx",
+      "path": "sample.js",
+      "source": "// @noflow\nconst a = 1;",
+      "prepared": "// @noflow\nconst a = 1;",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:60",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export type *\n  from \"./types\";",
+      "prepared": "export      *\n  from \"./types\";",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:60",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export      *\n  from \"./types\";",
+      "prepared": "export      *\n  from \"./types\";",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:62",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "declare module \"m\" {\n  export type * from \"./y\";\n}",
+      "prepared": "declare module \"m\" {\n  export      * from \"./y\";\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:62",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "declare module \"m\" {\n  export      * from \"./y\";\n}",
+      "prepared": "declare module \"m\" {\n  export      * from \"./y\";\n}",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:66",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export * from \"./a\";\r\nexport type * from \"./b\";\r\n",
+      "prepared": "export * from \"./a\";\r\nexport      * from \"./b\";\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:66",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export * from \"./a\";\r\nexport      * from \"./b\";\r\n",
+      "prepared": "export * from \"./a\";\r\nexport      * from \"./b\";\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:84",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "/**\n * export type * from \"./types\";\n */",
+      "prepared": "/**\n * export type * from \"./types\";\n */",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:164",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export type * from \"./types.js\";\nexport const = ;\n",
+      "prepared": "export      * from \"./types.js\";\nexport const = ;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:179",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export { FooClient } from \"./client.js\";\nexport * from \"./types.js\";\n",
+      "prepared": "export { FooClient } from \"./client.js\";\nexport * from \"./types.js\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:184",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "// prefer export type * from \"./types\"\nexport * from \"./types\";\n",
+      "prepared": "// prefer export type * from \"./types\"\nexport * from \"./types\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:188",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "declare module \"sdk\" {\n  export type * from \"./types\";\n  export function connect(): void;\n}\n",
+      "prepared": "declare module \"sdk\" {\n  export      * from \"./types\";\n  export function connect(): void;\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:219",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export interface FooClientOptions { baseUrl: string }\n",
+      "prepared": "export interface FooClientOptions { baseUrl: string }\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:220",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export class FooApiError extends Error {}\n",
+      "prepared": "export class FooApiError extends Error {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:221",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export class FooClient {\n",
+      "prepared": "export class FooClient {\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:222",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "  constructor(private opts: FooClientOptions) {}\n",
+      "prepared": "  constructor(private opts: FooClientOptions) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:223",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "  get(path: string) { return this.opts.baseUrl + path; }\n",
+      "prepared": "  get(path: string) { return this.opts.baseUrl + path; }\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:225",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export const DAYS_OF_WEEK = ['mon', 'tue'];\nexport type Schedule = { day: string };\n",
+      "prepared": "export const DAYS_OF_WEEK = ['mon', 'tue'];\nexport type Schedule = { day: string };\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:226",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export interface Circle { radius: number }\n",
+      "prepared": "export interface Circle { radius: number }\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:229",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export interface FooClientOptions { decoy: true }\nexport type Schedule = { decoy: true };\n",
+      "prepared": "export interface FooClientOptions { decoy: true }\nexport type Schedule = { decoy: true };\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:231",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "import { FooClient, type FooClientOptions } from \"../packages/sdk/src/index.js\";\n",
+      "prepared": "import { FooClient, type FooClientOptions } from \"../packages/sdk/src/index.js\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:232",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "import type { Schedule } from \"../packages/sdk/src/index.js\";\n",
+      "prepared": "import type { Schedule } from \"../packages/sdk/src/index.js\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:233",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "export function run(o: FooClientOptions, s: Schedule) {\n",
+      "prepared": "export function run(o: FooClientOptions, s: Schedule) {\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/ts-export-type-star.test.ts:234",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "  return new FooClient(o).get(s.day);\n",
+      "prepared": "  return new FooClient(o).get(s.day);\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:24",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "module.exports = require('./lib/express');\n",
+      "prepared": "module.exports = require('./lib/express');\n",
+      "commonjs": [
+        {
+          "fromNodeId": "file:sample.js",
+          "referenceName": "./lib/express",
+          "referenceKind": "imports",
+          "line": 1,
+          "column": 17,
+          "filePath": "sample.js",
+          "language": "javascript"
+        }
+      ]
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:26",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "var EventEmitter = require('events').EventEmitter;\nvar mixin = require('merge-descriptors');\nvar proto = require('./application');\nvar req = require('./request');\n\nfunction createApplication() {\n  var app = function () {};\n  mixin(app, EventEmitter.prototype, false);\n  mixin(app, proto, false);\n  app.request = Object.create(req);\n  return app;\n}\n\nmodule.exports = createApplication;\n",
+      "prepared": "var EventEmitter = require('events').EventEmitter;\nvar mixin = require('merge-descriptors');\nvar proto = require('./application');\nvar req = require('./request');\n\nfunction createApplication() {\n  var app = function () {};\n  mixin(app, EventEmitter.prototype, false);\n  mixin(app, proto, false);\n  app.request = Object.create(req);\n  return app;\n}\n\nmodule.exports = createApplication;\n",
+      "commonjs": [
+        {
+          "fromNodeId": "file:sample.js",
+          "referenceName": "./application",
+          "referenceKind": "imports",
+          "line": 3,
+          "column": 12,
+          "filePath": "sample.js",
+          "language": "javascript"
+        },
+        {
+          "fromNodeId": "file:sample.js",
+          "referenceName": "./request",
+          "referenceKind": "imports",
+          "line": 4,
+          "column": 10,
+          "filePath": "sample.js",
+          "language": "javascript"
+        }
+      ]
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:41",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "var app = exports = module.exports = {};\napp.init = function init() {};\n",
+      "prepared": "var app = exports = module.exports = {};\napp.init = function init() {};\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:44",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "var req = Object.create({});\nmodule.exports = req;\n",
+      "prepared": "var req = Object.create({});\nmodule.exports = req;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:47",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "var express = require('..');\nvar assert = require(\"assert\");\n",
+      "prepared": "var express = require('..');\nvar assert = require(\"assert\");\n",
+      "commonjs": [
+        {
+          "fromNodeId": "file:sample.js",
+          "referenceName": "..",
+          "referenceKind": "imports",
+          "line": 1,
+          "column": 14,
+          "filePath": "sample.js",
+          "language": "javascript"
+        }
+      ]
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:50",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "import './polyfills';\nimport helper = require('./helper');\nexport const value = helper.run();\n",
+      "prepared": "import './polyfills';\nimport helper = require('./helper');\nexport const value = helper.run();\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/commonjs-require-imports.test.ts:56",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "export function run(): number {\n  return 1;\n}\n",
+      "prepared": "export function run(): number {\n  return 1;\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/fixtures/kernel-parity/torture.c",
+      "language": "c",
+      "path": "torture.c",
+      "source": "/* Torture fixture for the C kernel walker (R7a) — exercises every c-path\n * branch of the checklist: fn-ptr tables, typedef enum/struct, file-scope\n * consts incl. multi-declarator, the macro-prototype misparse skip,\n * value-refs (+ shadow prune), the leading-attr-macro preParse blank, and\n * the C call shapes. Must parse ERROR-FREE post-preParse or the kernel arm\n * defers. */\n#include <stdio.h>\n#include <sys/socket.h>\n#include \"local_ops.h\"\n\n/** Retry budget for the poller. */\nstatic const int MAX_RETRIES = 3;\nstatic const int LOW_WATER = 2, HIGH_WATER = 8;\nstatic int counter = 0;\nstatic const char *BANNER = \"torture\";\n\n/* Bare identifier declarators are the macro-prototype misparse shape and are\n * skipped by design (uninit scalars are the accepted loss). */\nint bare_global;\nMYLIB_API config_handle;\n\n/* Leading attribute macro — blanked by preParseCSource (#1211), so the real\n * name survives on both arms. */\nSEC_ATTR UINT32 masked_entry(VOID) { return 0; }\n\ntypedef enum { STATE_IDLE, STATE_RUNNING, STATE_DONE } run_state_t;\n\ntypedef struct {\n  int fd;\n  void (*on_recv)(int);\n} conn_t;\n\ntypedef struct conn_pool conn_pool_t;\n\ntypedef int (*cb_t)(int);\n\nenum wire_flags { WIRE_A = 1, WIRE_B = 2 };\n\nstruct packet {\n  int len;\n  unsigned char body[64];\n  struct packet *next;\n  cb_t *async_cb;\n};\n\n/** Sum helper (docstring). */\nstatic int add(int a, int b) { return a + b; }\n\nstatic int cb_a(int x) { return add(x, 1); }\nstatic int cb_b(int x) { return add(x, 2); }\n\n/* fn-ptr table at file scope — the ungated 'list' capture positions. */\nstatic cb_t DISPATCH_TABLE[] = { cb_a, cb_b };\n\nstatic void handle_recv(int fd);\n\n/* struct initializer — the ungated 'value' capture positions. */\nstatic const struct handler_ops OPS = { .recv = handle_recv, .flags = WIRE_A };\n\nstatic void handle_recv(int fd) {\n  struct packet pkt;\n  pkt.len = fd;\n  printf(\"fd=%d retries=%d\\n\", fd, MAX_RETRIES);\n}\n\n/* Local shadow of a file-scope const — the shadow prune drops HIGH_WATER as a\n * value-ref target while LOW_WATER stays live. */\nstatic int shadowed_reader(void) {\n  int HIGH_WATER = 99;\n  return HIGH_WATER + LOW_WATER;\n}\n\nstatic int use_table(int idx, int v) {\n  cb_t fn = DISPATCH_TABLE[idx];\n  int r = (*fn)(v);\n  conn_t c = { 1, 0 };\n  c.on_recv(r);\n  return counter + r;\n}\n\nstatic void spawn_workers(void) {\n  register_handler(cb_a);\n  signal_connect(&cb_b);\n}\n\n/* ---- deferral round 2 (the linux-idiom preParse family) --------------------\n * Every shape below used to drop the WHOLE file into error recovery (and\n * therefore defer it to wasm). Each now parses via a round-2 blank/rewrite;\n * this section pins kernel-vs-wasm parity on all of them at once. */\n\n/* file-scope prefixed declaration macros — whole-line blank */\nstatic DEFINE_PER_CPU(struct llist_head, rstat_backlog_list);\nstatic DECLARE_WORK(init_free_wq, do_free_init);\nextern DECLARE_PER_CPU(struct tick_device, tick_cpu_device);\n\n/* initialized per-cpu declaration — the REWRITE (type + name survive) */\nstatic DEFINE_PER_CPU(struct conn, cpuhp_state) = {\n  .fd = 1,\n};\n\n/* type-keyword arguments — keyword (and trailing stars) blank */\nstatic void type_args(void *head, void *map) {\n  void *opts = kzalloc_obj(struct conn);\n  void *entry = list_first_entry(head,\n             struct conn, fd);\n  void *outer = hlist_entry_safe(rcu_dereference_raw(hlist_next_rcu(head)),\n             struct conn, fd);\n  use_ptr(outer, container_of(map, struct conn, fd));\n  use_ptr(opts, entry);\n}\nDEFINE_PER_CPU(struct conn *, ksoftirqd);\n\n/* parameterized annotations — name+args blank whole */\nstatic void cleanup_scope(void) {\n  struct conn *token __free(kfree) = NULL;\n  use_ptr(token, token);\n}\nstatic void __printf(1, 2) log_fmt(const char *fmt, ...);\nstruct flex_tail {\n  int count;\n  int owners[] __counted_by(count);\n};\n\n/* sandwiched lowercase annotations + C23 auto */\nstatic notrace void tick_do(int x) { use_val(x); }\nstatic nokprobe_inline void arm_probe(void) { }\nstatic void auto_user(void) {\n  auto hb = shadowed_reader();\n  use_val(hb);\n}\n\n/* va_arg with a qualified type argument */\nstatic void drain_args(va_list ap) {\n  const char *s = va_arg(ap, const char *);\n  int n = va_arg(ap, int);\n  use_ptr((void *)s, (void *)(long)n);\n}\n\n/* multi-line statement-position iterator macro */\nstatic void walk_rcu(void *head) {\n  hlist_for_each_entry_rcu(pos, head, hlist,\n         lockdep_is_held(&probe_mutex)) {\n    use_ptr(pos, head);\n  }\n}\n\n/* GNU named-variadic define — dots blank, body survives */\n#define verbose(env, fmt, args...) log_writer(env, fmt, ##args)\n\n/* block-scope prefixed declaration macro */\nstatic void ratelimited_warn(void) {\n  static DEFINE_RATELIMIT_STATE(ratelimit, 5 * HZ, 5);\n  use_ptr(&ratelimit, 0);\n}\n\n/* named union definition, forward declaration, and anonymous typedef union —\n   the definition is a node, the forward decl is not (#UNION) */\nunion packet_hdr {\n  unsigned int raw;\n  struct { unsigned char ver, flags; } parts;\n};\n\nunion opaque_hdr;\n\ntypedef union {\n  unsigned int u;\n  float f;\n} word_t;\n\nstatic unsigned int hdr_raw(union packet_hdr *h) { return h->raw; }\n\n/* struct, union and enum definitions in a declaration's type: each is a node\n   beside the declaration's variables, documented by the comment above the\n   declaration; an unnamed one takes the name of its first variable */\nstatic void noop_builtin(void) {}\n\n/* The parser's state. */\nstatic struct parse_state { int depth; const char *at; } parse_state, *active_state;\nstatic struct { int argc; char **argv; } SPT;\nstatic const struct { const char *name; void (*fn)(void); } builtin_table[] = {\n  { \"noop\", noop_builtin },\n};\nunion { int i; float f; } scratch_word = { 0 };\nenum { MODE_IDLE, MODE_BUSY } current_mode;\nstruct { int unused; } make_unnamed(void);\n\nstatic int declared_types_local(void) {\n  static struct { int hits; } local_stats;\n  return ++local_stats.hits + current_mode;\n}\n\n/* members: the types each is declared with are references from its holder, or\n   from the alias they are named through */\ntypedef struct member_s member_t;\ntypedef enum { PAUSE_OFF, PAUSE_ON } pause_mode;\ntypedef union { int i; float f; } member_value;\ntypedef void (*member_cb)(member_t *m, word_t w);\ntypedef word_t *word_ptr;\n\nstruct member_s {\n  member_t *next;\n  struct member_s *prev;\n  word_t by_value;\n  word_t by_array[4];\n  const word_t *by_pointer;\n  word_t **by_pointers;\n  struct parse_state *tagged, second, third[2];\n  union packet_hdr header;\n  enum hdr_kind kind;\n  pause_mode mode;\n  member_value (*make)(member_t *from, const struct parse_state *state);\n  void *(*table[2])(word_t w);\n  unsigned long mask;\n  int bits : 3;\n#ifdef MEMBER_EXTRA\n  word_t extra;\n#elif defined(MEMBER_OTHER)\n  member_value other;\n#else\n  pause_mode fallback;\n#endif\n  union { word_t in_anonymous; int raw; };\n  struct { member_value in_unnamed; } named_member;\n  struct member_inner { word_t deep; } nested;\n  enum { MEMBER_ON, MEMBER_OFF } state;\n  enum member_level { MEMBER_LOW, MEMBER_HIGH } level;\n};\n\ntypedef struct self_list {\n  struct self_list *next;\n  word_t value;\n} self_list;\n\ntypedef union {\n  word_t a;\n  struct { self_list *b; } c;\n} wrapped_member;\n",
+      "prepared": "/* Torture fixture for the C kernel walker (R7a) — exercises every c-path\n * branch of the checklist: fn-ptr tables, typedef enum/struct, file-scope\n * consts incl. multi-declarator, the macro-prototype misparse skip,\n * value-refs (+ shadow prune), the leading-attr-macro preParse blank, and\n * the C call shapes. Must parse ERROR-FREE post-preParse or the kernel arm\n * defers. */\n#include <stdio.h>\n#include <sys/socket.h>\n#include \"local_ops.h\"\n\n/** Retry budget for the poller. */\nstatic const int MAX_RETRIES = 3;\nstatic const int LOW_WATER = 2, HIGH_WATER = 8;\nstatic int counter = 0;\nstatic const char *BANNER = \"torture\";\n\n/* Bare identifier declarators are the macro-prototype misparse shape and are\n * skipped by design (uninit scalars are the accepted loss). */\nint bare_global;\nMYLIB_API config_handle;\n\n/* Leading attribute macro — blanked by preParseCSource (#1211), so the real\n * name survives on both arms. */\n         UINT32 masked_entry(VOID) { return 0; }\n\ntypedef enum { STATE_IDLE, STATE_RUNNING, STATE_DONE } run_state_t;\n\ntypedef struct {\n  int fd;\n  void (*on_recv)(int);\n} conn_t;\n\ntypedef struct conn_pool conn_pool_t;\n\ntypedef int (*cb_t)(int);\n\nenum wire_flags { WIRE_A = 1, WIRE_B = 2 };\n\nstruct packet {\n  int len;\n  unsigned char body[64];\n  struct packet *next;\n  cb_t *async_cb;\n};\n\n/** Sum helper (docstring). */\nstatic int add(int a, int b) { return a + b; }\n\nstatic int cb_a(int x) { return add(x, 1); }\nstatic int cb_b(int x) { return add(x, 2); }\n\n/* fn-ptr table at file scope — the ungated 'list' capture positions. */\nstatic cb_t DISPATCH_TABLE[] = { cb_a, cb_b };\n\nstatic void handle_recv(int fd);\n\n/* struct initializer — the ungated 'value' capture positions. */\nstatic const struct handler_ops OPS = { .recv = handle_recv, .flags = WIRE_A };\n\nstatic void handle_recv(int fd) {\n  struct packet pkt;\n  pkt.len = fd;\n  printf(\"fd=%d retries=%d\\n\", fd, MAX_RETRIES);\n}\n\n/* Local shadow of a file-scope const — the shadow prune drops HIGH_WATER as a\n * value-ref target while LOW_WATER stays live. */\nstatic int shadowed_reader(void) {\n  int HIGH_WATER = 99;\n  return HIGH_WATER + LOW_WATER;\n}\n\nstatic int use_table(int idx, int v) {\n  cb_t fn = DISPATCH_TABLE[idx];\n  int r = (*fn)(v);\n  conn_t c = { 1, 0 };\n  c.on_recv(r);\n  return counter + r;\n}\n\nstatic void spawn_workers(void) {\n  register_handler(cb_a);\n  signal_connect(&cb_b);\n}\n\n/* ---- deferral round 2 (the linux-idiom preParse family) --------------------\n * Every shape below used to drop the WHOLE file into error recovery (and\n * therefore defer it to wasm). Each now parses via a round-2 blank/rewrite;\n * this section pins kernel-vs-wasm parity on all of them at once. */\n\n/* file-scope prefixed declaration macros — whole-line blank */\n                                                             \n                                                \n                                                            \n\n/* initialized per-cpu declaration — the REWRITE (type + name survive) */\nstatic struct conn                 cpuhp_state  = {\n  .fd = 1,\n};\n\n/* type-keyword arguments — keyword (and trailing stars) blank */\nstatic void type_args(void *head, void *map) {\n  void *opts = kzalloc_obj(       conn);\n  void *entry = list_first_entry(head,\n                    conn, fd);\n  void *outer = hlist_entry_safe(rcu_dereference_raw(hlist_next_rcu(head)),\n                    conn, fd);\n  use_ptr(outer, container_of(map,        conn, fd));\n  use_ptr(opts, entry);\n}\nDEFINE_PER_CPU(       conn  , ksoftirqd);\n\n/* parameterized annotations — name+args blank whole */\nstatic void cleanup_scope(void) {\n  struct conn *token               = NULL;\n  use_ptr(token, token);\n}\nstatic void                log_fmt(const char *fmt, ...);\nstruct flex_tail {\n  int count;\n  int owners[]                    ;\n};\n\n/* sandwiched lowercase annotations + C23 auto */\nstatic         void tick_do(int x) { use_val(x); }\nstatic                 void arm_probe(void) { }\nstatic void auto_user(void) {\n       hb = shadowed_reader();\n  use_val(hb);\n}\n\n/* va_arg with a qualified type argument */\nstatic void drain_args(va_list ap) {\n  const char *s = va_arg(ap              );\n  int n = va_arg(ap, int);\n  use_ptr((void *)s, (void *)(long)n);\n}\n\n/* multi-line statement-position iterator macro */\nstatic void walk_rcu(void *head) {\n  hlist_for_each_entry_rcu;                 \n                                        {\n    use_ptr(pos, head);\n  }\n}\n\n/* GNU named-variadic define — dots blank, body survives */\n#define verbose(env, fmt, args   ) log_writer(env, fmt, ##args)\n\n/* block-scope prefixed declaration macro */\nstatic void ratelimited_warn(void) {\n                                                      \n  use_ptr(&ratelimit, 0);\n}\n\n/* named union definition, forward declaration, and anonymous typedef union —\n   the definition is a node, the forward decl is not (#UNION) */\nunion packet_hdr {\n  unsigned int raw;\n  struct { unsigned char ver, flags; } parts;\n};\n\nunion opaque_hdr;\n\ntypedef union {\n  unsigned int u;\n  float f;\n} word_t;\n\nstatic unsigned int hdr_raw(union packet_hdr *h) { return h->raw; }\n\n/* struct, union and enum definitions in a declaration's type: each is a node\n   beside the declaration's variables, documented by the comment above the\n   declaration; an unnamed one takes the name of its first variable */\nstatic void noop_builtin(void) {}\n\n/* The parser's state. */\nstatic struct parse_state { int depth; const char *at; } parse_state, *active_state;\nstatic struct { int argc; char **argv; } SPT;\nstatic const struct { const char *name; void (*fn)(void); } builtin_table[] = {\n  { \"noop\", noop_builtin },\n};\nunion { int i; float f; } scratch_word = { 0 };\nenum { MODE_IDLE, MODE_BUSY } current_mode;\nstruct { int unused; } make_unnamed(void);\n\nstatic int declared_types_local(void) {\n  static struct { int hits; } local_stats;\n  return ++local_stats.hits + current_mode;\n}\n\n/* members: the types each is declared with are references from its holder, or\n   from the alias they are named through */\ntypedef struct member_s member_t;\ntypedef enum { PAUSE_OFF, PAUSE_ON } pause_mode;\ntypedef union { int i; float f; } member_value;\ntypedef void (*member_cb)(member_t *m, word_t w);\ntypedef word_t *word_ptr;\n\nstruct member_s {\n  member_t *next;\n  struct member_s *prev;\n  word_t by_value;\n  word_t by_array[4];\n  const word_t *by_pointer;\n  word_t **by_pointers;\n  struct parse_state *tagged, second, third[2];\n  union packet_hdr header;\n  enum hdr_kind kind;\n  pause_mode mode;\n  member_value (*make)(member_t *from, const struct parse_state *state);\n  void *(*table[2])(word_t w);\n  unsigned long mask;\n  int bits : 3;\n#ifdef MEMBER_EXTRA\n  word_t extra;\n#elif defined(MEMBER_OTHER)\n  member_value other;\n#else\n  pause_mode fallback;\n#endif\n  union { word_t in_anonymous; int raw; };\n  struct { member_value in_unnamed; } named_member;\n  struct member_inner { word_t deep; } nested;\n  enum { MEMBER_ON, MEMBER_OFF } state;\n  enum member_level { MEMBER_LOW, MEMBER_HIGH } level;\n};\n\ntypedef struct self_list {\n  struct self_list *next;\n  word_t value;\n} self_list;\n\ntypedef union {\n  word_t a;\n  struct { self_list *b; } c;\n} wrapped_member;\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/fixtures/kernel-parity/torture-macros.c",
+      "language": "c",
+      "path": "torture-macros.c",
+      "source": "/* Parity fixture for #1838 in C: function-like macros as `constant` nodes\n * at file scope and inside a body, an object-like define that is NOT a node,\n * and the call refs the macro invocations still record. */\n#define TRACE_POINT(value) ((void)(value))\n#define VERSION 7\n#define MAX(a, b) ((a) > (b) ? (a) : (b))\n\nstatic int helper(int x) { return x; }\n\nint exercise(int value) {\n  TRACE_POINT(value);\n#define LOCAL_TRACE(v) ((void)(v))\n  LOCAL_TRACE(1);\n  return MAX(helper(value), VERSION);\n}\n",
+      "prepared": "/* Parity fixture for #1838 in C: function-like macros as `constant` nodes\n * at file scope and inside a body, an object-like define that is NOT a node,\n * and the call refs the macro invocations still record. */\n#define TRACE_POINT(value) ((void)(value))\n#define VERSION 7\n#define MAX(a, b) ((a) > (b) ? (a) : (b))\n\nstatic int helper(int x) { return x; }\n\nint exercise(int value) {\n  TRACE_POINT(value);\n#define LOCAL_TRACE(v) ((void)(v))\n  LOCAL_TRACE(1);\n  return MAX(helper(value), VERSION);\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/fixtures/kernel-parity/torture.cpp",
+      "language": "cpp",
+      "path": "torture.cpp",
+      "source": "/// Torture fixture for the C++ kernel walker (R7a) — namespaces (incl. C++17\n/// nested + anonymous), out-of-line Cls::method defs, templates + template\n/// bases, operator definitions, stack construction, local fn-ptrs, UE-macro\n/// shapes THROUGH the hoisted preParse, using-aliases, access specifiers,\n/// static-member value reads, and the cpp call shapes. Must parse ERROR-FREE\n/// post-preParse or the kernel arm defers (spaced operator CALL SITES live in\n/// torture-defer.cpp — they produce ERROR nodes by design).\n#include <vector>\n#include \"widget_base.hpp\"\n\nnamespace app {\n\n/** Engine config (docstring). */\nclass Config {\npublic:\n  int retries;\n  void apply();\n  int helper_count() const { return 2; }\n\nprivate:\n  int secret;\n};\n\nvoid Config::apply() { retries = helper_count(); }\n\nnamespace detail {\nstruct Counter {\n  int value;\n  Counter *next;\n};\n}  // namespace detail\n\nint detail_probe() { return 1; }\n\n}  // namespace app\n\nnamespace app::net {\nclass Session {\npublic:\n  void open();\n  virtual ~Session() {}\n  // #1727 — pure virtual must mint a method node (parity between wasm + kernel).\n  virtual int read(int key) = 0;\n};\nvoid Session::open() {}\n}  // namespace app::net\n\nnamespace {\nint hidden_helper() { return 3; }\n}  // namespace\n\ntemplate <typename T>\nclass Base {\npublic:\n  T item;\n};\n\ntemplate <typename T>\nclass Box : public Base<T> {\npublic:\n  T get() const { return value_; }\n  T unwrap();\n\nprivate:\n  T value_;\n};\n\ntemplate <typename T>\nT Box<T>::unwrap() {\n  return value_;\n}\n\nclass Derived : public Base<int>, private app::Config {\npublic:\n  Derived() : total_(0) {}\n  int total() const { return total_; }\n\nprivate:\n  int total_;\n};\n\nstruct Vec2 {\n  float x, y;\n  Vec2 operator+(const Vec2 &o) const { return {x + o.x, y + o.y}; }\n  explicit operator bool() const { return x != 0 || y != 0; }\n  Vec2 origin();\n};\n\nenum class Mode : unsigned char { Off, On };\nenum Legacy { LEGACY_A, LEGACY_B };\ntypedef struct {\n  int id;\n} packet_t;\nusing Handle = app::Config;\n\n// UE-macro shapes — every one below is recovered by the hoisted preParse\n// (export macro, reflection markup, inline specifier, API member prefix).\nclass MYMODULE_API Widget : public app::Config {\npublic:\n  UPROPERTY(EditAnywhere, Category = \"State\")\n  float Health;\n  FORCEINLINE float GetHealth() const { return Health; }\n  ENGINE_API virtual void Tick(float Delta);\n};\n\nvoid Widget::Tick(float Delta) { Health += Delta; }\n\nConfig GlobalConfig;\nint build_number = 7;\n\n// class/struct/union/enum definitions in a declaration's type — nodes beside\n// the variables; an unnamed one takes its first variable's name\nvoid on_open() {}\nvoid on_close() {}\nnamespace decl_types {\n/** The handler registry. */\nstruct Registry {\n  int size() const { return 2; }\n  void (*handlers[2])() = {&on_open, &on_close};\n} registry;\nclass Bar { void g() {} } bar, *pbar;\nstatic struct { int retries; } settings;\nenum { kIdle, kBusy } state;\n}  // namespace decl_types\n\ntemplate <typename T>\nT compute_seed(T v) {\n  return v + 1;\n}\n\nfloat drive_helper(float v) { return v; }\n\nWidget *make_widget() { return new Widget(); }\n\nfloat drive() {\n  Widget local;\n  app::Config cfg;\n  Vec2 a{1, 2};\n  Vec2 b(a);\n  Vec2 c2(1.5f, 2.5f);\n  float f = a.x + b.y + c2.x;\n  make_widget()->Tick(0.5f);\n  auto kernel = &compute_seed<float>;\n  if (f > 1) {\n    kernel = &drive_helper;\n  }\n  float r = kernel(f);\n  int flags = GlobalConfig.retries;\n  Mode m = Mode::Off;\n  int leg = LEGACY_A;\n  app::detail_probe();\n  compute_seed<int>(2);\n  auto mp = &app::Config::apply;\n  (void)mp;\n  (void)m;\n  return r + f + flags + leg;\n}\n// A function named past its noexcept/throw/requires clauses.\nnamespace clauses {\ntemplate <template <typename, typename> class Ser>\nclass Json {\n public:\n  template <typename T, typename U = T>\n  Json(T&& val) noexcept(noexcept(Ser<U>::to_json(*this, val))) {\n    Ser<U>::to_json(*this, val);\n  }\n  void Reserve(int n) throw(std::bad_alloc) {}\n};\ntemplate <typename T>\nT Twice(T v) requires std::integral<T> {\n  return v * 2;\n}\n}  // namespace clauses\n// Members: the types each is declared with are references from its holder, or\n// from the alias they are named through.\nnamespace members {\nclass Slice {};\ntemplate <typename K, typename V> class Map {};\nusing Rows = std::vector<Slice*>;\ntypedef Map<int, Slice> SliceMap;\ntemplate <class T>\nclass Holder {\n public:\n  Slice Get(const Slice& key);\n  virtual Rows* Scan(const Slice& from) = 0;\n  const Slice& Peek() const;\n private:\n  Slice by_value;\n  const Slice& by_reference;\n  members::Slice* qualified;\n  ::members::Slice* global;\n  std::vector<Slice> items;\n  std::unique_ptr<Map<int, T>> owner;\n  Outer<T>::Inner<Slice>* nested;\n  typename T::value_type element;\n  std::function<void(Slice*)> done;\n  void (*callback)(const Slice* key, Rows rows);\n  decltype(1) computed;\n  Holder<T>* next;\n  enum class Mode : int { A, B } mode;\n  class Fwd;\n  union { Slice left; int right; };\n  struct Node { SliceMap* map; };\n};\n}  // namespace members\n",
+      "prepared": "/// Torture fixture for the C++ kernel walker (R7a) — namespaces (incl. C++17\n/// nested + anonymous), out-of-line Cls::method defs, templates + template\n/// bases, operator definitions, stack construction, local fn-ptrs, UE-macro\n/// shapes THROUGH the hoisted preParse, using-aliases, access specifiers,\n/// static-member value reads, and the cpp call shapes. Must parse ERROR-FREE\n/// post-preParse or the kernel arm defers (spaced operator CALL SITES live in\n/// torture-defer.cpp — they produce ERROR nodes by design).\n#include <vector>\n#include \"widget_base.hpp\"\n\nnamespace app {\n\n/** Engine config (docstring). */\nclass Config {\npublic:\n  int retries;\n  void apply();\n  int helper_count() const { return 2; }\n\nprivate:\n  int secret;\n};\n\nvoid Config::apply() { retries = helper_count(); }\n\nnamespace detail {\nstruct Counter {\n  int value;\n  Counter *next;\n};\n}  // namespace detail\n\nint detail_probe() { return 1; }\n\n}  // namespace app\n\nnamespace app::net {\nclass Session {\npublic:\n  void open();\n  virtual ~Session() {}\n  // #1727 — pure virtual must mint a method node (parity between wasm + kernel).\n  virtual int read(int key) = 0;\n};\nvoid Session::open() {}\n}  // namespace app::net\n\nnamespace {\nint hidden_helper() { return 3; }\n}  // namespace\n\ntemplate <typename T>\nclass Base {\npublic:\n  T item;\n};\n\ntemplate <typename T>\nclass Box : public Base<T> {\npublic:\n  T get() const { return value_; }\n  T unwrap();\n\nprivate:\n  T value_;\n};\n\ntemplate <typename T>\nT Box<T>::unwrap() {\n  return value_;\n}\n\nclass Derived : public Base<int>, private app::Config {\npublic:\n  Derived() : total_(0) {}\n  int total() const { return total_; }\n\nprivate:\n  int total_;\n};\n\nstruct Vec2 {\n  float x, y;\n  Vec2 operator+(const Vec2 &o) const { return {x + o.x, y + o.y}; }\n  explicit operator bool() const { return x != 0 || y != 0; }\n  Vec2 origin();\n};\n\nenum class Mode : unsigned char { Off, On };\nenum Legacy { LEGACY_A, LEGACY_B };\ntypedef struct {\n  int id;\n} packet_t;\nusing Handle = app::Config;\n\n// UE-macro shapes — every one below is recovered by the hoisted preParse\n// (export macro, reflection markup, inline specifier, API member prefix).\nclass              Widget : public app::Config {\npublic:\n                                             \n  float Health;\n              float GetHealth() const { return Health; }\n             virtual void Tick(float Delta);\n};\n\nvoid Widget::Tick(float Delta) { Health += Delta; }\n\nConfig GlobalConfig;\nint build_number = 7;\n\n// class/struct/union/enum definitions in a declaration's type — nodes beside\n// the variables; an unnamed one takes its first variable's name\nvoid on_open() {}\nvoid on_close() {}\nnamespace decl_types {\n/** The handler registry. */\nstruct Registry {\n  int size() const { return 2; }\n  void (*handlers[2])() = {&on_open, &on_close};\n} registry;\nclass Bar { void g() {} } bar, *pbar;\nstatic struct { int retries; } settings;\nenum { kIdle, kBusy } state;\n}  // namespace decl_types\n\ntemplate <typename T>\nT compute_seed(T v) {\n  return v + 1;\n}\n\nfloat drive_helper(float v) { return v; }\n\nWidget *make_widget() { return new Widget(); }\n\nfloat drive() {\n  Widget local;\n  app::Config cfg;\n  Vec2 a{1, 2};\n  Vec2 b(a);\n  Vec2 c2(1.5f, 2.5f);\n  float f = a.x + b.y + c2.x;\n  make_widget()->Tick(0.5f);\n  auto kernel = &compute_seed<float>;\n  if (f > 1) {\n    kernel = &drive_helper;\n  }\n  float r = kernel(f);\n  int flags = GlobalConfig.retries;\n  Mode m = Mode::Off;\n  int leg = LEGACY_A;\n  app::detail_probe();\n  compute_seed<int>(2);\n  auto mp = &app::Config::apply;\n  (void)mp;\n  (void)m;\n  return r + f + flags + leg;\n}\n// A function named past its noexcept/throw/requires clauses.\nnamespace clauses {\ntemplate <template <typename, typename> class Ser>\nclass Json {\n public:\n  template <typename T, typename U = T>\n  Json(T&& val) noexcept(noexcept(Ser<U>::to_json(*this, val))) {\n    Ser<U>::to_json(*this, val);\n  }\n  void Reserve(int n) throw(std::bad_alloc) {}\n};\ntemplate <typename T>\nT Twice(T v) requires std::integral<T> {\n  return v * 2;\n}\n}  // namespace clauses\n// Members: the types each is declared with are references from its holder, or\n// from the alias they are named through.\nnamespace members {\nclass Slice {};\ntemplate <typename K, typename V> class Map {};\nusing Rows = std::vector<Slice*>;\ntypedef Map<int, Slice> SliceMap;\ntemplate <class T>\nclass Holder {\n public:\n  Slice Get(const Slice& key);\n  virtual Rows* Scan(const Slice& from) = 0;\n  const Slice& Peek() const;\n private:\n  Slice by_value;\n  const Slice& by_reference;\n  members::Slice* qualified;\n  ::members::Slice* global;\n  std::vector<Slice> items;\n  std::unique_ptr<Map<int, T>> owner;\n  Outer<T>::Inner<Slice>* nested;\n  typename T::value_type element;\n  std::function<void(Slice*)> done;\n  void (*callback)(const Slice* key, Rows rows);\n  decltype(1) computed;\n  Holder<T>* next;\n  enum class Mode : int { A, B } mode;\n  class Fwd;\n  union { Slice left; int right; };\n  struct Node { SliceMap* map; };\n};\n}  // namespace members\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/fixtures/kernel-parity/torture-macros-ctors.cpp",
+      "language": "cpp",
+      "path": "torture-macros-ctors.cpp",
+      "source": "/// Parity fixture for #1838 / #1839: function-like macros as `constant`\n/// nodes (file scope, inside a namespace, inside a body), constructor\n/// signatures, and the per-declarator constructor refs of local object\n/// initialization — default, direct, brace, multi-declarator, qualified and\n/// template types — beside the declarators that construct nothing (pointer,\n/// reference, most-vexing-parse, extern). Must parse ERROR-FREE.\n#define TRACE_POINT(value) ((void)(value))\n#define VERSION 7\n\nnamespace app {\n#define APP_LOG(fmt, ...) log_impl(fmt, __VA_ARGS__)\n\nstruct Aggregate {\n  int value;\n};\n\nclass Widget {\npublic:\n  Widget();\n  explicit Widget(int value);\n  Widget(int a, int b = 2) : first(a), second(b) {}\n\nprivate:\n  int first;\n  int second;\n};\n\nWidget::Widget() : first(0), second(0) {}\nWidget::Widget(int value) : first(value), second(0) {}\n\ntemplate <typename T>\nstruct Box {\n  Box(T inner) : value(inner) {}\n  T value;\n};\n\nvoid constructions() {\n  Aggregate item{};\n  Widget by_default;\n  Widget braced{};\n  Widget direct(1);\n  Widget two(1, 2);\n  Widget a, b(1), c{1, 2};\n  app::Widget qualified(3);\n  Box<int> boxed(4);\n  Widget();\n  TRACE_POINT(VERSION);\n  APP_LOG(\"x\", 1);\n#define LOCAL_TRACE(v) ((void)(v))\n  LOCAL_TRACE(1);\n}\n\nvoid non_constructions(Widget &other) {\n  Widget *pointer{};\n  Widget *null_pointer(nullptr);\n  Widget &reference{other};\n  Widget &bound(other);\n  Widget most_vexing();\n  Widget items[2]{}; // array elements do construct objects\n  Widget *table[2]{};\n  Widget (*callback)(){};\n  extern Widget external;\n  int primitive(5);\n  int braced_primitive{6};\n}\n}  // namespace app\n",
+      "prepared": "/// Parity fixture for #1838 / #1839: function-like macros as `constant`\n/// nodes (file scope, inside a namespace, inside a body), constructor\n/// signatures, and the per-declarator constructor refs of local object\n/// initialization — default, direct, brace, multi-declarator, qualified and\n/// template types — beside the declarators that construct nothing (pointer,\n/// reference, most-vexing-parse, extern). Must parse ERROR-FREE.\n#define TRACE_POINT(value) ((void)(value))\n#define VERSION 7\n\nnamespace app {\n#define APP_LOG(fmt, ...) log_impl(fmt, __VA_ARGS__)\n\nstruct Aggregate {\n  int value;\n};\n\nclass Widget {\npublic:\n  Widget();\n  explicit Widget(int value);\n  Widget(int a, int b = 2) : first(a), second(b) {}\n\nprivate:\n  int first;\n  int second;\n};\n\nWidget::Widget() : first(0), second(0) {}\nWidget::Widget(int value) : first(value), second(0) {}\n\ntemplate <typename T>\nstruct Box {\n  Box(T inner) : value(inner) {}\n  T value;\n};\n\nvoid constructions() {\n  Aggregate item{};\n  Widget by_default;\n  Widget braced{};\n  Widget direct(1);\n  Widget two(1, 2);\n  Widget a, b(1), c{1, 2};\n  app::Widget qualified(3);\n  Box<int> boxed(4);\n  Widget();\n  TRACE_POINT(VERSION);\n  APP_LOG(\"x\", 1);\n#define LOCAL_TRACE(v) ((void)(v))\n  LOCAL_TRACE(1);\n}\n\nvoid non_constructions(Widget &other) {\n  Widget *pointer{};\n  Widget *null_pointer(nullptr);\n  Widget &reference{other};\n  Widget &bound(other);\n  Widget most_vexing();\n  Widget items[2]{}; // array elements do construct objects\n  Widget *table[2]{};\n  Widget (*callback)(){};\n  extern Widget external;\n  int primitive(5);\n  int braced_primitive{6};\n}\n}  // namespace app\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/fixtures/kernel-parity/Torture.cs",
+      "language": "csharp",
+      "path": "Torture.cs",
+      "source": "#define TORTURE_FLAG\nglobal using GlobalNs.Thing;\nusing System;\nusing System.Collections.Generic;\nusing static System.Math;\n\nnamespace Torture.Alpha\n{\n    using System.Text;\n\n    namespace Inner\n    {\n        public class Deep { }\n    }\n\n    /// <summary>Doc line.</summary>\n    /// <remarks>Second doc line over an attribute.</remarks>\n    [Serializable]\n    public class TortureClass : Widget\n    {\n#pragma warning disable 168\n        public const int MaxItems = 10;\n        public static readonly string DefaultName = \"x\";\n        private const int LOCAL_SHADOWED = 5;\n        private Widget A, B;\n        private readonly int _count;\n        private static int counter;\n        private IRepo _repo;\n        private ServiceCollection builder;\n        private int status;\n        private List<Action<int>> Table = new() { TargetCb };\n\n#nullable enable\n        public string Name { get; set; }\n        public Widget Parent { get; init; }\n        public List<Widget> Items { get; }\n        public int Computed => MaxItems + 1;\n        public Widget Made { get; } = new();\n        public int Accessored { get { return Lookup(1); } set { Store(value); } }\n        public Action A2 { get; } = () => Register(HandleThing);\n\n        public event Action Changed;\n        public event Action Custom\n        {\n            add { Register(HandleThing); }\n            remove { Unregister(value); }\n        }\n\n        public static TortureClass operator +(TortureClass a, TortureClass b) { return Combine(a, b); }\n        public static explicit operator int(TortureClass t) { return Score(t); }\n        public int this[int idx] { get { return Lookup(idx); } }\n        ~TortureClass() { Cleanup(); }\n\n        public TortureClass(int seed) : base(Compute(seed)) { Init(seed); }\n        public TortureClass() => Init(0);\n\n        void IDisposable.Dispose() { Cleanup(); }\n\n        protected internal void PI() { }\n        private protected void PP() { }\n\n        public async Task Waity() { await Task.Delay(1); }\n\n        public int Sum() => Compute(1) + 2;\n\n        private void HandleThing(int v) { }\n        private static void StaticHandler() { }\n        private void OnClick() { }\n        private void Handler() { }\n        private static void TargetCb(int n) { }\n        private static int Compute(int v) { return v; }\n        private static Widget Mk() { return null; }\n\n        public void Wire(Widget button, int status)\n        {\n            Register(HandleThing);\n            Register(this.HandleThing);\n            Register(C.StaticHandler);\n            button.Click += OnClick;\n            this.status = status;\n            Del d = Handler;\n            Action g = () => Register(HandleThing);\n        }\n\n        public void CallsZoo(Widget p, MyDel myDel, HttpRequest request)\n        {\n            Helper();\n            Generic<int>(5);\n            this.Run(1);\n            base.Method();\n            _repo.Save(2);\n            var svcs = builder\n                .Services\n                .AddSingleton<IRepo, Repo>();\n            \"lit\".ToUpper();\n            request?.Method();\n            p!.Force();\n            Foo.Create(1).Bar();\n            GetThing().Bar();\n            (myDel)(3);\n            var n = nameof(Widget);\n        }\n\n        public void Reads(User u)\n        {\n            DoThing(Constants.MAX);\n            var x = ReadType.ReadAsDouble;\n            var y = Outer.Inner.DEEP;\n            var age = u.Age;\n            Console.WriteLine(x);\n        }\n\n        public void News()\n        {\n            var a = new Widget(1) { Name = Mk() };\n            var b = new Ns.Foo<int>();\n            Widget c = new();\n            var d = new { X = 1 };\n            var e = new Widget[10];\n            var f = new[] { Mk() };\n        }\n\n        public IEnumerable<int> Query(List<int> items)\n        {\n            var q = from x in items where Check(x) select Map(x);\n            var s = items.Count switch { 0 => One(), _ => Other() };\n            var msg = $\"Hello {NameOf(this)}\";\n            var raw = \"\"\"raw text\"\"\";\n            var verb = @\"verbatim\\path\";\n            int[] coll = [First(), Second()];\n            return q;\n        }\n\n        public int WithLocal()\n        {\n            int Local(int v) { return Compute(v); }\n            return Local(2);\n        }\n\n        public Task<List<Widget>> Fetch(Widget? maybe, Widget[] arr, (int Code, Widget Payload) pair, List<Widget> list, Sys.ICloneable c, dynamic dyn, String s, int nn) { return null; }\n        public Task<Widget> Single() { return null; }\n        public Ns.Foo Qual() { return null; }\n\n        public int Reader()\n        {\n            var LOCAL_SHADOWED = 1;\n            return MaxItems + LOCAL_SHADOWED;\n        }\n\n        public string Reader2() => DefaultName.Trim();\n    }\n\n    public class Client : ClientBase<Widget>, Sys.ICloneable, IThing { }\n\n    public partial class PartialHost { partial void Hook(); }\n    public partial class PartialHost { partial void Hook() { } }\n\n    public interface IWidgetRepo<T> where T : IEntity\n    {\n        Task<T> Get(int id);\n        string Label { get; }\n        int Compute(int x) => x + 1;\n    }\n\n    public enum ReadType : byte\n    {\n        [Obsolete] ReadAsInt = 1,\n        ReadAsDouble,\n    }\n\n    public struct Point3 { public int X; }\n\n    #region grouped\n    public class Grouped { }\n    #endregion\n}\n\nnamespace Torture.Beta\n{\n    public class Other { }\n}\n\nstatic class TopLevelGuard\n{\n    public static T AgainstNull<T>(T value) where T : class => value;\n}\n",
+      "prepared": "#define TORTURE_FLAG\nglobal using GlobalNs.Thing;\nusing System;\nusing System.Collections.Generic;\nusing static System.Math;\n\nnamespace Torture.Alpha\n{\n    using System.Text;\n\n    namespace Inner\n    {\n        public class Deep { }\n    }\n\n    /// <summary>Doc line.</summary>\n    /// <remarks>Second doc line over an attribute.</remarks>\n    [Serializable]\n    public class TortureClass : Widget\n    {\n#pragma warning disable 168\n        public const int MaxItems = 10;\n        public static readonly string DefaultName = \"x\";\n        private const int LOCAL_SHADOWED = 5;\n        private Widget A, B;\n        private readonly int _count;\n        private static int counter;\n        private IRepo _repo;\n        private ServiceCollection builder;\n        private int status;\n        private List<Action<int>> Table = new() { TargetCb };\n\n#nullable enable\n        public string Name { get; set; }\n        public Widget Parent { get; init; }\n        public List<Widget> Items { get; }\n        public int Computed => MaxItems + 1;\n        public Widget Made { get; } = new();\n        public int Accessored { get { return Lookup(1); } set { Store(value); } }\n        public Action A2 { get; } = () => Register(HandleThing);\n\n        public event Action Changed;\n        public event Action Custom\n        {\n            add { Register(HandleThing); }\n            remove { Unregister(value); }\n        }\n\n        public static TortureClass operator +(TortureClass a, TortureClass b) { return Combine(a, b); }\n        public static explicit operator int(TortureClass t) { return Score(t); }\n        public int this[int idx] { get { return Lookup(idx); } }\n        ~TortureClass() { Cleanup(); }\n\n        public TortureClass(int seed) : base(Compute(seed)) { Init(seed); }\n        public TortureClass() => Init(0);\n\n        void IDisposable.Dispose() { Cleanup(); }\n\n        protected internal void PI() { }\n        private protected void PP() { }\n\n        public async Task Waity() { await Task.Delay(1); }\n\n        public int Sum() => Compute(1) + 2;\n\n        private void HandleThing(int v) { }\n        private static void StaticHandler() { }\n        private void OnClick() { }\n        private void Handler() { }\n        private static void TargetCb(int n) { }\n        private static int Compute(int v) { return v; }\n        private static Widget Mk() { return null; }\n\n        public void Wire(Widget button, int status)\n        {\n            Register(HandleThing);\n            Register(this.HandleThing);\n            Register(C.StaticHandler);\n            button.Click += OnClick;\n            this.status = status;\n            Del d = Handler;\n            Action g = () => Register(HandleThing);\n        }\n\n        public void CallsZoo(Widget p, MyDel myDel, HttpRequest request)\n        {\n            Helper();\n            Generic<int>(5);\n            this.Run(1);\n            base.Method();\n            _repo.Save(2);\n            var svcs = builder\n                .Services\n                .AddSingleton<IRepo, Repo>();\n            \"lit\".ToUpper();\n            request?.Method();\n            p!.Force();\n            Foo.Create(1).Bar();\n            GetThing().Bar();\n            (myDel)(3);\n            var n = nameof(Widget);\n        }\n\n        public void Reads(User u)\n        {\n            DoThing(Constants.MAX);\n            var x = ReadType.ReadAsDouble;\n            var y = Outer.Inner.DEEP;\n            var age = u.Age;\n            Console.WriteLine(x);\n        }\n\n        public void News()\n        {\n            var a = new Widget(1) { Name = Mk() };\n            var b = new Ns.Foo<int>();\n            Widget c = new();\n            var d = new { X = 1 };\n            var e = new Widget[10];\n            var f = new[] { Mk() };\n        }\n\n        public IEnumerable<int> Query(List<int> items)\n        {\n            var q = from x in items where Check(x) select Map(x);\n            var s = items.Count switch { 0 => One(), _ => Other() };\n            var msg = $\"Hello {NameOf(this)}\";\n            var raw = \"\"\"raw text\"\"\";\n            var verb = @\"verbatim\\path\";\n            int[] coll = [First(), Second()];\n            return q;\n        }\n\n        public int WithLocal()\n        {\n            int Local(int v) { return Compute(v); }\n            return Local(2);\n        }\n\n        public Task<List<Widget>> Fetch(Widget? maybe, Widget[] arr, (int Code, Widget Payload) pair, List<Widget> list, Sys.ICloneable c, dynamic dyn, String s, int nn) { return null; }\n        public Task<Widget> Single() { return null; }\n        public Ns.Foo Qual() { return null; }\n\n        public int Reader()\n        {\n            var LOCAL_SHADOWED = 1;\n            return MaxItems + LOCAL_SHADOWED;\n        }\n\n        public string Reader2() => DefaultName.Trim();\n    }\n\n    public class Client : ClientBase<Widget>, Sys.ICloneable, IThing { }\n\n    public partial class PartialHost { partial void Hook(); }\n    public partial class PartialHost { partial void Hook() { } }\n\n    public interface IWidgetRepo<T> where T : IEntity\n    {\n        Task<T> Get(int id);\n        string Label { get; }\n        int Compute(int x) => x + 1;\n    }\n\n    public enum ReadType : byte\n    {\n        [Obsolete] ReadAsInt = 1,\n        ReadAsDouble,\n    }\n\n    public struct Point3 { public int X; }\n\n    #region grouped\n    public class Grouped { }\n    #endregion\n}\n\nnamespace Torture.Beta\n{\n    public class Other { }\n}\n\nstatic class TopLevelGuard\n{\n    public static T AgainstNull<T>(T value) where T : class => value;\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "CUDA mixed launches",
+      "language": "cpp",
+      "path": "kernels.cu",
+      "source": "__global__ void step(int n) {}\nvoid run() { step<<<dim3{1,1,1}, dim3{2,1,1}>>>(3); }\n",
+      "prepared": "           void step(int n) {}\nvoid run() { step                              (3); }\n",
+      "commonjs": []
+    },
+    {
+      "name": "Metal and raw strings",
+      "language": "cpp",
+      "path": "shader.metal",
+      "source": "struct Vertex { float4 pos [[position]]; };\nconst char* doc=R\"tag([[position]] FORCEINLINE int x)tag\";\n",
+      "prepared": "struct Vertex { float4 pos             ; };\nconst char* doc=R\"tag([[position]] FORCEINLINE int x)tag\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "C# directives and Unicode",
+      "language": "csharp",
+      "path": "sample.cs",
+      "source": "class Café {\r\n#if DEBUG // 😀\r\nvoid Yes() {}\r\n#else\r\nvoid No() {}\r\n#endif\r\n#region Retained\r\n#endregion\r\n}\r\n",
+      "prepared": "class Café {\r\n                \nvoid Yes() {}\r\n      \nvoid No() {}\r\n       \n#region Retained\r\n#endregion\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "CommonJS columns Unicode",
+      "language": "javascript",
+      "path": "sample.js",
+      "source": "const label=\"😀é\"; const foo=require(\"./foo\");\n// require(\"./bad\")\nconst bar = require(`./bar`);\nconst dep=require(\"express\");\n",
+      "prepared": "const label=\"😀é\"; const foo=require(\"./foo\");\n// require(\"./bad\")\nconst bar = require(`./bar`);\nconst dep=require(\"express\");\n",
+      "commonjs": [
+        {
+          "fromNodeId": "file:sample.js",
+          "referenceName": "./foo",
+          "referenceKind": "imports",
+          "line": 1,
+          "column": 29,
+          "filePath": "sample.js",
+          "language": "javascript"
+        },
+        {
+          "fromNodeId": "file:sample.js",
+          "referenceName": "./bar",
+          "referenceKind": "imports",
+          "line": 3,
+          "column": 12,
+          "filePath": "sample.js",
+          "language": "javascript"
+        }
+      ]
+    },
+    {
+      "name": "Type re-exports Unicode",
+      "language": "typescript",
+      "path": "sample.ts",
+      "source": "/* 😀 */ export type * from \"./alpha\";\nexport type * as β from \"./beta\";\n",
+      "prepared": "/* 😀 */ export      * from \"./alpha\";\nexport      * as β from \"./beta\";\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-newer-syntax.test.ts:15",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app\n\nclass Dialect(private val mode: Int) {\n    fun sql(value: Any?): String = when (value) {\n        is String if mode == 2 -> \"text\"\n        is Int if (\n            mode > 0\n        ) -> \"int\"\n        is Long -> if (mode == 1) \"long\" else \"big\"\n        else -> \"other\"\n    }\n\n    fun ranges(n: Int) {\n        for (i in 0..<n) println(i)\n    }\n\n    fun path(team: String) = $$\"?(@.user.team == $team)\"\n\n    fun adjust(body: Op<Boolean>?.() -> Op<Boolean>): Dialect = this\n\n    fun after(): Int = 1\n}\n\nclass Op<T>\n",
+      "prepared": "package app\n\nclass Dialect(private val mode: Int) {\n    fun sql(value: Any?): String = when (value) {\n        is String,   mode == 2 -> \"text\"\n        is Int,   (\n            mode > 0\n        ) -> \"int\"\n        is Long -> if (mode == 1) \"long\" else \"big\"\n        else -> \"other\"\n    }\n\n    fun ranges(n: Int) {\n        for (i in 0.. n) println(i)\n    }\n\n    fun path(team: String) =   \"?(@.user.team == $team)\"\n\n    fun adjust(body: Op<Boolean>.( ) -> Op<Boolean>): Dialect = this\n\n    fun after(): Int = 1\n}\n\nclass Op<T>\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:30",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.jdbc.tests\n\nclass JdbcTransaction\n\nfun withTables(statement: JdbcTransaction.() -> Unit) {}\n\nfun <T> JdbcTransaction.assertEquals(exp: T, act: T) {}\n",
+      "prepared": "package app.jdbc.tests\n\nclass JdbcTransaction\n\nfun withTables(statement: JdbcTransaction.() -> Unit) {}\n\nfun <T> JdbcTransaction.assertEquals(exp: T, act: T) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:38",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.r2dbc.tests\n\nclass R2dbcTransaction\n\nfun withTables(statement: R2dbcTransaction.() -> Unit) {}\n\nfun <T> R2dbcTransaction.assertEquals(exp: T, act: T) {}\n",
+      "prepared": "package app.r2dbc.tests\n\nclass R2dbcTransaction\n\nfun withTables(statement: R2dbcTransaction.() -> Unit) {}\n\nfun <T> R2dbcTransaction.assertEquals(exp: T, act: T) {}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:46",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.jdbc\n\nimport app.jdbc.tests.assertEquals\nimport app.jdbc.tests.withTables\n\nclass JdbcTest {\n  fun works() {\n    withTables { assertEquals(1, 1) }\n  }\n}\n",
+      "prepared": "package app.jdbc\n\nimport app.jdbc.tests.assertEquals\nimport app.jdbc.tests.withTables\n\nclass JdbcTest {\n  fun works() {\n    withTables { assertEquals(1, 1) }\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:57",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.r2dbc\n\nimport app.r2dbc.tests.*\n\nclass R2dbcTest {\n  fun works() {\n    withTables { assertEquals(1, 1) }\n  }\n}\n",
+      "prepared": "package app.r2dbc\n\nimport app.r2dbc.tests.*\n\nclass R2dbcTest {\n  fun works() {\n    withTables { assertEquals(1, 1) }\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:67",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.core\n\nimport kotlin.test.assertEquals\n\nclass PlainTest {\n  fun works() {\n    assertEquals(1, 1)\n  }\n}\n",
+      "prepared": "package app.core\n\nimport kotlin.test.assertEquals\n\nclass PlainTest {\n  fun works() {\n    assertEquals(1, 1)\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:77",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.jdbc.tests\n\nfun check() {\n  withTables { assertEquals(1, 1) }\n}\n",
+      "prepared": "package app.jdbc.tests\n\nfun check() {\n  withTables { assertEquals(1, 1) }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/kotlin-top-level-visibility.test.ts:83",
+      "language": "kotlin",
+      "path": "sample.kt",
+      "source": "package app.jdbc.tests\n\nclass DatabaseConfig {\n  class Builder\n}\n\n@MethodSource(\"data\")\nabstract class DatabaseTestsBase {\n  fun withTables(configure: (DatabaseConfig.Builder.() -> Unit)? = null, statement: () -> Unit) {\n    statement()\n  }\n}\n",
+      "prepared": "package app.jdbc.tests\n\nclass DatabaseConfig {\n  class Builder\n}\n\n@MethodSource(\"data\")\nabstract class DatabaseTestsBase {\n  fun withTables(configure: (               Builder.() -> Unit)? = null, statement: () -> Unit) {\n    statement()\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:21",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "class Store {\n    typealias Client = A.Client\n      & B.Client\n      & C.Client\n    let service: any P\n      & Q\n}\n",
+      "prepared": "class Store {\n    typealias Client = A.Client&\n       B.Client&\n       C.Client\n    let service: any P&\n       Q\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:32",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "class Store {\n    typealias Client = A.Client&\n       B.Client&\n       C.Client\n    let service: any P&\n       Q\n}\n",
+      "prepared": "class Store {\n    typealias Client = A.Client&\n       B.Client&\n       C.Client\n    let service: any P&\n       Q\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:43",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "struct S {\r\n  typealias X = A\r\n    & B\r\n}\r\n",
+      "prepared": "struct S {\r\n  typealias X = A&\r\n     B\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:44",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "struct S {\r\n  typealias X = A&\r\n     B\r\n}\r\n",
+      "prepared": "struct S {\r\n  typealias X = A&\r\n     B\r\n}\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:50",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "typealias X = A\n    & B\n",
+      "prepared": "typealias X = A\n    & B\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:52",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "func f() {\n  let ok = a\n    && b\n  let n = x\n    &+ y\n  foo(\n    &z)\n}\n",
+      "prepared": "func f() {\n  let ok = a\n    && b\n  let n = x\n    &+ y\n  foo(\n    &z)\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:54",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "class C {\n  typealias X = A // the client\n    & B\n}\n",
+      "prepared": "class C {\n  typealias X = A // the client\n    & B\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:56",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "class C {\n  func f() -> Int {\n    mask\n      & 1\n  }\n}\n",
+      "prepared": "class C {\n  func f() -> Int {\n    mask\n      & 1\n  }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:78",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "enum StatusEditor {}\nextension StatusEditor {\n    enum AutocompleteService { protocol Client {} }\n    enum PostingService { protocol Client {} }\n}\nenum Assistant {\n    static func prewarm() {}\n}\n",
+      "prepared": "enum StatusEditor {}\nextension StatusEditor {\n    enum AutocompleteService { protocol Client {} }\n    enum PostingService { protocol Client {} }\n}\nenum Assistant {\n    static func prewarm() {}\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "__tests__/swift-composition-continuation.test.ts:90",
+      "language": "swift",
+      "path": "sample.swift",
+      "source": "extension StatusEditor {\n    final class EditorStore {\n        typealias EditorClient = AutocompleteService.Client\n          & PostingService.Client\n        var client: (any EditorClient)?\n\n        init() {\n            #if !targetEnvironment(macCatalyst)\n              Assistant.prewarm()\n            #endif\n        }\n\n        func post() -> Bool { validate() }\n        func validate() -> Bool { true }\n    }\n}\n",
+      "prepared": "extension StatusEditor {\n    final class EditorStore {\n        typealias EditorClient = AutocompleteService.Client&\n           PostingService.Client\n        var client: (any EditorClient)?\n\n        init() {\n            #if !targetEnvironment(macCatalyst)\n              Assistant.prewarm()\n            #endif\n        }\n\n        func post() -> Bool { validate() }\n        func validate() -> Bool { true }\n    }\n}\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:1",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:2",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\r\n",
+      "prepared": "\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:3",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:4",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:5",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:6",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "objc-lone-macro-lines:7",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "foundation-enum-macros:8",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\r\n",
+      "prepared": "\r\n",
+      "commonjs": []
+    },
+    {
+      "name": "foundation-enum-macros:9",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "foundation-enum-macros:10",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "foundation-enum-macros:11",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    },
+    {
+      "name": "foundation-enum-macros:12",
+      "language": "objc",
+      "path": "Probe.m",
+      "source": "\n",
+      "prepared": "\n",
+      "commonjs": []
+    }
+  ]
+}

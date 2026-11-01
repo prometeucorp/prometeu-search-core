@@ -1,0 +1,195 @@
+[
+  {
+    "id": 21,
+    "reason": "The backend namespace has competing upb and cpp aliases under unresolved build flags. The reference chooses the first branch; Rust leaves these type and receiver targets unresolved.",
+    "missing": [
+      {
+        "source": "class:6eeecff9a188d0b3a192bba8e583b6d3",
+        "target": "type_alias:c3369fc3188d300ea5694d3594cf3f60",
+        "kind": "references",
+        "metadata": {
+          "confidence": 0.9,
+          "resolvedBy": "qualified-name",
+          "refName": "backend::Arena"
+        },
+        "line": 9,
+        "column": 2
+      },
+      {
+        "source": "method:71616640a648160f5891ee1f455ddaf2",
+        "target": "method:97c806eeb4debbd39dc11ade88e33408",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.9,
+          "resolvedBy": "instance-method",
+          "refName": "arena_.Fuse"
+        },
+        "line": 5,
+        "column": 35
+      },
+      {
+        "source": "method:c6196f95809af678cd419a599d42520a",
+        "target": "method:1539a05e47d28276b28da0ddf7250d15",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.9,
+          "resolvedBy": "instance-method",
+          "refName": "arena_.IsFused"
+        },
+        "line": 6,
+        "column": 38
+      },
+      {
+        "source": "method:3c883aace05130ba86751ec1a40447fd",
+        "target": "method:cb5b8306ac18036be343bec76a920669",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.9,
+          "resolvedBy": "instance-method",
+          "refName": "arena_.RefArena"
+        },
+        "line": 7,
+        "column": 35
+      }
+    ],
+    "extra": []
+  },
+  {
+    "id": 37,
+    "reason": "The bare constructor call has two indexed overloads. The reference guesses the one-argument overload for a zero-argument call at confidence 0.4. Rust retains both candidates with explicit ambiguity and the same low confidence.",
+    "missing": [
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:945464d8ae76683360000b65e7900a42",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor"
+        },
+        "line": 31,
+        "column": 4
+      }
+    ],
+    "extra": [
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:13987959cdf1214d7866ec6e78173ee1",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor",
+          "ambiguous": true
+        },
+        "line": 31,
+        "column": 4
+      },
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:945464d8ae76683360000b65e7900a42",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor",
+          "ambiguous": true
+        },
+        "line": 31,
+        "column": 4
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "reason": "The bare constructor call has two indexed overloads. The reference guesses the one-argument overload for a zero-argument call at confidence 0.4. Rust retains both candidates with explicit ambiguity and the same low confidence.",
+    "missing": [
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:945464d8ae76683360000b65e7900a42",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor"
+        },
+        "line": 31,
+        "column": 4
+      }
+    ],
+    "extra": [
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:13987959cdf1214d7866ec6e78173ee1",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor",
+          "ambiguous": true
+        },
+        "line": 31,
+        "column": 4
+      },
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:945464d8ae76683360000b65e7900a42",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor",
+          "ambiguous": true
+        },
+        "line": 31,
+        "column": 4
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "reason": "The bare constructor call has two indexed overloads. The reference guesses the one-argument overload for a zero-argument call at confidence 0.4. Rust retains both candidates with explicit ambiguity and the same low confidence.",
+    "missing": [
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:945464d8ae76683360000b65e7900a42",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor"
+        },
+        "line": 31,
+        "column": 4
+      }
+    ],
+    "extra": [
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:13987959cdf1214d7866ec6e78173ee1",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor",
+          "ambiguous": true
+        },
+        "line": 31,
+        "column": 4
+      },
+      {
+        "source": "function:c25e0b19ec503a668ae2f98a7e0ac996",
+        "target": "method:945464d8ae76683360000b65e7900a42",
+        "kind": "calls",
+        "metadata": {
+          "confidence": 0.4,
+          "resolvedBy": "exact-match",
+          "refName": "WithConstructor",
+          "ambiguous": true
+        },
+        "line": 31,
+        "column": 4
+      }
+    ]
+  }
+]

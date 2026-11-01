@@ -1,0 +1,1039 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.lua",
+      "kind": "file",
+      "name": "torture.lua",
+      "qualifiedName": "torture.lua",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 1,
+      "endLine": 109,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:79ab2a92a7787f11df5826d28039be8c",
+      "kind": "import",
+      "name": "app.core",
+      "qualifiedName": "app.core",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 13,
+      "endColumn": 32,
+      "signature": "require(\"app.core\")"
+    },
+    {
+      "id": "variable:96a031e283e601ba4b3a8a5a2e9cc77f",
+      "kind": "variable",
+      "name": "core",
+      "qualifiedName": "core",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 6,
+      "endColumn": 10,
+      "docstring": "File-header comment run line 1\nline 2 of the run",
+      "signature": "= require(\"app.core\")",
+      "isExported": false
+    },
+    {
+      "id": "import:50112f55f28c98dc5439d93203173f46",
+      "kind": "import",
+      "name": "Signal",
+      "qualifiedName": "Signal",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 15,
+      "endColumn": 44,
+      "signature": "require(script.Parent.Signal)"
+    },
+    {
+      "id": "variable:74c2b4520d1634310438f49d308ea008",
+      "kind": "variable",
+      "name": "Signal",
+      "qualifiedName": "Signal",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 6,
+      "endColumn": 12,
+      "signature": "= require(script.Parent.Signal)",
+      "isExported": false
+    },
+    {
+      "id": "import:9fad2f5b98b3ed7cd0143d3e3d6734ba",
+      "kind": "import",
+      "name": "app.quoted",
+      "qualifiedName": "app.quoted",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 15,
+      "endColumn": 35,
+      "signature": "require 'app.quoted'"
+    },
+    {
+      "id": "variable:c875e8abf5e83b47e8f6ef7b75a87498",
+      "kind": "variable",
+      "name": "quoted",
+      "qualifiedName": "quoted",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 6,
+      "endColumn": 12,
+      "signature": "= require 'app.quoted'",
+      "isExported": false
+    },
+    {
+      "id": "import:06f085468417da8798161a1d1d06207f",
+      "kind": "import",
+      "name": "app.bracketed",
+      "qualifiedName": "app.bracketed",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 18,
+      "endColumn": 43,
+      "signature": "require [[app.bracketed]]"
+    },
+    {
+      "id": "variable:a3127f3f791b568d650e0e4f33895030",
+      "kind": "variable",
+      "name": "bracketed",
+      "qualifiedName": "bracketed",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 6,
+      "endColumn": 15,
+      "signature": "= require [[app.bracketed]]",
+      "isExported": false
+    },
+    {
+      "id": "import:9f7cdf48927d4c1e2948a7228a4a2391",
+      "kind": "import",
+      "name": "Child",
+      "qualifiedName": "Child",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 17,
+      "endColumn": 54,
+      "signature": "require(script:WaitForChild(\"Child\"))"
+    },
+    {
+      "id": "variable:f3b5417555124c6b694cb2bb38b69a36",
+      "kind": "variable",
+      "name": "viaChild",
+      "qualifiedName": "viaChild",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 6,
+      "endColumn": 14,
+      "signature": "= require(script:WaitForChild(\"Child\"))",
+      "isExported": false
+    },
+    {
+      "id": "variable:459272f3b44e235883f114e8a7cc09fa",
+      "kind": "variable",
+      "name": "accessed",
+      "qualifiedName": "accessed",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 6,
+      "endColumn": 14,
+      "signature": "= require(\"app.acc\").field",
+      "isExported": false
+    },
+    {
+      "id": "variable:7c6b3910f19f92cae4c38a7565832746",
+      "kind": "variable",
+      "name": "dyn",
+      "qualifiedName": "dyn",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 6,
+      "endColumn": 9,
+      "signature": "= require(dynName)",
+      "isExported": false
+    },
+    {
+      "id": "import:917e0a651baeba802d1b15fc56b738a1",
+      "kind": "import",
+      "name": "two.a",
+      "qualifiedName": "two.a",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 19,
+      "endColumn": 35,
+      "signature": "require(\"two.a\")"
+    },
+    {
+      "id": "import:f3524e39583147d20cd1e3dfcc07d03b",
+      "kind": "import",
+      "name": "two.b",
+      "qualifiedName": "two.b",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 37,
+      "endColumn": 53,
+      "signature": "require(\"two.b\")"
+    },
+    {
+      "id": "variable:78f6db02f373a5efe2a9f3b303e35e16",
+      "kind": "variable",
+      "name": "twoA",
+      "qualifiedName": "twoA",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 6,
+      "endColumn": 10,
+      "signature": "= require(\"two.a\")",
+      "isExported": false
+    },
+    {
+      "id": "variable:247f05d883ce1a98f012960b2a5ad930",
+      "kind": "variable",
+      "name": "twoB",
+      "qualifiedName": "twoB",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 12,
+      "endColumn": 16,
+      "signature": "= require(\"two.b\")",
+      "isExported": false
+    },
+    {
+      "id": "variable:fedacda34e94b85718ac655a74368326",
+      "kind": "variable",
+      "name": "okG",
+      "qualifiedName": "okG",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 6,
+      "endColumn": 9,
+      "signature": "= pcall(require, \"app.guarded\")",
+      "isExported": false
+    },
+    {
+      "id": "variable:e01982441782327b70b675a02536d3be",
+      "kind": "variable",
+      "name": "guarded",
+      "qualifiedName": "guarded",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 11,
+      "endColumn": 18,
+      "isExported": false
+    },
+    {
+      "id": "function:6f1b9bec32998e16cfe282d768bf4888",
+      "kind": "function",
+      "name": "topFn",
+      "qualifiedName": "topFn",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 17,
+      "endLine": 19,
+      "startColumn": 0,
+      "endColumn": 3,
+      "docstring": "- LuaDoc summary for topFn.\n@param a number\n@return number",
+      "signature": "(a)"
+    },
+    {
+      "id": "function:0de344286ef5d117cc0e4de7b71092f1",
+      "kind": "function",
+      "name": "localFn",
+      "qualifiedName": "localFn",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 23,
+      "endLine": 25,
+      "startColumn": 0,
+      "endColumn": 3,
+      "docstring": "Block comment doc\nspanning two lines",
+      "signature": "(...)"
+    },
+    {
+      "id": "function:be78d3d2ca9e30251d624252a324952b",
+      "kind": "function",
+      "name": "anonAssigned",
+      "qualifiedName": "anonAssigned",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 28,
+      "endLine": 30,
+      "startColumn": 21,
+      "endColumn": 3,
+      "docstring": "doc for anonAssigned (function named from its local binding)",
+      "signature": "(v)"
+    },
+    {
+      "id": "variable:d05afb272af289f14ee6904b352e652d",
+      "kind": "variable",
+      "name": "M",
+      "qualifiedName": "M",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 32,
+      "endLine": 32,
+      "startColumn": 6,
+      "endColumn": 7,
+      "signature": "= {}",
+      "isExported": false
+    },
+    {
+      "id": "variable:9fb41be398c637882380aa0ca5e183b4",
+      "kind": "variable",
+      "name": "UPPER_CONST",
+      "qualifiedName": "UPPER_CONST",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 6,
+      "endColumn": 17,
+      "signature": "= 42",
+      "isExported": false
+    },
+    {
+      "id": "method:1ffd0a19e129180328c64d31cef01754",
+      "kind": "method",
+      "name": "create",
+      "qualifiedName": "M::create",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 35,
+      "endLine": 38,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(n)"
+    },
+    {
+      "id": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "M::render",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 40,
+      "endLine": 58,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(opts)"
+    },
+    {
+      "id": "function:37c390abd50c0167008655a9d88fe073",
+      "kind": "function",
+      "name": "inner",
+      "qualifiedName": "render::inner",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 49,
+      "endLine": 51,
+      "startColumn": 1,
+      "endColumn": 4,
+      "signature": "()"
+    },
+    {
+      "id": "method:71f85d20982180a51528b4d3198ef659",
+      "kind": "method",
+      "name": "attached",
+      "qualifiedName": "M::attached",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 52,
+      "endLine": 54,
+      "startColumn": 1,
+      "endColumn": 4,
+      "signature": "(q)"
+    },
+    {
+      "id": "function:dd2b707ae3dc499a662b8e994b541b9d",
+      "kind": "function",
+      "name": "leakedGlobal",
+      "qualifiedName": "render::leakedGlobal",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 55,
+      "endLine": 56,
+      "startColumn": 1,
+      "endColumn": 4,
+      "signature": "()"
+    },
+    {
+      "id": "method:24c8aca9dc4f3844a403d5753ed00b92",
+      "kind": "method",
+      "name": "chained",
+      "qualifiedName": "M.sub.deep::chained",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 60,
+      "endLine": 62,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "(x)"
+    },
+    {
+      "id": "method:13b6cf9cb70604e114dcd022b7b2e096",
+      "kind": "method",
+      "name": "installed",
+      "qualifiedName": "_G::installed",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 64,
+      "endLine": 65,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "()"
+    },
+    {
+      "id": "method:93186283b69cc2f35644199f0963df2b",
+      "kind": "method",
+      "name": "assigned",
+      "qualifiedName": "M::assigned",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 67,
+      "endLine": 69,
+      "startColumn": 13,
+      "endColumn": 3,
+      "signature": "(z)"
+    },
+    {
+      "id": "method:d50020a1a43788b961bf8a4652e85a45",
+      "kind": "method",
+      "name": "on_start",
+      "qualifiedName": "M.callbacks::on_start",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 72,
+      "endLine": 74,
+      "startColumn": 12,
+      "endColumn": 4,
+      "signature": "()"
+    },
+    {
+      "id": "method:7d5eac3e4b8be20f0d31544fbeb06f59",
+      "kind": "method",
+      "name": "on_stop",
+      "qualifiedName": "M.callbacks::on_stop",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 75,
+      "endLine": 77,
+      "startColumn": 15,
+      "endColumn": 4,
+      "signature": "()"
+    },
+    {
+      "id": "variable:105fdc9ff6cbb7586a586de31e0407cd",
+      "kind": "variable",
+      "name": "tbl",
+      "qualifiedName": "tbl",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 81,
+      "endLine": 81,
+      "startColumn": 6,
+      "endColumn": 9,
+      "signature": "= { cb = topFn, [1] = localFn, nested = { deep_cb = topFn } }",
+      "isExported": false
+    },
+    {
+      "id": "function:f548fcf56c5e1f25d9d36b8c86034284",
+      "kind": "function",
+      "name": "paren_conv",
+      "qualifiedName": "paren_conv",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 94,
+      "endLine": 96,
+      "startColumn": 0,
+      "endColumn": 3,
+      "signature": "()"
+    },
+    {
+      "id": "variable:82fce40eeaabd8ccadc6779d37a57209",
+      "kind": "variable",
+      "name": "one",
+      "qualifiedName": "one",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 98,
+      "endLine": 98,
+      "startColumn": 6,
+      "endColumn": 9,
+      "signature": "= 1",
+      "isExported": false
+    },
+    {
+      "id": "variable:8c9a81bef79763c9c67726355afcb403",
+      "kind": "variable",
+      "name": "two",
+      "qualifiedName": "two",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 98,
+      "endLine": 98,
+      "startColumn": 20,
+      "endColumn": 23,
+      "signature": "= 2",
+      "isExported": false
+    },
+    {
+      "id": "variable:0e1ebe0c408eb313069b90ffe30e9c10",
+      "kind": "variable",
+      "name": "s1",
+      "qualifiedName": "s1",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 100,
+      "endLine": 100,
+      "startColumn": 6,
+      "endColumn": 8,
+      "signature": "= [[long\nstring]]",
+      "isExported": false
+    },
+    {
+      "id": "variable:5c92c8f07975e49e2066cf90d65d4e3e",
+      "kind": "variable",
+      "name": "s2",
+      "qualifiedName": "s2",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 102,
+      "endLine": 102,
+      "startColumn": 6,
+      "endColumn": 8,
+      "signature": "= [==[nested ]] ok]==]",
+      "isExported": false
+    },
+    {
+      "id": "variable:9fc45d7622662ba5576f1caf82a1db04",
+      "kind": "variable",
+      "name": "x",
+      "qualifiedName": "x",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 103,
+      "endLine": 103,
+      "startColumn": 6,
+      "endColumn": 7,
+      "signature": "= 99",
+      "isExported": false
+    },
+    {
+      "id": "variable:4d047bb8d85f42d385cb6dae9e471c81",
+      "kind": "variable",
+      "name": "préfixe",
+      "qualifiedName": "préfixe",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 104,
+      "endLine": 104,
+      "startColumn": 6,
+      "endColumn": 13,
+      "signature": "= \"café\"",
+      "isExported": false
+    },
+    {
+      "id": "function:f09484bbbd7f1af828cd929c8f3dffe9",
+      "kind": "function",
+      "name": "after_unicode",
+      "qualifiedName": "after_unicode",
+      "filePath": "torture.lua",
+      "language": "lua",
+      "startLine": 105,
+      "endLine": 105,
+      "startColumn": 0,
+      "endColumn": 28,
+      "signature": "()"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.lua",
+      "target": "import:79ab2a92a7787f11df5826d28039be8c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:96a031e283e601ba4b3a8a5a2e9cc77f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "import:50112f55f28c98dc5439d93203173f46",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:74c2b4520d1634310438f49d308ea008",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "import:9fad2f5b98b3ed7cd0143d3e3d6734ba",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:c875e8abf5e83b47e8f6ef7b75a87498",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "import:06f085468417da8798161a1d1d06207f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:a3127f3f791b568d650e0e4f33895030",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "import:9f7cdf48927d4c1e2948a7228a4a2391",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:f3b5417555124c6b694cb2bb38b69a36",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:459272f3b44e235883f114e8a7cc09fa",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:7c6b3910f19f92cae4c38a7565832746",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "import:917e0a651baeba802d1b15fc56b738a1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "import:f3524e39583147d20cd1e3dfcc07d03b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:78f6db02f373a5efe2a9f3b303e35e16",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:247f05d883ce1a98f012960b2a5ad930",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:fedacda34e94b85718ac655a74368326",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:e01982441782327b70b675a02536d3be",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "function:6f1b9bec32998e16cfe282d768bf4888",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "function:0de344286ef5d117cc0e4de7b71092f1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "function:be78d3d2ca9e30251d624252a324952b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:d05afb272af289f14ee6904b352e652d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:9fb41be398c637882380aa0ca5e183b4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:1ffd0a19e129180328c64d31cef01754",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "kind": "contains"
+    },
+    {
+      "source": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "target": "function:37c390abd50c0167008655a9d88fe073",
+      "kind": "contains"
+    },
+    {
+      "source": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "target": "method:71f85d20982180a51528b4d3198ef659",
+      "kind": "contains"
+    },
+    {
+      "source": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "target": "function:dd2b707ae3dc499a662b8e994b541b9d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:24c8aca9dc4f3844a403d5753ed00b92",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:13b6cf9cb70604e114dcd022b7b2e096",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:93186283b69cc2f35644199f0963df2b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:d50020a1a43788b961bf8a4652e85a45",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "method:7d5eac3e4b8be20f0d31544fbeb06f59",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:105fdc9ff6cbb7586a586de31e0407cd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "function:f548fcf56c5e1f25d9d36b8c86034284",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:82fce40eeaabd8ccadc6779d37a57209",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:8c9a81bef79763c9c67726355afcb403",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:0e1ebe0c408eb313069b90ffe30e9c10",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:5c92c8f07975e49e2066cf90d65d4e3e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:9fc45d7622662ba5576f1caf82a1db04",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "variable:4d047bb8d85f42d385cb6dae9e471c81",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.lua",
+      "target": "function:f09484bbbd7f1af828cd929c8f3dffe9",
+      "kind": "contains"
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "app.core",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 13
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "Signal",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 15
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "app.quoted",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 15
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "app.bracketed",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 18
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "Child",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 17
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "two.a",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 19
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "two.b",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 37
+    },
+    {
+      "fromNodeId": "function:0de344286ef5d117cc0e4de7b71092f1",
+      "referenceName": "select",
+      "referenceKind": "calls",
+      "line": 24,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:be78d3d2ca9e30251d624252a324952b",
+      "referenceName": "hidden",
+      "referenceKind": "calls",
+      "line": 29,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:1ffd0a19e129180328c64d31cef01754",
+      "referenceName": "setmetatable",
+      "referenceKind": "calls",
+      "line": 37,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "require",
+      "referenceKind": "calls",
+      "line": 41,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "self:helperMethod",
+      "referenceKind": "calls",
+      "line": 43,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "self.field.deep",
+      "referenceKind": "calls",
+      "line": 44,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "M.create",
+      "referenceKind": "calls",
+      "line": 45,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "M.registry[key]",
+      "referenceKind": "calls",
+      "line": 46,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "core.util.log",
+      "referenceKind": "calls",
+      "line": 47,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "core.run",
+      "referenceKind": "calls",
+      "line": 48,
+      "column": 1
+    },
+    {
+      "fromNodeId": "function:37c390abd50c0167008655a9d88fe073",
+      "referenceName": "topFn",
+      "referenceKind": "calls",
+      "line": 50,
+      "column": 9
+    },
+    {
+      "fromNodeId": "method:2da70d9a8d68a5ebfd3fdf2247c31755",
+      "referenceName": "inner",
+      "referenceKind": "calls",
+      "line": 57,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:93186283b69cc2f35644199f0963df2b",
+      "referenceName": "topFn",
+      "referenceKind": "calls",
+      "line": 68,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:d50020a1a43788b961bf8a4652e85a45",
+      "referenceName": "topFn",
+      "referenceKind": "calls",
+      "line": 73,
+      "column": 9
+    },
+    {
+      "fromNodeId": "method:7d5eac3e4b8be20f0d31544fbeb06f59",
+      "referenceName": "topFn",
+      "referenceKind": "calls",
+      "line": 76,
+      "column": 9
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "topFn",
+      "referenceKind": "calls",
+      "line": 86,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "M.create",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "M:render",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "M.sub.deep:chained",
+      "referenceKind": "calls",
+      "line": 89,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "core.util.log",
+      "referenceKind": "calls",
+      "line": 90,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "t2[k2]",
+      "referenceKind": "calls",
+      "line": 91,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "f2()",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "f2",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:f548fcf56c5e1f25d9d36b8c86034284",
+      "referenceName": "handler",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 1
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "print",
+      "referenceKind": "calls",
+      "line": 98,
+      "column": 28
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "topFn",
+      "referenceKind": "function_ref",
+      "line": 80,
+      "column": 26
+    },
+    {
+      "fromNodeId": "file:torture.lua",
+      "referenceName": "localFn",
+      "referenceKind": "function_ref",
+      "line": 80,
+      "column": 43
+    }
+  ],
+  "errors": []
+}

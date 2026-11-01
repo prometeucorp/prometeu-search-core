@@ -1,0 +1,2479 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "name": "exports-build-and-browser",
+      "files": {
+        "package.json": "{\"workspaces\":[\"packages/*\"]}",
+        "packages/logger/package.json": "{\"name\":\"@lib/logger\",\"exports\":{\".\":{\"types\":\"./dist/index.d.ts\",\"import\":\"./dist/index.js\",\"browser\":\"./src/browser.ts\"},\"./tools/*\":\"./dist/tools/*.js\"}}",
+        "packages/logger/src/index.ts": "export function getLogger() { return \"server\"; }\n",
+        "packages/logger/src/browser.ts": "export function getLogger() { return \"browser\"; }\n",
+        "packages/logger/src/tools/task.ts": "export function execute() {}\n",
+        "server.ts": "import { getLogger } from \"@lib/logger\";\nimport { execute } from \"@lib/logger/tools/task\";\nexport function runServer() { execute(); return getLogger(); }\n",
+        "browser.ts": "import { getLogger } from \"@lib/logger\";\nexport function runBrowser() { window.location; return getLogger(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:browser.ts",
+          "kind": "file",
+          "name": "browser.ts",
+          "qualifiedName": "browser.ts",
+          "filePath": "browser.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:24fbd48f1aa88118a974b6f58baa85c0",
+          "kind": "import",
+          "name": "@lib/logger",
+          "qualifiedName": "@lib/logger",
+          "filePath": "browser.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 40,
+          "signature": "import { getLogger } from \"@lib/logger\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:64ddcebe6858d7a1494b674efc1a75e1",
+          "kind": "function",
+          "name": "runBrowser",
+          "qualifiedName": "runBrowser",
+          "filePath": "browser.ts",
+          "language": "typescript",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 7,
+          "endColumn": 69,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:packages/logger/src/browser.ts",
+          "kind": "file",
+          "name": "browser.ts",
+          "qualifiedName": "packages/logger/src/browser.ts",
+          "filePath": "packages/logger/src/browser.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:238744a7d07789866dba4af2940afa54",
+          "kind": "function",
+          "name": "getLogger",
+          "qualifiedName": "getLogger",
+          "filePath": "packages/logger/src/browser.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 49,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:packages/logger/src/index.ts",
+          "kind": "file",
+          "name": "index.ts",
+          "qualifiedName": "packages/logger/src/index.ts",
+          "filePath": "packages/logger/src/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:7c3a76f961b0878967524c086b16836f",
+          "kind": "function",
+          "name": "getLogger",
+          "qualifiedName": "getLogger",
+          "filePath": "packages/logger/src/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 48,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:packages/logger/src/tools/task.ts",
+          "kind": "file",
+          "name": "task.ts",
+          "qualifiedName": "packages/logger/src/tools/task.ts",
+          "filePath": "packages/logger/src/tools/task.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:e0625f98d3dd8cd23209aa0f11ae452d",
+          "kind": "function",
+          "name": "execute",
+          "qualifiedName": "execute",
+          "filePath": "packages/logger/src/tools/task.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 28,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:server.ts",
+          "kind": "file",
+          "name": "server.ts",
+          "qualifiedName": "server.ts",
+          "filePath": "server.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:4f24a68e59bb6ee579f580ca09a86dff",
+          "kind": "import",
+          "name": "@lib/logger",
+          "qualifiedName": "@lib/logger",
+          "filePath": "server.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 40,
+          "signature": "import { getLogger } from \"@lib/logger\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:797b4a8e46316fbe40c36f54a8cacc2e",
+          "kind": "import",
+          "name": "@lib/logger/tools/task",
+          "qualifiedName": "@lib/logger/tools/task",
+          "filePath": "server.ts",
+          "language": "typescript",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 49,
+          "signature": "import { execute } from \"@lib/logger/tools/task\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:3f8643d402b0c145befeab3f6b5a3876",
+          "kind": "function",
+          "name": "runServer",
+          "qualifiedName": "runServer",
+          "filePath": "server.ts",
+          "language": "typescript",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 7,
+          "endColumn": 62,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:browser.ts",
+          "target": "function:64ddcebe6858d7a1494b674efc1a75e1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:browser.ts",
+          "target": "import:24fbd48f1aa88118a974b6f58baa85c0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:browser.ts",
+          "target": "file:packages/logger/src/browser.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "@lib/logger"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:browser.ts",
+          "target": "function:238744a7d07789866dba4af2940afa54",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "getLogger"
+          },
+          "line": 1,
+          "column": 9,
+          "provenance": null
+        },
+        {
+          "source": "function:64ddcebe6858d7a1494b674efc1a75e1",
+          "target": "function:238744a7d07789866dba4af2940afa54",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "getLogger"
+          },
+          "line": 2,
+          "column": 55,
+          "provenance": null
+        },
+        {
+          "source": "file:packages/logger/src/browser.ts",
+          "target": "function:238744a7d07789866dba4af2940afa54",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:packages/logger/src/index.ts",
+          "target": "function:7c3a76f961b0878967524c086b16836f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:packages/logger/src/tools/task.ts",
+          "target": "function:e0625f98d3dd8cd23209aa0f11ae452d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "function:3f8643d402b0c145befeab3f6b5a3876",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "import:4f24a68e59bb6ee579f580ca09a86dff",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "import:797b4a8e46316fbe40c36f54a8cacc2e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "file:packages/logger/src/index.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "@lib/logger"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "file:packages/logger/src/tools/task.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "@lib/logger/tools/task"
+          },
+          "line": 2,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "function:7c3a76f961b0878967524c086b16836f",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "getLogger"
+          },
+          "line": 1,
+          "column": 9,
+          "provenance": null
+        },
+        {
+          "source": "file:server.ts",
+          "target": "function:e0625f98d3dd8cd23209aa0f11ae452d",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "execute"
+          },
+          "line": 2,
+          "column": 9,
+          "provenance": null
+        },
+        {
+          "source": "function:3f8643d402b0c145befeab3f6b5a3876",
+          "target": "function:7c3a76f961b0878967524c086b16836f",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "getLogger"
+          },
+          "line": 3,
+          "column": 48,
+          "provenance": null
+        },
+        {
+          "source": "function:3f8643d402b0c145befeab3f6b5a3876",
+          "target": "function:e0625f98d3dd8cd23209aa0f11ae452d",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "execute"
+          },
+          "line": 3,
+          "column": 30,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "scoped-path-dependency",
+      "files": {
+        "package.json": "{\"dependencies\":{\"helpers\":\"file:common\"}}",
+        "common/package.json": "{\"main\":\"src/index.ts\"}",
+        "common/src/index.ts": "export function work() { return 1; }\n",
+        "fixture/package.json": "{\"dependencies\":{\"helpers\":\"link:../local\"}}",
+        "local/package.json": "{\"exports\":\"./logic.ts\"}",
+        "local/logic.ts": "export function work() { return 2; }\n",
+        "main.ts": "import {work} from \"helpers\"; export function rootCaller() { return work(); }\n",
+        "fixture/main.ts": "import {work} from \"helpers\"; export function fixtureCaller() { return work(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:common/src/index.ts",
+          "kind": "file",
+          "name": "index.ts",
+          "qualifiedName": "common/src/index.ts",
+          "filePath": "common/src/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:666a070a52f81de242484a17c64c33b6",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "common/src/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 36,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:fixture/main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "fixture/main.ts",
+          "filePath": "fixture/main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:de563d26263831f8061971664ed1fba2",
+          "kind": "import",
+          "name": "helpers",
+          "qualifiedName": "helpers",
+          "filePath": "fixture/main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 29,
+          "signature": "import {work} from \"helpers\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:80c05930694c03308ed462c7f89478d2",
+          "kind": "function",
+          "name": "fixtureCaller",
+          "qualifiedName": "fixtureCaller",
+          "filePath": "fixture/main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 37,
+          "endColumn": 80,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:local/logic.ts",
+          "kind": "file",
+          "name": "logic.ts",
+          "qualifiedName": "local/logic.ts",
+          "filePath": "local/logic.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:eefe7b2fcd8242ff7399d02e5df062df",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "local/logic.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 36,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:cdbb480b7ec8962434bd4b4afd01c6c3",
+          "kind": "import",
+          "name": "helpers",
+          "qualifiedName": "helpers",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 29,
+          "signature": "import {work} from \"helpers\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:b3519fb296c3963b80c8c89f33a058e2",
+          "kind": "function",
+          "name": "rootCaller",
+          "qualifiedName": "rootCaller",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 37,
+          "endColumn": 77,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:common/src/index.ts",
+          "target": "function:666a070a52f81de242484a17c64c33b6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:fixture/main.ts",
+          "target": "function:80c05930694c03308ed462c7f89478d2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:fixture/main.ts",
+          "target": "import:de563d26263831f8061971664ed1fba2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:fixture/main.ts",
+          "target": "file:local/logic.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "helpers"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:fixture/main.ts",
+          "target": "function:eefe7b2fcd8242ff7399d02e5df062df",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:80c05930694c03308ed462c7f89478d2",
+          "target": "function:eefe7b2fcd8242ff7399d02e5df062df",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 71,
+          "provenance": null
+        },
+        {
+          "source": "file:local/logic.ts",
+          "target": "function:eefe7b2fcd8242ff7399d02e5df062df",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:b3519fb296c3963b80c8c89f33a058e2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:cdbb480b7ec8962434bd4b4afd01c6c3",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:common/src/index.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "helpers"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:666a070a52f81de242484a17c64c33b6",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:b3519fb296c3963b80c8c89f33a058e2",
+          "target": "function:666a070a52f81de242484a17c64c33b6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 68,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "nested-root-isolation",
+      "files": {
+        "package.json": "{\"workspaces\":[\"packages/*\"]}",
+        "packages/local/package.json": "{\"name\":\"local\"}",
+        "packages/local/index.ts": "export function work() {}\n",
+        "globals.ts": "function helper() {}\n",
+        "main.ts": "import {work} from \"local\"; export function main() { work(); helper(); }\n",
+        "compiler/package.json": "{\"workspaces\":[\"nested/*\"]}",
+        "compiler/main.ts": "import {work} from \"local\"; export function compile() { work(); helper(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:compiler/main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "compiler/main.ts",
+          "filePath": "compiler/main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:a66bf123483364a8da99b71aee8a7361",
+          "kind": "import",
+          "name": "local",
+          "qualifiedName": "local",
+          "filePath": "compiler/main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 27,
+          "signature": "import {work} from \"local\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:eddfbb4a35e7884110ffa99d3e0f4863",
+          "kind": "function",
+          "name": "compile",
+          "qualifiedName": "compile",
+          "filePath": "compiler/main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 35,
+          "endColumn": 75,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:globals.ts",
+          "kind": "file",
+          "name": "globals.ts",
+          "qualifiedName": "globals.ts",
+          "filePath": "globals.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:055d2c379f0a8e4ba3de033b8f3be1b8",
+          "kind": "function",
+          "name": "helper",
+          "qualifiedName": "helper",
+          "filePath": "globals.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 20,
+          "signature": "()",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:4fe2662736c6ae4c8adee808e19899b0",
+          "kind": "import",
+          "name": "local",
+          "qualifiedName": "local",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 27,
+          "signature": "import {work} from \"local\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:40791b418b95a9c94b4f785e598dd9fb",
+          "kind": "function",
+          "name": "main",
+          "qualifiedName": "main",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 35,
+          "endColumn": 72,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:packages/local/index.ts",
+          "kind": "file",
+          "name": "index.ts",
+          "qualifiedName": "packages/local/index.ts",
+          "filePath": "packages/local/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:4c2153baa882f244235120a80008683e",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "packages/local/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 25,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:compiler/main.ts",
+          "target": "function:eddfbb4a35e7884110ffa99d3e0f4863",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:compiler/main.ts",
+          "target": "import:a66bf123483364a8da99b71aee8a7361",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:globals.ts",
+          "target": "function:055d2c379f0a8e4ba3de033b8f3be1b8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:40791b418b95a9c94b4f785e598dd9fb",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:4fe2662736c6ae4c8adee808e19899b0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:packages/local/index.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "local"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:4c2153baa882f244235120a80008683e",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:40791b418b95a9c94b4f785e598dd9fb",
+          "target": "function:055d2c379f0a8e4ba3de033b8f3be1b8",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "helper"
+          },
+          "line": 1,
+          "column": 61,
+          "provenance": null
+        },
+        {
+          "source": "function:40791b418b95a9c94b4f785e598dd9fb",
+          "target": "function:4c2153baa882f244235120a80008683e",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 53,
+          "provenance": null
+        },
+        {
+          "source": "file:packages/local/index.ts",
+          "target": "function:4c2153baa882f244235120a80008683e",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "pnpm-component-barrel",
+      "files": {
+        "pnpm-workspace.yaml": "packages:\n - 'packages/**/*'\n",
+        "packages/internal/ui/package.json": "{\"name\":\"@scope/ui\",\"exports\":\"./src/index.ts\"}",
+        "packages/internal/ui/src/index.ts": "export {default as Button} from \"./ActualButton.svelte\";\n",
+        "packages/internal/ui/src/ActualButton.svelte": "<script>export let title = \"Run\";</script>\n<button>{title}</button>\n",
+        "main.ts": "import {Button} from \"@scope/ui\"; export function mount() { return new Button({target: document.body}); }\n",
+        "Screen.vue": "<script setup>\nimport {Button} from \"@scope/ui\";\n</script>\n<template><Button /></template>\n"
+      },
+      "nodes": [
+        {
+          "id": "file:Screen.vue",
+          "kind": "file",
+          "name": "Screen.vue",
+          "qualifiedName": "Screen.vue",
+          "filePath": "Screen.vue",
+          "language": "vue",
+          "startLine": 1,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "component:6bf4611fb8603ddabe578d775f20ba4b",
+          "kind": "component",
+          "name": "Screen",
+          "qualifiedName": "Screen.vue::Screen",
+          "filePath": "Screen.vue",
+          "language": "vue",
+          "startLine": 1,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:28cade49c3de98e0feef96c035ec53b9",
+          "kind": "import",
+          "name": "@scope/ui",
+          "qualifiedName": "@scope/ui",
+          "filePath": "Screen.vue",
+          "language": "vue",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 33,
+          "signature": "import {Button} from \"@scope/ui\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:78b0a16bb0930f4d440cf973a61a39a7",
+          "kind": "import",
+          "name": "@scope/ui",
+          "qualifiedName": "@scope/ui",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 33,
+          "signature": "import {Button} from \"@scope/ui\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:362d965d219542eaa8b5d63037231db7",
+          "kind": "function",
+          "name": "mount",
+          "qualifiedName": "mount",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 41,
+          "endColumn": 105,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:packages/internal/ui/src/ActualButton.svelte",
+          "kind": "file",
+          "name": "ActualButton.svelte",
+          "qualifiedName": "packages/internal/ui/src/ActualButton.svelte",
+          "filePath": "packages/internal/ui/src/ActualButton.svelte",
+          "language": "svelte",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "component:895a208798a7aa45801b625d7aea3464",
+          "kind": "component",
+          "name": "ActualButton",
+          "qualifiedName": "packages/internal/ui/src/ActualButton.svelte::ActualButton",
+          "filePath": "packages/internal/ui/src/ActualButton.svelte",
+          "language": "svelte",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "variable:1b31dbfd1d56a4244992e6696e6cef0a",
+          "kind": "variable",
+          "name": "title",
+          "qualifiedName": "title",
+          "filePath": "packages/internal/ui/src/ActualButton.svelte",
+          "language": "svelte",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 11,
+          "endColumn": 24,
+          "signature": "= \"Run\"",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:packages/internal/ui/src/index.ts",
+          "kind": "file",
+          "name": "index.ts",
+          "qualifiedName": "packages/internal/ui/src/index.ts",
+          "filePath": "packages/internal/ui/src/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:25e4ac12ccefd4cd3f0a3b232136cadc",
+          "kind": "import",
+          "name": "./ActualButton.svelte",
+          "qualifiedName": "./ActualButton.svelte",
+          "filePath": "packages/internal/ui/src/index.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 56,
+          "signature": "export {default as Button} from \"./ActualButton.svelte\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Screen.vue",
+          "target": "component:6bf4611fb8603ddabe578d775f20ba4b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Screen.vue",
+          "target": "component:895a208798a7aa45801b625d7aea3464",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "Button"
+          },
+          "line": 2,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "file:Screen.vue",
+          "target": "file:packages/internal/ui/src/index.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "@scope/ui"
+          },
+          "line": 2,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "component:6bf4611fb8603ddabe578d775f20ba4b",
+          "target": "import:28cade49c3de98e0feef96c035ec53b9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "component:6bf4611fb8603ddabe578d775f20ba4b",
+          "target": "component:895a208798a7aa45801b625d7aea3464",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "Button"
+          },
+          "line": 4,
+          "column": 11,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:362d965d219542eaa8b5d63037231db7",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:78b0a16bb0930f4d440cf973a61a39a7",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "component:895a208798a7aa45801b625d7aea3464",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "Button"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:packages/internal/ui/src/index.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "@scope/ui"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "function:362d965d219542eaa8b5d63037231db7",
+          "target": "component:895a208798a7aa45801b625d7aea3464",
+          "kind": "instantiates",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "Button"
+          },
+          "line": 1,
+          "column": 67,
+          "provenance": null
+        },
+        {
+          "source": "file:packages/internal/ui/src/ActualButton.svelte",
+          "target": "component:895a208798a7aa45801b625d7aea3464",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "component:895a208798a7aa45801b625d7aea3464",
+          "target": "variable:1b31dbfd1d56a4244992e6696e6cef0a",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:packages/internal/ui/src/index.ts",
+          "target": "import:25e4ac12ccefd4cd3f0a3b232136cadc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:packages/internal/ui/src/index.ts",
+          "target": "file:packages/internal/ui/src/ActualButton.svelte",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "./ActualButton.svelte"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "ohpm-entry",
+      "files": {
+        "entry/oh-package.json5": "{\"dependencies\":{\"data\":\"file:../core/data\"}}",
+        "core/data/oh-package.json5": "{ // entry\n\"main\":\"Index.ets\", }",
+        "core/data/Index.ets": "export function calculate(): number { return 1; }\n",
+        "entry/main.ets": "import {calculate as compute} from \"data\";\nexport function start(): number { return compute(); }\n",
+        "main.ts": "import {calculate} from \"data\";\nexport function run() { return calculate(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:core/data/Index.ets",
+          "kind": "file",
+          "name": "Index.ets",
+          "qualifiedName": "core/data/Index.ets",
+          "filePath": "core/data/Index.ets",
+          "language": "arkts",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:0907959e3760536ab21d985ad7e4d44c",
+          "kind": "function",
+          "name": "calculate",
+          "qualifiedName": "calculate",
+          "filePath": "core/data/Index.ets",
+          "language": "arkts",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 49,
+          "signature": "(): number",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:entry/main.ets",
+          "kind": "file",
+          "name": "main.ets",
+          "qualifiedName": "entry/main.ets",
+          "filePath": "entry/main.ets",
+          "language": "arkts",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:1e923971ef75f1dfa2e1f432a1ffec88",
+          "kind": "import",
+          "name": "data",
+          "qualifiedName": "data",
+          "filePath": "entry/main.ets",
+          "language": "arkts",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 42,
+          "signature": "import {calculate as compute} from \"data\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:1feae3f251dead3222bb52a31174a209",
+          "kind": "function",
+          "name": "start",
+          "qualifiedName": "start",
+          "filePath": "entry/main.ets",
+          "language": "arkts",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 7,
+          "endColumn": 53,
+          "signature": "(): number",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:1c61c2bc3a8fd5fc9dcfada3e49960a2",
+          "kind": "import",
+          "name": "data",
+          "qualifiedName": "data",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 31,
+          "signature": "import {calculate} from \"data\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:7e9336030a46e65ce2d6c7fffdfc2672",
+          "kind": "function",
+          "name": "run",
+          "qualifiedName": "run",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 7,
+          "endColumn": 45,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:core/data/Index.ets",
+          "target": "function:0907959e3760536ab21d985ad7e4d44c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:entry/main.ets",
+          "target": "function:1feae3f251dead3222bb52a31174a209",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:entry/main.ets",
+          "target": "import:1e923971ef75f1dfa2e1f432a1ffec88",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:entry/main.ets",
+          "target": "file:core/data/Index.ets",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "data"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:entry/main.ets",
+          "target": "function:0907959e3760536ab21d985ad7e4d44c",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "compute"
+          },
+          "line": 1,
+          "column": 21,
+          "provenance": null
+        },
+        {
+          "source": "function:1feae3f251dead3222bb52a31174a209",
+          "target": "function:0907959e3760536ab21d985ad7e4d44c",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "compute"
+          },
+          "line": 2,
+          "column": 41,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:7e9336030a46e65ce2d6c7fffdfc2672",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:1c61c2bc3a8fd5fc9dcfada3e49960a2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:core/data/Index.ets",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "data"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:0907959e3760536ab21d985ad7e4d44c",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "calculate"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:7e9336030a46e65ce2d6c7fffdfc2672",
+          "target": "function:0907959e3760536ab21d985ad7e4d44c",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "calculate"
+          },
+          "line": 2,
+          "column": 31,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "entry-extension-priority",
+      "files": {
+        "package.json": "{\"workspaces\":[\"lib\"]}",
+        "lib/package.json": "{\"name\":\"lib\",\"main\":\"./helper\"}",
+        "lib/helper.ts": "export function work() { return \"ts\"; }\n",
+        "lib/helper.js": "export function work() { return \"js\"; }\n",
+        "main.ts": "import {work} from \"lib\";export function typed() { return work(); }\n",
+        "main.js": "import {work} from \"lib\";export function script() { return work(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:lib/helper.js",
+          "kind": "file",
+          "name": "helper.js",
+          "qualifiedName": "lib/helper.js",
+          "filePath": "lib/helper.js",
+          "language": "javascript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:19a1984c08e74bb6a2bdacc82409e374",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "lib/helper.js",
+          "language": "javascript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 39,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:lib/helper.ts",
+          "kind": "file",
+          "name": "helper.ts",
+          "qualifiedName": "lib/helper.ts",
+          "filePath": "lib/helper.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:ec60c1019c02fbe43f5d39fc0d33a5c5",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "lib/helper.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 39,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.js",
+          "kind": "file",
+          "name": "main.js",
+          "qualifiedName": "main.js",
+          "filePath": "main.js",
+          "language": "javascript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:feb2b955d95b1ae70fd6f394c0e1b661",
+          "kind": "import",
+          "name": "lib",
+          "qualifiedName": "lib",
+          "filePath": "main.js",
+          "language": "javascript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 25,
+          "signature": "import {work} from \"lib\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:926f9c6a2a79230d7f8ac96823ba148d",
+          "kind": "function",
+          "name": "script",
+          "qualifiedName": "script",
+          "filePath": "main.js",
+          "language": "javascript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 32,
+          "endColumn": 68,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:07c1fb49a5d70c0bda78faa3dd576114",
+          "kind": "import",
+          "name": "lib",
+          "qualifiedName": "lib",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 25,
+          "signature": "import {work} from \"lib\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:df9584ddee3718828568edd24facd9f2",
+          "kind": "function",
+          "name": "typed",
+          "qualifiedName": "typed",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 32,
+          "endColumn": 67,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:lib/helper.js",
+          "target": "function:19a1984c08e74bb6a2bdacc82409e374",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:lib/helper.ts",
+          "target": "function:ec60c1019c02fbe43f5d39fc0d33a5c5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.js",
+          "target": "function:926f9c6a2a79230d7f8ac96823ba148d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.js",
+          "target": "import:feb2b955d95b1ae70fd6f394c0e1b661",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.js",
+          "target": "file:lib/helper.js",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "lib"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.js",
+          "target": "function:19a1984c08e74bb6a2bdacc82409e374",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:926f9c6a2a79230d7f8ac96823ba148d",
+          "target": "function:19a1984c08e74bb6a2bdacc82409e374",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 59,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:df9584ddee3718828568edd24facd9f2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:07c1fb49a5d70c0bda78faa3dd576114",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:lib/helper.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "lib"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:ec60c1019c02fbe43f5d39fc0d33a5c5",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:df9584ddee3718828568edd24facd9f2",
+          "target": "function:ec60c1019c02fbe43f5d39fc0d33a5c5",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 58,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "browser-strings-do-not-select-browser",
+      "files": {
+        "package.json": "{\"workspaces\":[\"lib\"]}",
+        "lib/package.json": "{\"name\":\"lib\",\"exports\":{\"node\":\"./server.ts\",\"browser\":\"./browser.ts\"}}",
+        "lib/server.ts": "export function work() {}\n",
+        "lib/browser.ts": "export function work() {}\n",
+        "main.ts": "import {work} from \"lib\";export function quoted() { const text = \"window.location\"; return work(); }\n",
+        "template.ts": "import {work} from \"lib\";export function template() { const text = `document.body`; return work(); }\n",
+        "comment.ts": "import {work} from \"lib\";/* document.body */export function comment() { return work(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:comment.ts",
+          "kind": "file",
+          "name": "comment.ts",
+          "qualifiedName": "comment.ts",
+          "filePath": "comment.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:d85727e44516cf63337d70c4fd5f40c6",
+          "kind": "import",
+          "name": "lib",
+          "qualifiedName": "lib",
+          "filePath": "comment.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 25,
+          "signature": "import {work} from \"lib\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:f7ead3681ec379c524305bc535015412",
+          "kind": "function",
+          "name": "comment",
+          "qualifiedName": "comment",
+          "filePath": "comment.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 51,
+          "endColumn": 88,
+          "docstring": "document.body",
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:lib/browser.ts",
+          "kind": "file",
+          "name": "browser.ts",
+          "qualifiedName": "lib/browser.ts",
+          "filePath": "lib/browser.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:4c6c31200cef12b33ac3a97b1f6cbb37",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "lib/browser.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 25,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:lib/server.ts",
+          "kind": "file",
+          "name": "server.ts",
+          "qualifiedName": "lib/server.ts",
+          "filePath": "lib/server.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "lib/server.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 25,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:07c1fb49a5d70c0bda78faa3dd576114",
+          "kind": "import",
+          "name": "lib",
+          "qualifiedName": "lib",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 25,
+          "signature": "import {work} from \"lib\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:64d3257af708fc7249c87606ddd16dfc",
+          "kind": "function",
+          "name": "quoted",
+          "qualifiedName": "quoted",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 32,
+          "endColumn": 100,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:template.ts",
+          "kind": "file",
+          "name": "template.ts",
+          "qualifiedName": "template.ts",
+          "filePath": "template.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:337adfe45b323aed61b68c5394e4ce23",
+          "kind": "import",
+          "name": "lib",
+          "qualifiedName": "lib",
+          "filePath": "template.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 25,
+          "signature": "import {work} from \"lib\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:c957a4f4b94bd59b3dd83195c11ffcbf",
+          "kind": "function",
+          "name": "template",
+          "qualifiedName": "template",
+          "filePath": "template.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 32,
+          "endColumn": 100,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:comment.ts",
+          "target": "function:f7ead3681ec379c524305bc535015412",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:comment.ts",
+          "target": "import:d85727e44516cf63337d70c4fd5f40c6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:comment.ts",
+          "target": "file:lib/server.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "lib"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:comment.ts",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:f7ead3681ec379c524305bc535015412",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 79,
+          "provenance": null
+        },
+        {
+          "source": "file:lib/browser.ts",
+          "target": "function:4c6c31200cef12b33ac3a97b1f6cbb37",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:lib/server.ts",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:64d3257af708fc7249c87606ddd16dfc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:07c1fb49a5d70c0bda78faa3dd576114",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:lib/server.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "lib"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:64d3257af708fc7249c87606ddd16dfc",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 91,
+          "provenance": null
+        },
+        {
+          "source": "file:template.ts",
+          "target": "function:c957a4f4b94bd59b3dd83195c11ffcbf",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:template.ts",
+          "target": "import:337adfe45b323aed61b68c5394e4ce23",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:template.ts",
+          "target": "file:lib/server.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "lib"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:template.ts",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:c957a4f4b94bd59b3dd83195c11ffcbf",
+          "target": "function:cf368f89bd43df80be985bcddb83830d",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 91,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "name": "workspace-emitted-subpaths",
+      "files": {
+        "package.json": "{\"workspaces\":[\"lib\"]}",
+        "lib/package.json": "{\"name\":\"lib\"}",
+        "lib/src/helper.ts": "export function work() {}\n",
+        "main.ts": "import {work} from \"lib/dist/esm/helper.js\";export function run() { work(); }\n"
+      },
+      "nodes": [
+        {
+          "id": "file:lib/src/helper.ts",
+          "kind": "file",
+          "name": "helper.ts",
+          "qualifiedName": "lib/src/helper.ts",
+          "filePath": "lib/src/helper.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:de6ede22040eef12154401af2f4e6d61",
+          "kind": "function",
+          "name": "work",
+          "qualifiedName": "work",
+          "filePath": "lib/src/helper.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 25,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:main.ts",
+          "kind": "file",
+          "name": "main.ts",
+          "qualifiedName": "main.ts",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:788a5af770e88087dcc1e87f87db0d90",
+          "kind": "import",
+          "name": "lib/dist/esm/helper.js",
+          "qualifiedName": "lib/dist/esm/helper.js",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 44,
+          "signature": "import {work} from \"lib/dist/esm/helper.js\";",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:110f3cd6f713eadcb2f45169f34600cd",
+          "kind": "function",
+          "name": "run",
+          "qualifiedName": "run",
+          "filePath": "main.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 51,
+          "endColumn": 77,
+          "signature": "()",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:lib/src/helper.ts",
+          "target": "function:de6ede22040eef12154401af2f4e6d61",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:110f3cd6f713eadcb2f45169f34600cd",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "import:788a5af770e88087dcc1e87f87db0d90",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "file:lib/src/helper.ts",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "lib/dist/esm/helper.js"
+          },
+          "line": 1,
+          "column": 0,
+          "provenance": null
+        },
+        {
+          "source": "file:main.ts",
+          "target": "function:de6ede22040eef12154401af2f4e6d61",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 8,
+          "provenance": null
+        },
+        {
+          "source": "function:110f3cd6f713eadcb2f45169f34600cd",
+          "target": "function:de6ede22040eef12154401af2f4e6d61",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "import",
+            "refName": "work"
+          },
+          "line": 1,
+          "column": 68,
+          "provenance": null
+        }
+      ]
+    }
+  ]
+}

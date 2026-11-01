@@ -1,0 +1,1831 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": "tracked-root-and-nested-ignore",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000036ae792640c0d0a3f6ae792640c0d0a3f0100000e016740d5000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00166e65737465642f646565702f747261636b65642e7473000000006ae792640c0aa5f06ae792640c0aa5f00100000e016740d3000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00116e65737465642f747261636b65642e7473006ae792640c0801fe6ae792640c0801fe0100000e016740d1000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007726f6f742e7473000000e565835005128545da3ecce17d8d813c6208f97c"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "root.ts\n"
+        },
+        "nested/.gitignore": {
+          "text": "*.ts\ndeep/\n"
+        },
+        "nested/deep/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/deep/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "ordinary.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "root.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/deep/tracked.ts",
+        "nested/tracked.ts",
+        "ordinary.ts"
+      ]
+    },
+    {
+      "id": "nested-negation",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae7926417ac9d2b6ae7926417ac9d2b0100000e01674109000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00116e65737465642f747261636b65642e7473006be04693a8e81f7025dfe48dc6e403c1b54ed16b"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "nested/.gitignore": {
+          "text": "*.ts\n!allowed.ts\n"
+        },
+        "nested/allowed.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/ignored.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/allowed.ts",
+        "nested/tracked.ts"
+      ]
+    },
+    {
+      "id": "defaults-and-opt-in",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000046ae7926421273fd56ae7926421273fd50100000e0167413c000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb001a6e6f64655f6d6f64756c65732f646570656e64656e63792e747300000000000000006ae79264212971af6ae79264212971af0100000e0167413e000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000a7372632f6170702e747300000000000000006ae792642124856d6ae792642124856d0100000e0167413a000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00147461726765742f646570656e64656e63792e72730000000000006ae792642121dd406ae792642121dd400100000e01674138000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb001476656e646f722f646570656e64656e63792e747300000000000011234185ae8f443bbb3a023a0878846908f52c11"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "!vendor/\n"
+        },
+        "node_modules/dependency.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/app.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "target/dependency.rs": {
+          "text": "export function symbol() {}\n"
+        },
+        "vendor/dependency.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "src/app.ts",
+        "vendor/dependency.ts"
+      ]
+    },
+    {
+      "id": "default-catalog",
+      "project": ".",
+      "files": {
+        ".angular/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".bloop/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".build/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".cache/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".cxx/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".dart_tool/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".docusaurus/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".eggs/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".externalNativeBuild/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".gradle/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".hypothesis/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".ipynb_checkpoints/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".luarocks/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".metals/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".mypy_cache/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".netlify/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".next/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".nitro/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".nox/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".nuxt/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".nyc_output/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".output/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".parcel-cache/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".pdm-build/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".pixi/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".pnpm-store/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".pub-cache/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".pytest_cache/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".ruff_cache/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".svelte-kit/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".swiftpm/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".tox/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".turbo/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".venv/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".vercel/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".vinxi/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".vite/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".wrangler/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        ".yarn/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "Carthage/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "DerivedData/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "Library/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "Pods/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "__history/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "__pycache__/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "__pypackages__/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "__recovery/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "bazel-output/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "bin/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "bower_components/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "build/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "cmake-build-debug/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "coverage/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "deps/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "dist/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "env/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "jspm_packages/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "lib/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "lua_modules/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "node_modules/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "obj/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "out/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "out-tsc/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "packages/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "project.egg-info/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "storage/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "storybook-static/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "target/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "tmp/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "vcpkg_installed/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "vendor/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "venv/source.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "web_modules/source.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "Library/source.ts",
+        "bin/source.ts",
+        "deps/source.ts",
+        "env/source.ts",
+        "lib/source.ts",
+        "packages/source.ts",
+        "src/source.ts",
+        "storage/source.ts",
+        "tmp/source.ts"
+      ]
+    },
+    {
+      "id": "jvm-and-source-build",
+      "project": ".",
+      "files": {
+        "app/res/layout-v21/view.xml": {
+          "text": "export function symbol() {}\n"
+        },
+        "app/res/raw/code.js": {
+          "text": "export function symbol() {}\n"
+        },
+        "app/res/values/strings.xml": {
+          "text": "export function symbol() {}\n"
+        },
+        "app/src/test/kotlin/build/Example.kt": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/src/web/build/asset.py": {
+          "text": "export function symbol() {}\n"
+        },
+        "res/drawable-hdpi/icon.xml": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/Feature.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/Project.cs": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/module.vue": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/output.js": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/types.d.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/unit.rs": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/go/build/project.go": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/main/java/org/build/Worker.java": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "app/res/raw/code.js",
+        "app/src/test/kotlin/build/Example.kt",
+        "src/build/Feature.ts",
+        "src/build/Project.cs",
+        "src/build/module.vue",
+        "src/build/unit.rs",
+        "src/go/build/project.go",
+        "src/main/java/org/build/Worker.java"
+      ]
+    },
+    {
+      "id": "source-build-opt-in",
+      "project": ".",
+      "files": {
+        ".gitignore": {
+          "text": "!src/build/\n"
+        },
+        "src/build/output.js": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/types.d.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "src/build/vendor/pkg.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "src/build/output.js",
+        "src/build/types.d.ts"
+      ]
+    },
+    {
+      "id": "include-exclude-and-extensions",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "Tools/\n"
+        },
+        "Tools/main.custom": {
+          "text": "export function symbol() {}\n"
+        },
+        "Tools/omit.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"extensions\":{\"custom\":\"typescript\"},\"include\":[\"Tools/\",\"node_modules/\"],\"exclude\":[\"Tools/omit.ts\"]}"
+        },
+        "node_modules/dependency.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "Tools/main.custom"
+      ]
+    },
+    {
+      "id": "embedded-untracked",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/.gitignore": {
+          "text": "ignored.ts\n"
+        },
+        "repos/child/ignored.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "repos/child/used.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "root.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "repos/child/used.ts",
+        "root.ts"
+      ]
+    },
+    {
+      "id": "embedded-ignored-default",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "repos/\n"
+        },
+        "repos/child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/used.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": []
+    },
+    {
+      "id": "embedded-ignored-opt-in",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "repos/\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"includeIgnored\":[\"repos/\"]}"
+        },
+        "repos/child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/used.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "repos/plain.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "repos/child/used.ts"
+      ]
+    },
+    {
+      "id": "embedded-specific-opt-in",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "repos/\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"includeIgnored\":[\"repos/chosen/\"]}"
+        },
+        "repos/chosen/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/chosen/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/chosen/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/chosen/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/chosen/used.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "repos/other/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/other/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/other/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/other/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/other/used.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "repos/chosen/used.ts"
+      ]
+    },
+    {
+      "id": "nested-embedded-opt-in",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "repos/\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"includeIgnored\":[\"repos/\"]}"
+        },
+        "repos/child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/.gitignore": {
+          "text": "hidden/\n"
+        },
+        "repos/child/hidden/grandchild/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/child/hidden/grandchild/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/child/hidden/grandchild/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/child/hidden/grandchild/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/hidden/grandchild/used.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "repos/child/used.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "repos/child/hidden/grandchild/used.ts",
+        "repos/child/used.ts"
+      ]
+    },
+    {
+      "id": "tracked-gitlink",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae79266146248db6ae79266146248db0100000e016744350000e000000001f50000001400000080b1a708deb5275630eefb2adb64e22dd04bd406ac00056368696c6400000000006ea34aba499e9917134567355f0021233bfd6f3b"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "child/.git/COMMIT_EDITMSG": {
+          "text": "fixture\n"
+        },
+        "child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "child/.git/index": {
+          "hex": "4449524300000002000000016ae792661462fac16ae792661462fac10100000e0167445a000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007757365642e74730000005452454500000019003120300a0213898c120525d78054439ba301de874ebce750daa938601c9de1421941cb00aae51e63de406290"
+        },
+        "child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "child/used.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "root.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "child/used.ts",
+        "root.ts"
+      ]
+    },
+    {
+      "id": "ignored-tracked-gitlink",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae7926626887b206ae7926626887b200100000e0167449b0000e000000001f50000001400000080b1a708deb5275630eefb2adb64e22dd04bd406ac00056368696c64000000000013f4843a3994a8effdb3adb743711276403f634b"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "child/\n"
+        },
+        "child/.git/COMMIT_EDITMSG": {
+          "text": "fixture\n"
+        },
+        "child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "child/.git/index": {
+          "hex": "4449524300000002000000016ae7926626892d066ae7926626892d060100000e016744c0000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007757365642e74730000005452454500000019003120300a0213898c120525d78054439ba301de874ebce750291e48d4f09f98c87f407b39af7abbea6f9e6310"
+        },
+        "child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "child/used.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": []
+    },
+    {
+      "id": "nested-worktree",
+      "project": ".",
+      "files": {
+        ".git/COMMIT_EDITMSG": {
+          "text": "fixture\n"
+        },
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae7926635b80a096ae7926635b80a090100000e01674501000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007626173652e74730000005452454500000019003120300a266875a6fed84f739e5a3be4a4da8ac0e31990b26ada1329111a7f5ee6c624421b81a5377d11d9c6"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".git/worktrees/copy/HEAD": {
+          "text": "ref: refs/heads/copy\n"
+        },
+        ".git/worktrees/copy/ORIG_HEAD": {
+          "text": "69141067383d87550e284d7c9231f7be3e048ec5\n"
+        },
+        ".git/worktrees/copy/commondir": {
+          "text": "../..\n"
+        },
+        ".git/worktrees/copy/gitdir": {
+          "text": "/private<WORKSPACE>/copy/.git\n"
+        },
+        ".git/worktrees/copy/index": {
+          "hex": "4449524300000002000000016ae7926700248db36ae7926700248db30100000e0167452a000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007626173652e74730000005452454500000019003120300a266875a6fed84f739e5a3be4a4da8ac0e31990b285787a51bf2304def4a8ad821acd54bcb6c91bf0"
+        },
+        "base.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"includeIgnored\":[\"copy/\"],\"include\":[\"copy/\"]}"
+        },
+        "copy/.git": {
+          "text": "gitdir: /private<WORKSPACE>/.git/worktrees/copy\n"
+        },
+        "copy/base.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "base.ts",
+        "copy/base.ts"
+      ]
+    },
+    {
+      "id": "index-version-four",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000004000000036ae792670bc63f446ae792670bc63f440100000e01674559000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000f006e65737465642f616c7068612e7473006ae792670bc80d046ae792670bc80d040100000e0167455a000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0012036265742e7473006ae792670bc993f86ae792670bc993f80100000e0167455b000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000e0b626574612e7473003475db80d6ee9f9834248ff5e9d8c08aa309260d"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "nested/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "nested/alpha.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/alphabet.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/beta.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/alpha.ts",
+        "nested/alphabet.ts",
+        "nested/beta.ts"
+      ]
+    },
+    {
+      "id": "split-index",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae7926719d7f5af6ae7926719d7f5af0100000e01674589000081a4000001f5000000140000001df8d863dab03d5c16b58fbe073bd6e5a4cb453abb000000006c696e6b0000004cc5d352aced4aefc87d43b39ad2aa11ec81e136040000000200000002000000020000000000000000000000020000000000000001000000020000000200000000000000000000000100000000dbb92414f70088f9f63fe6a82b6ca3c879f369f1"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".git/sharedindex.c5d352aced4aefc87d43b39ad2aa11ec81e13604": {
+          "hex": "4449524300000002000000026ae7926717a8aa616ae7926717a8aa610100000e01674589000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000f6e65737465642f66697273742e74730000006ae7926717aae3b86ae7926717aae3b80100000e0167458a000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00106e65737465642f7365636f6e642e74730000c5d352aced4aefc87d43b39ad2aa11ec81e13604"
+        },
+        "nested/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "nested/first.ts": {
+          "text": "export function changed() {}\n"
+        },
+        "nested/second.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/first.ts"
+      ]
+    },
+    {
+      "id": "skip-worktree-present-and-absent",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000003000000026ae7926723e4b68d6ae7926723e4b68d0100000e016745c0000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb401040006e65737465642f616273656e742e747300000000000000006ae7926723e2bf4b6ae7926723e2bf4b0100000e016745bf000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb401140006e65737465642f70726573656e742e7473000000000000004f494c43eff3a5035c64160d09b5f7697821f25b"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "nested/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "nested/present.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/present.ts"
+      ]
+    },
+    {
+      "id": "project-inside-repository",
+      "project": "app",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae7926732baf13b6ae7926732baf13b0100000e016745ef000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00156170702f6e65737465642f747261636b65642e747300000000006ae7926732bd780a6ae7926732bd780a0100000e016745f0000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000a6f7574736964652e7473000000000000000047eaa451164333dc02ad360aef40eed79ea8217e"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "app/nested/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "app/nested/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "app/nested/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "outside.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/tracked.ts"
+      ]
+    },
+    {
+      "id": "project-ignored-by-parent",
+      "project": "app",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".gitignore": {
+          "text": "app/\n"
+        },
+        "app/local.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "outside.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "local.ts"
+      ]
+    },
+    {
+      "id": "nested-worktree-default",
+      "project": ".",
+      "files": {
+        ".git/COMMIT_EDITMSG": {
+          "text": "fixture\n"
+        },
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae792680746ab5c6ae792680746ab5c0100000e01674646000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007626173652e74730000005452454500000019003120300a266875a6fed84f739e5a3be4a4da8ac0e31990b2bbe391c0a60ba742a2e40359f36a0db0aa9ed283"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".git/worktrees/copy/HEAD": {
+          "text": "ref: refs/heads/copy\n"
+        },
+        ".git/worktrees/copy/ORIG_HEAD": {
+          "text": "76f7243f9888b9c88a929293ac355ab64ed1fa02\n"
+        },
+        ".git/worktrees/copy/commondir": {
+          "text": "../..\n"
+        },
+        ".git/worktrees/copy/gitdir": {
+          "text": "/private<WORKSPACE>/copy/.git\n"
+        },
+        ".git/worktrees/copy/index": {
+          "hex": "4449524300000002000000016ae792680c1459ff6ae792680c1459ff0100000e0167466e000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007626173652e74730000005452454500000019003120300a266875a6fed84f739e5a3be4a4da8ac0e31990b25c9fa7dcf8f33376d055ffa21877a76932b5ae35"
+        },
+        "base.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"includeIgnored\":[\"copy/\"]}"
+        },
+        "copy/.git": {
+          "text": "gitdir: /private<WORKSPACE>/.git/worktrees/copy\n"
+        },
+        "copy/base.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "base.ts"
+      ]
+    },
+    {
+      "id": "filesystem-include-ignored-no-revival",
+      "project": ".",
+      "files": {
+        ".gitignore": {
+          "text": "repos/\n"
+        },
+        "prometeu-search.json": {
+          "text": "{\"includeIgnored\":[\"repos/\"]}"
+        },
+        "repos/child/.git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        "repos/child/.git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        "repos/child/.git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        "repos/child/.git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "repos/child/used.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": []
+    },
+    {
+      "id": "repository-exclude-files",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n\texcludesFile = <WORKSPACE>/rules.ignore\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000036ae792681a02b6bf6ae792681a02b6bf0100000e016746c7000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0007696e666f2e74730000006ae792681a05dc696ae792681a05dc690100000e016746c9000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00076b6570742e74730000006ae792681a04600a6ae792681a04600a0100000e016746c8000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00086c6f63616c2e74730000aa905b5f9921b58afca51789b250e8242103393a"
+        },
+        ".git/info/exclude": {
+          "text": "info.ts\n"
+        },
+        "info.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "kept.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "local.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "rules.ignore": {
+          "text": "local.ts\n"
+        }
+      },
+      "expected": [
+        "kept.ts"
+      ]
+    },
+    {
+      "id": "index-sha256",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[extensions]\n\tobjectformat = sha256\n[core]\n\trepositoryformatversion = 1\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = true\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000016ae79268265fe9c26ae79268265fe9c20100000e0167471b000081a4000001f5000000140000001c98fad7e3eb386b7e64c96d01d01561adb1ef020741ad3ad1ff625bdc7dede46200116e65737465642f747261636b65642e747300000000002fb53ee68df80e5855c0fef88997b480b7d5f936e0b7769e35bf96207294129d"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "nested/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "nested/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "nested/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "nested/tracked.ts"
+      ]
+    },
+    {
+      "id": "sparse-index-loose",
+      "project": ".",
+      "files": {
+        ".git/COMMIT_EDITMSG": {
+          "text": "fixture\n"
+        },
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[extensions]\n\tworktreeConfig = true\n"
+        },
+        ".git/config.worktree": {
+          "text": "[core]\n\tsparseCheckout = true\n\tsparseCheckoutCone = true\n[index]\n\tsparse = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "44495243000000030000000200000000000000000000000000000000000000000000000000004000000000000000000000000000bd4e89079049d084fc5e60a1f0fe909542ebc7844007400068696464656e2f006ae792683632e8a46ae792683632e8a40100000e01674781000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000f76697369626c652f6d61696e2e74730000005452454500000058003220320abefd3f18b3102a4306301bb8ccff56c26813cb7d68696464656e003120300abd4e89079049d084fc5e60a1f0fe909542ebc78476697369626c65003120300a3435b5b81b9bbee0b4199ebaf80641bfa5f15f7b7364697200000000df0b727ea5c63643af1650bdbcdda98cbb3a94d3"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".git/info/sparse-checkout": {
+          "text": "/*\n!/*/\n/visible/\n"
+        },
+        ".git/objects/34/35b5b81b9bbee0b4199ebaf80641bfa5f15f7b": {
+          "hex": "78012b294a4d5530366530343030333151c84dccccd32b2966f86a242692baf54a5ef8811a25d72f8b539b4f09bc06002af3102d"
+        },
+        ".git/objects/64/61deecd1c607fd7353099806614d206076a854": {
+          "hex": "78014bcac94f523065d0d22b29e602001759033e"
+        },
+        ".git/objects/88/cba6b4feb5ecde8ffea4b7c498510915258347": {
+          "hex": "78012b294a4d5530b6603034303033315128294a4cce4e4dd12b2966f86a242692baf54a5ef8811a25d72f8b539b4f09bc06005afc1169"
+        },
+        ".git/objects/bd/4e89079049d084fc5e60a1f0fe909542ebc784": {
+          "hex": "78012b294a4d553034b06430343030333151d04bcf2cc94ccfcb2f4a654849bcf7e6e231f6bfc5c19c33d8127d1512ca568498180081425e6a71496a0a43c7e9655bfe6d7d73afffdf92ed476604728aaa36bb438d29294a4cce4e4dd12b2966f86a242692baf54a5ef8811a25d72f8b539b4f09bc06004fc82f77"
+        },
+        ".git/objects/be/fd3f18b3102a4306301bb8ccff56c26813cb7d": {
+          "hex": "78012b294a4d5530336730310002858ccc9494d43c86bd7e9dec133c2fb4fc894b58f8e1df84a94eaf8fb740149465166726e5a43298986edd213d7bdf832d92f376fd6073dcbff4637c35004c9d202b"
+        },
+        ".git/objects/c3/b0016f315126ab9e65c4b1640bc152eabbd63a": {
+          "hex": "78019d8d410ec22010003df30a3ea0d9652da58931fec037c0b24412908650d3e76bfa044f739a196eb5e6a17186d3e8223a488a94d0054230fe4a60093004c79cd264d95887c4618eca6fe3d5ba7e76cf45f4ad1d7cc8eeeb5ae492df1f5f72bcffc20b4d167131fa0c04a0f8180ef9435529ef63eba2be03c137f5"
+        },
+        ".git/objects/f5/32161465b5d46e57c07c2245f4a36583ca10eb": {
+          "hex": "78014bcac94f5230b26048ad28c82f2a51482bcd4b2ec9cccf5328aecc4dcacfd1d054a8aee50200e8e90c7b"
+        },
+        "hidden/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "hidden/nested/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "hidden/nested/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "hidden/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "hidden/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "visible/main.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "hidden/nested/tracked.ts",
+        "hidden/tracked.ts",
+        "visible/main.ts"
+      ]
+    },
+    {
+      "id": "sparse-index-packed",
+      "project": ".",
+      "files": {
+        ".git/COMMIT_EDITMSG": {
+          "text": "fixture\n"
+        },
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[extensions]\n\tworktreeConfig = true\n"
+        },
+        ".git/config.worktree": {
+          "text": "[core]\n\tsparseCheckout = true\n\tsparseCheckoutCone = true\n[index]\n\tsparse = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "44495243000000030000000200000000000000000000000000000000000000000000000000004000000000000000000000000000bd4e89079049d084fc5e60a1f0fe909542ebc7844007400068696464656e2f006ae792690ace44bc6ae792690ace44bc0100000e016747ea000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000f76697369626c652f6d61696e2e74730000005452454500000058003220320abefd3f18b3102a4306301bb8ccff56c26813cb7d68696464656e003120300abd4e89079049d084fc5e60a1f0fe909542ebc78476697369626c65003120300a3435b5b81b9bbee0b4199ebaf80641bfa5f15f7b7364697200000000e0991ef513a65f8b73756c3b93868660a5d4721c"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        ".git/info/refs": {
+          "text": "2e05827672e6d8b980a5f77ca5f29760eb0eb77c\trefs/heads/master\n"
+        },
+        ".git/info/sparse-checkout": {
+          "text": "/*\n!/*/\n/visible/\n"
+        },
+        ".git/objects/info/commit-graph": {
+          "hex": "43475048010104004f49444600000000000000444f49444c000000000000044443444154000000000000045847444132000000000000047c000000000000000000000480000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000012e05827672e6d8b980a5f77ca5f29760eb0eb77cbefd3f18b3102a4306301bb8ccff56c26813cb7d7000000070000000000000046ae79269000000009530f3b0efa5a97689b82cef63ba47274d436048"
+        },
+        ".git/objects/info/packs": {
+          "hex": "50207061636b2d393435363438323133353965623934366535646265663737663430623532346533396363373663372e7061636b0a0a"
+        },
+        ".git/objects/pack/pack-94564821359eb946e5dbef77f40b524e39cc76c7.idx": {
+          "hex": "ff744f6300000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000300000003000000030000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000040000000400000004000000050000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000006000000060000000600000007000000070000000700000007000000070000000700000007000000070000000700000007000000072e05827672e6d8b980a5f77ca5f29760eb0eb77c3435b5b81b9bbee0b4199ebaf80641bfa5f15f7b6461deecd1c607fd7353099806614d206076a85488cba6b4feb5ecde8ffea4b7c498510915258347bd4e89079049d084fc5e60a1f0fe909542ebc784befd3f18b3102a4306301bb8ccff56c26813cb7df532161465b5d46e57c07c2245f4a36583ca10ebd254ebb010bd33976deb5971b78cb3956e849af2f011a1fb94ce3e9b0000000c000001a9000000840000017800000103000000b80000009294564821359eb946e5dbef77f40b524e39cc76c7f6317a65eb1e740643dac117f7308e593d2590bb"
+        },
+        ".git/objects/pack/pack-94564821359eb946e5dbef77f40b524e39cc76c7.pack": {
+          "hex": "5041434b00000002000000079a0a789c9dcbd109c3201000d07fa7708196bb5c630c94d20d3a83779e54d05ac4948c5fc808f97a5f6f7455cb9a2225f44c0853b811380264f62229cd4e26e791849768c236deaddb570f52d4dedbe153f750bf45aff9f30b25c787c565a5d921ae642f4000465aad790c3d514dcafbd8ba9a3fc2e834b635789cd3d22b29e6020003db014abc01789c4bad28c82f2a51482bcd4b2ec9cccf5328aecc4dcacfd1d054a8aee50200a0570a52a304789c33310002858ccc9494d43c86bd7e9dec133c2fb4fc894b58f8e1df84a94eaf8fb79880159465166726e5a43298986edd213d7bdf832d92f376fd6073dcbff4637c3500a9ea1deead06789c33343030333151d04bcf2cc94ccfcb2f4a654849bcf7e6e231f6bfc5c19c33d8127d1512ca568498180081425e6a71496a0a43c7e9655bfe6d7d73afffdf92ed476604728aaa36bb1b428c29294a4cce4e4dd12b2966f86a242692baf54a5ef8811a25d72f8b539b4f09bc060039632d0da602789c3334303033315128294a4cce4e4dd12b2966f86a242692baf54a5ef8811a25d72f8b539b4f09bc0600f9850f2ea302789c33343030333151c84dccccd32b2966f86a242692baf54a5ef8811a25d72f8b539b4f09bc0600d09c0df594564821359eb946e5dbef77f40b524e39cc76c7"
+        },
+        ".git/objects/pack/pack-94564821359eb946e5dbef77f40b524e39cc76c7.rev": {
+          "hex": "5249445800000001000000010000000000000002000000060000000500000004000000030000000194564821359eb946e5dbef77f40b524e39cc76c7c4b1653490dde355a1b409bef50db70bb9da1ec3"
+        },
+        ".git/packed-refs": {
+          "text": "# pack-refs with: peeled fully-peeled sorted \n2e05827672e6d8b980a5f77ca5f29760eb0eb77c refs/heads/master\n"
+        },
+        "hidden/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "hidden/nested/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "hidden/nested/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "hidden/tracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "hidden/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "visible/main.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "hidden/nested/tracked.ts",
+        "hidden/tracked.ts",
+        "visible/main.ts"
+      ]
+    },
+    {
+      "id": "git-config-include",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[include]\n\tpath = extra\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/extra": {
+          "text": "[core]\n excludesFile = \"<WORKSPACE>/included.ignore\"\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae79269185bee876ae79269185bee870100000e0167482c000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000968696464656e2e7473006ae792691859c95f6ae792691859c95f0100000e0167482b000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00076b6570742e747300000070059f5b6253dffa3ded3dc958bf2453e7d14c11"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "included.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "kept.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "kept.ts"
+      ]
+    },
+    {
+      "id": "git-config-conditional-directory",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[includeIf \"gitdir:**/.git\"]\n\tpath = extra\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/extra": {
+          "text": "[core]\n excludesFile = \"<WORKSPACE>/included.ignore\"\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae792692288ad5c6ae792692288ad5c0100000e0167485c000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000968696464656e2e7473006ae79269228686e76ae79269228686e70100000e0167485b000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00076b6570742e74730000001cdabe65320dd9bd80ea00064d8c752b9afb8a8c"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "included.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "kept.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "kept.ts"
+      ]
+    },
+    {
+      "id": "git-config-conditional-branch",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[includeIf \"onbranch:master\"]\n\tpath = extra\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/extra": {
+          "text": "[core]\n excludesFile = \"<WORKSPACE>/included.ignore\"\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae792692d131dc76ae792692d131dc70100000e0167488b000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000968696464656e2e7473006ae792692d11645f6ae792692d11645f0100000e0167488a000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00076b6570742e747300000049f47f22b20cb598fadb15e91d5deb014afdd6f7"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "included.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "kept.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "kept.ts"
+      ]
+    },
+    {
+      "id": "git-config-conditional-remote",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[includeIf \"hasconfig:remote.*.url:https://example.invalid/**\"]\n\tpath = extra\n[remote \"origin\"]\n\turl = https://example.invalid/project\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/extra": {
+          "text": "[core]\n excludesFile = \"<WORKSPACE>/included.ignore\"\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae792693807ce506ae792693807ce500100000e016748ba000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000968696464656e2e7473006ae7926938063c9e6ae7926938063c9e0100000e016748b9000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00076b6570742e74730000008a50da7e96bdd1d1dee24682467981a6ee035d75"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "included.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "kept.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "kept.ts"
+      ]
+    },
+    {
+      "id": "git-config-quoted-path",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n\texcludesFile = <WORKSPACE>/rules with \\\"quotes\\\".ignore\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae7926a0751f8846ae7926a0751f8840100000e016748ea000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000968696464656e2e7473006ae7926a075003dc6ae7926a075003dc0100000e016748e9000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb00076b6570742e747300000044b450a3d7533fae65c01023c6c1a5d83fb265b9"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "kept.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "rules with \"quotes\".ignore": {
+          "text": "hidden.ts\n"
+        }
+      },
+      "expected": [
+        "kept.ts"
+      ]
+    },
+    {
+      "id": "unicode-index-paths",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/index": {
+          "hex": "4449524300000002000000026ae7926a11c50b786ae7926a11c50b780100000e01674918000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb000ce4be8b2f636166c3a92e74730000000000006ae7926a11c70a8a6ae7926a11c70a8a0100000e01674919000081a4000001f5000000140000001cf532161465b5d46e57c07c2245f4a36583ca10eb0011e4be8b2f7370616365206e616d652e747300b0c4d8a8d91bfde28992d7ae460e7cf7f22d4405"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "例/.gitignore": {
+          "text": "*.ts\n"
+        },
+        "例/café.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "例/space name.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "例/untracked.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "例/café.ts",
+        "例/space name.ts"
+      ]
+    },
+    {
+      "id": "environment-count-excludes",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "other.ignore": {
+          "text": "visible.ts\n"
+        },
+        "rules.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_COUNT": "1",
+        "GIT_CONFIG_KEY_0": "core.excludesFile",
+        "GIT_CONFIG_VALUE_0": "<WORKSPACE>/rules.ignore"
+      }
+    },
+    {
+      "id": "environment-count-precedence",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "other.ignore": {
+          "text": "visible.ts\n"
+        },
+        "rules.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_COUNT": "2",
+        "GIT_CONFIG_KEY_0": "core.excludesFile",
+        "GIT_CONFIG_VALUE_0": "<WORKSPACE>/other.ignore",
+        "GIT_CONFIG_KEY_1": "core.excludesFile",
+        "GIT_CONFIG_VALUE_1": "<WORKSPACE>/rules.ignore"
+      }
+    },
+    {
+      "id": "environment-parameters-legacy",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "other.ignore": {
+          "text": "visible.ts\n"
+        },
+        "rules.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_PARAMETERS": "'core.excludesFile=<WORKSPACE>/rules.ignore'"
+      }
+    },
+    {
+      "id": "environment-parameters-pairs",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "other.ignore": {
+          "text": "visible.ts\n"
+        },
+        "rules.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_PARAMETERS": "'core.excludesFile'='<WORKSPACE>/rules.ignore'"
+      }
+    },
+    {
+      "id": "environment-parameters-quotes",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "rules with 'quotes'.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_PARAMETERS": "'core.excludesFile'='<WORKSPACE>/rules with '\\''quotes'\\''.ignore'"
+      }
+    },
+    {
+      "id": "environment-include",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "extra.config": {
+          "text": "[core]\n excludesFile = \"<WORKSPACE>/rules.ignore\"\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "other.ignore": {
+          "text": "visible.ts\n"
+        },
+        "rules.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_COUNT": "1",
+        "GIT_CONFIG_KEY_0": "include.path",
+        "GIT_CONFIG_VALUE_0": "<WORKSPACE>/extra.config"
+      }
+    },
+    {
+      "id": "environment-conditional-remote",
+      "project": ".",
+      "files": {
+        ".git/HEAD": {
+          "text": "ref: refs/heads/master\n"
+        },
+        ".git/config": {
+          "text": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = false\n\tprecomposeunicode = true\n[includeIf \"hasconfig:remote.*.url:https://example.invalid/**\"]\n\tpath = extra\n"
+        },
+        ".git/description": {
+          "text": "Unnamed repository; edit this file 'description' to name the repository.\n"
+        },
+        ".git/extra": {
+          "text": "[core]\n excludesFile = \"<WORKSPACE>/rules.ignore\"\n"
+        },
+        ".git/info/exclude": {
+          "text": "# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n"
+        },
+        "hidden.ts": {
+          "text": "export function symbol() {}\n"
+        },
+        "other.ignore": {
+          "text": "visible.ts\n"
+        },
+        "rules.ignore": {
+          "text": "hidden.ts\n"
+        },
+        "visible.ts": {
+          "text": "export function symbol() {}\n"
+        }
+      },
+      "expected": [
+        "visible.ts"
+      ],
+      "environment": {
+        "GIT_CONFIG_COUNT": "1",
+        "GIT_CONFIG_KEY_0": "remote.origin.url",
+        "GIT_CONFIG_VALUE_0": "https://example.invalid/project"
+      }
+    }
+  ]
+}

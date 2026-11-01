@@ -1,0 +1,1368 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "projects": [
+    {
+      "name": "nuxt-pages",
+      "files": {
+        "package.json": "{\"dependencies\":{\"nuxt\":\"*\"}}",
+        "pages/index.vue": "<template><div>Home</div></template>",
+        "pages/admin.vue": "<template><div>Admin</div></template>",
+        "pages/orders/index.vue": "<template><div>Orders</div></template>",
+        "components/index.vue": "<template><div>Other</div></template>",
+        "middleware/auth.ts": "export default function auth() {}",
+        "server/api/[id].ts": "export default function handler() {}"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:pages/admin.vue:/admin:1",
+            "kind": "route",
+            "name": "/admin",
+            "qualifiedName": "pages/admin.vue::route:/admin",
+            "filePath": "pages/admin.vue",
+            "language": "vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "component:6f351f5e3178d87ea9bb4514fc1f2a01",
+                "kind": "component",
+                "name": "admin",
+                "qualifiedName": "pages/admin.vue::admin",
+                "filePath": "pages/admin.vue",
+                "language": "vue",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 37,
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "nuxt",
+                "confidence": 0.95,
+                "resolvedBy": "framework",
+                "refName": "admin"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:pages/index.vue:/:1",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "pages/index.vue::route:/",
+            "filePath": "pages/index.vue",
+            "language": "vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "component:f197d06c8ef26bbf8214410a6cf657e1",
+                "kind": "component",
+                "name": "index",
+                "qualifiedName": "pages/index.vue::index",
+                "filePath": "pages/index.vue",
+                "language": "vue",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 36,
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "nuxt",
+                "confidence": 0.95,
+                "resolvedBy": "framework",
+                "refName": "index"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:pages/orders/index.vue:/orders:1",
+            "kind": "route",
+            "name": "/orders",
+            "qualifiedName": "pages/orders/index.vue::route:/orders",
+            "filePath": "pages/orders/index.vue",
+            "language": "vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "component:bab32e617d4a2ca162980cf68031f038",
+                "kind": "component",
+                "name": "index",
+                "qualifiedName": "pages/orders/index.vue::index",
+                "filePath": "pages/orders/index.vue",
+                "language": "vue",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 38,
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "nuxt",
+                "confidence": 0.95,
+                "resolvedBy": "framework",
+                "refName": "index"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:server/api/[id].ts:/api/:id:1",
+            "kind": "route",
+            "name": "/api/:id",
+            "qualifiedName": "server/api/[id].ts::route:/api/:id",
+            "filePath": "server/api/[id].ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": []
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "astro-pages",
+      "files": {
+        "package.json": "{\"dependencies\":{\"astro\":\"*\"}}",
+        "src/pages/index.astro": "<h1>Home</h1>",
+        "src/pages/blog/index.astro": "<h1>Blog</h1>",
+        "src/pages/_skip.astro": "<h1>Hidden</h1>",
+        "src/pages/api/hello.ts": "export const GET = async () => new Response(\"hi\");\nexport async function POST() { return new Response(\"ok\"); }",
+        "src/components/index.astro": "<h1>Other</h1>"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:src/pages/api/hello.ts:/api/hello:1",
+            "kind": "route",
+            "name": "/api/hello",
+            "qualifiedName": "src/pages/api/hello.ts::route:/api/hello",
+            "filePath": "src/pages/api/hello.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:08bde45ecb3a2450092dc4707edaf97a",
+                "kind": "function",
+                "name": "POST",
+                "qualifiedName": "POST",
+                "filePath": "src/pages/api/hello.ts",
+                "language": "typescript",
+                "startLine": 2,
+                "endLine": 2,
+                "startColumn": 7,
+                "endColumn": 59,
+                "signature": "()",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": true,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "POST"
+              }
+            },
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:305a8b8d7815355f1459515cae804091",
+                "kind": "function",
+                "name": "GET",
+                "qualifiedName": "GET",
+                "filePath": "src/pages/api/hello.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 19,
+                "endColumn": 49,
+                "signature": "()",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": true,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "GET"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:src/pages/blog/index.astro:/blog:1",
+            "kind": "route",
+            "name": "/blog",
+            "qualifiedName": "src/pages/blog/index.astro::route:/blog",
+            "filePath": "src/pages/blog/index.astro",
+            "language": "astro",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "component:50160634385ecd05eee4ba24231b2499",
+                "kind": "component",
+                "name": "index",
+                "qualifiedName": "src/pages/blog/index.astro::index",
+                "filePath": "src/pages/blog/index.astro",
+                "language": "astro",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 13,
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "astro",
+                "confidence": 0.95,
+                "resolvedBy": "framework",
+                "refName": "index"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:src/pages/index.astro:/:1",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/pages/index.astro::route:/",
+            "filePath": "src/pages/index.astro",
+            "language": "astro",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "component:9ab44aceec99c2241ddd988791f90540",
+                "kind": "component",
+                "name": "index",
+                "qualifiedName": "src/pages/index.astro::index",
+                "filePath": "src/pages/index.astro",
+                "language": "astro",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 13,
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "astro",
+                "confidence": 0.95,
+                "resolvedBy": "framework",
+                "refName": "index"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "fastapi-prefixes",
+      "files": {
+        "main.py": "from fastapi import FastAPI\nfrom api import api_router\napp=FastAPI()\napp.include_router(api_router,prefix=\"/api/v1\")\n",
+        "api.py": "from fastapi import APIRouter\nfrom routes import items\napi_router=APIRouter()\napi_router.include_router(items.router)\n",
+        "routes/__init__.py": "",
+        "routes/items.py": "from fastapi import APIRouter\nrouter=APIRouter(prefix=\"/items\")\n@router.get(\"/{id}\")\ndef read(): return 1\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:routes/items.py:3:GET:/{id}",
+            "kind": "route",
+            "name": "GET /api/v1/items/{id}",
+            "qualifiedName": "routes/items.py::GET:/{id}",
+            "filePath": "routes/items.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 19,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:3e03a1f6aff2b258f087ff87289e7b60",
+                "kind": "function",
+                "name": "read",
+                "qualifiedName": "read",
+                "filePath": "routes/items.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 20,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "read"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "fastapi-aliases",
+      "files": {
+        "main.py": "from fastapi import FastAPI\nfrom routes import router as items_router\napp=FastAPI()\napp.include_router(items_router,prefix=\"/api\")\n",
+        "routes.py": "from fastapi import APIRouter\nrouter=APIRouter(prefix=\"/items\")\n@router.post(\"\")\ndef create(): return 1\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:routes.py:3:POST:",
+            "kind": "route",
+            "name": "POST /api/items",
+            "qualifiedName": "routes.py::POST:",
+            "filePath": "routes.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:20ae4c60b349776750fbffad6026ba64",
+                "kind": "function",
+                "name": "create",
+                "qualifiedName": "create",
+                "filePath": "routes.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 22,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "create"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "fastapi-ambiguous-mount",
+      "files": {
+        "main.py": "from fastapi import FastAPI\nfrom routes import router\napp=FastAPI()\napp.include_router(router,prefix=\"/one\")\napp.include_router(router,prefix=\"/two\")\n",
+        "routes.py": "from fastapi import APIRouter\nrouter=APIRouter(prefix=\"/items\")\n@router.get(\"\")\ndef list_items(): return []\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:routes.py:3:GET:",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.py::GET:",
+            "filePath": "routes.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 14,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:5236be15a71b92216965004a2e39063f",
+                "kind": "function",
+                "name": "list_items",
+                "qualifiedName": "list_items",
+                "filePath": "routes.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 27,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list_items"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "fastapi-computed-prefix",
+      "files": {
+        "main.py": "from fastapi import FastAPI\nfrom routes import router\napp=FastAPI()\napp.include_router(router,prefix=settings.PREFIX)\n",
+        "routes.py": "from fastapi import APIRouter\nrouter=APIRouter(prefix=\"/items\")\n@router.get(\"\")\ndef list_items(): return []\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:routes.py:3:GET:",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.py::GET:",
+            "filePath": "routes.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 14,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:5236be15a71b92216965004a2e39063f",
+                "kind": "function",
+                "name": "list_items",
+                "qualifiedName": "list_items",
+                "filePath": "routes.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 27,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list_items"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "spring",
+      "files": {
+        "pom.xml": "<project><dependency>spring-boot</dependency></project>",
+        "Controller.java": "@RestController\n@RequestMapping(\"/items\")\nclass Controller {\n @GetMapping(\"/{id}\")\n public String get() {return \"\";}\n @Value(\"${app.cache-name}\") String cache;\n}\n@ConfigurationProperties(prefix=\"app.cache\")\nclass CacheProperties {}\n",
+        "application.yml": "app:\n  cache-name: production\n  cache-size: 10\n",
+        "application-dev.properties": "app.cache-name=development\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:Controller.java:4:GET:/items/{id}",
+            "kind": "route",
+            "name": "GET /items/{id}",
+            "qualifiedName": "Controller.java::route:/items/{id}",
+            "filePath": "Controller.java",
+            "language": "java",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "method:c9f71d83fe23246694a167aeb282f03c",
+                "kind": "method",
+                "name": "get",
+                "qualifiedName": "Controller::get",
+                "filePath": "Controller.java",
+                "language": "java",
+                "startLine": 4,
+                "endLine": 5,
+                "startColumn": 1,
+                "endColumn": 33,
+                "signature": "String ()",
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false,
+                "returnType": "String"
+              },
+              "metadata": {
+                "framework": "spring",
+                "confidence": 0.95,
+                "resolvedBy": "framework",
+                "refName": "get"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": [
+        {
+          "node": {
+            "id": "spring-value:Controller.java:6:app.cache-name",
+            "kind": "constant",
+            "name": "app.cache-name",
+            "qualifiedName": "Controller.java::@Value:app.cache-name",
+            "filePath": "Controller.java",
+            "language": "java",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 27,
+            "signature": "@Value(\"app.cache-name\")",
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "spring-config:application-dev.properties:1:app.cache-name",
+                "kind": "constant",
+                "name": "cache-name",
+                "qualifiedName": "app.cache-name",
+                "filePath": "application-dev.properties",
+                "language": "properties",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 11,
+                "signature": "app.cache-name",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.85,
+                "resolvedBy": "qualified-name",
+                "refName": "app.cache-name"
+              }
+            }
+          ],
+          "uncertainTargets": [
+            "spring-config:application-dev.properties:1:app.cache-name",
+            "spring-config:application.yml:2:app.cache-name"
+          ]
+        },
+        {
+          "node": {
+            "id": "spring-cp:Controller.java:8:app.cache",
+            "kind": "constant",
+            "name": "app.cache",
+            "qualifiedName": "Controller.java::@ConfigurationProperties:app.cache",
+            "filePath": "Controller.java",
+            "language": "java",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 43,
+            "signature": "@ConfigurationProperties(\"app.cache\")",
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "spring-config:application-dev.properties:1:app.cache-name",
+                "kind": "constant",
+                "name": "cache-name",
+                "qualifiedName": "app.cache-name",
+                "filePath": "application-dev.properties",
+                "language": "properties",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 11,
+                "signature": "app.cache-name",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "spring",
+                "confidence": 0.85,
+                "resolvedBy": "framework",
+                "refName": "app.cache:prefix"
+              }
+            }
+          ],
+          "uncertainTargets": [
+            "spring-config:application-dev.properties:1:app.cache-name",
+            "spring-config:application.yml:2:app.cache-name",
+            "spring-config:application.yml:3:app.cache-size"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "django",
+      "files": {
+        "manage.py": "",
+        "urls.py": "from app import views\nfrom django.urls import path\nurlpatterns = [path('items/', views.list_items)]\n",
+        "app/views.py": "def list_items():\n    return []\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:urls.py:3:items/",
+            "kind": "route",
+            "name": "items/",
+            "qualifiedName": "urls.py::route:items/",
+            "filePath": "urls.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 31,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:829c860a6a9933b58d310a7753fae4a4",
+                "kind": "function",
+                "name": "list_items",
+                "qualifiedName": "list_items",
+                "filePath": "app/views.py",
+                "language": "python",
+                "startLine": 1,
+                "endLine": 2,
+                "startColumn": 0,
+                "endColumn": 13,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list_items"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "flask",
+      "files": {
+        "app.py": "from flask import Flask\napp=Flask(__name__)\n@app.route('/items', methods=['POST'])\ndef create(): return 1\napp.add_url_rule('/list', view_func=create)\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:app.py:3:POST:/items",
+            "kind": "route",
+            "name": "POST /items",
+            "qualifiedName": "app.py::POST:/items",
+            "filePath": "app.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 38,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:d272e0a15ebe30d9b222443f653c9563",
+                "kind": "function",
+                "name": "create",
+                "qualifiedName": "create",
+                "filePath": "app.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 22,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "create"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:app.py:5:GET:/list",
+            "kind": "route",
+            "name": "GET /list",
+            "qualifiedName": "app.py::GET:/list",
+            "filePath": "app.py",
+            "language": "python",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:d272e0a15ebe30d9b222443f653c9563",
+                "kind": "function",
+                "name": "create",
+                "qualifiedName": "create",
+                "filePath": "app.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 22,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "create"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "fastapi",
+      "files": {
+        "main.py": "from fastapi import FastAPI\napp=FastAPI()\n@app.get('/items')\nasync def list_items(): return []\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.py:3:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "main.py::GET:/items",
+            "filePath": "main.py",
+            "language": "python",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 17,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:9f50e24c6539b6a8e256814b5ace15a3",
+                "kind": "function",
+                "name": "list_items",
+                "qualifiedName": "list_items",
+                "filePath": "main.py",
+                "language": "python",
+                "startLine": 4,
+                "endLine": 4,
+                "startColumn": 0,
+                "endColumn": 33,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list_items"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "go",
+      "files": {
+        "go.mod": "module example.local/server\n",
+        "server.go": "package main\nimport \"net/http\"\nfunc list(w http.ResponseWriter, r *http.Request) {}\nfunc routes(){ http.HandleFunc(\"GET /items\",list) }\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:server.go:4:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "server.go::route:/items",
+            "filePath": "server.go",
+            "language": "go",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 34,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:16f825990b28fa31aa1f171c3263da65",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "server.go",
+                "language": "go",
+                "startLine": 3,
+                "endLine": 3,
+                "startColumn": 0,
+                "endColumn": 52,
+                "signature": "(w http.ResponseWriter, r *http.Request)",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "rust",
+      "files": {
+        "Cargo.toml": "[package]\nname=\"server\"\nversion=\"0.1.0\"\n",
+        "src/lib.rs": "async fn list() {}\nfn routes(){ Router::new().route(\"/items\", get(list)); }\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:src/lib.rs:2:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "src/lib.rs::route:/items",
+            "filePath": "src/lib.rs",
+            "language": "rust",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:f087e3d9a7a1fb06ad676947ebd38116",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "src/lib.rs",
+                "language": "rust",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 0,
+                "endColumn": 18,
+                "signature": "()",
+                "visibility": "private",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "vapor-top-level",
+      "files": {
+        "routes.swift": "import Vapor\nfunc list(_ req: Request) {}\nfunc routes(_ app: Application) {\n app.get(\"items\", use: list)\n}\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:routes.swift:4:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.swift::route:/items",
+            "filePath": "routes.swift",
+            "language": "swift",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 26,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:cb95bd1efcc2dfcb213f08c84e3e0510",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.swift",
+                "language": "swift",
+                "startLine": 2,
+                "endLine": 2,
+                "startColumn": 0,
+                "endColumn": 28,
+                "visibility": "internal",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "vapor",
+                "confidence": 0.9,
+                "resolvedBy": "framework",
+                "refName": "@list"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "vapor-controllers",
+      "files": {
+        "routes.swift": "import Vapor\nfunc routes(_ app: Application) {\n let a = FirstController()\n app.get(\"first\", use: a.show)\n app.get(\"second\", use: SecondController.show)\n}\n",
+        "First.swift": "struct FirstController {\n func show(_ req: Request) {}\n func show(_ value: String) {}\n}\n",
+        "Second.swift": "struct SecondController {\n static func show(_ req: Request) {}\n}\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:routes.swift:4:GET:/first",
+            "kind": "route",
+            "name": "GET /first",
+            "qualifiedName": "routes.swift::route:/first",
+            "filePath": "routes.swift",
+            "language": "swift",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 28,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "method:dd6004fefec41f71235474964687f179",
+                "kind": "method",
+                "name": "show",
+                "qualifiedName": "FirstController::show",
+                "filePath": "First.swift",
+                "language": "swift",
+                "startLine": 2,
+                "endLine": 2,
+                "startColumn": 1,
+                "endColumn": 29,
+                "visibility": "internal",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "vapor",
+                "confidence": 0.9,
+                "resolvedBy": "framework",
+                "refName": "FirstController@show"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.swift:5:GET:/second",
+            "kind": "route",
+            "name": "GET /second",
+            "qualifiedName": "routes.swift::route:/second",
+            "filePath": "routes.swift",
+            "language": "swift",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 44,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "method:620aaa0bca5b8252a956a66468261ad0",
+                "kind": "method",
+                "name": "show",
+                "qualifiedName": "SecondController::show",
+                "filePath": "Second.swift",
+                "language": "swift",
+                "startLine": 2,
+                "endLine": 2,
+                "startColumn": 1,
+                "endColumn": 36,
+                "visibility": "internal",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": true,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "vapor",
+                "confidence": 0.9,
+                "resolvedBy": "framework",
+                "refName": "SecondController@show"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "vapor-local-extension",
+      "files": {
+        "Routes.swift": "import Vapor\nstruct Controller {\n func boot(routes: RoutesBuilder) {\n routes.get(\"local\", use: self.index)\n }\n}\n",
+        "Extension.swift": "extension Controller {\n func index(_ req: Request) {}\n}\n",
+        "Other.swift": "struct Other {\n func index(_ req: Request) {}\n}\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:Routes.swift:4:GET:/local",
+            "kind": "route",
+            "name": "GET /local",
+            "qualifiedName": "Routes.swift::route:/local",
+            "filePath": "Routes.swift",
+            "language": "swift",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 35,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "method:5a7490b79ae334874b04b26cc7fb81d0",
+                "kind": "method",
+                "name": "index",
+                "qualifiedName": "Controller::index",
+                "filePath": "Extension.swift",
+                "language": "swift",
+                "startLine": 2,
+                "endLine": 2,
+                "startColumn": 1,
+                "endColumn": 30,
+                "visibility": "internal",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "vapor",
+                "confidence": 0.9,
+                "resolvedBy": "framework",
+                "refName": "@index"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    },
+    {
+      "name": "vapor-nested-extension",
+      "files": {
+        "Routes.swift": "import Vapor\nfunc routes(_ app: Application) {\n app.get(\"nested\", use: API.Controller.show)\n}\n",
+        "Extension.swift": "extension API.Controller {\n static func show(_ req: Request) {}\n}\n",
+        "Other.swift": "struct Controller {\n static func show(_ req: Request) {}\n}\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:Routes.swift:3:GET:/nested",
+            "kind": "route",
+            "name": "GET /nested",
+            "qualifiedName": "Routes.swift::route:/nested",
+            "filePath": "Routes.swift",
+            "language": "swift",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 42,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "method:33a1203cb6580b59a090b6f4cfd9b265",
+                "kind": "method",
+                "name": "show",
+                "qualifiedName": "Controller::show",
+                "filePath": "Extension.swift",
+                "language": "swift",
+                "startLine": 2,
+                "endLine": 2,
+                "startColumn": 1,
+                "endColumn": 36,
+                "visibility": "internal",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": true,
+                "isAbstract": false
+              },
+              "metadata": {
+                "framework": "vapor",
+                "confidence": 0.9,
+                "resolvedBy": "framework",
+                "refName": "API.Controller@show"
+              }
+            }
+          ]
+        }
+      ],
+      "bindings": []
+    }
+  ]
+}

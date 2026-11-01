@@ -1,0 +1,704 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "files": [
+    "main.ts",
+    "sub/main.ts",
+    "same.ts",
+    "same.tsx",
+    "same.js",
+    "same.jsx",
+    "index.js",
+    "index.ts",
+    "folder/index.ts",
+    "folder/index.js",
+    "folder/index.vue",
+    "View.vue",
+    "src/View.vue",
+    "emitted.ts",
+    "emitted.tsx",
+    "modern.mts",
+    "common.cts",
+    "decl.d.ts",
+    "exact.js",
+    "exact.js.ts",
+    "src/helper.ts",
+    "src/helper.js",
+    "src/folder/index.vue",
+    "src/folder.vue",
+    "src/folder/index.ts"
+  ],
+  "cases": [
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "typescript",
+      "expected": "same.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "typescript",
+      "expected": "folder/index.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "typescript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "typescript",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "typescript",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "typescript",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "typescript",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "typescript",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "typescript",
+      "expected": "src/helper.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "typescript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "typescript",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "typescript",
+      "expected": "index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "typescript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "typescript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "tsx",
+      "expected": "same.tsx"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "tsx",
+      "expected": "folder/index.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "tsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "tsx",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "tsx",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "tsx",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "tsx",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "tsx",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "tsx",
+      "expected": "src/helper.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "tsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "tsx",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "tsx",
+      "expected": "index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "tsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "tsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "javascript",
+      "expected": "same.js"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "javascript",
+      "expected": "folder/index.js"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "javascript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "javascript",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "javascript",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "javascript",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "javascript",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "javascript",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "javascript",
+      "expected": "src/helper.js"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "javascript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "javascript",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "javascript",
+      "expected": "index.js"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "javascript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "javascript",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "jsx",
+      "expected": "same.jsx"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "jsx",
+      "expected": "folder/index.js"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "jsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "jsx",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "jsx",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "jsx",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "jsx",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "jsx",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "jsx",
+      "expected": "src/helper.js"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "jsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "jsx",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "jsx",
+      "expected": "index.js"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "jsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "jsx",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "arkts",
+      "expected": "same.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "arkts",
+      "expected": "folder/index.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "arkts",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "arkts",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "arkts",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "arkts",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "arkts",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "arkts",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "arkts",
+      "expected": "src/helper.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "arkts",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "arkts",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "arkts",
+      "expected": "index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "arkts",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "arkts",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "svelte",
+      "expected": "same.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "svelte",
+      "expected": "folder/index.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "svelte",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "svelte",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "svelte",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "svelte",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "svelte",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "svelte",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "svelte",
+      "expected": "src/helper.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "svelte",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "svelte",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "svelte",
+      "expected": "index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "svelte",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "svelte",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "vue",
+      "expected": "same.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "vue",
+      "expected": "folder/index.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "vue",
+      "expected": "View.vue"
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "vue",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "vue",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "vue",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "vue",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "vue",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "vue",
+      "expected": "src/helper.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "vue",
+      "expected": "src/View.vue"
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "vue",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "vue",
+      "expected": "index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "vue",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "vue",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./same",
+      "language": "astro",
+      "expected": "same.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./folder",
+      "language": "astro",
+      "expected": "folder/index.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./View",
+      "language": "astro",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "./emitted.js",
+      "language": "astro",
+      "expected": "emitted.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./modern.mjs",
+      "language": "astro",
+      "expected": "modern.mts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./common.cjs",
+      "language": "astro",
+      "expected": "common.cts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./decl.js",
+      "language": "astro",
+      "expected": "decl.d.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "./exact.js",
+      "language": "astro",
+      "expected": "exact.js.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "@/helper",
+      "language": "astro",
+      "expected": "src/helper.ts"
+    },
+    {
+      "from": "main.ts",
+      "source": "~/View",
+      "language": "astro",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "src/folder/",
+      "language": "astro",
+      "expected": "src/folder/index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "..",
+      "language": "astro",
+      "expected": "index.ts"
+    },
+    {
+      "from": "sub/main.ts",
+      "source": "../../outside",
+      "language": "astro",
+      "expected": null
+    },
+    {
+      "from": "main.ts",
+      "source": "undeclared",
+      "language": "astro",
+      "expected": null
+    }
+  ]
+}

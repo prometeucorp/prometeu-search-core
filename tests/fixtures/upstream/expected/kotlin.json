@@ -1,0 +1,3631 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.kt",
+      "kind": "file",
+      "name": "torture.kt",
+      "qualifiedName": "torture.kt",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 1,
+      "endLine": 352,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "kind": "namespace",
+      "name": "com.example.torture",
+      "qualifiedName": "com.example.torture",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 27
+    },
+    {
+      "id": "import:c83935b9151e970acd12b8999a18efde",
+      "kind": "import",
+      "name": "com.example.other.OtherClass",
+      "qualifiedName": "com.example.torture::com.example.other.OtherClass",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 35,
+      "signature": "import com.example.other.OtherClass"
+    },
+    {
+      "id": "import:578f8335f02210b8478e19ea788a0f11",
+      "kind": "import",
+      "name": "com.example.util.helper",
+      "qualifiedName": "com.example.torture::com.example.util.helper",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "import com.example.util.helper"
+    },
+    {
+      "id": "import:7be4fa1025ad92fd09e760637cf8cfd0",
+      "kind": "import",
+      "name": "com.example.wild",
+      "qualifiedName": "com.example.torture::com.example.wild",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "import com.example.wild.*"
+    },
+    {
+      "id": "import:f4d109eeb66edd3c5cac97d681b7816c",
+      "kind": "import",
+      "name": "com.example.alias.LongName",
+      "qualifiedName": "com.example.torture::com.example.alias.LongName",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 7,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 21,
+      "signature": "import com.example.alias.LongName as Short\n\n// line comment run 1\n// line comment run 2"
+    },
+    {
+      "id": "function:c062ca02de706ffe85e7dfb2f9586331",
+      "kind": "function",
+      "name": "topLevel",
+      "qualifiedName": "com.example.torture::topLevel",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 11,
+      "endLine": 14,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(x: Int, s: String): WidgetK",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetK"
+    },
+    {
+      "id": "method:8298e581fd7a847ecb2272499da9f0b3",
+      "kind": "method",
+      "name": "extend",
+      "qualifiedName": "WidgetK::extend",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 17,
+      "endLine": 20,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(n: Int): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:2e4801adf2e905b2e53a705bf1332218",
+      "kind": "method",
+      "name": "genericExt",
+      "qualifiedName": "List::genericExt",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 22,
+      "endLine": 22,
+      "startColumn": 0,
+      "endColumn": 41,
+      "signature": "(): T",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "T"
+    },
+    {
+      "id": "method:3f1c7c6dfd5058635bca3ad9c4d5fc0d",
+      "kind": "method",
+      "name": "qext",
+      "qualifiedName": "com::qext",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 0,
+      "endColumn": 35,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:8dcab5e9fdf88ce01677637e64f4542d",
+      "kind": "function",
+      "name": "suspender",
+      "qualifiedName": "com.example.torture::suspender",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 42,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:dd3b001cda91dced028afcdd1175c8fe",
+      "kind": "function",
+      "name": "visFn",
+      "qualifiedName": "com.example.torture::visFn",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:1b04cca2b65e08bddee8d664ceff60fd",
+      "kind": "constant",
+      "name": "hiddenTop",
+      "qualifiedName": "com.example.torture::hiddenTop",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 29,
+      "endLine": 29,
+      "startColumn": 0,
+      "endColumn": 25,
+      "visibility": "private"
+    },
+    {
+      "id": "variable:4472852535bb4749d3c1608af7453e28",
+      "kind": "variable",
+      "name": "sharedTop",
+      "qualifiedName": "com.example.torture::sharedTop",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 30,
+      "endLine": 30,
+      "startColumn": 0,
+      "endColumn": 26,
+      "visibility": "internal"
+    },
+    {
+      "id": "function:6781065224350531a81a82a28711ca83",
+      "kind": "function",
+      "name": "inferred",
+      "qualifiedName": "com.example.torture::inferred",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:e06a734b36616bbe9ba9cff81fc61903",
+      "kind": "function",
+      "name": "nullableRet",
+      "qualifiedName": "com.example.torture::nullableRet",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 35,
+      "endLine": 35,
+      "startColumn": 0,
+      "endColumn": 34,
+      "signature": "(): WidgetK?",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetK"
+    },
+    {
+      "id": "function:75a4255777e3c03e7df51dffebb1191e",
+      "kind": "function",
+      "name": "lambdaRet",
+      "qualifiedName": "com.example.torture::lambdaRet",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 0,
+      "endColumn": 36,
+      "signature": "(): (Int) -> Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:720b306858292772e4f3be92b8c70e21",
+      "kind": "function",
+      "name": "platformThing",
+      "qualifiedName": "com.example.torture::platformThing",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 39,
+      "endLine": 39,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int",
+      "decorators": [
+        "expect"
+      ]
+    },
+    {
+      "id": "function:153a56b951ec8e2154d68e2bf76211f0",
+      "kind": "function",
+      "name": "actualThing",
+      "qualifiedName": "com.example.torture::actualThing",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 41,
+      "endLine": 41,
+      "startColumn": 0,
+      "endColumn": 33,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int",
+      "decorators": [
+        "actual"
+      ]
+    },
+    {
+      "id": "function:791e4bcbab1e332a366024285036dbe2",
+      "kind": "function",
+      "name": "tailer",
+      "qualifiedName": "com.example.torture::tailer",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 43,
+      "endLine": 43,
+      "startColumn": 0,
+      "endColumn": 66,
+      "signature": "(n: Int): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:06aaefb7099cf9c3e6538bd366428f84",
+      "kind": "method",
+      "name": "pow",
+      "qualifiedName": "Int::pow",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 45,
+      "endLine": 45,
+      "startColumn": 0,
+      "endColumn": 37,
+      "signature": "(e: Int): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:6e8886e9aff23a124ece65917b80b8fe",
+      "kind": "method",
+      "name": "plus",
+      "qualifiedName": "WidgetK::plus",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 47,
+      "endLine": 47,
+      "startColumn": 0,
+      "endColumn": 53,
+      "signature": "(o: WidgetK): WidgetK",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetK"
+    },
+    {
+      "id": "constant:3cb2b74c3cadb99e54cf9f8cd7faa3b8",
+      "kind": "constant",
+      "name": "topVal",
+      "qualifiedName": "com.example.torture::topVal",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 0,
+      "endColumn": 19,
+      "visibility": "public"
+    },
+    {
+      "id": "variable:bdbd6085295556231bfcea007ba6c268",
+      "kind": "variable",
+      "name": "topVar",
+      "qualifiedName": "com.example.torture::topVar",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 50,
+      "endLine": 50,
+      "startColumn": 0,
+      "endColumn": 16,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:0c9f8b28d0b0d427a543ac8b50d5bb02",
+      "kind": "constant",
+      "name": "TOP_CONST",
+      "qualifiedName": "com.example.torture::TOP_CONST",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 51,
+      "endLine": 51,
+      "startColumn": 0,
+      "endColumn": 24,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:3b2b9cdc475d476f959adedfec70ebe1",
+      "kind": "constant",
+      "name": "topDelegated",
+      "qualifiedName": "com.example.torture::topDelegated",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 52,
+      "endLine": 52,
+      "startColumn": 0,
+      "endColumn": 39,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:7fe1cd612e2e36fdbc30cec76181e426",
+      "kind": "constant",
+      "name": "withGetter",
+      "qualifiedName": "com.example.torture::withGetter",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 54,
+      "endLine": 54,
+      "startColumn": 0,
+      "endColumn": 19,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:eff2f4620f03ce585e0bac06764112a4",
+      "kind": "constant",
+      "name": "initLambda",
+      "qualifiedName": "com.example.torture::initLambda",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 56,
+      "endLine": 56,
+      "startColumn": 0,
+      "endColumn": 41,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:12f0d8459666fd201dfba092737a7d84",
+      "kind": "constant",
+      "name": "initSam",
+      "qualifiedName": "com.example.torture::initSam",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 57,
+      "endLine": 57,
+      "startColumn": 0,
+      "endColumn": 35,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:1376f41a86d8afc710af2bc6cf53dc0b",
+      "kind": "constant",
+      "name": "handlerList",
+      "qualifiedName": "com.example.torture::handlerList",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 58,
+      "endLine": 58,
+      "startColumn": 0,
+      "endColumn": 34,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:242ce584412ac4de65824719cb0abc1c",
+      "kind": "constant",
+      "name": "initObject",
+      "qualifiedName": "com.example.torture::initObject",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 59,
+      "endLine": 63,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "class:3986b573516fa2c28563a741779efb92",
+      "kind": "class",
+      "name": "<Runnable$anon@59>",
+      "qualifiedName": "com.example.torture::initObject::<Runnable$anon@59>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 59,
+      "endLine": 63,
+      "startColumn": 17,
+      "endColumn": 1
+    },
+    {
+      "id": "method:7a113ca2d373c43680e057cefc8efa50",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::initObject::<Runnable$anon@59>::run",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 60,
+      "endLine": 62,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:41f9293caae8ed3579c607dd645cfedf",
+      "kind": "class",
+      "name": "WidgetK",
+      "qualifiedName": "com.example.torture::WidgetK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 65,
+      "endLine": 94,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "field:48eed0bb912facf4e6e6ee7d2c765497",
+      "kind": "field",
+      "name": "area",
+      "qualifiedName": "com.example.torture::WidgetK::area",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 66,
+      "endLine": 66,
+      "startColumn": 4,
+      "endColumn": 31,
+      "visibility": "public"
+    },
+    {
+      "id": "field:f43f89cdec4b91086655f08895d90a82",
+      "kind": "field",
+      "name": "hooks",
+      "qualifiedName": "com.example.torture::WidgetK::hooks",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 67,
+      "endLine": 67,
+      "startColumn": 4,
+      "endColumn": 32,
+      "visibility": "public"
+    },
+    {
+      "id": "field:01832a38e64de9305d3a419b3c90a720",
+      "kind": "field",
+      "name": "label",
+      "qualifiedName": "com.example.torture::WidgetK::label",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 68,
+      "endLine": 68,
+      "startColumn": 4,
+      "endColumn": 29,
+      "visibility": "public"
+    },
+    {
+      "id": "field:937240852d4af3bea1fbeace782a1d21",
+      "kind": "field",
+      "name": "computed",
+      "qualifiedName": "com.example.torture::WidgetK::computed",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 69,
+      "endLine": 69,
+      "startColumn": 4,
+      "endColumn": 21,
+      "visibility": "public"
+    },
+    {
+      "id": "method:bc3d00b4de52334c35b86b1d7a13c5be",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "com.example.torture::WidgetK::render",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 81,
+      "endLine": 83,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:dcac3f28520632bcde6205f36dd99e59",
+      "kind": "method",
+      "name": "chainInner",
+      "qualifiedName": "com.example.torture::WidgetK::chainInner",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 85,
+      "endLine": 85,
+      "startColumn": 4,
+      "endColumn": 36,
+      "signature": "(): WidgetK",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetK"
+    },
+    {
+      "id": "constant:3f89168a9107ff7a454caa46635e0084",
+      "kind": "constant",
+      "name": "SHARED",
+      "qualifiedName": "com.example.torture::WidgetK::SHARED",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 88,
+      "endLine": 88,
+      "startColumn": 8,
+      "endColumn": 31,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:653c2e9cf43717113984165c7e877a33",
+      "kind": "constant",
+      "name": "COMPANION_CONST",
+      "qualifiedName": "com.example.torture::WidgetK::COMPANION_CONST",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 89,
+      "endLine": 89,
+      "startColumn": 8,
+      "endColumn": 37,
+      "visibility": "public"
+    },
+    {
+      "id": "method:1824f5906eb511e4e00d739f0f1153be",
+      "kind": "method",
+      "name": "create",
+      "qualifiedName": "com.example.torture::WidgetK::create",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 8,
+      "endColumn": 42,
+      "signature": "(): WidgetK",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetK"
+    },
+    {
+      "id": "class:99ac4ab53e3a818bc82f7846627e065c",
+      "kind": "class",
+      "name": "DataK",
+      "qualifiedName": "com.example.torture::DataK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 96,
+      "endLine": 96,
+      "startColumn": 0,
+      "endColumn": 43,
+      "visibility": "public"
+    },
+    {
+      "id": "class:d80ae3dbbacf86bcb2908c39d6ec7ae7",
+      "kind": "class",
+      "name": "AbstractK",
+      "qualifiedName": "com.example.torture::AbstractK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 98,
+      "endLine": 100,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:290e4c781dd14d2f54f6a2dea2407fdd",
+      "kind": "method",
+      "name": "impl",
+      "qualifiedName": "com.example.torture::AbstractK::impl",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 99,
+      "endLine": 99,
+      "startColumn": 4,
+      "endColumn": 28,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:1d5a0afd75c3168afce687d08739d544",
+      "kind": "class",
+      "name": "OpenBase",
+      "qualifiedName": "com.example.torture::OpenBase",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 102,
+      "endLine": 104,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:e885320c09d8a57db874e6d46b794ea9",
+      "kind": "method",
+      "name": "over",
+      "qualifiedName": "com.example.torture::OpenBase::over",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 103,
+      "endLine": 103,
+      "startColumn": 4,
+      "endColumn": 22,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "kind": "class",
+      "name": "SubK",
+      "qualifiedName": "com.example.torture::SubK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 106,
+      "endLine": 110,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:d09c256d2948748fa5ee654db91a3b67",
+      "kind": "method",
+      "name": "over",
+      "qualifiedName": "com.example.torture::SubK::over",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 107,
+      "endLine": 107,
+      "startColumn": 4,
+      "endColumn": 26,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:17fb8801322704d71941ed171aea579c",
+      "kind": "method",
+      "name": "compareTo",
+      "qualifiedName": "com.example.torture::SubK::compareTo",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 108,
+      "endLine": 108,
+      "startColumn": 4,
+      "endColumn": 48,
+      "signature": "(other: SubK): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:9c5d9f7974d5a6880fcc8365e58ccaff",
+      "kind": "method",
+      "name": "draw",
+      "qualifiedName": "com.example.torture::SubK::draw",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 109,
+      "endLine": 109,
+      "startColumn": 4,
+      "endColumn": 26,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:378f5d9a436f17c257cf1f854035847c",
+      "kind": "class",
+      "name": "QualifiedSuper",
+      "qualifiedName": "com.example.torture::QualifiedSuper",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 112,
+      "endLine": 112,
+      "startColumn": 0,
+      "endColumn": 56,
+      "visibility": "public"
+    },
+    {
+      "id": "class:b6c10e2d44f8fd6be6f74f1cfbbec3d5",
+      "kind": "class",
+      "name": "DelegatedImpl",
+      "qualifiedName": "com.example.torture::DelegatedImpl",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 114,
+      "endLine": 114,
+      "startColumn": 0,
+      "endColumn": 48,
+      "visibility": "public"
+    },
+    {
+      "id": "interface:4d02e961359f7c1b8971db5b1ca96626",
+      "kind": "interface",
+      "name": "Drawable",
+      "qualifiedName": "com.example.torture::Drawable",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 116,
+      "endLine": 120,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:a13566a2a7f88bd810928b47184c7004",
+      "kind": "method",
+      "name": "draw",
+      "qualifiedName": "com.example.torture::Drawable::draw",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 117,
+      "endLine": 117,
+      "startColumn": 4,
+      "endColumn": 14,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:8000feb1bbb931e06e8b0f92a8214cd4",
+      "kind": "method",
+      "name": "outline",
+      "qualifiedName": "com.example.torture::Drawable::outline",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 118,
+      "endLine": 118,
+      "startColumn": 4,
+      "endColumn": 26,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "field:07551d9973503e2810c93706b64c9986",
+      "kind": "field",
+      "name": "prop",
+      "qualifiedName": "com.example.torture::Drawable::prop",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 119,
+      "endLine": 119,
+      "startColumn": 4,
+      "endColumn": 27,
+      "visibility": "public"
+    },
+    {
+      "id": "class:3501aa151758b91295beb282e6697427",
+      "kind": "class",
+      "name": "SealedOp",
+      "qualifiedName": "com.example.torture::SealedOp",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 122,
+      "endLine": 125,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "class:0d8ae79f1ab67049eaf8c6a12ad2855e",
+      "kind": "class",
+      "name": "Add",
+      "qualifiedName": "com.example.torture::SealedOp::Add",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 4,
+      "endColumn": 27,
+      "visibility": "public"
+    },
+    {
+      "id": "class:855ce9f9a9e661790a7e269055e01ee8",
+      "kind": "class",
+      "name": "Mul",
+      "qualifiedName": "com.example.torture::SealedOp::Mul",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 124,
+      "endLine": 124,
+      "startColumn": 4,
+      "endColumn": 43,
+      "visibility": "public"
+    },
+    {
+      "id": "interface:7dac84961ecdf9d5bf896c0697eb46f5",
+      "kind": "interface",
+      "name": "SealedIface",
+      "qualifiedName": "com.example.torture::SealedIface",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 127,
+      "endLine": 127,
+      "startColumn": 0,
+      "endColumn": 28
+    },
+    {
+      "id": "enum:939bd20570b2cc42d76761cbdd98f4be",
+      "kind": "enum",
+      "name": "Color",
+      "qualifiedName": "com.example.torture::Color",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 129,
+      "endLine": 131,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:bdc097da7c0310e450bb8f2fd3fa70fa",
+      "kind": "enum_member",
+      "name": "RED",
+      "qualifiedName": "com.example.torture::Color::RED",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 130,
+      "endLine": 130,
+      "startColumn": 4,
+      "endColumn": 7
+    },
+    {
+      "id": "enum_member:df4372af4a26423771111e480c41a7e8",
+      "kind": "enum_member",
+      "name": "GREEN",
+      "qualifiedName": "com.example.torture::Color::GREEN",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 130,
+      "endLine": 130,
+      "startColumn": 9,
+      "endColumn": 14
+    },
+    {
+      "id": "enum_member:3f4e71f2ae1252dfc0b220089959a31d",
+      "kind": "enum_member",
+      "name": "BLUE",
+      "qualifiedName": "com.example.torture::Color::BLUE",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 130,
+      "endLine": 130,
+      "startColumn": 16,
+      "endColumn": 20
+    },
+    {
+      "id": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "kind": "enum",
+      "name": "Http",
+      "qualifiedName": "com.example.torture::Http",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 133,
+      "endLine": 146,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:8bf2ad40253abd0ee89d7f34a6f6f4c8",
+      "kind": "enum_member",
+      "name": "OK",
+      "qualifiedName": "com.example.torture::Http::OK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 134,
+      "endLine": 134,
+      "startColumn": 4,
+      "endColumn": 6
+    },
+    {
+      "id": "method:9f04b6f1a31fc233679ea2ea481d4e81",
+      "kind": "method",
+      "name": "label",
+      "qualifiedName": "com.example.torture::Http::OK::label",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 135,
+      "endLine": 135,
+      "startColumn": 8,
+      "endColumn": 43,
+      "signature": "(): String",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "enum_member:c4b527ab0b569c6673517db33b64c0b9",
+      "kind": "enum_member",
+      "name": "ERR",
+      "qualifiedName": "com.example.torture::Http::ERR",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 137,
+      "endLine": 137,
+      "startColumn": 4,
+      "endColumn": 7
+    },
+    {
+      "id": "method:e8c2fc654ce022d4a56a1e94cc8c31ac",
+      "kind": "method",
+      "name": "label",
+      "qualifiedName": "com.example.torture::Http::ERR::label",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 138,
+      "endLine": 138,
+      "startColumn": 8,
+      "endColumn": 44,
+      "signature": "(): String",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "method:8db9c19851cdfcc15012aef70df66c68",
+      "kind": "method",
+      "name": "label",
+      "qualifiedName": "com.example.torture::Http::label",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 141,
+      "endLine": 141,
+      "startColumn": 4,
+      "endColumn": 32,
+      "signature": "(): String",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "method:2a63107bacdb268f87c990cd623f4258",
+      "kind": "method",
+      "name": "common",
+      "qualifiedName": "com.example.torture::Http::common",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 142,
+      "endLine": 142,
+      "startColumn": 4,
+      "endColumn": 28,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:ba1c1e430a8dd0b4818dead6ee6f8149",
+      "kind": "method",
+      "name": "of",
+      "qualifiedName": "com.example.torture::Http::of",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 144,
+      "endLine": 144,
+      "startColumn": 8,
+      "endColumn": 33,
+      "signature": "(c: Int): Http",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Http"
+    },
+    {
+      "id": "class:9ed04d29f63f2f28d880e7ac0c9f3316",
+      "kind": "class",
+      "name": "Registry",
+      "qualifiedName": "com.example.torture::Registry",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 148,
+      "endLine": 153,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:db3e2a53994a3ee61fa1d249d08346d4",
+      "kind": "constant",
+      "name": "instances",
+      "qualifiedName": "com.example.torture::Registry::instances",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 149,
+      "endLine": 149,
+      "startColumn": 4,
+      "endColumn": 44,
+      "visibility": "public"
+    },
+    {
+      "id": "variable:6518633f1bf5d551fbabeb7c23c0a2fc",
+      "kind": "variable",
+      "name": "count",
+      "qualifiedName": "com.example.torture::Registry::count",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 150,
+      "endLine": 150,
+      "startColumn": 4,
+      "endColumn": 17,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:fdb9ff390cf3c1b2676cf8ef278d043a",
+      "kind": "constant",
+      "name": "REG_CONST",
+      "qualifiedName": "com.example.torture::Registry::REG_CONST",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 151,
+      "endLine": 151,
+      "startColumn": 4,
+      "endColumn": 27,
+      "visibility": "public"
+    },
+    {
+      "id": "method:584a93bdaf25406de28637e5102dd711",
+      "kind": "method",
+      "name": "register",
+      "qualifiedName": "com.example.torture::Registry::register",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 152,
+      "endLine": 152,
+      "startColumn": 4,
+      "endColumn": 49,
+      "signature": "(w: WidgetK)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:501c0322478fcf5160d1d4ca31a8a85b",
+      "kind": "class",
+      "name": "MyMarker",
+      "qualifiedName": "com.example.torture::MyMarker",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 155,
+      "endLine": 155,
+      "startColumn": 0,
+      "endColumn": 47,
+      "visibility": "public"
+    },
+    {
+      "id": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "kind": "class",
+      "name": "Annotated",
+      "qualifiedName": "com.example.torture::Annotated",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 157,
+      "endLine": 170,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:cbb4c92bf52c3ded8856f60a2689604d",
+      "kind": "method",
+      "name": "jvmStatic",
+      "qualifiedName": "com.example.torture::Annotated::jvmStatic",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 159,
+      "endLine": 160,
+      "startColumn": 4,
+      "endColumn": 22,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:3eb251ebc7d9343eb33ca80a7d02651c",
+      "kind": "method",
+      "name": "old",
+      "qualifiedName": "com.example.torture::Annotated::old",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 162,
+      "endLine": 163,
+      "startColumn": 4,
+      "endColumn": 16,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "field:5fc1fee3e0e5407e53f8a6df3cbbf5d2",
+      "kind": "field",
+      "name": "fielded",
+      "qualifiedName": "com.example.torture::Annotated::fielded",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 165,
+      "endLine": 166,
+      "startColumn": 4,
+      "endColumn": 24,
+      "visibility": "public"
+    },
+    {
+      "id": "field:12ac77a324cfd2eee6d16610b4c02e5e",
+      "kind": "field",
+      "name": "got",
+      "qualifiedName": "com.example.torture::Annotated::got",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 168,
+      "endLine": 169,
+      "startColumn": 4,
+      "endColumn": 20,
+      "visibility": "public"
+    },
+    {
+      "id": "type_alias:6e34815e8fe90aebc51ac77ee144cda9",
+      "kind": "type_alias",
+      "name": "Handler",
+      "qualifiedName": "com.example.torture::Handler",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 172,
+      "endLine": 172,
+      "startColumn": 0,
+      "endColumn": 33
+    },
+    {
+      "id": "type_alias:de3d83c3c29a8860a484c7612f9f76a2",
+      "kind": "type_alias",
+      "name": "WidgetList",
+      "qualifiedName": "com.example.torture::WidgetList",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 173,
+      "endLine": 173,
+      "startColumn": 0,
+      "endColumn": 36
+    },
+    {
+      "id": "class:4691df96314719f5692c585769e11cb2",
+      "kind": "class",
+      "name": "PlatformFile",
+      "qualifiedName": "com.example.torture::PlatformFile",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 175,
+      "endLine": 177,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public",
+      "decorators": [
+        "expect"
+      ]
+    },
+    {
+      "id": "method:a80ef801ca843896c0d0a4e39054efdf",
+      "kind": "method",
+      "name": "path",
+      "qualifiedName": "com.example.torture::PlatformFile::path",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 176,
+      "endLine": 176,
+      "startColumn": 4,
+      "endColumn": 22,
+      "signature": "(): String",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "class:0fd328ea2fa63407c19aab87538f6763",
+      "kind": "class",
+      "name": "ActualFile",
+      "qualifiedName": "com.example.torture::ActualFile",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 179,
+      "endLine": 181,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public",
+      "decorators": [
+        "actual"
+      ]
+    },
+    {
+      "id": "method:b56c653a41988d4bf418266a79cca3a6",
+      "kind": "method",
+      "name": "path",
+      "qualifiedName": "com.example.torture::ActualFile::path",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 4,
+      "endColumn": 35,
+      "signature": "(): String",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String",
+      "decorators": [
+        "actual"
+      ]
+    },
+    {
+      "id": "type_alias:1e841c3807fe3b6a927b23f5368a2e3e",
+      "kind": "type_alias",
+      "name": "PlatformClock",
+      "qualifiedName": "com.example.torture::PlatformClock",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 183,
+      "endLine": 183,
+      "startColumn": 0,
+      "endColumn": 48,
+      "decorators": [
+        "actual"
+      ]
+    },
+    {
+      "id": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "kind": "function",
+      "name": "caller",
+      "qualifiedName": "com.example.torture::caller",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 185,
+      "endLine": 241,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:bd6ec333dd877a85c1cf58e0c34171d4",
+      "kind": "function",
+      "name": "localFn",
+      "qualifiedName": "com.example.torture::caller::localFn",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 227,
+      "endLine": 227,
+      "startColumn": 4,
+      "endColumn": 26,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:2d57eac5ae7d6e48c18c4048acd4bcf8",
+      "kind": "class",
+      "name": "LocalClass",
+      "qualifiedName": "com.example.torture::caller::LocalClass",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 229,
+      "endLine": 231,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public"
+    },
+    {
+      "id": "method:197e726b8550824f5a430dadd814cab0",
+      "kind": "method",
+      "name": "lm",
+      "qualifiedName": "com.example.torture::caller::LocalClass::lm",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 230,
+      "endLine": 230,
+      "startColumn": 8,
+      "endColumn": 19,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:3e0adc8399de0070199669018509fd4f",
+      "kind": "function",
+      "name": "om",
+      "qualifiedName": "com.example.torture::caller::om",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 233,
+      "endLine": 233,
+      "startColumn": 8,
+      "endColumn": 19,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:4beb6d41b0aae2485753e29f23faea3e",
+      "kind": "class",
+      "name": "<Drawable$anon@235>",
+      "qualifiedName": "com.example.torture::caller::<Drawable$anon@235>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 235,
+      "endLine": 237,
+      "startColumn": 15,
+      "endColumn": 5
+    },
+    {
+      "id": "method:79089e993ac03f7d6ba712f1bbc5d892",
+      "kind": "method",
+      "name": "draw",
+      "qualifiedName": "com.example.torture::caller::<Drawable$anon@235>::draw",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 236,
+      "endLine": 236,
+      "startColumn": 8,
+      "endColumn": 40,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:cee23847503acc26fddd8855ec1bd764",
+      "kind": "function",
+      "name": "`weird name`",
+      "qualifiedName": "com.example.torture::`weird name`",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 243,
+      "endLine": 243,
+      "startColumn": 0,
+      "endColumn": 27,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "function:a611a4de91efc2d4182e7d4dd0f02794",
+      "kind": "function",
+      "name": "trailing",
+      "qualifiedName": "com.example.torture::trailing",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 245,
+      "endLine": 245,
+      "startColumn": 0,
+      "endColumn": 49,
+      "signature": "(block: (Int) -> Int): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "function:0269fc62d23f85121a9ed794196328e3",
+      "kind": "function",
+      "name": "useTrailing",
+      "qualifiedName": "com.example.torture::useTrailing",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 247,
+      "endLine": 250,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:10576b5f9afeda3e2743e86ccd4fb53c",
+      "kind": "function",
+      "name": "defaults",
+      "qualifiedName": "com.example.torture::defaults",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 252,
+      "endLine": 252,
+      "startColumn": 0,
+      "endColumn": 52,
+      "signature": "(a: Int = compute(), b: String = \"x\")",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:095cd7e18ff37136d70d69bc66893459",
+      "kind": "function",
+      "name": "varargFn",
+      "qualifiedName": "com.example.torture::varargFn",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 254,
+      "endLine": 254,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "(vararg xs: Int)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:8eca69a11766f505ac36a19b8107cb80",
+      "kind": "function",
+      "name": "destructuringBody",
+      "qualifiedName": "com.example.torture::destructuringBody",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 256,
+      "endLine": 259,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(p: Pair<Int, Int>)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:8cb67334367b7b762eac2a9f9bdbe4ed",
+      "kind": "function",
+      "name": "assignRefs",
+      "qualifiedName": "com.example.torture::assignRefs",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 261,
+      "endLine": 264,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:954f74226a742a2069f6778fc8c269a0",
+      "kind": "function",
+      "name": "nullish",
+      "qualifiedName": "com.example.torture::nullish",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 266,
+      "endLine": 269,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(x: WidgetK?)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:4e7accbb265b0e2fcc4c4fc4e7def6c6",
+      "kind": "function",
+      "name": "stringsEdge",
+      "qualifiedName": "com.example.torture::stringsEdge",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 271,
+      "endLine": 273,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:c06d284bd4871180ee1fe7190f581b7d",
+      "kind": "function",
+      "name": "labeledLambda",
+      "qualifiedName": "com.example.torture::labeledLambda",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 275,
+      "endLine": 277,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:443183f7e45b91ca9f10e5075cb2e53f",
+      "kind": "function",
+      "name": "whereClause",
+      "qualifiedName": "com.example.torture::whereClause",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 279,
+      "endLine": 279,
+      "startColumn": 0,
+      "endColumn": 54,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:897a56f050d3d840c68072717ed0e41a",
+      "kind": "class",
+      "name": "AccessorK",
+      "qualifiedName": "com.example.torture::AccessorK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 281,
+      "endLine": 285,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "field:f1b0a924db5a5e82f7ae46e3c546bf74",
+      "kind": "field",
+      "name": "sameLineGetter",
+      "qualifiedName": "com.example.torture::AccessorK::sameLineGetter",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 282,
+      "endLine": 282,
+      "startColumn": 4,
+      "endColumn": 45,
+      "visibility": "public"
+    },
+    {
+      "id": "field:94d20063d2ebec373d19a45c0f69f3bc",
+      "kind": "field",
+      "name": "sameLinePair",
+      "qualifiedName": "com.example.torture::AccessorK::sameLinePair",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 283,
+      "endLine": 283,
+      "startColumn": 4,
+      "endColumn": 43,
+      "visibility": "public"
+    },
+    {
+      "id": "class:023236664b6b8a486426818aa5842a60",
+      "kind": "class",
+      "name": "SiblingAccessorK",
+      "qualifiedName": "com.example.torture::SiblingAccessorK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 287,
+      "endLine": 296,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "field:be8dd480979dc1ccc523dc2757030771",
+      "kind": "field",
+      "name": "nextLine",
+      "qualifiedName": "com.example.torture::SiblingAccessorK::nextLine",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 288,
+      "endLine": 288,
+      "startColumn": 4,
+      "endColumn": 25,
+      "visibility": "public"
+    },
+    {
+      "id": "class:716347413cc13bbd7a499c6275a4205b",
+      "kind": "class",
+      "name": "ReceiverChainK",
+      "qualifiedName": "com.example.torture::ReceiverChainK",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 298,
+      "endLine": 313,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:28084de84261fa3c32624f61be1835de",
+      "kind": "method",
+      "name": "chains",
+      "qualifiedName": "com.example.torture::ReceiverChainK::chains",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 299,
+      "endLine": 312,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "kind": "class",
+      "name": "ObjectExpressions",
+      "qualifiedName": "com.example.torture::ObjectExpressions",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 318,
+      "endLine": 349,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Object expressions as anonymous classes: dotted and generic supertypes, a\nconstructor and a `by` delegate in the header, nested and supertype-less ones.\n(Multi-line bodies: a one-line class body sets the grammar's phantom error.)",
+      "visibility": "public"
+    },
+    {
+      "id": "field:806e9a0acdb3413d0676489a434e50cb",
+      "kind": "field",
+      "name": "held",
+      "qualifiedName": "com.example.torture::ObjectExpressions::held",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 319,
+      "endLine": 325,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public"
+    },
+    {
+      "id": "class:8da4a2818d738b6a9b9a78babfcc7469",
+      "kind": "class",
+      "name": "<Listener$anon@319>",
+      "qualifiedName": "com.example.torture::ObjectExpressions::held::<Listener$anon@319>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 319,
+      "endLine": 325,
+      "startColumn": 15,
+      "endColumn": 5
+    },
+    {
+      "id": "method:40b2138d90df4dcc4c0977d2ab084928",
+      "kind": "method",
+      "name": "on",
+      "qualifiedName": "com.example.torture::ObjectExpressions::held::<Listener$anon@319>::on",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 320,
+      "endLine": 322,
+      "startColumn": 8,
+      "endColumn": 9,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:346bfbce2fb61fe7b9e68fbf96136544",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::ObjectExpressions::held::<Listener$anon@319>::run",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 323,
+      "endLine": 324,
+      "startColumn": 8,
+      "endColumn": 9,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:33b536b9ad651ba447b11ac97d061a33",
+      "kind": "method",
+      "name": "make",
+      "qualifiedName": "com.example.torture::ObjectExpressions::make",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 326,
+      "endLine": 334,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(): Base",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Base"
+    },
+    {
+      "id": "class:27cd6a950d8cd333f954ed00d15dea7b",
+      "kind": "class",
+      "name": "<Base$anon@326>",
+      "qualifiedName": "com.example.torture::ObjectExpressions::make::<Base$anon@326>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 326,
+      "endLine": 334,
+      "startColumn": 23,
+      "endColumn": 5
+    },
+    {
+      "id": "method:dc51ae44ad9acfa98c458135df5fe845",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::ObjectExpressions::make::<Base$anon@326>::run",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 327,
+      "endLine": 333,
+      "startColumn": 8,
+      "endColumn": 9,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:89943c3b60d9e1197c25c6ae8a541cc2",
+      "kind": "class",
+      "name": "<Runnable$anon@328>",
+      "qualifiedName": "com.example.torture::ObjectExpressions::make::<Base$anon@326>::run::<Runnable$anon@328>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 328,
+      "endLine": 332,
+      "startColumn": 24,
+      "endColumn": 13
+    },
+    {
+      "id": "method:64fb858a527e057eef8fc0182396eef7",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::ObjectExpressions::make::<Base$anon@326>::run::<Runnable$anon@328>::run",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 329,
+      "endLine": 331,
+      "startColumn": 16,
+      "endColumn": 17,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:6b0238edf1169dc807dcebf555f30724",
+      "kind": "method",
+      "name": "delegated",
+      "qualifiedName": "com.example.torture::ObjectExpressions::delegated",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 335,
+      "endLine": 337,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:09d916511e29d1b41af6782b4641d2b5",
+      "kind": "class",
+      "name": "<IFoo$anon@335>",
+      "qualifiedName": "com.example.torture::ObjectExpressions::delegated::<IFoo$anon@335>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 335,
+      "endLine": 337,
+      "startColumn": 22,
+      "endColumn": 5
+    },
+    {
+      "id": "method:ed34b59d042c259717a4f432cdb6030d",
+      "kind": "method",
+      "name": "generic",
+      "qualifiedName": "com.example.torture::ObjectExpressions::generic",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 338,
+      "endLine": 340,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:89aa0de266a277c904a505b245e6e2d4",
+      "kind": "class",
+      "name": "<Inner$anon@338>",
+      "qualifiedName": "com.example.torture::ObjectExpressions::generic::<Inner$anon@338>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 338,
+      "endLine": 340,
+      "startColumn": 20,
+      "endColumn": 5
+    },
+    {
+      "id": "method:03d03c522e32f3c664e3e3e67990a0f7",
+      "kind": "method",
+      "name": "bare",
+      "qualifiedName": "com.example.torture::ObjectExpressions::bare",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 341,
+      "endLine": 345,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:3c0961160c9e217c4f380d52ff7dae64",
+      "kind": "class",
+      "name": "<Object$anon@341>",
+      "qualifiedName": "com.example.torture::ObjectExpressions::bare::<Object$anon@341>",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 341,
+      "endLine": 345,
+      "startColumn": 17,
+      "endColumn": 5
+    },
+    {
+      "id": "method:8a36155000ecc7499a9160def9677165",
+      "kind": "method",
+      "name": "x",
+      "qualifiedName": "com.example.torture::ObjectExpressions::bare::<Object$anon@341>::x",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 342,
+      "endLine": 344,
+      "startColumn": 8,
+      "endColumn": 9,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:14c7c9094219202c233b7e1896edf3e9",
+      "kind": "method",
+      "name": "helper",
+      "qualifiedName": "com.example.torture::ObjectExpressions::helper",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 346,
+      "endLine": 347,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:de4a08ea47105576b73f15da9e9d776c",
+      "kind": "method",
+      "name": "compute",
+      "qualifiedName": "com.example.torture::ObjectExpressions::compute",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 348,
+      "endLine": 348,
+      "startColumn": 4,
+      "endColumn": 26,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:3be0378ecd8c0b0224129ae91a8bda49",
+      "kind": "class",
+      "name": "DottedSuper",
+      "qualifiedName": "com.example.torture::DottedSuper",
+      "filePath": "torture.kt",
+      "language": "kotlin",
+      "startLine": 351,
+      "endLine": 351,
+      "startColumn": 0,
+      "endColumn": 59,
+      "visibility": "public"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.kt",
+      "target": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "import:c83935b9151e970acd12b8999a18efde",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "import:578f8335f02210b8478e19ea788a0f11",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "import:7be4fa1025ad92fd09e760637cf8cfd0",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "import:f4d109eeb66edd3c5cac97d681b7816c",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:c062ca02de706ffe85e7dfb2f9586331",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "method:8298e581fd7a847ecb2272499da9f0b3",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "method:2e4801adf2e905b2e53a705bf1332218",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "method:3f1c7c6dfd5058635bca3ad9c4d5fc0d",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:8dcab5e9fdf88ce01677637e64f4542d",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:dd3b001cda91dced028afcdd1175c8fe",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:1b04cca2b65e08bddee8d664ceff60fd",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "variable:4472852535bb4749d3c1608af7453e28",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:6781065224350531a81a82a28711ca83",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:e06a734b36616bbe9ba9cff81fc61903",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:75a4255777e3c03e7df51dffebb1191e",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:720b306858292772e4f3be92b8c70e21",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:153a56b951ec8e2154d68e2bf76211f0",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:791e4bcbab1e332a366024285036dbe2",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "method:06aaefb7099cf9c3e6538bd366428f84",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "method:6e8886e9aff23a124ece65917b80b8fe",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:3cb2b74c3cadb99e54cf9f8cd7faa3b8",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "variable:bdbd6085295556231bfcea007ba6c268",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:0c9f8b28d0b0d427a543ac8b50d5bb02",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:3b2b9cdc475d476f959adedfec70ebe1",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:7fe1cd612e2e36fdbc30cec76181e426",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:eff2f4620f03ce585e0bac06764112a4",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:12f0d8459666fd201dfba092737a7d84",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:1376f41a86d8afc710af2bc6cf53dc0b",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "constant:242ce584412ac4de65824719cb0abc1c",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:242ce584412ac4de65824719cb0abc1c",
+      "target": "class:3986b573516fa2c28563a741779efb92",
+      "kind": "contains"
+    },
+    {
+      "source": "class:3986b573516fa2c28563a741779efb92",
+      "target": "method:7a113ca2d373c43680e057cefc8efa50",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:41f9293caae8ed3579c607dd645cfedf",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "field:48eed0bb912facf4e6e6ee7d2c765497",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "field:f43f89cdec4b91086655f08895d90a82",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "field:01832a38e64de9305d3a419b3c90a720",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "field:937240852d4af3bea1fbeace782a1d21",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "method:bc3d00b4de52334c35b86b1d7a13c5be",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "method:dcac3f28520632bcde6205f36dd99e59",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "constant:3f89168a9107ff7a454caa46635e0084",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "constant:653c2e9cf43717113984165c7e877a33",
+      "kind": "contains"
+    },
+    {
+      "source": "class:41f9293caae8ed3579c607dd645cfedf",
+      "target": "method:1824f5906eb511e4e00d739f0f1153be",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:99ac4ab53e3a818bc82f7846627e065c",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:d80ae3dbbacf86bcb2908c39d6ec7ae7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:d80ae3dbbacf86bcb2908c39d6ec7ae7",
+      "target": "method:290e4c781dd14d2f54f6a2dea2407fdd",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:1d5a0afd75c3168afce687d08739d544",
+      "kind": "contains"
+    },
+    {
+      "source": "class:1d5a0afd75c3168afce687d08739d544",
+      "target": "method:e885320c09d8a57db874e6d46b794ea9",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "target": "method:d09c256d2948748fa5ee654db91a3b67",
+      "kind": "contains"
+    },
+    {
+      "source": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "target": "method:17fb8801322704d71941ed171aea579c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "target": "method:9c5d9f7974d5a6880fcc8365e58ccaff",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:378f5d9a436f17c257cf1f854035847c",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:b6c10e2d44f8fd6be6f74f1cfbbec3d5",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "interface:4d02e961359f7c1b8971db5b1ca96626",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4d02e961359f7c1b8971db5b1ca96626",
+      "target": "method:a13566a2a7f88bd810928b47184c7004",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4d02e961359f7c1b8971db5b1ca96626",
+      "target": "method:8000feb1bbb931e06e8b0f92a8214cd4",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4d02e961359f7c1b8971db5b1ca96626",
+      "target": "field:07551d9973503e2810c93706b64c9986",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:3501aa151758b91295beb282e6697427",
+      "kind": "contains"
+    },
+    {
+      "source": "class:3501aa151758b91295beb282e6697427",
+      "target": "class:0d8ae79f1ab67049eaf8c6a12ad2855e",
+      "kind": "contains"
+    },
+    {
+      "source": "class:3501aa151758b91295beb282e6697427",
+      "target": "class:855ce9f9a9e661790a7e269055e01ee8",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "interface:7dac84961ecdf9d5bf896c0697eb46f5",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "enum:939bd20570b2cc42d76761cbdd98f4be",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:939bd20570b2cc42d76761cbdd98f4be",
+      "target": "enum_member:bdc097da7c0310e450bb8f2fd3fa70fa",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:939bd20570b2cc42d76761cbdd98f4be",
+      "target": "enum_member:df4372af4a26423771111e480c41a7e8",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:939bd20570b2cc42d76761cbdd98f4be",
+      "target": "enum_member:3f4e71f2ae1252dfc0b220089959a31d",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "target": "enum_member:8bf2ad40253abd0ee89d7f34a6f6f4c8",
+      "kind": "contains"
+    },
+    {
+      "source": "enum_member:8bf2ad40253abd0ee89d7f34a6f6f4c8",
+      "target": "method:9f04b6f1a31fc233679ea2ea481d4e81",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "target": "enum_member:c4b527ab0b569c6673517db33b64c0b9",
+      "kind": "contains"
+    },
+    {
+      "source": "enum_member:c4b527ab0b569c6673517db33b64c0b9",
+      "target": "method:e8c2fc654ce022d4a56a1e94cc8c31ac",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "target": "method:8db9c19851cdfcc15012aef70df66c68",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "target": "method:2a63107bacdb268f87c990cd623f4258",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:e047a34d2ddb1ded65aefba4cc6139bd",
+      "target": "method:ba1c1e430a8dd0b4818dead6ee6f8149",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:9ed04d29f63f2f28d880e7ac0c9f3316",
+      "kind": "contains"
+    },
+    {
+      "source": "class:9ed04d29f63f2f28d880e7ac0c9f3316",
+      "target": "constant:db3e2a53994a3ee61fa1d249d08346d4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:9ed04d29f63f2f28d880e7ac0c9f3316",
+      "target": "variable:6518633f1bf5d551fbabeb7c23c0a2fc",
+      "kind": "contains"
+    },
+    {
+      "source": "class:9ed04d29f63f2f28d880e7ac0c9f3316",
+      "target": "constant:fdb9ff390cf3c1b2676cf8ef278d043a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:9ed04d29f63f2f28d880e7ac0c9f3316",
+      "target": "method:584a93bdaf25406de28637e5102dd711",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:501c0322478fcf5160d1d4ca31a8a85b",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "target": "method:cbb4c92bf52c3ded8856f60a2689604d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "target": "method:3eb251ebc7d9343eb33ca80a7d02651c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "target": "field:5fc1fee3e0e5407e53f8a6df3cbbf5d2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "target": "field:12ac77a324cfd2eee6d16610b4c02e5e",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "type_alias:6e34815e8fe90aebc51ac77ee144cda9",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "type_alias:de3d83c3c29a8860a484c7612f9f76a2",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:4691df96314719f5692c585769e11cb2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:4691df96314719f5692c585769e11cb2",
+      "target": "method:a80ef801ca843896c0d0a4e39054efdf",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:0fd328ea2fa63407c19aab87538f6763",
+      "kind": "contains"
+    },
+    {
+      "source": "class:0fd328ea2fa63407c19aab87538f6763",
+      "target": "method:b56c653a41988d4bf418266a79cca3a6",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "type_alias:1e841c3807fe3b6a927b23f5368a2e3e",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "kind": "contains"
+    },
+    {
+      "source": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "target": "function:bd6ec333dd877a85c1cf58e0c34171d4",
+      "kind": "contains"
+    },
+    {
+      "source": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "target": "class:2d57eac5ae7d6e48c18c4048acd4bcf8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:2d57eac5ae7d6e48c18c4048acd4bcf8",
+      "target": "method:197e726b8550824f5a430dadd814cab0",
+      "kind": "contains"
+    },
+    {
+      "source": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "target": "function:3e0adc8399de0070199669018509fd4f",
+      "kind": "contains"
+    },
+    {
+      "source": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "target": "class:4beb6d41b0aae2485753e29f23faea3e",
+      "kind": "contains"
+    },
+    {
+      "source": "class:4beb6d41b0aae2485753e29f23faea3e",
+      "target": "method:79089e993ac03f7d6ba712f1bbc5d892",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:cee23847503acc26fddd8855ec1bd764",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:a611a4de91efc2d4182e7d4dd0f02794",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:0269fc62d23f85121a9ed794196328e3",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:10576b5f9afeda3e2743e86ccd4fb53c",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:095cd7e18ff37136d70d69bc66893459",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:8eca69a11766f505ac36a19b8107cb80",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:8cb67334367b7b762eac2a9f9bdbe4ed",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:954f74226a742a2069f6778fc8c269a0",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:4e7accbb265b0e2fcc4c4fc4e7def6c6",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:c06d284bd4871180ee1fe7190f581b7d",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "function:443183f7e45b91ca9f10e5075cb2e53f",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:897a56f050d3d840c68072717ed0e41a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:897a56f050d3d840c68072717ed0e41a",
+      "target": "field:f1b0a924db5a5e82f7ae46e3c546bf74",
+      "kind": "contains"
+    },
+    {
+      "source": "class:897a56f050d3d840c68072717ed0e41a",
+      "target": "field:94d20063d2ebec373d19a45c0f69f3bc",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:023236664b6b8a486426818aa5842a60",
+      "kind": "contains"
+    },
+    {
+      "source": "class:023236664b6b8a486426818aa5842a60",
+      "target": "field:be8dd480979dc1ccc523dc2757030771",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:716347413cc13bbd7a499c6275a4205b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:716347413cc13bbd7a499c6275a4205b",
+      "target": "method:28084de84261fa3c32624f61be1835de",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "field:806e9a0acdb3413d0676489a434e50cb",
+      "kind": "contains"
+    },
+    {
+      "source": "field:806e9a0acdb3413d0676489a434e50cb",
+      "target": "class:8da4a2818d738b6a9b9a78babfcc7469",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8da4a2818d738b6a9b9a78babfcc7469",
+      "target": "method:40b2138d90df4dcc4c0977d2ab084928",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8da4a2818d738b6a9b9a78babfcc7469",
+      "target": "method:346bfbce2fb61fe7b9e68fbf96136544",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "method:33b536b9ad651ba447b11ac97d061a33",
+      "kind": "contains"
+    },
+    {
+      "source": "method:33b536b9ad651ba447b11ac97d061a33",
+      "target": "class:27cd6a950d8cd333f954ed00d15dea7b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:27cd6a950d8cd333f954ed00d15dea7b",
+      "target": "method:dc51ae44ad9acfa98c458135df5fe845",
+      "kind": "contains"
+    },
+    {
+      "source": "method:dc51ae44ad9acfa98c458135df5fe845",
+      "target": "class:89943c3b60d9e1197c25c6ae8a541cc2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:89943c3b60d9e1197c25c6ae8a541cc2",
+      "target": "method:64fb858a527e057eef8fc0182396eef7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "method:6b0238edf1169dc807dcebf555f30724",
+      "kind": "contains"
+    },
+    {
+      "source": "method:6b0238edf1169dc807dcebf555f30724",
+      "target": "class:09d916511e29d1b41af6782b4641d2b5",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "method:ed34b59d042c259717a4f432cdb6030d",
+      "kind": "contains"
+    },
+    {
+      "source": "method:ed34b59d042c259717a4f432cdb6030d",
+      "target": "class:89aa0de266a277c904a505b245e6e2d4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "method:03d03c522e32f3c664e3e3e67990a0f7",
+      "kind": "contains"
+    },
+    {
+      "source": "method:03d03c522e32f3c664e3e3e67990a0f7",
+      "target": "class:3c0961160c9e217c4f380d52ff7dae64",
+      "kind": "contains"
+    },
+    {
+      "source": "class:3c0961160c9e217c4f380d52ff7dae64",
+      "target": "method:8a36155000ecc7499a9160def9677165",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "method:14c7c9094219202c233b7e1896edf3e9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:058985e068dbfb4bcb1d1910d27c2d0b",
+      "target": "method:de4a08ea47105576b73f15da9e9d776c",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "target": "class:3be0378ecd8c0b0224129ae91a8bda49",
+      "kind": "contains"
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "referenceName": "com.example.other.OtherClass",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "referenceName": "com.example.util.helper",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "referenceName": "com.example.wild",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "referenceName": "com.example.alias.LongName",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:c062ca02de706ffe85e7dfb2f9586331",
+      "referenceName": "WidgetK",
+      "referenceKind": "calls",
+      "line": 13,
+      "column": 11
+    },
+    {
+      "fromNodeId": "method:8298e581fd7a847ecb2272499da9f0b3",
+      "referenceName": "render",
+      "referenceKind": "calls",
+      "line": 18,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:2e4801adf2e905b2e53a705bf1332218",
+      "referenceName": "first",
+      "referenceKind": "calls",
+      "line": 22,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:8dcab5e9fdf88ce01677637e64f4542d",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 26,
+      "column": 32
+    },
+    {
+      "fromNodeId": "function:6781065224350531a81a82a28711ca83",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 33,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:791e4bcbab1e332a366024285036dbe2",
+      "referenceName": "tailer",
+      "referenceKind": "calls",
+      "line": 43,
+      "column": 53
+    },
+    {
+      "fromNodeId": "constant:3b2b9cdc475d476f959adedfec70ebe1",
+      "referenceName": "lazy",
+      "referenceKind": "calls",
+      "line": 52,
+      "column": 20
+    },
+    {
+      "fromNodeId": "constant:3b2b9cdc475d476f959adedfec70ebe1",
+      "referenceName": "WidgetK",
+      "referenceKind": "calls",
+      "line": 52,
+      "column": 27
+    },
+    {
+      "fromNodeId": "namespace:d9616ee78b39a3b73d3d8ea7130c5fb0",
+      "referenceName": "makePair",
+      "referenceKind": "calls",
+      "line": 53,
+      "column": 21
+    },
+    {
+      "fromNodeId": "constant:eff2f4620f03ce585e0bac06764112a4",
+      "referenceName": "caller",
+      "referenceKind": "calls",
+      "line": 56,
+      "column": 31
+    },
+    {
+      "fromNodeId": "constant:12f0d8459666fd201dfba092737a7d84",
+      "referenceName": "Runnable",
+      "referenceKind": "calls",
+      "line": 57,
+      "column": 14
+    },
+    {
+      "fromNodeId": "constant:12f0d8459666fd201dfba092737a7d84",
+      "referenceName": "caller",
+      "referenceKind": "calls",
+      "line": 57,
+      "column": 25
+    },
+    {
+      "fromNodeId": "constant:1376f41a86d8afc710af2bc6cf53dc0b",
+      "referenceName": "listOf",
+      "referenceKind": "calls",
+      "line": 58,
+      "column": 18
+    },
+    {
+      "fromNodeId": "constant:242ce584412ac4de65824719cb0abc1c",
+      "referenceName": "Runnable",
+      "referenceKind": "instantiates",
+      "line": 59,
+      "column": 26
+    },
+    {
+      "fromNodeId": "class:3986b573516fa2c28563a741779efb92",
+      "referenceName": "Runnable",
+      "referenceKind": "extends",
+      "line": 59,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:7a113ca2d373c43680e057cefc8efa50",
+      "referenceName": "caller",
+      "referenceKind": "calls",
+      "line": 61,
+      "column": 8
+    },
+    {
+      "fromNodeId": "field:f43f89cdec4b91086655f08895d90a82",
+      "referenceName": "listOf",
+      "referenceKind": "calls",
+      "line": 67,
+      "column": 16
+    },
+    {
+      "fromNodeId": "class:41f9293caae8ed3579c607dd645cfedf",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 74,
+      "column": 8
+    },
+    {
+      "fromNodeId": "class:41f9293caae8ed3579c607dd645cfedf",
+      "referenceName": "log",
+      "referenceKind": "calls",
+      "line": 78,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:bc3d00b4de52334c35b86b1d7a13c5be",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 82,
+      "column": 8
+    },
+    {
+      "fromNodeId": "constant:3f89168a9107ff7a454caa46635e0084",
+      "referenceName": "WidgetK",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:1824f5906eb511e4e00d739f0f1153be",
+      "referenceName": "WidgetK",
+      "referenceKind": "calls",
+      "line": 90,
+      "column": 32
+    },
+    {
+      "fromNodeId": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "referenceName": "OpenBase",
+      "referenceKind": "extends",
+      "line": 106,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "referenceName": "Drawable",
+      "referenceKind": "extends",
+      "line": 106,
+      "column": 34
+    },
+    {
+      "fromNodeId": "class:da090e2b73e748ea36d7d1c95cdf0c1f",
+      "referenceName": "Comparable",
+      "referenceKind": "extends",
+      "line": 106,
+      "column": 44
+    },
+    {
+      "fromNodeId": "class:378f5d9a436f17c257cf1f854035847c",
+      "referenceName": "com.example.deep.RemoteBase",
+      "referenceKind": "extends",
+      "line": 112,
+      "column": 23
+    },
+    {
+      "fromNodeId": "class:0d8ae79f1ab67049eaf8c6a12ad2855e",
+      "referenceName": "SealedOp",
+      "referenceKind": "extends",
+      "line": 123,
+      "column": 17
+    },
+    {
+      "fromNodeId": "class:855ce9f9a9e661790a7e269055e01ee8",
+      "referenceName": "SealedOp",
+      "referenceKind": "extends",
+      "line": 124,
+      "column": 33
+    },
+    {
+      "fromNodeId": "constant:db3e2a53994a3ee61fa1d249d08346d4",
+      "referenceName": "mutableListOf",
+      "referenceKind": "calls",
+      "line": 149,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:584a93bdaf25406de28637e5102dd711",
+      "referenceName": "instances.add",
+      "referenceKind": "calls",
+      "line": 152,
+      "column": 31
+    },
+    {
+      "fromNodeId": "class:eae2cf150bce5e95a52cd52d25b1bd47",
+      "referenceName": "MyMarker",
+      "referenceKind": "decorates",
+      "line": 157,
+      "column": 0
+    },
+    {
+      "fromNodeId": "method:cbb4c92bf52c3ded8856f60a2689604d",
+      "referenceName": "JvmStatic",
+      "referenceKind": "decorates",
+      "line": 159,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "WidgetK",
+      "referenceKind": "calls",
+      "line": 186,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "w.render",
+      "referenceKind": "calls",
+      "line": 187,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "toString",
+      "referenceKind": "calls",
+      "line": 188,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "hashCode",
+      "referenceKind": "calls",
+      "line": 189,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Registry.register",
+      "referenceKind": "calls",
+      "line": 190,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Registry",
+      "referenceKind": "references",
+      "line": 191,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Color",
+      "referenceKind": "references",
+      "line": 192,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "WidgetK.create().render",
+      "referenceKind": "calls",
+      "line": 194,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "WidgetK.create",
+      "referenceKind": "calls",
+      "line": 194,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Foo.getInstance().bar",
+      "referenceKind": "calls",
+      "line": 195,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Foo.getInstance",
+      "referenceKind": "calls",
+      "line": 195,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "chain",
+      "referenceKind": "calls",
+      "line": 196,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "lowerFactory",
+      "referenceKind": "calls",
+      "line": 196,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "render",
+      "referenceKind": "calls",
+      "line": 197,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "w.chainInner",
+      "referenceKind": "calls",
+      "line": 197,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "listOf",
+      "referenceKind": "calls",
+      "line": 200,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 203,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Short.static",
+      "referenceKind": "calls",
+      "line": 204,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "println",
+      "referenceKind": "calls",
+      "line": 205,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "fn(3)\n    (fn)",
+      "referenceKind": "calls",
+      "line": 206,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "fn(3)",
+      "referenceKind": "calls",
+      "line": 206,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "fn",
+      "referenceKind": "calls",
+      "line": 206,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "run",
+      "referenceKind": "calls",
+      "line": 208,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 208,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "forEach",
+      "referenceKind": "calls",
+      "line": 209,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "listOf",
+      "referenceKind": "calls",
+      "line": 209,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "w.let",
+      "referenceKind": "calls",
+      "line": 210,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "it.render",
+      "referenceKind": "calls",
+      "line": 210,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "generic",
+      "referenceKind": "calls",
+      "line": 211,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 212,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 213,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 214,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 215,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "obtain",
+      "referenceKind": "calls",
+      "line": 216,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "w.render",
+      "referenceKind": "calls",
+      "line": 219,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 222,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 223,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 225,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 226,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "localFn",
+      "referenceKind": "calls",
+      "line": 228,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "Drawable",
+      "referenceKind": "instantiates",
+      "line": 235,
+      "column": 24
+    },
+    {
+      "fromNodeId": "class:4beb6d41b0aae2485753e29f23faea3e",
+      "referenceName": "Drawable",
+      "referenceKind": "extends",
+      "line": 235,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:79089e993ac03f7d6ba712f1bbc5d892",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 236,
+      "column": 30
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "anon.draw",
+      "referenceKind": "calls",
+      "line": 238,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "`weird name`",
+      "referenceKind": "calls",
+      "line": 240,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:a611a4de91efc2d4182e7d4dd0f02794",
+      "referenceName": "block",
+      "referenceKind": "calls",
+      "line": 245,
+      "column": 41
+    },
+    {
+      "fromNodeId": "function:0269fc62d23f85121a9ed794196328e3",
+      "referenceName": "trailing",
+      "referenceKind": "calls",
+      "line": 248,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:0269fc62d23f85121a9ed794196328e3",
+      "referenceName": "trailing()",
+      "referenceKind": "calls",
+      "line": 249,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:0269fc62d23f85121a9ed794196328e3",
+      "referenceName": "trailing",
+      "referenceKind": "calls",
+      "line": 249,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:8eca69a11766f505ac36a19b8107cb80",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 258,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:954f74226a742a2069f6778fc8c269a0",
+      "referenceName": "x.render",
+      "referenceKind": "calls",
+      "line": 267,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:954f74226a742a2069f6778fc8c269a0",
+      "referenceName": "WidgetK",
+      "referenceKind": "calls",
+      "line": 268,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:c06d284bd4871180ee1fe7190f581b7d",
+      "referenceName": "forEach",
+      "referenceKind": "calls",
+      "line": 276,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:c06d284bd4871180ee1fe7190f581b7d",
+      "referenceName": "listOf",
+      "referenceKind": "calls",
+      "line": 276,
+      "column": 4
+    },
+    {
+      "fromNodeId": "field:f1b0a924db5a5e82f7ae46e3c546bf74",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 282,
+      "column": 36
+    },
+    {
+      "fromNodeId": "field:94d20063d2ebec373d19a45c0f69f3bc",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 283,
+      "column": 34
+    },
+    {
+      "fromNodeId": "field:94d20063d2ebec373d19a45c0f69f3bc",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 284,
+      "column": 17
+    },
+    {
+      "fromNodeId": "field:be8dd480979dc1ccc523dc2757030771",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 289,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:be8dd480979dc1ccc523dc2757030771",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 290,
+      "column": 17
+    },
+    {
+      "fromNodeId": "class:023236664b6b8a486426818aa5842a60",
+      "referenceName": "makePair",
+      "referenceKind": "calls",
+      "line": 291,
+      "column": 27
+    },
+    {
+      "fromNodeId": "class:023236664b6b8a486426818aa5842a60",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 293,
+      "column": 23
+    },
+    {
+      "fromNodeId": "class:023236664b6b8a486426818aa5842a60",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 294,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "engine.pump.drain",
+      "referenceKind": "calls",
+      "line": 300,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "this.engine.drain",
+      "referenceKind": "calls",
+      "line": 301,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "engine.pump.drain",
+      "referenceKind": "calls",
+      "line": 302,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "engine.pump.drain",
+      "referenceKind": "calls",
+      "line": 303,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "engine.a.b.c.drain",
+      "referenceKind": "calls",
+      "line": 306,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "drain",
+      "referenceKind": "calls",
+      "line": 307,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "drain",
+      "referenceKind": "calls",
+      "line": 308,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "engine!!.pump.drain()",
+      "referenceKind": "calls",
+      "line": 308,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "drain",
+      "referenceKind": "calls",
+      "line": 308,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "drain",
+      "referenceKind": "calls",
+      "line": 310,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "engine.pump",
+      "referenceKind": "calls",
+      "line": 310,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "toString",
+      "referenceKind": "calls",
+      "line": 311,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:28084de84261fa3c32624f61be1835de",
+      "referenceName": "toString",
+      "referenceKind": "calls",
+      "line": 311,
+      "column": 8
+    },
+    {
+      "fromNodeId": "field:806e9a0acdb3413d0676489a434e50cb",
+      "referenceName": "Outer.Listener",
+      "referenceKind": "instantiates",
+      "line": 319,
+      "column": 24
+    },
+    {
+      "fromNodeId": "class:8da4a2818d738b6a9b9a78babfcc7469",
+      "referenceName": "Outer.Listener",
+      "referenceKind": "extends",
+      "line": 319,
+      "column": 24
+    },
+    {
+      "fromNodeId": "class:8da4a2818d738b6a9b9a78babfcc7469",
+      "referenceName": "Runnable",
+      "referenceKind": "extends",
+      "line": 319,
+      "column": 40
+    },
+    {
+      "fromNodeId": "method:40b2138d90df4dcc4c0977d2ab084928",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 321,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:33b536b9ad651ba447b11ac97d061a33",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 326,
+      "column": 37
+    },
+    {
+      "fromNodeId": "method:33b536b9ad651ba447b11ac97d061a33",
+      "referenceName": "Base",
+      "referenceKind": "instantiates",
+      "line": 326,
+      "column": 32
+    },
+    {
+      "fromNodeId": "class:27cd6a950d8cd333f954ed00d15dea7b",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 326,
+      "column": 32
+    },
+    {
+      "fromNodeId": "method:dc51ae44ad9acfa98c458135df5fe845",
+      "referenceName": "Runnable",
+      "referenceKind": "instantiates",
+      "line": 328,
+      "column": 33
+    },
+    {
+      "fromNodeId": "class:89943c3b60d9e1197c25c6ae8a541cc2",
+      "referenceName": "Runnable",
+      "referenceKind": "extends",
+      "line": 328,
+      "column": 33
+    },
+    {
+      "fromNodeId": "method:64fb858a527e057eef8fc0182396eef7",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 330,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:6b0238edf1169dc807dcebf555f30724",
+      "referenceName": "makeDelegate",
+      "referenceKind": "calls",
+      "line": 335,
+      "column": 43
+    },
+    {
+      "fromNodeId": "method:6b0238edf1169dc807dcebf555f30724",
+      "referenceName": "api.IFoo",
+      "referenceKind": "instantiates",
+      "line": 335,
+      "column": 31
+    },
+    {
+      "fromNodeId": "class:09d916511e29d1b41af6782b4641d2b5",
+      "referenceName": "api.IFoo",
+      "referenceKind": "extends",
+      "line": 335,
+      "column": 31
+    },
+    {
+      "fromNodeId": "class:09d916511e29d1b41af6782b4641d2b5",
+      "referenceName": "Marker",
+      "referenceKind": "extends",
+      "line": 335,
+      "column": 59
+    },
+    {
+      "fromNodeId": "method:ed34b59d042c259717a4f432cdb6030d",
+      "referenceName": "pkg.Outer.Inner",
+      "referenceKind": "instantiates",
+      "line": 338,
+      "column": 29
+    },
+    {
+      "fromNodeId": "class:89aa0de266a277c904a505b245e6e2d4",
+      "referenceName": "pkg.Outer.Inner",
+      "referenceKind": "extends",
+      "line": 338,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:8a36155000ecc7499a9160def9677165",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 343,
+      "column": 12
+    },
+    {
+      "fromNodeId": "class:3be0378ecd8c0b0224129ae91a8bda49",
+      "referenceName": "Outer.Inner",
+      "referenceKind": "extends",
+      "line": 351,
+      "column": 20
+    },
+    {
+      "fromNodeId": "class:3be0378ecd8c0b0224129ae91a8bda49",
+      "referenceName": "com.example.Api.Listener",
+      "referenceKind": "extends",
+      "line": 351,
+      "column": 35
+    },
+    {
+      "fromNodeId": "constant:1376f41a86d8afc710af2bc6cf53dc0b",
+      "referenceName": "caller",
+      "referenceKind": "function_ref",
+      "line": 58,
+      "column": 27
+    },
+    {
+      "fromNodeId": "field:f43f89cdec4b91086655f08895d90a82",
+      "referenceName": "caller",
+      "referenceKind": "function_ref",
+      "line": 67,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "topLevel",
+      "referenceKind": "function_ref",
+      "line": 212,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "OtherClass::handle",
+      "referenceKind": "function_ref",
+      "line": 213,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:e3d26e906a34f1f2782563ebbfcefe77",
+      "referenceName": "this.caller",
+      "referenceKind": "function_ref",
+      "line": 215,
+      "column": 19
+    }
+  ],
+  "errors": []
+}

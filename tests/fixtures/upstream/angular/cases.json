@@ -1,0 +1,3328 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nexport const routes: Routes = [\n  { path: '', loadComponent: () => import('./home/home.component') },\n  { path: 'login', component: AuthComponent, canActivate: [guard] },\n  { path: 'editor', children: [\n      { path: '', loadComponent: () => import('./editor.component').then((m) => m.EditorComponent) },\n      { path: ':slug', loadComponent: () => import('./editor.component').then((m) => m.EditorComponent) },\n  ] },\n  { path: 'profile', loadChildren: () => import('./profile/profile.routes') },\n  { path: 'users', matcher: usersMatcher, component: UsersComponent },\n  { path: 'old', redirectTo: 'login' },\n  { path: '**', component: NotFoundComponent },\n];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 3,
+            "component": {
+              "name": null,
+              "spec": "./home/home.component"
+            },
+            "layouts": []
+          },
+          {
+            "path": "/login",
+            "line": 4,
+            "component": {
+              "name": "AuthComponent",
+              "spec": null
+            },
+            "layouts": []
+          },
+          {
+            "path": "/editor",
+            "line": 6,
+            "component": {
+              "name": "EditorComponent",
+              "spec": "./editor.component"
+            },
+            "layouts": []
+          },
+          {
+            "path": "/editor/:slug",
+            "line": 7,
+            "component": {
+              "name": "EditorComponent",
+              "spec": "./editor.component"
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [
+          {
+            "prefix": "/profile",
+            "spec": "./profile/profile.routes",
+            "line": 9
+          }
+        ],
+        "redirects": [
+          {
+            "from": "/old",
+            "to": "/login",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:3:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:4:/login:angular",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "app.routes.ts::route:/login",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:6:/editor:angular",
+            "kind": "route",
+            "name": "/editor",
+            "qualifiedName": "app.routes.ts::route:/editor",
+            "filePath": "app.routes.ts",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:7:/editor/:slug:angular",
+            "kind": "route",
+            "name": "/editor/:slug",
+            "qualifiedName": "app.routes.ts::route:/editor/:slug",
+            "filePath": "app.routes.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:3:/:angular",
+            "referenceName": "import:./home/home.component#default",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:4:/login:angular",
+            "referenceName": "AuthComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:6:/editor:angular",
+            "referenceName": "import:./editor.component#EditorComponent",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:7:/editor/:slug:angular",
+            "referenceName": "import:./editor.component#EditorComponent",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nconst routes: Routes = [\n  { path: ':username', component: ProfileComponent, children: [\n      { path: '', loadComponent: () => import('./articles.component') },\n      { path: 'favorites', loadComponent: () => import('./favorites.component') },\n  ] },\n  { path: 'pages', component: PagesComponent, children: [{ path: 'dashboard', component: DashboardComponent }] },\n];\nexport default routes;",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/:username",
+            "line": 4,
+            "component": {
+              "name": null,
+              "spec": "./articles.component"
+            },
+            "layouts": [
+              {
+                "name": "ProfileComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/:username/favorites",
+            "line": 5,
+            "component": {
+              "name": null,
+              "spec": "./favorites.component"
+            },
+            "layouts": [
+              {
+                "name": "ProfileComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/pages/dashboard",
+            "line": 7,
+            "component": {
+              "name": "DashboardComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "PagesComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/pages",
+            "line": 7,
+            "component": {
+              "name": "PagesComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:4:/:username:angular",
+            "kind": "route",
+            "name": "/:username",
+            "qualifiedName": "app.routes.ts::route:/:username",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:5:/:username/favorites:angular",
+            "kind": "route",
+            "name": "/:username/favorites",
+            "qualifiedName": "app.routes.ts::route:/:username/favorites",
+            "filePath": "app.routes.ts",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:7:/pages/dashboard:angular",
+            "kind": "route",
+            "name": "/pages/dashboard",
+            "qualifiedName": "app.routes.ts::route:/pages/dashboard",
+            "filePath": "app.routes.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:7:/pages:angular",
+            "kind": "route",
+            "name": "/pages",
+            "qualifiedName": "app.routes.ts::route:/pages",
+            "filePath": "app.routes.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:4:/:username:angular",
+            "referenceName": "import:./articles.component#default",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:4:/:username:angular",
+            "referenceName": "layout:ProfileComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:5:/:username/favorites:angular",
+            "referenceName": "import:./favorites.component#default",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:5:/:username/favorites:angular",
+            "referenceName": "layout:ProfileComponent",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:7:/pages/dashboard:angular",
+            "referenceName": "DashboardComponent",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:7:/pages/dashboard:angular",
+            "referenceName": "layout:PagesComponent",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:7:/pages:angular",
+            "referenceName": "PagesComponent",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nRouterModule.forRoot([{ path: 'a', component: A }])",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/a",
+            "line": 2,
+            "component": {
+              "name": "A",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:2:/a:angular",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "app.routes.ts::route:/a",
+            "filePath": "app.routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:2:/a:angular",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nRouterModule.forChild([{ path: 'a', component: A }])",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/a",
+            "line": 2,
+            "component": {
+              "name": "A",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:2:/a:angular",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "app.routes.ts::route:/a",
+            "filePath": "app.routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:2:/a:angular",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nbootstrapApplication(App, { providers: [provideRouter([{ path: 'a', component: A }])] })",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/a",
+            "line": 2,
+            "component": {
+              "name": "A",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:2:/a:angular",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "app.routes.ts::route:/a",
+            "filePath": "app.routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:2:/a:angular",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nexport default [{ path: 'a', component: A }] satisfies Routes;",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/a",
+            "line": 2,
+            "component": {
+              "name": "A",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:2:/a:angular",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "app.routes.ts::route:/a",
+            "filePath": "app.routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:2:/a:angular",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nconst table = [{ path: 'a', component: A }] as Routes;",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/a",
+            "line": 2,
+            "component": {
+              "name": "A",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:2:/a:angular",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "app.routes.ts::route:/a",
+            "filePath": "app.routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:2:/a:angular",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nconst tabs = [{ path: 'a', component: A }];",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nexport const routes = [{ path: 'a', component: A }];",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nexport const routes: Routes = [\n  { path: internalRoutes.account.path, component: AccountComponent },\n  { path: $localize`:kebab-case@@routes.about:about`, component: AboutComponent },\n  { path: '**', redirectTo: 'home', pathMatch: 'full' },\n];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/{internalRoutes.account.path}",
+            "line": 3,
+            "component": {
+              "name": "AccountComponent",
+              "spec": null
+            },
+            "layouts": []
+          },
+          {
+            "path": "/about",
+            "line": 4,
+            "component": {
+              "name": "AboutComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": [
+          {
+            "from": "/**",
+            "to": "/home",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:3:/{internalRoutes.account.path}:angular",
+            "kind": "route",
+            "name": "/{internalRoutes.account.path}",
+            "qualifiedName": "app.routes.ts::route:/{internalRoutes.account.path}",
+            "filePath": "app.routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:4:/about:angular",
+            "kind": "route",
+            "name": "/about",
+            "qualifiedName": "app.routes.ts::route:/about",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:3:/{internalRoutes.account.path}:angular",
+            "referenceName": "AccountComponent",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:4:/about:angular",
+            "referenceName": "AboutComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "@angular/router",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Routes } from '@angular/router';\nimport { AuthComponent } from './auth/auth.component';\nimport { internalRoutes } from './routes.constants';\nconst { about } = internalRoutes;\nexport const routes: Routes = [\n  { path: 'home', loadComponent: () => import('./home/home.component') },\n  { path: 'login', component: AuthComponent },\n  { path: about.path, loadComponent: () => import('./about/about.component').then((m) => m.AboutComponent) },\n  { path: internalRoutes.account.path, loadChildren: () => import('./account/account.routes') },\n  { path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule) },\n  { path: '**', redirectTo: 'home' },\n];\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/home",
+            "line": 6,
+            "component": {
+              "name": null,
+              "spec": "./home/home.component"
+            },
+            "layouts": []
+          },
+          {
+            "path": "/login",
+            "line": 7,
+            "component": {
+              "name": "AuthComponent",
+              "spec": null
+            },
+            "layouts": []
+          },
+          {
+            "path": "/{about.path}",
+            "line": 8,
+            "component": {
+              "name": "AboutComponent",
+              "spec": "./about/about.component"
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [
+          {
+            "prefix": "/{internalRoutes.account.path}",
+            "spec": "./account/account.routes",
+            "line": 9
+          },
+          {
+            "prefix": "/admin",
+            "spec": "./admin/admin.module",
+            "line": 10
+          }
+        ],
+        "redirects": [
+          {
+            "from": "/**",
+            "to": "/home",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:6:/home:angular",
+            "kind": "route",
+            "name": "/home",
+            "qualifiedName": "app.routes.ts::route:/home",
+            "filePath": "app.routes.ts",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:7:/login:angular",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "app.routes.ts::route:/login",
+            "filePath": "app.routes.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:8:/{about.path}:angular",
+            "kind": "route",
+            "name": "/{about.path}",
+            "qualifiedName": "app.routes.ts::route:/{about.path}",
+            "filePath": "app.routes.ts",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:6:/home:angular",
+            "referenceName": "import:./home/home.component#default",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:7:/login:angular",
+            "referenceName": "AuthComponent",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:8:/{about.path}:angular",
+            "referenceName": "import:./about/about.component#AboutComponent",
+            "referenceKind": "references",
+            "line": 8,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { Routes } from '@angular/router';\nimport { AuthComponent } from './auth/auth.component';\nimport { internalRoutes } from './routes.constants';\nconst { about } = internalRoutes;\nexport const routes: Routes = [\n  { path: 'home', loadComponent: () => import('./home/home.component') },\n  { path: 'login', component: AuthComponent },\n  { path: about.path, loadComponent: () => import('./about/about.component').then((m) => m.AboutComponent) },\n  { path: internalRoutes.account.path, loadChildren: () => import('./account/account.routes') },\n  { path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule) },\n  { path: '**', redirectTo: 'home' },\n];\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/home",
+            "line": 7,
+            "component": {
+              "name": null,
+              "spec": "./home/home.component"
+            },
+            "layouts": []
+          },
+          {
+            "path": "/login",
+            "line": 8,
+            "component": {
+              "name": "AuthComponent",
+              "spec": null
+            },
+            "layouts": []
+          },
+          {
+            "path": "/{about.path}",
+            "line": 9,
+            "component": {
+              "name": "AboutComponent",
+              "spec": "./about/about.component"
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [
+          {
+            "prefix": "/{internalRoutes.account.path}",
+            "spec": "./account/account.routes",
+            "line": 10
+          },
+          {
+            "prefix": "/admin",
+            "spec": "./admin/admin.module",
+            "line": 11
+          }
+        ],
+        "redirects": [
+          {
+            "from": "/**",
+            "to": "/home",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:7:/home:angular",
+            "kind": "route",
+            "name": "/home",
+            "qualifiedName": "app.routes.ts::route:/home",
+            "filePath": "app.routes.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:8:/login:angular",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "app.routes.ts::route:/login",
+            "filePath": "app.routes.ts",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:9:/{about.path}:angular",
+            "kind": "route",
+            "name": "/{about.path}",
+            "qualifiedName": "app.routes.ts::route:/{about.path}",
+            "filePath": "app.routes.ts",
+            "startLine": 9,
+            "endLine": 9,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:7:/home:angular",
+            "referenceName": "import:./home/home.component#default",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:8:/login:angular",
+            "referenceName": "AuthComponent",
+            "referenceKind": "references",
+            "line": 8,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:9:/{about.path}:angular",
+            "referenceName": "import:./about/about.component#AboutComponent",
+            "referenceKind": "references",
+            "line": 9,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Routes } from '@angular/router';\nimport { AccountComponent } from './account.component';\nimport { AccessComponent } from './access.component';\nimport { internalRoutes } from '../routes.constants';\nexport default [\n  { path: '', component: AccountComponent, children: [\n      { path: '', loadComponent: () => import('./overview.component') },\n      { path: internalRoutes.account.subRoutes.access.path + '/:id', component: AccessComponent },\n  ] },\n] satisfies Routes;\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 7,
+            "component": {
+              "name": null,
+              "spec": "./overview.component"
+            },
+            "layouts": [
+              {
+                "name": "AccountComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/{internalRoutes.account.subRoutes.access.path}/:id",
+            "line": 8,
+            "component": {
+              "name": "AccessComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "AccountComponent",
+                "spec": null
+              }
+            ]
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:7:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:8:/{internalRoutes.account.subRoutes.access.path}/:id:angular",
+            "kind": "route",
+            "name": "/{internalRoutes.account.subRoutes.access.path}/:id",
+            "qualifiedName": "app.routes.ts::route:/{internalRoutes.account.subRoutes.access.path}/:id",
+            "filePath": "app.routes.ts",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:7:/:angular",
+            "referenceName": "import:./overview.component#default",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:7:/:angular",
+            "referenceName": "layout:AccountComponent",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:8:/{internalRoutes.account.subRoutes.access.path}/:id:angular",
+            "referenceName": "AccessComponent",
+            "referenceKind": "references",
+            "line": 8,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:8:/{internalRoutes.account.subRoutes.access.path}/:id:angular",
+            "referenceName": "layout:AccountComponent",
+            "referenceKind": "references",
+            "line": 8,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { Routes } from '@angular/router';\nimport { AccountComponent } from './account.component';\nimport { AccessComponent } from './access.component';\nimport { internalRoutes } from '../routes.constants';\nexport default [\n  { path: '', component: AccountComponent, children: [\n      { path: '', loadComponent: () => import('./overview.component') },\n      { path: internalRoutes.account.subRoutes.access.path + '/:id', component: AccessComponent },\n  ] },\n] satisfies Routes;\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 8,
+            "component": {
+              "name": null,
+              "spec": "./overview.component"
+            },
+            "layouts": [
+              {
+                "name": "AccountComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/{internalRoutes.account.subRoutes.access.path}/:id",
+            "line": 9,
+            "component": {
+              "name": "AccessComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "AccountComponent",
+                "spec": null
+              }
+            ]
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:8:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:9:/{internalRoutes.account.subRoutes.access.path}/:id:angular",
+            "kind": "route",
+            "name": "/{internalRoutes.account.subRoutes.access.path}/:id",
+            "qualifiedName": "app.routes.ts::route:/{internalRoutes.account.subRoutes.access.path}/:id",
+            "filePath": "app.routes.ts",
+            "startLine": 9,
+            "endLine": 9,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:8:/:angular",
+            "referenceName": "import:./overview.component#default",
+            "referenceKind": "references",
+            "line": 8,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:8:/:angular",
+            "referenceName": "layout:AccountComponent",
+            "referenceKind": "references",
+            "line": 8,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:9:/{internalRoutes.account.subRoutes.access.path}/:id:angular",
+            "referenceName": "AccessComponent",
+            "referenceKind": "references",
+            "line": 9,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:9:/{internalRoutes.account.subRoutes.access.path}/:id:angular",
+            "referenceName": "layout:AccountComponent",
+            "referenceKind": "references",
+            "line": 9,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AdminUsersComponent } from './admin-users.component';\nconst routes: Routes = [{ path: '', redirectTo: 'users', pathMatch: 'full' }, { path: 'users', component: AdminUsersComponent }];\n@NgModule({ imports: [RouterModule.forChild(routes)], exports: [RouterModule] })\nexport class AdminRoutingModule {}\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/users",
+            "line": 4,
+            "component": {
+              "name": "AdminUsersComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": [
+          {
+            "from": "/",
+            "to": "/users",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:4:/users:angular",
+            "kind": "route",
+            "name": "/users",
+            "qualifiedName": "app.routes.ts::route:/users",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:4:/users:angular",
+            "referenceName": "AdminUsersComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AdminUsersComponent } from './admin-users.component';\nconst routes: Routes = [{ path: '', redirectTo: 'users', pathMatch: 'full' }, { path: 'users', component: AdminUsersComponent }];\n@NgModule({ imports: [RouterModule.forChild(routes)], exports: [RouterModule] })\nexport class AdminRoutingModule {}\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/users",
+            "line": 5,
+            "component": {
+              "name": "AdminUsersComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": [
+          {
+            "from": "/",
+            "to": "/users",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:5:/users:angular",
+            "kind": "route",
+            "name": "/users",
+            "qualifiedName": "app.routes.ts::route:/users",
+            "filePath": "app.routes.ts",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:5:/users:angular",
+            "referenceName": "AdminUsersComponent",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Router } from '@angular/router';",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Router } from '@angular/router';\nimport { internalRoutes } from '../routes.constants';",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Routes } from '@angular/router';\nimport { TasksComponent } from './tasks/tasks.component';\nexport const routes: Routes = [{ path: 'tasks', component: TasksComponent }];\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/tasks",
+            "line": 3,
+            "component": {
+              "name": "TasksComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:3:/tasks:angular",
+            "kind": "route",
+            "name": "/tasks",
+            "qualifiedName": "app.routes.ts::route:/tasks",
+            "filePath": "app.routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:3:/tasks:angular",
+            "referenceName": "TasksComponent",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { Routes } from '@angular/router';\nimport { TasksComponent } from './tasks/tasks.component';\nexport const routes: Routes = [{ path: 'tasks', component: TasksComponent }];\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/tasks",
+            "line": 4,
+            "component": {
+              "name": "TasksComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:4:/tasks:angular",
+            "kind": "route",
+            "name": "/tasks",
+            "qualifiedName": "app.routes.ts::route:/tasks",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:4:/tasks:angular",
+            "referenceName": "TasksComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Component, signal } from '@angular/core';\n@Component({\n  selector: 'app-nav',\n  template: `<nav>\n    <app-theme-toggle [class.open]=\"isOpen()\" />\n  </nav>`,\n})\nexport class NavComponent {\n  isOpen = signal(false);\n}\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [
+        {
+          "name": "NavComponent",
+          "isDefault": false,
+          "decoratorAt": 51
+        }
+      ],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Component, computed, signal } from '@angular/core';\n@Component({ selector: 'app-theme-toggle', templateUrl: './theme-toggle.component.html' })\nexport class ThemeToggleComponent {\n  private readonly theme = signal<'light' | 'dark'>('light');\n  icon = computed(() => (this.theme() === 'dark' ? 'moon' : 'sun'));\n  label = computed(() => (this.theme() === 'dark' ? 'Dark' : 'Light'));\n  cycle(): void {\n    this.theme.set(this.theme() === 'dark' ? 'light' : 'dark');\n  }\n  unused(): void {}\n}\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [
+        {
+          "name": "ThemeToggleComponent",
+          "isDefault": false,
+          "decoratorAt": 61
+        }
+      ],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Component, computed, signal } from '@angular/core';\n@Component({ selector: 'app-tasks', templateUrl: './tasks.component.html' })\nexport class TasksComponent {\n  lists = signal<{ id: number; title: string; items: { done: boolean }[] }[]>([]);\n  selectedListId = signal<number | null>(null);\n  selected = computed(() => this.lists().find((l) => l.id === this.selectedListId()));\n  editing = signal(false);\n  title = 'Tasks';\n  form = { reset() {} };\n  days = Array.from({ length: 3 }, (_, i) => i + 1);\n  row = computed(() => 0);\n  nameInput = (value: string) => value;\n\n  get canSave(): boolean {\n    return this.lists().length > 0;\n  }\n  remainingItems(list: { items: { done: boolean }[] }): number {\n    return list.items.filter((i) => !i.done).length;\n  }\n  trackById(index: number, list: { id: number }): number {\n    return list.id;\n  }\n  displayFn(list: { title: string }): string {\n    return list.title;\n  }\n  format(value: string): string {\n    return value;\n  }\n  reset(): void {}\n  set(): void {}\n  legacy(): string {\n    return '';\n  }\n  quoted(): string {\n    return '';\n  }\n  save(): void {}\n}\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [
+        {
+          "name": "TasksComponent",
+          "isDefault": false,
+          "decoratorAt": 61
+        }
+      ],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Route } from '@angular/router';\nimport { RouterUtil } from '@ws/utils';\n\nexport const shellRoutes: Route[] = [\n  { path: '', loadChildren: async () => (await import('@ws/home')).HomeModule },\n  { path: RouterUtil.Configuration.Lyrics, loadChildren: async () => (await import('@ws/lyrics')).LyricsModule },\n];\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [
+          {
+            "prefix": "/",
+            "spec": "@ws/home",
+            "line": 5
+          },
+          {
+            "prefix": "/{RouterUtil.Configuration.Lyrics}",
+            "spec": "@ws/lyrics",
+            "line": 6
+          }
+        ],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { Route } from '@angular/router';\nimport { RouterUtil } from '@ws/utils';\n\nexport const shellRoutes: Route[] = [\n  { path: '', loadChildren: async () => (await import('@ws/home')).HomeModule },\n  { path: RouterUtil.Configuration.Lyrics, loadChildren: async () => (await import('@ws/lyrics')).LyricsModule },\n];\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [
+          {
+            "prefix": "/",
+            "spec": "@ws/home",
+            "line": 6
+          },
+          {
+            "prefix": "/{RouterUtil.Configuration.Lyrics}",
+            "spec": "@ws/lyrics",
+            "line": 7
+          }
+        ],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { HomeComponent } from './home.component';\n@NgModule({ imports: [RouterModule.forChild([{ path: '', component: HomeComponent }])] })\nexport class HomeModule {}\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 4,
+            "component": {
+              "name": "HomeComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:4:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:4:/:angular",
+            "referenceName": "HomeComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { HomeComponent } from './home.component';\n@NgModule({ imports: [RouterModule.forChild([{ path: '', component: HomeComponent }])] })\nexport class HomeModule {}\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 5,
+            "component": {
+              "name": "HomeComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:5:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:5:/:angular",
+            "referenceName": "HomeComponent",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { LyricsComponent } from './lyrics.component';\n@NgModule({ imports: [RouterModule.forChild([{ path: '', component: LyricsComponent }])] })\nexport class LyricsModule {}\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 4,
+            "component": {
+              "name": "LyricsComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:4:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:4:/:angular",
+            "referenceName": "LyricsComponent",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { LyricsComponent } from './lyrics.component';\n@NgModule({ imports: [RouterModule.forChild([{ path: '', component: LyricsComponent }])] })\nexport class LyricsModule {}\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 5,
+            "component": {
+              "name": "LyricsComponent",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:5:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:5:/:angular",
+            "referenceName": "LyricsComponent",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Routes } from '@angular/router';\nexport const appRoutes: Routes = [\n  { path: 'project', loadChildren: () => import('./project/project.routes').then((m) => m.PROJECT_ROUTES) },\n  { path: '', redirectTo: 'project', pathMatch: 'full' },\n];\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [
+          {
+            "prefix": "/project",
+            "spec": "./project/project.routes",
+            "line": 3
+          }
+        ],
+        "redirects": [
+          {
+            "from": "/",
+            "to": "/project",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { Routes } from '@angular/router';\nexport const appRoutes: Routes = [\n  { path: 'project', loadChildren: () => import('./project/project.routes').then((m) => m.PROJECT_ROUTES) },\n  { path: '', redirectTo: 'project', pathMatch: 'full' },\n];\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [
+          {
+            "prefix": "/project",
+            "spec": "./project/project.routes",
+            "line": 4
+          }
+        ],
+        "redirects": [
+          {
+            "from": "/",
+            "to": "/project",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Routes } from '@angular/router';\nimport { ProjectComponent } from './project.component';\nimport { BoardComponent } from './board.component';\nimport { IssueComponent } from './issue.component';\nimport { ProjectConst } from './config/const';\nexport const PROJECT_ROUTES: Routes = [\n  {\n    path: '',\n    component: ProjectComponent,\n    children: [\n      { path: 'board', component: BoardComponent },\n      { path: `issue/:${ProjectConst.IssueId}`, component: IssueComponent },\n      { path: '', redirectTo: 'board', pathMatch: 'full' },\n    ],\n  },\n];\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/board",
+            "line": 11,
+            "component": {
+              "name": "BoardComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "ProjectComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/issue/:{ProjectConst.IssueId}",
+            "line": 12,
+            "component": {
+              "name": "IssueComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "ProjectComponent",
+                "spec": null
+              }
+            ]
+          }
+        ],
+        "mounts": [],
+        "redirects": [
+          {
+            "from": "/",
+            "to": "/board",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:11:/board:angular",
+            "kind": "route",
+            "name": "/board",
+            "qualifiedName": "app.routes.ts::route:/board",
+            "filePath": "app.routes.ts",
+            "startLine": 11,
+            "endLine": 11,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:12:/issue/:{ProjectConst.IssueId}:angular",
+            "kind": "route",
+            "name": "/issue/:{ProjectConst.IssueId}",
+            "qualifiedName": "app.routes.ts::route:/issue/:{ProjectConst.IssueId}",
+            "filePath": "app.routes.ts",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:11:/board:angular",
+            "referenceName": "BoardComponent",
+            "referenceKind": "references",
+            "line": 11,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:11:/board:angular",
+            "referenceName": "layout:ProjectComponent",
+            "referenceKind": "references",
+            "line": 11,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:12:/issue/:{ProjectConst.IssueId}:angular",
+            "referenceName": "IssueComponent",
+            "referenceKind": "references",
+            "line": 12,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:12:/issue/:{ProjectConst.IssueId}:angular",
+            "referenceName": "layout:ProjectComponent",
+            "referenceKind": "references",
+            "line": 12,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\nimport { Routes } from '@angular/router';\nimport { ProjectComponent } from './project.component';\nimport { BoardComponent } from './board.component';\nimport { IssueComponent } from './issue.component';\nimport { ProjectConst } from './config/const';\nexport const PROJECT_ROUTES: Routes = [\n  {\n    path: '',\n    component: ProjectComponent,\n    children: [\n      { path: 'board', component: BoardComponent },\n      { path: `issue/:${ProjectConst.IssueId}`, component: IssueComponent },\n      { path: '', redirectTo: 'board', pathMatch: 'full' },\n    ],\n  },\n];\n",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/board",
+            "line": 12,
+            "component": {
+              "name": "BoardComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "ProjectComponent",
+                "spec": null
+              }
+            ]
+          },
+          {
+            "path": "/issue/:{ProjectConst.IssueId}",
+            "line": 13,
+            "component": {
+              "name": "IssueComponent",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "ProjectComponent",
+                "spec": null
+              }
+            ]
+          }
+        ],
+        "mounts": [],
+        "redirects": [
+          {
+            "from": "/",
+            "to": "/board",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:12:/board:angular",
+            "kind": "route",
+            "name": "/board",
+            "qualifiedName": "app.routes.ts::route:/board",
+            "filePath": "app.routes.ts",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:13:/issue/:{ProjectConst.IssueId}:angular",
+            "kind": "route",
+            "name": "/issue/:{ProjectConst.IssueId}",
+            "qualifiedName": "app.routes.ts::route:/issue/:{ProjectConst.IssueId}",
+            "filePath": "app.routes.ts",
+            "startLine": 13,
+            "endLine": 13,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:12:/board:angular",
+            "referenceName": "BoardComponent",
+            "referenceKind": "references",
+            "line": 12,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:12:/board:angular",
+            "referenceName": "layout:ProjectComponent",
+            "referenceKind": "references",
+            "line": 12,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:13:/issue/:{ProjectConst.IssueId}:angular",
+            "referenceName": "IssueComponent",
+            "referenceKind": "references",
+            "line": 13,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:13:/issue/:{ProjectConst.IssueId}:angular",
+            "referenceName": "layout:ProjectComponent",
+            "referenceKind": "references",
+            "line": 13,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\n@Component({ selector: 'j-board', template: '<div></div>' })\nexport class BoardComponent {\n  constructor(private _router: Router) {}\n  openIssuePage(issueId: string) {\n    this._router.navigate(['project', 'issue', issueId]);\n  }\n}\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [
+        {
+          "name": "BoardComponent",
+          "isDefault": false,
+          "decoratorAt": 85
+        }
+      ],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\n@Component({ selector: 'j-issue', template: '<div></div>' })\nexport class IssueComponent {\n  constructor(private _router: Router) {}\n  backHome() {\n    this._router.navigate(['/']);\n  }\n}\n",
+      "parsed": {
+        "routes": [],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [
+        {
+          "name": "IssueComponent",
+          "isDefault": false,
+          "decoratorAt": 85
+        }
+      ],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import {Routes} from '@angular/router';\r\nconst emoji='😀';\r\nexport const routes:Routes=[{path:'café😀',component:Page}];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/café😀",
+            "line": 3,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:3:/café😀:angular",
+            "kind": "route",
+            "name": "/café😀",
+            "qualifiedName": "app.routes.ts::route:/café😀",
+            "filePath": "app.routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:3:/café😀:angular",
+            "referenceName": "Page",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.mts",
+      "source": "import {Routes} from '@angular/router';\r\nconst emoji='😀';\r\nexport const routes:Routes=[{path:'café😀',component:Page}];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/café😀",
+            "line": 3,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.mts:3:/café😀:angular",
+            "kind": "route",
+            "name": "/café😀",
+            "qualifiedName": "app.routes.mts::route:/café😀",
+            "filePath": "app.routes.mts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.mts:3:/café😀:angular",
+            "referenceName": "Page",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "app.routes.mts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.cts",
+      "source": "import {Routes} from '@angular/router';\r\nconst emoji='😀';\r\nexport const routes:Routes=[{path:'café😀',component:Page}];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/café😀",
+            "line": 3,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.cts:3:/café😀:angular",
+            "kind": "route",
+            "name": "/café😀",
+            "qualifiedName": "app.routes.cts::route:/café😀",
+            "filePath": "app.routes.cts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.cts:3:/café😀:angular",
+            "referenceName": "Page",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "app.routes.cts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.d.ts",
+      "source": "import {Routes} from '@angular/router';\r\nconst emoji='😀';\r\nexport const routes:Routes=[{path:'café😀',component:Page}];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/café😀",
+            "line": 3,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.js",
+      "source": "import {Routes} from '@angular/router';\r\nconst emoji='😀';\r\nexport const routes:Routes=[{path:'café😀',component:Page}];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/café😀",
+            "line": 3,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import '@angular/router'; const x = [{path:'x',component:Page}] as Routes;",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/x",
+            "line": 1,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:1:/x:angular",
+            "kind": "route",
+            "name": "/x",
+            "qualifiedName": "app.routes.ts::route:/x",
+            "filePath": "app.routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:1:/x:angular",
+            "referenceName": "Page",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import '@angular/router'; const x = [{component:Page,path:$localize`:key:about`},{path:Paths.a+'/foo',component:Foo},{path:`issue/:${Paths.id}`,loadComponent:()=>import('./page').then((m)=>m.Page)}] satisfies Routes;",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/about",
+            "line": 1,
+            "component": {
+              "name": "Page",
+              "spec": null
+            },
+            "layouts": []
+          },
+          {
+            "path": "/{Paths.a}/foo",
+            "line": 1,
+            "component": {
+              "name": "Foo",
+              "spec": null
+            },
+            "layouts": []
+          },
+          {
+            "path": "/issue/:{Paths.id}",
+            "line": 1,
+            "component": {
+              "name": "Page",
+              "spec": "./page"
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:1:/about:angular",
+            "kind": "route",
+            "name": "/about",
+            "qualifiedName": "app.routes.ts::route:/about",
+            "filePath": "app.routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:1:/{Paths.a}/foo:angular",
+            "kind": "route",
+            "name": "/{Paths.a}/foo",
+            "qualifiedName": "app.routes.ts::route:/{Paths.a}/foo",
+            "filePath": "app.routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:app.routes.ts:1:/issue/:{Paths.id}:angular",
+            "kind": "route",
+            "name": "/issue/:{Paths.id}",
+            "qualifiedName": "app.routes.ts::route:/issue/:{Paths.id}",
+            "filePath": "app.routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:1:/about:angular",
+            "referenceName": "Page",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:1:/{Paths.a}/foo:angular",
+            "referenceName": "Foo",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:1:/issue/:{Paths.id}:angular",
+            "referenceName": "import:./page#Page",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import '@angular/router'; export default [{path:'',component:Layout,children:[{path:'',component:Home},{path:'**',redirectTo:'home'}]}];",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/",
+            "line": 1,
+            "component": {
+              "name": "Home",
+              "spec": null
+            },
+            "layouts": [
+              {
+                "name": "Layout",
+                "spec": null
+              }
+            ]
+          }
+        ],
+        "mounts": [],
+        "redirects": [
+          {
+            "from": "/**",
+            "to": "/home",
+            "absolute": false
+          }
+        ]
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:1:/:angular",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "app.routes.ts::route:/",
+            "filePath": "app.routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:1:/:angular",
+            "referenceName": "Home",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:app.routes.ts:1:/:angular",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "app.routes.ts",
+      "source": "import '@angular/router'; provideRouter([{path:'foo',loadComponent:async()=> (await import('./x')).Page},{matcher:x,component:Unknown}]);",
+      "parsed": {
+        "routes": [
+          {
+            "path": "/foo",
+            "line": 1,
+            "component": {
+              "name": "Page",
+              "spec": "./x"
+            },
+            "layouts": []
+          }
+        ],
+        "mounts": [],
+        "redirects": []
+      },
+      "classes": [],
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:app.routes.ts:1:/foo:angular",
+            "kind": "route",
+            "name": "/foo",
+            "qualifiedName": "app.routes.ts::route:/foo",
+            "filePath": "app.routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:app.routes.ts:1:/foo:angular",
+            "referenceName": "import:./x#Page",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "app.routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "values": [
+    {
+      "text": "''",
+      "static": "",
+      "localize": null
+    },
+    {
+      "text": "'a' + 'b'",
+      "static": "ab",
+      "localize": null
+    },
+    {
+      "text": "'/'+$localize`:id:about`",
+      "static": "/about",
+      "localize": null
+    },
+    {
+      "text": "`plain`",
+      "static": "plain",
+      "localize": null
+    },
+    {
+      "text": "`/${id}`",
+      "static": null,
+      "localize": null
+    },
+    {
+      "text": "'a'+",
+      "static": "a",
+      "localize": null
+    },
+    {
+      "text": "'a'+ value",
+      "static": null,
+      "localize": null
+    },
+    {
+      "text": "$localize`:meaning|desc@@id:text`",
+      "static": "text",
+      "localize": "text"
+    },
+    {
+      "text": "$localize`literal`",
+      "static": "literal",
+      "localize": "literal"
+    },
+    {
+      "text": "$localize`has${hole}`",
+      "static": null,
+      "localize": null
+    },
+    {
+      "text": "'a\\n'",
+      "static": "an",
+      "localize": null
+    },
+    {
+      "text": "'😀'",
+      "static": "😀",
+      "localize": null
+    },
+    {
+      "text": "\"a,b\"",
+      "static": "a,b",
+      "localize": null
+    },
+    {
+      "text": "nope",
+      "static": null,
+      "localize": null
+    }
+  ],
+  "commands": [
+    {
+      "text": "['/article',slug]",
+      "fromRoot": false,
+      "expected": {
+        "path": "/article/\u0000",
+        "display": "/article/${…}"
+      }
+    },
+    {
+      "text": "['/article',slug]",
+      "fromRoot": true,
+      "expected": {
+        "path": "/article/\u0000",
+        "display": "/article/${…}"
+      }
+    },
+    {
+      "text": "['profile',id]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "['profile',id]",
+      "fromRoot": true,
+      "expected": {
+        "path": "/profile/\u0000",
+        "display": "/profile/${…}"
+      }
+    },
+    {
+      "text": "['../',id]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "['../',id]",
+      "fromRoot": true,
+      "expected": null
+    },
+    {
+      "text": "['/', {param:1}, name]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "['/', {param:1}, name]",
+      "fromRoot": true,
+      "expected": null
+    },
+    {
+      "text": "['/a,b',x]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "['/a,b',x]",
+      "fromRoot": true,
+      "expected": null
+    },
+    {
+      "text": "[`/${a}`,b]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "[`/${a}`,b]",
+      "fromRoot": true,
+      "expected": null
+    },
+    {
+      "text": "['/fixed',obj.run()]",
+      "fromRoot": false,
+      "expected": {
+        "path": "/fixed/\u0000",
+        "display": "/fixed/${…}"
+      }
+    },
+    {
+      "text": "['/fixed',obj.run()]",
+      "fromRoot": true,
+      "expected": {
+        "path": "/fixed/\u0000",
+        "display": "/fixed/${…}"
+      }
+    },
+    {
+      "text": "[]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "[]",
+      "fromRoot": true,
+      "expected": null
+    },
+    {
+      "text": "['/x'] trailing",
+      "fromRoot": false,
+      "expected": {
+        "path": "/x",
+        "display": "/x"
+      }
+    },
+    {
+      "text": "['/x'] trailing",
+      "fromRoot": true,
+      "expected": {
+        "path": "/x",
+        "display": "/x"
+      }
+    },
+    {
+      "text": "['/', undefined]",
+      "fromRoot": false,
+      "expected": null
+    },
+    {
+      "text": "['/', undefined]",
+      "fromRoot": true,
+      "expected": null
+    },
+    {
+      "text": "['/x', 'y/z']",
+      "fromRoot": false,
+      "expected": {
+        "path": "/x/y/z",
+        "display": "/x/y/z"
+      }
+    },
+    {
+      "text": "['/x', 'y/z']",
+      "fromRoot": true,
+      "expected": {
+        "path": "/x/y/z",
+        "display": "/x/y/z"
+      }
+    }
+  ],
+  "templates": [
+    {
+      "text": "<button (click)=\"cycle()\" [attr.aria-label]=\"label()\"><i [name]=\"icon()\"></i></button>",
+      "expected": [
+        {
+          "name": "label",
+          "at": 45,
+          "call": true,
+          "via": "[attr.aria-label]"
+        },
+        {
+          "name": "icon",
+          "at": 65,
+          "call": true,
+          "via": "[name]"
+        }
+      ]
+    },
+    {
+      "text": "<p *ngIf=\"isOpen(); else closed\">{{ count() }} {{ total }}</p><ng-template #closed></ng-template>",
+      "expected": [
+        {
+          "name": "isOpen",
+          "at": 10,
+          "call": true,
+          "via": "*ngIf"
+        },
+        {
+          "name": "count",
+          "at": 36,
+          "call": true,
+          "via": "{{ }}"
+        },
+        {
+          "name": "total",
+          "at": 50,
+          "call": false,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "@if (loading()) { x } @else if (failed()) { y } @switch (mode()) { @case (Mode.A) { a } }",
+      "expected": [
+        {
+          "name": "loading",
+          "at": 5,
+          "call": true,
+          "via": "@if"
+        },
+        {
+          "name": "failed",
+          "at": 32,
+          "call": true,
+          "via": "@else if"
+        },
+        {
+          "name": "mode",
+          "at": 57,
+          "call": true,
+          "via": "@switch"
+        },
+        {
+          "name": "Mode",
+          "at": 74,
+          "call": false,
+          "via": "@case"
+        }
+      ]
+    },
+    {
+      "text": "@defer (on viewport; when ready(); prefetch on timer(5s)) { x }",
+      "expected": [
+        {
+          "name": "ready",
+          "at": 26,
+          "call": true,
+          "via": "@defer"
+        }
+      ]
+    },
+    {
+      "text": "@let total = price() * quantity; <input [(ngModel)]=\"title\">",
+      "expected": [
+        {
+          "name": "price",
+          "at": 13,
+          "call": true,
+          "via": "@let"
+        },
+        {
+          "name": "quantity",
+          "at": 23,
+          "call": false,
+          "via": "@let"
+        },
+        {
+          "name": "title",
+          "at": 53,
+          "call": false,
+          "via": "[(ngModel)]"
+        }
+      ]
+    },
+    {
+      "text": "{{ total | currency: code() }} <i [ngClass]=\"{ active: isActive() }\" [x]=\"form.reset() || this.own()\"></i>",
+      "expected": [
+        {
+          "name": "total",
+          "at": 3,
+          "call": false,
+          "via": "{{ }}"
+        },
+        {
+          "name": "code",
+          "at": 21,
+          "call": true,
+          "via": "{{ }}"
+        },
+        {
+          "name": "isActive",
+          "at": 55,
+          "call": true,
+          "via": "[ngClass]"
+        },
+        {
+          "name": "form",
+          "at": 74,
+          "call": false,
+          "via": "[x]"
+        },
+        {
+          "name": "own",
+          "at": 95,
+          "call": true,
+          "via": "[x]"
+        }
+      ]
+    },
+    {
+      "text": "<!-- {{ legacy() }} <b [x]=\"old()\"></b> --> {{ 'quoted()' }} <b (click)=\"save()\"></b>",
+      "expected": []
+    },
+    {
+      "text": "<td [class.today]=\"isToday(`${key}-${formatDay(day)}`)\" [title]=\"`quoted()`\"></td>",
+      "expected": [
+        {
+          "name": "isToday",
+          "at": 19,
+          "call": true,
+          "via": "[class.today]"
+        },
+        {
+          "name": "key",
+          "at": 30,
+          "call": false,
+          "via": "[class.today]"
+        },
+        {
+          "name": "formatDay",
+          "at": 37,
+          "call": true,
+          "via": "[class.today]"
+        },
+        {
+          "name": "day",
+          "at": 47,
+          "call": false,
+          "via": "[class.today]"
+        }
+      ]
+    },
+    {
+      "text": "<li *ngFor=\"let item of items(); let i = index; trackBy: trackById\" [title]=\"item.name\">{{ i }}</li>",
+      "expected": [
+        {
+          "name": "items",
+          "at": 24,
+          "call": true,
+          "via": "*ngFor"
+        },
+        {
+          "name": "trackById",
+          "at": 57,
+          "call": false,
+          "via": "*ngFor"
+        }
+      ]
+    },
+    {
+      "text": "@if (user(); as user) { {{ user.name }} }",
+      "expected": [
+        {
+          "name": "user",
+          "at": 5,
+          "call": true,
+          "via": "@if"
+        }
+      ]
+    },
+    {
+      "text": "<div *ngIf=\"user() as user\">{{ user.name }}</div>",
+      "expected": [
+        {
+          "name": "user",
+          "at": 12,
+          "call": true,
+          "via": "*ngIf"
+        }
+      ]
+    },
+    {
+      "text": "@for (item of items(); track item.id; let odd = $odd) { {{ item.name }} {{ odd }} }",
+      "expected": [
+        {
+          "name": "items",
+          "at": 14,
+          "call": true,
+          "via": "@for"
+        }
+      ]
+    },
+    {
+      "text": "@let total = price(); {{ total }}",
+      "expected": [
+        {
+          "name": "price",
+          "at": 13,
+          "call": true,
+          "via": "@let"
+        }
+      ]
+    },
+    {
+      "text": "<b [x]=\"input.value\"></b><input #input>",
+      "expected": []
+    },
+    {
+      "text": "<ng-template let-row let-i=\"index\">{{ row.name }} {{ i }}</ng-template>",
+      "expected": []
+    },
+    {
+      "text": "😀\r\n{{ item() }} {{ other() }}",
+      "expected": [
+        {
+          "name": "item",
+          "at": 7,
+          "call": true,
+          "via": "{{ }}"
+        },
+        {
+          "name": "other",
+          "at": 20,
+          "call": true,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<b [x]=\"this.item()\" [y]=\"obj.item()\"></b>",
+      "expected": [
+        {
+          "name": "item",
+          "at": 17,
+          "call": true,
+          "via": "[x]"
+        },
+        {
+          "name": "obj",
+          "at": 30,
+          "call": false,
+          "via": "[y]"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@for (item of items(); track item.id; let n = $index) { {{ item() }} {{ n }} }",
+      "expected": [
+        {
+          "name": "items",
+          "at": 18,
+          "call": true,
+          "via": "@for"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@if (item(); as item) { {{ item }} }",
+      "expected": [
+        {
+          "name": "item",
+          "at": 9,
+          "call": true,
+          "via": "@if"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<!-- {{ fake() }} --> {{ `word${item()}-${other}` }}",
+      "expected": [
+        {
+          "name": "item",
+          "at": 36,
+          "call": true,
+          "via": "{{ }}"
+        },
+        {
+          "name": "other",
+          "at": 46,
+          "call": false,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@let item = value(); {{ item() }} {{ other() }}",
+      "expected": [
+        {
+          "name": "value",
+          "at": 16,
+          "call": true,
+          "via": "@let"
+        },
+        {
+          "name": "other",
+          "at": 41,
+          "call": true,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@let item = value(); <b [x]=\"this.item()\" [y]=\"obj.item()\"></b>",
+      "expected": [
+        {
+          "name": "value",
+          "at": 16,
+          "call": true,
+          "via": "@let"
+        },
+        {
+          "name": "obj",
+          "at": 51,
+          "call": false,
+          "via": "[y]"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@let item = value(); @for (item of items(); track item.id; let n = $index) { {{ item() }} {{ n }} }",
+      "expected": [
+        {
+          "name": "value",
+          "at": 16,
+          "call": true,
+          "via": "@let"
+        },
+        {
+          "name": "items",
+          "at": 39,
+          "call": true,
+          "via": "@for"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@let item = value(); @if (item(); as item) { {{ item }} }",
+      "expected": [
+        {
+          "name": "value",
+          "at": 16,
+          "call": true,
+          "via": "@let"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n@let item = value(); <!-- {{ fake() }} --> {{ `word${item()}-${other}` }}",
+      "expected": [
+        {
+          "name": "value",
+          "at": 16,
+          "call": true,
+          "via": "@let"
+        },
+        {
+          "name": "other",
+          "at": 67,
+          "call": false,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<input #item> {{ item() }} {{ other() }}",
+      "expected": [
+        {
+          "name": "other",
+          "at": 34,
+          "call": true,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<input #item> <b [x]=\"this.item()\" [y]=\"obj.item()\"></b>",
+      "expected": [
+        {
+          "name": "obj",
+          "at": 44,
+          "call": false,
+          "via": "[y]"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<input #item> @for (item of items(); track item.id; let n = $index) { {{ item() }} {{ n }} }",
+      "expected": [
+        {
+          "name": "items",
+          "at": 32,
+          "call": true,
+          "via": "@for"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<input #item> @if (item(); as item) { {{ item }} }",
+      "expected": []
+    },
+    {
+      "text": "😀\r\n<input #item> <!-- {{ fake() }} --> {{ `word${item()}-${other}` }}",
+      "expected": [
+        {
+          "name": "other",
+          "at": 60,
+          "call": false,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<div *ngFor=\"let item of items(); trackBy: track\">{{ item() }} {{ other() }}",
+      "expected": [
+        {
+          "name": "items",
+          "at": 29,
+          "call": true,
+          "via": "*ngFor"
+        },
+        {
+          "name": "track",
+          "at": 47,
+          "call": false,
+          "via": "*ngFor"
+        },
+        {
+          "name": "other",
+          "at": 70,
+          "call": true,
+          "via": "{{ }}"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<div *ngFor=\"let item of items(); trackBy: track\"><b [x]=\"this.item()\" [y]=\"obj.item()\"></b>",
+      "expected": [
+        {
+          "name": "items",
+          "at": 29,
+          "call": true,
+          "via": "*ngFor"
+        },
+        {
+          "name": "track",
+          "at": 47,
+          "call": false,
+          "via": "*ngFor"
+        },
+        {
+          "name": "obj",
+          "at": 80,
+          "call": false,
+          "via": "[y]"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<div *ngFor=\"let item of items(); trackBy: track\">@for (item of items(); track item.id; let n = $index) { {{ item() }} {{ n }} }",
+      "expected": [
+        {
+          "name": "items",
+          "at": 29,
+          "call": true,
+          "via": "*ngFor"
+        },
+        {
+          "name": "track",
+          "at": 47,
+          "call": false,
+          "via": "*ngFor"
+        },
+        {
+          "name": "items",
+          "at": 68,
+          "call": true,
+          "via": "@for"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<div *ngFor=\"let item of items(); trackBy: track\">@if (item(); as item) { {{ item }} }",
+      "expected": [
+        {
+          "name": "items",
+          "at": 29,
+          "call": true,
+          "via": "*ngFor"
+        },
+        {
+          "name": "track",
+          "at": 47,
+          "call": false,
+          "via": "*ngFor"
+        }
+      ]
+    },
+    {
+      "text": "😀\r\n<div *ngFor=\"let item of items(); trackBy: track\"><!-- {{ fake() }} --> {{ `word${item()}-${other}` }}",
+      "expected": [
+        {
+          "name": "items",
+          "at": 29,
+          "call": true,
+          "via": "*ngFor"
+        },
+        {
+          "name": "track",
+          "at": 47,
+          "call": false,
+          "via": "*ngFor"
+        },
+        {
+          "name": "other",
+          "at": 96,
+          "call": false,
+          "via": "{{ }}"
+        }
+      ]
+    }
+  ],
+  "microsyntax": [
+    {
+      "text": "let item of items | async; index as i; trackBy: trackFn",
+      "expected": {
+        "expressions": [
+          {
+            "at": 12,
+            "text": "items | async"
+          },
+          {
+            "at": 48,
+            "text": "trackFn"
+          }
+        ],
+        "locals": [
+          "item",
+          "i"
+        ]
+      }
+    },
+    {
+      "text": "user$ | async as user; else loading",
+      "expected": {
+        "expressions": [
+          {
+            "at": 0,
+            "text": "user$ | async "
+          },
+          {
+            "at": 28,
+            "text": "loading"
+          }
+        ],
+        "locals": [
+          "user"
+        ]
+      }
+    },
+    {
+      "text": "let item of items | async; index as i; trackBy: trackFn",
+      "expected": {
+        "expressions": [
+          {
+            "at": 12,
+            "text": "items | async"
+          },
+          {
+            "at": 48,
+            "text": "trackFn"
+          }
+        ],
+        "locals": [
+          "item",
+          "i"
+        ]
+      }
+    },
+    {
+      "text": "value() as alias; else other",
+      "expected": {
+        "expressions": [
+          {
+            "at": 0,
+            "text": "value() "
+          },
+          {
+            "at": 23,
+            "text": "other"
+          }
+        ],
+        "locals": [
+          "alias"
+        ]
+      }
+    },
+    {
+      "text": "let x = index, let y = even",
+      "expected": {
+        "expressions": [],
+        "locals": [
+          "x",
+          "y"
+        ]
+      }
+    },
+    {
+      "text": "of list(); trackBy: fn",
+      "expected": {
+        "expressions": [
+          {
+            "at": 0,
+            "text": "of list()"
+          },
+          {
+            "at": 20,
+            "text": "fn"
+          }
+        ],
+        "locals": []
+      }
+    },
+    {
+      "text": "😀; expression; as name",
+      "expected": {
+        "expressions": [
+          {
+            "at": 0,
+            "text": "😀"
+          },
+          {
+            "at": 19,
+            "text": "name"
+          }
+        ],
+        "locals": []
+      }
+    }
+  ]
+}

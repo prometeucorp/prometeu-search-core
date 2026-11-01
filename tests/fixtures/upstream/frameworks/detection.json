@@ -1,0 +1,493 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "registered": [
+    "laravel",
+    "drupal",
+    "codeigniter",
+    "express",
+    "nestjs",
+    "react",
+    "react-router",
+    "tanstack-router",
+    "nextjs",
+    "svelte",
+    "sveltekit-router",
+    "vue",
+    "nuxt",
+    "vue-router",
+    "angular-router",
+    "astro",
+    "django",
+    "flask",
+    "fastapi",
+    "rails",
+    "spring",
+    "play",
+    "go",
+    "goframe",
+    "rust",
+    "aspnet",
+    "swiftui",
+    "uikit",
+    "vapor",
+    "swift-objc-bridge",
+    "react-native-bridge",
+    "expo-modules",
+    "expo-modules-js",
+    "expo-router",
+    "fabric-view",
+    "cics",
+    "terraform"
+  ],
+  "cases": [
+    {
+      "id": "dependency-express",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "express"
+      ]
+    },
+    {
+      "id": "dependency-@nestjs/core",
+      "files": {
+        "package.json": "{\"dependencies\":{\"@nestjs/core\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "nestjs"
+      ]
+    },
+    {
+      "id": "dependency-react",
+      "files": {
+        "package.json": "{\"dependencies\":{\"react\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "react"
+      ]
+    },
+    {
+      "id": "dependency-react-router-dom",
+      "files": {
+        "package.json": "{\"dependencies\":{\"react-router-dom\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "react-router"
+      ]
+    },
+    {
+      "id": "dependency-@tanstack/react-router",
+      "files": {
+        "package.json": "{\"dependencies\":{\"@tanstack/react-router\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "tanstack-router"
+      ]
+    },
+    {
+      "id": "dependency-next",
+      "files": {
+        "package.json": "{\"dependencies\":{\"next\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "react",
+        "nextjs"
+      ]
+    },
+    {
+      "id": "dependency-svelte",
+      "files": {
+        "package.json": "{\"dependencies\":{\"svelte\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "svelte"
+      ]
+    },
+    {
+      "id": "dependency-@sveltejs/kit",
+      "files": {
+        "package.json": "{\"dependencies\":{\"@sveltejs/kit\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "svelte",
+        "sveltekit-router"
+      ]
+    },
+    {
+      "id": "dependency-vue",
+      "files": {
+        "package.json": "{\"dependencies\":{\"vue\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "vue"
+      ]
+    },
+    {
+      "id": "dependency-nuxt",
+      "files": {
+        "package.json": "{\"dependencies\":{\"nuxt\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "vue",
+        "nuxt",
+        "vue-router"
+      ]
+    },
+    {
+      "id": "dependency-vue-router",
+      "files": {
+        "package.json": "{\"dependencies\":{\"vue-router\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "vue-router"
+      ]
+    },
+    {
+      "id": "dependency-@angular/core",
+      "files": {
+        "package.json": "{\"dependencies\":{\"@angular/core\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "angular-router"
+      ]
+    },
+    {
+      "id": "dependency-astro",
+      "files": {
+        "package.json": "{\"dependencies\":{\"astro\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "astro"
+      ]
+    },
+    {
+      "id": "dependency-react-native",
+      "files": {
+        "package.json": "{\"dependencies\":{\"react-native\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "react",
+        "react-native-bridge",
+        "fabric-view"
+      ]
+    },
+    {
+      "id": "dependency-expo-modules-core",
+      "files": {
+        "package.json": "{\"dependencies\":{\"expo-modules-core\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "expo-modules",
+        "expo-modules-js"
+      ]
+    },
+    {
+      "id": "dependency-expo-router",
+      "files": {
+        "package.json": "{\"dependencies\":{\"expo-router\":\"*\"}}",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "expo-router"
+      ]
+    },
+    {
+      "id": "workspace-react-router-native",
+      "files": {
+        "packages/app/package.json": "{\"dependencies\":{\"react-router-native\":\"*\"}}",
+        "packages/app/probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "react-router"
+      ]
+    },
+    {
+      "id": "workspace-@tanstack/solid-router",
+      "files": {
+        "packages/app/package.json": "{\"dependencies\":{\"@tanstack/solid-router\":\"*\"}}",
+        "packages/app/probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "tanstack-router"
+      ]
+    },
+    {
+      "id": "workspace-nuxt3",
+      "files": {
+        "packages/app/package.json": "{\"dependencies\":{\"nuxt3\":\"*\"}}",
+        "packages/app/probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "nuxt",
+        "vue-router"
+      ]
+    },
+    {
+      "id": "workspace-@angular/router",
+      "files": {
+        "packages/app/package.json": "{\"dependencies\":{\"@angular/router\":\"*\"}}",
+        "packages/app/probe.ts": "export function probe() {}\n"
+      },
+      "expected": [
+        "angular-router"
+      ]
+    },
+    {
+      "id": "laravel",
+      "files": {
+        "artisan": "<?php\n",
+        "app/Http/Kernel.php": "<?php class Kernel {}\n"
+      },
+      "expected": [
+        "laravel"
+      ]
+    },
+    {
+      "id": "drupal",
+      "files": {
+        "composer.json": "{\"require\":{\"drupal/core\":\"*\"}}",
+        "src/Worker.php": "<?php class Worker {}\n"
+      },
+      "expected": [
+        "drupal"
+      ]
+    },
+    {
+      "id": "codeigniter",
+      "files": {
+        "application/config/routes.php": "<?php $route['default_controller']='welcome';\n"
+      },
+      "expected": [
+        "codeigniter"
+      ]
+    },
+    {
+      "id": "django",
+      "files": {
+        "manage.py": "",
+        "app/views.py": "def view(): return 1\n"
+      },
+      "expected": [
+        "django"
+      ]
+    },
+    {
+      "id": "flask",
+      "files": {
+        "requirements.txt": "flask\n",
+        "app.py": "from flask import Flask\napp=Flask(__name__)\n"
+      },
+      "expected": [
+        "flask"
+      ]
+    },
+    {
+      "id": "fastapi",
+      "files": {
+        "requirements.txt": "fastapi\n",
+        "main.py": "from fastapi import FastAPI\napp=FastAPI()\n"
+      },
+      "expected": [
+        "fastapi"
+      ]
+    },
+    {
+      "id": "rails",
+      "files": {
+        "Gemfile": "gem 'rails'\n",
+        "app/controllers/application_controller.rb": "class ApplicationController < ActionController::Base\nend\n"
+      },
+      "expected": [
+        "rails"
+      ]
+    },
+    {
+      "id": "spring",
+      "files": {
+        "pom.xml": "<project><dependency>spring-boot</dependency></project>",
+        "src/Worker.java": "class Worker {}\n"
+      },
+      "expected": [
+        "spring"
+      ]
+    },
+    {
+      "id": "play",
+      "files": {
+        "build.sbt": "enablePlugins(PlayScala)\n",
+        "conf/routes": "GET / controllers.Home.index\n",
+        "controllers/Home.scala": "object Home { def index = \"hello\" }\n"
+      },
+      "expected": [
+        "play"
+      ]
+    },
+    {
+      "id": "go",
+      "files": {
+        "go.mod": "module example.local/app\n",
+        "main.go": "package main\nfunc main() {}\n"
+      },
+      "expected": [
+        "go"
+      ]
+    },
+    {
+      "id": "goframe",
+      "files": {
+        "go.mod": "module example.local/app\nrequire github.com/gogf/gf/v2 v2.0.0\n",
+        "main.go": "package main\nfunc main() {}\n"
+      },
+      "expected": [
+        "go",
+        "goframe"
+      ]
+    },
+    {
+      "id": "rust",
+      "files": {
+        "Cargo.toml": "[package]\nname=\"fixture\"\nversion=\"0.1.0\"\n",
+        "src/lib.rs": "pub fn work() {}\n"
+      },
+      "expected": [
+        "rust"
+      ]
+    },
+    {
+      "id": "aspnet",
+      "files": {
+        "App.csproj": "<Project Sdk=\"Microsoft.NET.Sdk.Web\"></Project>",
+        "Controller.cs": "class Controller {}\n"
+      },
+      "expected": []
+    },
+    {
+      "id": "aspnet-program",
+      "files": {
+        "Program.cs": "class Program { static void Main() { WebApplication.CreateBuilder(); } }\n"
+      },
+      "expected": [
+        "aspnet"
+      ]
+    },
+    {
+      "id": "swiftui",
+      "files": {
+        "View.swift": "import SwiftUI\nstruct Screen: View { var body: some View { Text(\"hello\") } }\n"
+      },
+      "expected": [
+        "swiftui"
+      ]
+    },
+    {
+      "id": "uikit",
+      "files": {
+        "Screen.swift": "import UIKit\nclass Screen: UIViewController {}\n"
+      },
+      "expected": [
+        "uikit"
+      ]
+    },
+    {
+      "id": "vapor",
+      "files": {
+        "Package.swift": "import PackageDescription\nlet package = Package(name: \"App\", dependencies: [.package(url: \"https://github.com/vapor/vapor.git\", from: \"4.0.0\")])\n",
+        "routes.swift": "import Vapor\nfunc routes(_ app: Application) {}\n"
+      },
+      "expected": [
+        "vapor"
+      ]
+    },
+    {
+      "id": "swift-objc",
+      "files": {
+        "Screen.swift": "class Screen {}\n",
+        "Bridge.m": "@interface Bridge\n@end\n"
+      },
+      "expected": [
+        "swift-objc-bridge"
+      ]
+    },
+    {
+      "id": "cics",
+      "files": {
+        "main.cbl": "       IDENTIFICATION DIVISION.\n       PROGRAM-ID. MAIN.\n       PROCEDURE DIVISION.\n           EXEC CICS RETURN END-EXEC.\n           STOP RUN.\n"
+      },
+      "expected": [
+        "cics"
+      ]
+    },
+    {
+      "id": "terraform",
+      "files": {
+        "main.tf": "resource \"example\" \"main\" {}\n"
+      },
+      "expected": [
+        "terraform"
+      ]
+    },
+    {
+      "id": "source-vue",
+      "files": {
+        "Screen.vue": "<template><div>Hello</div></template>\n"
+      },
+      "expected": [
+        "vue"
+      ]
+    },
+    {
+      "id": "source-svelte",
+      "files": {
+        "Screen.svelte": "<h1>Hello</h1>\n"
+      },
+      "expected": [
+        "svelte"
+      ]
+    },
+    {
+      "id": "source-astro",
+      "files": {
+        "Screen.astro": "<h1>Hello</h1>\n"
+      },
+      "expected": [
+        "astro"
+      ]
+    },
+    {
+      "id": "empty",
+      "files": {},
+      "expected": []
+    },
+    {
+      "id": "malformed-package",
+      "files": {
+        "package.json": "{\"dependencies\":",
+        "probe.ts": "export function probe() {}\n"
+      },
+      "expected": []
+    },
+    {
+      "id": "ordinary-python",
+      "files": {
+        "worker.py": "def work(): return 1\n"
+      },
+      "expected": []
+    }
+  ]
+}

@@ -1,0 +1,2545 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.rs",
+      "kind": "file",
+      "name": "torture.rs",
+      "qualifiedName": "torture.rs",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 1,
+      "endLine": 338,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:0c1b73471235c7fdd7de97f568ceb0a6",
+      "kind": "import",
+      "name": "std",
+      "qualifiedName": "std",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 13,
+      "signature": "use std::fmt;"
+    },
+    {
+      "id": "import:103483ce64b82685f7994d8932ab4c4f",
+      "kind": "import",
+      "name": "crate",
+      "qualifiedName": "crate",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 23,
+      "signature": "use crate::mod_a::Item;"
+    },
+    {
+      "id": "import:d13779f3960b67fd9fe1bb7a1d6a676e",
+      "kind": "import",
+      "name": "crate",
+      "qualifiedName": "crate",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 0,
+      "endColumn": 38,
+      "signature": "use crate::mod_b::{A, B as C, sub::D};"
+    },
+    {
+      "id": "import:4413f5e46241edba8bd7755ce1bb78c8",
+      "kind": "import",
+      "name": "a",
+      "qualifiedName": "a",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 19,
+      "signature": "use a::{b::{c, d}};"
+    },
+    {
+      "id": "import:e1b4746e9dd972ef6759c8bc7e229474",
+      "kind": "import",
+      "name": "foo_single",
+      "qualifiedName": "foo_single",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 15,
+      "signature": "use foo_single;"
+    },
+    {
+      "id": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "kind": "struct",
+      "name": "Widget",
+      "qualifiedName": "Widget",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 12,
+      "endLine": 16,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Widget docs.",
+      "visibility": "public"
+    },
+    {
+      "id": "struct:0817bec85383d0bce329cdea6a6d811b",
+      "kind": "struct",
+      "name": "Unit",
+      "qualifiedName": "Unit",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 0,
+      "endColumn": 16,
+      "visibility": "public"
+    },
+    {
+      "id": "struct:5fcea532f9aedc459fa2d53ba939f3c3",
+      "kind": "struct",
+      "name": "Pair",
+      "qualifiedName": "Pair",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 20,
+      "endLine": 20,
+      "startColumn": 0,
+      "endColumn": 26,
+      "visibility": "public"
+    },
+    {
+      "id": "struct:859551f67d25ee29443e3b1a081f823c",
+      "kind": "struct",
+      "name": "Doc",
+      "qualifiedName": "Doc",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 24,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "struct:8dd22c4fc56baeba045e9bf82329d7eb",
+      "kind": "struct",
+      "name": "Deep",
+      "qualifiedName": "Deep",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 28,
+      "endLine": 30,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum:17acc88a5112f35e068a0eed30bf9761",
+      "kind": "enum",
+      "name": "Shape",
+      "qualifiedName": "Shape",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 32,
+      "endLine": 36,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:0e3904a0b597a2bc7b7c817ce48fd3ec",
+      "kind": "enum_member",
+      "name": "Circle",
+      "qualifiedName": "Shape::Circle",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 4,
+      "endColumn": 15
+    },
+    {
+      "id": "enum_member:1bda4bbb176b36d0d3af0f4179f51dde",
+      "kind": "enum_member",
+      "name": "Rect",
+      "qualifiedName": "Shape::Rect",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 34,
+      "endLine": 34,
+      "startColumn": 4,
+      "endColumn": 27
+    },
+    {
+      "id": "enum_member:cfbac78df5628da4b4b0bd8697397ba3",
+      "kind": "enum_member",
+      "name": "Empty",
+      "qualifiedName": "Shape::Empty",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 35,
+      "endLine": 35,
+      "startColumn": 4,
+      "endColumn": 9
+    },
+    {
+      "id": "type_alias:feafa08c2035b9892203463ba89e6d20",
+      "kind": "type_alias",
+      "name": "Alias",
+      "qualifiedName": "Alias",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 38,
+      "endLine": 38,
+      "startColumn": 0,
+      "endColumn": 29,
+      "visibility": "public"
+    },
+    {
+      "id": "trait:a58fd1ab5cf02f43676433b760728c37",
+      "kind": "trait",
+      "name": "Render",
+      "qualifiedName": "Render",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 41,
+      "endLine": 48,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Render trait docs."
+    },
+    {
+      "id": "method:1edca63b63663ee826e2349f6d040e1c",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "Render::render",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 42,
+      "endLine": 42,
+      "startColumn": 4,
+      "endColumn": 21,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:7fe7437d650d086d067a7cc00ec38cca",
+      "kind": "method",
+      "name": "hint",
+      "qualifiedName": "Render::hint",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 43,
+      "endLine": 45,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self) -> Size",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "Size"
+    },
+    {
+      "id": "trait:dcec472700533c7d65fd2f90ea3c6830",
+      "kind": "trait",
+      "name": "Base",
+      "qualifiedName": "Base",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 50,
+      "endLine": 50,
+      "startColumn": 0,
+      "endColumn": 17
+    },
+    {
+      "id": "trait:36abc0be91b35b7b2663de83c007b572",
+      "kind": "trait",
+      "name": "Super2",
+      "qualifiedName": "Super2",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 52,
+      "endLine": 52,
+      "startColumn": 0,
+      "endColumn": 34
+    },
+    {
+      "id": "trait:43a05f33dc47873c975e3feb8f75cbf8",
+      "kind": "trait",
+      "name": "Owned",
+      "qualifiedName": "Owned",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 54,
+      "endLine": 54,
+      "startColumn": 0,
+      "endColumn": 45
+    },
+    {
+      "id": "method:fc93d61b2caa73e9feea003464e6332d",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "Widget::render",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 57,
+      "endLine": 59,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:6109ec2817c2c7669710ba0ccf46bdd9",
+      "kind": "method",
+      "name": "fmt",
+      "qualifiedName": "Widget::fmt",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 63,
+      "endLine": 65,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "Result"
+    },
+    {
+      "id": "variable:b5c7b8633a304233212e0af8f98ee3db",
+      "kind": "variable",
+      "name": "SCALE",
+      "qualifiedName": "Widget::SCALE",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 69,
+      "endLine": 69,
+      "startColumn": 10,
+      "endColumn": 15,
+      "isExported": false
+    },
+    {
+      "id": "method:1ae04d31ad28c2d9a9c63e5a2c13123d",
+      "kind": "method",
+      "name": "area",
+      "qualifiedName": "Widget::area",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 71,
+      "endLine": 73,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self) -> u32",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "kind": "method",
+      "name": "via_field",
+      "qualifiedName": "Widget::via_field",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 77,
+      "endLine": 83,
+      "startColumn": 4,
+      "endColumn": 5,
+      "docstring": "Receiver shapes (#1585): only `self.<field>.<method>()` keeps the\nowner-field prefix; deeper / parenthesized / call / bare-self collapse.",
+      "signature": "(&self) -> u32",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:ac9d754fee3741f21584a0086c577453",
+      "kind": "method",
+      "name": "clone_self",
+      "qualifiedName": "Widget::clone_self",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 85,
+      "endLine": 92,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self) -> Self",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "self"
+    },
+    {
+      "id": "method:04a53200fc347c7f6addb793e5b4a417",
+      "kind": "method",
+      "name": "borrow_widget",
+      "qualifiedName": "Widget::borrow_widget",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 94,
+      "endLine": 96,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self) -> &Widget",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "Widget"
+    },
+    {
+      "id": "method:33b9ee32f8b91f95c3f3d82418b043d8",
+      "kind": "method",
+      "name": "outer",
+      "qualifiedName": "Widget::outer",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 98,
+      "endLine": 103,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self) -> u32",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:1ecca3d16e2cdc41ee916d22153359c2",
+      "kind": "method",
+      "name": "inner_helper",
+      "qualifiedName": "Widget::inner_helper",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 99,
+      "endLine": 101,
+      "startColumn": 8,
+      "endColumn": 9,
+      "signature": "(v: u32) -> u32",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:edcb8b15c67daf532c1057d9efe8ac3d",
+      "kind": "struct",
+      "name": "Container",
+      "qualifiedName": "Container",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 106,
+      "endLine": 108,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:bf79e82e64a3df305e219d034086b2b0",
+      "kind": "method",
+      "name": "unwrap",
+      "qualifiedName": "Container::unwrap",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 111,
+      "endLine": 113,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(self) -> T",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "T"
+    },
+    {
+      "id": "method:64996a1706443006da9f4a15b38abbe2",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "Container::render",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 117,
+      "endLine": 117,
+      "startColumn": 4,
+      "endColumn": 23,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "trait:7cbd29a1473d80a74da70be5024bc1d6",
+      "kind": "trait",
+      "name": "Source",
+      "qualifiedName": "Source",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 122,
+      "endLine": 124,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Receiver = the impl_item's `type` field (#1588): generic, lifetime,\nreference, scoped, and generic-trait impls all qualify by the TYPE."
+    },
+    {
+      "id": "method:5f23af2b373950fe2a4c01962e426926",
+      "kind": "method",
+      "name": "read",
+      "qualifiedName": "Source::read",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 4,
+      "endColumn": 32,
+      "signature": "(&mut self) -> usize",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:8af466b07dba0b708a3b1922902ab00a",
+      "kind": "struct",
+      "name": "FileSource",
+      "qualifiedName": "FileSource",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 126,
+      "endLine": 128,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:35091377684dd9ce1422bc199925f095",
+      "kind": "method",
+      "name": "read",
+      "qualifiedName": "FileSource::read",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 131,
+      "endLine": 133,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&mut self) -> usize",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:22cb841d7a3265379018f5b56364e98c",
+      "kind": "struct",
+      "name": "BufSource",
+      "qualifiedName": "BufSource",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 136,
+      "endLine": 138,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:ebf2f082376e23dff7ba2531c9a9d71f",
+      "kind": "method",
+      "name": "read",
+      "qualifiedName": "BufSource::read",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 141,
+      "endLine": 143,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&mut self) -> usize",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:4ea1b361173ba3f6b1b2e8dfe74e13d3",
+      "kind": "struct",
+      "name": "Parents",
+      "qualifiedName": "Parents",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 146,
+      "endLine": 148,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "type_alias:58bcebb7feaaca7a0be3c251dfa21bd7",
+      "kind": "type_alias",
+      "name": "Item",
+      "qualifiedName": "Parents::Item",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 151,
+      "endLine": 151,
+      "startColumn": 4,
+      "endColumn": 20,
+      "visibility": "private"
+    },
+    {
+      "id": "method:b739f420ee12a433408dfb1f4a2911de",
+      "kind": "method",
+      "name": "next",
+      "qualifiedName": "Parents::next",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 152,
+      "endLine": 154,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&mut self) -> Option<u32>",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "Option"
+    },
+    {
+      "id": "method:0843076b0b3cc6a4287f1bbbb3ec931d",
+      "kind": "method",
+      "name": "dup",
+      "qualifiedName": "Container::dup",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 158,
+      "endLine": 160,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self) -> T",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "T"
+    },
+    {
+      "id": "method:ee9f186763c4ce9337ce728d7b8c54e9",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "BufSource::render",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 166,
+      "endLine": 166,
+      "startColumn": 4,
+      "endColumn": 23,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:c19898b8b84cce6cc2b80007d1b6f588",
+      "kind": "method",
+      "name": "from",
+      "qualifiedName": "FileSource::from",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 172,
+      "endLine": 174,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(n: u32) -> Self",
+      "visibility": "private",
+      "isAsync": false,
+      "returnType": "self"
+    },
+    {
+      "id": "function:b951abb9eb66b92ce671266642a2a7f4",
+      "kind": "function",
+      "name": "render",
+      "qualifiedName": "render",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 4,
+      "endColumn": 23,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "type_alias:bcf57e2140cad83d0079a53db2e033c1",
+      "kind": "type_alias",
+      "name": "Out",
+      "qualifiedName": "(u32, u32)::Out",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 189,
+      "endLine": 189,
+      "startColumn": 4,
+      "endColumn": 18,
+      "visibility": "private"
+    },
+    {
+      "id": "variable:c2d3d943f2960fb15f2898cc181e908f",
+      "kind": "variable",
+      "name": "PAIR",
+      "qualifiedName": "(u32, u32)::PAIR",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 190,
+      "endLine": 190,
+      "startColumn": 10,
+      "endColumn": 14,
+      "isExported": false
+    },
+    {
+      "id": "type_alias:7a1b0c01cd33baa93c6bd5ba3bd9f219",
+      "kind": "type_alias",
+      "name": "Out",
+      "qualifiedName": "[u8]::Out",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 194,
+      "endLine": 194,
+      "startColumn": 4,
+      "endColumn": 19,
+      "visibility": "private"
+    },
+    {
+      "id": "variable:f26d5ec570544c3e0d460e35306c9f2a",
+      "kind": "variable",
+      "name": "WIDTH",
+      "qualifiedName": "u64::WIDTH",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 198,
+      "endLine": 198,
+      "startColumn": 10,
+      "endColumn": 15,
+      "isExported": false
+    },
+    {
+      "id": "method:9a4701fe7bce9185f36a98800bd3d323",
+      "kind": "method",
+      "name": "touch",
+      "qualifiedName": "Later::touch",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 202,
+      "endLine": 202,
+      "startColumn": 4,
+      "endColumn": 22,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:3b633d6cf7010af6dd2be4be8fef802f",
+      "kind": "struct",
+      "name": "Later",
+      "qualifiedName": "Later",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 205,
+      "endLine": 207,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "kind": "function",
+      "name": "fetch_data",
+      "qualifiedName": "fetch_data",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 210,
+      "endLine": 214,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Block-doc for an async fn — isAsync must stay FALSE (dead-code hook).",
+      "signature": "(url: &str) -> Result<Response, Error>",
+      "visibility": "public",
+      "isAsync": false,
+      "returnType": "Result"
+    },
+    {
+      "id": "function:02cfacca44da619a726b3d6598667357",
+      "kind": "function",
+      "name": "nested_ret",
+      "qualifiedName": "nested_ret",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 216,
+      "endLine": 218,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "() -> Result<Vec<Widget>, Error>",
+      "visibility": "public",
+      "isAsync": false
+    },
+    {
+      "id": "function:ba49d8dd538cbcb208019e76452ba1ff",
+      "kind": "function",
+      "name": "vec_ret",
+      "qualifiedName": "vec_ret",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 220,
+      "endLine": 222,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(w: &Widget) -> Vec<Widget>",
+      "visibility": "public",
+      "isAsync": false,
+      "returnType": "Vec"
+    },
+    {
+      "id": "function:15e65e06a66b48be74da4de7cc2f2a99",
+      "kind": "function",
+      "name": "crate_fn",
+      "qualifiedName": "crate_fn",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 224,
+      "endLine": 224,
+      "startColumn": 0,
+      "endColumn": 27,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false
+    },
+    {
+      "id": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "kind": "function",
+      "name": "caller",
+      "qualifiedName": "caller",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 226,
+      "endLine": 247,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:198d7df136a39a740591d0a31094b02d",
+      "kind": "function",
+      "name": "handler",
+      "qualifiedName": "handler",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 249,
+      "endLine": 249,
+      "startColumn": 0,
+      "endColumn": 15,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:c89db2b8bd7990221c2657b473194a5f",
+      "kind": "function",
+      "name": "handler2",
+      "qualifiedName": "handler2",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 250,
+      "endLine": 250,
+      "startColumn": 0,
+      "endColumn": 16,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:0fd52cd79135f673b22b732e22626389",
+      "kind": "function",
+      "name": "cb_a",
+      "qualifiedName": "cb_a",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 251,
+      "endLine": 251,
+      "startColumn": 0,
+      "endColumn": 12,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:00f78633c1d7188ab6d16e2e73d1fc63",
+      "kind": "function",
+      "name": "cb_b",
+      "qualifiedName": "cb_b",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 252,
+      "endLine": 252,
+      "startColumn": 0,
+      "endColumn": 12,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:2c6dbf5da8ca38ee9504bbe941435687",
+      "kind": "function",
+      "name": "invoke_all",
+      "qualifiedName": "invoke_all",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 253,
+      "endLine": 253,
+      "startColumn": 0,
+      "endColumn": 32,
+      "signature": "(fns: [fn(); 2])",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:6f633832ff3f38466a7aa48927e3a7ce",
+      "kind": "function",
+      "name": "register",
+      "qualifiedName": "register",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 255,
+      "endLine": 257,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(f: fn())",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:b97b5a91d1f5ae0e21e54f50f25e66e9",
+      "kind": "struct",
+      "name": "Holder",
+      "qualifiedName": "Holder",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 259,
+      "endLine": 261,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "kind": "function",
+      "name": "wiring",
+      "qualifiedName": "wiring",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 263,
+      "endLine": 272,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(mut o: Holder)",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "variable:31249bc011f855bd69a703f19dbd4657",
+      "kind": "variable",
+      "name": "CB",
+      "qualifiedName": "CB",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 274,
+      "endLine": 274,
+      "startColumn": 7,
+      "endColumn": 9,
+      "isExported": false
+    },
+    {
+      "id": "variable:1d5461b9378e4003878b0586826b4116",
+      "kind": "variable",
+      "name": "handler",
+      "qualifiedName": "handler",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 274,
+      "endLine": 274,
+      "startColumn": 18,
+      "endColumn": 25,
+      "isExported": false
+    },
+    {
+      "id": "variable:30d0c68cab215c0946992ff919d5ce40",
+      "kind": "variable",
+      "name": "MAX_LIMIT",
+      "qualifiedName": "MAX_LIMIT",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 276,
+      "endLine": 276,
+      "startColumn": 6,
+      "endColumn": 15,
+      "isExported": false
+    },
+    {
+      "id": "variable:926d7d90e778bc9136772a8a8321c9af",
+      "kind": "variable",
+      "name": "OTHER_LIMIT",
+      "qualifiedName": "OTHER_LIMIT",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 276,
+      "endLine": 276,
+      "startColumn": 23,
+      "endColumn": 34,
+      "isExported": false
+    },
+    {
+      "id": "variable:5b7fa5259fcb37da98c6153f240f8506",
+      "kind": "variable",
+      "name": "OTHER_LIMIT",
+      "qualifiedName": "OTHER_LIMIT",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 277,
+      "endLine": 277,
+      "startColumn": 6,
+      "endColumn": 17,
+      "isExported": false
+    },
+    {
+      "id": "function:6b41d1f030d08725e63e9e5da3a3db7e",
+      "kind": "function",
+      "name": "reads_limits",
+      "qualifiedName": "reads_limits",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 279,
+      "endLine": 281,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "() -> u32",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:3dc78b6a98fe429bf47bce2ae5721a61",
+      "kind": "function",
+      "name": "shadowed_read",
+      "qualifiedName": "shadowed_read",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 283,
+      "endLine": 286,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "function:0ef98dd37c57016b7f1a486029b0d425",
+      "kind": "function",
+      "name": "helper_pub",
+      "qualifiedName": "helper_pub",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 289,
+      "endLine": 289,
+      "startColumn": 4,
+      "endColumn": 26,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false
+    },
+    {
+      "id": "function:cfb5ca20af121b51d5f232a13022b1f8",
+      "kind": "function",
+      "name": "hidden",
+      "qualifiedName": "hidden",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 290,
+      "endLine": 290,
+      "startColumn": 4,
+      "endColumn": 18,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "struct:cdc86f83240a9f3baf6ad1f9d721de85",
+      "kind": "struct",
+      "name": "Item2",
+      "qualifiedName": "Item2",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 291,
+      "endLine": 293,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public"
+    },
+    {
+      "id": "function:d4f2d47c764ecc01cc68245d713ac47f",
+      "kind": "function",
+      "name": "mount",
+      "qualifiedName": "mount",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 296,
+      "endLine": 300,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "variable:cabd4a7519a3567d8d02d7fd898ec9b5",
+      "kind": "variable",
+      "name": "INIT_CONST",
+      "qualifiedName": "INIT_CONST",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 305,
+      "endLine": 305,
+      "startColumn": 6,
+      "endColumn": 16,
+      "docstring": "Initializer walks attributed to the declared symbol (#693).",
+      "isExported": false
+    },
+    {
+      "id": "variable:900304bc0ffb05323c4047e7616934d9",
+      "kind": "variable",
+      "name": "INIT_LAZY",
+      "qualifiedName": "INIT_LAZY",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 306,
+      "endLine": 306,
+      "startColumn": 7,
+      "endColumn": 16,
+      "isExported": false
+    },
+    {
+      "id": "variable:310ea25f00cdedf700c98d061e499dc8",
+      "kind": "variable",
+      "name": "INIT_ALIAS",
+      "qualifiedName": "INIT_ALIAS",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 307,
+      "endLine": 307,
+      "startColumn": 7,
+      "endColumn": 17,
+      "isExported": false
+    },
+    {
+      "id": "variable:5a64382aeacc964670b1d51112ad2fa7",
+      "kind": "variable",
+      "name": "free_fn",
+      "qualifiedName": "free_fn",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 307,
+      "endLine": 307,
+      "startColumn": 26,
+      "endColumn": 33,
+      "isExported": false
+    },
+    {
+      "id": "variable:ab49f513cdd71ff8ee7aa0e0b43174cd",
+      "kind": "variable",
+      "name": "INIT_TABLE",
+      "qualifiedName": "INIT_TABLE",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 309,
+      "endLine": 309,
+      "startColumn": 7,
+      "endColumn": 17,
+      "docstring": "A table the walk above takes for its symbol, and the scan no longer for the file.",
+      "isExported": false
+    },
+    {
+      "id": "union:a4828fb8d4664b074121306cd46febf2",
+      "kind": "union",
+      "name": "Reg",
+      "qualifiedName": "Reg",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 311,
+      "endLine": 314,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "function:fc210af8aa00263fb2391959c24fc36f",
+      "kind": "function",
+      "name": "turbofish_calls",
+      "qualifiedName": "turbofish_calls",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 321,
+      "endLine": 330,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Turbofish calls name the function they wrap: `s.get::<u32>()` is `s.get`,\nand a path's type arguments drop (`TfPool::<u8>::new` is `TfPool::new`),\nnested ones and a `->` inside them included.",
+      "signature": "(s: &TfStore, items: &[u8])",
+      "visibility": "private",
+      "isAsync": false
+    },
+    {
+      "id": "method:d1706b96ad652479726d12914762760d",
+      "kind": "method",
+      "name": "turbofish_self",
+      "qualifiedName": "TfStore::turbofish_self",
+      "filePath": "torture.rs",
+      "language": "rust",
+      "startLine": 333,
+      "endLine": 336,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(&self)",
+      "visibility": "private",
+      "isAsync": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.rs",
+      "target": "import:0c1b73471235c7fdd7de97f568ceb0a6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "import:103483ce64b82685f7994d8932ab4c4f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "import:d13779f3960b67fd9fe1bb7a1d6a676e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "import:4413f5e46241edba8bd7755ce1bb78c8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "import:e1b4746e9dd972ef6759c8bc7e229474",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:0817bec85383d0bce329cdea6a6d811b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:5fcea532f9aedc459fa2d53ba939f3c3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:859551f67d25ee29443e3b1a081f823c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:8dd22c4fc56baeba045e9bf82329d7eb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "enum:17acc88a5112f35e068a0eed30bf9761",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:17acc88a5112f35e068a0eed30bf9761",
+      "target": "enum_member:0e3904a0b597a2bc7b7c817ce48fd3ec",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:17acc88a5112f35e068a0eed30bf9761",
+      "target": "enum_member:1bda4bbb176b36d0d3af0f4179f51dde",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:17acc88a5112f35e068a0eed30bf9761",
+      "target": "enum_member:cfbac78df5628da4b4b0bd8697397ba3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "type_alias:feafa08c2035b9892203463ba89e6d20",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "trait:a58fd1ab5cf02f43676433b760728c37",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:a58fd1ab5cf02f43676433b760728c37",
+      "target": "method:1edca63b63663ee826e2349f6d040e1c",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:a58fd1ab5cf02f43676433b760728c37",
+      "target": "method:7fe7437d650d086d067a7cc00ec38cca",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "trait:dcec472700533c7d65fd2f90ea3c6830",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "trait:36abc0be91b35b7b2663de83c007b572",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "trait:43a05f33dc47873c975e3feb8f75cbf8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:fc93d61b2caa73e9feea003464e6332d",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:fc93d61b2caa73e9feea003464e6332d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:6109ec2817c2c7669710ba0ccf46bdd9",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:6109ec2817c2c7669710ba0ccf46bdd9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:b5c7b8633a304233212e0af8f98ee3db",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:1ae04d31ad28c2d9a9c63e5a2c13123d",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:1ae04d31ad28c2d9a9c63e5a2c13123d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:ac9d754fee3741f21584a0086c577453",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:ac9d754fee3741f21584a0086c577453",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:04a53200fc347c7f6addb793e5b4a417",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:04a53200fc347c7f6addb793e5b4a417",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:33b9ee32f8b91f95c3f3d82418b043d8",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:33b9ee32f8b91f95c3f3d82418b043d8",
+      "kind": "contains"
+    },
+    {
+      "source": "method:33b9ee32f8b91f95c3f3d82418b043d8",
+      "target": "method:1ecca3d16e2cdc41ee916d22153359c2",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "target": "method:1ecca3d16e2cdc41ee916d22153359c2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:edcb8b15c67daf532c1057d9efe8ac3d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:bf79e82e64a3df305e219d034086b2b0",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:edcb8b15c67daf532c1057d9efe8ac3d",
+      "target": "method:bf79e82e64a3df305e219d034086b2b0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:64996a1706443006da9f4a15b38abbe2",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:edcb8b15c67daf532c1057d9efe8ac3d",
+      "target": "method:64996a1706443006da9f4a15b38abbe2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "trait:7cbd29a1473d80a74da70be5024bc1d6",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:7cbd29a1473d80a74da70be5024bc1d6",
+      "target": "method:5f23af2b373950fe2a4c01962e426926",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:8af466b07dba0b708a3b1922902ab00a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:35091377684dd9ce1422bc199925f095",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:8af466b07dba0b708a3b1922902ab00a",
+      "target": "method:35091377684dd9ce1422bc199925f095",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:22cb841d7a3265379018f5b56364e98c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:ebf2f082376e23dff7ba2531c9a9d71f",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:22cb841d7a3265379018f5b56364e98c",
+      "target": "method:ebf2f082376e23dff7ba2531c9a9d71f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:4ea1b361173ba3f6b1b2e8dfe74e13d3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "type_alias:58bcebb7feaaca7a0be3c251dfa21bd7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:b739f420ee12a433408dfb1f4a2911de",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:4ea1b361173ba3f6b1b2e8dfe74e13d3",
+      "target": "method:b739f420ee12a433408dfb1f4a2911de",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:0843076b0b3cc6a4287f1bbbb3ec931d",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:edcb8b15c67daf532c1057d9efe8ac3d",
+      "target": "method:0843076b0b3cc6a4287f1bbbb3ec931d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:ee9f186763c4ce9337ce728d7b8c54e9",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:22cb841d7a3265379018f5b56364e98c",
+      "target": "method:ee9f186763c4ce9337ce728d7b8c54e9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:c19898b8b84cce6cc2b80007d1b6f588",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:8af466b07dba0b708a3b1922902ab00a",
+      "target": "method:c19898b8b84cce6cc2b80007d1b6f588",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:b951abb9eb66b92ce671266642a2a7f4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "type_alias:bcf57e2140cad83d0079a53db2e033c1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:c2d3d943f2960fb15f2898cc181e908f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "type_alias:7a1b0c01cd33baa93c6bd5ba3bd9f219",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:f26d5ec570544c3e0d460e35306c9f2a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:9a4701fe7bce9185f36a98800bd3d323",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:3b633d6cf7010af6dd2be4be8fef802f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:02cfacca44da619a726b3d6598667357",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:ba49d8dd538cbcb208019e76452ba1ff",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:15e65e06a66b48be74da4de7cc2f2a99",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:198d7df136a39a740591d0a31094b02d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:c89db2b8bd7990221c2657b473194a5f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:0fd52cd79135f673b22b732e22626389",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:00f78633c1d7188ab6d16e2e73d1fc63",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:2c6dbf5da8ca38ee9504bbe941435687",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:6f633832ff3f38466a7aa48927e3a7ce",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:b97b5a91d1f5ae0e21e54f50f25e66e9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:31249bc011f855bd69a703f19dbd4657",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:1d5461b9378e4003878b0586826b4116",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:30d0c68cab215c0946992ff919d5ce40",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:926d7d90e778bc9136772a8a8321c9af",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:5b7fa5259fcb37da98c6153f240f8506",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:6b41d1f030d08725e63e9e5da3a3db7e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:3dc78b6a98fe429bf47bce2ae5721a61",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:0ef98dd37c57016b7f1a486029b0d425",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:cfb5ca20af121b51d5f232a13022b1f8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "struct:cdc86f83240a9f3baf6ad1f9d721de85",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:d4f2d47c764ecc01cc68245d713ac47f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:cabd4a7519a3567d8d02d7fd898ec9b5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:900304bc0ffb05323c4047e7616934d9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:310ea25f00cdedf700c98d061e499dc8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:5a64382aeacc964670b1d51112ad2fa7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "variable:ab49f513cdd71ff8ee7aa0e0b43174cd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "union:a4828fb8d4664b074121306cd46febf2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "function:fc210af8aa00263fb2391959c24fc36f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rs",
+      "target": "method:d1706b96ad652479726d12914762760d",
+      "kind": "contains"
+    },
+    {
+      "source": "function:6b41d1f030d08725e63e9e5da3a3db7e",
+      "target": "variable:5b7fa5259fcb37da98c6153f240f8506",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "std",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "std::fmt",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 4
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "crate",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "crate::mod_a::Item",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 4
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "crate",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "crate::mod_b::A",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 19
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "crate::mod_b::B",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 22
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "crate::mod_b::sub::D",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 30
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "a",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "a::b::c",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 12
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "a::b::d",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 15
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "foo_single",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "foo_single",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 4
+    },
+    {
+      "fromNodeId": "trait:a58fd1ab5cf02f43676433b760728c37",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 41,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:7fe7437d650d086d067a7cc00ec38cca",
+      "referenceName": "Size",
+      "referenceKind": "references",
+      "line": 43,
+      "column": 22
+    },
+    {
+      "fromNodeId": "method:7fe7437d650d086d067a7cc00ec38cca",
+      "referenceName": "Size::default",
+      "referenceKind": "calls",
+      "line": 44,
+      "column": 8
+    },
+    {
+      "fromNodeId": "trait:a58fd1ab5cf02f43676433b760728c37",
+      "referenceName": "init_cap",
+      "referenceKind": "calls",
+      "line": 46,
+      "column": 23
+    },
+    {
+      "fromNodeId": "trait:36abc0be91b35b7b2663de83c007b572",
+      "referenceName": "Producer",
+      "referenceKind": "extends",
+      "line": 52,
+      "column": 18
+    },
+    {
+      "fromNodeId": "trait:43a05f33dc47873c975e3feb8f75cbf8",
+      "referenceName": "Deserialize",
+      "referenceKind": "extends",
+      "line": 54,
+      "column": 26
+    },
+    {
+      "fromNodeId": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "referenceName": "Render",
+      "referenceKind": "implements",
+      "line": 56,
+      "column": 5
+    },
+    {
+      "fromNodeId": "method:fc93d61b2caa73e9feea003464e6332d",
+      "referenceName": "draw",
+      "referenceKind": "calls",
+      "line": 58,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "referenceName": "fmt::Display",
+      "referenceKind": "implements",
+      "line": 62,
+      "column": 5
+    },
+    {
+      "fromNodeId": "method:6109ec2817c2c7669710ba0ccf46bdd9",
+      "referenceName": "Formatter",
+      "referenceKind": "references",
+      "line": 63,
+      "column": 31
+    },
+    {
+      "fromNodeId": "method:6109ec2817c2c7669710ba0ccf46bdd9",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 63,
+      "column": 54
+    },
+    {
+      "fromNodeId": "method:1ae04d31ad28c2d9a9c63e5a2c13123d",
+      "referenceName": "mul",
+      "referenceKind": "calls",
+      "line": 72,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "referenceName": "self.field.deep_call",
+      "referenceKind": "calls",
+      "line": 78,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "referenceName": "self.field.z.clone",
+      "referenceKind": "calls",
+      "line": 79,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "referenceName": "self.method_a().chain_b",
+      "referenceKind": "calls",
+      "line": 80,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "referenceName": "self.method_a",
+      "referenceKind": "calls",
+      "line": 80,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "referenceName": "deep_call",
+      "referenceKind": "calls",
+      "line": 81,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:126fc37c11f8a7d4489e67e45639fdb1",
+      "referenceName": "self.area",
+      "referenceKind": "calls",
+      "line": 82,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:ac9d754fee3741f21584a0086c577453",
+      "referenceName": "Self",
+      "referenceKind": "references",
+      "line": 85,
+      "column": 28
+    },
+    {
+      "fromNodeId": "method:ac9d754fee3741f21584a0086c577453",
+      "referenceName": "Self::assoc",
+      "referenceKind": "calls",
+      "line": 86,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:ac9d754fee3741f21584a0086c577453",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 87,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:ac9d754fee3741f21584a0086c577453",
+      "referenceName": "String::new",
+      "referenceKind": "calls",
+      "line": 89,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:ac9d754fee3741f21584a0086c577453",
+      "referenceName": "Deep",
+      "referenceKind": "instantiates",
+      "line": 90,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:04a53200fc347c7f6addb793e5b4a417",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 94,
+      "column": 32
+    },
+    {
+      "fromNodeId": "method:33b9ee32f8b91f95c3f3d82418b043d8",
+      "referenceName": "inner_helper",
+      "referenceKind": "calls",
+      "line": 102,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:bf79e82e64a3df305e219d034086b2b0",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 111,
+      "column": 23
+    },
+    {
+      "fromNodeId": "struct:edcb8b15c67daf532c1057d9efe8ac3d",
+      "referenceName": "Render",
+      "referenceKind": "implements",
+      "line": 116,
+      "column": 5
+    },
+    {
+      "fromNodeId": "struct:8af466b07dba0b708a3b1922902ab00a",
+      "referenceName": "Source",
+      "referenceKind": "implements",
+      "line": 130,
+      "column": 5
+    },
+    {
+      "fromNodeId": "struct:22cb841d7a3265379018f5b56364e98c",
+      "referenceName": "Source",
+      "referenceKind": "implements",
+      "line": 140,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:4ea1b361173ba3f6b1b2e8dfe74e13d3",
+      "referenceName": "Iterator",
+      "referenceKind": "implements",
+      "line": 150,
+      "column": 9
+    },
+    {
+      "fromNodeId": "method:b739f420ee12a433408dfb1f4a2911de",
+      "referenceName": "Option",
+      "referenceKind": "references",
+      "line": 152,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:0843076b0b3cc6a4287f1bbbb3ec931d",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 158,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:0843076b0b3cc6a4287f1bbbb3ec931d",
+      "referenceName": "self.item.clone",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:0c309a8ed6f33456724d94ba73599e04",
+      "referenceName": "Base",
+      "referenceKind": "implements",
+      "line": 163,
+      "column": 5
+    },
+    {
+      "fromNodeId": "struct:22cb841d7a3265379018f5b56364e98c",
+      "referenceName": "Render",
+      "referenceKind": "implements",
+      "line": 165,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:8dd22c4fc56baeba045e9bf82329d7eb",
+      "referenceName": "Base",
+      "referenceKind": "implements",
+      "line": 169,
+      "column": 5
+    },
+    {
+      "fromNodeId": "struct:8af466b07dba0b708a3b1922902ab00a",
+      "referenceName": "From<u32>",
+      "referenceKind": "implements",
+      "line": 171,
+      "column": 5
+    },
+    {
+      "fromNodeId": "method:c19898b8b84cce6cc2b80007d1b6f588",
+      "referenceName": "Self",
+      "referenceKind": "references",
+      "line": 172,
+      "column": 23
+    },
+    {
+      "fromNodeId": "method:c19898b8b84cce6cc2b80007d1b6f588",
+      "referenceName": "FileSource",
+      "referenceKind": "instantiates",
+      "line": 173,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 210,
+      "column": 38
+    },
+    {
+      "fromNodeId": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "referenceName": "Response",
+      "referenceKind": "references",
+      "line": 210,
+      "column": 45
+    },
+    {
+      "fromNodeId": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "referenceName": "Error",
+      "referenceKind": "references",
+      "line": 210,
+      "column": 55
+    },
+    {
+      "fromNodeId": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "referenceName": "get",
+      "referenceKind": "calls",
+      "line": 211,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "referenceName": "send",
+      "referenceKind": "calls",
+      "line": 212,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:e236b03480d5c55d9e587dfa12ffb095",
+      "referenceName": "client.request",
+      "referenceKind": "calls",
+      "line": 212,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:02cfacca44da619a726b3d6598667357",
+      "referenceName": "Result",
+      "referenceKind": "references",
+      "line": 216,
+      "column": 23
+    },
+    {
+      "fromNodeId": "function:02cfacca44da619a726b3d6598667357",
+      "referenceName": "Vec",
+      "referenceKind": "references",
+      "line": 216,
+      "column": 30
+    },
+    {
+      "fromNodeId": "function:02cfacca44da619a726b3d6598667357",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 216,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:02cfacca44da619a726b3d6598667357",
+      "referenceName": "Error",
+      "referenceKind": "references",
+      "line": 216,
+      "column": 43
+    },
+    {
+      "fromNodeId": "function:02cfacca44da619a726b3d6598667357",
+      "referenceName": "make_result",
+      "referenceKind": "calls",
+      "line": 217,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:ba49d8dd538cbcb208019e76452ba1ff",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 220,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:ba49d8dd538cbcb208019e76452ba1ff",
+      "referenceName": "Vec",
+      "referenceKind": "references",
+      "line": 220,
+      "column": 30
+    },
+    {
+      "fromNodeId": "function:ba49d8dd538cbcb208019e76452ba1ff",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 220,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:ba49d8dd538cbcb208019e76452ba1ff",
+      "referenceName": "build_list",
+      "referenceKind": "calls",
+      "line": 221,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 227,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "make_name",
+      "referenceKind": "calls",
+      "line": 229,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Deep",
+      "referenceKind": "instantiates",
+      "line": 230,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 232,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Foo::new().bar",
+      "referenceKind": "calls",
+      "line": 233,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Foo::new",
+      "referenceKind": "calls",
+      "line": 233,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "w.method_a().chain_b",
+      "referenceKind": "calls",
+      "line": 234,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "w.method_a",
+      "referenceKind": "calls",
+      "line": 234,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "w.field.deep_call",
+      "referenceKind": "calls",
+      "line": 235,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 238,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "m::helper2",
+      "referenceKind": "calls",
+      "line": 239,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 240,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 241,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "takes",
+      "referenceKind": "calls",
+      "line": 242,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 242,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "n2",
+      "referenceKind": "calls",
+      "line": 244,
+      "column": 14
+    },
+    {
+      "fromNodeId": "function:54ce1322eb82d876d2324d1a1e50a65d",
+      "referenceName": "Deep",
+      "referenceKind": "instantiates",
+      "line": 245,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:6f633832ff3f38466a7aa48927e3a7ce",
+      "referenceName": "f",
+      "referenceKind": "calls",
+      "line": 256,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "Holder",
+      "referenceKind": "references",
+      "line": 263,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 264,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "Holder",
+      "referenceKind": "instantiates",
+      "line": 266,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "invoke_all",
+      "referenceKind": "calls",
+      "line": 270,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "invoke",
+      "referenceKind": "calls",
+      "line": 271,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:d4f2d47c764ecc01cc68245d713ac47f",
+      "referenceName": "a::b::index_h",
+      "referenceKind": "references",
+      "line": 297,
+      "column": 20
+    },
+    {
+      "fromNodeId": "function:d4f2d47c764ecc01cc68245d713ac47f",
+      "referenceName": "health_h",
+      "referenceKind": "references",
+      "line": 297,
+      "column": 35
+    },
+    {
+      "fromNodeId": "function:d4f2d47c764ecc01cc68245d713ac47f",
+      "referenceName": "not_found_h",
+      "referenceKind": "references",
+      "line": 298,
+      "column": 22
+    },
+    {
+      "fromNodeId": "variable:cabd4a7519a3567d8d02d7fd898ec9b5",
+      "referenceName": "compute_len",
+      "referenceKind": "calls",
+      "line": 305,
+      "column": 26
+    },
+    {
+      "fromNodeId": "variable:900304bc0ffb05323c4047e7616934d9",
+      "referenceName": "Lazy::new",
+      "referenceKind": "calls",
+      "line": 306,
+      "column": 30
+    },
+    {
+      "fromNodeId": "variable:900304bc0ffb05323c4047e7616934d9",
+      "referenceName": "build_cfg",
+      "referenceKind": "calls",
+      "line": 306,
+      "column": 43
+    },
+    {
+      "fromNodeId": "union:a4828fb8d4664b074121306cd46febf2",
+      "referenceName": "Base",
+      "referenceKind": "implements",
+      "line": 316,
+      "column": 5
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfStore",
+      "referenceKind": "references",
+      "line": 321,
+      "column": 23
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "s.get",
+      "referenceKind": "calls",
+      "line": 322,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "tf_free",
+      "referenceKind": "calls",
+      "line": 323,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfPool::new",
+      "referenceKind": "calls",
+      "line": 324,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfPool::with_capacity",
+      "referenceKind": "calls",
+      "line": 325,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfPool::new().len",
+      "referenceKind": "calls",
+      "line": 326,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfPool::new",
+      "referenceKind": "calls",
+      "line": 326,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfPool::create().len",
+      "referenceKind": "calls",
+      "line": 327,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "TfPool::create",
+      "referenceKind": "calls",
+      "line": 327,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "tf_run",
+      "referenceKind": "calls",
+      "line": 328,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "items.iter().collect",
+      "referenceKind": "calls",
+      "line": 329,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:fc210af8aa00263fb2391959c24fc36f",
+      "referenceName": "items.iter",
+      "referenceKind": "calls",
+      "line": 329,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:d1706b96ad652479726d12914762760d",
+      "referenceName": "self.get",
+      "referenceKind": "calls",
+      "line": 334,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:d1706b96ad652479726d12914762760d",
+      "referenceName": "self.cache.load",
+      "referenceKind": "calls",
+      "line": 335,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "handler",
+      "referenceKind": "function_ref",
+      "line": 264,
+      "column": 13
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "handler2",
+      "referenceKind": "function_ref",
+      "line": 265,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "cb_a",
+      "referenceKind": "function_ref",
+      "line": 266,
+      "column": 25
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "cb_b",
+      "referenceKind": "function_ref",
+      "line": 267,
+      "column": 21
+    },
+    {
+      "fromNodeId": "function:9b6443d4c37bde42b8401a18f5bcc622",
+      "referenceName": "foo_single",
+      "referenceKind": "function_ref",
+      "line": 271,
+      "column": 11
+    },
+    {
+      "fromNodeId": "file:torture.rs",
+      "referenceName": "handler",
+      "referenceKind": "function_ref",
+      "line": 274,
+      "column": 18
+    },
+    {
+      "fromNodeId": "variable:ab49f513cdd71ff8ee7aa0e0b43174cd",
+      "referenceName": "handler",
+      "referenceKind": "function_ref",
+      "line": 309,
+      "column": 31
+    },
+    {
+      "fromNodeId": "variable:ab49f513cdd71ff8ee7aa0e0b43174cd",
+      "referenceName": "handler2",
+      "referenceKind": "function_ref",
+      "line": 309,
+      "column": 40
+    }
+  ],
+  "errors": []
+}

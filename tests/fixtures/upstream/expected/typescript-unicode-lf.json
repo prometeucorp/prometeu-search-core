@@ -1,0 +1,534 @@
+{
+  "nodes": [
+    {
+      "id": "file:literal.ts",
+      "kind": "file",
+      "name": "literal.ts",
+      "qualifiedName": "literal.ts",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 14,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "constant:97afefc1a73083b2802821b69d016024",
+      "kind": "constant",
+      "name": "Api",
+      "qualifiedName": "Api",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 16,
+      "endColumn": 196,
+      "docstring": "é😀",
+      "signature": "= { read() { helper(); }, close: () => helper(), gen: function* () { yield 1; }, 'quoted-key': functio...",
+      "isExported": false
+    },
+    {
+      "id": "function:55af4584f757874c6519a48a5426f4a1",
+      "kind": "function",
+      "name": "read",
+      "qualifiedName": "Api::read",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 24,
+      "endColumn": 44,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:4f42a975f6a483d5de745f50756e4713",
+      "kind": "function",
+      "name": "close",
+      "qualifiedName": "Api::close",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 53,
+      "endColumn": 67,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:1f0cc5e81d8806dbfc6df8b9f6f3d341",
+      "kind": "function",
+      "name": "gen",
+      "qualifiedName": "Api::gen",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 74,
+      "endColumn": 99,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:60495b3d41526ac9e5f6f01e3ac5c486",
+      "kind": "function",
+      "name": "quoted-key",
+      "qualifiedName": "Api::quoted-key",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 115,
+      "endColumn": 129,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:0c3487f2edefcba62f76717eee4d7b75",
+      "kind": "function",
+      "name": "helper",
+      "qualifiedName": "helper",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 20,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:1931385fc0d7aeb9a077caa7e5415ad6",
+      "kind": "constant",
+      "name": "Exported",
+      "qualifiedName": "Exported",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 13,
+      "endColumn": 48,
+      "docstring": "Saved.",
+      "signature": "= { save() { helper(); } }",
+      "isExported": true
+    },
+    {
+      "id": "function:fa00ece2e2c571fc6712d2c7be0d3f36",
+      "kind": "function",
+      "name": "save",
+      "qualifiedName": "Exported::save",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 26,
+      "endColumn": 46,
+      "signature": "()",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:5e93ac2ffe5cc72d617684a3aff78324",
+      "kind": "constant",
+      "name": "Local",
+      "qualifiedName": "Local",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 21,
+      "endColumn": 52,
+      "signature": "= { run() { helper(); } }",
+      "isExported": false
+    },
+    {
+      "id": "function:c0f0ae772666f806c68a186c35560bd6",
+      "kind": "function",
+      "name": "run",
+      "qualifiedName": "Local::run",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 31,
+      "endColumn": 50,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:bf70b8bbf120d5209dc44f8f07c786b0",
+      "kind": "variable",
+      "name": "WS",
+      "qualifiedName": "window.WS",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 84,
+      "endColumn": 121,
+      "signature": "= { ws() { Local.run(); } }",
+      "isExported": false
+    },
+    {
+      "id": "function:6973b26dca6f3913249b79e833736c10",
+      "kind": "function",
+      "name": "ws",
+      "qualifiedName": "window.WS::ws",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 98,
+      "endColumn": 119,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:4f0c5f032d5fdbe6f94f4c58aba36a15",
+      "kind": "variable",
+      "name": "utils",
+      "qualifiedName": "App.utils",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 0,
+      "endColumn": 36,
+      "signature": "= { pad(s) { return s; } }",
+      "isExported": false
+    },
+    {
+      "id": "function:93a878a1f75c87667df8e23ed41186af",
+      "kind": "function",
+      "name": "pad",
+      "qualifiedName": "App.utils::pad",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 14,
+      "endColumn": 34,
+      "signature": "(s)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:d429c688ccf1126d1fd4e9270fcd97c1",
+      "kind": "variable",
+      "name": "dw_page",
+      "qualifiedName": "dw_page",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 35,
+      "docstring": "The page.",
+      "signature": "= { start() { helper(); } }",
+      "isExported": false
+    },
+    {
+      "id": "function:0f0dc2090bd53221be3b2bdf228626c0",
+      "kind": "function",
+      "name": "start",
+      "qualifiedName": "dw_page::start",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 12,
+      "endColumn": 33,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:f183cb9b1fd38d1de1b8fc374156f42a",
+      "kind": "function",
+      "name": "setup",
+      "qualifiedName": "setup",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 67,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:891223eb6c6dfe0cc90777d5c4aaa952",
+      "kind": "variable",
+      "name": "late",
+      "qualifiedName": "ns.late",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 19,
+      "endColumn": 40,
+      "signature": "= { go() {} }",
+      "isExported": false
+    },
+    {
+      "id": "function:5080d6db46bf6940d57337282b2ddd99",
+      "kind": "function",
+      "name": "go",
+      "qualifiedName": "ns.late::go",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 31,
+      "endColumn": 38,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:96960f7f9bfcd88cfcd59ca4d26252e2",
+      "kind": "variable",
+      "name": "handlers",
+      "qualifiedName": "self.handlers",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "= { click() {} }",
+      "isExported": false
+    },
+    {
+      "id": "function:1765ec628e0e70b019de4c7cb8e49b53",
+      "kind": "function",
+      "name": "click",
+      "qualifiedName": "self.handlers::click",
+      "filePath": "literal.ts",
+      "language": "typescript",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 18,
+      "endColumn": 28,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:literal.ts",
+      "target": "constant:97afefc1a73083b2802821b69d016024",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:97afefc1a73083b2802821b69d016024",
+      "target": "function:55af4584f757874c6519a48a5426f4a1",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:97afefc1a73083b2802821b69d016024",
+      "target": "function:4f42a975f6a483d5de745f50756e4713",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:97afefc1a73083b2802821b69d016024",
+      "target": "function:1f0cc5e81d8806dbfc6df8b9f6f3d341",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:97afefc1a73083b2802821b69d016024",
+      "target": "function:60495b3d41526ac9e5f6f01e3ac5c486",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "function:0c3487f2edefcba62f76717eee4d7b75",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "constant:1931385fc0d7aeb9a077caa7e5415ad6",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:1931385fc0d7aeb9a077caa7e5415ad6",
+      "target": "function:fa00ece2e2c571fc6712d2c7be0d3f36",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "constant:5e93ac2ffe5cc72d617684a3aff78324",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:5e93ac2ffe5cc72d617684a3aff78324",
+      "target": "function:c0f0ae772666f806c68a186c35560bd6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "variable:bf70b8bbf120d5209dc44f8f07c786b0",
+      "kind": "contains"
+    },
+    {
+      "source": "variable:bf70b8bbf120d5209dc44f8f07c786b0",
+      "target": "function:6973b26dca6f3913249b79e833736c10",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "variable:4f0c5f032d5fdbe6f94f4c58aba36a15",
+      "kind": "contains"
+    },
+    {
+      "source": "variable:4f0c5f032d5fdbe6f94f4c58aba36a15",
+      "target": "function:93a878a1f75c87667df8e23ed41186af",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "variable:d429c688ccf1126d1fd4e9270fcd97c1",
+      "kind": "contains"
+    },
+    {
+      "source": "variable:d429c688ccf1126d1fd4e9270fcd97c1",
+      "target": "function:0f0dc2090bd53221be3b2bdf228626c0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "function:f183cb9b1fd38d1de1b8fc374156f42a",
+      "kind": "contains"
+    },
+    {
+      "source": "function:f183cb9b1fd38d1de1b8fc374156f42a",
+      "target": "variable:891223eb6c6dfe0cc90777d5c4aaa952",
+      "kind": "contains"
+    },
+    {
+      "source": "variable:891223eb6c6dfe0cc90777d5c4aaa952",
+      "target": "function:5080d6db46bf6940d57337282b2ddd99",
+      "kind": "contains"
+    },
+    {
+      "source": "file:literal.ts",
+      "target": "variable:96960f7f9bfcd88cfcd59ca4d26252e2",
+      "kind": "contains"
+    },
+    {
+      "source": "variable:96960f7f9bfcd88cfcd59ca4d26252e2",
+      "target": "function:1765ec628e0e70b019de4c7cb8e49b53",
+      "kind": "contains"
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "function:55af4584f757874c6519a48a5426f4a1",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 1,
+      "column": 33
+    },
+    {
+      "fromNodeId": "function:4f42a975f6a483d5de745f50756e4713",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 1,
+      "column": 59
+    },
+    {
+      "fromNodeId": "constant:97afefc1a73083b2802821b69d016024",
+      "referenceName": "dyn",
+      "referenceKind": "calls",
+      "line": 1,
+      "column": 132
+    },
+    {
+      "fromNodeId": "constant:97afefc1a73083b2802821b69d016024",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 1,
+      "column": 143
+    },
+    {
+      "fromNodeId": "constant:97afefc1a73083b2802821b69d016024",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 1,
+      "column": 163
+    },
+    {
+      "fromNodeId": "function:fa00ece2e2c571fc6712d2c7be0d3f36",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 4,
+      "column": 35
+    },
+    {
+      "fromNodeId": "function:c0f0ae772666f806c68a186c35560bd6",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 5,
+      "column": 39
+    },
+    {
+      "fromNodeId": "file:literal.ts",
+      "referenceName": "Local.run",
+      "referenceKind": "calls",
+      "line": 5,
+      "column": 71
+    },
+    {
+      "fromNodeId": "function:6973b26dca6f3913249b79e833736c10",
+      "referenceName": "Local.run",
+      "referenceKind": "calls",
+      "line": 5,
+      "column": 105
+    },
+    {
+      "fromNodeId": "function:0f0dc2090bd53221be3b2bdf228626c0",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 8,
+      "column": 22
+    },
+    {
+      "fromNodeId": "file:literal.ts",
+      "referenceName": "consume",
+      "referenceKind": "calls",
+      "line": 13,
+      "column": 0
+    },
+    {
+      "fromNodeId": "constant:97afefc1a73083b2802821b69d016024",
+      "referenceName": "helper",
+      "referenceKind": "function_ref",
+      "line": 1,
+      "column": 188
+    }
+  ],
+  "errors": []
+}

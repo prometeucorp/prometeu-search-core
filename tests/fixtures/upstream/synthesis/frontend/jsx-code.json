@@ -1,0 +1,695 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "source": "/** Renders a <Route> in an <Outlet>. */\r\nexport function Page({ items }) {\r\n  const re = /<Fake\\/>/g, s = 'a <Fake />', t = `<Fake /> ${items.map((i) => <Item key={i} />)}`;\r\n  return (\r\n    <Shell title=\"<Fake />\">\r\n      {/* <Fake /> */} Don't <Link to=\"/x\">go</Link> to https://a.b/c\r\n    </Shell>\r\n  );\r\n}",
+      "expected": "                                        \r\nexport function Page({ items }) {\r\n  const re = /        /g, s = '          ', t = `         ${items.map((i) => <Item key={i} />)}`;\r\n  return (\r\n    <Shell title=\"        \">\r\n      {              } Don't <Link to=\"  \">go</Link> to https://a.b/c\r\n    </Shell>\r\n  );\r\n}",
+      "byteExpected": "                                        \r\nexport function Page({ items }) {\r\n  const re = /        /g, s = '          ', t = `         ${items.map((i) => <Item key={i} />)}`;\r\n  return (\r\n    <Shell title=\"        \">\r\n      {              } Don't <Link to=\"  \">go</Link> to https://a.b/c\r\n    </Shell>\r\n  );\r\n}"
+    },
+    {
+      "source": "type Fn = <T>(x: T) => T;\ninterface Call { <T>(x: T): T }\nconst first = <T,>(items: T[]) => items[0];\nconst Table = <Entry extends Base>({ rows }) => <Grid rows={rows} label='a \"b' />;\nconst c = i++ / 2, d = x! < y;",
+      "expected": "type Fn = <T>(x: T) => T;\ninterface Call { <T>(x: T): T }\nconst first = <T,>(items: T[]) => items[0];\nconst Table = <Entry extends Base>({ rows }) => <Grid rows={rows} label='    ' />;\nconst c = i++ / 2, d = x! < y;",
+      "byteExpected": "type Fn = <T>(x: T) => T;\ninterface Call { <T>(x: T): T }\nconst first = <T,>(items: T[]) => items[0];\nconst Table = <Entry extends Base>({ rows }) => <Grid rows={rows} label='    ' />;\nconst c = i++ / 2, d = x! < y;"
+    },
+    {
+      "source": "const a = <p>a } b</p>;",
+      "expected": null,
+      "byteExpected": null
+    },
+    {
+      "source": "function f() {\n  return 1;\n",
+      "expected": null,
+      "byteExpected": null
+    },
+    {
+      "source": "const s = 'open\nconst b = 1;",
+      "expected": null,
+      "byteExpected": null
+    },
+    {
+      "source": "const a = <A><B></A></B>;",
+      "expected": null,
+      "byteExpected": null
+    },
+    {
+      "source": "export function Card() { return <div>decoy</div>; }\n",
+      "expected": "export function Card() { return <div>decoy</div>; }\n",
+      "byteExpected": "export function Card() { return <div>decoy</div>; }\n"
+    },
+    {
+      "source": "export function Card() { return <div>real</div>; }\n",
+      "expected": "export function Card() { return <div>real</div>; }\n",
+      "byteExpected": "export function Card() { return <div>real</div>; }\n"
+    },
+    {
+      "source": "import { Card } from './real/card';\nexport function Grid() { return <div><Card /></div>; }\n",
+      "expected": "import { Card } from '           ';\nexport function Grid() { return <div><Card /></div>; }\n",
+      "byteExpected": "import { Card } from '           ';\nexport function Grid() { return <div><Card /></div>; }\n"
+    },
+    {
+      "source": "export function Row() { return <li>decoy</li>; }\n",
+      "expected": "export function Row() { return <li>decoy</li>; }\n",
+      "byteExpected": "export function Row() { return <li>decoy</li>; }\n"
+    },
+    {
+      "source": "export function Row() { return <li>real</li>; }\n",
+      "expected": "export function Row() { return <li>real</li>; }\n",
+      "byteExpected": "export function Row() { return <li>real</li>; }\n"
+    },
+    {
+      "source": "import { Row } from '@/real/row';\nexport function List() { return <ul><Row /></ul>; }\n",
+      "expected": "import { Row } from '          ';\nexport function List() { return <ul><Row /></ul>; }\n",
+      "byteExpected": "import { Row } from '          ';\nexport function List() { return <ul><Row /></ul>; }\n"
+    },
+    {
+      "source": "export function Pill() { return <span>decoy</span>; }\n",
+      "expected": "export function Pill() { return <span>decoy</span>; }\n",
+      "byteExpected": "export function Pill() { return <span>decoy</span>; }\n"
+    },
+    {
+      "source": "function Pill() { return <span>local</span>; }\nexport function Toolbar() { return <div><Pill /></div>; }\n",
+      "expected": "function Pill() { return <span>local</span>; }\nexport function Toolbar() { return <div><Pill /></div>; }\n",
+      "byteExpected": "function Pill() { return <span>local</span>; }\nexport function Toolbar() { return <div><Pill /></div>; }\n"
+    },
+    {
+      "source": "class CaptureSettings {\n  func sync() {}\n}\n",
+      "expected": "class CaptureSettings {\n  func sync() {}\n}\n",
+      "byteExpected": "class CaptureSettings {\n  func sync() {}\n}\n"
+    },
+    {
+      "source": "export function CaptureSettings() { return <div />; }\n",
+      "expected": "export function CaptureSettings() { return <div />; }\n",
+      "byteExpected": "export function CaptureSettings() { return <div />; }\n"
+    },
+    {
+      "source": "import { CaptureSettings } from './capture-settings';\nexport function Overlay() { return <div><CaptureSettings /></div>; }\n",
+      "expected": "import { CaptureSettings } from '                  ';\nexport function Overlay() { return <div><CaptureSettings /></div>; }\n",
+      "byteExpected": "import { CaptureSettings } from '                  ';\nexport function Overlay() { return <div><CaptureSettings /></div>; }\n"
+    },
+    {
+      "source": "export function Badge() { return <b>1</b>; }\n",
+      "expected": "export function Badge() { return <b>1</b>; }\n",
+      "byteExpected": "export function Badge() { return <b>1</b>; }\n"
+    },
+    {
+      "source": "import { Badge } from './only/badge';\nexport function Header() { return <h1><Badge /></h1>; }\n",
+      "expected": "import { Badge } from '            ';\nexport function Header() { return <h1><Badge /></h1>; }\n",
+      "byteExpected": "import { Badge } from '            ';\nexport function Header() { return <h1><Badge /></h1>; }\n"
+    },
+    {
+      "source": "export default class Document {\n  title = \"\";\n}\n",
+      "expected": "export default class Document {\n  title = \"\";\n}\n",
+      "byteExpected": "export default class Document {\n  title = \"\";\n}\n"
+    },
+    {
+      "source": "export default class User {\n  name = \"\";\n}\n",
+      "expected": "export default class User {\n  name = \"\";\n}\n",
+      "byteExpected": "export default class User {\n  name = \"\";\n}\n"
+    },
+    {
+      "source": "export function PaginatedList<T>({ items }: { items: T[] }) {\n  return <ul>{items.length}</ul>;\n}\n",
+      "expected": "export function PaginatedList<T>({ items }: { items: T[] }) {\n  return <ul>{items.length}</ul>;\n}\n",
+      "byteExpected": "export function PaginatedList<T>({ items }: { items: T[] }) {\n  return <ul>{items.length}</ul>;\n}\n"
+    },
+    {
+      "source": "import * as React from \"react\";\nexport class Badge extends React.Component {\n  render() {\n    return <b />;\n  }\n}\n",
+      "expected": "import * as React from \"     \";\nexport class Badge extends React.Component {\n  render() {\n    return <b />;\n  }\n}\n",
+      "byteExpected": "import * as React from \"     \";\nexport class Badge extends React.Component {\n  render() {\n    return <b />;\n  }\n}\n"
+    },
+    {
+      "source": "import * as React from 'react';\nimport Document from '../models/Document';\nimport User from '../models/User';\nimport { Badge } from './Badge';\nimport { PaginatedList } from './PaginatedList';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n",
+      "expected": "import * as React from '     ';\nimport Document from '                  ';\nimport User from '              ';\nimport { Badge } from '       ';\nimport { PaginatedList } from '               ';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n",
+      "byteExpected": "import * as React from '     ';\nimport Document from '                  ';\nimport User from '              ';\nimport { Badge } from '       ';\nimport { PaginatedList } from '               ';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n"
+    },
+    {
+      "source": "export function Entry() {\n  return <div />;\n}\n",
+      "expected": "export function Entry() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Entry() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "type BaseEntity = { id: string };\n\nexport const Table = <Entry extends BaseEntity>({ data }: { data: Entry[] }) => {\n  return <table>{data.length}</table>;\n};\n",
+      "expected": "type BaseEntity = { id: string };\n\nexport const Table = <Entry extends BaseEntity>({ data }: { data: Entry[] }) => {\n  return <table>{data.length}</table>;\n};\n",
+      "byteExpected": "type BaseEntity = { id: string };\n\nexport const Table = <Entry extends BaseEntity>({ data }: { data: Entry[] }) => {\n  return <table>{data.length}</table>;\n};\n"
+    },
+    {
+      "source": "export function Content() {\n  return <div />;\n}\n\nexport function Icon() {\n  return <svg />;\n}\n",
+      "expected": "export function Content() {\n  return <div />;\n}\n\nexport function Icon() {\n  return <svg />;\n}\n",
+      "byteExpected": "export function Content() {\n  return <div />;\n}\n\nexport function Icon() {\n  return <svg />;\n}\n"
+    },
+    {
+      "source": "export function Widget() {\n  return <div />;\n}\n",
+      "expected": "export function Widget() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Widget() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function Portal({ children }) {\n  return <div>{children}</div>;\n}\n",
+      "expected": "export function Portal({ children }) {\n  return <div>{children}</div>;\n}\n",
+      "byteExpected": "export function Portal({ children }) {\n  return <div>{children}</div>;\n}\n"
+    },
+    {
+      "source": "import * as DropdownMenu from '@radix-ui/react-dropdown-menu';\nimport * as ContextMenu from '@radix-ui/react-context-menu';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === 'dropdown' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === 'dropdown'\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n",
+      "expected": "import * as DropdownMenu from '                             ';\nimport * as ContextMenu from '                            ';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === '        ' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === '        '\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n",
+      "byteExpected": "import * as DropdownMenu from '                             ';\nimport * as ContextMenu from '                            ';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === '        ' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === '        '\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n"
+    },
+    {
+      "source": "export function Row() {\n  return <tr />;\n}\n",
+      "expected": "export function Row() {\n  return <tr />;\n}\n",
+      "byteExpected": "export function Row() {\n  return <tr />;\n}\n"
+    },
+    {
+      "source": "export function Icon() {\n  return <svg />;\n}\n",
+      "expected": "export function Icon() {\n  return <svg />;\n}\n",
+      "byteExpected": "export function Icon() {\n  return <svg />;\n}\n"
+    },
+    {
+      "source": "import { Icon } from './icon';\n\nfunction Row() {\n  return <tr className=\"outer\" />;\n}\n\nexport function Table({ rows }) {\n  const Row = ({ row }) => <tr>{row.name}</tr>;\n  return <table>{rows.map((row) => <Row key={row.id} row={row} />)}</table>;\n}\n\nexport function Toolbar({ actions }) {\n  return (\n    <div>\n      <Icon />\n      {actions.map((action) => {\n        const Icon = action.icon;\n        return <Icon key={action.id} />;\n      })}\n    </div>\n  );\n}\n",
+      "expected": "import { Icon } from '      ';\n\nfunction Row() {\n  return <tr className=\"     \" />;\n}\n\nexport function Table({ rows }) {\n  const Row = ({ row }) => <tr>{row.name}</tr>;\n  return <table>{rows.map((row) => <Row key={row.id} row={row} />)}</table>;\n}\n\nexport function Toolbar({ actions }) {\n  return (\n    <div>\n      <Icon />\n      {actions.map((action) => {\n        const Icon = action.icon;\n        return <Icon key={action.id} />;\n      })}\n    </div>\n  );\n}\n",
+      "byteExpected": "import { Icon } from '      ';\n\nfunction Row() {\n  return <tr className=\"     \" />;\n}\n\nexport function Table({ rows }) {\n  const Row = ({ row }) => <tr>{row.name}</tr>;\n  return <table>{rows.map((row) => <Row key={row.id} row={row} />)}</table>;\n}\n\nexport function Toolbar({ actions }) {\n  return (\n    <div>\n      <Icon />\n      {actions.map((action) => {\n        const Icon = action.icon;\n        return <Icon key={action.id} />;\n      })}\n    </div>\n  );\n}\n"
+    },
+    {
+      "source": "export default function WelcomeScreen() {\n  return <div />;\n}\n",
+      "expected": "export default function WelcomeScreen() {\n  return <div />;\n}\n",
+      "byteExpected": "export default function WelcomeScreen() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function Sidebar() {\n  return <aside />;\n}\n",
+      "expected": "export function Sidebar() {\n  return <aside />;\n}\n",
+      "byteExpected": "export function Sidebar() {\n  return <aside />;\n}\n"
+    },
+    {
+      "source": "export function Header() {\n  return <header />;\n}\n",
+      "expected": "export function Header() {\n  return <header />;\n}\n",
+      "byteExpected": "export function Header() {\n  return <header />;\n}\n"
+    },
+    {
+      "source": "export function Footer() {\n  return <footer />;\n}\n",
+      "expected": "export function Footer() {\n  return <footer />;\n}\n",
+      "byteExpected": "export function Footer() {\n  return <footer />;\n}\n"
+    },
+    {
+      "source": "export function Glyph() {\n  return <i />;\n}\n",
+      "expected": "export function Glyph() {\n  return <i />;\n}\n",
+      "byteExpected": "export function Glyph() {\n  return <i />;\n}\n"
+    },
+    {
+      "source": "export function Icon() {\n  return <svg />;\n}\n",
+      "expected": "export function Icon() {\n  return <svg />;\n}\n",
+      "byteExpected": "export function Icon() {\n  return <svg />;\n}\n"
+    },
+    {
+      "source": "export function Panel() {\n  return <section />;\n}\n",
+      "expected": "export function Panel() {\n  return <section />;\n}\n",
+      "byteExpected": "export function Panel() {\n  return <section />;\n}\n"
+    },
+    {
+      "source": "export default function ExampleApp({ excalidrawLib }) {\n  const { WelcomeScreen, exportToSvg, Sidebar } = excalidrawLib;\n  const renderSidebar = () => {\n    return <Sidebar name=\"custom\" />;\n  };\n  return <div><WelcomeScreen />{renderSidebar()}</div>;\n}\n",
+      "expected": "export default function ExampleApp({ excalidrawLib }) {\n  const { WelcomeScreen, exportToSvg, Sidebar } = excalidrawLib;\n  const renderSidebar = () => {\n    return <Sidebar name=\"      \" />;\n  };\n  return <div><WelcomeScreen />{renderSidebar()}</div>;\n}\n",
+      "byteExpected": "export default function ExampleApp({ excalidrawLib }) {\n  const { WelcomeScreen, exportToSvg, Sidebar } = excalidrawLib;\n  const renderSidebar = () => {\n    return <Sidebar name=\"      \" />;\n  };\n  return <div><WelcomeScreen />{renderSidebar()}</div>;\n}\n"
+    },
+    {
+      "source": "export const Layout = ({ children, Header, Footer }) => {\n  return (\n    <div>\n      {Header && <Header />}\n      {children}\n      {Footer && <Footer />}\n    </div>\n  );\n};\n",
+      "expected": "export const Layout = ({ children, Header, Footer }) => {\n  return (\n    <div>\n      {Header && <Header />}\n      {children}\n      {Footer && <Footer />}\n    </div>\n  );\n};\n",
+      "byteExpected": "export const Layout = ({ children, Header, Footer }) => {\n  return (\n    <div>\n      {Header && <Header />}\n      {children}\n      {Footer && <Footer />}\n    </div>\n  );\n};\n"
+    },
+    {
+      "source": "import * as React from 'react';\n\nexport function Nav({ items, slots: { Panel } }) {\n  const [Icon] = React.useState(null);\n  return (\n    <ul>\n      {items.map(({ icon: Glyph, label }) => <li key={label}><Glyph /><Icon /></li>)}\n      <Panel />\n    </ul>\n  );\n}\n",
+      "expected": "import * as React from '     ';\n\nexport function Nav({ items, slots: { Panel } }) {\n  const [Icon] = React.useState(null);\n  return (\n    <ul>\n      {items.map(({ icon: Glyph, label }) => <li key={label}><Glyph /><Icon /></li>)}\n      <Panel />\n    </ul>\n  );\n}\n",
+      "byteExpected": "import * as React from '     ';\n\nexport function Nav({ items, slots: { Panel } }) {\n  const [Icon] = React.useState(null);\n  return (\n    <ul>\n      {items.map(({ icon: Glyph, label }) => <li key={label}><Glyph /><Icon /></li>)}\n      <Panel />\n    </ul>\n  );\n}\n"
+    },
+    {
+      "source": "export function Icon() {\n  return <svg />;\n}\n",
+      "expected": "export function Icon() {\n  return <svg />;\n}\n",
+      "byteExpected": "export function Icon() {\n  return <svg />;\n}\n"
+    },
+    {
+      "source": "export function StyledItem() {\n  return <li />;\n}\n",
+      "expected": "export function StyledItem() {\n  return <li />;\n}\n",
+      "byteExpected": "export function StyledItem() {\n  return <li />;\n}\n"
+    },
+    {
+      "source": "export function Cell() {\n  return <td />;\n}\n",
+      "expected": "export function Cell() {\n  return <td />;\n}\n",
+      "byteExpected": "export function Cell() {\n  return <td />;\n}\n"
+    },
+    {
+      "source": "export function Menu({ items }) {\n  const Icon = items[0].icon;\n  const renderItem = (item) => <li key={item.id}><Icon /></li>;\n  return <ul>{items.map(renderItem)}</ul>;\n}\n\nexport function Tree({ nodes }) {\n  const StyledItem = ({ label }) => <li>{label}</li>;\n  const renderNode = (node) => <StyledItem key={node.id} label={node.label} />;\n  return <ul>{nodes.map(renderNode)}</ul>;\n}\n",
+      "expected": "export function Menu({ items }) {\n  const Icon = items[0].icon;\n  const renderItem = (item) => <li key={item.id}><Icon /></li>;\n  return <ul>{items.map(renderItem)}</ul>;\n}\n\nexport function Tree({ nodes }) {\n  const StyledItem = ({ label }) => <li>{label}</li>;\n  const renderNode = (node) => <StyledItem key={node.id} label={node.label} />;\n  return <ul>{nodes.map(renderNode)}</ul>;\n}\n",
+      "byteExpected": "export function Menu({ items }) {\n  const Icon = items[0].icon;\n  const renderItem = (item) => <li key={item.id}><Icon /></li>;\n  return <ul>{items.map(renderItem)}</ul>;\n}\n\nexport function Tree({ nodes }) {\n  const StyledItem = ({ label }) => <li>{label}</li>;\n  const renderNode = (node) => <StyledItem key={node.id} label={node.label} />;\n  return <ul>{nodes.map(renderNode)}</ul>;\n}\n"
+    },
+    {
+      "source": "export function Table({ rows, columns }) {\n  function Cell({ value }) {\n    return <td>{value}</td>;\n  }\n  const titles = columns.map(({ Cell, title }) => title);\n  return <table>{rows.map((row) => <tr key={row.id}><Cell value={row.value} /></tr>)}</table>;\n}\n",
+      "expected": "export function Table({ rows, columns }) {\n  function Cell({ value }) {\n    return <td>{value}</td>;\n  }\n  const titles = columns.map(({ Cell, title }) => title);\n  return <table>{rows.map((row) => <tr key={row.id}><Cell value={row.value} /></tr>)}</table>;\n}\n",
+      "byteExpected": "export function Table({ rows, columns }) {\n  function Cell({ value }) {\n    return <td>{value}</td>;\n  }\n  const titles = columns.map(({ Cell, title }) => title);\n  return <table>{rows.map((row) => <tr key={row.id}><Cell value={row.value} /></tr>)}</table>;\n}\n"
+    },
+    {
+      "source": "export function Footer() {\n  return <footer />;\n}\n",
+      "expected": "export function Footer() {\n  return <footer />;\n}\n",
+      "byteExpected": "export function Footer() {\n  return <footer />;\n}\n"
+    },
+    {
+      "source": "export function Fallback() {\n  return <div />;\n}\n",
+      "expected": "export function Fallback() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Fallback() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function Badge() {\n  return <b />;\n}\n",
+      "expected": "export function Badge() {\n  return <b />;\n}\n",
+      "byteExpected": "export function Badge() {\n  return <b />;\n}\n"
+    },
+    {
+      "source": "export function Legacy() {\n  return <div />;\n}\n",
+      "expected": "export function Legacy() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Legacy() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function Chart() {\n  return <canvas />;\n}\n",
+      "expected": "export function Chart() {\n  return <canvas />;\n}\n",
+      "byteExpected": "export function Chart() {\n  return <canvas />;\n}\n"
+    },
+    {
+      "source": "import { Footer } from './footer';\nimport { Fallback } from './fallback';\nimport { Badge } from './badge';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n",
+      "expected": "import { Footer } from '        ';\nimport { Fallback } from '          ';\nimport { Badge } from '       ';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n",
+      "byteExpected": "import { Footer } from '        ';\nimport { Fallback } from '          ';\nimport { Badge } from '       ';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n"
+    },
+    {
+      "source": "function LegacyPage() {\n  const { Legacy } = require('./legacy');\n  return <Legacy />;\n}\n\nasync function renderChart() {\n  const { Chart } = await import('./chart');\n  return <Chart />;\n}\n\nmodule.exports = { LegacyPage, renderChart };\n",
+      "expected": "function LegacyPage() {\n  const { Legacy } = require('        ');\n  return <Legacy />;\n}\n\nasync function renderChart() {\n  const { Chart } = await import('       ');\n  return <Chart />;\n}\n\nmodule.exports = { LegacyPage, renderChart };\n",
+      "byteExpected": "function LegacyPage() {\n  const { Legacy } = require('        ');\n  return <Legacy />;\n}\n\nasync function renderChart() {\n  const { Chart } = await import('       ');\n  return <Chart />;\n}\n\nmodule.exports = { LegacyPage, renderChart };\n"
+    },
+    {
+      "source": "export function Title() {\n  return <h1 />;\n}\n",
+      "expected": "export function Title() {\n  return <h1 />;\n}\n",
+      "byteExpected": "export function Title() {\n  return <h1 />;\n}\n"
+    },
+    {
+      "source": "export function Text() {\n  return <span />;\n}\n",
+      "expected": "export function Text() {\n  return <span />;\n}\n",
+      "byteExpected": "export function Text() {\n  return <span />;\n}\n"
+    },
+    {
+      "source": "import { Typography } from 'antd';\n\nconst { Title, Text } = Typography;\n\nexport function PostShow({ post }) {\n  return (\n    <div>\n      <Title level={5}>Title</Title>\n      <Text>{post.title}</Text>\n    </div>\n  );\n}\n\nexport function Summary() {\n  function Text({ children }) {\n    return <p>{children}</p>;\n  }\n  return <Text>summary</Text>;\n}\n",
+      "expected": "import { Typography } from '    ';\n\nconst { Title, Text } = Typography;\n\nexport function PostShow({ post }) {\n  return (\n    <div>\n      <Title level={5}>Title</Title>\n      <Text>{post.title}</Text>\n    </div>\n  );\n}\n\nexport function Summary() {\n  function Text({ children }) {\n    return <p>{children}</p>;\n  }\n  return <Text>summary</Text>;\n}\n",
+      "byteExpected": "import { Typography } from '    ';\n\nconst { Title, Text } = Typography;\n\nexport function PostShow({ post }) {\n  return (\n    <div>\n      <Title level={5}>Title</Title>\n      <Text>{post.title}</Text>\n    </div>\n  );\n}\n\nexport function Summary() {\n  function Text({ children }) {\n    return <p>{children}</p>;\n  }\n  return <Text>summary</Text>;\n}\n"
+    },
+    {
+      "source": "export function Legacy() {\n  return <div />;\n}\n",
+      "expected": "export function Legacy() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Legacy() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function Badge() {\n  return <b />;\n}\n",
+      "expected": "export function Badge() {\n  return <b />;\n}\n",
+      "byteExpected": "export function Badge() {\n  return <b />;\n}\n"
+    },
+    {
+      "source": "export function Chart() {\n  return <canvas />;\n}\n",
+      "expected": "export function Chart() {\n  return <canvas />;\n}\n",
+      "byteExpected": "export function Chart() {\n  return <canvas />;\n}\n"
+    },
+    {
+      "source": "const { Legacy } = require('./legacy');\n\n[1].forEach(({ Badge }) => Badge);\n\nfunction helper(props) {\n  const { Chart } = props;\n  return Chart;\n}\n\nexport function Page() {\n  return <div><Legacy /><Badge /><Chart />{helper}</div>;\n}\n",
+      "expected": "const { Legacy } = require('        ');\n\n[1].forEach(({ Badge }) => Badge);\n\nfunction helper(props) {\n  const { Chart } = props;\n  return Chart;\n}\n\nexport function Page() {\n  return <div><Legacy /><Badge /><Chart />{helper}</div>;\n}\n",
+      "byteExpected": "const { Legacy } = require('        ');\n\n[1].forEach(({ Badge }) => Badge);\n\nfunction helper(props) {\n  const { Chart } = props;\n  return Chart;\n}\n\nexport function Page() {\n  return <div><Legacy /><Badge /><Chart />{helper}</div>;\n}\n"
+    },
+    {
+      "source": "export default class Document {\n  title = \"\";\n}\n",
+      "expected": "export default class Document {\n  title = \"\";\n}\n",
+      "byteExpected": "export default class Document {\n  title = \"\";\n}\n"
+    },
+    {
+      "source": "export class Mode {\n  name = \"\";\n}\n",
+      "expected": "export class Mode {\n  name = \"\";\n}\n",
+      "byteExpected": "export class Mode {\n  name = \"\";\n}\n"
+    },
+    {
+      "source": "type PaginatedItem = { id: string };\n\nconst PaginatedList = <T extends PaginatedItem>({ items }: { items: T[] }) => {\n  return <ul>{items.length}</ul>;\n};\n\nexport default PaginatedList;\n",
+      "expected": "type PaginatedItem = { id: string };\n\nconst PaginatedList = <T extends PaginatedItem>({ items }: { items: T[] }) => {\n  return <ul>{items.length}</ul>;\n};\n\nexport default PaginatedList;\n",
+      "byteExpected": "type PaginatedItem = { id: string };\n\nconst PaginatedList = <T extends PaginatedItem>({ items }: { items: T[] }) => {\n  return <ul>{items.length}</ul>;\n};\n\nexport default PaginatedList;\n"
+    },
+    {
+      "source": "export const RadioSelection = <T extends Object>({ value }: { value: T }) => {\n  return <div>{String(value)}</div>;\n};\n",
+      "expected": "export const RadioSelection = <T extends Object>({ value }: { value: T }) => {\n  return <div>{String(value)}</div>;\n};\n",
+      "byteExpected": "export const RadioSelection = <T extends Object>({ value }: { value: T }) => {\n  return <div>{String(value)}</div>;\n};\n"
+    },
+    {
+      "source": "export function DataTable<Row, Column>({ children }: { rows: Row[]; columns: Column[]; children?: unknown }) {\n  return <table>{children}</table>;\n}\n",
+      "expected": "export function DataTable<Row, Column>({ children }: { rows: Row[]; columns: Column[]; children?: unknown }) {\n  return <table>{children}</table>;\n}\n",
+      "byteExpected": "export function DataTable<Row, Column>({ children }: { rows: Row[]; columns: Column[]; children?: unknown }) {\n  return <table>{children}</table>;\n}\n"
+    },
+    {
+      "source": "import PaginatedList from './PaginatedList';\nimport { RadioSelection } from './RadioSelection';\nimport { DataTable } from './DataTable';\nimport Document from '../models/Document';\nimport { Mode } from '../models/Mode';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "expected": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "byteExpected": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n"
+    },
+    {
+      "source": "import * as React from 'react';\n\nexport class Grid<Row> extends React.Component<{ rows: Row[] }> {\n  render() {\n    return <table>{this.props.rows.length}</table>;\n  }\n}\n",
+      "expected": "import * as React from '     ';\n\nexport class Grid<Row> extends React.Component<{ rows: Row[] }> {\n  render() {\n    return <table>{this.props.rows.length}</table>;\n  }\n}\n",
+      "byteExpected": "import * as React from '     ';\n\nexport class Grid<Row> extends React.Component<{ rows: Row[] }> {\n  render() {\n    return <table>{this.props.rows.length}</table>;\n  }\n}\n"
+    },
+    {
+      "source": "import * as React from 'react';\nimport { Grid } from './Grid';\n\nexport function Report({ rows }: { rows: string[] }) {\n  const grid = React.useRef<Grid<string>>(null);\n  const [grids] = React.useState<Array<Grid<string>>>([]);\n  return <section>{rows.length + grids.length}</section>;\n}\n",
+      "expected": "import * as React from '     ';\nimport { Grid } from '      ';\n\nexport function Report({ rows }: { rows: string[] }) {\n  const grid = React.useRef<Grid<string>>(null);\n  const [grids] = React.useState<Array<Grid<string>>>([]);\n  return <section>{rows.length + grids.length}</section>;\n}\n",
+      "byteExpected": "import * as React from '     ';\nimport { Grid } from '      ';\n\nexport function Report({ rows }: { rows: string[] }) {\n  const grid = React.useRef<Grid<string>>(null);\n  const [grids] = React.useState<Array<Grid<string>>>([]);\n  return <section>{rows.length + grids.length}</section>;\n}\n"
+    },
+    {
+      "source": "export function Select() {\n  return <select />;\n}\n",
+      "expected": "export function Select() {\n  return <select />;\n}\n",
+      "byteExpected": "export function Select() {\n  return <select />;\n}\n"
+    },
+    {
+      "source": "export function Table() {\n  return <table />;\n}\n",
+      "expected": "export function Table() {\n  return <table />;\n}\n",
+      "byteExpected": "export function Table() {\n  return <table />;\n}\n"
+    },
+    {
+      "source": "import { Select } from 'react95';\nimport { Table } from 'antd';\n\ntype IPost = { id: number };\n\nexport function PostList({ posts }: { posts: IPost[] }) {\n  return (\n    <div>\n      <Select<number> options={[]} />\n      <Table<IPost> dataSource={posts} />\n    </div>\n  );\n}\n",
+      "expected": "import { Select } from '       ';\nimport { Table } from '    ';\n\ntype IPost = { id: number };\n\nexport function PostList({ posts }: { posts: IPost[] }) {\n  return (\n    <div>\n      <Select<number> options={[]} />\n      <Table<IPost> dataSource={posts} />\n    </div>\n  );\n}\n",
+      "byteExpected": "import { Select } from '       ';\nimport { Table } from '    ';\n\ntype IPost = { id: number };\n\nexport function PostList({ posts }: { posts: IPost[] }) {\n  return (\n    <div>\n      <Select<number> options={[]} />\n      <Table<IPost> dataSource={posts} />\n    </div>\n  );\n}\n"
+    },
+    {
+      "source": "export default function RegisterPage() {\n  return <div />;\n}\n",
+      "expected": "export default function RegisterPage() {\n  return <div />;\n}\n",
+      "byteExpected": "export default function RegisterPage() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export default function Register() {\n  return <div />;\n}\n",
+      "expected": "export default function Register() {\n  return <div />;\n}\n",
+      "byteExpected": "export default function Register() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "import { lazy } from 'react';\nimport Loadable from '../components/Loadable';\n\nconst RegisterPage = Loadable(lazy(() => import('../pages/auth/Register')));\n\nexport function AuthShell() {\n  return <main><RegisterPage /></main>;\n}\n",
+      "expected": "import { lazy } from '     ';\nimport Loadable from '                      ';\n\nconst RegisterPage = Loadable(lazy(() => import('                      ')));\n\nexport function AuthShell() {\n  return <main><RegisterPage /></main>;\n}\n",
+      "byteExpected": "import { lazy } from '     ';\nimport Loadable from '                      ';\n\nconst RegisterPage = Loadable(lazy(() => import('                      ')));\n\nexport function AuthShell() {\n  return <main><RegisterPage /></main>;\n}\n"
+    },
+    {
+      "source": "export default function LoginPage() {\n  return <div />;\n}\n",
+      "expected": "export default function LoginPage() {\n  return <div />;\n}\n",
+      "byteExpected": "export default function LoginPage() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "import { lazy } from 'react';\nimport Loadable from '../components/Loadable';\n\n// An import only the app's own build resolves (`baseUrl`).\nconst LoginPage = Loadable(lazy(() => import('pages/auth/Login')));\n\nexport function AuthShell() {\n  return <main>Sign in <LoginPage /></main>;\n}\n",
+      "expected": "import { lazy } from '     ';\nimport Loadable from '                      ';\n\n                                                           \nconst LoginPage = Loadable(lazy(() => import('                ')));\n\nexport function AuthShell() {\n  return <main>Sign in <LoginPage /></main>;\n}\n",
+      "byteExpected": "import { lazy } from '     ';\nimport Loadable from '                      ';\n\n                                                           \nconst LoginPage = Loadable(lazy(() => import('                ')));\n\nexport function AuthShell() {\n  return <main>Sign in <LoginPage /></main>;\n}\n"
+    },
+    {
+      "source": "const Excalidraw = React.forwardRef((props, ref) => <div ref={ref} />);\nexport default { Excalidraw };\n",
+      "expected": "const Excalidraw = React.forwardRef((props, ref) => <div ref={ref} />);\nexport default { Excalidraw };\n",
+      "byteExpected": "const Excalidraw = React.forwardRef((props, ref) => <div ref={ref} />);\nexport default { Excalidraw };\n"
+    },
+    {
+      "source": "const ExcalidrawWrapper = () => {\n  return <div />;\n};\nexport default ExcalidrawWrapper;\n",
+      "expected": "const ExcalidrawWrapper = () => {\n  return <div />;\n};\nexport default ExcalidrawWrapper;\n",
+      "byteExpected": "const ExcalidrawWrapper = () => {\n  return <div />;\n};\nexport default ExcalidrawWrapper;\n"
+    },
+    {
+      "source": "import dynamic from 'next/dynamic';\n\nconst Excalidraw = dynamic(\n  async () => (await import('../excalidrawWrapper')).default,\n  {\n    ssr: false,\n  },\n);\n\nexport default function Page() {\n  return <Excalidraw />;\n}\n",
+      "expected": "import dynamic from '            ';\n\nconst Excalidraw = dynamic(\n  async () => (await import('                    ')).default,\n  {\n    ssr: false,\n  },\n);\n\nexport default function Page() {\n  return <Excalidraw />;\n}\n",
+      "byteExpected": "import dynamic from '            ';\n\nconst Excalidraw = dynamic(\n  async () => (await import('                    ')).default,\n  {\n    ssr: false,\n  },\n);\n\nexport default function Page() {\n  return <Excalidraw />;\n}\n"
+    },
+    {
+      "source": "export function LineChart() {\n  return <svg />;\n}\n",
+      "expected": "export function LineChart() {\n  return <svg />;\n}\n",
+      "byteExpected": "export function LineChart() {\n  return <svg />;\n}\n"
+    },
+    {
+      "source": "export function LineChart() {\n  return <svg />;\n}\n",
+      "expected": "export function LineChart() {\n  return <svg />;\n}\n",
+      "byteExpected": "export function LineChart() {\n  return <svg />;\n}\n"
+    },
+    {
+      "source": "export default function Fallback() {\n  return null;\n}\nexport * from './line-chart';\n",
+      "expected": "export default function Fallback() {\n  return null;\n}\nexport * from '            ';\n",
+      "byteExpected": "export default function Fallback() {\n  return null;\n}\nexport * from '            ';\n"
+    },
+    {
+      "source": "import { lazy } from 'react';\nconst LineChart = lazy(() => import('./charts').then((m) => ({ default: m.LineChart })));\nexport function Dashboard() {\n  return <LineChart />;\n}\n",
+      "expected": "import { lazy } from '     ';\nconst LineChart = lazy(() => import('        ').then((m) => ({ default: m.LineChart })));\nexport function Dashboard() {\n  return <LineChart />;\n}\n",
+      "byteExpected": "import { lazy } from '     ';\nconst LineChart = lazy(() => import('        ').then((m) => ({ default: m.LineChart })));\nexport function Dashboard() {\n  return <LineChart />;\n}\n"
+    },
+    {
+      "source": "export function Login() {\n  return <form />;\n}\n",
+      "expected": "export function Login() {\n  return <form />;\n}\n",
+      "byteExpected": "export function Login() {\n  return <form />;\n}\n"
+    },
+    {
+      "source": "import { observer } from 'mobx-react';\nfunction Login() {\n  return <form />;\n}\n\nexport default observer(Login);\n",
+      "expected": "import { observer } from '          ';\nfunction Login() {\n  return <form />;\n}\n\nexport default observer(Login);\n",
+      "byteExpected": "import { observer } from '          ';\nfunction Login() {\n  return <form />;\n}\n\nexport default observer(Login);\n"
+    },
+    {
+      "source": "import Login from \"./Login\";\n\nexport default Login;\n",
+      "expected": "import Login from \"       \";\n\nexport default Login;\n",
+      "byteExpected": "import Login from \"       \";\n\nexport default Login;\n"
+    },
+    {
+      "source": "import { lazy } from 'react';\nconst Login = lazy(() => import('../Login'));\nexport function SharedScene() {\n  return <Login />;\n}\n",
+      "expected": "import { lazy } from '     ';\nconst Login = lazy(() => import('        '));\nexport function SharedScene() {\n  return <Login />;\n}\n",
+      "byteExpected": "import { lazy } from '     ';\nconst Login = lazy(() => import('        '));\nexport function SharedScene() {\n  return <Login />;\n}\n"
+    },
+    {
+      "source": "export function DialogPortal() {\n  return <div />;\n}\n",
+      "expected": "export function DialogPortal() {\n  return <div />;\n}\n",
+      "byteExpected": "export function DialogPortal() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "import { observer } from 'mobx-react';\nimport * as DialogPrimitive from '@radix-ui/react-dialog';\n\nconst DialogPortal = DialogPrimitive.Portal;\n\nconst Application = observer(function Application() {\n  return <div />;\n});\n\nfunction TableViewInner() {\n  return <table />;\n}\n\nconst TableView = observer(TableViewInner) as typeof TableViewInner;\n\nexport function Settings() {\n  return <DialogPortal><Application /><TableView /></DialogPortal>;\n}\n",
+      "expected": "import { observer } from '          ';\nimport * as DialogPrimitive from '                      ';\n\nconst DialogPortal = DialogPrimitive.Portal;\n\nconst Application = observer(function Application() {\n  return <div />;\n});\n\nfunction TableViewInner() {\n  return <table />;\n}\n\nconst TableView = observer(TableViewInner) as typeof TableViewInner;\n\nexport function Settings() {\n  return <DialogPortal><Application /><TableView /></DialogPortal>;\n}\n",
+      "byteExpected": "import { observer } from '          ';\nimport * as DialogPrimitive from '                      ';\n\nconst DialogPortal = DialogPrimitive.Portal;\n\nconst Application = observer(function Application() {\n  return <div />;\n});\n\nfunction TableViewInner() {\n  return <table />;\n}\n\nconst TableView = observer(TableViewInner) as typeof TableViewInner;\n\nexport function Settings() {\n  return <DialogPortal><Application /><TableView /></DialogPortal>;\n}\n"
+    },
+    {
+      "source": "export class TableView {}\n",
+      "expected": "export class TableView {}\n",
+      "byteExpected": "export class TableView {}\n"
+    },
+    {
+      "source": "export function AuthZDevModal() {\n  return <div />;\n}\n",
+      "expected": "export function AuthZDevModal() {\n  return <div />;\n}\n",
+      "byteExpected": "export function AuthZDevModal() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function Combobox() {\n  return <div />;\n}\n",
+      "expected": "export function Combobox() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Combobox() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function MemoizedRows() {\n  return <div />;\n}\n",
+      "expected": "export function MemoizedRows() {\n  return <div />;\n}\n",
+      "byteExpected": "export function MemoizedRows() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export function AuthZDevModal() {\n  return <dialog />;\n}\n",
+      "expected": "export function AuthZDevModal() {\n  return <dialog />;\n}\n",
+      "byteExpected": "export function AuthZDevModal() {\n  return <dialog />;\n}\n"
+    },
+    {
+      "source": "import React, { forwardRef } from 'react';\n\nconst IS_DEV = process.env.NODE_ENV === 'development';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('./lib/devtools/AuthZDevModal').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "expected": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "byteExpected": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n"
+    },
+    {
+      "source": "export function Schema() {\n  return <div />;\n}\n",
+      "expected": "export function Schema() {\n  return <div />;\n}\n",
+      "byteExpected": "export function Schema() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "export default function Heavy() {\n  return <div />;\n}\n",
+      "expected": "export default function Heavy() {\n  return <div />;\n}\n",
+      "byteExpected": "export default function Heavy() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "import { z } from 'zod';\nimport { useForm } from 'react-hook-form';\nimport { withFallback } from './fallback';\n\nconst Schema = z.object({ name: z.string() });\ntype Schema = z.infer<typeof Schema>;\n\nconst Dialog = withFallback('Dialog', (props) => {\n  const load = () => import('./heavy');\n  return <div onClick={load} />;\n});\n\nexport function Form() {\n  const form = useForm<Schema>();\n  return <form><Dialog /></form>;\n}\n",
+      "expected": "import { z } from '   ';\nimport { useForm } from '               ';\nimport { withFallback } from '          ';\n\nconst Schema = z.object({ name: z.string() });\ntype Schema = z.infer<typeof Schema>;\n\nconst Dialog = withFallback('      ', (props) => {\n  const load = () => import('       ');\n  return <div onClick={load} />;\n});\n\nexport function Form() {\n  const form = useForm<Schema>();\n  return <form><Dialog /></form>;\n}\n",
+      "byteExpected": "import { z } from '   ';\nimport { useForm } from '               ';\nimport { withFallback } from '          ';\n\nconst Schema = z.object({ name: z.string() });\ntype Schema = z.infer<typeof Schema>;\n\nconst Dialog = withFallback('      ', (props) => {\n  const load = () => import('       ');\n  return <div onClick={load} />;\n});\n\nexport function Form() {\n  const form = useForm<Schema>();\n  return <form><Dialog /></form>;\n}\n"
+    },
+    {
+      "source": "export function withFallback(name, render) {\n  return render;\n}\n",
+      "expected": "export function withFallback(name, render) {\n  return render;\n}\n",
+      "byteExpected": "export function withFallback(name, render) {\n  return render;\n}\n"
+    },
+    {
+      "source": "export function User() {\n  return <div />;\n}\n",
+      "expected": "export function User() {\n  return <div />;\n}\n",
+      "byteExpected": "export function User() {\n  return <div />;\n}\n"
+    },
+    {
+      "source": "import { z } from 'zod';\n\nconst User = z.object({ name: z.string() });\ntype User = z.infer<typeof User>;\n\nexport function ProfileForm({ user }: { user: User }) {\n  return <form>{user.name}</form>;\n}\n",
+      "expected": "import { z } from '   ';\n\nconst User = z.object({ name: z.string() });\ntype User = z.infer<typeof User>;\n\nexport function ProfileForm({ user }: { user: User }) {\n  return <form>{user.name}</form>;\n}\n",
+      "byteExpected": "import { z } from '   ';\n\nconst User = z.object({ name: z.string() });\ntype User = z.infer<typeof User>;\n\nexport function ProfileForm({ user }: { user: User }) {\n  return <form>{user.name}</form>;\n}\n"
+    },
+    {
+      "source": "export function Sidebar() {\n  return <aside />;\n}\n",
+      "expected": "export function Sidebar() {\n  return <aside />;\n}\n",
+      "byteExpected": "export function Sidebar() {\n  return <aside />;\n}\n"
+    },
+    {
+      "source": "import { observer } from 'mobx-react';\n\nfunction AppSidebar() {\n  return <nav />;\n}\n\nexport default observer(AppSidebar);\n",
+      "expected": "import { observer } from '          ';\n\nfunction AppSidebar() {\n  return <nav />;\n}\n\nexport default observer(AppSidebar);\n",
+      "byteExpected": "import { observer } from '          ';\n\nfunction AppSidebar() {\n  return <nav />;\n}\n\nexport default observer(AppSidebar);\n"
+    },
+    {
+      "source": "import Sidebar from './App';\n\nexport default Sidebar;\n",
+      "expected": "import Sidebar from '     ';\n\nexport default Sidebar;\n",
+      "byteExpected": "import Sidebar from '     ';\n\nexport default Sidebar;\n"
+    },
+    {
+      "source": "import Sidebar from './Sidebar';\n\nexport function AuthenticatedLayout() {\n  return <main><Sidebar /></main>;\n}\n",
+      "expected": "import Sidebar from '         ';\n\nexport function AuthenticatedLayout() {\n  return <main><Sidebar /></main>;\n}\n",
+      "byteExpected": "import Sidebar from '         ';\n\nexport function AuthenticatedLayout() {\n  return <main><Sidebar /></main>;\n}\n"
+    },
+    {
+      "source": "export function StaticCanvas() {\n  return <canvas id=\"decoy\" />;\n}\n",
+      "expected": "export function StaticCanvas() {\n  return <canvas id=\"     \" />;\n}\n",
+      "byteExpected": "export function StaticCanvas() {\n  return <canvas id=\"     \" />;\n}\n"
+    },
+    {
+      "source": "import React from 'react';\n\nconst StaticCanvas = () => {\n  return <canvas />;\n};\n\nconst areEqual = () => true;\n\nexport default React.memo(StaticCanvas, areEqual);\n",
+      "expected": "import React from '     ';\n\nconst StaticCanvas = () => {\n  return <canvas />;\n};\n\nconst areEqual = () => true;\n\nexport default React.memo(StaticCanvas, areEqual);\n",
+      "byteExpected": "import React from '     ';\n\nconst StaticCanvas = () => {\n  return <canvas />;\n};\n\nconst areEqual = () => true;\n\nexport default React.memo(StaticCanvas, areEqual);\n"
+    },
+    {
+      "source": "import StaticCanvas from './StaticCanvas';\n\nexport { StaticCanvas };\n",
+      "expected": "import StaticCanvas from '              ';\n\nexport { StaticCanvas };\n",
+      "byteExpected": "import StaticCanvas from '              ';\n\nexport { StaticCanvas };\n"
+    },
+    {
+      "source": "import { StaticCanvas } from './canvases';\n\nexport function App() {\n  return <div><StaticCanvas /></div>;\n}\n",
+      "expected": "import { StaticCanvas } from '          ';\n\nexport function App() {\n  return <div><StaticCanvas /></div>;\n}\n",
+      "byteExpected": "import { StaticCanvas } from '          ';\n\nexport function App() {\n  return <div><StaticCanvas /></div>;\n}\n"
+    },
+    {
+      "source": "import React from 'react';\n\nexport const Inner = React.forwardRef<HTMLSpanElement, object>((props, ref) => <span ref={ref} {...props} />);\n\nfunction Button(props: object, ref: React.Ref<HTMLButtonElement>) {\n  return <button ref={ref}><Inner /></button>;\n}\n\nexport default React.forwardRef<HTMLButtonElement, object>(Button);\n",
+      "expected": "import React from '     ';\n\nexport const Inner = React.forwardRef<HTMLSpanElement, object>((props, ref) => <span ref={ref} {...props} />);\n\nfunction Button(props: object, ref: React.Ref<HTMLButtonElement>) {\n  return <button ref={ref}><Inner /></button>;\n}\n\nexport default React.forwardRef<HTMLButtonElement, object>(Button);\n",
+      "byteExpected": "import React from '     ';\n\nexport const Inner = React.forwardRef<HTMLSpanElement, object>((props, ref) => <span ref={ref} {...props} />);\n\nfunction Button(props: object, ref: React.Ref<HTMLButtonElement>) {\n  return <button ref={ref}><Inner /></button>;\n}\n\nexport default React.forwardRef<HTMLButtonElement, object>(Button);\n"
+    },
+    {
+      "source": "import ToolbarButton from './Button';\n\nexport function Toolbar() {\n  return <div><ToolbarButton /></div>;\n}\n",
+      "expected": "import ToolbarButton from '        ';\n\nexport function Toolbar() {\n  return <div><ToolbarButton /></div>;\n}\n",
+      "byteExpected": "import ToolbarButton from '        ';\n\nexport function Toolbar() {\n  return <div><ToolbarButton /></div>;\n}\n"
+    },
+    {
+      "source": "export function Button() {\n  return <button />;\n}\n",
+      "expected": "export function Button() {\n  return <button />;\n}\n",
+      "byteExpected": "export function Button() {\n  return <button />;\n}\n"
+    },
+    {
+      "source": "export * from './button';\n",
+      "expected": "export * from '        ';\n",
+      "byteExpected": "export * from '        ';\n"
+    },
+    {
+      "source": "import { Button } from '@/components/ui/button';\n\nexport function LoginForm() {\n  return <form><Button /></form>;\n}\n",
+      "expected": "import { Button } from '                      ';\n\nexport function LoginForm() {\n  return <form><Button /></form>;\n}\n",
+      "byteExpected": "import { Button } from '                      ';\n\nexport function LoginForm() {\n  return <form><Button /></form>;\n}\n"
+    },
+    {
+      "source": "import { memo } from 'react';\n\nfunction Blurhash({ hash }: { hash: string }) {\n  return <canvas data-hash={hash} />;\n}\n\nconst MemoizedBlurhash = memo(Blurhash);\n\nexport { MemoizedBlurhash as Blurhash };\n",
+      "expected": "import { memo } from '     ';\n\nfunction Blurhash({ hash }: { hash: string }) {\n  return <canvas data-hash={hash} />;\n}\n\nconst MemoizedBlurhash = memo(Blurhash);\n\nexport { MemoizedBlurhash as Blurhash };\n",
+      "byteExpected": "import { memo } from '     ';\n\nfunction Blurhash({ hash }: { hash: string }) {\n  return <canvas data-hash={hash} />;\n}\n\nconst MemoizedBlurhash = memo(Blurhash);\n\nexport { MemoizedBlurhash as Blurhash };\n"
+    },
+    {
+      "source": "import { Blurhash } from './blurhash';\n\nexport function MediaItem() {\n  return <div><Blurhash hash=\"x\" /></div>;\n}\n",
+      "expected": "import { Blurhash } from '          ';\n\nexport function MediaItem() {\n  return <div><Blurhash hash=\" \" /></div>;\n}\n",
+      "byteExpected": "import { Blurhash } from '          ';\n\nexport function MediaItem() {\n  return <div><Blurhash hash=\" \" /></div>;\n}\n"
+    },
+    {
+      "source": "import { observer } from 'mobx-react';\n\nfunction Avatar() {\n  return <img />;\n}\n\nexport default observer(Avatar);\n",
+      "expected": "import { observer } from '          ';\n\nfunction Avatar() {\n  return <img />;\n}\n\nexport default observer(Avatar);\n",
+      "byteExpected": "import { observer } from '          ';\n\nfunction Avatar() {\n  return <img />;\n}\n\nexport default observer(Avatar);\n"
+    },
+    {
+      "source": "import { observer } from 'mobx-react';\nimport Avatar from './Avatar';\n\nfunction AvatarWithHoverCard() {\n  return <div><Avatar /></div>;\n}\n\nexport default observer(AvatarWithHoverCard);\n",
+      "expected": "import { observer } from '          ';\nimport Avatar from '        ';\n\nfunction AvatarWithHoverCard() {\n  return <div><Avatar /></div>;\n}\n\nexport default observer(AvatarWithHoverCard);\n",
+      "byteExpected": "import { observer } from '          ';\nimport Avatar from '        ';\n\nfunction AvatarWithHoverCard() {\n  return <div><Avatar /></div>;\n}\n\nexport default observer(AvatarWithHoverCard);\n"
+    },
+    {
+      "source": "import AvatarWithHoverCard from './AvatarWithHoverCard';\n\nconst Avatar = AvatarWithHoverCard;\n\nexport { Avatar };\n",
+      "expected": "import AvatarWithHoverCard from '                     ';\n\nconst Avatar = AvatarWithHoverCard;\n\nexport { Avatar };\n",
+      "byteExpected": "import AvatarWithHoverCard from '                     ';\n\nconst Avatar = AvatarWithHoverCard;\n\nexport { Avatar };\n"
+    },
+    {
+      "source": "import { Avatar } from '~/components/Avatar';\n\nexport function CommentForm() {\n  return <form><Avatar /></form>;\n}\n",
+      "expected": "import { Avatar } from '                   ';\n\nexport function CommentForm() {\n  return <form><Avatar /></form>;\n}\n",
+      "byteExpected": "import { Avatar } from '                   ';\n\nexport function CommentForm() {\n  return <form><Avatar /></form>;\n}\n"
+    },
+    {
+      "source": "export function Primary() {\n  return <b />;\n}\n",
+      "expected": "export function Primary() {\n  return <b />;\n}\n",
+      "byteExpected": "export function Primary() {\n  return <b />;\n}\n"
+    },
+    {
+      "source": "export function Secondary() {\n  return <i />;\n}\n",
+      "expected": "export function Secondary() {\n  return <i />;\n}\n",
+      "byteExpected": "export function Secondary() {\n  return <i />;\n}\n"
+    },
+    {
+      "source": "import { Primary } from './Primary';\nimport { Secondary } from './Secondary';\n\nlet Button = Primary;\nif (globalThis.compact) Button = Secondary;\n\nexport { Button };\n",
+      "expected": "import { Primary } from '         ';\nimport { Secondary } from '           ';\n\nlet Button = Primary;\nif (globalThis.compact) Button = Secondary;\n\nexport { Button };\n",
+      "byteExpected": "import { Primary } from '         ';\nimport { Secondary } from '           ';\n\nlet Button = Primary;\nif (globalThis.compact) Button = Secondary;\n\nexport { Button };\n"
+    },
+    {
+      "source": "import { Button } from './Button';\n\nexport function Toolbar() {\n  return <div><Button /></div>;\n}\n",
+      "expected": "import { Button } from '        ';\n\nexport function Toolbar() {\n  return <div><Button /></div>;\n}\n",
+      "byteExpected": "import { Button } from '        ';\n\nexport function Toolbar() {\n  return <div><Button /></div>;\n}\n"
+    },
+    {
+      "source": "export function Footer() {\n  return <div className=\"app-footer\" />;\n}\n",
+      "expected": "export function Footer() {\n  return <div className=\"          \" />;\n}\n",
+      "byteExpected": "export function Footer() {\n  return <div className=\"          \" />;\n}\n"
+    },
+    {
+      "source": "export const Link = ({ href }: { href: string }) => <a href={href} />;\n\nexport default ({ url }: { url: string }) => (\n  <footer><Link href={url} /></footer>\n);\n",
+      "expected": "export const Link = ({ href }: { href: string }) => <a href={href} />;\n\nexport default ({ url }: { url: string }) => (\n  <footer><Link href={url} /></footer>\n);\n",
+      "byteExpected": "export const Link = ({ href }: { href: string }) => <a href={href} />;\n\nexport default ({ url }: { url: string }) => (\n  <footer><Link href={url} /></footer>\n);\n"
+    },
+    {
+      "source": "import Footer from './components/Footer';\n\nexport function Welcome() {\n  return <div><Footer url=\"/\" /></div>;\n}\n",
+      "expected": "import Footer from '                   ';\n\nexport function Welcome() {\n  return <div><Footer url=\" \" /></div>;\n}\n",
+      "byteExpected": "import Footer from '                   ';\n\nexport function Welcome() {\n  return <div><Footer url=\" \" /></div>;\n}\n"
+    },
+    {
+      "source": "export function Card() {\n  return <div id=\"decoy\" />;\n}\n",
+      "expected": "export function Card() {\n  return <div id=\"     \" />;\n}\n",
+      "byteExpected": "export function Card() {\n  return <div id=\"     \" />;\n}\n"
+    },
+    {
+      "source": "const React = require('react');\n\nfunction Card() {\n  return React.createElement('div');\n}\n\nmodule.exports = Card;\n",
+      "expected": "const React = require('     ');\n\nfunction Card() {\n  return React.createElement('   ');\n}\n\nmodule.exports = Card;\n",
+      "byteExpected": "const React = require('     ');\n\nfunction Card() {\n  return React.createElement('   ');\n}\n\nmodule.exports = Card;\n"
+    },
+    {
+      "source": "import Card from './Card';\n\nexport function Deck() {\n  return <section><Card /></section>;\n}\n",
+      "expected": "import Card from '      ';\n\nexport function Deck() {\n  return <section><Card /></section>;\n}\n",
+      "byteExpected": "import Card from '      ';\n\nexport function Deck() {\n  return <section><Card /></section>;\n}\n"
+    },
+    {
+      "source": "/* 🌍 */\r\nconst text = \"🌍 <No/>\";\r\nconst el = <Ärea title=\"🌍\"><Real/></Ärea>;\r\n",
+      "expected": "        \r\nconst text = \"        \";\r\nconst el = <Ärea title=\"  \"><Real/></Ärea>;\r\n",
+      "byteExpected": "          \r\nconst text = \"          \";\r\nconst el = <Ärea title=\"    \"><Real/></Ärea>;\r\n"
+    },
+    {
+      "source": "const x = `🌍${<A value=\"🌍\"/>} and ${`nested${<B/>}`}`;\n",
+      "expected": "const x = `  ${<A value=\"  \"/>}     ${`      ${<B/>}`}`;\n",
+      "byteExpected": "const x = `    ${<A value=\"    \"/>}     ${`      ${<B/>}`}`;\n"
+    },
+    {
+      "source": "const x = <A title=\"line\r\n<No/>\"><B/>don't</A>;\n",
+      "expected": "const x = <A title=\"    \r\n     \"><B/>don't</A>;\n",
+      "byteExpected": "const x = <A title=\"    \r\n     \"><B/>don't</A>;\n"
+    },
+    {
+      "source": "const id = <T,>(value:T)=>value;\nconst el = <List<Item>><Child/></List>;\n",
+      "expected": "const id = <T,>(value:T)=>value;\nconst el = <List<Item>><Child/></List>;\n",
+      "byteExpected": "const id = <T,>(value:T)=>value;\nconst el = <List<Item>><Child/></List>;\n"
+    },
+    {
+      "source": "const x = /[\\/]<No/>/g; const y = <Yes/>;\n",
+      "expected": "const x = /       />/                 />;\n",
+      "byteExpected": "const x = /       />/                 />;\n"
+    },
+    {
+      "source": "const x = <A><B/></C>;\n",
+      "expected": null,
+      "byteExpected": null
+    }
+  ]
+}
