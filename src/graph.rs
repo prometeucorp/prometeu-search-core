@@ -5,7 +5,7 @@ use crate::{Direction, Engine, Relation, RelationsResult, SymbolLocation};
 use anyhow::{Context, Result, ensure};
 use rusqlite::{Connection, params};
 use serde::{Deserialize, Serialize};
-use std::cell::Cell;
+use std::cell::{Cell, RefCell};
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet, VecDeque};
 use std::path::{Component, Path};
 
@@ -101,6 +101,7 @@ struct File {
     nodes: Vec<usize>,
     qualified: HashMap<String, Vec<usize>>,
     exports: HashMap<String, Vec<usize>>,
+    modules: HashMap<String, Vec<String>>,
 }
 struct Node {
     id: i64,
@@ -131,6 +132,7 @@ pub(crate) struct Graph {
     dependents: BTreeMap<String, Vec<String>>,
     truncated: bool,
     resolution_truncated: Cell<bool>,
+    overview_cache: RefCell<Option<Overview>>,
 }
 
 impl GraphOptions {
@@ -201,6 +203,7 @@ impl Graph {
             dependents: BTreeMap::new(),
             truncated: false,
             resolution_truncated: Cell::new(false),
+            overview_cache: RefCell::new(None),
         };
         // ponytail: metadata is cached per generation with fixed memory/work ceilings;
         // use indexed persisted edges if rebuild cost becomes a measured bottleneck.
@@ -286,11 +289,25 @@ impl Graph {
                     nodes,
                     qualified,
                     exports,
+                    modules: HashMap::new(),
                 },
             );
         }
         graph.outgoing.resize_with(graph.nodes.len(), Vec::new);
         graph.incoming.resize_with(graph.nodes.len(), Vec::new);
+        // Import targets depend only on this generation's file set, not the referencing symbol.
+        for path in graph.files.keys().cloned().collect::<Vec<_>>() {
+            let mut modules = HashMap::new();
+            for import in &graph.files[&path].analysis.imports {
+                if !modules.contains_key(&import.module) {
+                    modules.insert(
+                        import.module.clone(),
+                        graph.module_files(&path, &import.module),
+                    );
+                }
+            }
+            graph.files.get_mut(&path).unwrap().modules = modules;
+        }
         graph.build_edges();
         graph.truncated |= graph.resolution_truncated.get();
         Ok(graph)
@@ -308,6 +325,9 @@ impl Graph {
     }
 
     fn module_files(&self, from: &str, module: &str) -> Vec<String> {
+        if let Some(paths) = self.files[from].modules.get(module) {
+            return paths.clone();
+        }
         let language = &self.files[from].analysis.language;
         let parent = from.rsplit_once('/').map_or("", |(parent, _)| parent);
         let mut stems = Vec::new();

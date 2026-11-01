@@ -58,6 +58,13 @@ fn overview_aggregates_cross_file_evidence_and_observes_other_clients() {
         first,
         serde_json::to_value(engine.overview().unwrap()).unwrap()
     );
+    let mut owned = engine.overview().unwrap();
+    owned.files.clear();
+    owned.edges.clear();
+    assert_eq!(
+        first,
+        serde_json::to_value(engine.overview().unwrap()).unwrap()
+    );
 
     let mut writer = Engine::open(&root, Some(&database)).unwrap();
     fs::remove_file(root.join("fallback.ts")).unwrap();
@@ -71,6 +78,11 @@ fn overview_aggregates_cross_file_evidence_and_observes_other_clients() {
         "a missing imported file must not resolve by name"
     );
     assert!(updated.files.iter().any(|file| file.path == "renamed.ts"));
+    fs::rename(root.join("renamed.ts"), root.join("leaf.ts")).unwrap();
+    writer.sync().unwrap();
+    let restored = engine.overview().unwrap();
+    assert_eq!(restored.edges.len(), 1);
+    assert_eq!(restored.edges[0].to, "leaf.ts");
 }
 
 #[test]

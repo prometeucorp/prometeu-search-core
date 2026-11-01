@@ -8,14 +8,14 @@ const MAX_FILES: usize = 1_000;
 const MAX_EDGES: usize = 4_000;
 const MAX_BYTES: usize = 512 * 1024;
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Clone, Serialize)]
 pub struct OverviewFile {
     pub path: String,
     pub language: String,
     pub symbols: usize,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Clone, Serialize)]
 pub struct OverviewEdge {
     pub from: String,
     pub to: String,
@@ -24,7 +24,7 @@ pub struct OverviewEdge {
     pub uncertain: bool,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Clone, Serialize)]
 pub struct Overview {
     pub generation: u64,
     pub files: Vec<OverviewFile>,
@@ -41,6 +41,15 @@ impl Engine {
 
 impl Graph {
     fn overview(&self) -> Result<Overview> {
+        if let Some(overview) = self.overview_cache.borrow().as_ref() {
+            return Ok(overview.clone());
+        }
+        let overview = self.build_overview()?;
+        *self.overview_cache.borrow_mut() = Some(overview.clone());
+        Ok(overview)
+    }
+
+    fn build_overview(&self) -> Result<Overview> {
         let mut result = Overview {
             generation: self.generation,
             files: Vec::new(),

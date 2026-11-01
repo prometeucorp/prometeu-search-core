@@ -148,6 +148,9 @@ graph construction, and serialized-byte limits can all truncate results.
 The serialized budget includes JSON escaping and metadata. Source and collections
 are shortened to fit; every omitted result is signaled with `truncated`.
 
-The graph cache is rebuilt after a changed generation. Targeted source updates
+The graph cache is rebuilt after a changed generation. Declared import targets
+and the bounded file overview are retained within that generation, so repeated
+references and overview reads reuse the same derived data. An overview response
+is an owned copy; callers cannot mutate cached results. Targeted source updates
 avoid hashing unrelated files, but rebuilding graph metadata still depends on
 indexed graph size. This is separate from source synchronization costs.

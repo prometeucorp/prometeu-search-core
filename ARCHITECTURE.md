@@ -27,7 +27,8 @@ scope, and receiver evidence precedes uncertain name matching. Relationship
 responses retain resolution method, confidence, and ambiguity. Analysis has
 explicit work and response limits. Graph metadata is cached per connection and
 index generation; source is read from the same SQLite snapshot as the graph.
-A generation change invalidates the cached graph, including when another client
+A generation also owns cached import-to-file resolution and the bounded file
+overview. A generation change invalidates the cached graph, including when another client
 commits changes. The graph remains heuristic, not compiler authority.
 
 Search reads source stored with the indexed symbol. It never slices a changed
