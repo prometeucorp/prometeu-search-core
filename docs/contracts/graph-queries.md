@@ -111,7 +111,13 @@ candidates. Results from files with syntax errors retain `syntax_errors`.
 
 `explore` selects exact names, qualified names, or files first, then uses ranked
 lexical search when no exact symbol matches. It expands a bounded neighborhood
-and assembles source grouped by file, relationships, and reverse impact. Large
+and assembles source grouped by file, relationships, and reverse impact. Lexical
+fallback uses up to half the source-symbol limit (rounded up) as ranked seeds,
+reserving the remaining slots for connected context. Unused context slots are
+filled with the next ranked matches; returned roots retain that ranking and only
+identify matches whose source symbols remain in the response. Exact name, file,
+and line selections and the other analysis modes keep their full seed limit.
+Omitted matches or relationships still set `truncated`. Large
 source snippets can begin near a matching line; `snippet_start_line` locates the
 returned text while `start_line` and `end_line` retain the complete symbol range.
 `snippet_truncated` identifies incomplete source.

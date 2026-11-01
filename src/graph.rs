@@ -999,7 +999,7 @@ impl Graph {
         query: &str,
         options: &GraphOptions,
         lexical: bool,
-    ) -> Result<(Vec<usize>, bool)> {
+    ) -> Result<(Vec<usize>, bool, bool)> {
         let qualified = query.replace('.', "::");
         let path = options
             .path
@@ -1066,7 +1066,7 @@ impl Graph {
             }
         }
         let ambiguous = selected.len() > 1 && exact && !self.files.contains_key(query);
-        Ok((selected, ambiguous))
+        Ok((selected, ambiguous, !exact && lexical))
     }
 
     fn edge(&self, index: usize) -> GraphEdge {
@@ -1262,7 +1262,15 @@ impl Graph {
         mode: Option<GraphMode>,
         options: &GraphOptions,
     ) -> Result<GraphResult> {
-        let (mut roots, ambiguous) = self.select(connection, query, options, mode.is_none())?;
+        let (mut roots, ambiguous, lexical) =
+            self.select(connection, query, options, mode.is_none())?;
+        // Broad lexical matches leave source slots for context, then backfill unused slots.
+        let root_limit = if lexical {
+            options.limit.div_ceil(2)
+        } else {
+            options.limit
+        };
+        let matches = roots.clone();
         let mut result = GraphResult {
             generation: self.generation,
             roots: Vec::new(),
@@ -1272,10 +1280,9 @@ impl Graph {
             impact: Vec::new(),
             affected_tests: Vec::new(),
             ambiguous,
-            truncated: self.truncated || roots.len() > options.limit,
+            truncated: self.truncated || (!lexical && roots.len() > root_limit),
         };
-        roots.truncate(options.limit);
-        result.roots = roots.iter().map(|&index| self.location(index)).collect();
+        roots.truncate(root_limit);
         let mut included = roots.clone();
         let mut selected_edges = Vec::new();
         match mode {
@@ -1286,7 +1293,7 @@ impl Graph {
                     target: None,
                     ..options.clone()
                 };
-                let (targets, ambiguous) = self.select(
+                let (targets, ambiguous, _) = self.select(
                     connection,
                     options.target.as_deref().unwrap(),
                     &target_options,
@@ -1370,11 +1377,19 @@ impl Graph {
                 included.extend(impacted);
             }
         }
+        if lexical {
+            included.extend(matches.iter().skip(root_limit).copied());
+        }
         let mut seen = HashSet::new();
         included.retain(|index| seen.insert(*index));
         result.truncated |= included.len() > options.limit;
         included.truncate(options.limit);
         let included_set: HashSet<_> = included.iter().copied().collect();
+        result.roots = matches
+            .iter()
+            .filter(|index| included_set.contains(index))
+            .map(|&index| self.location(index))
+            .collect();
         if result
             .path
             .iter()
@@ -1385,6 +1400,23 @@ impl Graph {
         }
         selected_edges.sort_unstable();
         selected_edges.dedup();
+        // Backfilled matches need not have been traversed. Report omitted relationships honestly.
+        if lexical {
+            for &node in matches
+                .iter()
+                .skip(root_limit)
+                .filter(|node| included_set.contains(node))
+            {
+                result.truncated |= self.outgoing[node]
+                    .iter()
+                    .chain(
+                        self.incoming[node]
+                            .iter()
+                            .filter(|&&index| self.edges[index].kind != "contains"),
+                    )
+                    .any(|index| selected_edges.binary_search(index).is_err());
+            }
+        }
         for index in selected_edges {
             let edge = &self.edges[index];
             if included_set.contains(&edge.from)
@@ -1431,6 +1463,15 @@ impl Graph {
             }
         }
         fit(&mut result, options.max_bytes)?;
+        if lexical {
+            let returned: HashSet<_> = result
+                .files
+                .iter()
+                .flat_map(|file| &file.symbols)
+                .map(|symbol| symbol.id)
+                .collect();
+            result.roots.retain(|root| returned.contains(&root.id));
+        }
         Ok(result)
     }
 }
@@ -1449,7 +1490,7 @@ pub(crate) fn related(
     };
     options.validate(symbol)?;
     with_graph(engine, |graph, connection| {
-        let (selected, _) = graph.select(connection, symbol, &options, false)?;
+        let (selected, _, _) = graph.select(connection, symbol, &options, false)?;
         let selected: HashSet<_> = selected.into_iter().collect();
         let mut result = RelationsResult {
             generation: graph.generation,
