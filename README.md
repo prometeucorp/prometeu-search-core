@@ -159,3 +159,11 @@ The workspace includes `prometeu-extract`, a reusable Rust library for native
 language extraction without a Node runtime. Its Tree-sitter walkers return
 canonical records and run against independent reference fixtures; the current
 SQLite engine keeps its existing language selection and query contracts.
+
+## Canonical graph algorithms for Rust hosts
+
+`graph_query::GraphSnapshot` accepts host-owned canonical nodes and edges and
+provides traversal, paths, impact, call sites, dependencies, and symbol context.
+The `hierarchy` module computes declared ancestry, subtype fans, and member
+overrides from the same record types. These pure APIs do not open an index or
+read source files; their independent oracle tests run offline.

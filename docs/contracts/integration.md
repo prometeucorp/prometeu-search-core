@@ -106,3 +106,11 @@ previous committed snapshot remains stored but the tool reports failure rather
 than silently answering from it. The host decides whether agents fall back to
 ordinary search. MCP registration/injection, selection defaults, visible status,
 and automatic reconnect belong in Prometeu, not in this engine.
+
+## Canonical snapshot APIs
+
+Rust hosts can pass canonical node and edge slices to
+`graph_query::GraphSnapshot::new` and the `hierarchy` functions without creating
+an `Engine`. Traversal callers choose work limits through `TraversalOptions`;
+results report truncation when a selected traversal budget is reached. These
+APIs use the supplied records only and do not refresh or access the filesystem.

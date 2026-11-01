@@ -79,3 +79,7 @@ deliberately remove the derived index before retrying.
 
 Native Tree-sitter grammars and bundled SQLite keep the executable independent
 of external runtimes.
+
+`src/graph_query.rs` and `src/hierarchy.rs` operate on caller-owned canonical
+records from `prometeu-extract`. They are pure library boundaries: the current
+SQLite engine, executable, and MCP tools retain their existing contracts.
