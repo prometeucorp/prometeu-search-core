@@ -254,6 +254,7 @@ pub(super) fn enrich(
         };
         for caller in callers {
             parsed.references.push(Reference {
+                column: None,
                 caller,
                 target: target.clone(),
                 line,
