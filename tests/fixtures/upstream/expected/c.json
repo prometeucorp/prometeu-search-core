@@ -1,0 +1,1871 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.c",
+      "kind": "file",
+      "name": "torture.c",
+      "qualifiedName": "torture.c",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 1,
+      "endLine": 238,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:81f8d772c8fee488e2c1dcd3ff2c1219",
+      "kind": "import",
+      "name": "stdio.h",
+      "qualifiedName": "stdio.h",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 7,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 0,
+      "signature": "#include <stdio.h>"
+    },
+    {
+      "id": "import:6bdd8c097e9500820246778e758ec879",
+      "kind": "import",
+      "name": "sys/socket.h",
+      "qualifiedName": "sys/socket.h",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 8,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 0,
+      "signature": "#include <sys/socket.h>"
+    },
+    {
+      "id": "import:a599144119302bd080c36feb375a4a0f",
+      "kind": "import",
+      "name": "local_ops.h",
+      "qualifiedName": "local_ops.h",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 9,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 0,
+      "signature": "#include \"local_ops.h\""
+    },
+    {
+      "id": "constant:84e8ca2c7ea91f1d3a3ed700ab7c9298",
+      "kind": "constant",
+      "name": "MAX_RETRIES",
+      "qualifiedName": "MAX_RETRIES",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 17,
+      "endColumn": 32,
+      "docstring": "Retry budget for the poller.",
+      "signature": "= 3",
+      "isExported": false
+    },
+    {
+      "id": "constant:45e137b8b2d4a1ce1d78ca783676e501",
+      "kind": "constant",
+      "name": "LOW_WATER",
+      "qualifiedName": "LOW_WATER",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 17,
+      "endColumn": 30,
+      "signature": "= 2",
+      "isExported": false
+    },
+    {
+      "id": "constant:e550abf99bdb41f998a086918827ea84",
+      "kind": "constant",
+      "name": "HIGH_WATER",
+      "qualifiedName": "HIGH_WATER",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 32,
+      "endColumn": 46,
+      "signature": "= 8",
+      "isExported": false
+    },
+    {
+      "id": "variable:3a1b0855fa589b2743e29e04375449c5",
+      "kind": "variable",
+      "name": "counter",
+      "qualifiedName": "counter",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 14,
+      "endLine": 14,
+      "startColumn": 11,
+      "endColumn": 22,
+      "signature": "= 0",
+      "isExported": false
+    },
+    {
+      "id": "constant:78438188a7039438b8b03d9449498fab",
+      "kind": "constant",
+      "name": "BANNER",
+      "qualifiedName": "BANNER",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 15,
+      "endLine": 15,
+      "startColumn": 18,
+      "endColumn": 37,
+      "signature": "= \"torture\"",
+      "isExported": false
+    },
+    {
+      "id": "function:83c5dee82ba42b15ad5d74163798335f",
+      "kind": "function",
+      "name": "masked_entry",
+      "qualifiedName": "masked_entry",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 9,
+      "endColumn": 48,
+      "docstring": "Leading attribute macro — blanked by preParseCSource (#1211), so the real\nname survives on both arms.",
+      "returnType": "UINT32"
+    },
+    {
+      "id": "enum:9958034bfac23f4633184a21536c7416",
+      "kind": "enum",
+      "name": "run_state_t",
+      "qualifiedName": "run_state_t",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 67
+    },
+    {
+      "id": "enum_member:178c5151848359c64ff38537ca0cf05c",
+      "kind": "enum_member",
+      "name": "STATE_IDLE",
+      "qualifiedName": "run_state_t::STATE_IDLE",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 15,
+      "endColumn": 25
+    },
+    {
+      "id": "enum_member:e6f266605a5de4158b1fb45dd70f1612",
+      "kind": "enum_member",
+      "name": "STATE_RUNNING",
+      "qualifiedName": "run_state_t::STATE_RUNNING",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 27,
+      "endColumn": 40
+    },
+    {
+      "id": "enum_member:aaef8622f6acd8dd521fad72886148bd",
+      "kind": "enum_member",
+      "name": "STATE_DONE",
+      "qualifiedName": "run_state_t::STATE_DONE",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 42,
+      "endColumn": 52
+    },
+    {
+      "id": "struct:7dcc3e8c0c639ebb09d04ec84126b25b",
+      "kind": "struct",
+      "name": "conn_t",
+      "qualifiedName": "conn_t",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 28,
+      "endLine": 31,
+      "startColumn": 0,
+      "endColumn": 9
+    },
+    {
+      "id": "type_alias:ea7602cc1268d15f573f37f43c58d4e8",
+      "kind": "type_alias",
+      "name": "conn_pool_t",
+      "qualifiedName": "conn_pool_t",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 0,
+      "endColumn": 37
+    },
+    {
+      "id": "type_alias:0cc126fa729916372d1e6d88ee0e2415",
+      "kind": "type_alias",
+      "name": "(*cb_t)",
+      "qualifiedName": "(*cb_t)",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 35,
+      "endLine": 35,
+      "startColumn": 0,
+      "endColumn": 25
+    },
+    {
+      "id": "enum:cd8423ffdc115ca17b269050cb3e31b9",
+      "kind": "enum",
+      "name": "wire_flags",
+      "qualifiedName": "wire_flags",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 0,
+      "endColumn": 42
+    },
+    {
+      "id": "enum_member:9bfdb8d7e95fee19e49d949dc908e5d3",
+      "kind": "enum_member",
+      "name": "WIRE_A",
+      "qualifiedName": "wire_flags::WIRE_A",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 18,
+      "endColumn": 28
+    },
+    {
+      "id": "enum_member:06b3243d9e47f8dded8d41f67d941026",
+      "kind": "enum_member",
+      "name": "WIRE_B",
+      "qualifiedName": "wire_flags::WIRE_B",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 30,
+      "endColumn": 40
+    },
+    {
+      "id": "struct:c178330f11d7b530d10a9a362596e95e",
+      "kind": "struct",
+      "name": "packet",
+      "qualifiedName": "packet",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 39,
+      "endLine": 44,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "function:d34b72d7848b01f2bb9cc6eea3206a67",
+      "kind": "function",
+      "name": "add",
+      "qualifiedName": "add",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 47,
+      "endLine": 47,
+      "startColumn": 0,
+      "endColumn": 46,
+      "docstring": "Sum helper (docstring)."
+    },
+    {
+      "id": "function:64514e020343f839129de60fb3d0e82a",
+      "kind": "function",
+      "name": "cb_a",
+      "qualifiedName": "cb_a",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 0,
+      "endColumn": 44
+    },
+    {
+      "id": "function:fcd5e95c35b0d729f302762b3d2c7201",
+      "kind": "function",
+      "name": "cb_b",
+      "qualifiedName": "cb_b",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 50,
+      "endLine": 50,
+      "startColumn": 0,
+      "endColumn": 44
+    },
+    {
+      "id": "variable:ee9c6e0fee8889153857dd10264fe3d8",
+      "kind": "variable",
+      "name": "DISPATCH_TABLE",
+      "qualifiedName": "DISPATCH_TABLE",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 53,
+      "endLine": 53,
+      "startColumn": 12,
+      "endColumn": 45,
+      "docstring": "fn-ptr table at file scope — the ungated 'list' capture positions.",
+      "signature": "= { cb_a, cb_b }",
+      "isExported": false
+    },
+    {
+      "id": "constant:aaba795d08a1564e02c7770fb12c7e3d",
+      "kind": "constant",
+      "name": "OPS",
+      "qualifiedName": "OPS",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 58,
+      "endLine": 58,
+      "startColumn": 32,
+      "endColumn": 78,
+      "docstring": "struct initializer — the ungated 'value' capture positions.",
+      "signature": "= { .recv = handle_recv, .flags = WIRE_A }",
+      "isExported": false
+    },
+    {
+      "id": "function:d7da4b402ad97a64a1766fcf09e392e0",
+      "kind": "function",
+      "name": "handle_recv",
+      "qualifiedName": "handle_recv",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 60,
+      "endLine": 64,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "function:a8c2c8f513bc437341958e1e409a8797",
+      "kind": "function",
+      "name": "shadowed_reader",
+      "qualifiedName": "shadowed_reader",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 68,
+      "endLine": 71,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Local shadow of a file-scope const — the shadow prune drops HIGH_WATER as a\nvalue-ref target while LOW_WATER stays live."
+    },
+    {
+      "id": "function:7a0b33da86ba854a62dfdbc9159b1318",
+      "kind": "function",
+      "name": "use_table",
+      "qualifiedName": "use_table",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 73,
+      "endLine": 79,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "function:72926d28d8630ec83d6f5314cb2888c6",
+      "kind": "function",
+      "name": "spawn_workers",
+      "qualifiedName": "spawn_workers",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 81,
+      "endLine": 84,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "variable:2a0c00fec19253efc994ef6afb4eb8bd",
+      "kind": "variable",
+      "name": "cpuhp_state",
+      "qualifiedName": "cpuhp_state",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 97,
+      "endLine": 99,
+      "startColumn": 35,
+      "endColumn": 1,
+      "docstring": "---- deferral round 2 (the linux-idiom preParse family) --------------------\nEvery shape below used to drop the WHOLE file into error recovery (and\ntherefore defer it to wasm). Each now parses via a round-2 blank/rewrite;\nthis section pins kernel-vs-wasm parity on all of them at once.\nfile-scope prefixed declaration macros — whole-line blank\ninitialized per-cpu declaration — the REWRITE (type + name survive)",
+      "signature": "= {\n  .fd = 1,\n}",
+      "isExported": false
+    },
+    {
+      "id": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "kind": "function",
+      "name": "type_args",
+      "qualifiedName": "type_args",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 102,
+      "endLine": 110,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "type-keyword arguments — keyword (and trailing stars) blank"
+    },
+    {
+      "id": "function:6b42908388ec30ebd77cb30442982033",
+      "kind": "function",
+      "name": "cleanup_scope",
+      "qualifiedName": "cleanup_scope",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 114,
+      "endLine": 117,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "parameterized annotations — name+args blank whole"
+    },
+    {
+      "id": "struct:27fbb507111460b65bffde24338f1495",
+      "kind": "struct",
+      "name": "flex_tail",
+      "qualifiedName": "flex_tail",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 119,
+      "endLine": 122,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "function:521a5bea2bed7202dcb40e666d7bcfb2",
+      "kind": "function",
+      "name": "tick_do",
+      "qualifiedName": "tick_do",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 125,
+      "endLine": 125,
+      "startColumn": 0,
+      "endColumn": 50,
+      "docstring": "sandwiched lowercase annotations + C23 auto"
+    },
+    {
+      "id": "function:71522b538cfa04649f207e8a20efcf69",
+      "kind": "function",
+      "name": "arm_probe",
+      "qualifiedName": "arm_probe",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 126,
+      "endLine": 126,
+      "startColumn": 0,
+      "endColumn": 47
+    },
+    {
+      "id": "function:4c142f94bfc81f2dbaeb53322f651474",
+      "kind": "function",
+      "name": "auto_user",
+      "qualifiedName": "auto_user",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 127,
+      "endLine": 130,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "function:94e47546d3d7e830b92f97eb2a289d01",
+      "kind": "function",
+      "name": "drain_args",
+      "qualifiedName": "drain_args",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 133,
+      "endLine": 137,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "va_arg with a qualified type argument"
+    },
+    {
+      "id": "function:bde51e54776bf116801473b468e0a03f",
+      "kind": "function",
+      "name": "walk_rcu",
+      "qualifiedName": "walk_rcu",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 140,
+      "endLine": 145,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "multi-line statement-position iterator macro"
+    },
+    {
+      "id": "constant:5d127cddd1a0cd55ff1db6e60ffa6bdb",
+      "kind": "constant",
+      "name": "verbose",
+      "qualifiedName": "verbose",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 148,
+      "endLine": 149,
+      "startColumn": 0,
+      "endColumn": 0,
+      "signature": "#define verbose(env, fmt, args   ) log_writer(env, fmt, ##args)"
+    },
+    {
+      "id": "function:b7ca967fea03e27557d0c5f386de2439",
+      "kind": "function",
+      "name": "ratelimited_warn",
+      "qualifiedName": "ratelimited_warn",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 151,
+      "endLine": 154,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "block-scope prefixed declaration macro"
+    },
+    {
+      "id": "union:87328bb244dc25e95ff76f307ddb5a57",
+      "kind": "union",
+      "name": "packet_hdr",
+      "qualifiedName": "packet_hdr",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 158,
+      "endLine": 161,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "named union definition, forward declaration, and anonymous typedef union —\n   the definition is a node, the forward decl is not (#UNION)"
+    },
+    {
+      "id": "struct:aa7ce416b52984c7ea2b1b6d43e70da9",
+      "kind": "struct",
+      "name": "<anonymous>",
+      "qualifiedName": "packet_hdr::<anonymous>",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 160,
+      "endLine": 160,
+      "startColumn": 2,
+      "endColumn": 38
+    },
+    {
+      "id": "union:effd1738dcf4c1fe91118605ac444272",
+      "kind": "union",
+      "name": "word_t",
+      "qualifiedName": "word_t",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 165,
+      "endLine": 168,
+      "startColumn": 0,
+      "endColumn": 9
+    },
+    {
+      "id": "function:e20384b6ac1f9559f78e2c0bd7b0328e",
+      "kind": "function",
+      "name": "hdr_raw",
+      "qualifiedName": "hdr_raw",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 170,
+      "endLine": 170,
+      "startColumn": 0,
+      "endColumn": 67
+    },
+    {
+      "id": "function:403dfc5d40725b6280b190df17dd2b1c",
+      "kind": "function",
+      "name": "noop_builtin",
+      "qualifiedName": "noop_builtin",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 175,
+      "endLine": 175,
+      "startColumn": 0,
+      "endColumn": 33,
+      "docstring": "struct, union and enum definitions in a declaration's type: each is a node\n   beside the declaration's variables, documented by the comment above the\n   declaration; an unnamed one takes the name of its first variable"
+    },
+    {
+      "id": "struct:6ed43952e4b275566a769fc37ffcee75",
+      "kind": "struct",
+      "name": "parse_state",
+      "qualifiedName": "parse_state",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 178,
+      "endLine": 178,
+      "startColumn": 7,
+      "endColumn": 56,
+      "docstring": "The parser's state."
+    },
+    {
+      "id": "variable:09742878e9d97ee5380fb7df9501f955",
+      "kind": "variable",
+      "name": "active_state",
+      "qualifiedName": "active_state",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 178,
+      "endLine": 178,
+      "startColumn": 70,
+      "endColumn": 83,
+      "docstring": "The parser's state.",
+      "isExported": false
+    },
+    {
+      "id": "struct:8fcf6a56e61497a5877ad94c46bd7179",
+      "kind": "struct",
+      "name": "SPT",
+      "qualifiedName": "SPT",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 179,
+      "endLine": 179,
+      "startColumn": 7,
+      "endColumn": 40
+    },
+    {
+      "id": "struct:35bdecf5dc2dbefd5b4bf10cda28e2d2",
+      "kind": "struct",
+      "name": "builtin_table",
+      "qualifiedName": "builtin_table",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 13,
+      "endColumn": 59
+    },
+    {
+      "id": "constant:a942c81fc4d96b2d1c5c088ced7dd200",
+      "kind": "constant",
+      "name": "builtin_table",
+      "qualifiedName": "builtin_table",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 180,
+      "endLine": 182,
+      "startColumn": 60,
+      "endColumn": 1,
+      "signature": "= {\n  { \"noop\", noop_builtin },\n}",
+      "isExported": false
+    },
+    {
+      "id": "union:ed9f1995de68b9b576bb1da1dd8a4eb4",
+      "kind": "union",
+      "name": "scratch_word",
+      "qualifiedName": "scratch_word",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 183,
+      "endLine": 183,
+      "startColumn": 0,
+      "endColumn": 25
+    },
+    {
+      "id": "variable:e68089daa62251b8d4345b9b20f551f7",
+      "kind": "variable",
+      "name": "scratch_word",
+      "qualifiedName": "scratch_word",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 183,
+      "endLine": 183,
+      "startColumn": 26,
+      "endColumn": 46,
+      "signature": "= { 0 }",
+      "isExported": false
+    },
+    {
+      "id": "enum:2d7ca3695da9ad511f736852c09c7967",
+      "kind": "enum",
+      "name": "current_mode",
+      "qualifiedName": "current_mode",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 184,
+      "endLine": 184,
+      "startColumn": 0,
+      "endColumn": 29
+    },
+    {
+      "id": "enum_member:5cd64ddea5b9717162c8a8a39a0ca8bd",
+      "kind": "enum_member",
+      "name": "MODE_IDLE",
+      "qualifiedName": "current_mode::MODE_IDLE",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 184,
+      "endLine": 184,
+      "startColumn": 7,
+      "endColumn": 16
+    },
+    {
+      "id": "enum_member:b74f4e4190c6e0a2563fa40eefb178b1",
+      "kind": "enum_member",
+      "name": "MODE_BUSY",
+      "qualifiedName": "current_mode::MODE_BUSY",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 184,
+      "endLine": 184,
+      "startColumn": 18,
+      "endColumn": 27
+    },
+    {
+      "id": "struct:8e38f990d2a315750080322e04eec80e",
+      "kind": "struct",
+      "name": "<anonymous>",
+      "qualifiedName": "<anonymous>",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 185,
+      "endLine": 185,
+      "startColumn": 0,
+      "endColumn": 22
+    },
+    {
+      "id": "function:bdde5733072e7e28d2e888958cc48a0e",
+      "kind": "function",
+      "name": "declared_types_local",
+      "qualifiedName": "declared_types_local",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 187,
+      "endLine": 190,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "struct:e4d549df442fbd80877ac5064bf626c5",
+      "kind": "struct",
+      "name": "local_stats",
+      "qualifiedName": "declared_types_local::local_stats",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 188,
+      "endLine": 188,
+      "startColumn": 9,
+      "endColumn": 29
+    },
+    {
+      "id": "type_alias:5cb3a2602da0cc402a7f7bf9b946f23d",
+      "kind": "type_alias",
+      "name": "member_t",
+      "qualifiedName": "member_t",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 194,
+      "endLine": 194,
+      "startColumn": 0,
+      "endColumn": 33,
+      "docstring": "members: the types each is declared with are references from its holder, or\n   from the alias they are named through"
+    },
+    {
+      "id": "enum:8a30454d7f36a403484fa1422061bac3",
+      "kind": "enum",
+      "name": "pause_mode",
+      "qualifiedName": "pause_mode",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 0,
+      "endColumn": 48
+    },
+    {
+      "id": "enum_member:22eb06dcd0a3744391b59a3293b2969c",
+      "kind": "enum_member",
+      "name": "PAUSE_OFF",
+      "qualifiedName": "pause_mode::PAUSE_OFF",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 15,
+      "endColumn": 24
+    },
+    {
+      "id": "enum_member:cdfc6b22836d2528d44f99fdac91a78d",
+      "kind": "enum_member",
+      "name": "PAUSE_ON",
+      "qualifiedName": "pause_mode::PAUSE_ON",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 195,
+      "endLine": 195,
+      "startColumn": 26,
+      "endColumn": 34
+    },
+    {
+      "id": "union:146649a978fd416b1984dd404d2b557a",
+      "kind": "union",
+      "name": "member_value",
+      "qualifiedName": "member_value",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 196,
+      "endLine": 196,
+      "startColumn": 0,
+      "endColumn": 47
+    },
+    {
+      "id": "type_alias:94c7a48e66a08bd44ba5fb37de908948",
+      "kind": "type_alias",
+      "name": "(*member_cb)",
+      "qualifiedName": "(*member_cb)",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 197,
+      "endLine": 197,
+      "startColumn": 0,
+      "endColumn": 49
+    },
+    {
+      "id": "type_alias:0814f51710ef7926fee276c2876e4c3b",
+      "kind": "type_alias",
+      "name": "word_ptr",
+      "qualifiedName": "word_ptr",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 198,
+      "endLine": 198,
+      "startColumn": 0,
+      "endColumn": 25
+    },
+    {
+      "id": "struct:e2f23776e8079753225552244912f440",
+      "kind": "struct",
+      "name": "member_s",
+      "qualifiedName": "member_s",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 200,
+      "endLine": 227,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "union:68671acbdaeb3d113022a845d327cfbc",
+      "kind": "union",
+      "name": "<anonymous>",
+      "qualifiedName": "member_s::<anonymous>",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 222,
+      "endLine": 222,
+      "startColumn": 2,
+      "endColumn": 41
+    },
+    {
+      "id": "struct:23f2f8a38ab83efb2a7edd7a0cf35967",
+      "kind": "struct",
+      "name": "<anonymous>",
+      "qualifiedName": "member_s::<anonymous>",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 223,
+      "endLine": 223,
+      "startColumn": 2,
+      "endColumn": 37
+    },
+    {
+      "id": "struct:aacdbf81426f34e7222c0775b8c5aacc",
+      "kind": "struct",
+      "name": "member_inner",
+      "qualifiedName": "member_s::member_inner",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 224,
+      "endLine": 224,
+      "startColumn": 2,
+      "endColumn": 38
+    },
+    {
+      "id": "enum:4a7650205d80375841967d34c745069c",
+      "kind": "enum",
+      "name": "<anonymous>",
+      "qualifiedName": "member_s::<anonymous>",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 225,
+      "endLine": 225,
+      "startColumn": 2,
+      "endColumn": 32
+    },
+    {
+      "id": "enum_member:ca2ee1b77cd192412f46f137ab72976d",
+      "kind": "enum_member",
+      "name": "MEMBER_ON",
+      "qualifiedName": "member_s::<anonymous>::MEMBER_ON",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 225,
+      "endLine": 225,
+      "startColumn": 9,
+      "endColumn": 18
+    },
+    {
+      "id": "enum_member:5df9032ab95dec9044ed95a3e36fba07",
+      "kind": "enum_member",
+      "name": "MEMBER_OFF",
+      "qualifiedName": "member_s::<anonymous>::MEMBER_OFF",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 225,
+      "endLine": 225,
+      "startColumn": 20,
+      "endColumn": 30
+    },
+    {
+      "id": "enum:0c3bb4f7b6ea6d96a4dbd83ae01586a0",
+      "kind": "enum",
+      "name": "member_level",
+      "qualifiedName": "member_s::member_level",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 226,
+      "endLine": 226,
+      "startColumn": 2,
+      "endColumn": 47
+    },
+    {
+      "id": "enum_member:6e5b49b6871be10aeaeec41283b32cfc",
+      "kind": "enum_member",
+      "name": "MEMBER_LOW",
+      "qualifiedName": "member_s::member_level::MEMBER_LOW",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 226,
+      "endLine": 226,
+      "startColumn": 22,
+      "endColumn": 32
+    },
+    {
+      "id": "enum_member:96b9305a315798d766168d9d7e9fad97",
+      "kind": "enum_member",
+      "name": "MEMBER_HIGH",
+      "qualifiedName": "member_s::member_level::MEMBER_HIGH",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 226,
+      "endLine": 226,
+      "startColumn": 34,
+      "endColumn": 45
+    },
+    {
+      "id": "struct:852fc73e03e29b6e6349420f2fe38461",
+      "kind": "struct",
+      "name": "self_list",
+      "qualifiedName": "self_list",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 229,
+      "endLine": 232,
+      "startColumn": 0,
+      "endColumn": 12
+    },
+    {
+      "id": "union:1c1f6d5c542ca3c3c24a65f2baa7e923",
+      "kind": "union",
+      "name": "wrapped_member",
+      "qualifiedName": "wrapped_member",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 234,
+      "endLine": 237,
+      "startColumn": 0,
+      "endColumn": 17
+    },
+    {
+      "id": "struct:afb14d0ded3090d043e9c1eb77aa8e72",
+      "kind": "struct",
+      "name": "<anonymous>",
+      "qualifiedName": "wrapped_member::<anonymous>",
+      "filePath": "torture.c",
+      "language": "c",
+      "startLine": 236,
+      "endLine": 236,
+      "startColumn": 2,
+      "endColumn": 26
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.c",
+      "target": "import:81f8d772c8fee488e2c1dcd3ff2c1219",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "import:6bdd8c097e9500820246778e758ec879",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "import:a599144119302bd080c36feb375a4a0f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:84e8ca2c7ea91f1d3a3ed700ab7c9298",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:45e137b8b2d4a1ce1d78ca783676e501",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:e550abf99bdb41f998a086918827ea84",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "variable:3a1b0855fa589b2743e29e04375449c5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:78438188a7039438b8b03d9449498fab",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:83c5dee82ba42b15ad5d74163798335f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "enum:9958034bfac23f4633184a21536c7416",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:9958034bfac23f4633184a21536c7416",
+      "target": "enum_member:178c5151848359c64ff38537ca0cf05c",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:9958034bfac23f4633184a21536c7416",
+      "target": "enum_member:e6f266605a5de4158b1fb45dd70f1612",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:9958034bfac23f4633184a21536c7416",
+      "target": "enum_member:aaef8622f6acd8dd521fad72886148bd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:7dcc3e8c0c639ebb09d04ec84126b25b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "type_alias:ea7602cc1268d15f573f37f43c58d4e8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "type_alias:0cc126fa729916372d1e6d88ee0e2415",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "enum:cd8423ffdc115ca17b269050cb3e31b9",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:cd8423ffdc115ca17b269050cb3e31b9",
+      "target": "enum_member:9bfdb8d7e95fee19e49d949dc908e5d3",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:cd8423ffdc115ca17b269050cb3e31b9",
+      "target": "enum_member:06b3243d9e47f8dded8d41f67d941026",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:c178330f11d7b530d10a9a362596e95e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:d34b72d7848b01f2bb9cc6eea3206a67",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:64514e020343f839129de60fb3d0e82a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:fcd5e95c35b0d729f302762b3d2c7201",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "variable:ee9c6e0fee8889153857dd10264fe3d8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:aaba795d08a1564e02c7770fb12c7e3d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:d7da4b402ad97a64a1766fcf09e392e0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:a8c2c8f513bc437341958e1e409a8797",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:7a0b33da86ba854a62dfdbc9159b1318",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:72926d28d8630ec83d6f5314cb2888c6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "variable:2a0c00fec19253efc994ef6afb4eb8bd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:6b42908388ec30ebd77cb30442982033",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:27fbb507111460b65bffde24338f1495",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:521a5bea2bed7202dcb40e666d7bcfb2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:71522b538cfa04649f207e8a20efcf69",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:4c142f94bfc81f2dbaeb53322f651474",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:94e47546d3d7e830b92f97eb2a289d01",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:bde51e54776bf116801473b468e0a03f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:5d127cddd1a0cd55ff1db6e60ffa6bdb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:b7ca967fea03e27557d0c5f386de2439",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "union:87328bb244dc25e95ff76f307ddb5a57",
+      "kind": "contains"
+    },
+    {
+      "source": "union:87328bb244dc25e95ff76f307ddb5a57",
+      "target": "struct:aa7ce416b52984c7ea2b1b6d43e70da9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "union:effd1738dcf4c1fe91118605ac444272",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:e20384b6ac1f9559f78e2c0bd7b0328e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:403dfc5d40725b6280b190df17dd2b1c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:6ed43952e4b275566a769fc37ffcee75",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "variable:09742878e9d97ee5380fb7df9501f955",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:8fcf6a56e61497a5877ad94c46bd7179",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:35bdecf5dc2dbefd5b4bf10cda28e2d2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "constant:a942c81fc4d96b2d1c5c088ced7dd200",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "union:ed9f1995de68b9b576bb1da1dd8a4eb4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "variable:e68089daa62251b8d4345b9b20f551f7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "enum:2d7ca3695da9ad511f736852c09c7967",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:2d7ca3695da9ad511f736852c09c7967",
+      "target": "enum_member:5cd64ddea5b9717162c8a8a39a0ca8bd",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:2d7ca3695da9ad511f736852c09c7967",
+      "target": "enum_member:b74f4e4190c6e0a2563fa40eefb178b1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:8e38f990d2a315750080322e04eec80e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "function:bdde5733072e7e28d2e888958cc48a0e",
+      "kind": "contains"
+    },
+    {
+      "source": "function:bdde5733072e7e28d2e888958cc48a0e",
+      "target": "struct:e4d549df442fbd80877ac5064bf626c5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "type_alias:5cb3a2602da0cc402a7f7bf9b946f23d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "enum:8a30454d7f36a403484fa1422061bac3",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:8a30454d7f36a403484fa1422061bac3",
+      "target": "enum_member:22eb06dcd0a3744391b59a3293b2969c",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:8a30454d7f36a403484fa1422061bac3",
+      "target": "enum_member:cdfc6b22836d2528d44f99fdac91a78d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "union:146649a978fd416b1984dd404d2b557a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "type_alias:94c7a48e66a08bd44ba5fb37de908948",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "type_alias:0814f51710ef7926fee276c2876e4c3b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:e2f23776e8079753225552244912f440",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:e2f23776e8079753225552244912f440",
+      "target": "union:68671acbdaeb3d113022a845d327cfbc",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:e2f23776e8079753225552244912f440",
+      "target": "struct:23f2f8a38ab83efb2a7edd7a0cf35967",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:e2f23776e8079753225552244912f440",
+      "target": "struct:aacdbf81426f34e7222c0775b8c5aacc",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:e2f23776e8079753225552244912f440",
+      "target": "enum:4a7650205d80375841967d34c745069c",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:4a7650205d80375841967d34c745069c",
+      "target": "enum_member:ca2ee1b77cd192412f46f137ab72976d",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:4a7650205d80375841967d34c745069c",
+      "target": "enum_member:5df9032ab95dec9044ed95a3e36fba07",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:e2f23776e8079753225552244912f440",
+      "target": "enum:0c3bb4f7b6ea6d96a4dbd83ae01586a0",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:0c3bb4f7b6ea6d96a4dbd83ae01586a0",
+      "target": "enum_member:6e5b49b6871be10aeaeec41283b32cfc",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:0c3bb4f7b6ea6d96a4dbd83ae01586a0",
+      "target": "enum_member:96b9305a315798d766168d9d7e9fad97",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "struct:852fc73e03e29b6e6349420f2fe38461",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.c",
+      "target": "union:1c1f6d5c542ca3c3c24a65f2baa7e923",
+      "kind": "contains"
+    },
+    {
+      "source": "union:1c1f6d5c542ca3c3c24a65f2baa7e923",
+      "target": "struct:afb14d0ded3090d043e9c1eb77aa8e72",
+      "kind": "contains"
+    },
+    {
+      "source": "function:d7da4b402ad97a64a1766fcf09e392e0",
+      "target": "constant:84e8ca2c7ea91f1d3a3ed700ab7c9298",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:a8c2c8f513bc437341958e1e409a8797",
+      "target": "constant:45e137b8b2d4a1ce1d78ca783676e501",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:7a0b33da86ba854a62dfdbc9159b1318",
+      "target": "variable:ee9c6e0fee8889153857dd10264fe3d8",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "stdio.h",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "sys/socket.h",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "local_ops.h",
+      "referenceKind": "imports",
+      "line": 9,
+      "column": 0
+    },
+    {
+      "fromNodeId": "type_alias:ea7602cc1268d15f573f37f43c58d4e8",
+      "referenceName": "conn_pool",
+      "referenceKind": "references",
+      "line": 33,
+      "column": 15
+    },
+    {
+      "fromNodeId": "struct:c178330f11d7b530d10a9a362596e95e",
+      "referenceName": "cb_t",
+      "referenceKind": "references",
+      "line": 43,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:64514e020343f839129de60fb3d0e82a",
+      "referenceName": "add",
+      "referenceKind": "calls",
+      "line": 49,
+      "column": 32
+    },
+    {
+      "fromNodeId": "function:fcd5e95c35b0d729f302762b3d2c7201",
+      "referenceName": "add",
+      "referenceKind": "calls",
+      "line": 50,
+      "column": 32
+    },
+    {
+      "fromNodeId": "function:d7da4b402ad97a64a1766fcf09e392e0",
+      "referenceName": "printf",
+      "referenceKind": "calls",
+      "line": 63,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:7a0b33da86ba854a62dfdbc9159b1318",
+      "referenceName": "fn",
+      "referenceKind": "calls",
+      "line": 75,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:7a0b33da86ba854a62dfdbc9159b1318",
+      "referenceName": "c.on_recv",
+      "referenceKind": "calls",
+      "line": 77,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:72926d28d8630ec83d6f5314cb2888c6",
+      "referenceName": "register_handler",
+      "referenceKind": "calls",
+      "line": 82,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:72926d28d8630ec83d6f5314cb2888c6",
+      "referenceName": "signal_connect",
+      "referenceKind": "calls",
+      "line": 83,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "kzalloc_obj",
+      "referenceKind": "calls",
+      "line": 103,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "list_first_entry",
+      "referenceKind": "calls",
+      "line": 104,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "hlist_entry_safe",
+      "referenceKind": "calls",
+      "line": 106,
+      "column": 16
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "rcu_dereference_raw",
+      "referenceKind": "calls",
+      "line": 106,
+      "column": 33
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "hlist_next_rcu",
+      "referenceKind": "calls",
+      "line": 106,
+      "column": 53
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "use_ptr",
+      "referenceKind": "calls",
+      "line": 108,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "container_of",
+      "referenceKind": "calls",
+      "line": 108,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:70b6a2de4fa26b9f48f20000109db8a8",
+      "referenceName": "use_ptr",
+      "referenceKind": "calls",
+      "line": 109,
+      "column": 2
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "DEFINE_PER_CPU",
+      "referenceKind": "calls",
+      "line": 111,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:6b42908388ec30ebd77cb30442982033",
+      "referenceName": "use_ptr",
+      "referenceKind": "calls",
+      "line": 116,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:521a5bea2bed7202dcb40e666d7bcfb2",
+      "referenceName": "use_val",
+      "referenceKind": "calls",
+      "line": 125,
+      "column": 37
+    },
+    {
+      "fromNodeId": "function:4c142f94bfc81f2dbaeb53322f651474",
+      "referenceName": "shadowed_reader",
+      "referenceKind": "calls",
+      "line": 128,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:4c142f94bfc81f2dbaeb53322f651474",
+      "referenceName": "use_val",
+      "referenceKind": "calls",
+      "line": 129,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:94e47546d3d7e830b92f97eb2a289d01",
+      "referenceName": "va_arg",
+      "referenceKind": "calls",
+      "line": 134,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:94e47546d3d7e830b92f97eb2a289d01",
+      "referenceName": "va_arg",
+      "referenceKind": "calls",
+      "line": 135,
+      "column": 10
+    },
+    {
+      "fromNodeId": "function:94e47546d3d7e830b92f97eb2a289d01",
+      "referenceName": "use_ptr",
+      "referenceKind": "calls",
+      "line": 136,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:bde51e54776bf116801473b468e0a03f",
+      "referenceName": "use_ptr",
+      "referenceKind": "calls",
+      "line": 143,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:b7ca967fea03e27557d0c5f386de2439",
+      "referenceName": "use_ptr",
+      "referenceKind": "calls",
+      "line": 153,
+      "column": 2
+    },
+    {
+      "fromNodeId": "type_alias:5cb3a2602da0cc402a7f7bf9b946f23d",
+      "referenceName": "member_s",
+      "referenceKind": "references",
+      "line": 194,
+      "column": 15
+    },
+    {
+      "fromNodeId": "type_alias:94c7a48e66a08bd44ba5fb37de908948",
+      "referenceName": "member_t",
+      "referenceKind": "references",
+      "line": 197,
+      "column": 26
+    },
+    {
+      "fromNodeId": "type_alias:94c7a48e66a08bd44ba5fb37de908948",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 197,
+      "column": 39
+    },
+    {
+      "fromNodeId": "type_alias:0814f51710ef7926fee276c2876e4c3b",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 198,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_t",
+      "referenceKind": "references",
+      "line": 201,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 203,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 204,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 205,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 206,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "parse_state",
+      "referenceKind": "references",
+      "line": 207,
+      "column": 9
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "packet_hdr",
+      "referenceKind": "references",
+      "line": 208,
+      "column": 8
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "hdr_kind",
+      "referenceKind": "references",
+      "line": 209,
+      "column": 7
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "pause_mode",
+      "referenceKind": "references",
+      "line": 210,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_value",
+      "referenceKind": "references",
+      "line": 211,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_t",
+      "referenceKind": "references",
+      "line": 211,
+      "column": 23
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "parse_state",
+      "referenceKind": "references",
+      "line": 211,
+      "column": 52
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 212,
+      "column": 20
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 216,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_value",
+      "referenceKind": "references",
+      "line": 218,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "pause_mode",
+      "referenceKind": "references",
+      "line": 220,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 222,
+      "column": 10
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_value",
+      "referenceKind": "references",
+      "line": 223,
+      "column": 11
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_inner",
+      "referenceKind": "references",
+      "line": 224,
+      "column": 9
+    },
+    {
+      "fromNodeId": "struct:e2f23776e8079753225552244912f440",
+      "referenceName": "member_level",
+      "referenceKind": "references",
+      "line": 226,
+      "column": 7
+    },
+    {
+      "fromNodeId": "struct:aacdbf81426f34e7222c0775b8c5aacc",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 224,
+      "column": 24
+    },
+    {
+      "fromNodeId": "struct:852fc73e03e29b6e6349420f2fe38461",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 231,
+      "column": 2
+    },
+    {
+      "fromNodeId": "union:1c1f6d5c542ca3c3c24a65f2baa7e923",
+      "referenceName": "word_t",
+      "referenceKind": "references",
+      "line": 235,
+      "column": 2
+    },
+    {
+      "fromNodeId": "union:1c1f6d5c542ca3c3c24a65f2baa7e923",
+      "referenceName": "self_list",
+      "referenceKind": "references",
+      "line": 236,
+      "column": 11
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "cb_a",
+      "referenceKind": "function_ref",
+      "line": 53,
+      "column": 33
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "cb_b",
+      "referenceKind": "function_ref",
+      "line": 53,
+      "column": 39
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "handle_recv",
+      "referenceKind": "function_ref",
+      "line": 58,
+      "column": 48
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "WIRE_A",
+      "referenceKind": "function_ref",
+      "line": 58,
+      "column": 70
+    },
+    {
+      "fromNodeId": "function:72926d28d8630ec83d6f5314cb2888c6",
+      "referenceName": "cb_a",
+      "referenceKind": "function_ref",
+      "line": 82,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:72926d28d8630ec83d6f5314cb2888c6",
+      "referenceName": "cb_b",
+      "referenceKind": "function_ref",
+      "line": 83,
+      "column": 18
+    },
+    {
+      "fromNodeId": "file:torture.c",
+      "referenceName": "noop_builtin",
+      "referenceKind": "function_ref",
+      "line": 181,
+      "column": 12
+    }
+  ],
+  "errors": []
+}

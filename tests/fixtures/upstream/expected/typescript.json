@@ -1,0 +1,1557 @@
+{
+  "nodes": [
+    {
+      "id": "file:loader.ts",
+      "kind": "file",
+      "name": "loader.ts",
+      "qualifiedName": "loader.ts",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 1,
+      "endLine": 180,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:16f918c6516747086a8e01cedb7f52e0",
+      "kind": "import",
+      "name": "fs",
+      "qualifiedName": "fs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "import * as fs from 'fs';"
+    },
+    {
+      "id": "import:369a7ad8aa70c1ef29f7c3ce3e19312e",
+      "kind": "import",
+      "name": "path",
+      "qualifiedName": "path",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 29,
+      "signature": "import * as path from 'path';"
+    },
+    {
+      "id": "import:7b658284bf4ea7f64a54e93a482e1425",
+      "kind": "import",
+      "name": "module",
+      "qualifiedName": "module",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 27,
+      "endLine": 27,
+      "startColumn": 0,
+      "endColumn": 39,
+      "signature": "import { createRequire } from 'module';"
+    },
+    {
+      "id": "import:431892068bafbaa7c099b0c4ce219688",
+      "kind": "import",
+      "name": "../../types",
+      "qualifiedName": "../../types",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 0,
+      "endColumn": 53,
+      "signature": "import { NODE_KINDS, EDGE_KINDS } from '../../types';"
+    },
+    {
+      "id": "import:e12da130436332db6c680b075f097b10",
+      "kind": "import",
+      "name": "./layout",
+      "qualifiedName": "./layout",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 29,
+      "endLine": 29,
+      "startColumn": 0,
+      "endColumn": 46,
+      "signature": "import { KERNEL_ABI_VERSION } from './layout';"
+    },
+    {
+      "id": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "kind": "interface",
+      "name": "KernelBuffers",
+      "qualifiedName": "KernelBuffers",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 32,
+      "endLine": 38,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Raw buffer tables for one file — see layout.ts for the byte layout.",
+      "isExported": true
+    },
+    {
+      "id": "property:fc81728f9ecd7b5a953312b5d61cf7a3",
+      "kind": "property",
+      "name": "meta",
+      "qualifiedName": "KernelBuffers::meta",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 2,
+      "endColumn": 14,
+      "signature": "Buffer meta",
+      "isStatic": false
+    },
+    {
+      "id": "property:8e5375f462d34674e7ff7ccdee829b19",
+      "kind": "property",
+      "name": "nodes",
+      "qualifiedName": "KernelBuffers::nodes",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 34,
+      "endLine": 34,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "Buffer nodes",
+      "isStatic": false
+    },
+    {
+      "id": "property:5d59a76256ec2268a96d44cfce1dfb72",
+      "kind": "property",
+      "name": "edges",
+      "qualifiedName": "KernelBuffers::edges",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 35,
+      "endLine": 35,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "Buffer edges",
+      "isStatic": false
+    },
+    {
+      "id": "property:ebe542875ac3868be4a3f980a762a53c",
+      "kind": "property",
+      "name": "refs",
+      "qualifiedName": "KernelBuffers::refs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 36,
+      "endLine": 36,
+      "startColumn": 2,
+      "endColumn": 14,
+      "signature": "Buffer refs",
+      "isStatic": false
+    },
+    {
+      "id": "property:f2f9887b44b6b8b556ff02fdf9ea5395",
+      "kind": "property",
+      "name": "arena",
+      "qualifiedName": "KernelBuffers::arena",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "Buffer arena",
+      "isStatic": false
+    },
+    {
+      "id": "interface:e6ad190b52aac497262656228407f40b",
+      "kind": "interface",
+      "name": "KernelContractInfo",
+      "qualifiedName": "KernelContractInfo",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 40,
+      "endLine": 46,
+      "startColumn": 7,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "property:24b819884f91986ea8dd7ae620d89098",
+      "kind": "property",
+      "name": "abiVersion",
+      "qualifiedName": "KernelContractInfo::abiVersion",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 41,
+      "endLine": 41,
+      "startColumn": 2,
+      "endColumn": 20,
+      "signature": "number abiVersion",
+      "isStatic": false
+    },
+    {
+      "id": "property:e7d5970f5d4b7abdc049f19533d30f36",
+      "kind": "property",
+      "name": "kernelVersion",
+      "qualifiedName": "KernelContractInfo::kernelVersion",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 42,
+      "endLine": 42,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "string kernelVersion",
+      "isStatic": false
+    },
+    {
+      "id": "property:209646c1d5eb7842961e99df986f93f4",
+      "kind": "property",
+      "name": "nodeKinds",
+      "qualifiedName": "KernelContractInfo::nodeKinds",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 43,
+      "endLine": 43,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "string[] nodeKinds",
+      "isStatic": false
+    },
+    {
+      "id": "property:bdece4d5aa73780acef8d8471a48db3f",
+      "kind": "property",
+      "name": "edgeKinds",
+      "qualifiedName": "KernelContractInfo::edgeKinds",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 44,
+      "endLine": 44,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "string[] edgeKinds",
+      "isStatic": false
+    },
+    {
+      "id": "property:6397f0a18224ef1db27c1623dbd09069",
+      "kind": "property",
+      "name": "languages",
+      "qualifiedName": "KernelContractInfo::languages",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 45,
+      "endLine": 45,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "string[] languages",
+      "isStatic": false
+    },
+    {
+      "id": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "kind": "interface",
+      "name": "KernelGrammarInfo",
+      "qualifiedName": "KernelGrammarInfo",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 48,
+      "endLine": 54,
+      "startColumn": 7,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "property:07e4ab896989867b3d558fedb5543bb3",
+      "kind": "property",
+      "name": "abiVersion",
+      "qualifiedName": "KernelGrammarInfo::abiVersion",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 2,
+      "endColumn": 20,
+      "signature": "number abiVersion",
+      "isStatic": false
+    },
+    {
+      "id": "property:c7dc0e3760c9e10ae37f7ae0b5bd37dc",
+      "kind": "property",
+      "name": "nodeKindCount",
+      "qualifiedName": "KernelGrammarInfo::nodeKindCount",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 50,
+      "endLine": 50,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "number nodeKindCount",
+      "isStatic": false
+    },
+    {
+      "id": "property:534df5643a7a800d71f87a73ef3ebc6c",
+      "kind": "property",
+      "name": "fieldCount",
+      "qualifiedName": "KernelGrammarInfo::fieldCount",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 51,
+      "endLine": 51,
+      "startColumn": 2,
+      "endColumn": 20,
+      "signature": "number fieldCount",
+      "isStatic": false
+    },
+    {
+      "id": "property:047bbece9e549fc8a8cb99485b464ad7",
+      "kind": "property",
+      "name": "nodeKinds",
+      "qualifiedName": "KernelGrammarInfo::nodeKinds",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 52,
+      "endLine": 52,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "string[] nodeKinds",
+      "isStatic": false
+    },
+    {
+      "id": "property:349e2426f20e6a271df025231da2ef5b",
+      "kind": "property",
+      "name": "fieldNames",
+      "qualifiedName": "KernelGrammarInfo::fieldNames",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 53,
+      "endLine": 53,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "string[] fieldNames",
+      "isStatic": false
+    },
+    {
+      "id": "interface:b02a2e7e07c33109e1e4ca106b2a6f72",
+      "kind": "interface",
+      "name": "CfnptrFileIn",
+      "qualifiedName": "CfnptrFileIn",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 58,
+      "endLine": 61,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Input to the cFnPtr extraction sweep: one file's raw text + its struct\n node extents (`endLine ?? startLine` applied by the caller).",
+      "isExported": true
+    },
+    {
+      "id": "property:f943e348bd411bf17ec433155e234dde",
+      "kind": "property",
+      "name": "text",
+      "qualifiedName": "CfnptrFileIn::text",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 59,
+      "endLine": 59,
+      "startColumn": 2,
+      "endColumn": 14,
+      "signature": "string text",
+      "isStatic": false
+    },
+    {
+      "id": "property:23d90cf24ef57a4071dc6dffe6440256",
+      "kind": "property",
+      "name": "structs",
+      "qualifiedName": "CfnptrFileIn::structs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 60,
+      "endLine": 60,
+      "startColumn": 2,
+      "endColumn": 63,
+      "signature": "{ id: string; startLine: number; endLine: number }[] structs",
+      "isStatic": false
+    },
+    {
+      "id": "interface:636369ce8502d7fff9c68147df2dc444",
+      "kind": "interface",
+      "name": "CfnptrFactsOut",
+      "qualifiedName": "CfnptrFactsOut",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 66,
+      "endLine": 80,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Per-file facts from the native cFnPtr extraction sweep — mirror of the\n Rust `CfnptrFacts` (see prometeu-kernel/src/cfnptr.rs); semantics match\n the JS sweep in src/resolution/c-fnptr-synthesizer.ts.",
+      "isExported": true
+    },
+    {
+      "id": "property:8232523d89c1a6bd2bde9d86f6499c5c",
+      "kind": "property",
+      "name": "fnPtrTypedefs",
+      "qualifiedName": "CfnptrFactsOut::fnPtrTypedefs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 67,
+      "endLine": 67,
+      "startColumn": 2,
+      "endColumn": 25,
+      "signature": "string[] fnPtrTypedefs",
+      "isStatic": false
+    },
+    {
+      "id": "property:59ed31866b3bf146073fb4ecb44fc0ae",
+      "kind": "property",
+      "name": "fnTypeTypedefs",
+      "qualifiedName": "CfnptrFactsOut::fnTypeTypedefs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 68,
+      "endLine": 68,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "string[] fnTypeTypedefs",
+      "isStatic": false
+    },
+    {
+      "id": "property:06081b58cee4eb70e92880e53001a20b",
+      "kind": "property",
+      "name": "structs",
+      "qualifiedName": "CfnptrFactsOut::structs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 69,
+      "endLine": 69,
+      "startColumn": 2,
+      "endColumn": 115,
+      "signature": "{ id: string; parsed: boolean; fields: { name: string; index: number; ptr: boolean; type: string }[] }[] structs",
+      "isStatic": false
+    },
+    {
+      "id": "property:bc67e8d968c076a716a9b780845ecc93",
+      "kind": "property",
+      "name": "inlinePtr",
+      "qualifiedName": "CfnptrFactsOut::inlinePtr",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 70,
+      "endLine": 70,
+      "startColumn": 2,
+      "endColumn": 20,
+      "signature": "boolean inlinePtr",
+      "isStatic": false
+    },
+    {
+      "id": "property:3457ff0ad9e99933c128888301117f01",
+      "kind": "property",
+      "name": "inlineTypes",
+      "qualifiedName": "CfnptrFactsOut::inlineTypes",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 71,
+      "endLine": 71,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "string[] inlineTypes",
+      "isStatic": false
+    },
+    {
+      "id": "property:a2afdda086c26095744b2ac3e62605c0",
+      "kind": "property",
+      "name": "inlineTags",
+      "qualifiedName": "CfnptrFactsOut::inlineTags",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 72,
+      "endLine": 72,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "string[] inlineTags",
+      "isStatic": false
+    },
+    {
+      "id": "property:54464367c72f29dbd86074b3790906dc",
+      "kind": "property",
+      "name": "initTokens",
+      "qualifiedName": "CfnptrFactsOut::initTokens",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 73,
+      "endLine": 73,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "string[] initTokens",
+      "isStatic": false
+    },
+    {
+      "id": "property:e111b6cd3a479a3fd8f12b5a4cc98193",
+      "kind": "property",
+      "name": "arrayElems",
+      "qualifiedName": "CfnptrFactsOut::arrayElems",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 74,
+      "endLine": 74,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "string[] arrayElems",
+      "isStatic": false
+    },
+    {
+      "id": "property:264fa1d48dbbd81b4bbc9123e91f24b6",
+      "kind": "property",
+      "name": "aliasNames",
+      "qualifiedName": "CfnptrFactsOut::aliasNames",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 75,
+      "endLine": 75,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "string[] aliasNames",
+      "isStatic": false
+    },
+    {
+      "id": "property:1555c355bca020799ac23579547fdbe6",
+      "kind": "property",
+      "name": "dPairs",
+      "qualifiedName": "CfnptrFactsOut::dPairs",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 76,
+      "endLine": 76,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "string[] dPairs",
+      "isStatic": false
+    },
+    {
+      "id": "property:b458dbffabaa7196a1d834549fdac6c5",
+      "kind": "property",
+      "name": "dispatchFields",
+      "qualifiedName": "CfnptrFactsOut::dispatchFields",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 77,
+      "endLine": 77,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "string[] dispatchFields",
+      "isStatic": false
+    },
+    {
+      "id": "property:35a6d20a806e18aa7f41012f4a78e2b5",
+      "kind": "property",
+      "name": "arrayDispatchNames",
+      "qualifiedName": "CfnptrFactsOut::arrayDispatchNames",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 78,
+      "endLine": 78,
+      "startColumn": 2,
+      "endColumn": 30,
+      "signature": "string[] arrayDispatchNames",
+      "isStatic": false
+    },
+    {
+      "id": "property:6372d4ca0201fdacaa1b4024fd1c0fab",
+      "kind": "property",
+      "name": "includes",
+      "qualifiedName": "CfnptrFactsOut::includes",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 79,
+      "endLine": 79,
+      "startColumn": 2,
+      "endColumn": 20,
+      "signature": "string[] includes",
+      "isStatic": false
+    },
+    {
+      "id": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "kind": "interface",
+      "name": "KernelModule",
+      "qualifiedName": "KernelModule",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 82,
+      "endLine": 91,
+      "startColumn": 7,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "method:1bc28f048e9683bf4d9e8dc2fdffe455",
+      "kind": "method",
+      "name": "extractFile",
+      "qualifiedName": "KernelModule::extractFile",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 83,
+      "endLine": 83,
+      "startColumn": 2,
+      "endColumn": 81,
+      "signature": "(filePath: string, content: string, language: string): KernelBuffers",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:0202301e50f9d37d6784760293a8d76f",
+      "kind": "method",
+      "name": "contractInfo",
+      "qualifiedName": "KernelModule::contractInfo",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 84,
+      "endLine": 84,
+      "startColumn": 2,
+      "endColumn": 36,
+      "signature": "(): KernelContractInfo",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:558d5f3c1664646e58f9632db9e8fc82",
+      "kind": "method",
+      "name": "grammarInfo",
+      "qualifiedName": "KernelModule::grammarInfo",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 85,
+      "endLine": 85,
+      "startColumn": 2,
+      "endColumn": 57,
+      "signature": "(language: string): KernelGrammarInfo | null",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:490f67012eb5953b7483fc28f1b200cf",
+      "kind": "method",
+      "name": "cfnptrScanFiles",
+      "qualifiedName": "KernelModule::cfnptrScanFiles",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 88,
+      "endLine": 88,
+      "startColumn": 2,
+      "endColumn": 59,
+      "docstring": "Batched cFnPtr extraction sweep (task #5 step 2). OPTIONAL: absent on\n older binaries — callers feature-detect and keep their JS path.",
+      "signature": "(files: CfnptrFileIn[]): CfnptrFactsOut[]",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:cc33ee16a8143d020b2f0b9bb42ce420",
+      "kind": "method",
+      "name": "cfnptrStripC",
+      "qualifiedName": "KernelModule::cfnptrStripC",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 2,
+      "endColumn": 37,
+      "docstring": "Native `stripCommentsForRegex(text, 'c')` — differential-oracle hook.",
+      "signature": "(text: string): string",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:9d159a8888c36a199d6c6b32ac08e35c",
+      "kind": "function",
+      "name": "debugEnabled",
+      "qualifiedName": "debugEnabled",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 93,
+      "endLine": 93,
+      "startColumn": 21,
+      "endColumn": 68,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:79cbf6095b85c5e9bbd9a9ca6383df28",
+      "kind": "function",
+      "name": "debug",
+      "qualifiedName": "debug",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 94,
+      "endLine": 96,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(msg: string): void",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "kind": "variable",
+      "name": "kernelLanguages",
+      "qualifiedName": "kernelLanguages",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 99,
+      "endLine": 99,
+      "startColumn": 4,
+      "endColumn": 52,
+      "docstring": "Languages the loaded binary supports (contract-verified). Empty when no kernel.",
+      "signature": "= new Set()",
+      "isExported": false
+    },
+    {
+      "id": "variable:605281e12723d76d302b391cfe46dec1",
+      "kind": "variable",
+      "name": "cached",
+      "qualifiedName": "cached",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 101,
+      "endLine": 101,
+      "startColumn": 4,
+      "endColumn": 43,
+      "docstring": "undefined = not attempted yet; null = attempted and unavailable.",
+      "isExported": false
+    },
+    {
+      "id": "function:5e86735f192b53f2735fc36276ea9618",
+      "kind": "function",
+      "name": "candidatePaths",
+      "qualifiedName": "candidatePaths",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 103,
+      "endLine": 118,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(): string[]",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "kind": "function",
+      "name": "verifyContract",
+      "qualifiedName": "verifyContract",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 124,
+      "endLine": 137,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Verify the binary speaks our wire contract: same ABI version and byte-equal\nNodeKind/EdgeKind tables (kinds cross the boundary as indexes into these).",
+      "signature": "(mod: KernelModule, from: string): boolean",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:de4f28bc207d895c213212d0675c2689",
+      "kind": "function",
+      "name": "sameTable",
+      "qualifiedName": "verifyContract::sameTable",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 130,
+      "endLine": 131,
+      "startColumn": 20,
+      "endColumn": 58,
+      "signature": "(a: readonly string[], b: readonly string[])",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:451080722d9f4c768fdb113403ee0896",
+      "kind": "function",
+      "name": "getKernel",
+      "qualifiedName": "getKernel",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 144,
+      "endLine": 167,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Load (once per process) and return the kernel module, or null when\nunavailable. The kill switch is NOT checked here — callers route through\n`kernelAvailable()` / `tryKernelExtract()` which check it per call.",
+      "signature": "(): KernelModule | null",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:9be9112af3c41a35585a076a5b425534",
+      "kind": "function",
+      "name": "kernelSupports",
+      "qualifiedName": "kernelSupports",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 170,
+      "endLine": 173,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "True when the kill switch is off, a verified binary is loaded, and it supports `language`.",
+      "signature": "(language: string): boolean",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:7ba8a9708783945e38db087f0a35aaaf",
+      "kind": "function",
+      "name": "resetKernelForTests",
+      "qualifiedName": "resetKernelForTests",
+      "filePath": "loader.ts",
+      "language": "typescript",
+      "startLine": 176,
+      "endLine": 179,
+      "startColumn": 7,
+      "endColumn": 1,
+      "docstring": "Test hook: forget the loaded module so a changed env is re-evaluated.",
+      "signature": "(): void",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:loader.ts",
+      "target": "import:16f918c6516747086a8e01cedb7f52e0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "import:369a7ad8aa70c1ef29f7c3ce3e19312e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "import:7b658284bf4ea7f64a54e93a482e1425",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "import:431892068bafbaa7c099b0c4ce219688",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "import:e12da130436332db6c680b075f097b10",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "target": "property:fc81728f9ecd7b5a953312b5d61cf7a3",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "target": "property:8e5375f462d34674e7ff7ccdee829b19",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "target": "property:5d59a76256ec2268a96d44cfce1dfb72",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "target": "property:ebe542875ac3868be4a3f980a762a53c",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:64a28a6dde0f863f3aec5de7649d32e0",
+      "target": "property:f2f9887b44b6b8b556ff02fdf9ea5395",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "interface:e6ad190b52aac497262656228407f40b",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:e6ad190b52aac497262656228407f40b",
+      "target": "property:24b819884f91986ea8dd7ae620d89098",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:e6ad190b52aac497262656228407f40b",
+      "target": "property:e7d5970f5d4b7abdc049f19533d30f36",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:e6ad190b52aac497262656228407f40b",
+      "target": "property:209646c1d5eb7842961e99df986f93f4",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:e6ad190b52aac497262656228407f40b",
+      "target": "property:bdece4d5aa73780acef8d8471a48db3f",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:e6ad190b52aac497262656228407f40b",
+      "target": "property:6397f0a18224ef1db27c1623dbd09069",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "target": "property:07e4ab896989867b3d558fedb5543bb3",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "target": "property:c7dc0e3760c9e10ae37f7ae0b5bd37dc",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "target": "property:534df5643a7a800d71f87a73ef3ebc6c",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "target": "property:047bbece9e549fc8a8cb99485b464ad7",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:eaa68c5bfa4b27d9147235ac6d2a8d98",
+      "target": "property:349e2426f20e6a271df025231da2ef5b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "interface:b02a2e7e07c33109e1e4ca106b2a6f72",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:b02a2e7e07c33109e1e4ca106b2a6f72",
+      "target": "property:f943e348bd411bf17ec433155e234dde",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:b02a2e7e07c33109e1e4ca106b2a6f72",
+      "target": "property:23d90cf24ef57a4071dc6dffe6440256",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "interface:636369ce8502d7fff9c68147df2dc444",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:8232523d89c1a6bd2bde9d86f6499c5c",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:59ed31866b3bf146073fb4ecb44fc0ae",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:06081b58cee4eb70e92880e53001a20b",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:bc67e8d968c076a716a9b780845ecc93",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:3457ff0ad9e99933c128888301117f01",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:a2afdda086c26095744b2ac3e62605c0",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:54464367c72f29dbd86074b3790906dc",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:e111b6cd3a479a3fd8f12b5a4cc98193",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:264fa1d48dbbd81b4bbc9123e91f24b6",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:1555c355bca020799ac23579547fdbe6",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:b458dbffabaa7196a1d834549fdac6c5",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:35a6d20a806e18aa7f41012f4a78e2b5",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:636369ce8502d7fff9c68147df2dc444",
+      "target": "property:6372d4ca0201fdacaa1b4024fd1c0fab",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "target": "method:1bc28f048e9683bf4d9e8dc2fdffe455",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "target": "method:0202301e50f9d37d6784760293a8d76f",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "target": "method:558d5f3c1664646e58f9632db9e8fc82",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "target": "method:490f67012eb5953b7483fc28f1b200cf",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:4e2f30e186a6735c82dc53b02525a8a7",
+      "target": "method:cc33ee16a8143d020b2f0b9bb42ce420",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:9d159a8888c36a199d6c6b32ac08e35c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:79cbf6095b85c5e9bbd9a9ca6383df28",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "variable:605281e12723d76d302b391cfe46dec1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:5e86735f192b53f2735fc36276ea9618",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "kind": "contains"
+    },
+    {
+      "source": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "target": "function:de4f28bc207d895c213212d0675c2689",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:451080722d9f4c768fdb113403ee0896",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:9be9112af3c41a35585a076a5b425534",
+      "kind": "contains"
+    },
+    {
+      "source": "file:loader.ts",
+      "target": "function:7ba8a9708783945e38db087f0a35aaaf",
+      "kind": "contains"
+    },
+    {
+      "source": "function:451080722d9f4c768fdb113403ee0896",
+      "target": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:9be9112af3c41a35585a076a5b425534",
+      "target": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:7ba8a9708783945e38db087f0a35aaaf",
+      "target": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "fs",
+      "referenceKind": "imports",
+      "line": 25,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "fs",
+      "referenceKind": "imports",
+      "line": 25,
+      "column": 12
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "path",
+      "referenceKind": "imports",
+      "line": 26,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "path",
+      "referenceKind": "imports",
+      "line": 26,
+      "column": 12
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "module",
+      "referenceKind": "imports",
+      "line": 27,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "createRequire",
+      "referenceKind": "imports",
+      "line": 27,
+      "column": 9
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "../../types",
+      "referenceKind": "imports",
+      "line": 28,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "NODE_KINDS",
+      "referenceKind": "imports",
+      "line": 28,
+      "column": 9
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "EDGE_KINDS",
+      "referenceKind": "imports",
+      "line": 28,
+      "column": 21
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "./layout",
+      "referenceKind": "imports",
+      "line": 29,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:loader.ts",
+      "referenceName": "KERNEL_ABI_VERSION",
+      "referenceKind": "imports",
+      "line": 29,
+      "column": 9
+    },
+    {
+      "fromNodeId": "property:fc81728f9ecd7b5a953312b5d61cf7a3",
+      "referenceName": "Buffer",
+      "referenceKind": "references",
+      "line": 33,
+      "column": 8
+    },
+    {
+      "fromNodeId": "property:8e5375f462d34674e7ff7ccdee829b19",
+      "referenceName": "Buffer",
+      "referenceKind": "references",
+      "line": 34,
+      "column": 9
+    },
+    {
+      "fromNodeId": "property:5d59a76256ec2268a96d44cfce1dfb72",
+      "referenceName": "Buffer",
+      "referenceKind": "references",
+      "line": 35,
+      "column": 9
+    },
+    {
+      "fromNodeId": "property:ebe542875ac3868be4a3f980a762a53c",
+      "referenceName": "Buffer",
+      "referenceKind": "references",
+      "line": 36,
+      "column": 8
+    },
+    {
+      "fromNodeId": "property:f2f9887b44b6b8b556ff02fdf9ea5395",
+      "referenceName": "Buffer",
+      "referenceKind": "references",
+      "line": 37,
+      "column": 9
+    },
+    {
+      "fromNodeId": "method:1bc28f048e9683bf4d9e8dc2fdffe455",
+      "referenceName": "KernelBuffers",
+      "referenceKind": "references",
+      "line": 83,
+      "column": 68
+    },
+    {
+      "fromNodeId": "method:1bc28f048e9683bf4d9e8dc2fdffe455",
+      "referenceName": "KernelBuffers",
+      "referenceKind": "references",
+      "line": 83,
+      "column": 68
+    },
+    {
+      "fromNodeId": "method:0202301e50f9d37d6784760293a8d76f",
+      "referenceName": "KernelContractInfo",
+      "referenceKind": "references",
+      "line": 84,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:0202301e50f9d37d6784760293a8d76f",
+      "referenceName": "KernelContractInfo",
+      "referenceKind": "references",
+      "line": 84,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:558d5f3c1664646e58f9632db9e8fc82",
+      "referenceName": "KernelGrammarInfo",
+      "referenceKind": "references",
+      "line": 85,
+      "column": 33
+    },
+    {
+      "fromNodeId": "method:558d5f3c1664646e58f9632db9e8fc82",
+      "referenceName": "KernelGrammarInfo",
+      "referenceKind": "references",
+      "line": 85,
+      "column": 33
+    },
+    {
+      "fromNodeId": "method:490f67012eb5953b7483fc28f1b200cf",
+      "referenceName": "CfnptrFileIn",
+      "referenceKind": "references",
+      "line": 88,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:490f67012eb5953b7483fc28f1b200cf",
+      "referenceName": "CfnptrFactsOut",
+      "referenceKind": "references",
+      "line": 88,
+      "column": 43
+    },
+    {
+      "fromNodeId": "method:490f67012eb5953b7483fc28f1b200cf",
+      "referenceName": "CfnptrFactsOut",
+      "referenceKind": "references",
+      "line": 88,
+      "column": 43
+    },
+    {
+      "fromNodeId": "function:79cbf6095b85c5e9bbd9a9ca6383df28",
+      "referenceName": "debugEnabled",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:79cbf6095b85c5e9bbd9a9ca6383df28",
+      "referenceName": "process.stderr.write",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 22
+    },
+    {
+      "fromNodeId": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "referenceName": "ReadonlySet",
+      "referenceKind": "references",
+      "line": 99,
+      "column": 21
+    },
+    {
+      "fromNodeId": "variable:51237ddef83cf757778ec30ebff6ca97",
+      "referenceName": "Set",
+      "referenceKind": "instantiates",
+      "line": 99,
+      "column": 43
+    },
+    {
+      "fromNodeId": "variable:605281e12723d76d302b391cfe46dec1",
+      "referenceName": "KernelModule",
+      "referenceKind": "references",
+      "line": 101,
+      "column": 12
+    },
+    {
+      "fromNodeId": "function:5e86735f192b53f2735fc36276ea9618",
+      "referenceName": "candidates.push",
+      "referenceKind": "calls",
+      "line": 105,
+      "column": 40
+    },
+    {
+      "fromNodeId": "function:5e86735f192b53f2735fc36276ea9618",
+      "referenceName": "path.resolve",
+      "referenceKind": "calls",
+      "line": 106,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:5e86735f192b53f2735fc36276ea9618",
+      "referenceName": "candidates.push",
+      "referenceKind": "calls",
+      "line": 107,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:5e86735f192b53f2735fc36276ea9618",
+      "referenceName": "path.join",
+      "referenceKind": "calls",
+      "line": 107,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:5e86735f192b53f2735fc36276ea9618",
+      "referenceName": "candidates.push",
+      "referenceKind": "calls",
+      "line": 108,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:5e86735f192b53f2735fc36276ea9618",
+      "referenceName": "path.join",
+      "referenceKind": "calls",
+      "line": 109,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "KernelModule",
+      "referenceKind": "references",
+      "line": 124,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "mod.contractInfo",
+      "referenceKind": "calls",
+      "line": 125,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "debug",
+      "referenceKind": "calls",
+      "line": 127,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:de4f28bc207d895c213212d0675c2689",
+      "referenceName": "a.every",
+      "referenceKind": "calls",
+      "line": 131,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "sameTable",
+      "referenceKind": "calls",
+      "line": 132,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "sameTable",
+      "referenceKind": "calls",
+      "line": 132,
+      "column": 49
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "debug",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "KernelModule",
+      "referenceKind": "references",
+      "line": 144,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "KernelModule",
+      "referenceKind": "references",
+      "line": 144,
+      "column": 29
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "candidatePaths",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 26
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "fs.existsSync",
+      "referenceKind": "calls",
+      "line": 149,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "createRequire",
+      "referenceKind": "calls",
+      "line": 151,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "req",
+      "referenceKind": "calls",
+      "line": 152,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "debug",
+      "referenceKind": "calls",
+      "line": 154,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "verifyContract",
+      "referenceKind": "calls",
+      "line": 157,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "Set",
+      "referenceKind": "instantiates",
+      "line": 158,
+      "column": 24
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "mod.contractInfo",
+      "referenceKind": "calls",
+      "line": 158,
+      "column": 32
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "debug",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "debug",
+      "referenceKind": "calls",
+      "line": 163,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:451080722d9f4c768fdb113403ee0896",
+      "referenceName": "String",
+      "referenceKind": "calls",
+      "line": 163,
+      "column": 83
+    },
+    {
+      "fromNodeId": "function:9be9112af3c41a35585a076a5b425534",
+      "referenceName": "getKernel",
+      "referenceKind": "calls",
+      "line": 172,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:9be9112af3c41a35585a076a5b425534",
+      "referenceName": "kernelLanguages.has",
+      "referenceKind": "calls",
+      "line": 172,
+      "column": 33
+    },
+    {
+      "fromNodeId": "function:7ba8a9708783945e38db087f0a35aaaf",
+      "referenceName": "Set",
+      "referenceKind": "instantiates",
+      "line": 178,
+      "column": 20
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "NODE_KINDS",
+      "referenceKind": "function_ref",
+      "line": 132,
+      "column": 33
+    },
+    {
+      "fromNodeId": "function:20444d076fcf2cfcbd6331cc42aaaa7a",
+      "referenceName": "EDGE_KINDS",
+      "referenceKind": "function_ref",
+      "line": 132,
+      "column": 75
+    }
+  ],
+  "errors": []
+}

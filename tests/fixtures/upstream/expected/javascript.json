@@ -1,0 +1,1370 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.js",
+      "kind": "file",
+      "name": "torture.js",
+      "qualifiedName": "torture.js",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 1,
+      "endLine": 143,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:6f2c210232936459036ceda9ea071342",
+      "kind": "import",
+      "name": "node:events",
+      "qualifiedName": "node:events",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 43,
+      "signature": "import { EventEmitter } from 'node:events';"
+    },
+    {
+      "id": "function:9880cd7d8361fedda327ff0eb3eb37df",
+      "kind": "function",
+      "name": "legacyHelper",
+      "qualifiedName": "legacyHelper",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 9,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Legacy prototype-style helper.",
+      "signature": "(a, b)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:f54946f3687d20f9751ad94e97e271d7",
+      "kind": "function",
+      "name": "arrow",
+      "qualifiedName": "arrow",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 14,
+      "endColumn": 39,
+      "signature": "(x)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "kind": "class",
+      "name": "Widget",
+      "qualifiedName": "Widget",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 15,
+      "endLine": 40,
+      "startColumn": 0,
+      "endColumn": 1,
+      "isExported": false
+    },
+    {
+      "id": "property:b4d87d2c7ae64ef169b8ec2611f4adf0",
+      "kind": "property",
+      "name": "registry",
+      "qualifiedName": "Widget::registry",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 16,
+      "endLine": 16,
+      "startColumn": 2,
+      "endColumn": 29,
+      "signature": "registry",
+      "isStatic": true
+    },
+    {
+      "id": "property:6f2358dc1ea1ae3cf37c3dd1b4065640",
+      "kind": "property",
+      "name": "hooks",
+      "qualifiedName": "Widget::hooks",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 17,
+      "endLine": 17,
+      "startColumn": 2,
+      "endColumn": 39,
+      "signature": "hooks",
+      "isStatic": true
+    },
+    {
+      "id": "property:ea7484b05021ad71c30162df7608fd88",
+      "kind": "property",
+      "name": "#privateField",
+      "qualifiedName": "Widget::#privateField",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 2,
+      "endColumn": 19,
+      "signature": "#privateField",
+      "isStatic": false
+    },
+    {
+      "id": "property:ba8b8909697027bd7c624799837cdc1d",
+      "kind": "property",
+      "name": "label",
+      "qualifiedName": "Widget::label",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 19,
+      "endLine": 19,
+      "startColumn": 2,
+      "endColumn": 13,
+      "signature": "label",
+      "isStatic": false
+    },
+    {
+      "id": "method:ff6e6da8cac9c4190b05827aff956ca1",
+      "kind": "method",
+      "name": "onTick",
+      "qualifiedName": "Widget::onTick",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 20,
+      "endLine": 22,
+      "startColumn": 2,
+      "endColumn": 3,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:e94d6a6a23aa0b6e963e69ea7e525128",
+      "kind": "method",
+      "name": "wrapped",
+      "qualifiedName": "Widget::wrapped",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 23,
+      "endLine": 25,
+      "startColumn": 2,
+      "endColumn": 8,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:bd9d6abf67e1c899d98b1c8993643c07",
+      "kind": "method",
+      "name": "constructor",
+      "qualifiedName": "Widget::constructor",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 27,
+      "endLine": 31,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(opts)",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:804303ee3b103b81a3a4b776cfe592be",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "Widget::render",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 33,
+      "endLine": 35,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "()",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:c3ac1519ebcb1cb3721d3481f8b2f31c",
+      "kind": "method",
+      "name": "create",
+      "qualifiedName": "Widget::create",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 37,
+      "endLine": 39,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(opts)",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "function:8c7b195ac818a3ff09593908cbc48028",
+      "kind": "function",
+      "name": "hiddenInner",
+      "qualifiedName": "hiddenInner",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 44,
+      "endLine": 46,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:b582ff1a21a48083f78069150a8de3a2",
+      "kind": "function",
+      "name": "makeWidget",
+      "qualifiedName": "makeWidget",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 50,
+      "endLine": 52,
+      "startColumn": 28,
+      "endColumn": 1,
+      "signature": "(opts)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:25ca9b3c99764d08e9f94c27de8df481",
+      "kind": "constant",
+      "name": "mutations",
+      "qualifiedName": "mutations",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 55,
+      "endLine": 59,
+      "startColumn": 6,
+      "endColumn": 1,
+      "docstring": "Vuex module shape (store-file signals: mutations + actions + getters).",
+      "signature": "= {\n  SET_USER(state, user) {\n    state.user = user;\n  },\n}",
+      "isExported": false
+    },
+    {
+      "id": "function:a548f12f9120575aa54e8e09ed4bb65f",
+      "kind": "function",
+      "name": "SET_USER",
+      "qualifiedName": "mutations::SET_USER",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 56,
+      "endLine": 58,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(state, user)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:54afe5f104a4e9a2b61b618213bd3c1f",
+      "kind": "constant",
+      "name": "actions",
+      "qualifiedName": "actions",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 60,
+      "endLine": 65,
+      "startColumn": 6,
+      "endColumn": 1,
+      "signature": "= {\n  async loadUser({ commit }, id) {\n    const user = await fetchUser(id);\n    commit('SET_USER', us...",
+      "isExported": false
+    },
+    {
+      "id": "function:da35edf904718ee004d324ee65a7544d",
+      "kind": "function",
+      "name": "loadUser",
+      "qualifiedName": "actions::loadUser",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 61,
+      "endLine": 64,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "({ commit }, id)",
+      "isExported": false,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:a790832b388ace88c47bbacb91812155",
+      "kind": "function",
+      "name": "userName",
+      "qualifiedName": "userName",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 72,
+      "endLine": 74,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "(state)",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:9330a6b515f190e755baa3a37e0d04ba",
+      "kind": "constant",
+      "name": "eagerConfig",
+      "qualifiedName": "eagerConfig",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 80,
+      "endLine": 80,
+      "startColumn": 6,
+      "endColumn": 32,
+      "docstring": "Initializer walks attributed to the declared symbol (#693). A plain call\nleaked to the FILE node; a non-exported object literal was skipped outright.",
+      "signature": "= loadConfig()",
+      "isExported": false
+    },
+    {
+      "id": "constant:bf73b58a834e5e51868dd74b4ae89994",
+      "kind": "constant",
+      "name": "handlerMap",
+      "qualifiedName": "handlerMap",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 81,
+      "endLine": 81,
+      "startColumn": 6,
+      "endColumn": 79,
+      "signature": "= { onSave: () => persist(eagerConfig), onLoad: loadConfig() }",
+      "isExported": false
+    },
+    {
+      "id": "function:1710f4f05ce5bdd8e1b2662e40746d82",
+      "kind": "function",
+      "name": "onSave",
+      "qualifiedName": "handlerMap::onSave",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 81,
+      "endLine": 81,
+      "startColumn": 29,
+      "endColumn": 55,
+      "signature": "()",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:bf9327d1f057f04fd94d08a5474102f1",
+      "kind": "constant",
+      "name": "registry",
+      "qualifiedName": "registry",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 82,
+      "endLine": 82,
+      "startColumn": 6,
+      "endColumn": 69,
+      "signature": "= { legacyHelper, run: arrow, nested: [legacyHelper] }",
+      "isExported": false
+    },
+    {
+      "id": "constant:40d785f6bdfaf2551c9d485d95536a88",
+      "kind": "constant",
+      "name": "lazyList",
+      "qualifiedName": "lazyList",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 83,
+      "endLine": 83,
+      "startColumn": 6,
+      "endColumn": 45,
+      "signature": "= [() => persist(eagerConfig)]",
+      "isExported": false
+    },
+    {
+      "id": "function:08fb74976268e8ee2741e3675a81f863",
+      "kind": "function",
+      "name": "getItems",
+      "qualifiedName": "getItems",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 85,
+      "endLine": 85,
+      "startColumn": 19,
+      "endColumn": 71,
+      "signature": "(req, res)",
+      "isExported": true,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "function:4e7d436296f9d627171a67af56d2cc8b",
+      "kind": "function",
+      "name": "deleteItem",
+      "qualifiedName": "deleteItem",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 86,
+      "endLine": 86,
+      "startColumn": 28,
+      "endColumn": 89,
+      "signature": "(req, res)",
+      "isExported": true,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "kind": "function",
+      "name": "bucketChains",
+      "qualifiedName": "bucketChains",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 90,
+      "endLine": 96,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "- call-expression receivers (#1683) ----------------------------------------",
+      "signature": "(d, k, v)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:730545b285669ce3c6143d21af6ba986",
+      "kind": "function",
+      "name": "exprReceivers",
+      "qualifiedName": "exprReceivers",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 98,
+      "endLine": 110,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "- expression receivers ----------------------------------------------------",
+      "signature": "(x)",
+      "isExported": false,
+      "isAsync": true,
+      "isStatic": false
+    },
+    {
+      "id": "constant:a053a1648508a5ccbbb4e78511581e39",
+      "kind": "constant",
+      "name": "PANEL_GAP",
+      "qualifiedName": "PANEL_GAP",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 112,
+      "endLine": 112,
+      "startColumn": 6,
+      "endColumn": 19,
+      "docstring": "- component wrappers walked under the component ------------------------------",
+      "signature": "= 8",
+      "isExported": false
+    },
+    {
+      "id": "component:cd0768131da491952556dccdb077778e",
+      "kind": "component",
+      "name": "Panel",
+      "qualifiedName": "Panel",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 113,
+      "endLine": 116,
+      "startColumn": 6,
+      "endColumn": 1,
+      "signature": "= styled(Widget)`\n  gap: ${PANEL_GAP}px;\n  color: ${(props) => colorOf(props.theme)};\n`",
+      "isExported": false
+    },
+    {
+      "id": "component:00226d99af6d697c0680bdde2c5bd4d2",
+      "kind": "component",
+      "name": "Row",
+      "qualifiedName": "Row",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 117,
+      "endLine": 119,
+      "startColumn": 6,
+      "endColumn": 1,
+      "signature": "= styled.div.attrs((props) => ({ role: roleOf(props) }))`\n  ${Panel} { margin: 0; }\n`",
+      "isExported": false
+    },
+    {
+      "id": "component:7409cc5200546a2d864c264d16c35521",
+      "kind": "component",
+      "name": "MemoPanel",
+      "qualifiedName": "MemoPanel",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 120,
+      "endLine": 120,
+      "startColumn": 6,
+      "endColumn": 49,
+      "signature": "= React.memo(Panel, legacyHelper)",
+      "isExported": false
+    },
+    {
+      "id": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "kind": "function",
+      "name": "calleeShapes",
+      "qualifiedName": "calleeShapes",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 122,
+      "endLine": 131,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "- callees that name nothing, and wrappers that keep one -----------------------",
+      "signature": "(handlers, type, fn, ns)",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "kind": "function",
+      "name": "defaultsOf",
+      "qualifiedName": "defaultsOf",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 133,
+      "endLine": 135,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "- parameter defaults are the function's code (#2588) -----------------------",
+      "signature": "(note = legacyHelper(1), { a = arrow(2), b: { c = new Widget() } = {} } = {}, [x = legacyHelper(3), , y = arrow(4)] = [], { [legacyHelper(5)]: keyed } = {})",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "class:b7d4dd03ddce7e9e9371b566d6eaece8",
+      "kind": "class",
+      "name": "DefaultsHolder",
+      "qualifiedName": "DefaultsHolder",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 136,
+      "endLine": 140,
+      "startColumn": 0,
+      "endColumn": 1,
+      "isExported": false
+    },
+    {
+      "id": "method:459c919121fc82c2c087eddfa9b2f317",
+      "kind": "method",
+      "name": "constructor",
+      "qualifiedName": "DefaultsHolder::constructor",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 137,
+      "endLine": 137,
+      "startColumn": 2,
+      "endColumn": 47,
+      "signature": "(o = new Widget())",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:0faf95ebd9dcd7ff7eb24aa80db15ab1",
+      "kind": "method",
+      "name": "pick",
+      "qualifiedName": "DefaultsHolder::pick",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 138,
+      "endLine": 138,
+      "startColumn": 2,
+      "endColumn": 47,
+      "signature": "(item = legacyHelper(6))",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:7a82dea88e04fbb867f94144348ba38f",
+      "kind": "method",
+      "name": "onPick",
+      "qualifiedName": "DefaultsHolder::onPick",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 139,
+      "endLine": 139,
+      "startColumn": 2,
+      "endColumn": 36,
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "constant:57042ebb29da2e77c87a497f07d4249d",
+      "kind": "constant",
+      "name": "defaultsApi",
+      "qualifiedName": "defaultsApi",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 141,
+      "endLine": 141,
+      "startColumn": 6,
+      "endColumn": 69,
+      "signature": "= { load(note = legacyHelper(8)) { return note; } }",
+      "isExported": false
+    },
+    {
+      "id": "function:b9c79288c4b490af460d92be5097dc56",
+      "kind": "function",
+      "name": "load",
+      "qualifiedName": "defaultsApi::load",
+      "filePath": "torture.js",
+      "language": "javascript",
+      "startLine": 141,
+      "endLine": 141,
+      "startColumn": 22,
+      "endColumn": 67,
+      "signature": "(note = legacyHelper(8))",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.js",
+      "target": "import:6f2c210232936459036ceda9ea071342",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:9880cd7d8361fedda327ff0eb3eb37df",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:f54946f3687d20f9751ad94e97e271d7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "property:b4d87d2c7ae64ef169b8ec2611f4adf0",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "property:6f2358dc1ea1ae3cf37c3dd1b4065640",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "property:ea7484b05021ad71c30162df7608fd88",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "property:ba8b8909697027bd7c624799837cdc1d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "method:ff6e6da8cac9c4190b05827aff956ca1",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "method:e94d6a6a23aa0b6e963e69ea7e525128",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "method:bd9d6abf67e1c899d98b1c8993643c07",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "method:804303ee3b103b81a3a4b776cfe592be",
+      "kind": "contains"
+    },
+    {
+      "source": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "target": "method:c3ac1519ebcb1cb3721d3481f8b2f31c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:8c7b195ac818a3ff09593908cbc48028",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:b582ff1a21a48083f78069150a8de3a2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:25ca9b3c99764d08e9f94c27de8df481",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:25ca9b3c99764d08e9f94c27de8df481",
+      "target": "function:a548f12f9120575aa54e8e09ed4bb65f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:54afe5f104a4e9a2b61b618213bd3c1f",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:54afe5f104a4e9a2b61b618213bd3c1f",
+      "target": "function:da35edf904718ee004d324ee65a7544d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:a790832b388ace88c47bbacb91812155",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:9330a6b515f190e755baa3a37e0d04ba",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:bf73b58a834e5e51868dd74b4ae89994",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:bf73b58a834e5e51868dd74b4ae89994",
+      "target": "function:1710f4f05ce5bdd8e1b2662e40746d82",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:bf9327d1f057f04fd94d08a5474102f1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:40d785f6bdfaf2551c9d485d95536a88",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:08fb74976268e8ee2741e3675a81f863",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:4e7d436296f9d627171a67af56d2cc8b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:730545b285669ce3c6143d21af6ba986",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:a053a1648508a5ccbbb4e78511581e39",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "component:cd0768131da491952556dccdb077778e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "component:00226d99af6d697c0680bdde2c5bd4d2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "component:7409cc5200546a2d864c264d16c35521",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "class:b7d4dd03ddce7e9e9371b566d6eaece8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:b7d4dd03ddce7e9e9371b566d6eaece8",
+      "target": "method:459c919121fc82c2c087eddfa9b2f317",
+      "kind": "contains"
+    },
+    {
+      "source": "class:b7d4dd03ddce7e9e9371b566d6eaece8",
+      "target": "method:0faf95ebd9dcd7ff7eb24aa80db15ab1",
+      "kind": "contains"
+    },
+    {
+      "source": "class:b7d4dd03ddce7e9e9371b566d6eaece8",
+      "target": "method:7a82dea88e04fbb867f94144348ba38f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.js",
+      "target": "constant:57042ebb29da2e77c87a497f07d4249d",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:57042ebb29da2e77c87a497f07d4249d",
+      "target": "function:b9c79288c4b490af460d92be5097dc56",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:bf73b58a834e5e51868dd74b4ae89994",
+      "target": "constant:9330a6b515f190e755baa3a37e0d04ba",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "function:1710f4f05ce5bdd8e1b2662e40746d82",
+      "target": "constant:9330a6b515f190e755baa3a37e0d04ba",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "constant:40d785f6bdfaf2551c9d485d95536a88",
+      "target": "constant:9330a6b515f190e755baa3a37e0d04ba",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "component:cd0768131da491952556dccdb077778e",
+      "target": "constant:a053a1648508a5ccbbb4e78511581e39",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.js",
+      "referenceName": "node:events",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.js",
+      "referenceName": "EventEmitter",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "fromNodeId": "file:torture.js",
+      "referenceName": "require",
+      "referenceKind": "calls",
+      "line": 6,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:f54946f3687d20f9751ad94e97e271d7",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 13,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:7b9fe84bf0a135fd43dd8e0a43329327",
+      "referenceName": "EventEmitter",
+      "referenceKind": "extends",
+      "line": 15,
+      "column": 21
+    },
+    {
+      "fromNodeId": "property:b4d87d2c7ae64ef169b8ec2611f4adf0",
+      "referenceName": "Map",
+      "referenceKind": "instantiates",
+      "line": 16,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:ff6e6da8cac9c4190b05827aff956ca1",
+      "referenceName": "render",
+      "referenceKind": "calls",
+      "line": 21,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:e94d6a6a23aa0b6e963e69ea7e525128",
+      "referenceName": "expensive",
+      "referenceKind": "calls",
+      "line": 24,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:bd9d6abf67e1c899d98b1c8993643c07",
+      "referenceName": "super",
+      "referenceKind": "calls",
+      "line": 28,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:bd9d6abf67e1c899d98b1c8993643c07",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 30,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:804303ee3b103b81a3a4b776cfe592be",
+      "referenceName": "paint",
+      "referenceKind": "calls",
+      "line": 34,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:c3ac1519ebcb1cb3721d3481f8b2f31c",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 38,
+      "column": 11
+    },
+    {
+      "fromNodeId": "file:torture.js",
+      "referenceName": "hiddenInner",
+      "referenceKind": "calls",
+      "line": 47,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:b582ff1a21a48083f78069150a8de3a2",
+      "referenceName": "Widget.create",
+      "referenceKind": "calls",
+      "line": 51,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:da35edf904718ee004d324ee65a7544d",
+      "referenceName": "fetchUser",
+      "referenceKind": "calls",
+      "line": 62,
+      "column": 23
+    },
+    {
+      "fromNodeId": "function:da35edf904718ee004d324ee65a7544d",
+      "referenceName": "commit",
+      "referenceKind": "calls",
+      "line": 63,
+      "column": 4
+    },
+    {
+      "fromNodeId": "constant:9330a6b515f190e755baa3a37e0d04ba",
+      "referenceName": "loadConfig",
+      "referenceKind": "calls",
+      "line": 80,
+      "column": 20
+    },
+    {
+      "fromNodeId": "function:1710f4f05ce5bdd8e1b2662e40746d82",
+      "referenceName": "persist",
+      "referenceKind": "calls",
+      "line": 81,
+      "column": 35
+    },
+    {
+      "fromNodeId": "constant:bf73b58a834e5e51868dd74b4ae89994",
+      "referenceName": "loadConfig",
+      "referenceKind": "calls",
+      "line": 81,
+      "column": 65
+    },
+    {
+      "fromNodeId": "constant:40d785f6bdfaf2551c9d485d95536a88",
+      "referenceName": "persist",
+      "referenceKind": "calls",
+      "line": 83,
+      "column": 24
+    },
+    {
+      "fromNodeId": "function:08fb74976268e8ee2741e3675a81f863",
+      "referenceName": "res.json",
+      "referenceKind": "calls",
+      "line": 85,
+      "column": 41
+    },
+    {
+      "fromNodeId": "function:08fb74976268e8ee2741e3675a81f863",
+      "referenceName": "findItems",
+      "referenceKind": "calls",
+      "line": 85,
+      "column": 56
+    },
+    {
+      "fromNodeId": "function:4e7d436296f9d627171a67af56d2cc8b",
+      "referenceName": "removeItem",
+      "referenceKind": "calls",
+      "line": 86,
+      "column": 50
+    },
+    {
+      "fromNodeId": "function:4e7d436296f9d627171a67af56d2cc8b",
+      "referenceName": "res.end",
+      "referenceKind": "calls",
+      "line": 86,
+      "column": 77
+    },
+    {
+      "fromNodeId": "file:torture.js",
+      "referenceName": "persist",
+      "referenceKind": "calls",
+      "line": 88,
+      "column": 26
+    },
+    {
+      "fromNodeId": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "referenceName": "d.setdefault().append",
+      "referenceKind": "calls",
+      "line": 91,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "referenceName": "d.setdefault",
+      "referenceKind": "calls",
+      "line": 91,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "referenceName": "make().run",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "referenceName": "make",
+      "referenceKind": "calls",
+      "line": 92,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "referenceName": "obj.make().run",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:c6c7a736b13b9b1ff0e9397952f09349",
+      "referenceName": "obj.make",
+      "referenceKind": "calls",
+      "line": 95,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "list().map",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "list",
+      "referenceKind": "calls",
+      "line": 99,
+      "column": 9
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "x.run",
+      "referenceKind": "calls",
+      "line": 100,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "f",
+      "referenceKind": "calls",
+      "line": 102,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "run",
+      "referenceKind": "calls",
+      "line": 104,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "new Runner().go",
+      "referenceKind": "calls",
+      "line": 105,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "Runner",
+      "referenceKind": "instantiates",
+      "line": 105,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "new RegExp().exec",
+      "referenceKind": "calls",
+      "line": 106,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "RegExp",
+      "referenceKind": "instantiates",
+      "line": 106,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "new ns.Widget().draw",
+      "referenceKind": "calls",
+      "line": 107,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 107,
+      "column": 3
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "(pick())",
+      "referenceKind": "instantiates",
+      "line": 108,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "pick",
+      "referenceKind": "calls",
+      "line": 108,
+      "column": 7
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "copy",
+      "referenceKind": "calls",
+      "line": 109,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:730545b285669ce3c6143d21af6ba986",
+      "referenceName": "constructor",
+      "referenceKind": "instantiates",
+      "line": 109,
+      "column": 2
+    },
+    {
+      "fromNodeId": "component:cd0768131da491952556dccdb077778e",
+      "referenceName": "colorOf",
+      "referenceKind": "calls",
+      "line": 115,
+      "column": 22
+    },
+    {
+      "fromNodeId": "component:00226d99af6d697c0680bdde2c5bd4d2",
+      "referenceName": "roleOf",
+      "referenceKind": "calls",
+      "line": 117,
+      "column": 49
+    },
+    {
+      "fromNodeId": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 123,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "referenceName": "arrow",
+      "referenceKind": "calls",
+      "line": 124,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "referenceName": "connect",
+      "referenceKind": "calls",
+      "line": 125,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "referenceName": "breakpoint",
+      "referenceKind": "calls",
+      "line": 126,
+      "column": 2
+    },
+    {
+      "fromNodeId": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "referenceName": "fn",
+      "referenceKind": "calls",
+      "line": 129,
+      "column": 3
+    },
+    {
+      "fromNodeId": "function:1c731d01deb9c8e7eb2881eaebba9e58",
+      "referenceName": "ns.fn",
+      "referenceKind": "calls",
+      "line": 130,
+      "column": 3
+    },
+    {
+      "fromNodeId": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 27
+    },
+    {
+      "fromNodeId": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "referenceName": "arrow",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 50
+    },
+    {
+      "fromNodeId": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 133,
+      "column": 69
+    },
+    {
+      "fromNodeId": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 102
+    },
+    {
+      "fromNodeId": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "referenceName": "arrow",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 125
+    },
+    {
+      "fromNodeId": "function:4a28c33e875fdd687608fc79a7d769a4",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 144
+    },
+    {
+      "fromNodeId": "method:459c919121fc82c2c087eddfa9b2f317",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 137,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:0faf95ebd9dcd7ff7eb24aa80db15ab1",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 138,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:7a82dea88e04fbb867f94144348ba38f",
+      "referenceName": "arrow",
+      "referenceKind": "calls",
+      "line": 139,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:b9c79288c4b490af460d92be5097dc56",
+      "referenceName": "legacyHelper",
+      "referenceKind": "calls",
+      "line": 141,
+      "column": 34
+    },
+    {
+      "fromNodeId": "file:torture.js",
+      "referenceName": "arrow",
+      "referenceKind": "calls",
+      "line": 142,
+      "column": 32
+    },
+    {
+      "fromNodeId": "property:6f2358dc1ea1ae3cf37c3dd1b4065640",
+      "referenceName": "legacyHelper",
+      "referenceKind": "function_ref",
+      "line": 17,
+      "column": 25
+    },
+    {
+      "fromNodeId": "method:bd9d6abf67e1c899d98b1c8993643c07",
+      "referenceName": "this.onTick",
+      "referenceKind": "function_ref",
+      "line": 30,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:804303ee3b103b81a3a4b776cfe592be",
+      "referenceName": "this.label",
+      "referenceKind": "function_ref",
+      "line": 34,
+      "column": 15
+    },
+    {
+      "fromNodeId": "constant:bf9327d1f057f04fd94d08a5474102f1",
+      "referenceName": "legacyHelper",
+      "referenceKind": "function_ref",
+      "line": 82,
+      "column": 19
+    },
+    {
+      "fromNodeId": "constant:bf9327d1f057f04fd94d08a5474102f1",
+      "referenceName": "arrow",
+      "referenceKind": "function_ref",
+      "line": 82,
+      "column": 38
+    },
+    {
+      "fromNodeId": "component:7409cc5200546a2d864c264d16c35521",
+      "referenceName": "legacyHelper",
+      "referenceKind": "function_ref",
+      "line": 120,
+      "column": 36
+    }
+  ],
+  "errors": []
+}

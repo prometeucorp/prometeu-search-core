@@ -1,0 +1,219 @@
+[
+  {
+    "project": "ts-wrapped-field-initializers-13",
+    "missingNodes": [],
+    "extraNodes": [],
+    "missingEdges": [
+      {
+        "column": 34,
+        "kind": "calls",
+        "line": 3,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "_register",
+          "resolvedBy": "exact-match"
+        },
+        "source": "property:f9e049df6558b9f7857a12751d37a819",
+        "target": "method:ed5c4703cec8c079c1ed0a6fa260c15a"
+      }
+    ],
+    "extraEdges": [],
+    "reason": "A class that does not extend Disposable cannot resolve this._register to the unrelated Disposable method."
+  },
+  {
+    "project": "ts-chained-receiver-37",
+    "missingNodes": [],
+    "extraNodes": [],
+    "missingEdges": [
+      {
+        "column": 9,
+        "kind": "calls",
+        "line": 4,
+        "metadata": {
+          "confidence": 0.4,
+          "refName": "ping",
+          "resolvedBy": "exact-match"
+        },
+        "source": "function:eb14cfac62bb841a97bfcb522213df56",
+        "target": "function:2409d9dce52a083efdb81d2d59d8bbcb"
+      }
+    ],
+    "extraEdges": [
+      {
+        "column": 9,
+        "kind": "calls",
+        "line": 4,
+        "metadata": {
+          "ambiguous": true,
+          "confidence": 0.4,
+          "refName": "ping",
+          "resolvedBy": "exact-match"
+        },
+        "source": "function:eb14cfac62bb841a97bfcb522213df56",
+        "target": "function:2409d9dce52a083efdb81d2d59d8bbcb"
+      },
+      {
+        "column": 9,
+        "kind": "calls",
+        "line": 4,
+        "metadata": {
+          "ambiguous": true,
+          "confidence": 0.4,
+          "refName": "ping",
+          "resolvedBy": "exact-match"
+        },
+        "source": "function:eb14cfac62bb841a97bfcb522213df56",
+        "target": "method:ab5ca4f621fdb2a4a00e215da10484be"
+      }
+    ],
+    "reason": "An untyped window receiver keeps both plausible ping targets explicitly ambiguous instead of selecting the first."
+  },
+  {
+    "project": "namespace-missing-type-47",
+    "missingNodes": [],
+    "extraNodes": [],
+    "missingEdges": [
+      {
+        "column": 25,
+        "kind": "references",
+        "line": 3,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "Service",
+          "resolvedBy": "exact-match"
+        },
+        "source": "property:986cf309a11c37de84c42037ac139287",
+        "target": "class:94400bd2dd8679ba91de4ad18f3c1e31"
+      }
+    ],
+    "extraEdges": [],
+    "reason": "An imported namespace with no Service export cannot name an unrelated local Service type."
+  },
+  {
+    "project": "typed-name-single-55",
+    "missingNodes": [],
+    "extraNodes": [],
+    "missingEdges": [
+      {
+        "column": 9,
+        "kind": "imports",
+        "line": 1,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "absent",
+          "resolvedBy": "exact-match"
+        },
+        "source": "file:entry.ts",
+        "target": "function:ea8dec966772662207367ded7c0323aa"
+      },
+      {
+        "column": 94,
+        "kind": "calls",
+        "line": 1,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "absent",
+          "resolvedBy": "exact-match"
+        },
+        "source": "function:e963ffa0e7ab5423d7c71a8c736d75d3",
+        "target": "function:ea8dec966772662207367ded7c0323aa"
+      }
+    ],
+    "extraEdges": [],
+    "reason": "An import from a missing module cannot select an unrelated same-name declaration."
+  },
+  {
+    "project": "namespace-local-reexport-receivers-82",
+    "missingNodes": [],
+    "extraNodes": [],
+    "missingEdges": [
+      {
+        "column": 47,
+        "kind": "references",
+        "line": 5,
+        "metadata": {
+          "confidence": 0.4,
+          "refName": "Hidden",
+          "resolvedBy": "exact-match"
+        },
+        "source": "function:cfc0134d022b01a008ac18d59fad5404",
+        "target": "class:67e523d559a3450befdc153e0b95153b"
+      },
+      {
+        "column": 48,
+        "kind": "references",
+        "line": 4,
+        "metadata": {
+          "confidence": 0.4,
+          "refName": "Store",
+          "resolvedBy": "exact-match"
+        },
+        "source": "function:6b7e8eea63ab457984b7063935893c92",
+        "target": "class:4c898381fbb5c8a2e97281b3c01c42be"
+      },
+      {
+        "column": 55,
+        "kind": "calls",
+        "line": 3,
+        "metadata": {
+          "confidence": 0.7,
+          "refName": "value.write",
+          "resolvedBy": "instance-method"
+        },
+        "source": "function:fea70fe608ade20c71332160ebf7b134",
+        "target": "method:651d618706c3ac1743f34bf5f4b1d1fc"
+      }
+    ],
+    "extraEdges": [
+      {
+        "column": 48,
+        "kind": "references",
+        "line": 4,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "Store",
+          "resolvedBy": "import"
+        },
+        "source": "function:6b7e8eea63ab457984b7063935893c92",
+        "target": "class:4c898381fbb5c8a2e97281b3c01c42be"
+      },
+      {
+        "column": 51,
+        "kind": "calls",
+        "line": 2,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "value.save",
+          "resolvedBy": "instance-method"
+        },
+        "source": "function:f78ad28bef7dfc6403afadae3d790acc",
+        "target": "method:dc6d4d58c9e6f69d349826d741a3d372"
+      },
+      {
+        "column": 55,
+        "kind": "calls",
+        "line": 3,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "value.write",
+          "resolvedBy": "instance-method"
+        },
+        "source": "function:fea70fe608ade20c71332160ebf7b134",
+        "target": "method:651d618706c3ac1743f34bf5f4b1d1fc"
+      },
+      {
+        "column": 57,
+        "kind": "calls",
+        "line": 4,
+        "metadata": {
+          "confidence": 0.9,
+          "refName": "value.save",
+          "resolvedBy": "instance-method"
+        },
+        "source": "function:6b7e8eea63ab457984b7063935893c92",
+        "target": "method:dc6d4d58c9e6f69d349826d741a3d372"
+      }
+    ],
+    "reason": "Preserve established syntax-proven exported namespace receiver methods and re-exported declared types at their import/receiver confidence. The reference line scanner misses lowercase namespace annotations, guesses the interface method by name, and binds the private model.Hidden type to an unrelated export. Private and missing namespace members remain unresolved."
+  }
+]

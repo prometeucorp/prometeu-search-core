@@ -1,0 +1,2203 @@
+{
+  "nodes": [
+    {
+      "id": "file:Torture.java",
+      "kind": "file",
+      "name": "Torture.java",
+      "qualifiedName": "Torture.java",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 1,
+      "endLine": 149,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "kind": "namespace",
+      "name": "com.example.torture",
+      "qualifiedName": "com.example.torture",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 28
+    },
+    {
+      "id": "import:d01aa110302e3842ac3db1f01e44fd49",
+      "kind": "import",
+      "name": "java.util.List",
+      "qualifiedName": "com.example.torture::java.util.List",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 22,
+      "signature": "import java.util.List;"
+    },
+    {
+      "id": "import:014653bb4cdb1b43354937ba89cb80b5",
+      "kind": "import",
+      "name": "java.util.Map",
+      "qualifiedName": "com.example.torture::java.util.Map",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 21,
+      "signature": "import java.util.Map;"
+    },
+    {
+      "id": "import:69115d13094a1f7c83181f4d7dbdbf16",
+      "kind": "import",
+      "name": "java.util.Objects.requireNonNull",
+      "qualifiedName": "com.example.torture::java.util.Objects.requireNonNull",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 47,
+      "signature": "import static java.util.Objects.requireNonNull;"
+    },
+    {
+      "id": "import:1bb9139cc33ad8d8c9e84f960ccd8ec8",
+      "kind": "import",
+      "name": "com.example.other.OtherClass",
+      "qualifiedName": "com.example.torture::com.example.other.OtherClass",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 0,
+      "endColumn": 36,
+      "signature": "import com.example.other.OtherClass;"
+    },
+    {
+      "id": "import:cc46f446c585ccfc466f2e2651ed18a2",
+      "kind": "import",
+      "name": "lombok.Data",
+      "qualifiedName": "com.example.torture::lombok.Data",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 0,
+      "endColumn": 19,
+      "signature": "import lombok.Data;"
+    },
+    {
+      "id": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "kind": "class",
+      "name": "TortureService",
+      "qualifiedName": "com.example.torture::TortureService",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 16,
+      "endLine": 107,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "Javadoc for the service.",
+      "visibility": "public"
+    },
+    {
+      "id": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "kind": "constant",
+      "name": "RETRY_LIMITS",
+      "qualifiedName": "com.example.torture::TortureService::RETRY_LIMITS",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 20,
+      "endLine": 20,
+      "startColumn": 43,
+      "endColumn": 72,
+      "docstring": "A shared constant table (value-ref target).",
+      "signature": "Map<String, Integer> RETRY_LIMITS",
+      "visibility": "public",
+      "isStatic": true
+    },
+    {
+      "id": "constant:027c429f02116e6725f83e648b4778cf",
+      "kind": "constant",
+      "name": "API_BASE",
+      "qualifiedName": "com.example.torture::TortureService::API_BASE",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 21,
+      "endLine": 21,
+      "startColumn": 30,
+      "endColumn": 63,
+      "signature": "String API_BASE",
+      "visibility": "private",
+      "isStatic": true
+    },
+    {
+      "id": "field:e9004b77b03bb4395ce3ea42669d45f2",
+      "kind": "field",
+      "name": "count",
+      "qualifiedName": "com.example.torture::TortureService::count",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 22,
+      "endLine": 22,
+      "startColumn": 16,
+      "endColumn": 25,
+      "signature": "int count",
+      "visibility": "protected",
+      "isStatic": false
+    },
+    {
+      "id": "field:2d9816236940ff530104ce7cd9e51f38",
+      "kind": "field",
+      "name": "names",
+      "qualifiedName": "com.example.torture::TortureService::names",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 23,
+      "endLine": 23,
+      "startColumn": 29,
+      "endColumn": 34,
+      "signature": "List<String> names",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:1bb7cdefaf2cf085ee17e49f3d247947",
+      "kind": "field",
+      "name": "packagePrivate",
+      "qualifiedName": "com.example.torture::TortureService::packagePrivate",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 6,
+      "endColumn": 20,
+      "signature": "int packagePrivate",
+      "isStatic": false
+    },
+    {
+      "id": "field:942316661e6a9cf0abe48f56272277ef",
+      "kind": "field",
+      "name": "secondDeclarator",
+      "qualifiedName": "com.example.torture::TortureService::secondDeclarator",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 22,
+      "endColumn": 38,
+      "signature": "int secondDeclarator",
+      "isStatic": false
+    },
+    {
+      "id": "field:9b8892c2103e8d26a2d169b562508cad",
+      "kind": "field",
+      "name": "fieldLambda",
+      "qualifiedName": "com.example.torture::TortureService::fieldLambda",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 25,
+      "endColumn": 65,
+      "docstring": "Field initializers — walked scoped to the field (#693).",
+      "signature": "Runnable fieldLambda",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:aad418c7800fdc96bf64e4ae2e8fbbbf",
+      "kind": "field",
+      "name": "fieldAnonClass",
+      "qualifiedName": "com.example.torture::TortureService::fieldAnonClass",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 27,
+      "endLine": 32,
+      "startColumn": 25,
+      "endColumn": 3,
+      "signature": "Runnable fieldAnonClass",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "class:c4ed77533cd6f14e451fe7962f484e20",
+      "kind": "class",
+      "name": "<Runnable$anon@27>",
+      "qualifiedName": "com.example.torture::TortureService::fieldAnonClass::<Runnable$anon@27>",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 27,
+      "endLine": 32,
+      "startColumn": 42,
+      "endColumn": 3
+    },
+    {
+      "id": "method:581cacf02c5580f95fc293758de7be4e",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::TortureService::fieldAnonClass::<Runnable$anon@27>::run",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 28,
+      "endLine": 31,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "void ()",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "field:82c35725be28a27cad8dc5e8357d2e52",
+      "kind": "field",
+      "name": "fieldMethodRef",
+      "qualifiedName": "com.example.torture::TortureService::fieldMethodRef",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 33,
+      "endLine": 33,
+      "startColumn": 25,
+      "endColumn": 65,
+      "signature": "Runnable fieldMethodRef",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "constant:10178a6c93bf4201425b677b327d301d",
+      "kind": "constant",
+      "name": "FIELD_TABLE",
+      "qualifiedName": "com.example.torture::TortureService::FIELD_TABLE",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 34,
+      "endLine": 34,
+      "startColumn": 38,
+      "endColumn": 84,
+      "signature": "List<Runnable> FIELD_TABLE",
+      "visibility": "private",
+      "isStatic": true
+    },
+    {
+      "id": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "kind": "method",
+      "name": "TortureService",
+      "qualifiedName": "com.example.torture::TortureService::TortureService",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 37,
+      "endLine": 49,
+      "startColumn": 2,
+      "endColumn": 3,
+      "docstring": "Ctor javadoc.",
+      "signature": "(List<String> names)",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "class:94a84b8fd7bfb401c50d8b02ebe0f469",
+      "kind": "class",
+      "name": "<Runnable$anon@43>",
+      "qualifiedName": "com.example.torture::TortureService::TortureService::<Runnable$anon@43>",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 43,
+      "endLine": 48,
+      "startColumn": 20,
+      "endColumn": 5
+    },
+    {
+      "id": "method:e65d005a7092125bfe273d24c0a4cd95",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::TortureService::TortureService::<Runnable$anon@43>::run",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 44,
+      "endLine": 47,
+      "startColumn": 6,
+      "endColumn": 7,
+      "signature": "void ()",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::TortureService::run",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 51,
+      "endLine": 60,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "void ()",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:2cdc6efa220484b8e74b77fd3de860d0",
+      "kind": "method",
+      "name": "helper",
+      "qualifiedName": "com.example.torture::TortureService::helper",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 62,
+      "endLine": 64,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "Config (Object arg)",
+      "visibility": "private",
+      "isStatic": true,
+      "returnType": "Config"
+    },
+    {
+      "id": "method:0582151a7753d96b1404c765ad969ae9",
+      "kind": "method",
+      "name": "onEvent",
+      "qualifiedName": "com.example.torture::TortureService::onEvent",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 66,
+      "endLine": 66,
+      "startColumn": 2,
+      "endColumn": 27,
+      "signature": "void ()",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "method:cedda858aeb5a53acaa0d6830c7f206d",
+      "kind": "method",
+      "name": "compute",
+      "qualifiedName": "com.example.torture::TortureService::compute",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 67,
+      "endLine": 67,
+      "startColumn": 2,
+      "endColumn": 34,
+      "signature": "void ()",
+      "visibility": "private",
+      "isStatic": true
+    },
+    {
+      "id": "method:093c1b02379bfbc1ca0da81d375f7998",
+      "kind": "method",
+      "name": "shadowed",
+      "qualifiedName": "com.example.torture::TortureService::shadowed",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 69,
+      "endLine": 72,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "void ()",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "enum:6bd5e8c1c66114b3340b3aabf519427f",
+      "kind": "enum",
+      "name": "Direction",
+      "qualifiedName": "com.example.torture::TortureService::Direction",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 74,
+      "endLine": 81,
+      "startColumn": 2,
+      "endColumn": 3
+    },
+    {
+      "id": "enum_member:d3a159a38f742aefb5b73670d52a1674",
+      "kind": "enum_member",
+      "name": "UP",
+      "qualifiedName": "com.example.torture::TortureService::Direction::UP",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 75,
+      "endLine": 75,
+      "startColumn": 4,
+      "endColumn": 6
+    },
+    {
+      "id": "enum_member:bcedaf849d1537dcab0ccbeeff0604df",
+      "kind": "enum_member",
+      "name": "DOWN",
+      "qualifiedName": "com.example.torture::TortureService::Direction::DOWN",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 76,
+      "endLine": 76,
+      "startColumn": 4,
+      "endColumn": 8
+    },
+    {
+      "id": "method:18cfad7f588de301741ebd0915efed47",
+      "kind": "method",
+      "name": "opposite",
+      "qualifiedName": "com.example.torture::TortureService::Direction::opposite",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 78,
+      "endLine": 80,
+      "startColumn": 4,
+      "endColumn": 5,
+      "signature": "Direction ()",
+      "isStatic": false,
+      "returnType": "Direction"
+    },
+    {
+      "id": "enum:5414204c667741f87d6c6407d7aa610d",
+      "kind": "enum",
+      "name": "Step",
+      "qualifiedName": "com.example.torture::TortureService::Step",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 83,
+      "endLine": 102,
+      "startColumn": 2,
+      "endColumn": 3
+    },
+    {
+      "id": "enum_member:707bc3066d76b82aa801d0d5f252e3c5",
+      "kind": "enum_member",
+      "name": "NEXT",
+      "qualifiedName": "com.example.torture::TortureService::Step::NEXT",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 84,
+      "endLine": 89,
+      "startColumn": 4,
+      "endColumn": 5
+    },
+    {
+      "id": "method:08551f945a1ef553318f4ea6dd593b8b",
+      "kind": "method",
+      "name": "apply",
+      "qualifiedName": "com.example.torture::TortureService::Step::NEXT::apply",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 85,
+      "endLine": 88,
+      "startColumn": 6,
+      "endColumn": 7,
+      "signature": "int (int at)",
+      "isStatic": false
+    },
+    {
+      "id": "enum_member:f4118df7a7fde2a486800e69b2eff432",
+      "kind": "enum_member",
+      "name": "BACK",
+      "qualifiedName": "com.example.torture::TortureService::Step::BACK",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 90,
+      "endLine": 93,
+      "startColumn": 4,
+      "endColumn": 5
+    },
+    {
+      "id": "method:d783a2d7f12ebdac921535a3344f2b06",
+      "kind": "method",
+      "name": "apply",
+      "qualifiedName": "com.example.torture::TortureService::Step::BACK::apply",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 91,
+      "endLine": 92,
+      "startColumn": 6,
+      "endColumn": 45,
+      "signature": "int (int at)",
+      "isStatic": false
+    },
+    {
+      "id": "field:ca77c580169541f24fa01b544896d0c0",
+      "kind": "field",
+      "name": "size",
+      "qualifiedName": "com.example.torture::TortureService::Step::size",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 95,
+      "endLine": 95,
+      "startColumn": 14,
+      "endColumn": 18,
+      "signature": "int size",
+      "isStatic": false
+    },
+    {
+      "id": "method:d30a5d33ce411bc4f588c87cc6bf995f",
+      "kind": "method",
+      "name": "Step",
+      "qualifiedName": "com.example.torture::TortureService::Step::Step",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 97,
+      "endLine": 97,
+      "startColumn": 4,
+      "endColumn": 40,
+      "signature": "(int size)",
+      "isStatic": false
+    },
+    {
+      "id": "method:8069a523329588fa066c0307ec7030ef",
+      "kind": "method",
+      "name": "apply",
+      "qualifiedName": "com.example.torture::TortureService::Step::apply",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 99,
+      "endLine": 99,
+      "startColumn": 4,
+      "endColumn": 31,
+      "signature": "int (int at)",
+      "isStatic": false
+    },
+    {
+      "id": "method:c0b1de661e119412b88a696fe18e1cd9",
+      "kind": "method",
+      "name": "clamp",
+      "qualifiedName": "com.example.torture::TortureService::Step::clamp",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 101,
+      "endLine": 101,
+      "startColumn": 4,
+      "endColumn": 56,
+      "signature": "int (int at)",
+      "isStatic": true
+    },
+    {
+      "id": "interface:624a49ad7e32dc6b9559d01c3f31126c",
+      "kind": "interface",
+      "name": "Listener",
+      "qualifiedName": "com.example.torture::TortureService::Listener",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 104,
+      "endLine": 106,
+      "startColumn": 2,
+      "endColumn": 3
+    },
+    {
+      "id": "method:5b4995c22c359b8bae168d02d2599408",
+      "kind": "method",
+      "name": "onChange",
+      "qualifiedName": "com.example.torture::TortureService::Listener::onChange",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 105,
+      "endLine": 105,
+      "startColumn": 4,
+      "endColumn": 38,
+      "signature": "void (TortureService svc)",
+      "isStatic": false
+    },
+    {
+      "id": "class:8e1913319462953a5561cf63ce836b45",
+      "kind": "class",
+      "name": "LombokBean",
+      "qualifiedName": "com.example.torture::LombokBean",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 109,
+      "endLine": 118,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "field:9a3e3cd73fe5c5bbd7bfe129cb81741b",
+      "kind": "field",
+      "name": "name",
+      "qualifiedName": "com.example.torture::LombokBean::name",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 111,
+      "endLine": 111,
+      "startColumn": 17,
+      "endColumn": 21,
+      "signature": "String name",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:0193c0c8bdc4cc4fb40ba99c40937854",
+      "kind": "field",
+      "name": "isActive",
+      "qualifiedName": "com.example.torture::LombokBean::isActive",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 112,
+      "endLine": 112,
+      "startColumn": 18,
+      "endColumn": 26,
+      "signature": "boolean isActive",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:fb2b7519be6631f57e7fac7451ada7b8",
+      "kind": "field",
+      "name": "id",
+      "qualifiedName": "com.example.torture::LombokBean::id",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 113,
+      "endLine": 113,
+      "startColumn": 20,
+      "endColumn": 22,
+      "signature": "int id",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "field:8ecbec8b4b455da0571e34219d8084b2",
+      "kind": "field",
+      "name": "counter",
+      "qualifiedName": "com.example.torture::LombokBean::counter",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 114,
+      "endLine": 114,
+      "startColumn": 21,
+      "endColumn": 28,
+      "signature": "int counter",
+      "visibility": "private",
+      "isStatic": true
+    },
+    {
+      "id": "field:1a20b4de0c6a71426213e3621d660b0d",
+      "kind": "field",
+      "name": "toString",
+      "qualifiedName": "com.example.torture::LombokBean::toString",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 115,
+      "endLine": 115,
+      "startColumn": 17,
+      "endColumn": 25,
+      "signature": "String toString",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "method:a8bd95671e65ebc0b929a9141e137f92",
+      "kind": "method",
+      "name": "getName",
+      "qualifiedName": "com.example.torture::LombokBean::getName",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 117,
+      "endLine": 117,
+      "startColumn": 2,
+      "endColumn": 42,
+      "docstring": "taken: no synthetic toString field collision",
+      "signature": "String ()",
+      "visibility": "public",
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "method:dcb6fb44a11f4997955010a09054edf4",
+      "kind": "method",
+      "name": "setName",
+      "qualifiedName": "com.example.torture::LombokBean::setName",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 111,
+      "endLine": 111,
+      "startColumn": 17,
+      "endColumn": 21,
+      "visibility": "public",
+      "signature": "void setName(String name)",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:a5c2e7483a140ca79c940023c88c7a29",
+      "kind": "method",
+      "name": "isActive",
+      "qualifiedName": "com.example.torture::LombokBean::isActive",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 112,
+      "endLine": 112,
+      "startColumn": 18,
+      "endColumn": 26,
+      "visibility": "public",
+      "signature": "boolean isActive()",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:4be11031dd036bc7236ab5dc65ed97ea",
+      "kind": "method",
+      "name": "setActive",
+      "qualifiedName": "com.example.torture::LombokBean::setActive",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 112,
+      "endLine": 112,
+      "startColumn": 18,
+      "endColumn": 26,
+      "visibility": "public",
+      "signature": "void setActive(boolean isActive)",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:b49c3bc0e9a39f97542d2630f43b080a",
+      "kind": "method",
+      "name": "getId",
+      "qualifiedName": "com.example.torture::LombokBean::getId",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 113,
+      "endLine": 113,
+      "startColumn": 20,
+      "endColumn": 22,
+      "visibility": "public",
+      "signature": "int getId()",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:35df201b30650ea0452914f11c298cbd",
+      "kind": "method",
+      "name": "getToString",
+      "qualifiedName": "com.example.torture::LombokBean::getToString",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 115,
+      "endLine": 115,
+      "startColumn": 17,
+      "endColumn": 25,
+      "visibility": "public",
+      "signature": "String getToString()",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ],
+      "returnType": "String"
+    },
+    {
+      "id": "method:0c99eb6f1865a4e134c8bc72794ce270",
+      "kind": "method",
+      "name": "setToString",
+      "qualifiedName": "com.example.torture::LombokBean::setToString",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 115,
+      "endLine": 115,
+      "startColumn": 17,
+      "endColumn": 25,
+      "visibility": "public",
+      "signature": "void setToString(String toString)",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:a522384c688e99e48f7a5b6b55462ff9",
+      "kind": "method",
+      "name": "toString",
+      "qualifiedName": "com.example.torture::LombokBean::toString",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 110,
+      "endLine": 110,
+      "startColumn": 6,
+      "endColumn": 16,
+      "visibility": "public",
+      "signature": "String toString()",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:e5f90aa06e4d96a41e79c57e883aa951",
+      "kind": "method",
+      "name": "equals",
+      "qualifiedName": "com.example.torture::LombokBean::equals",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 110,
+      "endLine": 110,
+      "startColumn": 6,
+      "endColumn": 16,
+      "visibility": "public",
+      "signature": "boolean equals(Object o)",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "method:0328426239f67ba097262d824f2ce36b",
+      "kind": "method",
+      "name": "hashCode",
+      "qualifiedName": "com.example.torture::LombokBean::hashCode",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 110,
+      "endLine": 110,
+      "startColumn": 6,
+      "endColumn": 16,
+      "visibility": "public",
+      "signature": "int hashCode()",
+      "docstring": "Lombok-generated (@Data)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "class:928285da34d5258148518f08e02d851f",
+      "kind": "class",
+      "name": "LombokBuilderBean",
+      "qualifiedName": "com.example.torture::LombokBuilderBean",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 120,
+      "endLine": 125,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "field:710b111a234ca7177ca8078ca34a865a",
+      "kind": "field",
+      "name": "items",
+      "qualifiedName": "com.example.torture::LombokBuilderBean::items",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 124,
+      "endLine": 124,
+      "startColumn": 23,
+      "endColumn": 28,
+      "signature": "List<String> items",
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "method:83ab00af3d19c6fd1d7dacbcf7cdb2f0",
+      "kind": "method",
+      "name": "getItems",
+      "qualifiedName": "com.example.torture::LombokBuilderBean::getItems",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 124,
+      "endLine": 124,
+      "startColumn": 23,
+      "endColumn": 28,
+      "visibility": "public",
+      "signature": "List<String> getItems()",
+      "docstring": "Lombok-generated (@Getter)",
+      "decorators": [
+        "lombok"
+      ],
+      "returnType": "List"
+    },
+    {
+      "id": "method:a9caa520ad95f2f8f43f5631963263d1",
+      "kind": "method",
+      "name": "builder",
+      "qualifiedName": "com.example.torture::LombokBuilderBean::builder",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 6,
+      "endColumn": 23,
+      "visibility": "public",
+      "signature": "static LombokBuilderBean.LombokBuilderBeanBuilder builder()",
+      "docstring": "Lombok-generated (@Builder)",
+      "decorators": [
+        "lombok"
+      ],
+      "isStatic": true,
+      "returnType": "LombokBuilderBeanBuilder"
+    },
+    {
+      "id": "field:612e05cfe094478266cdef28126cd602",
+      "kind": "field",
+      "name": "log",
+      "qualifiedName": "com.example.torture::LombokBuilderBean::log",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 6,
+      "endColumn": 23,
+      "visibility": "private",
+      "isStatic": true,
+      "signature": "Logger log",
+      "docstring": "Lombok-generated (@Slf4j)",
+      "decorators": [
+        "lombok"
+      ]
+    },
+    {
+      "id": "interface:da9fa32bffee7a89ba9868da6abf2f09",
+      "kind": "interface",
+      "name": "Shape",
+      "qualifiedName": "com.example.torture::Shape",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 127,
+      "endLine": 129,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "method:477b3632d3afcba5b480daabb93ed0f5",
+      "kind": "method",
+      "name": "area",
+      "qualifiedName": "com.example.torture::Shape::area",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 128,
+      "endLine": 128,
+      "startColumn": 2,
+      "endColumn": 16,
+      "signature": "double ()",
+      "isStatic": false
+    },
+    {
+      "id": "interface:1d6612fe19eaab4aa53a6c2ed8377e97",
+      "kind": "interface",
+      "name": "Marker",
+      "qualifiedName": "com.example.torture::Marker",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 131,
+      "endLine": 133,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "class:f869628cc366603b5fde0549582cefc3",
+      "kind": "class",
+      "name": "DottedAnon",
+      "qualifiedName": "com.example.torture::DottedAnon",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 135,
+      "endLine": 142,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "field:e0c29c95f7b18a8f21501159ba63af9d",
+      "kind": "field",
+      "name": "listener",
+      "qualifiedName": "com.example.torture::DottedAnon::listener",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 136,
+      "endLine": 138,
+      "startColumn": 15,
+      "endColumn": 3,
+      "signature": "Api.Listener listener",
+      "isStatic": false
+    },
+    {
+      "id": "class:b1ca87279430c1edb66ce62ae9e133cb",
+      "kind": "class",
+      "name": "<Listener$anon@136>",
+      "qualifiedName": "com.example.torture::DottedAnon::listener::<Listener$anon@136>",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 136,
+      "endLine": 138,
+      "startColumn": 26,
+      "endColumn": 3
+    },
+    {
+      "id": "method:320ad6e842f597a0fcac0ef3c59924c4",
+      "kind": "method",
+      "name": "on",
+      "qualifiedName": "com.example.torture::DottedAnon::listener::<Listener$anon@136>::on",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 137,
+      "endLine": 137,
+      "startColumn": 4,
+      "endColumn": 23,
+      "signature": "void ()",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "field:287f401dedcaf12d56ef5dd17daf3cd9",
+      "kind": "field",
+      "name": "plain",
+      "qualifiedName": "com.example.torture::DottedAnon::plain",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 139,
+      "endLine": 141,
+      "startColumn": 9,
+      "endColumn": 3,
+      "signature": "Object plain",
+      "isStatic": false
+    },
+    {
+      "id": "class:830a9dc7d7522d704938f0c013437012",
+      "kind": "class",
+      "name": "<Callable$anon@139>",
+      "qualifiedName": "com.example.torture::DottedAnon::plain::<Callable$anon@139>",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 139,
+      "endLine": 141,
+      "startColumn": 17,
+      "endColumn": 3
+    },
+    {
+      "id": "method:3513ac4a18d4de4c1bd390454d8d5fb3",
+      "kind": "method",
+      "name": "call",
+      "qualifiedName": "com.example.torture::DottedAnon::plain::<Callable$anon@139>::call",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 140,
+      "endLine": 140,
+      "startColumn": 4,
+      "endColumn": 39,
+      "signature": "Integer ()",
+      "visibility": "public",
+      "isStatic": false,
+      "returnType": "Integer"
+    },
+    {
+      "id": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "kind": "interface",
+      "name": "TortureConsts",
+      "qualifiedName": "com.example.torture::TortureConsts",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 143,
+      "endLine": 148,
+      "startColumn": 0,
+      "endColumn": 1
+    },
+    {
+      "id": "constant:6b089a55eaaf2875a90789b3c86fee21",
+      "kind": "constant",
+      "name": "MAX",
+      "qualifiedName": "com.example.torture::TortureConsts::MAX",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 144,
+      "endLine": 144,
+      "startColumn": 6,
+      "endColumn": 14,
+      "signature": "int MAX",
+      "isStatic": true
+    },
+    {
+      "id": "constant:43ffb6a9179d14d6bae71cdd0fbc7236",
+      "kind": "constant",
+      "name": "HELPER",
+      "qualifiedName": "com.example.torture::TortureConsts::HELPER",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 145,
+      "endLine": 145,
+      "startColumn": 9,
+      "endColumn": 30,
+      "signature": "Helper HELPER",
+      "isStatic": true
+    },
+    {
+      "id": "constant:7895627b2f0750d7d8e6efa1fe5a4b13",
+      "kind": "constant",
+      "name": "NAME",
+      "qualifiedName": "com.example.torture::TortureConsts::NAME",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 146,
+      "endLine": 146,
+      "startColumn": 9,
+      "endColumn": 19,
+      "signature": "String NAME",
+      "isStatic": true
+    },
+    {
+      "id": "constant:cb0052c1d749d90f40c5eead5bd65c47",
+      "kind": "constant",
+      "name": "OTHER",
+      "qualifiedName": "com.example.torture::TortureConsts::OTHER",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 146,
+      "endLine": 146,
+      "startColumn": 21,
+      "endColumn": 32,
+      "signature": "String OTHER",
+      "isStatic": true
+    },
+    {
+      "id": "constant:9c0fa0569cc99290a0524ca2e23c3ee2",
+      "kind": "constant",
+      "name": "TASK",
+      "qualifiedName": "com.example.torture::TortureConsts::TASK",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 147,
+      "endLine": 147,
+      "startColumn": 11,
+      "endColumn": 64,
+      "signature": "Runnable TASK",
+      "isStatic": true
+    },
+    {
+      "id": "class:a67c083fc90d4fa2c12f5c45c0568632",
+      "kind": "class",
+      "name": "<Runnable$anon@147>",
+      "qualifiedName": "com.example.torture::TortureConsts::TASK::<Runnable$anon@147>",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 147,
+      "endLine": 147,
+      "startColumn": 18,
+      "endColumn": 64
+    },
+    {
+      "id": "method:7c407c9f885b12561b6c4f593b957d76",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "com.example.torture::TortureConsts::TASK::<Runnable$anon@147>::run",
+      "filePath": "Torture.java",
+      "language": "java",
+      "startLine": 147,
+      "endLine": 147,
+      "startColumn": 35,
+      "endColumn": 62,
+      "signature": "void ()",
+      "visibility": "public",
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:Torture.java",
+      "target": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "import:d01aa110302e3842ac3db1f01e44fd49",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "import:014653bb4cdb1b43354937ba89cb80b5",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "import:69115d13094a1f7c83181f4d7dbdbf16",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "import:1bb9139cc33ad8d8c9e84f960ccd8ec8",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "import:cc46f446c585ccfc466f2e2651ed18a2",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "constant:027c429f02116e6725f83e648b4778cf",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:e9004b77b03bb4395ce3ea42669d45f2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:2d9816236940ff530104ce7cd9e51f38",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:1bb7cdefaf2cf085ee17e49f3d247947",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:942316661e6a9cf0abe48f56272277ef",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:9b8892c2103e8d26a2d169b562508cad",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:aad418c7800fdc96bf64e4ae2e8fbbbf",
+      "kind": "contains"
+    },
+    {
+      "source": "field:aad418c7800fdc96bf64e4ae2e8fbbbf",
+      "target": "class:c4ed77533cd6f14e451fe7962f484e20",
+      "kind": "contains"
+    },
+    {
+      "source": "class:c4ed77533cd6f14e451fe7962f484e20",
+      "target": "method:581cacf02c5580f95fc293758de7be4e",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "field:82c35725be28a27cad8dc5e8357d2e52",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "constant:10178a6c93bf4201425b677b327d301d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "kind": "contains"
+    },
+    {
+      "source": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "target": "class:94a84b8fd7bfb401c50d8b02ebe0f469",
+      "kind": "contains"
+    },
+    {
+      "source": "class:94a84b8fd7bfb401c50d8b02ebe0f469",
+      "target": "method:e65d005a7092125bfe273d24c0a4cd95",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "method:2cdc6efa220484b8e74b77fd3de860d0",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "method:0582151a7753d96b1404c765ad969ae9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "method:cedda858aeb5a53acaa0d6830c7f206d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "method:093c1b02379bfbc1ca0da81d375f7998",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "enum:6bd5e8c1c66114b3340b3aabf519427f",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:6bd5e8c1c66114b3340b3aabf519427f",
+      "target": "enum_member:d3a159a38f742aefb5b73670d52a1674",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:6bd5e8c1c66114b3340b3aabf519427f",
+      "target": "enum_member:bcedaf849d1537dcab0ccbeeff0604df",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:6bd5e8c1c66114b3340b3aabf519427f",
+      "target": "method:18cfad7f588de301741ebd0915efed47",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "enum:5414204c667741f87d6c6407d7aa610d",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:5414204c667741f87d6c6407d7aa610d",
+      "target": "enum_member:707bc3066d76b82aa801d0d5f252e3c5",
+      "kind": "contains"
+    },
+    {
+      "source": "enum_member:707bc3066d76b82aa801d0d5f252e3c5",
+      "target": "method:08551f945a1ef553318f4ea6dd593b8b",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:5414204c667741f87d6c6407d7aa610d",
+      "target": "enum_member:f4118df7a7fde2a486800e69b2eff432",
+      "kind": "contains"
+    },
+    {
+      "source": "enum_member:f4118df7a7fde2a486800e69b2eff432",
+      "target": "method:d783a2d7f12ebdac921535a3344f2b06",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:5414204c667741f87d6c6407d7aa610d",
+      "target": "field:ca77c580169541f24fa01b544896d0c0",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:5414204c667741f87d6c6407d7aa610d",
+      "target": "method:d30a5d33ce411bc4f588c87cc6bf995f",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:5414204c667741f87d6c6407d7aa610d",
+      "target": "method:8069a523329588fa066c0307ec7030ef",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:5414204c667741f87d6c6407d7aa610d",
+      "target": "method:c0b1de661e119412b88a696fe18e1cd9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "target": "interface:624a49ad7e32dc6b9559d01c3f31126c",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:624a49ad7e32dc6b9559d01c3f31126c",
+      "target": "method:5b4995c22c359b8bae168d02d2599408",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "class:8e1913319462953a5561cf63ce836b45",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "field:9a3e3cd73fe5c5bbd7bfe129cb81741b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "field:0193c0c8bdc4cc4fb40ba99c40937854",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "field:fb2b7519be6631f57e7fac7451ada7b8",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "field:8ecbec8b4b455da0571e34219d8084b2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "field:1a20b4de0c6a71426213e3621d660b0d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:a8bd95671e65ebc0b929a9141e137f92",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:dcb6fb44a11f4997955010a09054edf4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:a5c2e7483a140ca79c940023c88c7a29",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:4be11031dd036bc7236ab5dc65ed97ea",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:b49c3bc0e9a39f97542d2630f43b080a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:35df201b30650ea0452914f11c298cbd",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:0c99eb6f1865a4e134c8bc72794ce270",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:a522384c688e99e48f7a5b6b55462ff9",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:e5f90aa06e4d96a41e79c57e883aa951",
+      "kind": "contains"
+    },
+    {
+      "source": "class:8e1913319462953a5561cf63ce836b45",
+      "target": "method:0328426239f67ba097262d824f2ce36b",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "class:928285da34d5258148518f08e02d851f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:928285da34d5258148518f08e02d851f",
+      "target": "field:710b111a234ca7177ca8078ca34a865a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:928285da34d5258148518f08e02d851f",
+      "target": "method:83ab00af3d19c6fd1d7dacbcf7cdb2f0",
+      "kind": "contains"
+    },
+    {
+      "source": "class:928285da34d5258148518f08e02d851f",
+      "target": "method:a9caa520ad95f2f8f43f5631963263d1",
+      "kind": "contains"
+    },
+    {
+      "source": "class:928285da34d5258148518f08e02d851f",
+      "target": "field:612e05cfe094478266cdef28126cd602",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "interface:da9fa32bffee7a89ba9868da6abf2f09",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:da9fa32bffee7a89ba9868da6abf2f09",
+      "target": "method:477b3632d3afcba5b480daabb93ed0f5",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "interface:1d6612fe19eaab4aa53a6c2ed8377e97",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "class:f869628cc366603b5fde0549582cefc3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:f869628cc366603b5fde0549582cefc3",
+      "target": "field:e0c29c95f7b18a8f21501159ba63af9d",
+      "kind": "contains"
+    },
+    {
+      "source": "field:e0c29c95f7b18a8f21501159ba63af9d",
+      "target": "class:b1ca87279430c1edb66ce62ae9e133cb",
+      "kind": "contains"
+    },
+    {
+      "source": "class:b1ca87279430c1edb66ce62ae9e133cb",
+      "target": "method:320ad6e842f597a0fcac0ef3c59924c4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:f869628cc366603b5fde0549582cefc3",
+      "target": "field:287f401dedcaf12d56ef5dd17daf3cd9",
+      "kind": "contains"
+    },
+    {
+      "source": "field:287f401dedcaf12d56ef5dd17daf3cd9",
+      "target": "class:830a9dc7d7522d704938f0c013437012",
+      "kind": "contains"
+    },
+    {
+      "source": "class:830a9dc7d7522d704938f0c013437012",
+      "target": "method:3513ac4a18d4de4c1bd390454d8d5fb3",
+      "kind": "contains"
+    },
+    {
+      "source": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "target": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "target": "constant:6b089a55eaaf2875a90789b3c86fee21",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "target": "constant:43ffb6a9179d14d6bae71cdd0fbc7236",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "target": "constant:7895627b2f0750d7d8e6efa1fe5a4b13",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "target": "constant:cb0052c1d749d90f40c5eead5bd65c47",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:0d8e830d28fa6e7b08103616e32870a4",
+      "target": "constant:9c0fa0569cc99290a0524ca2e23c3ee2",
+      "kind": "contains"
+    },
+    {
+      "source": "constant:9c0fa0569cc99290a0524ca2e23c3ee2",
+      "target": "class:a67c083fc90d4fa2c12f5c45c0568632",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a67c083fc90d4fa2c12f5c45c0568632",
+      "target": "method:7c407c9f885b12561b6c4f593b957d76",
+      "kind": "contains"
+    },
+    {
+      "source": "method:581cacf02c5580f95fc293758de7be4e",
+      "target": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "target": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:e65d005a7092125bfe273d24c0a4cd95",
+      "target": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "referenceName": "java.util.List",
+      "referenceKind": "imports",
+      "line": 9,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "referenceName": "java.util.Map",
+      "referenceKind": "imports",
+      "line": 10,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "referenceName": "java.util.Objects.requireNonNull",
+      "referenceKind": "imports",
+      "line": 11,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "referenceName": "com.example.other.OtherClass",
+      "referenceKind": "imports",
+      "line": 12,
+      "column": 0
+    },
+    {
+      "fromNodeId": "namespace:ef7fefe9d27ae48c94786cc9970c3f0d",
+      "referenceName": "lombok.Data",
+      "referenceKind": "imports",
+      "line": 13,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "referenceName": "BaseService",
+      "referenceKind": "extends",
+      "line": 18,
+      "column": 36
+    },
+    {
+      "fromNodeId": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "referenceName": "Runnable",
+      "referenceKind": "implements",
+      "line": 18,
+      "column": 59
+    },
+    {
+      "fromNodeId": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "referenceName": "AutoCloseable",
+      "referenceKind": "implements",
+      "line": 18,
+      "column": 69
+    },
+    {
+      "fromNodeId": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "referenceName": "Service",
+      "referenceKind": "decorates",
+      "line": 16,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "referenceName": "Component",
+      "referenceKind": "decorates",
+      "line": 17,
+      "column": 0
+    },
+    {
+      "fromNodeId": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 20,
+      "column": 22
+    },
+    {
+      "fromNodeId": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "referenceName": "Integer",
+      "referenceKind": "references",
+      "line": 20,
+      "column": 34
+    },
+    {
+      "fromNodeId": "constant:9ef5f2100c2250165378d22671ea7a78",
+      "referenceName": "Map.of",
+      "referenceKind": "calls",
+      "line": 20,
+      "column": 58
+    },
+    {
+      "fromNodeId": "field:2d9816236940ff530104ce7cd9e51f38",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 23,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:9b8892c2103e8d26a2d169b562508cad",
+      "referenceName": "Runnable",
+      "referenceKind": "references",
+      "line": 26,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:9b8892c2103e8d26a2d169b562508cad",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 26,
+      "column": 45
+    },
+    {
+      "fromNodeId": "field:aad418c7800fdc96bf64e4ae2e8fbbbf",
+      "referenceName": "Runnable",
+      "referenceKind": "references",
+      "line": 27,
+      "column": 16
+    },
+    {
+      "fromNodeId": "field:aad418c7800fdc96bf64e4ae2e8fbbbf",
+      "referenceName": "Runnable",
+      "referenceKind": "instantiates",
+      "line": 27,
+      "column": 42
+    },
+    {
+      "fromNodeId": "class:c4ed77533cd6f14e451fe7962f484e20",
+      "referenceName": "Runnable",
+      "referenceKind": "extends",
+      "line": 26,
+      "column": 46
+    },
+    {
+      "fromNodeId": "method:581cacf02c5580f95fc293758de7be4e",
+      "referenceName": "Override",
+      "referenceKind": "decorates",
+      "line": 28,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:581cacf02c5580f95fc293758de7be4e",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 30,
+      "column": 6
+    },
+    {
+      "fromNodeId": "field:82c35725be28a27cad8dc5e8357d2e52",
+      "referenceName": "Runnable",
+      "referenceKind": "references",
+      "line": 33,
+      "column": 16
+    },
+    {
+      "fromNodeId": "constant:10178a6c93bf4201425b677b327d301d",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 34,
+      "column": 23
+    },
+    {
+      "fromNodeId": "constant:10178a6c93bf4201425b677b327d301d",
+      "referenceName": "Runnable",
+      "referenceKind": "references",
+      "line": 34,
+      "column": 28
+    },
+    {
+      "fromNodeId": "constant:10178a6c93bf4201425b677b327d301d",
+      "referenceName": "List.of",
+      "referenceKind": "calls",
+      "line": 34,
+      "column": 52
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 37,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "requireNonNull",
+      "referenceKind": "calls",
+      "line": 38,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 39,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "queue",
+      "referenceKind": "calls",
+      "line": 40,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "queue",
+      "referenceKind": "calls",
+      "line": 41,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 42,
+      "column": 23
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "executor.submit",
+      "referenceKind": "calls",
+      "line": 43,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "Runnable",
+      "referenceKind": "instantiates",
+      "line": 43,
+      "column": 20
+    },
+    {
+      "fromNodeId": "class:94a84b8fd7bfb401c50d8b02ebe0f469",
+      "referenceName": "Runnable",
+      "referenceKind": "extends",
+      "line": 42,
+      "column": 24
+    },
+    {
+      "fromNodeId": "method:e65d005a7092125bfe273d24c0a4cd95",
+      "referenceName": "Override",
+      "referenceKind": "decorates",
+      "line": 44,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:e65d005a7092125bfe273d24c0a4cd95",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 46,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "Override",
+      "referenceKind": "decorates",
+      "line": 51,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "Deprecated",
+      "referenceKind": "decorates",
+      "line": 52,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "ConfigLoader.getInstance().load",
+      "referenceKind": "calls",
+      "line": 54,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "ConfigLoader.getInstance",
+      "referenceKind": "calls",
+      "line": 54,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "registry.lookup",
+      "referenceKind": "calls",
+      "line": 55,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 56,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "Direction",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 11
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "Limits",
+      "referenceKind": "references",
+      "line": 58,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "new StringBuilder(16).append",
+      "referenceKind": "calls",
+      "line": 59,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a03c4cdec02b6ff151f707417580ce5f",
+      "referenceName": "StringBuilder",
+      "referenceKind": "instantiates",
+      "line": 59,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:2cdc6efa220484b8e74b77fd3de860d0",
+      "referenceName": "Object",
+      "referenceKind": "references",
+      "line": 62,
+      "column": 31
+    },
+    {
+      "fromNodeId": "method:2cdc6efa220484b8e74b77fd3de860d0",
+      "referenceName": "Config",
+      "referenceKind": "references",
+      "line": 62,
+      "column": 17
+    },
+    {
+      "fromNodeId": "method:2cdc6efa220484b8e74b77fd3de860d0",
+      "referenceName": "Config",
+      "referenceKind": "instantiates",
+      "line": 63,
+      "column": 11
+    },
+    {
+      "fromNodeId": "method:093c1b02379bfbc1ca0da81d375f7998",
+      "referenceName": "log",
+      "referenceKind": "calls",
+      "line": 71,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:18cfad7f588de301741ebd0915efed47",
+      "referenceName": "Direction",
+      "referenceKind": "references",
+      "line": 78,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:08551f945a1ef553318f4ea6dd593b8b",
+      "referenceName": "Override",
+      "referenceKind": "decorates",
+      "line": 85,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:08551f945a1ef553318f4ea6dd593b8b",
+      "referenceName": "clamp",
+      "referenceKind": "calls",
+      "line": 87,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:d783a2d7f12ebdac921535a3344f2b06",
+      "referenceName": "Override",
+      "referenceKind": "decorates",
+      "line": 91,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:c0b1de661e119412b88a696fe18e1cd9",
+      "referenceName": "Math.max",
+      "referenceKind": "calls",
+      "line": 101,
+      "column": 38
+    },
+    {
+      "fromNodeId": "method:5b4995c22c359b8bae168d02d2599408",
+      "referenceName": "TortureService",
+      "referenceKind": "references",
+      "line": 105,
+      "column": 18
+    },
+    {
+      "fromNodeId": "class:8e1913319462953a5561cf63ce836b45",
+      "referenceName": "Data",
+      "referenceKind": "decorates",
+      "line": 109,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:928285da34d5258148518f08e02d851f",
+      "referenceName": "Getter",
+      "referenceKind": "decorates",
+      "line": 120,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:928285da34d5258148518f08e02d851f",
+      "referenceName": "Slf4j",
+      "referenceKind": "decorates",
+      "line": 121,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:928285da34d5258148518f08e02d851f",
+      "referenceName": "Builder",
+      "referenceKind": "decorates",
+      "line": 122,
+      "column": 0
+    },
+    {
+      "fromNodeId": "field:710b111a234ca7177ca8078ca34a865a",
+      "referenceName": "List",
+      "referenceKind": "references",
+      "line": 124,
+      "column": 10
+    },
+    {
+      "fromNodeId": "interface:da9fa32bffee7a89ba9868da6abf2f09",
+      "referenceName": "Comparable",
+      "referenceKind": "extends",
+      "line": 127,
+      "column": 24
+    },
+    {
+      "fromNodeId": "interface:da9fa32bffee7a89ba9868da6abf2f09",
+      "referenceName": "Cloneable",
+      "referenceKind": "extends",
+      "line": 127,
+      "column": 43
+    },
+    {
+      "fromNodeId": "field:e0c29c95f7b18a8f21501159ba63af9d",
+      "referenceName": "Api",
+      "referenceKind": "references",
+      "line": 136,
+      "column": 2
+    },
+    {
+      "fromNodeId": "field:e0c29c95f7b18a8f21501159ba63af9d",
+      "referenceName": "Listener",
+      "referenceKind": "references",
+      "line": 136,
+      "column": 6
+    },
+    {
+      "fromNodeId": "field:e0c29c95f7b18a8f21501159ba63af9d",
+      "referenceName": "Listener",
+      "referenceKind": "instantiates",
+      "line": 136,
+      "column": 26
+    },
+    {
+      "fromNodeId": "class:b1ca87279430c1edb66ce62ae9e133cb",
+      "referenceName": "Api.Listener",
+      "referenceKind": "extends",
+      "line": 135,
+      "column": 30
+    },
+    {
+      "fromNodeId": "field:287f401dedcaf12d56ef5dd17daf3cd9",
+      "referenceName": "Object",
+      "referenceKind": "references",
+      "line": 139,
+      "column": 2
+    },
+    {
+      "fromNodeId": "field:287f401dedcaf12d56ef5dd17daf3cd9",
+      "referenceName": "Callable",
+      "referenceKind": "instantiates",
+      "line": 139,
+      "column": 17
+    },
+    {
+      "fromNodeId": "class:830a9dc7d7522d704938f0c013437012",
+      "referenceName": "java.util.concurrent.Callable",
+      "referenceKind": "extends",
+      "line": 138,
+      "column": 21
+    },
+    {
+      "fromNodeId": "method:3513ac4a18d4de4c1bd390454d8d5fb3",
+      "referenceName": "Integer",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 11
+    },
+    {
+      "fromNodeId": "constant:43ffb6a9179d14d6bae71cdd0fbc7236",
+      "referenceName": "Helper",
+      "referenceKind": "references",
+      "line": 145,
+      "column": 2
+    },
+    {
+      "fromNodeId": "constant:43ffb6a9179d14d6bae71cdd0fbc7236",
+      "referenceName": "Helper",
+      "referenceKind": "instantiates",
+      "line": 145,
+      "column": 18
+    },
+    {
+      "fromNodeId": "constant:9c0fa0569cc99290a0524ca2e23c3ee2",
+      "referenceName": "Runnable",
+      "referenceKind": "references",
+      "line": 147,
+      "column": 2
+    },
+    {
+      "fromNodeId": "constant:9c0fa0569cc99290a0524ca2e23c3ee2",
+      "referenceName": "Runnable",
+      "referenceKind": "instantiates",
+      "line": 147,
+      "column": 18
+    },
+    {
+      "fromNodeId": "class:a67c083fc90d4fa2c12f5c45c0568632",
+      "referenceName": "Runnable",
+      "referenceKind": "extends",
+      "line": 146,
+      "column": 22
+    },
+    {
+      "fromNodeId": "method:7c407c9f885b12561b6c4f593b957d76",
+      "referenceName": "go",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 55
+    },
+    {
+      "fromNodeId": "class:75b65f6c8276b034f5dd64a930bffc4d",
+      "referenceName": "TortureService::compute",
+      "referenceKind": "function_ref",
+      "line": 33,
+      "column": 58
+    },
+    {
+      "fromNodeId": "constant:10178a6c93bf4201425b677b327d301d",
+      "referenceName": "TortureService::compute",
+      "referenceKind": "function_ref",
+      "line": 34,
+      "column": 76
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "this.onEvent",
+      "referenceKind": "function_ref",
+      "line": 39,
+      "column": 19
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "TortureService::compute",
+      "referenceKind": "function_ref",
+      "line": 40,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:76398b5fcd26e7883cc5a12a301d4ad4",
+      "referenceName": "OtherClass::handle",
+      "referenceKind": "function_ref",
+      "line": 41,
+      "column": 22
+    }
+  ],
+  "errors": []
+}

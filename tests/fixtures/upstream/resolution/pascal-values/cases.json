@@ -1,0 +1,4424 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "projects": [
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / links the issue's paren-less call as a call and the event's method as a reference",
+      "files": {
+        "UnitA.pas": "unit UnitA;\n\ninterface\n\ntype\n  TGetIntEvent = function: Integer of object;\n\n  TProvider = class\n  public\n    function Value: Integer;\n    function ValueParens(): Integer;\n  end;\n\n  TConsumer = class\n  private\n    FProvider: TProvider;\n    FOnGet: TGetIntEvent;\n  public\n    function UseNoParens: Integer;\n    function UseParens: Integer;\n    function UseEvent: Integer;\n    procedure Wire;\n    property OnGet: TGetIntEvent read FOnGet write FOnGet;\n  end;\n\nimplementation\n\nfunction TProvider.Value: Integer;\nbegin\n  Result := 1;\nend;\n\nfunction TProvider.ValueParens(): Integer;\nbegin\n  Result := 2;\nend;\n\nfunction TConsumer.UseNoParens: Integer;\nbegin\n  Result := FProvider.Value + 1;\nend;\n\nfunction TConsumer.UseParens: Integer;\nbegin\n  Result := FProvider.ValueParens() + 1;\nend;\n\nprocedure TConsumer.Wire;\nbegin\n  OnGet := FProvider.Value;\nend;\n\nfunction TConsumer.UseEvent: Integer;\nbegin\n  Result := FOnGet;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:UnitA.pas",
+          "kind": "file",
+          "name": "UnitA.pas",
+          "qualifiedName": "UnitA.pas",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 59,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:6b73bbb03bc4fd8dca172a598ccdebb8",
+          "kind": "module",
+          "name": "UnitA",
+          "qualifiedName": "UnitA",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 58,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:304b2e020669a7864cc2521112d9ba27",
+          "kind": "type_alias",
+          "name": "TGetIntEvent",
+          "qualifiedName": "TGetIntEvent",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 45,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:726854f2e93e153aaf6e22062fdab171",
+          "kind": "class",
+          "name": "TProvider",
+          "qualifiedName": "TProvider",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 12,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:b7be7b0ba0d2265688d895d8c7882387",
+          "kind": "method",
+          "name": "Value",
+          "qualifiedName": "TProvider::Value",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:e359a9a9f0183fa4c5acad73fba6be01",
+          "kind": "method",
+          "name": "ValueParens",
+          "qualifiedName": "TProvider::ValueParens",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 11,
+          "endLine": 11,
+          "startColumn": 4,
+          "endColumn": 36,
+          "signature": "(): Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "kind": "class",
+          "name": "TConsumer",
+          "qualifiedName": "TConsumer",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 14,
+          "endLine": 24,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:bd363a089cb3b025061ce7a539ce4a0f",
+          "kind": "field",
+          "name": "FProvider",
+          "qualifiedName": "TConsumer::FProvider",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 16,
+          "endLine": 16,
+          "startColumn": 4,
+          "endColumn": 25,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:730b4ab2c27927c3ff3af0b57ed5a62a",
+          "kind": "field",
+          "name": "FOnGet",
+          "qualifiedName": "TConsumer::FOnGet",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 17,
+          "endLine": 17,
+          "startColumn": 4,
+          "endColumn": 25,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:093b0e5c668b1d74f737af38a657d1a9",
+          "kind": "method",
+          "name": "UseNoParens",
+          "qualifiedName": "TConsumer::UseNoParens",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 19,
+          "endLine": 19,
+          "startColumn": 4,
+          "endColumn": 34,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:06f2a67f8ee91ebdb679b9e96a975424",
+          "kind": "method",
+          "name": "UseParens",
+          "qualifiedName": "TConsumer::UseParens",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 20,
+          "endLine": 20,
+          "startColumn": 4,
+          "endColumn": 32,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:96b28ea87a92cef5b00f0237b43541b5",
+          "kind": "method",
+          "name": "UseEvent",
+          "qualifiedName": "TConsumer::UseEvent",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 21,
+          "endLine": 21,
+          "startColumn": 4,
+          "endColumn": 31,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:255bb2380a0126c29f33be7611775a2e",
+          "kind": "method",
+          "name": "Wire",
+          "qualifiedName": "TConsumer::Wire",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 22,
+          "endLine": 22,
+          "startColumn": 4,
+          "endColumn": 19,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "property:8c9857a5ad581edbd51c058145d36c5b",
+          "kind": "property",
+          "name": "OnGet",
+          "qualifiedName": "TConsumer::OnGet",
+          "filePath": "UnitA.pas",
+          "language": "pascal",
+          "startLine": 23,
+          "endLine": 23,
+          "startColumn": 4,
+          "endColumn": 58,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:UnitA.pas",
+          "target": "class:726854f2e93e153aaf6e22062fdab171",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:UnitA.pas",
+          "target": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:UnitA.pas",
+          "target": "module:6b73bbb03bc4fd8dca172a598ccdebb8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:UnitA.pas",
+          "target": "type_alias:304b2e020669a7864cc2521112d9ba27",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:726854f2e93e153aaf6e22062fdab171",
+          "target": "method:b7be7b0ba0d2265688d895d8c7882387",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:726854f2e93e153aaf6e22062fdab171",
+          "target": "method:e359a9a9f0183fa4c5acad73fba6be01",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "field:730b4ab2c27927c3ff3af0b57ed5a62a",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "field:bd363a089cb3b025061ce7a539ce4a0f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "method:06f2a67f8ee91ebdb679b9e96a975424",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "method:093b0e5c668b1d74f737af38a657d1a9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "method:255bb2380a0126c29f33be7611775a2e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "method:96b28ea87a92cef5b00f0237b43541b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7cc13cf8d3bf0558b84a5a80fc827555",
+          "target": "property:8c9857a5ad581edbd51c058145d36c5b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:093b0e5c668b1d74f737af38a657d1a9",
+          "target": "method:b7be7b0ba0d2265688d895d8c7882387",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TConsumer}.FProvider.Value",
+            "refKind": "references"
+          },
+          "line": 40,
+          "column": 12,
+          "provenance": null
+        },
+        {
+          "source": "method:06f2a67f8ee91ebdb679b9e96a975424",
+          "target": "method:e359a9a9f0183fa4c5acad73fba6be01",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "FProvider.ValueParens"
+          },
+          "line": 45,
+          "column": 12,
+          "provenance": null
+        },
+        {
+          "source": "method:255bb2380a0126c29f33be7611775a2e",
+          "target": "method:b7be7b0ba0d2265688d895d8c7882387",
+          "kind": "references",
+          "metadata": {
+            "fnRef": true,
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{ref=OnGet@TConsumer}.FProvider.Value"
+          },
+          "line": 50,
+          "column": 11,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:093b0e5c668b1d74f737af38a657d1a9",
+            "referenceName": "{read@TConsumer}.FProvider.Value",
+            "referenceKind": "references",
+            "line": 40,
+            "column": 12,
+            "filePath": "UnitA.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:b7be7b0ba0d2265688d895d8c7882387",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:255bb2380a0126c29f33be7611775a2e",
+            "referenceName": "{ref=OnGet@TConsumer}.FProvider.Value",
+            "referenceKind": "references",
+            "line": 50,
+            "column": 11,
+            "filePath": "UnitA.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:b7be7b0ba0d2265688d895d8c7882387",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": {
+              "fnRef": true
+            }
+          }
+        }
+      ],
+      "supertypes": {
+        "class:726854f2e93e153aaf6e22062fdab171": [],
+        "class:7cc13cf8d3bf0558b84a5a80fc827555": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / links a bare name to the class's method or the unit's routine, as a statement or for its value",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TMin = class\n  public\n    procedure Before;\n    procedure After;\n    function Value: Integer;\n    procedure UseValue;\n  end;\n\nprocedure FreeProc;\n\nimplementation\n\nprocedure FreeProc;\nbegin\nend;\n\nprocedure TMin.Before;\nbegin\nend;\n\nprocedure TMin.After;\nbegin\n  Before;\n  freeproc;\nend;\n\nfunction TMin.Value: Integer;\nbegin\n  Result := 1;\nend;\n\nprocedure TMin.UseValue;\nvar\n  X: Integer;\nbegin\n  X := Value;\n  if Value > 0 then\n    Before;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 47,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 46,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "kind": "class",
+          "name": "TMin",
+          "qualifiedName": "TMin",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 12,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d1047126bbe11a89aac56940a693e71c",
+          "kind": "method",
+          "name": "Before",
+          "qualifiedName": "TMin::Before",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 4,
+          "endColumn": 21,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:ea1d3532d0f6ab3abec2cea8c64c1e26",
+          "kind": "method",
+          "name": "After",
+          "qualifiedName": "TMin::After",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 9,
+          "endLine": 9,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:8d9c91334741718ec274c38112296d6e",
+          "kind": "method",
+          "name": "Value",
+          "qualifiedName": "TMin::Value",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:55ca6f588fcdca798804aa4baddb06f8",
+          "kind": "method",
+          "name": "UseValue",
+          "qualifiedName": "TMin::UseValue",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 11,
+          "endLine": 11,
+          "startColumn": 4,
+          "endColumn": 23,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:754732f3047deac7148fc38861ead0d6",
+          "kind": "function",
+          "name": "FreeProc",
+          "qualifiedName": "FreeProc",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 14,
+          "endLine": 14,
+          "startColumn": 0,
+          "endColumn": 19,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:754732f3047deac7148fc38861ead0d6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:55ca6f588fcdca798804aa4baddb06f8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:8d9c91334741718ec274c38112296d6e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:d1047126bbe11a89aac56940a693e71c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:ea1d3532d0f6ab3abec2cea8c64c1e26",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:ea1d3532d0f6ab3abec2cea8c64c1e26",
+          "target": "function:754732f3047deac7148fc38861ead0d6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "{call@TMin}.freeproc",
+            "refKind": "references"
+          },
+          "line": 29,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:ea1d3532d0f6ab3abec2cea8c64c1e26",
+          "target": "method:d1047126bbe11a89aac56940a693e71c",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{call@TMin}.Before",
+            "refKind": "references"
+          },
+          "line": 28,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:55ca6f588fcdca798804aa4baddb06f8",
+          "target": "method:8d9c91334741718ec274c38112296d6e",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read=:Integer@TMin}.Value",
+            "refKind": "references"
+          },
+          "line": 41,
+          "column": 7,
+          "provenance": null
+        },
+        {
+          "source": "method:55ca6f588fcdca798804aa4baddb06f8",
+          "target": "method:8d9c91334741718ec274c38112296d6e",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TMin}.Value",
+            "refKind": "references"
+          },
+          "line": 42,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "method:55ca6f588fcdca798804aa4baddb06f8",
+          "target": "method:d1047126bbe11a89aac56940a693e71c",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{call@TMin}.Before",
+            "refKind": "references"
+          },
+          "line": 43,
+          "column": 4,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:ea1d3532d0f6ab3abec2cea8c64c1e26",
+            "referenceName": "{call@TMin}.Before",
+            "referenceKind": "references",
+            "line": 28,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:d1047126bbe11a89aac56940a693e71c",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ea1d3532d0f6ab3abec2cea8c64c1e26",
+            "referenceName": "{call@TMin}.freeproc",
+            "referenceKind": "references",
+            "line": 29,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "function:754732f3047deac7148fc38861ead0d6",
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:55ca6f588fcdca798804aa4baddb06f8",
+            "referenceName": "{call@TMin}.Before",
+            "referenceKind": "references",
+            "line": 43,
+            "column": 4,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:d1047126bbe11a89aac56940a693e71c",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:55ca6f588fcdca798804aa4baddb06f8",
+            "referenceName": "{read=:Integer@TMin}.Value",
+            "referenceKind": "references",
+            "line": 41,
+            "column": 7,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:8d9c91334741718ec274c38112296d6e",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:55ca6f588fcdca798804aa4baddb06f8",
+            "referenceName": "{read@TMin}.Value",
+            "referenceKind": "references",
+            "line": 42,
+            "column": 5,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:8d9c91334741718ec274c38112296d6e",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        }
+      ],
+      "supertypes": {
+        "class:af3ce98818bdd0de3b937ece7bc26fc9": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / never links a name that reads a field, property, variable, constant or parameter",
+      "files": {
+        "Base.pas": "unit Base;\n\ninterface\n\ntype\n  TBase = class\n  protected\n    FReady: Boolean;\n  public\n    property Ready: Boolean read FReady;\n  end;\n\nimplementation\n\nend.\n",
+        "Decoys.pas": "unit Decoys;\n\ninterface\n\nfunction Ready: Boolean;\nfunction Count: Integer;\nfunction Items: Integer;\nfunction Limit: Integer;\nfunction Total: Integer;\nfunction FItems: Integer;\n\nimplementation\n\nfunction Ready: Boolean; begin Result := True; end;\nfunction Count: Integer; begin Result := 0; end;\nfunction Items: Integer; begin Result := 0; end;\nfunction Limit: Integer; begin Result := 0; end;\nfunction Total: Integer; begin Result := 0; end;\nfunction FItems: Integer; begin Result := 0; end;\n\nend.\n",
+        "Main.pas": "unit Main;\n\ninterface\n\nuses Decoys, Base;\n\ntype\n  TList = class(TBase)\n  private\n    FItems: Integer;\n    function GetCount: Integer;\n  public\n    property Count: Integer read GetCount;\n    function Run(Total: Integer): Integer;\n  end;\n\nconst\n  Limit = 10;\n\nvar\n  Items: Integer;\n\nimplementation\n\nfunction TList.GetCount: Integer;\nbegin\n  Result := 0;\nend;\n\nfunction TList.Run(Total: Integer): Integer;\nbegin\n  Result := Count + Items + Limit + Total + FItems;\n  if Ready then\n    Result := 0;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Base.pas",
+          "kind": "file",
+          "name": "Base.pas",
+          "qualifiedName": "Base.pas",
+          "filePath": "Base.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 16,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:5c770d0572da486157ef3d8b4cc10096",
+          "kind": "module",
+          "name": "Base",
+          "qualifiedName": "Base",
+          "filePath": "Base.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 15,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:01f0cfb4a8e54d5552d0b7c5a87533b6",
+          "kind": "class",
+          "name": "TBase",
+          "qualifiedName": "TBase",
+          "filePath": "Base.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 11,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:39ec2f183690784d0fe4270fc5aed0be",
+          "kind": "field",
+          "name": "FReady",
+          "qualifiedName": "TBase::FReady",
+          "filePath": "Base.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "protected",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "property:4bf2b122d9122cd7e89c68e382ada5ed",
+          "kind": "property",
+          "name": "Ready",
+          "qualifiedName": "TBase::Ready",
+          "filePath": "Base.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 40,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:Decoys.pas",
+          "kind": "file",
+          "name": "Decoys.pas",
+          "qualifiedName": "Decoys.pas",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 22,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:27220751063a7479b881b431a6450c2f",
+          "kind": "module",
+          "name": "Decoys",
+          "qualifiedName": "Decoys",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 21,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:ba86671677b58ebcbf0ecdcff82cf8eb",
+          "kind": "function",
+          "name": "Ready",
+          "qualifiedName": "Ready",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 24,
+          "signature": ": Boolean",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Boolean"
+        },
+        {
+          "id": "function:5a36134b92c0d4a1154daf352092204f",
+          "kind": "function",
+          "name": "Count",
+          "qualifiedName": "Count",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 24,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "function:2e9d91061c5db5196202af3e63dfbd4c",
+          "kind": "function",
+          "name": "Items",
+          "qualifiedName": "Items",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 24,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "function:46313b004450bcbd691881cadf590a45",
+          "kind": "function",
+          "name": "Limit",
+          "qualifiedName": "Limit",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 24,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "function:963fa2a91982fb5f6aadbf4a495e604d",
+          "kind": "function",
+          "name": "Total",
+          "qualifiedName": "Total",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 9,
+          "endLine": 9,
+          "startColumn": 0,
+          "endColumn": 24,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "function:b8d3a7ab79c6d0139fce5087a9ddfb87",
+          "kind": "function",
+          "name": "FItems",
+          "qualifiedName": "FItems",
+          "filePath": "Decoys.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 0,
+          "endColumn": 25,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "file:Main.pas",
+          "kind": "file",
+          "name": "Main.pas",
+          "qualifiedName": "Main.pas",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 38,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:da3edf4c05306f8c96ed82baff5e5bc9",
+          "kind": "module",
+          "name": "Main",
+          "qualifiedName": "Main",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 37,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:941005f4ecbb415e7e69f4d1d01999ea",
+          "kind": "import",
+          "name": "Decoys",
+          "qualifiedName": "Decoys",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 5,
+          "endColumn": 11,
+          "signature": "uses Decoys, Base;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:c0a0593a686e4cd0db510a7fe02a0a14",
+          "kind": "import",
+          "name": "Base",
+          "qualifiedName": "Base",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 13,
+          "endColumn": 17,
+          "signature": "uses Decoys, Base;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "kind": "class",
+          "name": "TList",
+          "qualifiedName": "TList",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 15,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:0b6d18d1e9e83f2b1c9986055987c1f8",
+          "kind": "field",
+          "name": "FItems",
+          "qualifiedName": "TList::FItems",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:fccb83263f7fd1f15b040a30f66e7066",
+          "kind": "method",
+          "name": "GetCount",
+          "qualifiedName": "TList::GetCount",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 11,
+          "endLine": 11,
+          "startColumn": 4,
+          "endColumn": 31,
+          "signature": ": Integer",
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "property:be4e6ed71afdfc92b158109cba5dc28e",
+          "kind": "property",
+          "name": "Count",
+          "qualifiedName": "TList::Count",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 4,
+          "endColumn": 42,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:c1213973fcf97d7c536e8937ee98e3f6",
+          "kind": "method",
+          "name": "Run",
+          "qualifiedName": "TList::Run",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 14,
+          "endLine": 14,
+          "startColumn": 4,
+          "endColumn": 42,
+          "signature": "(Total: Integer): Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "constant:a9e1afe6db8cb7ee03fe0cf777d5e23b",
+          "kind": "constant",
+          "name": "Limit",
+          "qualifiedName": "Limit",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 18,
+          "endLine": 18,
+          "startColumn": 2,
+          "endColumn": 13,
+          "signature": "= 10",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "variable:9d7dcffcf53219a7b8fa59bb79c3ff79",
+          "kind": "variable",
+          "name": "Items",
+          "qualifiedName": "Items",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 21,
+          "endLine": 21,
+          "startColumn": 2,
+          "endColumn": 17,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Base.pas",
+          "target": "class:01f0cfb4a8e54d5552d0b7c5a87533b6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Base.pas",
+          "target": "module:5c770d0572da486157ef3d8b4cc10096",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:01f0cfb4a8e54d5552d0b7c5a87533b6",
+          "target": "field:39ec2f183690784d0fe4270fc5aed0be",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:01f0cfb4a8e54d5552d0b7c5a87533b6",
+          "target": "property:4bf2b122d9122cd7e89c68e382ada5ed",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "function:2e9d91061c5db5196202af3e63dfbd4c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "function:46313b004450bcbd691881cadf590a45",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "function:5a36134b92c0d4a1154daf352092204f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "function:963fa2a91982fb5f6aadbf4a495e604d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "function:b8d3a7ab79c6d0139fce5087a9ddfb87",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "function:ba86671677b58ebcbf0ecdcff82cf8eb",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Decoys.pas",
+          "target": "module:27220751063a7479b881b431a6450c2f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "constant:a9e1afe6db8cb7ee03fe0cf777d5e23b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "import:941005f4ecbb415e7e69f4d1d01999ea",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "import:c0a0593a686e4cd0db510a7fe02a0a14",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:da3edf4c05306f8c96ed82baff5e5bc9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "variable:9d7dcffcf53219a7b8fa59bb79c3ff79",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:27220751063a7479b881b431a6450c2f",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Decoys"
+          },
+          "line": 5,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:5c770d0572da486157ef3d8b4cc10096",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Base"
+          },
+          "line": 5,
+          "column": 13,
+          "provenance": null
+        },
+        {
+          "source": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "target": "field:0b6d18d1e9e83f2b1c9986055987c1f8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "target": "method:c1213973fcf97d7c536e8937ee98e3f6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "target": "method:fccb83263f7fd1f15b040a30f66e7066",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "target": "property:be4e6ed71afdfc92b158109cba5dc28e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4af518ebad124aa04de3d20e6e921f2e",
+          "target": "class:01f0cfb4a8e54d5552d0b7c5a87533b6",
+          "kind": "extends",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "TBase"
+          },
+          "line": 8,
+          "column": 16,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:c1213973fcf97d7c536e8937ee98e3f6",
+            "referenceName": "{read@TList}.Ready",
+            "referenceKind": "references",
+            "line": 33,
+            "column": 5,
+            "filePath": "Main.pas",
+            "language": "pascal"
+          },
+          "expected": null
+        }
+      ],
+      "supertypes": {
+        "class:01f0cfb4a8e54d5552d0b7c5a87533b6": [],
+        "class:4af518ebad124aa04de3d20e6e921f2e": [
+          "class:01f0cfb4a8e54d5552d0b7c5a87533b6"
+        ]
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / follows the class's ancestors and the units it uses, the last one first",
+      "files": {
+        "Lib.pas": "unit Lib;\n\ninterface\n\ntype\n  TBase = class\n  public\n    procedure Setup;\n  end;\n\nprocedure Helper;\n\nimplementation\n\nprocedure TBase.Setup; begin end;\nprocedure Helper; begin end;\n\nend.\n",
+        "Main.pas": "unit Main;\n\ninterface\n\nuses Other, Lib;\n\ntype\n  TChild = class(TBase)\n  public\n    procedure Run;\n  end;\n\nimplementation\n\nprocedure TChild.Run;\nbegin\n  Setup;\n  Helper;\n  Teardown;\nend;\n\nend.\n",
+        "Other.pas": "unit Other;\n\ninterface\n\nprocedure Helper;\n\nimplementation\n\nprocedure Helper; begin end;\n\nend.\n",
+        "Unused.pas": "unit Unused;\n\ninterface\n\nprocedure Teardown;\n\nimplementation\n\nprocedure Teardown; begin end;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Lib.pas",
+          "kind": "file",
+          "name": "Lib.pas",
+          "qualifiedName": "Lib.pas",
+          "filePath": "Lib.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 19,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:961efe20ad0df69cec2fd18feaf46c2b",
+          "kind": "module",
+          "name": "Lib",
+          "qualifiedName": "Lib",
+          "filePath": "Lib.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 18,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:29e6f63a56e670b39a618ddb6d86a299",
+          "kind": "class",
+          "name": "TBase",
+          "qualifiedName": "TBase",
+          "filePath": "Lib.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 9,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d8227925d10bbaefe2d2a51691062cb6",
+          "kind": "method",
+          "name": "Setup",
+          "qualifiedName": "TBase::Setup",
+          "filePath": "Lib.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:2382b748c45bba1568102bd9ccee39ef",
+          "kind": "function",
+          "name": "Helper",
+          "qualifiedName": "Helper",
+          "filePath": "Lib.pas",
+          "language": "pascal",
+          "startLine": 11,
+          "endLine": 11,
+          "startColumn": 0,
+          "endColumn": 17,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:Main.pas",
+          "kind": "file",
+          "name": "Main.pas",
+          "qualifiedName": "Main.pas",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 23,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:da3edf4c05306f8c96ed82baff5e5bc9",
+          "kind": "module",
+          "name": "Main",
+          "qualifiedName": "Main",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 22,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:911bc90258cd4621419f7424658a1ea1",
+          "kind": "import",
+          "name": "Other",
+          "qualifiedName": "Other",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 5,
+          "endColumn": 10,
+          "signature": "uses Other, Lib;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:fd719bb5f4d8c1b946c24311a6f7e09e",
+          "kind": "import",
+          "name": "Lib",
+          "qualifiedName": "Lib",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 12,
+          "endColumn": 15,
+          "signature": "uses Other, Lib;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:4544ba16c7915c4e84f40b269bd128a9",
+          "kind": "class",
+          "name": "TChild",
+          "qualifiedName": "TChild",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 11,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:b416247a50cdd3b3ee5289db30d352fc",
+          "kind": "method",
+          "name": "Run",
+          "qualifiedName": "TChild::Run",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 18,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:Other.pas",
+          "kind": "file",
+          "name": "Other.pas",
+          "qualifiedName": "Other.pas",
+          "filePath": "Other.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 12,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:48a43299c7cc5c378ed0f63f2629cb0d",
+          "kind": "module",
+          "name": "Other",
+          "qualifiedName": "Other",
+          "filePath": "Other.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 11,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:45f4607aaf4ee9a9a38bff7f969e1759",
+          "kind": "function",
+          "name": "Helper",
+          "qualifiedName": "Helper",
+          "filePath": "Other.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 17,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:Unused.pas",
+          "kind": "file",
+          "name": "Unused.pas",
+          "qualifiedName": "Unused.pas",
+          "filePath": "Unused.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 12,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4b98679fbe792f68624a3045a67e2fd6",
+          "kind": "module",
+          "name": "Unused",
+          "qualifiedName": "Unused",
+          "filePath": "Unused.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 11,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:1e86998f3809e17091bf92969925d9bc",
+          "kind": "function",
+          "name": "Teardown",
+          "qualifiedName": "Teardown",
+          "filePath": "Unused.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 19,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Lib.pas",
+          "target": "class:29e6f63a56e670b39a618ddb6d86a299",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Lib.pas",
+          "target": "function:2382b748c45bba1568102bd9ccee39ef",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Lib.pas",
+          "target": "module:961efe20ad0df69cec2fd18feaf46c2b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:29e6f63a56e670b39a618ddb6d86a299",
+          "target": "method:d8227925d10bbaefe2d2a51691062cb6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "class:4544ba16c7915c4e84f40b269bd128a9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "import:911bc90258cd4621419f7424658a1ea1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "import:fd719bb5f4d8c1b946c24311a6f7e09e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:da3edf4c05306f8c96ed82baff5e5bc9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:48a43299c7cc5c378ed0f63f2629cb0d",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Other"
+          },
+          "line": 5,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:961efe20ad0df69cec2fd18feaf46c2b",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Lib"
+          },
+          "line": 5,
+          "column": 12,
+          "provenance": null
+        },
+        {
+          "source": "class:4544ba16c7915c4e84f40b269bd128a9",
+          "target": "method:b416247a50cdd3b3ee5289db30d352fc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4544ba16c7915c4e84f40b269bd128a9",
+          "target": "class:29e6f63a56e670b39a618ddb6d86a299",
+          "kind": "extends",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "TBase"
+          },
+          "line": 8,
+          "column": 17,
+          "provenance": null
+        },
+        {
+          "source": "method:b416247a50cdd3b3ee5289db30d352fc",
+          "target": "function:2382b748c45bba1568102bd9ccee39ef",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.85,
+            "resolvedBy": "import",
+            "refName": "{call@TChild}.Helper",
+            "refKind": "references"
+          },
+          "line": 18,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:b416247a50cdd3b3ee5289db30d352fc",
+          "target": "method:d8227925d10bbaefe2d2a51691062cb6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{call@TChild}.Setup",
+            "refKind": "references"
+          },
+          "line": 17,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "file:Other.pas",
+          "target": "function:45f4607aaf4ee9a9a38bff7f969e1759",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Other.pas",
+          "target": "module:48a43299c7cc5c378ed0f63f2629cb0d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unused.pas",
+          "target": "function:1e86998f3809e17091bf92969925d9bc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unused.pas",
+          "target": "module:4b98679fbe792f68624a3045a67e2fd6",
+          "kind": "contains",
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:b416247a50cdd3b3ee5289db30d352fc",
+            "referenceName": "{call@TChild}.Setup",
+            "referenceKind": "references",
+            "line": 17,
+            "column": 2,
+            "filePath": "Main.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:d8227925d10bbaefe2d2a51691062cb6",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b416247a50cdd3b3ee5289db30d352fc",
+            "referenceName": "{call@TChild}.Helper",
+            "referenceKind": "references",
+            "line": 18,
+            "column": 2,
+            "filePath": "Main.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "function:2382b748c45bba1568102bd9ccee39ef",
+            "confidence": 0.85,
+            "resolvedBy": "import",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b416247a50cdd3b3ee5289db30d352fc",
+            "referenceName": "{call@TChild}.Teardown",
+            "referenceKind": "references",
+            "line": 19,
+            "column": 2,
+            "filePath": "Main.pas",
+            "language": "pascal"
+          },
+          "expected": null
+        }
+      ],
+      "supertypes": {
+        "class:29e6f63a56e670b39a618ddb6d86a299": [],
+        "class:4544ba16c7915c4e84f40b269bd128a9": [
+          "class:29e6f63a56e670b39a618ddb6d86a299"
+        ]
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / links a function used as a receiver, through fields, parameters and locals of a declared type",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TSeries = class\n  public\n    procedure BeginUpdate;\n    function Visible: Boolean;\n  end;\n\n  TPanel = class\n  public\n    function ActiveSeries: TSeries;\n  end;\n\n  TForm1 = class\n  private\n    FPanel: TPanel;\n    function CurrentPanel: TPanel;\n  public\n    procedure Run;\n    procedure RunWith(APanel: TPanel);\n  end;\n\nimplementation\n\nprocedure TSeries.BeginUpdate; begin end;\nfunction TSeries.Visible: Boolean; begin Result := True; end;\nfunction TPanel.ActiveSeries: TSeries; begin Result := nil; end;\nfunction TForm1.CurrentPanel: TPanel; begin Result := FPanel; end;\n\nprocedure TForm1.Run;\nbegin\n  FPanel.ActiveSeries.BeginUpdate;\n  if CurrentPanel.ActiveSeries.Visible then\n    Exit;\nend;\n\nprocedure TForm1.RunWith(APanel: TPanel);\nvar\n  S: TSeries;\nbegin\n  S := APanel.ActiveSeries;\n  if S.Visible then\n    Exit;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 50,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 49,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:008cba39cc2be34aae80ca50cfba5d0e",
+          "kind": "class",
+          "name": "TSeries",
+          "qualifiedName": "TSeries",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 10,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:c32abbbb78794b1f9d59af8fa39beef3",
+          "kind": "method",
+          "name": "BeginUpdate",
+          "qualifiedName": "TSeries::BeginUpdate",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 4,
+          "endColumn": 26,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:2f4ba2a67010098253b9e739b0f28a8d",
+          "kind": "method",
+          "name": "Visible",
+          "qualifiedName": "TSeries::Visible",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 9,
+          "endLine": 9,
+          "startColumn": 4,
+          "endColumn": 30,
+          "signature": ": Boolean",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Boolean"
+        },
+        {
+          "id": "class:4e1f0300da4006dc6e1b00f0d3136eff",
+          "kind": "class",
+          "name": "TPanel",
+          "qualifiedName": "TPanel",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 12,
+          "endLine": 15,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:599afb2553ea4883438978758c59d9c6",
+          "kind": "method",
+          "name": "ActiveSeries",
+          "qualifiedName": "TPanel::ActiveSeries",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 14,
+          "endLine": 14,
+          "startColumn": 4,
+          "endColumn": 35,
+          "signature": ": TSeries",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "TSeries"
+        },
+        {
+          "id": "class:d8d22a5997462fe3a8b1be7014e6b70d",
+          "kind": "class",
+          "name": "TForm1",
+          "qualifiedName": "TForm1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 17,
+          "endLine": 24,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:7d83a74e1636b487ece2814258bfa262",
+          "kind": "field",
+          "name": "FPanel",
+          "qualifiedName": "TForm1::FPanel",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 19,
+          "endLine": 19,
+          "startColumn": 4,
+          "endColumn": 19,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:db987363b6a165da0336cdefbefaec0a",
+          "kind": "method",
+          "name": "CurrentPanel",
+          "qualifiedName": "TForm1::CurrentPanel",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 20,
+          "endLine": 20,
+          "startColumn": 4,
+          "endColumn": 34,
+          "signature": ": TPanel",
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "TPanel"
+        },
+        {
+          "id": "method:4e6a9a971c28481553ab24482f98d257",
+          "kind": "method",
+          "name": "Run",
+          "qualifiedName": "TForm1::Run",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 22,
+          "endLine": 22,
+          "startColumn": 4,
+          "endColumn": 18,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:67b10913e2bef4e539d4b2717b667fa7",
+          "kind": "method",
+          "name": "RunWith",
+          "qualifiedName": "TForm1::RunWith",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 23,
+          "endLine": 23,
+          "startColumn": 4,
+          "endColumn": 38,
+          "signature": "(APanel: TPanel)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:008cba39cc2be34aae80ca50cfba5d0e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:4e1f0300da4006dc6e1b00f0d3136eff",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:d8d22a5997462fe3a8b1be7014e6b70d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:008cba39cc2be34aae80ca50cfba5d0e",
+          "target": "method:2f4ba2a67010098253b9e739b0f28a8d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:008cba39cc2be34aae80ca50cfba5d0e",
+          "target": "method:c32abbbb78794b1f9d59af8fa39beef3",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4e1f0300da4006dc6e1b00f0d3136eff",
+          "target": "method:599afb2553ea4883438978758c59d9c6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:d8d22a5997462fe3a8b1be7014e6b70d",
+          "target": "field:7d83a74e1636b487ece2814258bfa262",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:d8d22a5997462fe3a8b1be7014e6b70d",
+          "target": "method:4e6a9a971c28481553ab24482f98d257",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:d8d22a5997462fe3a8b1be7014e6b70d",
+          "target": "method:67b10913e2bef4e539d4b2717b667fa7",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:d8d22a5997462fe3a8b1be7014e6b70d",
+          "target": "method:db987363b6a165da0336cdefbefaec0a",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:4e6a9a971c28481553ab24482f98d257",
+          "target": "method:2f4ba2a67010098253b9e739b0f28a8d",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TForm1}.CurrentPanel.ActiveSeries.Visible",
+            "refKind": "references"
+          },
+          "line": 36,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "method:4e6a9a971c28481553ab24482f98d257",
+          "target": "method:599afb2553ea4883438978758c59d9c6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{recv@TForm1}.FPanel.ActiveSeries",
+            "refKind": "references"
+          },
+          "line": 35,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:4e6a9a971c28481553ab24482f98d257",
+          "target": "method:599afb2553ea4883438978758c59d9c6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{recv@TForm1}.CurrentPanel.ActiveSeries",
+            "refKind": "references"
+          },
+          "line": 36,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "method:4e6a9a971c28481553ab24482f98d257",
+          "target": "method:c32abbbb78794b1f9d59af8fa39beef3",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{call@TForm1}.FPanel.ActiveSeries.BeginUpdate",
+            "refKind": "references"
+          },
+          "line": 35,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:4e6a9a971c28481553ab24482f98d257",
+          "target": "method:db987363b6a165da0336cdefbefaec0a",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{recv@TForm1}.CurrentPanel",
+            "refKind": "references"
+          },
+          "line": 36,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "method:67b10913e2bef4e539d4b2717b667fa7",
+          "target": "method:2f4ba2a67010098253b9e739b0f28a8d",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TForm1}.:TSeries.Visible",
+            "refKind": "references"
+          },
+          "line": 45,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "method:67b10913e2bef4e539d4b2717b667fa7",
+          "target": "method:599afb2553ea4883438978758c59d9c6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read=:TSeries@TForm1}.:TPanel.ActiveSeries",
+            "refKind": "references"
+          },
+          "line": 44,
+          "column": 7,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:4e6a9a971c28481553ab24482f98d257",
+            "referenceName": "{call@TForm1}.FPanel.ActiveSeries.BeginUpdate",
+            "referenceKind": "references",
+            "line": 35,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:c32abbbb78794b1f9d59af8fa39beef3",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:4e6a9a971c28481553ab24482f98d257",
+            "referenceName": "{recv@TForm1}.FPanel.ActiveSeries",
+            "referenceKind": "references",
+            "line": 35,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:599afb2553ea4883438978758c59d9c6",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:4e6a9a971c28481553ab24482f98d257",
+            "referenceName": "{recv@TForm1}.CurrentPanel.ActiveSeries",
+            "referenceKind": "references",
+            "line": 36,
+            "column": 5,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:599afb2553ea4883438978758c59d9c6",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:4e6a9a971c28481553ab24482f98d257",
+            "referenceName": "{read@TForm1}.CurrentPanel.ActiveSeries.Visible",
+            "referenceKind": "references",
+            "line": 36,
+            "column": 5,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:2f4ba2a67010098253b9e739b0f28a8d",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:67b10913e2bef4e539d4b2717b667fa7",
+            "referenceName": "{read=:TSeries@TForm1}.:TPanel.ActiveSeries",
+            "referenceKind": "references",
+            "line": 44,
+            "column": 7,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:599afb2553ea4883438978758c59d9c6",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:67b10913e2bef4e539d4b2717b667fa7",
+            "referenceName": "{read@TForm1}.:TSeries.Visible",
+            "referenceKind": "references",
+            "line": 45,
+            "column": 5,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:2f4ba2a67010098253b9e739b0f28a8d",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:4e6a9a971c28481553ab24482f98d257",
+            "referenceName": "{recv@TForm1}.CurrentPanel",
+            "referenceKind": "references",
+            "line": 36,
+            "column": 5,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:db987363b6a165da0336cdefbefaec0a",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        }
+      ],
+      "supertypes": {
+        "class:008cba39cc2be34aae80ca50cfba5d0e": [],
+        "class:4e1f0300da4006dc6e1b00f0d3136eff": [],
+        "class:d8d22a5997462fe3a8b1be7014e6b70d": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / gives a method to an event or an argument as a reference, a method pointer",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TNotify = procedure of object;\n\n  TButton = class\n  public\n    OnClick: TNotify;\n    procedure Click;\n  end;\n\n  TItem = class\n  public\n    constructor Create(AOwner: TObject);\n  end;\n\n  TForm1 = class\n  private\n    FButton: TButton;\n    procedure ButtonClick;\n    procedure Register(Handler: TNotify);\n    function Title: string;\n    function Compare(A, B: Integer): Integer;\n    procedure Sort(Fn: TCompare);\n  public\n    procedure Setup;\n    procedure SetupWith;\n  end;\n\nimplementation\n\nconstructor TItem.Create(AOwner: TObject); begin end;\nprocedure TButton.Click; begin end;\nprocedure TForm1.ButtonClick; begin end;\nprocedure TForm1.Register(Handler: TNotify); begin end;\nfunction TForm1.Title: string; begin Result := ''; end;\nfunction TForm1.Compare(A, B: Integer): Integer; begin Result := A - B; end;\nprocedure TForm1.Sort(Fn: TCompare); begin end;\n\nprocedure TForm1.Setup;\nvar\n  Item: TObject;\nbegin\n  FButton.OnClick := ButtonClick;\n  Register(ButtonClick);\n  // A function that needs arguments, written without them, is its pointer.\n  Sort(Compare);\n  // A constructor written without the arguments it needs is an inherited\n  // one outside the project, TObject.Create.\n  Item := TItem.Create;\nend;\n\nprocedure TForm1.SetupWith;\nvar\n  S: string;\nbegin\n  with FButton do\n  begin\n    Click;\n    OnClick := ButtonClick;\n    S := Title;\n  end;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 68,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 67,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:b48cd4c1686130d492fac6f38666751b",
+          "kind": "type_alias",
+          "name": "TNotify",
+          "qualifiedName": "TNotify",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 32,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "kind": "class",
+          "name": "TButton",
+          "qualifiedName": "TButton",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 12,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:cbf206edfac1779f24233351489d56d6",
+          "kind": "field",
+          "name": "OnClick",
+          "qualifiedName": "TButton::OnClick",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 21,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:bd72097fd13769b10546777d39d036a1",
+          "kind": "method",
+          "name": "Click",
+          "qualifiedName": "TButton::Click",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 11,
+          "endLine": 11,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:0b7ac52b648b25471926a2fc268edd3e",
+          "kind": "class",
+          "name": "TItem",
+          "qualifiedName": "TItem",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 14,
+          "endLine": 17,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:fe4dffd77ef1ff1f78ff187a268447c1",
+          "kind": "method",
+          "name": "Create",
+          "qualifiedName": "TItem::Create",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 16,
+          "endLine": 16,
+          "startColumn": 4,
+          "endColumn": 40,
+          "signature": "(AOwner: TObject)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "kind": "class",
+          "name": "TForm1",
+          "qualifiedName": "TForm1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 19,
+          "endLine": 30,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:5abd98b48a5940be682b53a0f75991e6",
+          "kind": "field",
+          "name": "FButton",
+          "qualifiedName": "TForm1::FButton",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 21,
+          "endLine": 21,
+          "startColumn": 4,
+          "endColumn": 21,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:f1b303f3590e9645827430f609c514bc",
+          "kind": "method",
+          "name": "ButtonClick",
+          "qualifiedName": "TForm1::ButtonClick",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 22,
+          "endLine": 22,
+          "startColumn": 4,
+          "endColumn": 26,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:c3dde007c09ec976d90e1fe0592424d0",
+          "kind": "method",
+          "name": "Register",
+          "qualifiedName": "TForm1::Register",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 23,
+          "endLine": 23,
+          "startColumn": 4,
+          "endColumn": 41,
+          "signature": "(Handler: TNotify)",
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:ffafcef22969873b7e6fb6add7e7a2fe",
+          "kind": "method",
+          "name": "Title",
+          "qualifiedName": "TForm1::Title",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 24,
+          "endLine": 24,
+          "startColumn": 4,
+          "endColumn": 27,
+          "signature": ": string",
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "string"
+        },
+        {
+          "id": "method:e4c812270876c9a907bab835a839767d",
+          "kind": "method",
+          "name": "Compare",
+          "qualifiedName": "TForm1::Compare",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 25,
+          "endLine": 25,
+          "startColumn": 4,
+          "endColumn": 45,
+          "signature": "(A, B: Integer): Integer",
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:08f07e45c0d9d9b51469e1c3068be426",
+          "kind": "method",
+          "name": "Sort",
+          "qualifiedName": "TForm1::Sort",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 26,
+          "endLine": 26,
+          "startColumn": 4,
+          "endColumn": 33,
+          "signature": "(Fn: TCompare)",
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "kind": "method",
+          "name": "Setup",
+          "qualifiedName": "TForm1::Setup",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 28,
+          "endLine": 28,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:fa9e4053d5874c32c14d7c58aa97ba39",
+          "kind": "method",
+          "name": "SetupWith",
+          "qualifiedName": "TForm1::SetupWith",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 29,
+          "endLine": 29,
+          "startColumn": 4,
+          "endColumn": 24,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:0b7ac52b648b25471926a2fc268edd3e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "type_alias:b48cd4c1686130d492fac6f38666751b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "target": "field:cbf206edfac1779f24233351489d56d6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "target": "method:bd72097fd13769b10546777d39d036a1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:0b7ac52b648b25471926a2fc268edd3e",
+          "target": "method:fe4dffd77ef1ff1f78ff187a268447c1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "field:5abd98b48a5940be682b53a0f75991e6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:08f07e45c0d9d9b51469e1c3068be426",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:c3dde007c09ec976d90e1fe0592424d0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:e4c812270876c9a907bab835a839767d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:f1b303f3590e9645827430f609c514bc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:fa9e4053d5874c32c14d7c58aa97ba39",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cdfe6b6288af5cd7a18e7026082882aa",
+          "target": "method:ffafcef22969873b7e6fb6add7e7a2fe",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "target": "method:08f07e45c0d9d9b51469e1c3068be426",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Sort"
+          },
+          "line": 49,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "target": "method:c3dde007c09ec976d90e1fe0592424d0",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Register"
+          },
+          "line": 47,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "target": "method:e4c812270876c9a907bab835a839767d",
+          "kind": "references",
+          "metadata": {
+            "fnRef": true,
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TForm1}.Compare"
+          },
+          "line": 49,
+          "column": 7,
+          "provenance": null
+        },
+        {
+          "source": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "target": "method:f1b303f3590e9645827430f609c514bc",
+          "kind": "references",
+          "metadata": {
+            "fnRef": true,
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{ref=FButton.OnClick@TForm1}.ButtonClick"
+          },
+          "line": 46,
+          "column": 21,
+          "provenance": null
+        },
+        {
+          "source": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+          "target": "method:f1b303f3590e9645827430f609c514bc",
+          "kind": "references",
+          "metadata": {
+            "fnRef": true,
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TForm1}.ButtonClick"
+          },
+          "line": 47,
+          "column": 11,
+          "provenance": null
+        },
+        {
+          "source": "method:fa9e4053d5874c32c14d7c58aa97ba39",
+          "target": "method:f1b303f3590e9645827430f609c514bc",
+          "kind": "references",
+          "metadata": {
+            "fnRef": true,
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{ref@TForm1}.ButtonClick"
+          },
+          "line": 62,
+          "column": 15,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+            "referenceName": "{read=:TObject@TForm1}.TItem.Create",
+            "referenceKind": "references",
+            "line": 52,
+            "column": 10,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+            "referenceName": "{ref=FButton.OnClick@TForm1}.ButtonClick",
+            "referenceKind": "references",
+            "line": 46,
+            "column": 21,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:f1b303f3590e9645827430f609c514bc",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": {
+              "fnRef": true
+            }
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+            "referenceName": "{read@TForm1}.ButtonClick",
+            "referenceKind": "references",
+            "line": 47,
+            "column": 11,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:f1b303f3590e9645827430f609c514bc",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": {
+              "fnRef": true
+            }
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d9ed07a94f2ec62ffd77c57422ef9bb7",
+            "referenceName": "{read@TForm1}.Compare",
+            "referenceKind": "references",
+            "line": 49,
+            "column": 7,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:e4c812270876c9a907bab835a839767d",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": {
+              "fnRef": true
+            }
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:fa9e4053d5874c32c14d7c58aa97ba39",
+            "referenceName": "{ref@TForm1}.ButtonClick",
+            "referenceKind": "references",
+            "line": 62,
+            "column": 15,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:f1b303f3590e9645827430f609c514bc",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": {
+              "fnRef": true
+            }
+          }
+        }
+      ],
+      "supertypes": {
+        "class:9e183c8a39c43fac3b15977dfd6833c8": [],
+        "class:0b7ac52b648b25471926a2fc268edd3e": [],
+        "class:cdfe6b6288af5cd7a18e7026082882aa": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / finds the class of a generic class's method, whose node spells its constraints",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TBox<T: class> = class\n  public\n    procedure Clear;\n    procedure Reset;\n  end;\n\n  TOther = class\n  public\n    procedure Clear;\n    procedure Reset;\n  end;\n\nimplementation\n\nprocedure TOther.Clear; begin end;\nprocedure TOther.Reset; begin end;\nprocedure TBox<T>.Clear; begin end;\n\nprocedure TBox<T>.Reset;\nbegin\n  Clear;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 30,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 29,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:3f59841cc11779e71efa962960fd7b5d",
+          "kind": "class",
+          "name": "TBox<T: class>",
+          "qualifiedName": "TBox<T: class>",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 10,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:7ece22d2cdad1ea9e15a1fc93fae7e9b",
+          "kind": "method",
+          "name": "Clear",
+          "qualifiedName": "TBox<T: class>::Clear",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:4ec2289b7331c48322e87207be5e8ea7",
+          "kind": "method",
+          "name": "Reset",
+          "qualifiedName": "TBox<T: class>::Reset",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 9,
+          "endLine": 9,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:5087c50056aed3252e5bb5112cda55ed",
+          "kind": "class",
+          "name": "TOther",
+          "qualifiedName": "TOther",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 12,
+          "endLine": 16,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:659736221b08c78974a32031b0980ecf",
+          "kind": "method",
+          "name": "Clear",
+          "qualifiedName": "TOther::Clear",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 14,
+          "endLine": 14,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:a317a24d18cc840b462e236731269e74",
+          "kind": "method",
+          "name": "Reset",
+          "qualifiedName": "TOther::Reset",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 15,
+          "endLine": 15,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:3f59841cc11779e71efa962960fd7b5d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:5087c50056aed3252e5bb5112cda55ed",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:3f59841cc11779e71efa962960fd7b5d",
+          "target": "method:4ec2289b7331c48322e87207be5e8ea7",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:3f59841cc11779e71efa962960fd7b5d",
+          "target": "method:7ece22d2cdad1ea9e15a1fc93fae7e9b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:4ec2289b7331c48322e87207be5e8ea7",
+          "target": "method:7ece22d2cdad1ea9e15a1fc93fae7e9b",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{call@TBox}.Clear",
+            "refKind": "references"
+          },
+          "line": 26,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "class:5087c50056aed3252e5bb5112cda55ed",
+          "target": "method:659736221b08c78974a32031b0980ecf",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:5087c50056aed3252e5bb5112cda55ed",
+          "target": "method:a317a24d18cc840b462e236731269e74",
+          "kind": "contains",
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:4ec2289b7331c48322e87207be5e8ea7",
+            "referenceName": "{call@TBox}.Clear",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:7ece22d2cdad1ea9e15a1fc93fae7e9b",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        }
+      ],
+      "supertypes": {
+        "class:3f59841cc11779e71efa962960fd7b5d": [],
+        "class:5087c50056aed3252e5bb5112cda55ed": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / links a form's event handler named after its component, and a C library's function",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TNotify = procedure(Sender: TObject) of object;\n\n  TButton = class\n  public\n    OnClick: TNotify;\n  end;\n\n  TForm1 = class\n  private\n    btnOK: TButton;\n  public\n    procedure btnOKClick(Sender: TObject);\n    procedure Setup;\n    function Check: Integer;\n  end;\n\nfunction ERR_get_error: Cardinal; cdecl;\nfunction mach_absolute_time: UInt64; cdecl;\n\nimplementation\n\nfunction ERR_get_error: Cardinal; cdecl;\nbegin\n  Result := 0;\nend;\n\nfunction mach_absolute_time: UInt64; cdecl;\nbegin\n  Result := 0;\nend;\n\nprocedure TForm1.btnOKClick(Sender: TObject);\nbegin\nend;\n\nprocedure TForm1.Setup;\nbegin\n  btnOK.OnClick := btnOKClick;\nend;\n\nfunction TForm1.Check: Integer;\nbegin\n  Result := ERR_get_error + mach_absolute_time;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 52,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 51,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:b48cd4c1686130d492fac6f38666751b",
+          "kind": "type_alias",
+          "name": "TNotify",
+          "qualifiedName": "TNotify",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 49,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "kind": "class",
+          "name": "TButton",
+          "qualifiedName": "TButton",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 11,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:cbf206edfac1779f24233351489d56d6",
+          "kind": "field",
+          "name": "OnClick",
+          "qualifiedName": "TButton::OnClick",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 21,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:41b33385ada6af84f27bbd2fca566e07",
+          "kind": "class",
+          "name": "TForm1",
+          "qualifiedName": "TForm1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 13,
+          "endLine": 20,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:d7c0d70ae0d0114ae51810d867baa60a",
+          "kind": "field",
+          "name": "btnOK",
+          "qualifiedName": "TForm1::btnOK",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 15,
+          "endLine": 15,
+          "startColumn": 4,
+          "endColumn": 19,
+          "visibility": "private",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:3ee09ae777b8a0c0d2769a9329dba691",
+          "kind": "method",
+          "name": "btnOKClick",
+          "qualifiedName": "TForm1::btnOKClick",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 17,
+          "endLine": 17,
+          "startColumn": 4,
+          "endColumn": 42,
+          "signature": "(Sender: TObject)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:503707df064a683b61abd6ed3df0753d",
+          "kind": "method",
+          "name": "Setup",
+          "qualifiedName": "TForm1::Setup",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 18,
+          "endLine": 18,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:0efaa12e737049789e1bdc1b6aa23bc2",
+          "kind": "method",
+          "name": "Check",
+          "qualifiedName": "TForm1::Check",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 19,
+          "endLine": 19,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "function:6bbe2566ff5a9498ea885bd5a4284861",
+          "kind": "function",
+          "name": "ERR_get_error",
+          "qualifiedName": "ERR_get_error",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 22,
+          "endLine": 22,
+          "startColumn": 0,
+          "endColumn": 40,
+          "signature": ": Cardinal",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Cardinal"
+        },
+        {
+          "id": "function:230eb58b215cc05da3f2b44462c9bae6",
+          "kind": "function",
+          "name": "mach_absolute_time",
+          "qualifiedName": "mach_absolute_time",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 23,
+          "endLine": 23,
+          "startColumn": 0,
+          "endColumn": 43,
+          "signature": ": UInt64",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "UInt64"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:41b33385ada6af84f27bbd2fca566e07",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:230eb58b215cc05da3f2b44462c9bae6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:6bbe2566ff5a9498ea885bd5a4284861",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "type_alias:b48cd4c1686130d492fac6f38666751b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:9e183c8a39c43fac3b15977dfd6833c8",
+          "target": "field:cbf206edfac1779f24233351489d56d6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:41b33385ada6af84f27bbd2fca566e07",
+          "target": "field:d7c0d70ae0d0114ae51810d867baa60a",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:41b33385ada6af84f27bbd2fca566e07",
+          "target": "method:0efaa12e737049789e1bdc1b6aa23bc2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:41b33385ada6af84f27bbd2fca566e07",
+          "target": "method:3ee09ae777b8a0c0d2769a9329dba691",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:41b33385ada6af84f27bbd2fca566e07",
+          "target": "method:503707df064a683b61abd6ed3df0753d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:503707df064a683b61abd6ed3df0753d",
+          "target": "method:3ee09ae777b8a0c0d2769a9329dba691",
+          "kind": "references",
+          "metadata": {
+            "fnRef": true,
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{ref=btnOK.OnClick@TForm1}.btnOKClick"
+          },
+          "line": 43,
+          "column": 19,
+          "provenance": null
+        },
+        {
+          "source": "method:0efaa12e737049789e1bdc1b6aa23bc2",
+          "target": "function:230eb58b215cc05da3f2b44462c9bae6",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "{read@TForm1}.mach_absolute_time",
+            "refKind": "references"
+          },
+          "line": 48,
+          "column": 28,
+          "provenance": null
+        },
+        {
+          "source": "method:0efaa12e737049789e1bdc1b6aa23bc2",
+          "target": "function:6bbe2566ff5a9498ea885bd5a4284861",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "{read@TForm1}.ERR_get_error",
+            "refKind": "references"
+          },
+          "line": 48,
+          "column": 12,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:503707df064a683b61abd6ed3df0753d",
+            "referenceName": "{ref=btnOK.OnClick@TForm1}.btnOKClick",
+            "referenceKind": "references",
+            "line": 43,
+            "column": 19,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:3ee09ae777b8a0c0d2769a9329dba691",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": {
+              "fnRef": true
+            }
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:0efaa12e737049789e1bdc1b6aa23bc2",
+            "referenceName": "{read@TForm1}.ERR_get_error",
+            "referenceKind": "references",
+            "line": 48,
+            "column": 12,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "function:6bbe2566ff5a9498ea885bd5a4284861",
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:0efaa12e737049789e1bdc1b6aa23bc2",
+            "referenceName": "{read@TForm1}.mach_absolute_time",
+            "referenceKind": "references",
+            "line": 48,
+            "column": 28,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "function:230eb58b215cc05da3f2b44462c9bae6",
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "metadata": null
+          }
+        }
+      ],
+      "supertypes": {
+        "class:9e183c8a39c43fac3b15977dfd6833c8": [],
+        "class:41b33385ada6af84f27bbd2fca566e07": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / reads an ancestor through a class the unit declares ahead (`TBase = class;`)",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TChild = class;\n\n  TBase = class\n  public\n    function Ready: Boolean;\n  end;\n\n  TChild = class(TBase)\n  public\n    procedure Run;\n  end;\n\nimplementation\n\nfunction TBase.Ready: Boolean;\nbegin\n  Result := True;\nend;\n\nprocedure TChild.Run;\nbegin\n  if Ready then\n    Exit;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 32,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 31,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:bd577a07aa1352ac124d0b50fcc0b9f1",
+          "kind": "class",
+          "name": "TChild",
+          "qualifiedName": "TChild",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 17,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:f767d6410f4eecc39ebdbcd8eff7997f",
+          "kind": "class",
+          "name": "TBase",
+          "qualifiedName": "TBase",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 11,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:30d6e8cb1b4d1182b7395858ab3c42b2",
+          "kind": "method",
+          "name": "Ready",
+          "qualifiedName": "TBase::Ready",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Boolean",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Boolean"
+        },
+        {
+          "id": "class:bc0680047d9615651a13dac50c00ab4d",
+          "kind": "class",
+          "name": "TChild",
+          "qualifiedName": "TChild",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 13,
+          "endLine": 16,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:684ab5a7fc3a40bb947961b9c286ecf0",
+          "kind": "method",
+          "name": "Run",
+          "qualifiedName": "TChild::Run",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 15,
+          "endLine": 15,
+          "startColumn": 4,
+          "endColumn": 18,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:bc0680047d9615651a13dac50c00ab4d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:bd577a07aa1352ac124d0b50fcc0b9f1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:f767d6410f4eecc39ebdbcd8eff7997f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:f767d6410f4eecc39ebdbcd8eff7997f",
+          "target": "method:30d6e8cb1b4d1182b7395858ab3c42b2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:bc0680047d9615651a13dac50c00ab4d",
+          "target": "method:684ab5a7fc3a40bb947961b9c286ecf0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:bc0680047d9615651a13dac50c00ab4d",
+          "target": "class:f767d6410f4eecc39ebdbcd8eff7997f",
+          "kind": "extends",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "TBase"
+          },
+          "line": 13,
+          "column": 17,
+          "provenance": null
+        },
+        {
+          "source": "method:684ab5a7fc3a40bb947961b9c286ecf0",
+          "target": "method:30d6e8cb1b4d1182b7395858ab3c42b2",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "{read@TChild}.Ready",
+            "refKind": "references"
+          },
+          "line": 27,
+          "column": 5,
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "method:684ab5a7fc3a40bb947961b9c286ecf0",
+            "referenceName": "{read@TChild}.Ready",
+            "referenceKind": "references",
+            "line": 27,
+            "column": 5,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "method:30d6e8cb1b4d1182b7395858ab3c42b2",
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "metadata": null
+          }
+        }
+      ],
+      "supertypes": {
+        "class:bd577a07aa1352ac124d0b50fcc0b9f1": [],
+        "class:f767d6410f4eecc39ebdbcd8eff7997f": [],
+        "class:bc0680047d9615651a13dac50c00ab4d": [
+          "class:f767d6410f4eecc39ebdbcd8eff7997f"
+        ]
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / links the calls of a unit's initialization and finalization sections",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\nprocedure Setup;\nprocedure Teardown;\n\nimplementation\n\nprocedure Setup;\nbegin\nend;\n\nprocedure Teardown;\nbegin\nend;\n\ninitialization\n  Setup;\n\nfinalization\n  Teardown;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 25,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 24,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:b4d5339046198908b3ce9e6b71e70619",
+          "kind": "function",
+          "name": "Setup",
+          "qualifiedName": "Setup",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 16,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:4290313bdb60e013d6253c0c840e3c09",
+          "kind": "function",
+          "name": "Teardown",
+          "qualifiedName": "Teardown",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 19,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:4290313bdb60e013d6253c0c840e3c09",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "{call}.Teardown",
+            "refKind": "references"
+          },
+          "line": 22,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:b4d5339046198908b3ce9e6b71e70619",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "{call}.Setup",
+            "refKind": "references"
+          },
+          "line": 19,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:4290313bdb60e013d6253c0c840e3c09",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "function:b4d5339046198908b3ce9e6b71e70619",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        }
+      ],
+      "references": [
+        {
+          "reference": {
+            "fromNodeId": "file:Unit1.pas",
+            "referenceName": "{call}.Setup",
+            "referenceKind": "references",
+            "line": 19,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "function:b4d5339046198908b3ce9e6b71e70619",
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "metadata": null
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "file:Unit1.pas",
+            "referenceName": "{call}.Teardown",
+            "referenceKind": "references",
+            "line": 22,
+            "column": 2,
+            "filePath": "Unit1.pas",
+            "language": "pascal"
+          },
+          "expected": {
+            "target": "function:4290313bdb60e013d6253c0c840e3c09",
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "metadata": null
+          }
+        }
+      ],
+      "supertypes": {}
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / takes a name the class's code assigns or passes to Inc for a variable, as Delphi does",
+      "files": {
+        "Helpers.pas": "unit Helpers;\n\ninterface\n\nfunction Run: Integer;\nfunction Limit: Integer;\n\nimplementation\n\nfunction Run: Integer; begin Result := 0; end;\nfunction Limit: Integer; begin Result := 0; end;\n\nend.\n",
+        "Main.pas": "unit Main;\n\ninterface\n\nuses Helpers;\n\ntype\n  TMyHighlighter = class(TSynCustomHighlighter)\n  public\n    procedure Next;\n    procedure Reset;\n    function Count: Integer;\n  end;\n\nimplementation\n\nprocedure TMyHighlighter.Next;\nvar\n  C: Char;\nbegin\n  Inc(Run);\n  C := FLine[Run];\n  if Limit > 0 then\n    Exit;\nend;\n\nprocedure TMyHighlighter.Reset;\nbegin\n  Limit := 0;\nend;\n\nfunction TMyHighlighter.Count: Integer;\nbegin\n  Count := Run;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Helpers.pas",
+          "kind": "file",
+          "name": "Helpers.pas",
+          "qualifiedName": "Helpers.pas",
+          "filePath": "Helpers.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 14,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:48c518262e650c1de82d9a8bbdc1c6f5",
+          "kind": "module",
+          "name": "Helpers",
+          "qualifiedName": "Helpers",
+          "filePath": "Helpers.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:5362a5a7b76a9ed36d788abf9707e8a3",
+          "kind": "function",
+          "name": "Run",
+          "qualifiedName": "Run",
+          "filePath": "Helpers.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 22,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "function:c724d3a80d0a0667bbe03eeed9b9ac1b",
+          "kind": "function",
+          "name": "Limit",
+          "qualifiedName": "Limit",
+          "filePath": "Helpers.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 24,
+          "signature": ": Integer",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "file:Main.pas",
+          "kind": "file",
+          "name": "Main.pas",
+          "qualifiedName": "Main.pas",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 38,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:da3edf4c05306f8c96ed82baff5e5bc9",
+          "kind": "module",
+          "name": "Main",
+          "qualifiedName": "Main",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 37,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:f831a0b36c129dbd83092a9c681401a0",
+          "kind": "import",
+          "name": "Helpers",
+          "qualifiedName": "Helpers",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 5,
+          "endColumn": 12,
+          "signature": "uses Helpers;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:a7c6b31ce1191ab7abb45623c7d51933",
+          "kind": "class",
+          "name": "TMyHighlighter",
+          "qualifiedName": "TMyHighlighter",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 13,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d92b1314c1e64e3b2170abe235706af8",
+          "kind": "method",
+          "name": "Next",
+          "qualifiedName": "TMyHighlighter::Next",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 19,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:dcf9030e65605615b4fcae44cd0eb665",
+          "kind": "method",
+          "name": "Reset",
+          "qualifiedName": "TMyHighlighter::Reset",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 11,
+          "endLine": 11,
+          "startColumn": 4,
+          "endColumn": 20,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d0c5ebe34c088f2503a669d779f556d5",
+          "kind": "method",
+          "name": "Count",
+          "qualifiedName": "TMyHighlighter::Count",
+          "filePath": "Main.pas",
+          "language": "pascal",
+          "startLine": 12,
+          "endLine": 12,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Helpers.pas",
+          "target": "function:5362a5a7b76a9ed36d788abf9707e8a3",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Helpers.pas",
+          "target": "function:c724d3a80d0a0667bbe03eeed9b9ac1b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Helpers.pas",
+          "target": "module:48c518262e650c1de82d9a8bbdc1c6f5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "class:a7c6b31ce1191ab7abb45623c7d51933",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "import:f831a0b36c129dbd83092a9c681401a0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:da3edf4c05306f8c96ed82baff5e5bc9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Main.pas",
+          "target": "module:48c518262e650c1de82d9a8bbdc1c6f5",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Helpers"
+          },
+          "line": 5,
+          "column": 5,
+          "provenance": null
+        },
+        {
+          "source": "class:a7c6b31ce1191ab7abb45623c7d51933",
+          "target": "method:d0c5ebe34c088f2503a669d779f556d5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:a7c6b31ce1191ab7abb45623c7d51933",
+          "target": "method:d92b1314c1e64e3b2170abe235706af8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:a7c6b31ce1191ab7abb45623c7d51933",
+          "target": "method:dcf9030e65605615b4fcae44cd0eb665",
+          "kind": "contains",
+          "provenance": null
+        }
+      ],
+      "references": [],
+      "supertypes": {
+        "class:a7c6b31ce1191ab7abb45623c7d51933": []
+      }
+    },
+    {
+      "name": "pascal-parenless-calls.test.ts / Delphi calls without parentheses (#2514) / leaves out names a routine declares itself, even where a method shares the name",
+      "files": {
+        "Unit1.pas": "unit Unit1;\n\ninterface\n\ntype\n  TMin = class\n  public\n    function Value: Integer;\n    function Items: Integer;\n    procedure Run(Value: Integer);\n  end;\n\nimplementation\n\nfunction TMin.Value: Integer; begin Result := 1; end;\nfunction TMin.Items: Integer; begin Result := 1; end;\n\nprocedure TMin.Run(Value: Integer);\nvar\n  X: Integer;\nbegin\n  X := Value;\n  for var Items in [1, 2] do\n    X := X + Items;\nend;\n\nend.\n"
+      },
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "file:Unit1.pas",
+          "kind": "file",
+          "name": "Unit1.pas",
+          "qualifiedName": "Unit1.pas",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 28,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "module",
+          "name": "Unit1",
+          "qualifiedName": "Unit1",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 1,
+          "endLine": 27,
+          "startColumn": 0,
+          "endColumn": 4,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "kind": "class",
+          "name": "TMin",
+          "qualifiedName": "TMin",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 6,
+          "endLine": 11,
+          "startColumn": 2,
+          "endColumn": 6,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:0e46aeaff44e24742ad6bb46c5b72448",
+          "kind": "method",
+          "name": "Value",
+          "qualifiedName": "TMin::Value",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 8,
+          "endLine": 8,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:5def84249f4d7b4629071bd40c1f3a0b",
+          "kind": "method",
+          "name": "Items",
+          "qualifiedName": "TMin::Items",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 9,
+          "endLine": 9,
+          "startColumn": 4,
+          "endColumn": 28,
+          "signature": ": Integer",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Integer"
+        },
+        {
+          "id": "method:0b55596564229fcb04ed473fff300d1f",
+          "kind": "method",
+          "name": "Run",
+          "qualifiedName": "TMin::Run",
+          "filePath": "Unit1.pas",
+          "language": "pascal",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 4,
+          "endColumn": 34,
+          "signature": "(Value: Integer)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:Unit1.pas",
+          "target": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:Unit1.pas",
+          "target": "module:4bb37588c274fe4739ef7efbfd4891b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:0b55596564229fcb04ed473fff300d1f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:0e46aeaff44e24742ad6bb46c5b72448",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:af3ce98818bdd0de3b937ece7bc26fc9",
+          "target": "method:5def84249f4d7b4629071bd40c1f3a0b",
+          "kind": "contains",
+          "provenance": null
+        }
+      ],
+      "references": [],
+      "supertypes": {
+        "class:af3ce98818bdd0de3b937ece7bc26fc9": []
+      }
+    }
+  ]
+}

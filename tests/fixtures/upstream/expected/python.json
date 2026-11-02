@@ -1,0 +1,813 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.py",
+      "kind": "file",
+      "name": "torture.py",
+      "qualifiedName": "torture.py",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 1,
+      "endLine": 77,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false,
+      "docstring": "Python torture fixture — decorators, self fn-refs, imports, shadowing."
+    },
+    {
+      "id": "import:0dc560d291ced9a60dcfc92b3d1517c1",
+      "kind": "import",
+      "name": "os",
+      "qualifiedName": "os",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 14,
+      "signature": "import os, sys"
+    },
+    {
+      "id": "import:95e073d27b0a05dee53bd4f2dd337996",
+      "kind": "import",
+      "name": "sys",
+      "qualifiedName": "sys",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 14,
+      "signature": "import os, sys"
+    },
+    {
+      "id": "import:74ce565919ddb6e46e4a742337a7feb1",
+      "kind": "import",
+      "name": "os.path",
+      "qualifiedName": "os.path",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 0,
+      "endColumn": 21,
+      "signature": "import os.path as osp"
+    },
+    {
+      "id": "import:1d1d85b7f18e49012c7ebda155ba360b",
+      "kind": "import",
+      "name": "collections",
+      "qualifiedName": "collections",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 48,
+      "signature": "from collections import OrderedDict, defaultdict"
+    },
+    {
+      "id": "import:3dfa953a218bdfb127cccc4a7430c101",
+      "kind": "import",
+      "name": ".relative",
+      "qualifiedName": ".relative",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 27,
+      "signature": "from .relative import thing"
+    },
+    {
+      "id": "import:2ee5c0c674cdd86640a278af131eb539",
+      "kind": "import",
+      "name": "mypkg.handlers",
+      "qualifiedName": "mypkg.handlers",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 0,
+      "endColumn": 36,
+      "signature": "from mypkg.handlers import target_cb"
+    },
+    {
+      "id": "variable:8fef25ea8abe486ee94190ed47c3644b",
+      "kind": "variable",
+      "name": "RETRY_LIMITS",
+      "qualifiedName": "RETRY_LIMITS",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 23,
+      "signature": "= {\"a\": 1}"
+    },
+    {
+      "id": "variable:6d8fcb43a5a4a11e8f006f6392c905eb",
+      "kind": "variable",
+      "name": "API_BASE",
+      "qualifiedName": "API_BASE",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 0,
+      "endColumn": 33,
+      "signature": "= \"https://example.test\""
+    },
+    {
+      "id": "variable:788d75a828c79f9847e0be0e2b73a196",
+      "kind": "variable",
+      "name": "x",
+      "qualifiedName": "x",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "= compute(RETRY_LIMITS)"
+    },
+    {
+      "id": "class:066eb79e83cf3105cebd14593747068f",
+      "kind": "class",
+      "name": "Service",
+      "qualifiedName": "Service",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 13,
+      "endLine": 33,
+      "startColumn": 0,
+      "endColumn": 12,
+      "docstring": "Class docs."
+    },
+    {
+      "id": "method:fbe990aa0f9630ab6f709c19c88d51da",
+      "kind": "method",
+      "name": "__init__",
+      "qualifiedName": "Service::__init__",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 16,
+      "endLine": 19,
+      "startColumn": 4,
+      "endColumn": 24,
+      "signature": "(self, registry)",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:3ac9d03b2b42036d5064669684b96d97",
+      "kind": "method",
+      "name": "helper",
+      "qualifiedName": "Service::helper",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 22,
+      "endLine": 23,
+      "startColumn": 4,
+      "endColumn": 29,
+      "signature": "(arg)",
+      "isAsync": false,
+      "isStatic": true
+    },
+    {
+      "id": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "Service::run",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 25,
+      "endLine": 30,
+      "startColumn": 4,
+      "endColumn": 36,
+      "signature": "(self)",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:8b33f99493ca56b33c661cb49cf02640",
+      "kind": "method",
+      "name": "on_event",
+      "qualifiedName": "Service::on_event",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 32,
+      "endLine": 33,
+      "startColumn": 4,
+      "endColumn": 12,
+      "signature": "(self)",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:692077921d04b315880bc35a0bc872a9",
+      "kind": "function",
+      "name": "view",
+      "qualifiedName": "view",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 37,
+      "endLine": 40,
+      "startColumn": 0,
+      "endColumn": 18,
+      "signature": "()",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:d2fae347c5c9176a3642fc94640462a6",
+      "kind": "function",
+      "name": "inner",
+      "qualifiedName": "view::inner",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 38,
+      "endLine": 39,
+      "startColumn": 4,
+      "endColumn": 23,
+      "signature": "()",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:f66e04344be6aab3cf448175c414d5ed",
+      "kind": "function",
+      "name": "shadowed",
+      "qualifiedName": "shadowed",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 43,
+      "endLine": 45,
+      "startColumn": 0,
+      "endColumn": 19,
+      "signature": "()",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "variable:0560d6516d21bba56151a91b46a3458f",
+      "kind": "variable",
+      "name": "handlers",
+      "qualifiedName": "handlers",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 48,
+      "endLine": 48,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "= {\"recv\": target_cb}"
+    },
+    {
+      "id": "variable:36e608fb368763b7f8a74a69f477cec7",
+      "kind": "variable",
+      "name": "callbacks",
+      "qualifiedName": "callbacks",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 49,
+      "endLine": 49,
+      "startColumn": 0,
+      "endColumn": 29,
+      "signature": "= [target_cb, view]"
+    },
+    {
+      "id": "variable:9b11e2d2271460cf5d5c12d00f607ca1",
+      "kind": "variable",
+      "name": "INIT_EAGER",
+      "qualifiedName": "INIT_EAGER",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 52,
+      "endLine": 52,
+      "startColumn": 0,
+      "endColumn": 21,
+      "signature": "= helper()"
+    },
+    {
+      "id": "variable:459f624660c51fd045cc765047a12ec3",
+      "kind": "variable",
+      "name": "INIT_LAMBDA",
+      "qualifiedName": "INIT_LAMBDA",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 53,
+      "endLine": 53,
+      "startColumn": 0,
+      "endColumn": 33,
+      "signature": "= lambda: target_cb()"
+    },
+    {
+      "id": "variable:fb450996c12f335b36201ead67a34f64",
+      "kind": "variable",
+      "name": "INIT_MAP",
+      "qualifiedName": "INIT_MAP",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 54,
+      "endLine": 54,
+      "startColumn": 0,
+      "endColumn": 26,
+      "signature": "= {\"a\": helper()}"
+    },
+    {
+      "id": "function:fdace61258b1ce2e795b000effa9d472",
+      "kind": "function",
+      "name": "bucket_chains",
+      "qualifiedName": "bucket_chains",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 58,
+      "endLine": 63,
+      "startColumn": 0,
+      "endColumn": 28,
+      "docstring": "--- call receivers (#1683) ---------------------------------------------------",
+      "signature": "(d, k, v)",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:401cee81900ccc20ec60b28121564cd9",
+      "kind": "function",
+      "name": "fabrication_shapes",
+      "qualifiedName": "fabrication_shapes",
+      "filePath": "torture.py",
+      "language": "python",
+      "startLine": 67,
+      "endLine": 76,
+      "startColumn": 0,
+      "endColumn": 23,
+      "docstring": "--- non-call, non-identifier receivers (#66) ---------------------------------",
+      "signature": "(rows_by_file, key)",
+      "isAsync": false,
+      "isStatic": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.py",
+      "target": "import:0dc560d291ced9a60dcfc92b3d1517c1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "import:95e073d27b0a05dee53bd4f2dd337996",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "import:74ce565919ddb6e46e4a742337a7feb1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "import:1d1d85b7f18e49012c7ebda155ba360b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "import:3dfa953a218bdfb127cccc4a7430c101",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "import:2ee5c0c674cdd86640a278af131eb539",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:8fef25ea8abe486ee94190ed47c3644b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:6d8fcb43a5a4a11e8f006f6392c905eb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:788d75a828c79f9847e0be0e2b73a196",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "class:066eb79e83cf3105cebd14593747068f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:066eb79e83cf3105cebd14593747068f",
+      "target": "method:fbe990aa0f9630ab6f709c19c88d51da",
+      "kind": "contains"
+    },
+    {
+      "source": "class:066eb79e83cf3105cebd14593747068f",
+      "target": "method:3ac9d03b2b42036d5064669684b96d97",
+      "kind": "contains"
+    },
+    {
+      "source": "class:066eb79e83cf3105cebd14593747068f",
+      "target": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "kind": "contains"
+    },
+    {
+      "source": "class:066eb79e83cf3105cebd14593747068f",
+      "target": "method:8b33f99493ca56b33c661cb49cf02640",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "function:692077921d04b315880bc35a0bc872a9",
+      "kind": "contains"
+    },
+    {
+      "source": "function:692077921d04b315880bc35a0bc872a9",
+      "target": "function:d2fae347c5c9176a3642fc94640462a6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "function:f66e04344be6aab3cf448175c414d5ed",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:0560d6516d21bba56151a91b46a3458f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:36e608fb368763b7f8a74a69f477cec7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:9b11e2d2271460cf5d5c12d00f607ca1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:459f624660c51fd045cc765047a12ec3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "variable:fb450996c12f335b36201ead67a34f64",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "function:fdace61258b1ce2e795b000effa9d472",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.py",
+      "target": "function:401cee81900ccc20ec60b28121564cd9",
+      "kind": "contains"
+    },
+    {
+      "source": "variable:788d75a828c79f9847e0be0e2b73a196",
+      "target": "variable:8fef25ea8abe486ee94190ed47c3644b",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "target": "variable:8fef25ea8abe486ee94190ed47c3644b",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "os",
+      "referenceKind": "imports",
+      "line": 2,
+      "column": 7
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "sys",
+      "referenceKind": "imports",
+      "line": 2,
+      "column": 11
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "os.path",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 7
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "collections",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "OrderedDict",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 24
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "defaultdict",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 37
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": ".relative",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "thing",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 22
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "mypkg.handlers",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "target_cb",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 27
+    },
+    {
+      "fromNodeId": "variable:788d75a828c79f9847e0be0e2b73a196",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 10,
+      "column": 4
+    },
+    {
+      "fromNodeId": "class:066eb79e83cf3105cebd14593747068f",
+      "referenceName": "BaseService",
+      "referenceKind": "extends",
+      "line": 13,
+      "column": 14
+    },
+    {
+      "fromNodeId": "class:066eb79e83cf3105cebd14593747068f",
+      "referenceName": "mixins.LoggerMixin",
+      "referenceKind": "extends",
+      "line": 13,
+      "column": 27
+    },
+    {
+      "fromNodeId": "method:fbe990aa0f9630ab6f709c19c88d51da",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 18,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:fbe990aa0f9630ab6f709c19c88d51da",
+      "referenceName": "queue",
+      "referenceKind": "calls",
+      "line": 19,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:3ac9d03b2b42036d5064669684b96d97",
+      "referenceName": "staticmethod",
+      "referenceKind": "decorates",
+      "line": 21,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:3ac9d03b2b42036d5064669684b96d97",
+      "referenceName": "transform",
+      "referenceKind": "calls",
+      "line": 23,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "referenceName": "self.registry.lookup",
+      "referenceKind": "calls",
+      "line": 26,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "referenceName": "obj.method_chain().deep",
+      "referenceKind": "calls",
+      "line": 28,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "referenceName": "obj.method_chain",
+      "referenceKind": "calls",
+      "line": 28,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:ea9d3d2b24e0b1e6559d12766186eb52",
+      "referenceName": "fetch",
+      "referenceKind": "calls",
+      "line": 30,
+      "column": 21
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "app.route",
+      "referenceKind": "calls",
+      "line": 36,
+      "column": 1
+    },
+    {
+      "fromNodeId": "function:692077921d04b315880bc35a0bc872a9",
+      "referenceName": "inner",
+      "referenceKind": "calls",
+      "line": 40,
+      "column": 11
+    },
+    {
+      "fromNodeId": "variable:9b11e2d2271460cf5d5c12d00f607ca1",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 52,
+      "column": 13
+    },
+    {
+      "fromNodeId": "variable:459f624660c51fd045cc765047a12ec3",
+      "referenceName": "target_cb",
+      "referenceKind": "calls",
+      "line": 53,
+      "column": 22
+    },
+    {
+      "fromNodeId": "variable:fb450996c12f335b36201ead67a34f64",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 54,
+      "column": 17
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 55,
+      "column": 17
+    },
+    {
+      "fromNodeId": "file:torture.py",
+      "referenceName": "view",
+      "referenceKind": "calls",
+      "line": 55,
+      "column": 27
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "d.setdefault().append",
+      "referenceKind": "calls",
+      "line": 59,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "d.setdefault",
+      "referenceKind": "calls",
+      "line": 59,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "d.items().get",
+      "referenceKind": "calls",
+      "line": 60,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "d.items",
+      "referenceKind": "calls",
+      "line": 60,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "make().run",
+      "referenceKind": "calls",
+      "line": 61,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "make",
+      "referenceKind": "calls",
+      "line": 61,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "(lambda: make)()",
+      "referenceKind": "calls",
+      "line": 62,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "(lambda: make)",
+      "referenceKind": "calls",
+      "line": 62,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "obj.make().run",
+      "referenceKind": "calls",
+      "line": 63,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:fdace61258b1ce2e795b000effa9d472",
+      "referenceName": "obj.make",
+      "referenceKind": "calls",
+      "line": 63,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:401cee81900ccc20ec60b28121564cd9",
+      "referenceName": "self_like.rows.append",
+      "referenceKind": "calls",
+      "line": 73,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:401cee81900ccc20ec60b28121564cd9",
+      "referenceName": "rows_by_file[key].append",
+      "referenceKind": "calls",
+      "line": 74,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:401cee81900ccc20ec60b28121564cd9",
+      "referenceName": "rows_by_file[key].get",
+      "referenceKind": "calls",
+      "line": 75,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:fbe990aa0f9630ab6f709c19c88d51da",
+      "referenceName": "self.on_event",
+      "referenceKind": "function_ref",
+      "line": 18,
+      "column": 22
+    },
+    {
+      "fromNodeId": "method:fbe990aa0f9630ab6f709c19c88d51da",
+      "referenceName": "target_cb",
+      "referenceKind": "function_ref",
+      "line": 19,
+      "column": 14
+    },
+    {
+      "fromNodeId": "variable:0560d6516d21bba56151a91b46a3458f",
+      "referenceName": "target_cb",
+      "referenceKind": "function_ref",
+      "line": 48,
+      "column": 20
+    },
+    {
+      "fromNodeId": "variable:36e608fb368763b7f8a74a69f477cec7",
+      "referenceName": "target_cb",
+      "referenceKind": "function_ref",
+      "line": 49,
+      "column": 13
+    },
+    {
+      "fromNodeId": "variable:36e608fb368763b7f8a74a69f477cec7",
+      "referenceName": "view",
+      "referenceKind": "function_ref",
+      "line": 49,
+      "column": 24
+    }
+  ],
+  "errors": []
+}

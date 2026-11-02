@@ -1,0 +1,383 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": "1: finds calls in interpolations, bindings, directives and handlers, at their offsets",
+      "source": "<template>\n  <NuxtLink :to=\"useBar(link.location)\" v-if=\"canShow(link)\">{{ useBar(link) }}</NuxtLink>\n  <li v-for=\"row in rowsFor(user)\" v-show=\"visible()\" v-my-dir=\"setup(1)\">{{ label(row) }}</li>\n  <button @click=\"save(item)\" v-on:keyup.enter=\"submit()\" @input=\"onInput\">go</button>\n  <Comp :style=\"{ color: tint() }\" :title=\"`#${index(n)}`\" @change=\"(v) => update(v)\" />\n</template>\n",
+      "expected": [
+        [
+          "useBar",
+          28
+        ],
+        [
+          "canShow",
+          57
+        ],
+        [
+          "useBar",
+          75
+        ],
+        [
+          "rowsFor",
+          122
+        ],
+        [
+          "visible",
+          145
+        ],
+        [
+          "setup",
+          166
+        ],
+        [
+          "label",
+          179
+        ],
+        [
+          "save",
+          216
+        ],
+        [
+          "submit",
+          246
+        ],
+        [
+          "tint",
+          310
+        ],
+        [
+          "index",
+          332
+        ],
+        [
+          "update",
+          360
+        ]
+      ]
+    },
+    {
+      "id": "2: names a member call by its path, as a script call is named",
+      "source": "<template>\n  <p @click=\"store.fetchUsers()\" :a=\"user?.profile?.load()\" :b=\"fn?.(1)\">{{ props.format(v) }}</p>\n  <p :c=\"list[0].go()\" :d=\"make().then(x => x.done())\">{{ (a as B).run() }}</p>\n</template>",
+      "expected": [
+        [
+          "store.fetchUsers",
+          24
+        ],
+        [
+          "user.profile.load",
+          48
+        ],
+        [
+          "fn",
+          75
+        ],
+        [
+          "props.format",
+          87
+        ],
+        [
+          "make",
+          137
+        ]
+      ]
+    },
+    {
+      "id": "3: skips names the template binds: v-for aliases and slot props in their subtree, arrow and function parameters",
+      "source": "<template>\n  <ul>\n    <li v-for=\"(item, i) in items\" :key=\"item.id\" @click=\"item.select(i)\">\n      {{ item.label() }} {{ format(item) }}\n      <Row #default=\"{ row, toggle }\">{{ toggle(row) }} {{ rowLabel(row) }}</Row>\n    </li>\n  </ul>\n  <Comp :cb=\"function (x) { return x.go() }\" :keys=\"(k) => k.trim()\" @done=\"cb => cb()\" />\n  <p>{{ toggle() }} {{ item() }}</p>\n</template>",
+      "expected": [
+        [
+          "format",
+          121
+        ],
+        [
+          "rowLabel",
+          196
+        ],
+        [
+          "toggle",
+          336
+        ],
+        [
+          "item",
+          351
+        ]
+      ]
+    },
+    {
+      "id": "4: skips what is never project code: strings, Vue template globals, $-helpers, keywords, new, object methods",
+      "source": "<template>\n  <p :title=\"$t('x')\" :class=\"'a(b)'\">{{ Math.max(a(), 1) }} {{ JSON.stringify(c) }} {{ $route.query.x }}</p>\n  <p v-if=\"typeof x === 'function' && /f(o)/.test(s)\">{{ new Date(stamp()).getTime() }} {{ \"no()\" }}</p>\n  <Chart :options=\"{ formatter(v) { return fmt(v) } }\" @click=\"$emit('close')\" />\n</template>",
+      "expected": [
+        [
+          "a",
+          61
+        ],
+        [
+          "stamp",
+          187
+        ],
+        [
+          "fmt",
+          269
+        ]
+      ]
+    },
+    {
+      "id": "5: reads a CRLF file the same way",
+      "source": "<template>\r\n  <p\r\n    :title=\"label(\r\n      item)\"\r\n  >{{ useBar(x) }}</p>\r\n</template>\r\n",
+      "expected": [
+        [
+          "label",
+          30
+        ],
+        [
+          "useBar",
+          58
+        ]
+      ]
+    },
+    {
+      "id": "6: reads only the root template, and only what Vue compiles",
+      "source": "<template>\n  <!-- {{ commented() }} -->\n  <div v-pre>{{ raw() }} <span :x=\"raw()\"></span></div>\n  <template v-if=\"cond()\"><span>{{ inner() }}</span></template>\n  <p data-x=\"plain(1)\">{{ after() }}</p>\n</template>\n<script setup>\nconst x = scriptCall()\n</script>\n<i18n>{ \"en\": { \"a\": \"{{ notTemplate() }}\" } }</i18n>",
+      "expected": [
+        [
+          "cond",
+          114
+        ],
+        [
+          "inner",
+          131
+        ],
+        [
+          "after",
+          186
+        ]
+      ]
+    },
+    {
+      "id": "7: reads only the root template, and only what Vue compiles",
+      "source": "<template lang=\"pug\">\ndiv {{ pug() }}\n</template>",
+      "expected": []
+    },
+    {
+      "id": "8: reads only the root template, and only what Vue compiles",
+      "source": "<script setup>\nconst a = b()\n</script>",
+      "expected": []
+    },
+    {
+      "id": "9: unicode offsets and quoted closing angle",
+      "source": "<template>é😀<p :title=\"choose(a > b, café())\">{{ 雪() }} {{ helper() }}</p></template>",
+      "expected": [
+        [
+          "choose",
+          27
+        ],
+        [
+          "helper",
+          66
+        ]
+      ]
+    },
+    {
+      "id": "10: self-closing scope does not leak",
+      "source": "<template><Row v-for=\"row in rows()\" @click=\"row.save()\"/><p>{{ row() }}{{ done() }}</p></template>",
+      "expected": [
+        [
+          "rows",
+          29
+        ],
+        [
+          "row",
+          64
+        ],
+        [
+          "done",
+          75
+        ]
+      ]
+    },
+    {
+      "id": "11: nested templates and root closing",
+      "source": "<template><template v-if=\"enabled()\"><template v-for=\"x in rows()\">{{ render(x) }}</template>{{ afterInner() }}</template>{{ done() }}</template><template>{{ second() }}</template>",
+      "expected": [
+        [
+          "enabled",
+          26
+        ],
+        [
+          "rows",
+          59
+        ],
+        [
+          "render",
+          70
+        ],
+        [
+          "afterInner",
+          96
+        ],
+        [
+          "done",
+          125
+        ]
+      ]
+    },
+    {
+      "id": "12: template substitutions and escapes",
+      "source": "<template><p :title=\"`plain(fake()) ${format(value)} ${nested(`${inner()}`)}`\">{{ done() }}</p></template>",
+      "expected": [
+        [
+          "format",
+          38
+        ],
+        [
+          "nested",
+          55
+        ],
+        [
+          "inner",
+          65
+        ],
+        [
+          "done",
+          82
+        ]
+      ]
+    },
+    {
+      "id": "13: regular expressions and comments",
+      "source": "<template><p :x=\"/fake\\(call\\)/.test(input) && real()\" @click=\"/* hidden() */ save() // later()\">{{ end() }}</p></template>",
+      "expected": [
+        [
+          "real",
+          47
+        ],
+        [
+          "save",
+          78
+        ],
+        [
+          "end",
+          100
+        ]
+      ]
+    },
+    {
+      "id": "14: arrow destructuring and default values",
+      "source": "<template><p :f=\"({row, value: renamed}) => row.save() + renamed() + outside()\" :g=\"(x = defaulted()) => x.run() + other()\"/></template>",
+      "expected": [
+        [
+          "outside",
+          69
+        ],
+        [
+          "defaulted",
+          89
+        ],
+        [
+          "other",
+          115
+        ]
+      ]
+    },
+    {
+      "id": "15: function names and parameter scope",
+      "source": "<template><p :f=\"function handler(item) { item.run(); helper(); }\" :g=\"function (value) { return format(value) }\"/></template>",
+      "expected": [
+        [
+          "helper",
+          54
+        ],
+        [
+          "format",
+          97
+        ]
+      ]
+    },
+    {
+      "id": "16: slot destructuring aliases",
+      "source": "<template><Row v-slot:default=\"{ item: row, save = fallback }\">{{ row.label() }}{{ save() }}{{ format(row) }}</Row>{{ row() }}</template>",
+      "expected": [
+        [
+          "format",
+          95
+        ],
+        [
+          "row",
+          118
+        ]
+      ]
+    },
+    {
+      "id": "17: v-pre subtree",
+      "source": "<template><div v-pre :x=\"ignored()\"><span>{{ ignored() }}</span></div>{{ live() }}</template>",
+      "expected": [
+        [
+          "live",
+          73
+        ]
+      ]
+    },
+    {
+      "id": "18: scripts styles comments",
+      "source": "<script>const x = \"<template>{{ wrong() }}</template>\"</script><style>.x { content: \"{{ wrong() }}\" }</style><!-- <template>{{ wrong() }}</template> --><template>{{ right() }}</template>",
+      "expected": [
+        [
+          "right",
+          165
+        ]
+      ]
+    },
+    {
+      "id": "19: plain attributes and unquoted binding",
+      "source": "<template><p title=\"plain()\" :title=bare() v-bind:data-id=\"identify()\" @click.stop.prevent=\"save()\"/></template>",
+      "expected": [
+        [
+          "bare",
+          36
+        ],
+        [
+          "identify",
+          59
+        ],
+        [
+          "save",
+          92
+        ]
+      ]
+    },
+    {
+      "id": "20: globals helpers and constructors",
+      "source": "<template>{{ Number(value()) }}{{ Math.min(one(), two()) }}{{ $t(label()) }}{{ new Thing(input()) }}{{ globalThis.parseInt(text()) }}</template>",
+      "expected": [
+        [
+          "value",
+          20
+        ],
+        [
+          "one",
+          43
+        ],
+        [
+          "two",
+          50
+        ],
+        [
+          "label",
+          65
+        ],
+        [
+          "input",
+          89
+        ],
+        [
+          "globalThis.parseInt",
+          103
+        ],
+        [
+          "text",
+          123
+        ]
+      ]
+    }
+  ]
+}

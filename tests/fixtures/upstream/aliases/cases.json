@@ -1,0 +1,872 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "name": "root-alias",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\".\",\"paths\":{\"#app/*\":[\"src/local/*\"],\"@/*\":[\"src/*\"]}}}"
+      },
+      "files": [
+        "src/main.ts",
+        "src/local/test.ts",
+        "src/Page.vue"
+      ],
+      "expected": [
+        {
+          "from": "src/main.ts",
+          "source": "#app/test",
+          "language": "typescript",
+          "target": "src/local/test.ts"
+        },
+        {
+          "from": "src/main.ts",
+          "source": "@/Page",
+          "language": "vue",
+          "target": "src/Page.vue"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "#app/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/local/*"
+              ]
+            },
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "nearest-root-fallback",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"paths\":{\"@/*\":[\"shared/*\"],\"root/*\":[\"root/*\"]}}}",
+        "app/tsconfig.json": "{\"compilerOptions\":{\"paths\":{\"@/*\":[\"local/*\"],\"nested/*\":[\"local/*\"]}}}"
+      },
+      "files": [
+        "app/main.ts",
+        "app/local/item.ts",
+        "shared/item.ts",
+        "root/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "app/main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "app/local/item.ts"
+        },
+        {
+          "from": "app/main.ts",
+          "source": "root/item",
+          "language": "typescript",
+          "target": "root/item.ts"
+        },
+        {
+          "from": "app/main.ts",
+          "source": "nested/item",
+          "language": "typescript",
+          "target": "app/local/item.ts"
+        },
+        {
+          "from": "app/main.ts",
+          "source": "nested/missing",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "root/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "root/*"
+              ]
+            },
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "shared/*"
+              ]
+            }
+          ]
+        },
+        "app": {
+          "baseUrl": "/fixture/app",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "nested/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "local/*"
+              ]
+            },
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "local/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "base-url-packages",
+      "manifests": {
+        "package.json": "{\"dependencies\":{\"lodash\":\"*\",\"@scope/lib\":\"*\"}}",
+        "tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\"src\",\"paths\":{\"*\":[\"types/*\",\"*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "src/layout/Main.tsx",
+        "src/lodash/index.ts",
+        "src/types/lodash.d.ts",
+        "src/@scope/lib.ts",
+        "src/@scope/lib.d.ts",
+        "src/fs.ts",
+        "src/types/fs.d.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "layout/Main",
+          "language": "typescript",
+          "target": "src/layout/Main.tsx"
+        },
+        {
+          "from": "main.ts",
+          "source": "lodash",
+          "language": "typescript",
+          "target": "src/types/lodash.d.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "lodash",
+          "language": "javascript",
+          "target": null
+        },
+        {
+          "from": "main.ts",
+          "source": "@scope/lib",
+          "language": "typescript",
+          "target": "src/@scope/lib.d.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "fs",
+          "language": "typescript",
+          "target": "src/types/fs.d.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "unknown",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture/src",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "types/*",
+                "*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "extends-relative",
+      "manifests": {
+        "config/base.json": "{\"compilerOptions\":{\"paths\":{\"@/*\":[\"../lib/*\"]}}}",
+        "tsconfig.json": "{\"extends\":\"./config/base\"}"
+      },
+      "files": [
+        "main.ts",
+        "lib/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "lib/item.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture/config",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "../lib/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "extends-base-relative",
+      "manifests": {
+        "config/base.json": "{\"compilerOptions\":{\"baseUrl\":\"../shared\",\"paths\":{\"@/*\":[\"src/*\"]}}}",
+        "app/tsconfig.json": "{\"extends\":\"../config/base.json\",\"compilerOptions\":{\"paths\":{\"@/*\":[\"*\"]}}}"
+      },
+      "files": [
+        "app/main.ts",
+        "shared/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "app/main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "shared/item.ts"
+        }
+      ],
+      "maps": {
+        "app": {
+          "baseUrl": "/fixture/shared",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "extends-array-replacement",
+      "manifests": {
+        "first.json": "{\"compilerOptions\":{\"baseUrl\":\"a\",\"paths\":{\"first/*\":[\"*\"]}}}",
+        "second.json": "{\"compilerOptions\":{\"paths\":{\"second/*\":[\"b/*\"]}}}",
+        "tsconfig.json": "{\"extends\":[\"./first\",\"./second\"],\"compilerOptions\":{\"paths\":{\"chosen/*\":[\"*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "a/item.ts",
+        "b/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "chosen/item",
+          "language": "typescript",
+          "target": "a/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "first/item",
+          "language": "typescript",
+          "target": null
+        },
+        {
+          "from": "main.ts",
+          "source": "second/item",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture/a",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "chosen/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "config-fallback-order",
+      "manifests": {
+        "tsconfig.json": "{\"references\":[{\"path\":\"./lib\"}]}",
+        "jsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\"javascript\"}}",
+        "tsconfig.base.json": "{\"compilerOptions\":{\"paths\":{\"@/*\":[\"source/*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "source/item.ts",
+        "javascript/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "source/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "item",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "source/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "empty-paths-authoritative",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"paths\":{}}}",
+        "jsconfig.json": "{\"compilerOptions\":{\"paths\":{\"@/*\":[\"lib/*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "lib/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {}
+    },
+    {
+      "name": "literal-specificity",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"paths\":{\"@x/*/index\":[\"wrong/*\"],\"@x/*\":[\"general/*\"],\"@x/exact\":[\"exact.ts\"],\"@x/exact*\":[\"wild/*\"],\"weird**suffix\":[\"first/*/again*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "general/index.ts",
+        "exact.ts",
+        "wild/x.ts",
+        "first/a/again*.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@x/index",
+          "language": "typescript",
+          "target": "general/index.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "@x/exact",
+          "language": "typescript",
+          "target": "exact.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "@x/exactx",
+          "language": "typescript",
+          "target": "wild/x.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "weirda*suffix",
+          "language": "typescript",
+          "target": "first/a/again*.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "@x/exact",
+              "suffix": "",
+              "hasWildcard": false,
+              "replacements": [
+                "exact.ts"
+              ]
+            },
+            {
+              "prefix": "@x/exact",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "wild/*"
+              ]
+            },
+            {
+              "prefix": "weird",
+              "suffix": "*suffix",
+              "hasWildcard": true,
+              "replacements": [
+                "first/*/again*"
+              ]
+            },
+            {
+              "prefix": "@x/",
+              "suffix": "/index",
+              "hasWildcard": true,
+              "replacements": [
+                "wrong/*"
+              ]
+            },
+            {
+              "prefix": "@x/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "general/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "first-match-no-fallback",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"paths\":{\"@x/*\":[\"missing/*\"],\"@*\":[\"lib/*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "lib/x/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@x/item",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "@x/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "missing/*"
+              ]
+            },
+            {
+              "prefix": "@",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "lib/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "comment-url-trailing",
+      "manifests": {
+        "tsconfig.json": "{/*conf*/\"compilerOptions\":{\"baseUrl\":\".\",\"paths\":{\"http://x/*\":[\"src/*\"],\"@/*\":[\"src/*\",],\"comma,}\":[\"src/item.ts\"]},},}"
+      },
+      "files": [
+        "main.ts",
+        "src/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "src/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "http://x/item",
+          "language": "typescript",
+          "target": "src/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "comma}",
+          "language": "typescript",
+          "target": "src/item.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "http://x/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/*"
+              ]
+            },
+            {
+              "prefix": "comma}",
+              "suffix": "",
+              "hasWildcard": false,
+              "replacements": [
+                "src/item.ts"
+              ]
+            },
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "package-extends",
+      "manifests": {
+        "tsconfig.json": "{\"extends\":\"@org/config/base\"}",
+        "node_modules/@org/config/base.json": "{\"compilerOptions\":{\"paths\":{\"@/*\":[\"../../../src/*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "src/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "src/item.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture/node_modules/@org/config",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "../../../src/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "nearest-package-extends",
+      "manifests": {
+        "app/tsconfig.json": "{\"extends\":\"preset\"}",
+        "app/node_modules/preset/tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\"../../src\"}}",
+        "node_modules/preset/tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\"../../other\"}}"
+      },
+      "files": [
+        "app/main.ts",
+        "app/src/item.ts",
+        "other/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "app/main.ts",
+          "source": "item",
+          "language": "typescript",
+          "target": "app/src/item.ts"
+        }
+      ],
+      "maps": {
+        "app": {
+          "baseUrl": "/fixture/app/src",
+          "declaresBaseUrl": true,
+          "patterns": []
+        },
+        "app/node_modules/preset": {
+          "baseUrl": "/fixture/app/src",
+          "declaresBaseUrl": true,
+          "patterns": []
+        },
+        "node_modules/preset": {
+          "baseUrl": "/fixture/other",
+          "declaresBaseUrl": true,
+          "patterns": []
+        }
+      }
+    },
+    {
+      "name": "cycle",
+      "manifests": {
+        "tsconfig.json": "{\"extends\":\"./b\",\"compilerOptions\":{\"paths\":{\"a/*\":[\"src/*\"]}}}",
+        "b.json": "{\"extends\":\"./tsconfig\",\"compilerOptions\":{\"baseUrl\":\"src\",\"paths\":{\"b/*\":[\"*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "src/src/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "a/item",
+          "language": "typescript",
+          "target": "src/src/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "b/item",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture/src",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "a/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "invalid-first-extends-target",
+      "manifests": {
+        "tsconfig.json": "{\"extends\":\"./base\"}",
+        "base": "invalid json",
+        "base.json": "{\"compilerOptions\":{\"baseUrl\":\"src\"}}"
+      },
+      "files": [
+        "main.ts",
+        "src/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "item",
+          "language": "typescript",
+          "target": null
+        }
+      ],
+      "maps": {}
+    },
+    {
+      "name": "bounds-and-dotfolders",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\".\",\"paths\":{\"@/*\":[\"../outside/*\",\"..generated/*\",\"$ROOT/src/*\"],\"/*\":[\"src/*\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "..generated/item.ts",
+        "src/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "@/item",
+          "language": "typescript",
+          "target": "..generated/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "/item",
+          "language": "typescript",
+          "target": "src/item.ts"
+        },
+        {
+          "from": "main.ts",
+          "source": "//item",
+          "language": "typescript",
+          "target": "src/item.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": true,
+          "patterns": [
+            {
+              "prefix": "@/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "../outside/*",
+                "..generated/*",
+                "/fixture/src/*"
+              ]
+            },
+            {
+              "prefix": "/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "workspace-alias-priority",
+      "manifests": {
+        "package.json": "{\"workspaces\":[\"lib\"]}",
+        "lib/package.json": "{\"name\":\"workspace\",\"main\":\"./index.ts\"}",
+        "tsconfig.json": "{\"compilerOptions\":{\"paths\":{\"workspace\":[\"replacement.ts\"]}}}"
+      },
+      "files": [
+        "main.ts",
+        "replacement.ts",
+        "lib/index.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "workspace",
+          "language": "typescript",
+          "target": "replacement.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "workspace",
+              "suffix": "",
+              "hasWildcard": false,
+              "replacements": [
+                "replacement.ts"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "deep-nearest-config",
+      "manifests": {
+        "a/b/c/d/e/f/g/tsconfig.json": "{\"compilerOptions\":{\"paths\":{\"local/*\":[\"src/*\"]}}}"
+      },
+      "files": [
+        "a/b/c/d/e/f/g/main.ts",
+        "a/b/c/d/e/f/g/src/item.ts"
+      ],
+      "expected": [
+        {
+          "from": "a/b/c/d/e/f/g/main.ts",
+          "source": "local/item",
+          "language": "typescript",
+          "target": "a/b/c/d/e/f/g/src/item.ts"
+        }
+      ],
+      "maps": {
+        "a/b/c/d/e/f/g": {
+          "baseUrl": "/fixture/a/b/c/d/e/f/g",
+          "declaresBaseUrl": false,
+          "patterns": [
+            {
+              "prefix": "local/",
+              "suffix": "",
+              "hasWildcard": true,
+              "replacements": [
+                "src/*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "empty-base-only",
+      "manifests": {
+        "tsconfig.json": "{\"compilerOptions\":{\"baseUrl\":\"\"}}"
+      },
+      "files": [
+        "main.ts",
+        "item.ts"
+      ],
+      "expected": [
+        {
+          "from": "main.ts",
+          "source": "item",
+          "language": "typescript",
+          "target": "item.ts"
+        }
+      ],
+      "maps": {
+        "": {
+          "baseUrl": "/fixture",
+          "declaresBaseUrl": true,
+          "patterns": []
+        }
+      }
+    }
+  ]
+}

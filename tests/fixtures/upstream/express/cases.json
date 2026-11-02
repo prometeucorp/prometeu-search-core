@@ -1,0 +1,5156 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "path": "routes.ts",
+      "source": "\n@app.route('/users')\ndef list_users():\n    return []\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n@app.get('/users')\nasync def list_users():\n    return []\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n@router.post('/items')\ndef create_item(item: Item):\n    pass\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n@router.get(\"\", response_model=ListOfArticles, name=\"articles:list\")\nasync def list_articles():\n    return []\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n@router.post(\n    \"\",\n    status_code=201,\n    response_model=ArticleInResponse,\n)\nasync def create_article():\n    pass\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/users', listUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/users",
+            "kind": "route",
+            "name": "GET /users",
+            "qualifiedName": "routes.ts::GET:/users",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/users",
+            "referenceName": "listUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.post('/items', auth, createItem);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:POST:/items",
+            "kind": "route",
+            "name": "POST /items",
+            "qualifiedName": "routes.ts::POST:/items",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 21,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:POST:/items",
+            "referenceName": "createItem",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/x', userController.list);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "list",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/users', rateLimit({ keyGenerator: (req) => lookup(req.ip) }), getUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/users",
+            "kind": "route",
+            "name": "GET /users",
+            "qualifiedName": "routes.ts::GET:/users",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/users",
+            "referenceName": "getUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', (req, res, next) => audit(req, next), getUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "getUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.post('/x', asyncHandler(async (req, res) => { createItem(req.body); }));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:POST:/x",
+            "kind": "route",
+            "name": "POST /x",
+            "qualifiedName": "routes.ts::POST:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:POST:/x",
+            "referenceName": "createItem",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.post('/x', auth, async (req, res) => { createItem(req.body); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:POST:/x",
+            "kind": "route",
+            "name": "POST /x",
+            "qualifiedName": "routes.ts::POST:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:POST:/x",
+            "referenceName": "createItem",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', function (req, res) { listUsers(); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "listUsers",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', function (req, res) { const u = findUser(req.id); res.json(u.items.map((i) => shape(i))); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "findUser",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "shape",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 67,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.route('/x').get(function (req, res) { const a = load(); a.forEach((x) => shape(x)); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "load",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "shape",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', (req, res, cb = function () {}) => { svc(); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "svc",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', wrap(ctrl.list, { onError: function (e) { report(e); } }));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', asyncHandler(function (req, res) { svc(); }));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "svc",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', withErrors(function onErr(e) { report(e); }, async (req, res) => { svc(); }));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "svc",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', body('tags').matches(/^[^\\]]+$/), getUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "getUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', check('q').matches(/\\[/), getUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "getUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', async (req, res) => { const re = /[^]]/, out = compute(req); save(out); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "compute",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "save",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', function (req, res) { if (ok(req)) { for (const a of b) run(a); } items.forEach(function (i) { shape(i); }); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "ok",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "run",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "shape",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "app.get('/a', (req, res) => { res.send(renderToString(<div>{a()}</div>)); });\napp.get('/b', (req, res) => { res.send(renderPage(<>{b()}</>)); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:GET:/a",
+            "kind": "route",
+            "name": "GET /a",
+            "qualifiedName": "server.tsx::GET:/a",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          },
+          {
+            "id": "route:server.tsx:2:GET:/b",
+            "kind": "route",
+            "name": "GET /b",
+            "qualifiedName": "server.tsx::GET:/b",
+            "filePath": "server.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/a",
+            "referenceName": "renderToString",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/a",
+            "referenceName": "a",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/a",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 30,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:2:GET:/b",
+            "referenceName": "renderPage",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:2:GET:/b",
+            "referenceName": "b",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:2:GET:/b",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 30,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "app.get('*', (req, res) => {\n  const html = renderToString(<App store={store} />);\n  sendPage(res, html);\n});\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:GET:*",
+            "kind": "route",
+            "name": "GET *",
+            "qualifiedName": "server.tsx::GET:*",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 12,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:GET:*",
+            "referenceName": "renderToString",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:*",
+            "referenceName": "sendPage",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', (req, res) => { const v = { a: 1 }\n/ 2; svc(v); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "svc",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', rateLimit({ max: cfg.max! / 2 }), getUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "getUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', limiter(hits++ / 2), getUsers);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "getUsers",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.route('/x').get(async function (req, res) { const s = t.replace(/}/g, ''); load(); items.map((i) => shape(i)); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "t.replace",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "load",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "shape",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', function (req, res) { function helper(a) { return a; } Promise.all(items.map(async (i) => save(i))); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "save",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/u/:id', async (req, res) => { if (!/^\\d+/.test(req.params.id)) return res.sendStatus(400); const user = await userService.findById(req.params.id); res.json(user); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/u/:id",
+            "kind": "route",
+            "name": "GET /u/:id",
+            "qualifiedName": "routes.ts::GET:/u/:id",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/u/:id",
+            "referenceName": "userService.findById",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/u/:id",
+            "referenceName": "res.sendStatus",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 83,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/u/:id",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 160,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.route('/:id').get((req, res) => { if (!/^\\w+/.test(req.params.id)) return bad(res); load(req); }).put(protect, updateThing);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/:id",
+            "kind": "route",
+            "name": "GET /:id",
+            "qualifiedName": "routes.ts::GET:/:id",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:1:PUT:/:id",
+            "kind": "route",
+            "name": "PUT /:id",
+            "qualifiedName": "routes.ts::PUT:/:id",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/:id",
+            "referenceName": "bad",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/:id",
+            "referenceName": "load",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:PUT:/:id",
+            "referenceName": "updateThing",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "app.get('/echo', (req, res) => { res.send(String(req.query.q).replace(/</g, '&lt;').replace(/>/g, '&gt;')); audit(req); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:GET:/echo",
+            "kind": "route",
+            "name": "GET /echo",
+            "qualifiedName": "server.tsx::GET:/echo",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/echo",
+            "referenceName": "audit",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/echo",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 33,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "router.get('/x', (req, res) => { res.send(`<p>${fmtUser(req.user)}</p>`); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "server.tsx::GET:/x",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/x",
+            "referenceName": "fmtUser",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/x",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 33,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/stats', async (req, res) => { const pct = Math.round((a - b) / total * 100) / 100; res.json({ pct: summarize(pct) }); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/stats",
+            "kind": "route",
+            "name": "GET /stats",
+            "qualifiedName": "routes.ts::GET:/stats",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/stats",
+            "referenceName": "Math.round",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/stats",
+            "referenceName": "summarize",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/stats",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 96,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.route('/s').get((req, res) => { const m = Math.floor((t1 - t0) / 1000) / 60; res.json(fmt(m)); }).post(protect, createS);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/s",
+            "kind": "route",
+            "name": "GET /s",
+            "qualifiedName": "routes.ts::GET:/s",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:1:POST:/s",
+            "kind": "route",
+            "name": "POST /s",
+            "qualifiedName": "routes.ts::POST:/s",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 6,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/s",
+            "referenceName": "Math.floor",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/s",
+            "referenceName": "fmt",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/s",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 84,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:POST:/s",
+            "referenceName": "createS",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "app.get('/list', (req, res) => { res.send(renderToString(<ul>{items.map((x) => (<li key={x}>{x}</li>))}</ul>)); audit(req); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:GET:/list",
+            "kind": "route",
+            "name": "GET /list",
+            "qualifiedName": "server.tsx::GET:/list",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/list",
+            "referenceName": "renderToString",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/list",
+            "referenceName": "audit",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/list",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 33,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/s', (req, res) => { res.json({ pct: Math.round(s.done) / s.total, next: '/stats/2' }); audit(req); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/s",
+            "kind": "route",
+            "name": "GET /s",
+            "qualifiedName": "routes.ts::GET:/s",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/s",
+            "referenceName": "Math.round",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/s",
+            "referenceName": "audit",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/s",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 33,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/p', (req, res) => { const n = Math.ceil(count(req)) / size; res.redirect('/p/' + n); after(req); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/p",
+            "kind": "route",
+            "name": "GET /p",
+            "qualifiedName": "routes.ts::GET:/p",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/p",
+            "referenceName": "Math.ceil",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/p",
+            "referenceName": "count",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/p",
+            "referenceName": "after",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/p",
+            "referenceName": "res.redirect",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 73,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/c', cfg(f(a) / 2, 'x/y'), handler);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/c",
+            "kind": "route",
+            "name": "GET /c",
+            "qualifiedName": "routes.ts::GET:/c",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/c",
+            "referenceName": "handler",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/admin', authorize(function (user, req) { return user.isAdmin; }), adminCtrl.index);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/admin",
+            "kind": "route",
+            "name": "GET /admin",
+            "qualifiedName": "routes.ts::GET:/admin",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/admin",
+            "referenceName": "index",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/referrals', function (req, res, next) { check(); next(); }, getReferrals);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/referrals",
+            "kind": "route",
+            "name": "GET /referrals",
+            "qualifiedName": "routes.ts::GET:/referrals",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 24,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/referrals",
+            "referenceName": "getReferrals",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/cfg', (req, res, next) => { load(); next(); }, overrideConfig);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/cfg",
+            "kind": "route",
+            "name": "GET /cfg",
+            "qualifiedName": "routes.ts::GET:/cfg",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/cfg",
+            "referenceName": "overrideConfig",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/u/:id', function (req, res, next) { User.findById(id, function (err, user) { req.user = user; next(err); }); }, userCtrl.show);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/u/:id",
+            "kind": "route",
+            "name": "GET /u/:id",
+            "qualifiedName": "routes.ts::GET:/u/:id",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/u/:id",
+            "referenceName": "show",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', responseTime(function (req, res, time) { stats.timing(req.path, time); }), ctrl.list);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "list",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/errors', function (req, res, next) { auth(req); next(); }, getErrors);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/errors",
+            "kind": "route",
+            "name": "GET /errors",
+            "qualifiedName": "routes.ts::GET:/errors",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 21,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/errors",
+            "referenceName": "getErrors",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.use('/api', function (req, res, next) { if (!ok) return res.sendStatus(403); authorize(req, next); }, apiRouter);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "routes.ts::USE:/api",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:USE:/api",
+            "referenceName": "apiRouter",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "router.post('/g', auth, asyncHandler<Req, Res>(async (req, res) => { doIt(); }));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:POST:/g",
+            "kind": "route",
+            "name": "POST /g",
+            "qualifiedName": "server.tsx::POST:/g",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:POST:/g",
+            "referenceName": "doIt",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "router.post('/d', asyncHandler<Req>(async (req, res) => { saveFile(req.file); }));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:POST:/d",
+            "kind": "route",
+            "name": "POST /d",
+            "qualifiedName": "server.tsx::POST:/d",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:POST:/d",
+            "referenceName": "saveFile",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "server.tsx",
+      "source": "app.get('/x', (req, res) => {\n  res.send(render(<p>Don't</p>));\n  res.send(render(<p>won't</p>));\n  load();\n});\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:server.tsx:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "server.tsx::GET:/x",
+            "filePath": "server.tsx",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/x",
+            "referenceName": "load",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/x",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:server.tsx:1:GET:/x",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 2,
+            "filePath": "server.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/o', (req, res) => { svc.list(); res.json(1) }, { cache: true });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/o",
+            "kind": "route",
+            "name": "GET /o",
+            "qualifiedName": "routes.ts::GET:/o",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/o",
+            "referenceName": "svc.list",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/o",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 45,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/w', withErrors(function onErr(e) { report(e); }, ctrl.list));\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/w",
+            "kind": "route",
+            "name": "GET /w",
+            "qualifiedName": "routes.ts::GET:/w",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.post('/x', auth, [validate, ctrl.create]);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:POST:/x",
+            "kind": "route",
+            "name": "POST /x",
+            "qualifiedName": "routes.ts::POST:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:POST:/x",
+            "referenceName": "create",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/re', (req, res) => {\n  const re = /[}]/\n  run(re)\n})\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/re",
+            "kind": "route",
+            "name": "GET /re",
+            "qualifiedName": "routes.ts::GET:/re",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/re",
+            "referenceName": "run",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "const esc = (s) => s.replace(/`/g, 'x');\nrouter.get('/d', async (req, res) => { await svc.doThing(); res.end(); });\nrouter.get('/e', ctrl.list);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:2:GET:/d",
+            "kind": "route",
+            "name": "GET /d",
+            "qualifiedName": "routes.ts::GET:/d",
+            "filePath": "routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:3:GET:/e",
+            "kind": "route",
+            "name": "GET /e",
+            "qualifiedName": "routes.ts::GET:/e",
+            "filePath": "routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:2:GET:/d",
+            "referenceName": "svc.doThing",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:2:GET:/d",
+            "referenceName": "res.end",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 60,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:3:GET:/e",
+            "referenceName": "list",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/x', (req, res) => {\n const r = done! / total!; res.redirect(r ? '/:id' : '/');\n svc.run(r);\n});\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "res.redirect",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 27,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/y', (req, res) => {\n const r = sum! / count!; const parts = csv.split(/,/);\n svc.run(parts);\n});\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/y",
+            "kind": "route",
+            "name": "GET /y",
+            "qualifiedName": "routes.ts::GET:/y",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/y",
+            "referenceName": "csv.split",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/y",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.delete('/users/:id', async (req, res) => { await userService.delete(req.params.id); cache .with(k); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:DELETE:/users/:id",
+            "kind": "route",
+            "name": "DELETE /users/:id",
+            "qualifiedName": "routes.ts::DELETE:/users/:id",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 27,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:DELETE:/users/:id",
+            "referenceName": "userService.delete",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:DELETE:/users/:id",
+            "referenceName": "cache.with",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get('/x', (req, res) => { return of(load()); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "of",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "load",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.route('/items').get(rateLimit({ keyGenerator: (r) => lookup(r.ip) }), getItem).post(async (req, res) => { createItem(); });\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:1:POST:/items",
+            "kind": "route",
+            "name": "POST /items",
+            "qualifiedName": "routes.ts::POST:/items",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 6,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/items",
+            "referenceName": "getItem",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:POST:/items",
+            "referenceName": "createItem",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get(\"users\", use: listUsers)\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:users",
+            "kind": "route",
+            "name": "GET users",
+            "qualifiedName": "routes.ts::GET:users",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.get(\"users\", User.parameter, \"edit\", use: self.editUserHandler)\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:users",
+            "kind": "route",
+            "name": "GET users",
+            "qualifiedName": "routes.ts::GET:users",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 19,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:users",
+            "referenceName": "editUserHandler",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\nadmin.get(use: self.list)\napp.get(\"users\", use: listUsers)\nrouter.post(\"users\", User.parameter, \"edit\", use: UserController.edit)\napp.patch(\":id\" ,  \"meta\" ,  use: update)\napp.get(\n  \"multi\",\n  \"line\",\n  use: multiLine\n)\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:3:GET:users",
+            "kind": "route",
+            "name": "GET users",
+            "qualifiedName": "routes.ts::GET:users",
+            "filePath": "routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:4:POST:users",
+            "kind": "route",
+            "name": "POST users",
+            "qualifiedName": "routes.ts::POST:users",
+            "filePath": "routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:5:PATCH::id",
+            "kind": "route",
+            "name": "PATCH :id",
+            "qualifiedName": "routes.ts::PATCH::id",
+            "filePath": "routes.ts",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 17,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:6:GET:multi",
+            "kind": "route",
+            "name": "GET multi",
+            "qualifiedName": "routes.ts::GET:multi",
+            "filePath": "routes.ts",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 19,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:4:POST:users",
+            "referenceName": "edit",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n# @app.route('/fake')\n# def fake_view():\n#     return ''\n\n@app.route('/real')\ndef real_view():\n    return ''\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n\"\"\"\nExample:\n    @app.get('/in-docstring')\n    async def doc():\n        pass\n\"\"\"\n@app.get('/real')\nasync def real_handler():\n    return {}\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n// app.get('/fake', fakeHandler);\n/* router.post('/also-fake', otherHandler); */\napp.get('/real', realHandler);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:4:GET:/real",
+            "kind": "route",
+            "name": "GET /real",
+            "qualifiedName": "routes.ts::GET:/real",
+            "filePath": "routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 16,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:4:GET:/real",
+            "referenceName": "realHandler",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "\n// app.get(\"fake\", use: fakeHandler)\n/* app.post(\"also-fake\", use: anotherHandler) */\napp.get(\"real\", use: listUsers)\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:4:GET:real",
+            "kind": "route",
+            "name": "GET real",
+            "qualifiedName": "routes.ts::GET:real",
+            "filePath": "routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 15,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.use('/api', rateLimit({ max: cfg.max! / 2 }), apiRouter);\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "routes.ts::USE:/api",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:USE:/api",
+            "referenceName": "apiRouter",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "import { Router } from 'express';\nconst router = Router();\nfunction listUsers(req, res) {}\nrouter.get('/users', listUsers);\nexport default router;\n",
+      "origin": "frameworks.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:4:GET:/users",
+            "kind": "route",
+            "name": "GET /users",
+            "qualifiedName": "routes.ts::GET:/users",
+            "filePath": "routes.ts",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:4:GET:/users",
+            "referenceName": "listUsers",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "const express = require('express');\nconst app = express();\nconst router = express.Router();\n\nfunction authenticate(name, pass, fn) {\n  fn(null, { name });\n}\n\nfunction restrict(req, res, next) {\n  next();\n}\n\nfunction loadUser(id) {\n  return { id };\n}\n\nfunction listPosts() {\n  return [];\n}\n\nfunction wrap(fn) {\n  return fn;\n}\n\nfunction showPost(req, res) {\n  res.send('post');\n}\n\napp.post('/login', function (req, res, next) {\n  authenticate(req.body.username, req.body.password, function (err, user) {\n    res.redirect('/');\n  });\n});\n\napp.get('/restricted', restrict, function named(req, res) {\n  res.send(loadUser(req.params.id));\n});\n\nrouter.get(\n  '/posts',\n  wrap(async function (req, res) {\n    res.json(listPosts());\n  }),\n);\n\napp.get('/post/:id', (req, res, next) => next(), showPost);\n\nrouter.route('/users/:id').get(function (req, res) {\n  res.json(loadUser(req.params.id));\n});\n",
+      "origin": "express-inline-function-handler.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:29:POST:/login",
+            "kind": "route",
+            "name": "POST /login",
+            "qualifiedName": "routes.ts::POST:/login",
+            "filePath": "routes.ts",
+            "startLine": 29,
+            "endLine": 29,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:35:GET:/restricted",
+            "kind": "route",
+            "name": "GET /restricted",
+            "qualifiedName": "routes.ts::GET:/restricted",
+            "filePath": "routes.ts",
+            "startLine": 35,
+            "endLine": 35,
+            "startColumn": 0,
+            "endColumn": 22,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:39:GET:/posts",
+            "kind": "route",
+            "name": "GET /posts",
+            "qualifiedName": "routes.ts::GET:/posts",
+            "filePath": "routes.ts",
+            "startLine": 39,
+            "endLine": 39,
+            "startColumn": 0,
+            "endColumn": 23,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:46:GET:/post/:id",
+            "kind": "route",
+            "name": "GET /post/:id",
+            "qualifiedName": "routes.ts::GET:/post/:id",
+            "filePath": "routes.ts",
+            "startLine": 46,
+            "endLine": 46,
+            "startColumn": 0,
+            "endColumn": 20,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:48:GET:/users/:id",
+            "kind": "route",
+            "name": "GET /users/:id",
+            "qualifiedName": "routes.ts::GET:/users/:id",
+            "filePath": "routes.ts",
+            "startLine": 48,
+            "endLine": 48,
+            "startColumn": 0,
+            "endColumn": 5,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:29:POST:/login",
+            "referenceName": "authenticate",
+            "referenceKind": "calls",
+            "line": 29,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:29:POST:/login",
+            "referenceName": "res.redirect",
+            "referenceKind": "calls",
+            "line": 31,
+            "column": 4,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:35:GET:/restricted",
+            "referenceName": "loadUser",
+            "referenceKind": "calls",
+            "line": 35,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:35:GET:/restricted",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 36,
+            "column": 2,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:39:GET:/posts",
+            "referenceName": "listPosts",
+            "referenceKind": "calls",
+            "line": 39,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:39:GET:/posts",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 42,
+            "column": 4,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:46:GET:/post/:id",
+            "referenceName": "showPost",
+            "referenceKind": "references",
+            "line": 46,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:48:GET:/users/:id",
+            "referenceName": "loadUser",
+            "referenceKind": "calls",
+            "line": 48,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:48:GET:/users/:id",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 49,
+            "column": 2,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "const express = require('express');\nconst app = express();\n\nfunction validateBody(req, res, next) {\n  next();\n}\n\napp.post('/items', validateBody, (req, res) => res.send('ok'));\n",
+      "origin": "express-heuristic-same-file.test.ts",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:8:POST:/items",
+            "kind": "route",
+            "name": "POST /items",
+            "qualifiedName": "routes.ts::POST:/items",
+            "filePath": "routes.ts",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:8:POST:/items",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 8,
+            "column": 47,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:2:GET:/café😀",
+            "kind": "route",
+            "name": "GET /café😀",
+            "qualifiedName": "routes.ts::GET:/café😀",
+            "filePath": "routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:2:GET:/café😀",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:2:GET:/café😀",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 63,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.tsx",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.tsx:2:GET:/café😀",
+            "kind": "route",
+            "name": "GET /café😀",
+            "qualifiedName": "routes.tsx::GET:/café😀",
+            "filePath": "routes.tsx",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.tsx:2:GET:/café😀",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.tsx",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.tsx:2:GET:/café😀",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 63,
+            "filePath": "routes.tsx",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.js",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.js:2:GET:/café😀",
+            "kind": "route",
+            "name": "GET /café😀",
+            "qualifiedName": "routes.js::GET:/café😀",
+            "filePath": "routes.js",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.js:2:GET:/café😀",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:routes.js:2:GET:/café😀",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 63,
+            "filePath": "routes.js",
+            "language": "javascript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.mjs",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.mjs:2:GET:/café😀",
+            "kind": "route",
+            "name": "GET /café😀",
+            "qualifiedName": "routes.mjs::GET:/café😀",
+            "filePath": "routes.mjs",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.mjs:2:GET:/café😀",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.mjs",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:routes.mjs:2:GET:/café😀",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 63,
+            "filePath": "routes.mjs",
+            "language": "javascript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.cjs",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.cjs:2:GET:/café😀",
+            "kind": "route",
+            "name": "GET /café😀",
+            "qualifiedName": "routes.cjs::GET:/café😀",
+            "filePath": "routes.cjs",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.cjs:2:GET:/café😀",
+            "referenceName": "svc.run",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.cjs",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:routes.cjs:2:GET:/café😀",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 63,
+            "filePath": "routes.cjs",
+            "language": "javascript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.jsx",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.cts",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.mts",
+      "source": "// 😀\r\napp.get('/café😀', (req, res) => { const text='😀'; svc.run(); res.status(200).json({text}); });\r\n",
+      "origin": "UTF16 and extension applicability",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "router.route('/x')\n .get(validate, [before, handler], {cache: true})\n .post(function (req,res) { helper(); res.send('ok'); });",
+      "origin": "handler structure boundaries",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:2:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 7,
+            "language": "typescript"
+          },
+          {
+            "id": "route:routes.ts:3:POST:/x",
+            "kind": "route",
+            "name": "POST /x",
+            "qualifiedName": "routes.ts::POST:/x",
+            "filePath": "routes.ts",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 8,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:2:GET:/x",
+            "referenceName": "handler",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:3:POST:/x",
+            "referenceName": "helper",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:3:POST:/x",
+            "referenceName": "res.send",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 38,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.use('skip', skip); app.get('/incomplete', (req,res) => broken( ",
+      "origin": "handler structure boundaries",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/incomplete",
+            "kind": "route",
+            "name": "GET /incomplete",
+            "qualifiedName": "routes.ts::GET:/incomplete",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 22,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/x', withErrors(function fail(e){report(e);}, async (req,res)=>{load();res.json('ok')}));",
+      "origin": "handler structure boundaries",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "load",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "res.json",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 80,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/x', withErrors(function fail(e){report(e);}, ctrl.list));",
+      "origin": "handler structure boundaries",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": []
+      }
+    },
+    {
+      "path": "routes.ts",
+      "source": "app.get('/x', wrap<Req, Result<{key:number}>>(async (req,res)=>{store();}));",
+      "origin": "handler structure boundaries",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:routes.ts:1:GET:/x",
+            "kind": "route",
+            "name": "GET /x",
+            "qualifiedName": "routes.ts::GET:/x",
+            "filePath": "routes.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:routes.ts:1:GET:/x",
+            "referenceName": "store",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "routes.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "name": "express-inline-function-handler",
+      "files": {
+        "app.js": "const express = require('express');\nconst app = express();\nconst router = express.Router();\n\nfunction authenticate(name, pass, fn) {\n  fn(null, { name });\n}\n\nfunction restrict(req, res, next) {\n  next();\n}\n\nfunction loadUser(id) {\n  return { id };\n}\n\nfunction listPosts() {\n  return [];\n}\n\nfunction wrap(fn) {\n  return fn;\n}\n\nfunction showPost(req, res) {\n  res.send('post');\n}\n\napp.post('/login', function (req, res, next) {\n  authenticate(req.body.username, req.body.password, function (err, user) {\n    res.redirect('/');\n  });\n});\n\napp.get('/restricted', restrict, function named(req, res) {\n  res.send(loadUser(req.params.id));\n});\n\nrouter.get(\n  '/posts',\n  wrap(async function (req, res) {\n    res.json(listPosts());\n  }),\n);\n\napp.get('/post/:id', (req, res, next) => next(), showPost);\n\nrouter.route('/users/:id').get(function (req, res) {\n  res.json(loadUser(req.params.id));\n});\n",
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:app.js:29:POST:/login",
+            "kind": "route",
+            "name": "POST /login",
+            "qualifiedName": "app.js::POST:/login",
+            "filePath": "app.js",
+            "language": "javascript",
+            "startLine": 29,
+            "endLine": 29,
+            "startColumn": 0,
+            "endColumn": 18,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:79c11417c835498f7c41af9fe5a6a829",
+                "kind": "function",
+                "name": "authenticate",
+                "qualifiedName": "authenticate",
+                "filePath": "app.js",
+                "language": "javascript",
+                "startLine": 5,
+                "endLine": 7,
+                "startColumn": 0,
+                "endColumn": 1,
+                "signature": "(name, pass, fn)",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "authenticate"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:app.js:35:GET:/restricted",
+            "kind": "route",
+            "name": "GET /restricted",
+            "qualifiedName": "app.js::GET:/restricted",
+            "filePath": "app.js",
+            "language": "javascript",
+            "startLine": 35,
+            "endLine": 35,
+            "startColumn": 0,
+            "endColumn": 22,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:e0c45288ee4535890235a38f41ed9716",
+                "kind": "function",
+                "name": "loadUser",
+                "qualifiedName": "loadUser",
+                "filePath": "app.js",
+                "language": "javascript",
+                "startLine": 13,
+                "endLine": 15,
+                "startColumn": 0,
+                "endColumn": 1,
+                "signature": "(id)",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "loadUser"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:app.js:39:GET:/posts",
+            "kind": "route",
+            "name": "GET /posts",
+            "qualifiedName": "app.js::GET:/posts",
+            "filePath": "app.js",
+            "language": "javascript",
+            "startLine": 39,
+            "endLine": 39,
+            "startColumn": 0,
+            "endColumn": 23,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:9799b944af9abb24ee606251428bde68",
+                "kind": "function",
+                "name": "listPosts",
+                "qualifiedName": "listPosts",
+                "filePath": "app.js",
+                "language": "javascript",
+                "startLine": 17,
+                "endLine": 19,
+                "startColumn": 0,
+                "endColumn": 1,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "listPosts"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:app.js:46:GET:/post/:id",
+            "kind": "route",
+            "name": "GET /post/:id",
+            "qualifiedName": "app.js::GET:/post/:id",
+            "filePath": "app.js",
+            "language": "javascript",
+            "startLine": 46,
+            "endLine": 46,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:bdc9c345dab5e7b3c73051d64929ab4e",
+                "kind": "function",
+                "name": "showPost",
+                "qualifiedName": "showPost",
+                "filePath": "app.js",
+                "language": "javascript",
+                "startLine": 25,
+                "endLine": 27,
+                "startColumn": 0,
+                "endColumn": 1,
+                "signature": "(req, res)",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "showPost"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:app.js:48:GET:/users/:id",
+            "kind": "route",
+            "name": "GET /users/:id",
+            "qualifiedName": "app.js::GET:/users/:id",
+            "filePath": "app.js",
+            "language": "javascript",
+            "startLine": 48,
+            "endLine": 48,
+            "startColumn": 0,
+            "endColumn": 5,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:e0c45288ee4535890235a38f41ed9716",
+                "kind": "function",
+                "name": "loadUser",
+                "qualifiedName": "loadUser",
+                "filePath": "app.js",
+                "language": "javascript",
+                "startLine": 13,
+                "endLine": 15,
+                "startColumn": 0,
+                "endColumn": 1,
+                "signature": "(id)",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "loadUser"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "express-heuristic-same-file",
+      "files": {
+        "packages/kit/src/core/config/options.js": "export function validate(config) {\n  return config;\n}\n",
+        "packages/kit/src/runtime/remote/query.js": "export function query(validate, arg) {\n  return () => validate(arg);\n}\n",
+        "server/app.js": "const express = require('express');\nconst app = express();\n\nfunction validateBody(req, res, next) {\n  next();\n}\n\napp.post('/items', validateBody, (req, res) => res.send('ok'));\n",
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:server/app.js:8:POST:/items",
+            "kind": "route",
+            "name": "POST /items",
+            "qualifiedName": "server/app.js::POST:/items",
+            "filePath": "server/app.js",
+            "language": "javascript",
+            "startLine": 8,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 18,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": []
+        }
+      ]
+    },
+    {
+      "name": "mount-esm",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "import {router} from './routes'; const app={}; app.use('/api',router);"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "main.ts::USE:/api",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /api/items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /api",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mount-require",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "const app={}; app.use('/api/',require('./routes').router);"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/api/",
+            "kind": "route",
+            "name": "USE /api/",
+            "qualifiedName": "main.ts::USE:/api/",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /api/items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /api",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mount-ambiguous",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "import {router} from './routes'; const app={}; app.use('/one',router); app.use('/two',router);"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/one",
+            "kind": "route",
+            "name": "USE /one",
+            "qualifiedName": "main.ts::USE:/one",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/two",
+            "kind": "route",
+            "name": "USE /two",
+            "qualifiedName": "main.ts::USE:/two",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mount-composed",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "import {router} from './api'; const app={}; app.use('/v1',router);",
+        "api.ts": "import {router as items} from './routes'; export const router={}; router.use('/api',items);"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:api.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /v1/api",
+            "qualifiedName": "api.ts::USE:/api",
+            "filePath": "api.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 18,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "items"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/v1",
+            "kind": "route",
+            "name": "USE /v1",
+            "qualifiedName": "main.ts::USE:/v1",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 14,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:4e58bcb651d906d5357b907cd1659e10",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "api.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 55,
+                "endColumn": 64,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /v1/api/items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /v1/api",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mount-options",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "import {router} from './routes'; const app={}; app.use('/api',router,{option:true});"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "main.ts::USE:/api",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mount-alias-config",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"}}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "import {router} from '#routes'; const app={}; app.use('/api',router);",
+        "tsconfig.json": "{\"extends\":\"./config/paths.json\"}",
+        "config/paths.json": "{\"compilerOptions\":{\"baseUrl\":\"..\",\"paths\":{\"#routes\":[\"routes\"]}}}"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "main.ts::USE:/api",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /api/items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /api",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "invalid-workspace-export",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"},\"workspaces\":[\"packages/*\"]}",
+        "routes.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n",
+        "main.ts": "import {router} from 'router-package'; const app={}; app.use('/api',router);",
+        "packages/routes/package.json": "{\"name\":\"router-package\",\"exports\":\"../../routes.ts\"}"
+      },
+      "explicit_uncertainty": true,
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "main.ts::USE:/api",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:27a73b78b5eccc599202d83caa48a91e",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /items",
+            "qualifiedName": "routes.ts::GET:/items",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:routes.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /",
+            "qualifiedName": "routes.ts::POST:/",
+            "filePath": "routes.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:070c76244efd23da22fb0137ffff9480",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "routes.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mount-workspace",
+      "files": {
+        "package.json": "{\"dependencies\":{\"express\":\"*\"},\"workspaces\":[\"packages/*\"]}",
+        "main.ts": "import {router} from 'router-package'; const app={}; app.use('/api',router);",
+        "packages/routes/package.json": "{\"name\":\"router-package\",\"exports\":\"./index.ts\"}",
+        "packages/routes/index.ts": "export const router={}; function list() {}\nrouter.get('/items', list);\nrouter.post('/',()=>{list();});\n"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:main.ts:1:USE:/api",
+            "kind": "route",
+            "name": "USE /api",
+            "qualifiedName": "main.ts::USE:/api",
+            "filePath": "main.ts",
+            "language": "typescript",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 15,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "constant:88260fc7e31c8a6f7f94213ce3a2adb9",
+                "kind": "constant",
+                "name": "router",
+                "qualifiedName": "router",
+                "filePath": "packages/routes/index.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 13,
+                "endColumn": 22,
+                "signature": "= {}",
+                "visibility": null,
+                "isExported": true,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "import",
+                "refName": "router"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:packages/routes/index.ts:2:GET:/items",
+            "kind": "route",
+            "name": "GET /api/items",
+            "qualifiedName": "packages/routes/index.ts::GET:/items",
+            "filePath": "packages/routes/index.ts",
+            "language": "typescript",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 20,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "references",
+              "node": {
+                "id": "function:139cb9abe219679a0ca7a27ab663ecbb",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "packages/routes/index.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:packages/routes/index.ts:3:POST:/",
+            "kind": "route",
+            "name": "POST /api",
+            "qualifiedName": "packages/routes/index.ts::POST:/",
+            "filePath": "packages/routes/index.ts",
+            "language": "typescript",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "kind": "calls",
+              "node": {
+                "id": "function:139cb9abe219679a0ca7a27ab663ecbb",
+                "kind": "function",
+                "name": "list",
+                "qualifiedName": "list",
+                "filePath": "packages/routes/index.ts",
+                "language": "typescript",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 24,
+                "endColumn": 42,
+                "signature": "()",
+                "visibility": null,
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              },
+              "metadata": {
+                "confidence": 0.9,
+                "resolvedBy": "exact-match",
+                "refName": "list"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolver_nodes": [
+    {
+      "id": "foreign",
+      "name": "validate",
+      "kind": "function",
+      "filePath": "other/middleware/validate.ts",
+      "qualifiedName": "other/middleware/validate.ts::validate",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "local",
+      "name": "validate",
+      "kind": "function",
+      "filePath": "app/user.ts",
+      "qualifiedName": "app/user.ts::validate",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "base",
+      "name": "auth",
+      "kind": "constant",
+      "filePath": "app/user.ts",
+      "qualifiedName": "app/user.ts::auth",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "base-foreign",
+      "name": "auth",
+      "kind": "function",
+      "filePath": "other/middleware/auth.ts",
+      "qualifiedName": "other/middleware/auth.ts::auth",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "import",
+      "name": "cors",
+      "kind": "import",
+      "filePath": "app/user.ts",
+      "qualifiedName": "app/user.ts::cors",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "class",
+      "name": "UserController",
+      "kind": "class",
+      "filePath": "app/user.ts",
+      "qualifiedName": "app/user.ts::UserController",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "method",
+      "name": "show",
+      "kind": "method",
+      "filePath": "app/user.ts",
+      "qualifiedName": "app/user.ts::show",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "foreign-method",
+      "name": "show",
+      "kind": "method",
+      "filePath": "other/user.ts",
+      "qualifiedName": "other/user.ts::show",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    },
+    {
+      "id": "service",
+      "name": "run",
+      "kind": "function",
+      "filePath": "app/user.ts",
+      "qualifiedName": "app/user.ts::run",
+      "startLine": 1,
+      "endLine": 1,
+      "startColumn": 0,
+      "endColumn": 1,
+      "language": "typescript"
+    }
+  ],
+  "resolutions": [
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "validate",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": {
+        "id": "local",
+        "confidence": 0.8
+      }
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "authMiddleware",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "cors",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "UserController.show",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": {
+        "id": "method",
+        "confidence": 0.85
+      }
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userService.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": {
+        "id": "service",
+        "confidence": 0.8
+      }
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userHelper.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": {
+        "id": "service",
+        "confidence": 0.8
+      }
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userUtil.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": {
+        "id": "service",
+        "confidence": 0.8
+      }
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userUtils.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": {
+        "id": "service",
+        "confidence": 0.8
+      }
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "UserController.missing",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "otherService.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "app/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "validate",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "authMiddleware",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "cors",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "UserController.show",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userService.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userHelper.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userUtil.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userUtils.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "UserController.missing",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "otherService.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "other/user.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "validate",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "authMiddleware",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "cors",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "UserController.show",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userService.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userHelper.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userUtil.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "userUtils.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "UserController.missing",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    },
+    {
+      "reference": {
+        "fromNodeId": "caller",
+        "referenceName": "otherService.run",
+        "referenceKind": "calls",
+        "line": 1,
+        "column": 0,
+        "filePath": "unknown.ts",
+        "language": "typescript"
+      },
+      "expected": null
+    }
+  ]
+}

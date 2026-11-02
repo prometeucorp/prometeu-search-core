@@ -1,0 +1,5998 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": 0,
+      "origin": "__tests__/type-parameter-refs.test.ts: type parameters / Scala: a def’s type parameters, and a case class local to another test",
+      "nodes": [
+        {
+          "id": "file:src/Elsewhere.scala",
+          "kind": "file",
+          "name": "Elsewhere.scala",
+          "qualifiedName": "src/Elsewhere.scala",
+          "filePath": "src/Elsewhere.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:609fb983e7afc3930cb66206a55ab7db",
+          "kind": "module",
+          "name": "Elsewhere",
+          "qualifiedName": "Elsewhere",
+          "filePath": "src/Elsewhere.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:f5960546d317d52652df469d14c96fac",
+          "kind": "method",
+          "name": "combineAll",
+          "qualifiedName": "Elsewhere::combineAll",
+          "filePath": "src/Elsewhere.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 2,
+          "endColumn": 38,
+          "signature": "(xs: List[A]): Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "method:2f5b51ecdc272a3c417e6e815303b76d",
+          "kind": "method",
+          "name": "lift",
+          "qualifiedName": "Elsewhere::lift",
+          "filePath": "src/Elsewhere.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 40,
+          "signature": "(implicit F: FlatMap): Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "file:src/Eval.scala",
+          "kind": "file",
+          "name": "Eval.scala",
+          "qualifiedName": "src/Eval.scala",
+          "filePath": "src/Eval.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:5f7e61a07cf55673681902536e3bdc20",
+          "kind": "module",
+          "name": "Eval",
+          "qualifiedName": "Eval",
+          "filePath": "src/Eval.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:715c60982963ce171e9f22800006c6c3",
+          "kind": "class",
+          "name": "FlatMap",
+          "qualifiedName": "Eval::FlatMap",
+          "filePath": "src/Eval.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 2,
+          "endColumn": 34,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:src/FlatMap.scala",
+          "kind": "file",
+          "name": "FlatMap.scala",
+          "qualifiedName": "src/FlatMap.scala",
+          "filePath": "src/FlatMap.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "trait:be360f10b0bb90fb811affafab791b45",
+          "kind": "trait",
+          "name": "FlatMap",
+          "qualifiedName": "FlatMap",
+          "filePath": "src/FlatMap.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 13,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:src/Inst.scala",
+          "kind": "file",
+          "name": "Inst.scala",
+          "qualifiedName": "src/Inst.scala",
+          "filePath": "src/Inst.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:d06c6fb71567e98e7bec08f3b3be2809",
+          "kind": "module",
+          "name": "Inst",
+          "qualifiedName": "Inst",
+          "filePath": "src/Inst.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:73459f01cc4f1faa409224606e91cab1",
+          "kind": "method",
+          "name": "A",
+          "qualifiedName": "Inst::A",
+          "filePath": "src/Inst.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 2,
+          "endColumn": 25,
+          "signature": ": Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "file:src/Ops.scala",
+          "kind": "file",
+          "name": "Ops.scala",
+          "qualifiedName": "src/Ops.scala",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 40,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:c9ef7a3557f6dbdbc5c95883b613e697",
+          "kind": "module",
+          "name": "Ops",
+          "qualifiedName": "Ops",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:7709b556fa6d4786333ffc7cb7e2161f",
+          "kind": "method",
+          "name": "|+|",
+          "qualifiedName": "Ops::|+|",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 2,
+          "endColumn": 31,
+          "signature": "[A]: A",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "A"
+        },
+        {
+          "id": "method:c2d67e958dbcdb60ee1e5b5a9c3b52d4",
+          "kind": "method",
+          "name": "*",
+          "qualifiedName": "Ops::*",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 23,
+          "signature": "[B]: B",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "B"
+        },
+        {
+          "id": "trait:deaca9b877bf48a4495bc05cc029bad1",
+          "kind": "trait",
+          "name": "Heyting",
+          "qualifiedName": "Heyting",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 6,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:01e273b1141c997a88d65222754df90b",
+          "kind": "method",
+          "name": "and",
+          "qualifiedName": "Heyting::and",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 2,
+          "endColumn": 24,
+          "signature": "(a: A, b: A): A",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "A"
+        },
+        {
+          "id": "class:fba896c1d6a04e00acb18f5523ac6865",
+          "kind": "class",
+          "name": "FlatMapped",
+          "qualifiedName": "FlatMapped",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 9,
+          "endLine": 11,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+          "kind": "type_alias",
+          "name": "A",
+          "qualifiedName": "FlatMapped::A",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 10,
+          "endLine": 10,
+          "startColumn": 2,
+          "endColumn": 14,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "trait:d0b406c75cd914c1e702ee629e807e15",
+          "kind": "trait",
+          "name": "Laws",
+          "qualifiedName": "Laws",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 12,
+          "endLine": 14,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:89f0a97b4e13a83893b0c20f90adc957",
+          "kind": "type_alias",
+          "name": "L",
+          "qualifiedName": "Laws::L",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 2,
+          "endColumn": 14,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:285ee5be81a627cfd570d49c756c370c",
+          "kind": "class",
+          "name": "MyLaws",
+          "qualifiedName": "MyLaws",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 15,
+          "endLine": 17,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:3bae55002eecd6b86d0aee94883f0ab9",
+          "kind": "method",
+          "name": "check",
+          "qualifiedName": "MyLaws::check",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 16,
+          "endLine": 16,
+          "startColumn": 2,
+          "endColumn": 33,
+          "signature": "(x: L): Boolean",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Boolean"
+        },
+        {
+          "id": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+          "kind": "module",
+          "name": "UsesImport",
+          "qualifiedName": "UsesImport",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 18,
+          "endLine": 21,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:a0244b91254d1541e3ed87fac3aaa35a",
+          "kind": "import",
+          "name": "FlatMapped",
+          "qualifiedName": "UsesImport::FlatMapped",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 19,
+          "endLine": 19,
+          "startColumn": 2,
+          "endColumn": 21,
+          "signature": "import FlatMapped._",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:f8a4ba4e14338e811568180b64b0efab",
+          "kind": "method",
+          "name": "viaImport",
+          "qualifiedName": "UsesImport::viaImport",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 20,
+          "endLine": 20,
+          "startColumn": 2,
+          "endColumn": 30,
+          "signature": "(x: A): Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "module:2d6fefaaaecf72867af1e2b79d57d1d0",
+          "kind": "module",
+          "name": "Folds",
+          "qualifiedName": "Folds",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 22,
+          "endLine": 24,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d20bab76a364dd52aba39d1f00814090",
+          "kind": "method",
+          "name": "foldMap",
+          "qualifiedName": "Folds::foldMap",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 23,
+          "endLine": 23,
+          "startColumn": 2,
+          "endColumn": 104,
+          "signature": "[A]: Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "module:2c39f5fdecdfd06204a4ec1094f8bbc8",
+          "kind": "module",
+          "name": "TraverseLaws",
+          "qualifiedName": "TraverseLaws",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 25,
+          "endLine": 27,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:8321588269267bf9bad078135d7190d4",
+          "kind": "method",
+          "name": "updatedRef",
+          "qualifiedName": "TraverseLaws::updatedRef",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 26,
+          "endLine": 26,
+          "startColumn": 2,
+          "endColumn": 64,
+          "signature": "[A, B >: A]: Option[B]",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Option"
+        },
+        {
+          "id": "trait:e40d8921b85fae4fe2d446f29cec21b4",
+          "kind": "trait",
+          "name": "UnorderedTraverseTests",
+          "qualifiedName": "UnorderedTraverseTests",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 28,
+          "endLine": 39,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+          "kind": "method",
+          "name": "unorderedTraverse",
+          "qualifiedName": "UnorderedTraverseTests::unorderedTraverse",
+          "filePath": "src/Ops.scala",
+          "language": "scala",
+          "startLine": 29,
+          "endLine": 38,
+          "startColumn": 2,
+          "endColumn": 14,
+          "signature": "[\n    A,\n    B,\n    C,\n    X,\n    Y\n  ]: Unit",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Unit"
+        },
+        {
+          "id": "file:src/Seqs.scala",
+          "kind": "file",
+          "name": "Seqs.scala",
+          "qualifiedName": "src/Seqs.scala",
+          "filePath": "src/Seqs.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:dd33efb9695e3693df2b2e8f841b6d62",
+          "kind": "module",
+          "name": "Seqs",
+          "qualifiedName": "Seqs",
+          "filePath": "src/Seqs.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:b88c63ffa595ff651ca1a5ac28006238",
+          "kind": "method",
+          "name": "zipWith",
+          "qualifiedName": "Seqs::zipWith",
+          "filePath": "src/Seqs.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 2,
+          "endColumn": 79,
+          "signature": "[A, B, C]: List[C]",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "List"
+        },
+        {
+          "id": "file:src/SyntaxSuite.scala",
+          "kind": "file",
+          "name": "SyntaxSuite.scala",
+          "qualifiedName": "src/SyntaxSuite.scala",
+          "filePath": "src/SyntaxSuite.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:3ff1bc27a633d55023376addc34e0c0e",
+          "kind": "class",
+          "name": "SyntaxSuite",
+          "qualifiedName": "SyntaxSuite",
+          "filePath": "src/SyntaxSuite.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:7dba2f70d1087134af4ddf8e7e0b56f9",
+          "kind": "method",
+          "name": "testOptionEmpty",
+          "qualifiedName": "SyntaxSuite::testOptionEmpty",
+          "filePath": "src/SyntaxSuite.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 3,
+          "signature": "(): Unit",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Unit"
+        },
+        {
+          "id": "class:7995357f3e06448b8f4bb8a189738a9f",
+          "kind": "class",
+          "name": "B",
+          "qualifiedName": "SyntaxSuite::testOptionEmpty::B",
+          "filePath": "src/SyntaxSuite.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 4,
+          "endColumn": 18,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "sources": {
+        "src/Elsewhere.scala": "package app\nobject Elsewhere {\n  def combineAll(xs: List[A]): Int = 1\n  def lift(implicit F: FlatMap): Int = 1\n}\n",
+        "src/Eval.scala": "package app\nobject Eval {\n  final case class FlatMap(x: Int)\n}\n",
+        "src/FlatMap.scala": "package app\ntrait FlatMap\n",
+        "src/Inst.scala": "package app\nobject Inst {\n  implicit def A: Int = 1\n}\n",
+        "src/Ops.scala": "package app\nobject Ops {\n  def |+|[A](x: A, y: A): A = x\n  def *[B](b: B): B = b\n}\ntrait Heyting[@sp(Int, Long) A] {\n  def and(a: A, b: A): A\n}\nfinal case class FlatMapped(f: Int => Int) {\n  type A = Int\n}\ntrait Laws {\n  type L = Int\n}\nclass MyLaws extends Laws {\n  def check(x: L): Boolean = true\n}\nobject UsesImport {\n  import FlatMapped._\n  def viaImport(x: A): Int = 1\n}\nobject Folds {\n  def foldMap[A](fa: List[A])(f: A => Int)(implicit G: Ordering[Int]): Int = { f(fa.head); G.max(1, 2) }\n}\nobject TraverseLaws {\n  def updatedRef[A, B >: A](fa: List[A], b: B): Option[B] = None\n}\ntrait UnorderedTraverseTests {\n  def unorderedTraverse[\n    A,\n    B,\n    C,\n    X,\n    Y\n  ](implicit\n    ArbXB: Option[X],\n    ArbYB: List[B]\n  ): Unit = ()\n}\n",
+        "src/Seqs.scala": "package app\nobject Seqs {\n  def zipWith[A, B, C](fa: List[A], fb: List[B])(f: (A, B) => C): List[C] = ???\n}\n",
+        "src/SyntaxSuite.scala": "package app\nclass SyntaxSuite {\n  def testOptionEmpty(): Unit = {\n    case class B()\n    val b: B = B()\n  }\n}\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "class:285ee5be81a627cfd570d49c756c370c",
+            "referenceName": "Laws",
+            "referenceKind": "extends",
+            "line": 15,
+            "column": 21,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 12
+          },
+          "input": {
+            "targetNodeId": "trait:d0b406c75cd914c1e702ee629e807e15",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "trait:d0b406c75cd914c1e702ee629e807e15",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+            "referenceName": "FlatMapped",
+            "referenceKind": "imports",
+            "line": 19,
+            "column": 2,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 14
+          },
+          "input": {
+            "targetNodeId": "class:fba896c1d6a04e00acb18f5523ac6865",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "class:fba896c1d6a04e00acb18f5523ac6865",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:f5960546d317d52652df469d14c96fac",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 21,
+            "filePath": "src/Elsewhere.scala",
+            "language": "scala",
+            "rowId": 1
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:f5960546d317d52652df469d14c96fac",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 26,
+            "filePath": "src/Elsewhere.scala",
+            "language": "scala",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:2f5b51ecdc272a3c417e6e815303b76d",
+            "referenceName": "FlatMap",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 23,
+            "filePath": "src/Elsewhere.scala",
+            "language": "scala",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "class:715c60982963ce171e9f22800006c6c3",
+            "confidence": 0.4
+          },
+          "expected": {
+            "targetNodeId": "trait:be360f10b0bb90fb811affafab791b45",
+            "confidence": 0.4
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:7709b556fa6d4786333ffc7cb7e2161f",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 16,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 4
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:7709b556fa6d4786333ffc7cb7e2161f",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 22,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 5
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:7709b556fa6d4786333ffc7cb7e2161f",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 26,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 6
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:c2d67e958dbcdb60ee1e5b5a9c3b52d4",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 14,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 7
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:c2d67e958dbcdb60ee1e5b5a9c3b52d4",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 18,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 8
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:01e273b1141c997a88d65222754df90b",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 13,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 9
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:01e273b1141c997a88d65222754df90b",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 19,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 10
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:01e273b1141c997a88d65222754df90b",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 7,
+            "column": 23,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 11
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:3bae55002eecd6b86d0aee94883f0ab9",
+            "referenceName": "L",
+            "referenceKind": "references",
+            "line": 16,
+            "column": 15,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 13
+          },
+          "input": {
+            "targetNodeId": "type_alias:89f0a97b4e13a83893b0c20f90adc957",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "type_alias:89f0a97b4e13a83893b0c20f90adc957",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:f8a4ba4e14338e811568180b64b0efab",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 20,
+            "column": 19,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 15
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d20bab76a364dd52aba39d1f00814090",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 23,
+            "column": 21,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 16
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d20bab76a364dd52aba39d1f00814090",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 23,
+            "column": 26,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 17
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d20bab76a364dd52aba39d1f00814090",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 23,
+            "column": 33,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 18
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d20bab76a364dd52aba39d1f00814090",
+            "referenceName": "Ordering",
+            "referenceKind": "references",
+            "line": 23,
+            "column": 55,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 19
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d20bab76a364dd52aba39d1f00814090",
+            "referenceName": "f",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 79,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 20
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d20bab76a364dd52aba39d1f00814090",
+            "referenceName": "G.max",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 91,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 21
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8321588269267bf9bad078135d7190d4",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 32,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 22
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8321588269267bf9bad078135d7190d4",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 37,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 23
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8321588269267bf9bad078135d7190d4",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 44,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 24
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8321588269267bf9bad078135d7190d4",
+            "referenceName": "Option",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 48,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 25
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8321588269267bf9bad078135d7190d4",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 55,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 26
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8321588269267bf9bad078135d7190d4",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 25,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 27
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+            "referenceName": "Option",
+            "referenceKind": "references",
+            "line": 36,
+            "column": 11,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 28
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+            "referenceName": "X",
+            "referenceKind": "references",
+            "line": 36,
+            "column": 18,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 29
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 37,
+            "column": 11,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 30
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 37,
+            "column": 16,
+            "filePath": "src/Ops.scala",
+            "language": "scala",
+            "rowId": 31
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 27,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 32
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 32,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 33
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 40,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 34
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 45,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 35
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 53,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 36
+          },
+          "input": {
+            "targetNodeId": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 56,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 37
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "C",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 62,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 38
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 66,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 39
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:b88c63ffa595ff651ca1a5ac28006238",
+            "referenceName": "C",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 71,
+            "filePath": "src/Seqs.scala",
+            "language": "scala",
+            "rowId": 40
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:7dba2f70d1087134af4ddf8e7e0b56f9",
+            "referenceName": "B",
+            "referenceKind": "calls",
+            "line": 5,
+            "column": 15,
+            "filePath": "src/SyntaxSuite.scala",
+            "language": "scala",
+            "rowId": 41
+          },
+          "input": {
+            "targetNodeId": "class:7995357f3e06448b8f4bb8a189738a9f",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "class:7995357f3e06448b8f4bb8a189738a9f",
+            "confidence": 0.9
+          }
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:src/Elsewhere.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "module:609fb983e7afc3930cb66206a55ab7db",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:f5960546d317d52652df469d14c96fac",
+          "types": [],
+          "values": [
+            "xs"
+          ]
+        },
+        {
+          "node": "method:2f5b51ecdc272a3c417e6e815303b76d",
+          "types": [],
+          "values": [
+            "F"
+          ]
+        },
+        {
+          "node": "file:src/Eval.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "module:5f7e61a07cf55673681902536e3bdc20",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:715c60982963ce171e9f22800006c6c3",
+          "types": [],
+          "values": [
+            "x"
+          ]
+        },
+        {
+          "node": "file:src/FlatMap.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "trait:be360f10b0bb90fb811affafab791b45",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "file:src/Inst.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "module:d06c6fb71567e98e7bec08f3b3be2809",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:73459f01cc4f1faa409224606e91cab1",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "file:src/Ops.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "module:c9ef7a3557f6dbdbc5c95883b613e697",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:7709b556fa6d4786333ffc7cb7e2161f",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "node": "method:c2d67e958dbcdb60ee1e5b5a9c3b52d4",
+          "types": [
+            [
+              "B",
+              null
+            ]
+          ],
+          "values": [
+            "b"
+          ]
+        },
+        {
+          "node": "trait:deaca9b877bf48a4495bc05cc029bad1",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "method:01e273b1141c997a88d65222754df90b",
+          "types": [],
+          "values": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "node": "class:fba896c1d6a04e00acb18f5523ac6865",
+          "types": [],
+          "values": [
+            "f"
+          ]
+        },
+        {
+          "node": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "trait:d0b406c75cd914c1e702ee629e807e15",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "type_alias:89f0a97b4e13a83893b0c20f90adc957",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:285ee5be81a627cfd570d49c756c370c",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:3bae55002eecd6b86d0aee94883f0ab9",
+          "types": [],
+          "values": [
+            "x"
+          ]
+        },
+        {
+          "node": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "import:a0244b91254d1541e3ed87fac3aaa35a",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:f8a4ba4e14338e811568180b64b0efab",
+          "types": [],
+          "values": [
+            "x"
+          ]
+        },
+        {
+          "node": "module:2d6fefaaaecf72867af1e2b79d57d1d0",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:d20bab76a364dd52aba39d1f00814090",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "fa",
+            "f",
+            "G"
+          ]
+        },
+        {
+          "node": "module:2c39f5fdecdfd06204a4ec1094f8bbc8",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:8321588269267bf9bad078135d7190d4",
+          "types": [
+            [
+              "A",
+              null
+            ],
+            [
+              "B",
+              null
+            ]
+          ],
+          "values": [
+            "fa",
+            "b"
+          ]
+        },
+        {
+          "node": "trait:e40d8921b85fae4fe2d446f29cec21b4",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+          "types": [
+            [
+              "A",
+              null
+            ],
+            [
+              "B",
+              null
+            ],
+            [
+              "C",
+              null
+            ],
+            [
+              "X",
+              null
+            ],
+            [
+              "Y",
+              null
+            ]
+          ],
+          "values": [
+            "ArbXB",
+            "ArbYB"
+          ]
+        },
+        {
+          "node": "file:src/Seqs.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "module:dd33efb9695e3693df2b2e8f841b6d62",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:b88c63ffa595ff651ca1a5ac28006238",
+          "types": [
+            [
+              "A",
+              null
+            ],
+            [
+              "B",
+              null
+            ],
+            [
+              "C",
+              null
+            ]
+          ],
+          "values": [
+            "fa",
+            "fb",
+            "f"
+          ]
+        },
+        {
+          "node": "file:src/SyntaxSuite.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:3ff1bc27a633d55023376addc34e0c0e",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:7dba2f70d1087134af4ddf8e7e0b56f9",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:7995357f3e06448b8f4bb8a189738a9f",
+          "types": [],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:src/Elsewhere.scala",
+          "target": "module:609fb983e7afc3930cb66206a55ab7db",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:609fb983e7afc3930cb66206a55ab7db",
+          "target": "method:2f5b51ecdc272a3c417e6e815303b76d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:609fb983e7afc3930cb66206a55ab7db",
+          "target": "method:f5960546d317d52652df469d14c96fac",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:2f5b51ecdc272a3c417e6e815303b76d",
+          "target": "trait:be360f10b0bb90fb811affafab791b45",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.4,
+            "resolvedBy": "exact-match",
+            "refName": "FlatMap"
+          },
+          "line": 4,
+          "column": 23,
+          "provenance": null
+        },
+        {
+          "source": "file:src/Eval.scala",
+          "target": "module:5f7e61a07cf55673681902536e3bdc20",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:5f7e61a07cf55673681902536e3bdc20",
+          "target": "class:715c60982963ce171e9f22800006c6c3",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/FlatMap.scala",
+          "target": "trait:be360f10b0bb90fb811affafab791b45",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Inst.scala",
+          "target": "module:d06c6fb71567e98e7bec08f3b3be2809",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:d06c6fb71567e98e7bec08f3b3be2809",
+          "target": "method:73459f01cc4f1faa409224606e91cab1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "class:285ee5be81a627cfd570d49c756c370c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "class:fba896c1d6a04e00acb18f5523ac6865",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "module:2c39f5fdecdfd06204a4ec1094f8bbc8",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "module:2d6fefaaaecf72867af1e2b79d57d1d0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "module:c9ef7a3557f6dbdbc5c95883b613e697",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "trait:d0b406c75cd914c1e702ee629e807e15",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "trait:deaca9b877bf48a4495bc05cc029bad1",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Ops.scala",
+          "target": "trait:e40d8921b85fae4fe2d446f29cec21b4",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:c9ef7a3557f6dbdbc5c95883b613e697",
+          "target": "method:7709b556fa6d4786333ffc7cb7e2161f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:c9ef7a3557f6dbdbc5c95883b613e697",
+          "target": "method:c2d67e958dbcdb60ee1e5b5a9c3b52d4",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "trait:deaca9b877bf48a4495bc05cc029bad1",
+          "target": "method:01e273b1141c997a88d65222754df90b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:fba896c1d6a04e00acb18f5523ac6865",
+          "target": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "trait:d0b406c75cd914c1e702ee629e807e15",
+          "target": "type_alias:89f0a97b4e13a83893b0c20f90adc957",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:285ee5be81a627cfd570d49c756c370c",
+          "target": "method:3bae55002eecd6b86d0aee94883f0ab9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:285ee5be81a627cfd570d49c756c370c",
+          "target": "trait:d0b406c75cd914c1e702ee629e807e15",
+          "kind": "extends",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Laws"
+          },
+          "line": 15,
+          "column": 21,
+          "provenance": null
+        },
+        {
+          "source": "method:3bae55002eecd6b86d0aee94883f0ab9",
+          "target": "type_alias:89f0a97b4e13a83893b0c20f90adc957",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "L"
+          },
+          "line": 16,
+          "column": 15,
+          "provenance": null
+        },
+        {
+          "source": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+          "target": "import:a0244b91254d1541e3ed87fac3aaa35a",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+          "target": "method:f8a4ba4e14338e811568180b64b0efab",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:5ecf5155b32bdcde51e8846b5255a1dc",
+          "target": "class:fba896c1d6a04e00acb18f5523ac6865",
+          "kind": "imports",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "FlatMapped"
+          },
+          "line": 19,
+          "column": 2,
+          "provenance": null
+        },
+        {
+          "source": "method:f8a4ba4e14338e811568180b64b0efab",
+          "target": "type_alias:9ee7bdabef35e141627e7ad37421fb45",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "A"
+          },
+          "line": 20,
+          "column": 19,
+          "provenance": null
+        },
+        {
+          "source": "module:2d6fefaaaecf72867af1e2b79d57d1d0",
+          "target": "method:d20bab76a364dd52aba39d1f00814090",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:2c39f5fdecdfd06204a4ec1094f8bbc8",
+          "target": "method:8321588269267bf9bad078135d7190d4",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "trait:e40d8921b85fae4fe2d446f29cec21b4",
+          "target": "method:ca5fcaf240c4786dd8a13cc2f86d293f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Seqs.scala",
+          "target": "module:dd33efb9695e3693df2b2e8f841b6d62",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:dd33efb9695e3693df2b2e8f841b6d62",
+          "target": "method:b88c63ffa595ff651ca1a5ac28006238",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/SyntaxSuite.scala",
+          "target": "class:3ff1bc27a633d55023376addc34e0c0e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:3ff1bc27a633d55023376addc34e0c0e",
+          "target": "method:7dba2f70d1087134af4ddf8e7e0b56f9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:7dba2f70d1087134af4ddf8e7e0b56f9",
+          "target": "class:7995357f3e06448b8f4bb8a189738a9f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:7dba2f70d1087134af4ddf8e7e0b56f9",
+          "target": "class:7995357f3e06448b8f4bb8a189738a9f",
+          "kind": "instantiates",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "B",
+            "refKind": "calls"
+          },
+          "line": 5,
+          "column": 15,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "origin": "__tests__/type-parameter-refs.test.ts: type parameters / Java, TypeScript and Dart: declared before or after the name",
+      "nodes": [
+        {
+          "id": "file:lib/first.dart",
+          "kind": "file",
+          "name": "first.dart",
+          "qualifiedName": "lib/first.dart",
+          "filePath": "lib/first.dart",
+          "language": "dart",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "constant:a811fb6e90d8eddcff9a10e4d44e6a3f",
+          "kind": "constant",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "lib/first.dart",
+          "language": "dart",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 6,
+          "endColumn": 11,
+          "signature": "= 1",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+          "kind": "function",
+          "name": "first",
+          "qualifiedName": "first",
+          "filePath": "lib/first.dart",
+          "language": "dart",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 22,
+          "signature": "T (List<T> xs)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        },
+        {
+          "id": "file:src/Foo.java",
+          "kind": "file",
+          "name": "Foo.java",
+          "qualifiedName": "src/Foo.java",
+          "filePath": "src/Foo.java",
+          "language": "java",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "namespace:4d799899d9dd7a2e02833e0259dcaaab",
+          "kind": "namespace",
+          "name": "app",
+          "qualifiedName": "app",
+          "filePath": "src/Foo.java",
+          "language": "java",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 12,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:e7d3daac1e3ab03bade0e58099410c0b",
+          "kind": "class",
+          "name": "Foo",
+          "qualifiedName": "app::Foo",
+          "filePath": "src/Foo.java",
+          "language": "java",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 19,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:src/T.java",
+          "kind": "file",
+          "name": "T.java",
+          "qualifiedName": "src/T.java",
+          "filePath": "src/T.java",
+          "language": "java",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "namespace:54ac48cc4d15fa656d2d8cadd23e2c73",
+          "kind": "namespace",
+          "name": "app",
+          "qualifiedName": "app",
+          "filePath": "src/T.java",
+          "language": "java",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 12,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:71733eeeda036c3db5a3d360540c49b3",
+          "kind": "class",
+          "name": "T",
+          "qualifiedName": "app::T",
+          "filePath": "src/T.java",
+          "language": "java",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 17,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:src/Util.java",
+          "kind": "file",
+          "name": "Util.java",
+          "qualifiedName": "src/Util.java",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 1,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "namespace:cf98dacb25bb8369daad50f94e34db11",
+          "kind": "namespace",
+          "name": "app",
+          "qualifiedName": "app",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 12,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:e82e6fcbcf53a725fa14e6177520a426",
+          "kind": "import",
+          "name": "java.util.List",
+          "qualifiedName": "app::java.util.List",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 22,
+          "signature": "import java.util.List;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:217101417e0aee74b93c63b1f3d1e729",
+          "kind": "import",
+          "name": "java.util.Map",
+          "qualifiedName": "app::java.util.Map",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 21,
+          "signature": "import java.util.Map;",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:0d63bbe4ba07ceea07e3a193e8e3e260",
+          "kind": "class",
+          "name": "Util",
+          "qualifiedName": "app::Util",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 4,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:dcbabfddcfe0260492057a4c2b8f2c93",
+          "kind": "method",
+          "name": "max",
+          "qualifiedName": "app::Util::max",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 2,
+          "endColumn": 76,
+          "signature": "T (List<T> xs)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": true,
+          "isAbstract": false,
+          "returnType": "T"
+        },
+        {
+          "id": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+          "kind": "method",
+          "name": "index",
+          "qualifiedName": "app::Util::index",
+          "filePath": "src/Util.java",
+          "language": "java",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 69,
+          "signature": "Map<String, Foo> (List<Foo> xs)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": true,
+          "isAbstract": false,
+          "returnType": "Map"
+        },
+        {
+          "id": "file:src/wrap.ts",
+          "kind": "file",
+          "name": "wrap.ts",
+          "qualifiedName": "src/wrap.ts",
+          "filePath": "src/wrap.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:2484cea8daa5233b5b15a3323a4951f5",
+          "kind": "class",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "src/wrap.ts",
+          "language": "typescript",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 7,
+          "endColumn": 17,
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:9bf62a10f2d4aaae231b112d9179baf0",
+          "kind": "function",
+          "name": "wrap",
+          "qualifiedName": "wrap",
+          "filePath": "src/wrap.ts",
+          "language": "typescript",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 7,
+          "endColumn": 46,
+          "signature": "(x: T): T",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "sources": {
+        "lib/first.dart": "const T = 1;\nT first<T>(List<T> xs) => xs.first;\n",
+        "src/Foo.java": "package app;\npublic class Foo {}\n",
+        "src/T.java": "package app;\npublic class T {}\n",
+        "src/Util.java": "package app;\nimport java.util.List;\nimport java.util.Map;\npublic class Util {\n  public static <T extends Comparable<T>> T max(List<T> xs) { return null; }\n  public static Map<String, Foo> index(List<Foo> xs) { return null; }\n}\n",
+        "src/wrap.ts": "export class T {}\nexport function wrap<T>(x: T): T { return x; }\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "namespace:cf98dacb25bb8369daad50f94e34db11",
+            "referenceName": "java.util.List",
+            "referenceKind": "imports",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 6
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "namespace:cf98dacb25bb8369daad50f94e34db11",
+            "referenceName": "java.util.Map",
+            "referenceKind": "imports",
+            "line": 3,
+            "column": 0,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 7
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "lib/first.dart",
+            "language": "dart",
+            "rowId": 1
+          },
+          "input": {
+            "targetNodeId": "constant:a811fb6e90d8eddcff9a10e4d44e6a3f",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 8,
+            "filePath": "lib/first.dart",
+            "language": "dart",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "constant:a811fb6e90d8eddcff9a10e4d44e6a3f",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 11,
+            "filePath": "lib/first.dart",
+            "language": "dart",
+            "rowId": 3
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 16,
+            "filePath": "lib/first.dart",
+            "language": "dart",
+            "rowId": 4
+          },
+          "input": {
+            "targetNodeId": "constant:a811fb6e90d8eddcff9a10e4d44e6a3f",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+            "referenceName": "xs.first",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 29,
+            "filePath": "lib/first.dart",
+            "language": "dart",
+            "rowId": 5
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:dcbabfddcfe0260492057a4c2b8f2c93",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 48,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 8
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:dcbabfddcfe0260492057a4c2b8f2c93",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 53,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 9
+          },
+          "input": {
+            "targetNodeId": "class:71733eeeda036c3db5a3d360540c49b3",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:dcbabfddcfe0260492057a4c2b8f2c93",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 42,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 10
+          },
+          "input": {
+            "targetNodeId": "class:71733eeeda036c3db5a3d360540c49b3",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 39,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 11
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+            "referenceName": "Foo",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 44,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 12
+          },
+          "input": {
+            "targetNodeId": "class:e7d3daac1e3ab03bade0e58099410c0b",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "class:e7d3daac1e3ab03bade0e58099410c0b",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+            "referenceName": "Map",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 16,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 13
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+            "referenceName": "Foo",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 28,
+            "filePath": "src/Util.java",
+            "language": "java",
+            "rowId": 14
+          },
+          "input": {
+            "targetNodeId": "class:e7d3daac1e3ab03bade0e58099410c0b",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "class:e7d3daac1e3ab03bade0e58099410c0b",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:9bf62a10f2d4aaae231b112d9179baf0",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 27,
+            "filePath": "src/wrap.ts",
+            "language": "typescript",
+            "rowId": 15
+          },
+          "input": {
+            "targetNodeId": "class:2484cea8daa5233b5b15a3323a4951f5",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:9bf62a10f2d4aaae231b112d9179baf0",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 31,
+            "filePath": "src/wrap.ts",
+            "language": "typescript",
+            "rowId": 16
+          },
+          "input": {
+            "targetNodeId": "class:2484cea8daa5233b5b15a3323a4951f5",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:9bf62a10f2d4aaae231b112d9179baf0",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 31,
+            "filePath": "src/wrap.ts",
+            "language": "typescript",
+            "rowId": 17
+          },
+          "input": {
+            "targetNodeId": "class:2484cea8daa5233b5b15a3323a4951f5",
+            "confidence": 0.9
+          },
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:lib/first.dart",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "constant:a811fb6e90d8eddcff9a10e4d44e6a3f",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "file:src/Foo.java",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "namespace:4d799899d9dd7a2e02833e0259dcaaab",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:e7d3daac1e3ab03bade0e58099410c0b",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "file:src/T.java",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "namespace:54ac48cc4d15fa656d2d8cadd23e2c73",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:71733eeeda036c3db5a3d360540c49b3",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "file:src/Util.java",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "namespace:cf98dacb25bb8369daad50f94e34db11",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "import:e82e6fcbcf53a725fa14e6177520a426",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "import:217101417e0aee74b93c63b1f3d1e729",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:0d63bbe4ba07ceea07e3a193e8e3e260",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:dcbabfddcfe0260492057a4c2b8f2c93",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "file:src/wrap.ts",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:2484cea8daa5233b5b15a3323a4951f5",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "function:9bf62a10f2d4aaae231b112d9179baf0",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:lib/first.dart",
+          "target": "constant:a811fb6e90d8eddcff9a10e4d44e6a3f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:lib/first.dart",
+          "target": "function:e1a6bf8a05e7a9605f9b1108c48227a6",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Foo.java",
+          "target": "namespace:4d799899d9dd7a2e02833e0259dcaaab",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "namespace:4d799899d9dd7a2e02833e0259dcaaab",
+          "target": "class:e7d3daac1e3ab03bade0e58099410c0b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/T.java",
+          "target": "namespace:54ac48cc4d15fa656d2d8cadd23e2c73",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "namespace:54ac48cc4d15fa656d2d8cadd23e2c73",
+          "target": "class:71733eeeda036c3db5a3d360540c49b3",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/Util.java",
+          "target": "namespace:cf98dacb25bb8369daad50f94e34db11",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "namespace:cf98dacb25bb8369daad50f94e34db11",
+          "target": "class:0d63bbe4ba07ceea07e3a193e8e3e260",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "namespace:cf98dacb25bb8369daad50f94e34db11",
+          "target": "import:217101417e0aee74b93c63b1f3d1e729",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "namespace:cf98dacb25bb8369daad50f94e34db11",
+          "target": "import:e82e6fcbcf53a725fa14e6177520a426",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:0d63bbe4ba07ceea07e3a193e8e3e260",
+          "target": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:0d63bbe4ba07ceea07e3a193e8e3e260",
+          "target": "method:dcbabfddcfe0260492057a4c2b8f2c93",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+          "target": "class:e7d3daac1e3ab03bade0e58099410c0b",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Foo"
+          },
+          "line": 6,
+          "column": 28,
+          "provenance": null
+        },
+        {
+          "source": "method:3106cad5d6ed4eeb5eedf5863280fe78",
+          "target": "class:e7d3daac1e3ab03bade0e58099410c0b",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Foo"
+          },
+          "line": 6,
+          "column": 44,
+          "provenance": null
+        },
+        {
+          "source": "file:src/wrap.ts",
+          "target": "class:2484cea8daa5233b5b15a3323a4951f5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/wrap.ts",
+          "target": "function:9bf62a10f2d4aaae231b112d9179baf0",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "origin": "__tests__/scala-bare-call-scope.test.ts: bare Scala calls / stay with locals, the receiver’s type, the class hierarchy and anonymous bases",
+      "nodes": [
+        {
+          "id": "file:src/main/scala/app/Base.scala",
+          "kind": "file",
+          "name": "Base.scala",
+          "qualifiedName": "src/main/scala/app/Base.scala",
+          "filePath": "src/main/scala/app/Base.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "trait:4231d7b1965820250e503b0fca15811d",
+          "kind": "trait",
+          "name": "Base",
+          "qualifiedName": "Base",
+          "filePath": "src/main/scala/app/Base.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:c8b3eac28b9fe1b8a59efbb66c2f8e39",
+          "kind": "method",
+          "name": "helper",
+          "qualifiedName": "Base::helper",
+          "filePath": "src/main/scala/app/Base.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 23,
+          "signature": "(): Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "file:src/main/scala/app/FreeT.scala",
+          "kind": "file",
+          "name": "FreeT.scala",
+          "qualifiedName": "src/main/scala/app/FreeT.scala",
+          "filePath": "src/main/scala/app/FreeT.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:818565d4a809d0a609fe266df36928ad",
+          "kind": "class",
+          "name": "FlatMapped",
+          "qualifiedName": "FlatMapped",
+          "filePath": "src/main/scala/app/FreeT.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 41,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:src/main/scala/app/LazyOps.scala",
+          "kind": "file",
+          "name": "LazyOps.scala",
+          "qualifiedName": "src/main/scala/app/LazyOps.scala",
+          "filePath": "src/main/scala/app/LazyOps.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:cfba84730ecc122e3da8b34f749d988a",
+          "kind": "class",
+          "name": "LazyOps",
+          "qualifiedName": "LazyOps",
+          "filePath": "src/main/scala/app/LazyOps.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:e1a331addea3408aa79a55b5228d5569",
+          "kind": "method",
+          "name": "map",
+          "qualifiedName": "LazyOps::map",
+          "filePath": "src/main/scala/app/LazyOps.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 44,
+          "signature": "[B]: List[B]",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "List"
+        },
+        {
+          "id": "file:src/main/scala/app/OptionParser.scala",
+          "kind": "file",
+          "name": "OptionParser.scala",
+          "qualifiedName": "src/main/scala/app/OptionParser.scala",
+          "filePath": "src/main/scala/app/OptionParser.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:ea7b5e3556babc360af21e987d1560b5",
+          "kind": "class",
+          "name": "OptionParser",
+          "qualifiedName": "OptionParser",
+          "filePath": "src/main/scala/app/OptionParser.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:e065e1419fb2001f0bbf14b42dc2ea5b",
+          "kind": "method",
+          "name": "head",
+          "qualifiedName": "OptionParser::head",
+          "filePath": "src/main/scala/app/OptionParser.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 34,
+          "signature": "(xs: String*): Unit",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Unit"
+        },
+        {
+          "id": "file:src/main/scala/app/Request.scala",
+          "kind": "file",
+          "name": "Request.scala",
+          "qualifiedName": "src/main/scala/app/Request.scala",
+          "filePath": "src/main/scala/app/Request.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:f51c2e2300e1f611ed0a15386c66e471",
+          "kind": "class",
+          "name": "Request",
+          "qualifiedName": "Request",
+          "filePath": "src/main/scala/app/Request.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:2e37cea22745b5e20aca14bf6f8305fa",
+          "kind": "method",
+          "name": "send",
+          "qualifiedName": "Request::send",
+          "filePath": "src/main/scala/app/Request.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 45,
+          "signature": "(backend: String): String",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "String"
+        },
+        {
+          "id": "file:src/main/scala/app/Use.scala",
+          "kind": "file",
+          "name": "Use.scala",
+          "qualifiedName": "src/main/scala/app/Use.scala",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 12,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "kind": "module",
+          "name": "Use",
+          "qualifiedName": "Use",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 11,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:8589fb9b7c2810f08a66b195034ec8eb",
+          "kind": "method",
+          "name": "tabulate",
+          "qualifiedName": "Use::tabulate",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 2,
+          "endColumn": 64,
+          "signature": "[A]: (A, A)",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:8940e051f74b55b87a5b45d30c2c848c",
+          "kind": "method",
+          "name": "twice",
+          "qualifiedName": "Use::twice",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 2,
+          "endColumn": 69,
+          "signature": "(fa: List[Int]): List[Int]",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "List"
+        },
+        {
+          "id": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+          "kind": "method",
+          "name": "run",
+          "qualifiedName": "Use::run",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 65,
+          "signature": "(basicRequest: Request): String",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "String"
+        },
+        {
+          "id": "method:9e2f57fbc2b46c79653384f1e3533989",
+          "kind": "method",
+          "name": "local",
+          "qualifiedName": "Use::local",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 2,
+          "endColumn": 29,
+          "signature": "(): Int",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Int"
+        },
+        {
+          "id": "constant:50bfce1798d0738888439fe7a6499016",
+          "kind": "constant",
+          "name": "parser",
+          "qualifiedName": "Use::parser",
+          "filePath": "src/main/scala/app/Use.scala",
+          "language": "scala",
+          "startLine": 8,
+          "endLine": 10,
+          "startColumn": 2,
+          "endColumn": 3,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "sources": {
+        "src/main/scala/app/Base.scala": "package app\n\ntrait Base {\n  def helper(): Int = 1\n}\n",
+        "src/main/scala/app/FreeT.scala": "package app\n\nfinal case class FlatMapped[A](f: A => A)\n",
+        "src/main/scala/app/LazyOps.scala": "package app\n\nclass LazyOps[A](xs: List[A]) {\n  def map[B](g: A => B): List[B] = xs.map(g)\n}\n",
+        "src/main/scala/app/OptionParser.scala": "package app\n\nabstract class OptionParser[C](name: String) {\n  def head(xs: String*): Unit = ()\n}\n",
+        "src/main/scala/app/Request.scala": "package app\n\nclass Request {\n  def send(backend: String): String = backend\n}\n",
+        "src/main/scala/app/Use.scala": "package app\n\nobject Use extends Base {\n  def tabulate[A](f: Boolean => A): (A, A) = (f(true), f(false))\n  def twice(fa: List[Int]): List[Int] = fa.iterator.map(_ + 1).toList\n  def run(basicRequest: Request): String = basicRequest.send(\"b\")\n  def local(): Int = helper()\n  val parser = new OptionParser[Int](\"scopt\") {\n    head(\"scopt\", \"3.x\")\n  }\n}\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "module:918e68c6beffb9bd47682d918f8b8ba9",
+            "referenceName": "Base",
+            "referenceKind": "extends",
+            "line": 3,
+            "column": 19,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 6
+          },
+          "input": {
+            "targetNodeId": "trait:4231d7b1965820250e503b0fca15811d",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "trait:4231d7b1965820250e503b0fca15811d",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:e1a331addea3408aa79a55b5228d5569",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 16,
+            "filePath": "src/main/scala/app/LazyOps.scala",
+            "language": "scala",
+            "rowId": 1
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:e1a331addea3408aa79a55b5228d5569",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 21,
+            "filePath": "src/main/scala/app/LazyOps.scala",
+            "language": "scala",
+            "rowId": 2
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:e1a331addea3408aa79a55b5228d5569",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 25,
+            "filePath": "src/main/scala/app/LazyOps.scala",
+            "language": "scala",
+            "rowId": 3
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:e1a331addea3408aa79a55b5228d5569",
+            "referenceName": "B",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 30,
+            "filePath": "src/main/scala/app/LazyOps.scala",
+            "language": "scala",
+            "rowId": 4
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:e1a331addea3408aa79a55b5228d5569",
+            "referenceName": "xs.map",
+            "referenceKind": "calls",
+            "line": 4,
+            "column": 35,
+            "filePath": "src/main/scala/app/LazyOps.scala",
+            "language": "scala",
+            "rowId": 5
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8589fb9b7c2810f08a66b195034ec8eb",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 32,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 7
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8589fb9b7c2810f08a66b195034ec8eb",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 37,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 8
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8589fb9b7c2810f08a66b195034ec8eb",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 40,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 9
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8589fb9b7c2810f08a66b195034ec8eb",
+            "referenceName": "f",
+            "referenceKind": "calls",
+            "line": 4,
+            "column": 46,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 10
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8589fb9b7c2810f08a66b195034ec8eb",
+            "referenceName": "f",
+            "referenceKind": "calls",
+            "line": 4,
+            "column": 55,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 11
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8940e051f74b55b87a5b45d30c2c848c",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 16,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 12
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8940e051f74b55b87a5b45d30c2c848c",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 28,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 13
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8940e051f74b55b87a5b45d30c2c848c",
+            "referenceName": "map",
+            "referenceKind": "calls",
+            "line": 5,
+            "column": 40,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 14
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+            "referenceName": "Request",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 24,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 15
+          },
+          "input": {
+            "targetNodeId": "class:f51c2e2300e1f611ed0a15386c66e471",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "class:f51c2e2300e1f611ed0a15386c66e471",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+            "referenceName": "basicRequest.send",
+            "referenceKind": "calls",
+            "line": 6,
+            "column": 43,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 16
+          },
+          "input": {
+            "targetNodeId": "method:2e37cea22745b5e20aca14bf6f8305fa",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "method:2e37cea22745b5e20aca14bf6f8305fa",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:9e2f57fbc2b46c79653384f1e3533989",
+            "referenceName": "helper",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 21,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 17
+          },
+          "input": {
+            "targetNodeId": "method:c8b3eac28b9fe1b8a59efbb66c2f8e39",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "method:c8b3eac28b9fe1b8a59efbb66c2f8e39",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "constant:50bfce1798d0738888439fe7a6499016",
+            "referenceName": "OptionParser",
+            "referenceKind": "instantiates",
+            "line": 8,
+            "column": 15,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 18
+          },
+          "input": {
+            "targetNodeId": "class:ea7b5e3556babc360af21e987d1560b5",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "class:ea7b5e3556babc360af21e987d1560b5",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "constant:50bfce1798d0738888439fe7a6499016",
+            "referenceName": "head",
+            "referenceKind": "calls",
+            "line": 9,
+            "column": 4,
+            "filePath": "src/main/scala/app/Use.scala",
+            "language": "scala",
+            "rowId": 19
+          },
+          "input": {
+            "targetNodeId": "method:e065e1419fb2001f0bbf14b42dc2ea5b",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "method:e065e1419fb2001f0bbf14b42dc2ea5b",
+            "confidence": 0.9
+          }
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:src/main/scala/app/Base.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "trait:4231d7b1965820250e503b0fca15811d",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:c8b3eac28b9fe1b8a59efbb66c2f8e39",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "file:src/main/scala/app/FreeT.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:818565d4a809d0a609fe266df36928ad",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "f"
+          ]
+        },
+        {
+          "node": "file:src/main/scala/app/LazyOps.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:cfba84730ecc122e3da8b34f749d988a",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "xs"
+          ]
+        },
+        {
+          "node": "method:e1a331addea3408aa79a55b5228d5569",
+          "types": [
+            [
+              "B",
+              null
+            ]
+          ],
+          "values": [
+            "g"
+          ]
+        },
+        {
+          "node": "file:src/main/scala/app/OptionParser.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:ea7b5e3556babc360af21e987d1560b5",
+          "types": [
+            [
+              "C",
+              null
+            ]
+          ],
+          "values": [
+            "name"
+          ]
+        },
+        {
+          "node": "method:e065e1419fb2001f0bbf14b42dc2ea5b",
+          "types": [],
+          "values": [
+            "xs"
+          ]
+        },
+        {
+          "node": "file:src/main/scala/app/Request.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:f51c2e2300e1f611ed0a15386c66e471",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:2e37cea22745b5e20aca14bf6f8305fa",
+          "types": [],
+          "values": [
+            "backend"
+          ]
+        },
+        {
+          "node": "file:src/main/scala/app/Use.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:8589fb9b7c2810f08a66b195034ec8eb",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "f"
+          ]
+        },
+        {
+          "node": "method:8940e051f74b55b87a5b45d30c2c848c",
+          "types": [],
+          "values": [
+            "fa"
+          ]
+        },
+        {
+          "node": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+          "types": [],
+          "values": [
+            "basicRequest"
+          ]
+        },
+        {
+          "node": "method:9e2f57fbc2b46c79653384f1e3533989",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "constant:50bfce1798d0738888439fe7a6499016",
+          "types": [],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:src/main/scala/app/Base.scala",
+          "target": "trait:4231d7b1965820250e503b0fca15811d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "trait:4231d7b1965820250e503b0fca15811d",
+          "target": "method:c8b3eac28b9fe1b8a59efbb66c2f8e39",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/main/scala/app/FreeT.scala",
+          "target": "class:818565d4a809d0a609fe266df36928ad",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/main/scala/app/LazyOps.scala",
+          "target": "class:cfba84730ecc122e3da8b34f749d988a",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:cfba84730ecc122e3da8b34f749d988a",
+          "target": "method:e1a331addea3408aa79a55b5228d5569",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/main/scala/app/OptionParser.scala",
+          "target": "class:ea7b5e3556babc360af21e987d1560b5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:ea7b5e3556babc360af21e987d1560b5",
+          "target": "method:e065e1419fb2001f0bbf14b42dc2ea5b",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/main/scala/app/Request.scala",
+          "target": "class:f51c2e2300e1f611ed0a15386c66e471",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:f51c2e2300e1f611ed0a15386c66e471",
+          "target": "method:2e37cea22745b5e20aca14bf6f8305fa",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/main/scala/app/Use.scala",
+          "target": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "target": "constant:50bfce1798d0738888439fe7a6499016",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "target": "method:8589fb9b7c2810f08a66b195034ec8eb",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "target": "method:8940e051f74b55b87a5b45d30c2c848c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "target": "method:9e2f57fbc2b46c79653384f1e3533989",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "target": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "module:918e68c6beffb9bd47682d918f8b8ba9",
+          "target": "trait:4231d7b1965820250e503b0fca15811d",
+          "kind": "extends",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Base"
+          },
+          "line": 3,
+          "column": 19,
+          "provenance": null
+        },
+        {
+          "source": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+          "target": "method:2e37cea22745b5e20aca14bf6f8305fa",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "instance-method",
+            "refName": "basicRequest.send"
+          },
+          "line": 6,
+          "column": 43,
+          "provenance": null
+        },
+        {
+          "source": "method:ea340cfe11ff1ce12db84b2dfb23fb13",
+          "target": "class:f51c2e2300e1f611ed0a15386c66e471",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Request"
+          },
+          "line": 6,
+          "column": 24,
+          "provenance": null
+        },
+        {
+          "source": "method:9e2f57fbc2b46c79653384f1e3533989",
+          "target": "method:c8b3eac28b9fe1b8a59efbb66c2f8e39",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "helper"
+          },
+          "line": 7,
+          "column": 21,
+          "provenance": null
+        },
+        {
+          "source": "constant:50bfce1798d0738888439fe7a6499016",
+          "target": "method:e065e1419fb2001f0bbf14b42dc2ea5b",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "head"
+          },
+          "line": 9,
+          "column": 4,
+          "provenance": null
+        },
+        {
+          "source": "constant:50bfce1798d0738888439fe7a6499016",
+          "target": "class:ea7b5e3556babc360af21e987d1560b5",
+          "kind": "instantiates",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "OptionParser"
+          },
+          "line": 8,
+          "column": 15,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "origin": "__tests__/scala-package-object-scope.test.ts: Scala package object members / and through an import of their package",
+      "nodes": [
+        {
+          "id": "file:algebra-core/src/main/scala/algebra/package.scala",
+          "kind": "file",
+          "name": "package.scala",
+          "qualifiedName": "algebra-core/src/main/scala/algebra/package.scala",
+          "filePath": "algebra-core/src/main/scala/algebra/package.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:348aaaa46bbdbaa140d5adf36a365af4",
+          "kind": "type_alias",
+          "name": "Eq",
+          "qualifiedName": "Eq",
+          "filePath": "algebra-core/src/main/scala/algebra/package.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 2,
+          "endColumn": 32,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "kind": "file",
+          "name": "RingLaws.scala",
+          "qualifiedName": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "import:926c6fce913cdfd6fd580c1e0b96d6c9",
+          "kind": "import",
+          "name": "algebra",
+          "qualifiedName": "algebra",
+          "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "language": "scala",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 16,
+          "signature": "import algebra._",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "trait:e86ccb07791696f88cca3743650b24a5",
+          "kind": "trait",
+          "name": "RingLaws",
+          "qualifiedName": "RingLaws",
+          "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "language": "scala",
+          "startLine": 5,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:8834530e21670020a36a02168008ed20",
+          "kind": "method",
+          "name": "eqv",
+          "qualifiedName": "RingLaws::eqv",
+          "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "language": "scala",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 2,
+          "endColumn": 39,
+          "signature": "[A]: Boolean",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Boolean"
+        },
+        {
+          "id": "file:core/src/main/scala/cats/package.scala",
+          "kind": "file",
+          "name": "package.scala",
+          "qualifiedName": "core/src/main/scala/cats/package.scala",
+          "filePath": "core/src/main/scala/cats/package.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "type_alias:20925d29878a7d66c6e4e20597970339",
+          "kind": "type_alias",
+          "name": "Eq",
+          "qualifiedName": "Eq",
+          "filePath": "core/src/main/scala/cats/package.scala",
+          "language": "scala",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 2,
+          "endColumn": 32,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "file:laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "kind": "file",
+          "name": "FunctorLaws.scala",
+          "qualifiedName": "laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "filePath": "laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "language": "scala",
+          "startLine": 1,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "trait:30c48409e2e0095acb037789324b2733",
+          "kind": "trait",
+          "name": "FunctorLaws",
+          "qualifiedName": "FunctorLaws",
+          "filePath": "laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "language": "scala",
+          "startLine": 4,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 1,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:c5a55fe232562fcc2826e48b0bbdd6ce",
+          "kind": "method",
+          "name": "identity",
+          "qualifiedName": "FunctorLaws::identity",
+          "filePath": "laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "language": "scala",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 2,
+          "endColumn": 44,
+          "signature": "[A]: Boolean",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Boolean"
+        }
+      ],
+      "sources": {
+        "algebra-core/src/main/scala/algebra/package.scala": "package object algebra {\n  type Eq[A] = cats.kernel.Eq[A]\n}\n",
+        "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala": "package algebra.laws\n\nimport algebra._\n\ntrait RingLaws {\n  def eqv[A](eq: Eq[A]): Boolean = true\n}\n",
+        "core/src/main/scala/cats/package.scala": "package object cats {\n  type Eq[A] = cats.kernel.Eq[A]\n}\n",
+        "laws/src/main/scala/cats/laws/FunctorLaws.scala": "package cats\npackage laws\n\ntrait FunctorLaws {\n  def identity[A](eq: Eq[A]): Boolean = true\n}\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "file:algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+            "referenceName": "algebra",
+            "referenceKind": "imports",
+            "line": 3,
+            "column": 0,
+            "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+            "language": "scala",
+            "rowId": 1
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8834530e21670020a36a02168008ed20",
+            "referenceName": "Eq",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 17,
+            "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+            "language": "scala",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "type_alias:348aaaa46bbdbaa140d5adf36a365af4",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "type_alias:348aaaa46bbdbaa140d5adf36a365af4",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:8834530e21670020a36a02168008ed20",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 20,
+            "filePath": "algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+            "language": "scala",
+            "rowId": 3
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:c5a55fe232562fcc2826e48b0bbdd6ce",
+            "referenceName": "Eq",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 22,
+            "filePath": "laws/src/main/scala/cats/laws/FunctorLaws.scala",
+            "language": "scala",
+            "rowId": 4
+          },
+          "input": {
+            "targetNodeId": "type_alias:20925d29878a7d66c6e4e20597970339",
+            "confidence": 0.9
+          },
+          "expected": {
+            "targetNodeId": "type_alias:20925d29878a7d66c6e4e20597970339",
+            "confidence": 0.9
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:c5a55fe232562fcc2826e48b0bbdd6ce",
+            "referenceName": "A",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 25,
+            "filePath": "laws/src/main/scala/cats/laws/FunctorLaws.scala",
+            "language": "scala",
+            "rowId": 5
+          },
+          "input": null,
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:algebra-core/src/main/scala/algebra/package.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "type_alias:348aaaa46bbdbaa140d5adf36a365af4",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "file:algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "import:926c6fce913cdfd6fd580c1e0b96d6c9",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "trait:e86ccb07791696f88cca3743650b24a5",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:8834530e21670020a36a02168008ed20",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "eq"
+          ]
+        },
+        {
+          "node": "file:core/src/main/scala/cats/package.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "type_alias:20925d29878a7d66c6e4e20597970339",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "file:laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "trait:30c48409e2e0095acb037789324b2733",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:c5a55fe232562fcc2826e48b0bbdd6ce",
+          "types": [
+            [
+              "A",
+              null
+            ]
+          ],
+          "values": [
+            "eq"
+          ]
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:algebra-core/src/main/scala/algebra/package.scala",
+          "target": "type_alias:348aaaa46bbdbaa140d5adf36a365af4",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "target": "import:926c6fce913cdfd6fd580c1e0b96d6c9",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:algebra-laws/src/main/scala/algebra/laws/RingLaws.scala",
+          "target": "trait:e86ccb07791696f88cca3743650b24a5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "trait:e86ccb07791696f88cca3743650b24a5",
+          "target": "method:8834530e21670020a36a02168008ed20",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:8834530e21670020a36a02168008ed20",
+          "target": "type_alias:348aaaa46bbdbaa140d5adf36a365af4",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Eq"
+          },
+          "line": 6,
+          "column": 17,
+          "provenance": null
+        },
+        {
+          "source": "file:core/src/main/scala/cats/package.scala",
+          "target": "type_alias:20925d29878a7d66c6e4e20597970339",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:laws/src/main/scala/cats/laws/FunctorLaws.scala",
+          "target": "trait:30c48409e2e0095acb037789324b2733",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "trait:30c48409e2e0095acb037789324b2733",
+          "target": "method:c5a55fe232562fcc2826e48b0bbdd6ce",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:c5a55fe232562fcc2826e48b0bbdd6ce",
+          "target": "type_alias:20925d29878a7d66c6e4e20597970339",
+          "kind": "references",
+          "metadata": {
+            "confidence": 0.9,
+            "resolvedBy": "exact-match",
+            "refName": "Eq"
+          },
+          "line": 5,
+          "column": 22,
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "origin": "generic cpp",
+      "nodes": [
+        {
+          "id": "file:api.cpp",
+          "kind": "file",
+          "name": "api.cpp",
+          "qualifiedName": "api.cpp",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 1,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:f89a69211d0f29ecddd5ee6d740d2a0e",
+          "kind": "struct",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 11,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:d0618028b1fde05e0508693067e8d6d0",
+          "kind": "struct",
+          "name": "TcParser",
+          "qualifiedName": "TcParser",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 46,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:aa54329415534765dc1361c3bdb04db7",
+          "kind": "method",
+          "name": "ParseLoop",
+          "qualifiedName": "TcParser::ParseLoop",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 18,
+          "endColumn": 44,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:fb89c0f08aac11d6552bd4431f6e9432",
+          "kind": "class",
+          "name": "Holder",
+          "qualifiedName": "Holder",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 63,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:203f188fe747c2e1e9b707ce5d850d28",
+          "kind": "method",
+          "name": "parse",
+          "qualifiedName": "Holder::parse",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 24,
+          "endColumn": 61,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:edc8f9006586625d6a40ddda1284a876",
+          "kind": "class",
+          "name": "Cache",
+          "qualifiedName": "Cache",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 50,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:97370c467f1f85ce6eb6c23d9373729f",
+          "kind": "method",
+          "name": "run",
+          "qualifiedName": "Cache::run",
+          "filePath": "api.cpp",
+          "language": "cpp",
+          "startLine": 6,
+          "endLine": 6,
+          "startColumn": 14,
+          "endColumn": 48,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "sources": {
+        "api.cpp": "struct T {};\nstruct TcParser { static void ParseLoop() {} };\ntemplate <typename T, class Parser = TcParser>\nclass Holder { T value; void parse() { Parser::ParseLoop(); } };\ntemplate <class Shard>\nclass Cache { void run() { Shard::ParseLoop(); } };\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "class:fb89c0f08aac11d6552bd4431f6e9432",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 15,
+            "filePath": "api.cpp",
+            "language": "cpp",
+            "rowId": 1
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:203f188fe747c2e1e9b707ce5d850d28",
+            "referenceName": "Parser::ParseLoop",
+            "referenceKind": "calls",
+            "line": 4,
+            "column": 39,
+            "filePath": "api.cpp",
+            "language": "cpp",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "method:aa54329415534765dc1361c3bdb04db7",
+            "confidence": 0.7
+          },
+          "expected": {
+            "targetNodeId": "method:aa54329415534765dc1361c3bdb04db7",
+            "confidence": 0.7
+          }
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:97370c467f1f85ce6eb6c23d9373729f",
+            "referenceName": "Shard::ParseLoop",
+            "referenceKind": "calls",
+            "line": 6,
+            "column": 27,
+            "filePath": "api.cpp",
+            "language": "cpp",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "method:aa54329415534765dc1361c3bdb04db7",
+            "confidence": 0.7
+          },
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:api.cpp",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:f89a69211d0f29ecddd5ee6d740d2a0e",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:d0618028b1fde05e0508693067e8d6d0",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:aa54329415534765dc1361c3bdb04db7",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:fb89c0f08aac11d6552bd4431f6e9432",
+          "types": [
+            [
+              "T",
+              null
+            ],
+            [
+              "Parser",
+              "TcParser"
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "method:203f188fe747c2e1e9b707ce5d850d28",
+          "types": [
+            [
+              "T",
+              null
+            ],
+            [
+              "Parser",
+              "TcParser"
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "class:edc8f9006586625d6a40ddda1284a876",
+          "types": [
+            [
+              "Shard",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "method:97370c467f1f85ce6eb6c23d9373729f",
+          "types": [
+            [
+              "Shard",
+              null
+            ]
+          ],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:api.cpp",
+          "target": "class:edc8f9006586625d6a40ddda1284a876",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:api.cpp",
+          "target": "class:fb89c0f08aac11d6552bd4431f6e9432",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:api.cpp",
+          "target": "struct:d0618028b1fde05e0508693067e8d6d0",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:api.cpp",
+          "target": "struct:f89a69211d0f29ecddd5ee6d740d2a0e",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "struct:d0618028b1fde05e0508693067e8d6d0",
+          "target": "method:aa54329415534765dc1361c3bdb04db7",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:fb89c0f08aac11d6552bd4431f6e9432",
+          "target": "method:203f188fe747c2e1e9b707ce5d850d28",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "method:203f188fe747c2e1e9b707ce5d850d28",
+          "target": "method:aa54329415534765dc1361c3bdb04db7",
+          "kind": "calls",
+          "metadata": {
+            "confidence": 0.7,
+            "resolvedBy": "instance-method",
+            "refName": "Parser::ParseLoop"
+          },
+          "line": 4,
+          "column": 39,
+          "provenance": null
+        },
+        {
+          "source": "class:edc8f9006586625d6a40ddda1284a876",
+          "target": "method:97370c467f1f85ce6eb6c23d9373729f",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "origin": "generic go",
+      "nodes": [
+        {
+          "id": "file:main.go",
+          "kind": "file",
+          "name": "main.go",
+          "qualifiedName": "main.go",
+          "filePath": "main.go",
+          "language": "go",
+          "startLine": 1,
+          "endLine": 6,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:f4a6f32c121ed5cef48f5a484c43827c",
+          "kind": "struct",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "main.go",
+          "language": "go",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 5,
+          "endColumn": 15,
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:b7c4b82d6d4a24c60c89114181f351a2",
+          "kind": "struct",
+          "name": "Box",
+          "qualifiedName": "Box",
+          "filePath": "main.go",
+          "language": "go",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 5,
+          "endColumn": 34,
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:5cfa6c96482c0747c55e58830463f66c",
+          "kind": "method",
+          "name": "Get",
+          "qualifiedName": "Box::Get",
+          "filePath": "main.go",
+          "language": "go",
+          "startLine": 4,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 42,
+          "signature": "() T",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        },
+        {
+          "id": "function:ad78e047439841aa092938ede3a5c3dc",
+          "kind": "function",
+          "name": "First",
+          "qualifiedName": "First",
+          "filePath": "main.go",
+          "language": "go",
+          "startLine": 5,
+          "endLine": 5,
+          "startColumn": 0,
+          "endColumn": 52,
+          "signature": "(values []T) T",
+          "visibility": null,
+          "isExported": true,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        }
+      ],
+      "sources": {
+        "main.go": "package app\ntype T struct{}\ntype Box[T any] struct { Value T }\nfunc (b Box[T]) Get() T { return b.Value }\nfunc First[T any](values []T) T { return values[0] }\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "method:5cfa6c96482c0747c55e58830463f66c",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 22,
+            "filePath": "main.go",
+            "language": "go",
+            "rowId": 1
+          },
+          "input": {
+            "targetNodeId": "struct:f4a6f32c121ed5cef48f5a484c43827c",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:ad78e047439841aa092938ede3a5c3dc",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 27,
+            "filePath": "main.go",
+            "language": "go",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "struct:f4a6f32c121ed5cef48f5a484c43827c",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:ad78e047439841aa092938ede3a5c3dc",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 30,
+            "filePath": "main.go",
+            "language": "go",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "struct:f4a6f32c121ed5cef48f5a484c43827c",
+            "confidence": 0.9
+          },
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:main.go",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:f4a6f32c121ed5cef48f5a484c43827c",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:b7c4b82d6d4a24c60c89114181f351a2",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "method:5cfa6c96482c0747c55e58830463f66c",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "function:ad78e047439841aa092938ede3a5c3dc",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:main.go",
+          "target": "function:ad78e047439841aa092938ede3a5c3dc",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.go",
+          "target": "method:5cfa6c96482c0747c55e58830463f66c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.go",
+          "target": "struct:b7c4b82d6d4a24c60c89114181f351a2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:main.go",
+          "target": "struct:f4a6f32c121ed5cef48f5a484c43827c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "struct:b7c4b82d6d4a24c60c89114181f351a2",
+          "target": "method:5cfa6c96482c0747c55e58830463f66c",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "origin": "generic kotlin",
+      "nodes": [
+        {
+          "id": "file:App.kt",
+          "kind": "file",
+          "name": "App.kt",
+          "qualifiedName": "App.kt",
+          "filePath": "App.kt",
+          "language": "kotlin",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:200643c8d55bd4d2a8ad11a605d66ce4",
+          "kind": "class",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "App.kt",
+          "language": "kotlin",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 7,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:b06c65fc9848001b53938b648b678811",
+          "kind": "class",
+          "name": "Box",
+          "qualifiedName": "Box",
+          "filePath": "App.kt",
+          "language": "kotlin",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 30,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:2ae453aecd30fc4b534dd173eef04ada",
+          "kind": "function",
+          "name": "first",
+          "qualifiedName": "first",
+          "filePath": "App.kt",
+          "language": "kotlin",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 45,
+          "signature": "(values: List<T>): T",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        }
+      ],
+      "sources": {
+        "App.kt": "class T\nclass Box<out T>(val value: T)\nfun <T> first(values: List<T>): T = values[0]\n"
+      },
+      "answers": [],
+      "heads": [
+        {
+          "node": "file:App.kt",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:200643c8d55bd4d2a8ad11a605d66ce4",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:b06c65fc9848001b53938b648b678811",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "function:2ae453aecd30fc4b534dd173eef04ada",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": [
+            "values"
+          ]
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:App.kt",
+          "target": "class:200643c8d55bd4d2a8ad11a605d66ce4",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.kt",
+          "target": "class:b06c65fc9848001b53938b648b678811",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.kt",
+          "target": "function:2ae453aecd30fc4b534dd173eef04ada",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "origin": "generic csharp",
+      "nodes": [
+        {
+          "id": "file:App.cs",
+          "kind": "file",
+          "name": "App.cs",
+          "qualifiedName": "App.cs",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:36197c9322c80c55ee63c21c3f8e6877",
+          "kind": "class",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 10,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:4c906765a02c00d088c5ad507abcebb5",
+          "kind": "class",
+          "name": "Box",
+          "qualifiedName": "Box",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 65,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:0d7cab8f7262d4854874cf9ca88d6dad",
+          "kind": "field",
+          "name": "Value",
+          "qualifiedName": "Box::Value",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 24,
+          "endColumn": 29,
+          "signature": "T Value",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:27b9588ec78bbc20ce50977485eae789",
+          "kind": "method",
+          "name": "Get",
+          "qualifiedName": "Box::Get",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 31,
+          "endColumn": 63,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        },
+        {
+          "id": "class:7c0913b9c79dac8876cb489b9e5020bf",
+          "kind": "class",
+          "name": "Utility",
+          "qualifiedName": "Utility",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 69,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:9cc1a0a8e71c6767ec3affd81df38f66",
+          "kind": "method",
+          "name": "First",
+          "qualifiedName": "Utility::First",
+          "filePath": "App.cs",
+          "language": "csharp",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 16,
+          "endColumn": 67,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        }
+      ],
+      "sources": {
+        "App.cs": "class T {}\nclass Box<T> { public T Value; public T Get() { return Value; } }\nclass Utility { public T First<T>(T[] values) { return values[0]; } }\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "field:0d7cab8f7262d4854874cf9ca88d6dad",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 22,
+            "filePath": "App.cs",
+            "language": "csharp",
+            "rowId": 1
+          },
+          "input": {
+            "targetNodeId": "class:36197c9322c80c55ee63c21c3f8e6877",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:27b9588ec78bbc20ce50977485eae789",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 38,
+            "filePath": "App.cs",
+            "language": "csharp",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "class:36197c9322c80c55ee63c21c3f8e6877",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:9cc1a0a8e71c6767ec3affd81df38f66",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 23,
+            "filePath": "App.cs",
+            "language": "csharp",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "class:36197c9322c80c55ee63c21c3f8e6877",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:9cc1a0a8e71c6767ec3affd81df38f66",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 34,
+            "filePath": "App.cs",
+            "language": "csharp",
+            "rowId": 4
+          },
+          "input": {
+            "targetNodeId": "class:36197c9322c80c55ee63c21c3f8e6877",
+            "confidence": 0.9
+          },
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:App.cs",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:36197c9322c80c55ee63c21c3f8e6877",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:4c906765a02c00d088c5ad507abcebb5",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "field:0d7cab8f7262d4854874cf9ca88d6dad",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:27b9588ec78bbc20ce50977485eae789",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:7c0913b9c79dac8876cb489b9e5020bf",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:9cc1a0a8e71c6767ec3affd81df38f66",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:App.cs",
+          "target": "class:36197c9322c80c55ee63c21c3f8e6877",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.cs",
+          "target": "class:4c906765a02c00d088c5ad507abcebb5",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.cs",
+          "target": "class:7c0913b9c79dac8876cb489b9e5020bf",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4c906765a02c00d088c5ad507abcebb5",
+          "target": "field:0d7cab8f7262d4854874cf9ca88d6dad",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4c906765a02c00d088c5ad507abcebb5",
+          "target": "method:27b9588ec78bbc20ce50977485eae789",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:7c0913b9c79dac8876cb489b9e5020bf",
+          "target": "method:9cc1a0a8e71c6767ec3affd81df38f66",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "origin": "generic swift",
+      "nodes": [
+        {
+          "id": "file:App.swift",
+          "kind": "file",
+          "name": "App.swift",
+          "qualifiedName": "App.swift",
+          "filePath": "App.swift",
+          "language": "swift",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:77452e4917a301d3244d131fb8b25d3d",
+          "kind": "struct",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "App.swift",
+          "language": "swift",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 11,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:018dbe868b1720dd31e326546ce24cda",
+          "kind": "struct",
+          "name": "Box",
+          "qualifiedName": "Box",
+          "filePath": "App.swift",
+          "language": "swift",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 57,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "field:b8d9b59e4953f37f47e433f8c479e411",
+          "kind": "field",
+          "name": "value",
+          "qualifiedName": "Box::value",
+          "filePath": "App.swift",
+          "language": "swift",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 16,
+          "endColumn": 28,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:d316ad3613ab4b866edcb51c1202bc16",
+          "kind": "method",
+          "name": "get",
+          "qualifiedName": "Box::get",
+          "filePath": "App.swift",
+          "language": "swift",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 30,
+          "endColumn": 55,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        },
+        {
+          "id": "function:6eac2f0a7e934409b85e916543e06160",
+          "kind": "function",
+          "name": "first",
+          "qualifiedName": "first",
+          "filePath": "App.swift",
+          "language": "swift",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 47,
+          "visibility": "internal",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        }
+      ],
+      "sources": {
+        "App.swift": "struct T {}\nstruct Box<T> { let value: T; func get() -> T { value } }\nfunc first<T>(_ values: [T]) -> T { values[0] }\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "struct:018dbe868b1720dd31e326546ce24cda",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 27,
+            "filePath": "App.swift",
+            "language": "swift",
+            "rowId": 1
+          },
+          "input": {
+            "targetNodeId": "struct:77452e4917a301d3244d131fb8b25d3d",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:d316ad3613ab4b866edcb51c1202bc16",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 44,
+            "filePath": "App.swift",
+            "language": "swift",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "struct:77452e4917a301d3244d131fb8b25d3d",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:6eac2f0a7e934409b85e916543e06160",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 32,
+            "filePath": "App.swift",
+            "language": "swift",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "struct:77452e4917a301d3244d131fb8b25d3d",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:6eac2f0a7e934409b85e916543e06160",
+            "referenceName": "values",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 36,
+            "filePath": "App.swift",
+            "language": "swift",
+            "rowId": 4
+          },
+          "input": null,
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:App.swift",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:77452e4917a301d3244d131fb8b25d3d",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:018dbe868b1720dd31e326546ce24cda",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "field:b8d9b59e4953f37f47e433f8c479e411",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:d316ad3613ab4b866edcb51c1202bc16",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "function:6eac2f0a7e934409b85e916543e06160",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:App.swift",
+          "target": "function:6eac2f0a7e934409b85e916543e06160",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.swift",
+          "target": "struct:018dbe868b1720dd31e326546ce24cda",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.swift",
+          "target": "struct:77452e4917a301d3244d131fb8b25d3d",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "struct:018dbe868b1720dd31e326546ce24cda",
+          "target": "field:b8d9b59e4953f37f47e433f8c479e411",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "struct:018dbe868b1720dd31e326546ce24cda",
+          "target": "method:d316ad3613ab4b866edcb51c1202bc16",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "origin": "generic rust",
+      "nodes": [
+        {
+          "id": "file:src/lib.rs",
+          "kind": "file",
+          "name": "lib.rs",
+          "qualifiedName": "src/lib.rs",
+          "filePath": "src/lib.rs",
+          "language": "rust",
+          "startLine": 1,
+          "endLine": 4,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:6f4d281b4f4913f050c58ad861b7aa9a",
+          "kind": "struct",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "src/lib.rs",
+          "language": "rust",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 13,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "struct:41a9d853fce726b17dd42462cc94097c",
+          "kind": "struct",
+          "name": "Boxed",
+          "qualifiedName": "Boxed",
+          "filePath": "src/lib.rs",
+          "language": "rust",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 32,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+          "kind": "function",
+          "name": "first",
+          "qualifiedName": "first",
+          "filePath": "src/lib.rs",
+          "language": "rust",
+          "startLine": 3,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 61,
+          "signature": "(mut values: Vec<T>) -> T",
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        }
+      ],
+      "sources": {
+        "src/lib.rs": "pub struct T;\npub struct Boxed<T> { value: T }\npub fn first<T>(mut values: Vec<T>) -> T { values.remove(0) }\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+            "referenceName": "Vec",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 28,
+            "filePath": "src/lib.rs",
+            "language": "rust",
+            "rowId": 1
+          },
+          "input": null,
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 32,
+            "filePath": "src/lib.rs",
+            "language": "rust",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "struct:6f4d281b4f4913f050c58ad861b7aa9a",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 39,
+            "filePath": "src/lib.rs",
+            "language": "rust",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "struct:6f4d281b4f4913f050c58ad861b7aa9a",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+            "referenceName": "values.remove",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 43,
+            "filePath": "src/lib.rs",
+            "language": "rust",
+            "rowId": 4
+          },
+          "input": null,
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:src/lib.rs",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:6f4d281b4f4913f050c58ad861b7aa9a",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "struct:41a9d853fce726b17dd42462cc94097c",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:src/lib.rs",
+          "target": "function:36b9cbdabba4b80dea43bf1dac40ade2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/lib.rs",
+          "target": "struct:41a9d853fce726b17dd42462cc94097c",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:src/lib.rs",
+          "target": "struct:6f4d281b4f4913f050c58ad861b7aa9a",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "origin": "generic vbnet",
+      "nodes": [
+        {
+          "id": "file:App.vb",
+          "kind": "file",
+          "name": "App.vb",
+          "qualifiedName": "App.vb",
+          "filePath": "App.vb",
+          "language": "vbnet",
+          "startLine": 1,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:34e1f3b48cdc006c9d71be383f3ccae3",
+          "kind": "class",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "App.vb",
+          "language": "vbnet",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:36e3761044ac763a78eff3cf6edfe317",
+          "kind": "class",
+          "name": "Box",
+          "qualifiedName": "Box",
+          "filePath": "App.vb",
+          "language": "vbnet",
+          "startLine": 3,
+          "endLine": 8,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:f4940b2a43e042df7f849735e9dee5b3",
+          "kind": "method",
+          "name": "GetValue",
+          "qualifiedName": "Box::GetValue",
+          "filePath": "App.vb",
+          "language": "vbnet",
+          "startLine": 4,
+          "endLine": 7,
+          "startColumn": 1,
+          "endColumn": 0,
+          "visibility": "public",
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "T"
+        }
+      ],
+      "sources": {
+        "App.vb": "Public Class T\nEnd Class\nPublic Class Box(Of T)\n Public Function GetValue(value As T) As T\n  Return value\n End Function\nEnd Class\n"
+      },
+      "answers": [],
+      "heads": [
+        {
+          "node": "file:App.vb",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:34e1f3b48cdc006c9d71be383f3ccae3",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:36e3761044ac763a78eff3cf6edfe317",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:f4940b2a43e042df7f849735e9dee5b3",
+          "types": [],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:App.vb",
+          "target": "class:34e1f3b48cdc006c9d71be383f3ccae3",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.vb",
+          "target": "class:36e3761044ac763a78eff3cf6edfe317",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:36e3761044ac763a78eff3cf6edfe317",
+          "target": "method:f4940b2a43e042df7f849735e9dee5b3",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "origin": "generic arkts",
+      "nodes": [
+        {
+          "id": "file:App.ets",
+          "kind": "file",
+          "name": "App.ets",
+          "qualifiedName": "App.ets",
+          "filePath": "App.ets",
+          "language": "arkts",
+          "startLine": 1,
+          "endLine": 3,
+          "startColumn": 0,
+          "endColumn": 0,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:99b19c19d7f56698f033472f84373c84",
+          "kind": "class",
+          "name": "T",
+          "qualifiedName": "T",
+          "filePath": "App.ets",
+          "language": "arkts",
+          "startLine": 1,
+          "endLine": 1,
+          "startColumn": 0,
+          "endColumn": 10,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "class:4683f28918769dec6ed57dc98b17c9f2",
+          "kind": "class",
+          "name": "Box",
+          "qualifiedName": "Box",
+          "filePath": "App.ets",
+          "language": "arkts",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 0,
+          "endColumn": 58,
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "property:ed7311e1b40c1d2272befbbf14b52b5c",
+          "kind": "property",
+          "name": "value",
+          "qualifiedName": "Box::value",
+          "filePath": "App.ets",
+          "language": "arkts",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 15,
+          "endColumn": 23,
+          "signature": "T value",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        },
+        {
+          "id": "method:87664acca959903122df23af4c307d0f",
+          "kind": "method",
+          "name": "get",
+          "qualifiedName": "Box::get",
+          "filePath": "App.ets",
+          "language": "arkts",
+          "startLine": 2,
+          "endLine": 2,
+          "startColumn": 25,
+          "endColumn": 56,
+          "signature": "(): T",
+          "visibility": null,
+          "isExported": false,
+          "isAsync": false,
+          "isStatic": false,
+          "isAbstract": false
+        }
+      ],
+      "sources": {
+        "App.ets": "class T {}\nclass Box<T> { value: T; get(): T { return this.value; } }\n"
+      },
+      "answers": [
+        {
+          "reference": {
+            "fromNodeId": "property:ed7311e1b40c1d2272befbbf14b52b5c",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 22,
+            "filePath": "App.ets",
+            "language": "arkts",
+            "rowId": 1
+          },
+          "input": {
+            "targetNodeId": "class:99b19c19d7f56698f033472f84373c84",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:87664acca959903122df23af4c307d0f",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 32,
+            "filePath": "App.ets",
+            "language": "arkts",
+            "rowId": 2
+          },
+          "input": {
+            "targetNodeId": "class:99b19c19d7f56698f033472f84373c84",
+            "confidence": 0.9
+          },
+          "expected": null
+        },
+        {
+          "reference": {
+            "fromNodeId": "method:87664acca959903122df23af4c307d0f",
+            "referenceName": "T",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 32,
+            "filePath": "App.ets",
+            "language": "arkts",
+            "rowId": 3
+          },
+          "input": {
+            "targetNodeId": "class:99b19c19d7f56698f033472f84373c84",
+            "confidence": 0.9
+          },
+          "expected": null
+        }
+      ],
+      "heads": [
+        {
+          "node": "file:App.ets",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:99b19c19d7f56698f033472f84373c84",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "class:4683f28918769dec6ed57dc98b17c9f2",
+          "types": [
+            [
+              "T",
+              null
+            ]
+          ],
+          "values": []
+        },
+        {
+          "node": "property:ed7311e1b40c1d2272befbbf14b52b5c",
+          "types": [],
+          "values": []
+        },
+        {
+          "node": "method:87664acca959903122df23af4c307d0f",
+          "types": [],
+          "values": []
+        }
+      ],
+      "allEdges": [
+        {
+          "source": "file:App.ets",
+          "target": "class:4683f28918769dec6ed57dc98b17c9f2",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "file:App.ets",
+          "target": "class:99b19c19d7f56698f033472f84373c84",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4683f28918769dec6ed57dc98b17c9f2",
+          "target": "method:87664acca959903122df23af4c307d0f",
+          "kind": "contains",
+          "provenance": null
+        },
+        {
+          "source": "class:4683f28918769dec6ed57dc98b17c9f2",
+          "target": "property:ed7311e1b40c1d2272befbbf14b52b5c",
+          "kind": "contains",
+          "provenance": null
+        }
+      ]
+    }
+  ]
+}

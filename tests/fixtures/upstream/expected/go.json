@@ -1,0 +1,1534 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.go",
+      "kind": "file",
+      "name": "torture.go",
+      "qualifiedName": "torture.go",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 1,
+      "endLine": 194,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:64743408a7371afefc7768c546b83fb2",
+      "kind": "import",
+      "name": "fmt",
+      "qualifiedName": "fmt",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 1,
+      "endColumn": 6,
+      "signature": "\"fmt\""
+    },
+    {
+      "id": "import:17cf6081e0b98e781b1b457772f3dd34",
+      "kind": "import",
+      "name": "example.com/other/pkga",
+      "qualifiedName": "example.com/other/pkga",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 1,
+      "endColumn": 30,
+      "signature": "pkga \"example.com/other/pkga\""
+    },
+    {
+      "id": "constant:0558b57204d51fcce0a73629df252447",
+      "kind": "constant",
+      "name": "MAX_ITEMS",
+      "qualifiedName": "MAX_ITEMS",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 9,
+      "endLine": 9,
+      "startColumn": 6,
+      "endColumn": 21,
+      "signature": "= 128",
+      "isExported": true
+    },
+    {
+      "id": "constant:ed7cb3b106fde81b28af2cec98fb76ff",
+      "kind": "constant",
+      "name": "MinItems",
+      "qualifiedName": "MinItems",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 14,
+      "endLine": 14,
+      "startColumn": 1,
+      "endColumn": 13,
+      "docstring": "MinItems is documented inside its group.",
+      "signature": "= 1",
+      "isExported": true
+    },
+    {
+      "id": "constant:fa63b8a70ec94e70d19aa77bb0d8ec74",
+      "kind": "constant",
+      "name": "MaxSlots",
+      "qualifiedName": "MaxSlots",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 15,
+      "endLine": 15,
+      "startColumn": 1,
+      "endColumn": 14,
+      "docstring": "Limits: the group's comment, for a member without its own.",
+      "signature": "= 64",
+      "isExported": true
+    },
+    {
+      "id": "variable:29197c63289561872f574db4ef81b805",
+      "kind": "variable",
+      "name": "DefaultRegistry",
+      "qualifiedName": "DefaultRegistry",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 4,
+      "endColumn": 35,
+      "signature": "= NewRegistry()",
+      "isExported": true
+    },
+    {
+      "id": "variable:ebbcd06aadb55168a8b5ea82734f6eae",
+      "kind": "variable",
+      "name": "handlerTable",
+      "qualifiedName": "handlerTable",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 20,
+      "endLine": 22,
+      "startColumn": 4,
+      "endColumn": 1,
+      "signature": "= map[string]func(int){\n\t\"recv\": TargetCb,\n}",
+      "isExported": false
+    },
+    {
+      "id": "variable:15b11293498b2e4567fcb8045a8f8b28",
+      "kind": "variable",
+      "name": "handlersByName",
+      "qualifiedName": "handlersByName",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 27,
+      "endLine": 27,
+      "startColumn": 1,
+      "endColumn": 56,
+      "docstring": "handlersByName is documented inside its group.",
+      "signature": "= map[string]func(int){\"recv\": TargetCb}",
+      "isExported": false
+    },
+    {
+      "id": "variable:2b35500d382ab3314dc1b7183cb033c2",
+      "kind": "variable",
+      "name": "DefaultWidget",
+      "qualifiedName": "DefaultWidget",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 1,
+      "endColumn": 31,
+      "docstring": "Registries: the group's comment, for a member without its own.",
+      "signature": "= NewRegistry()",
+      "isExported": true
+    },
+    {
+      "id": "struct:f40c718c9819fba2c03363830f20153e",
+      "kind": "struct",
+      "name": "Widget",
+      "qualifiedName": "Widget",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 32,
+      "endLine": 40,
+      "startColumn": 5,
+      "endColumn": 1,
+      "docstring": "Widget is documented above its own type declaration.",
+      "isExported": true
+    },
+    {
+      "id": "struct:c5ad6fdcd5df62a879ea7e11ddb91d96",
+      "kind": "struct",
+      "name": "Stack",
+      "qualifiedName": "Stack",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 44,
+      "endLine": 46,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "struct:f75038b4c506da37518a036f175172d6",
+      "kind": "struct",
+      "name": "Server",
+      "qualifiedName": "Server",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 51,
+      "endLine": 68,
+      "startColumn": 5,
+      "endColumn": 1,
+      "docstring": "A struct references the types its fields are declared with, but the types\nit embeds (supertypes), its own type parameters, predeclared types and its\nown name written bare.",
+      "isExported": true
+    },
+    {
+      "id": "struct:14d3f7bc2568dde06e8d06e86007c4f1",
+      "kind": "struct",
+      "name": "Pool",
+      "qualifiedName": "Pool",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 70,
+      "endLine": 75,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "struct:30e24fa9212fb5ab7e6f735f6e4c68dc",
+      "kind": "struct",
+      "name": "AnonFields",
+      "qualifiedName": "AnonFields",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 77,
+      "endLine": 79,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:98f3012837f03cffde08fbfd460ecbc4",
+      "kind": "type_alias",
+      "name": "Seconds",
+      "qualifiedName": "Seconds",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 83,
+      "endLine": 83,
+      "startColumn": 1,
+      "endColumn": 12,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:15013d263c87031d124697caeef60a1e",
+      "kind": "type_alias",
+      "name": "Minutes",
+      "qualifiedName": "Minutes",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 85,
+      "endLine": 85,
+      "startColumn": 1,
+      "endColumn": 12,
+      "docstring": "Minutes is documented inside its group.",
+      "isExported": true
+    },
+    {
+      "id": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "kind": "interface",
+      "name": "Core",
+      "qualifiedName": "Core",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 88,
+      "endLine": 95,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "method:62716f8eb1c95825ea325a5850467459",
+      "kind": "method",
+      "name": "Marshal",
+      "qualifiedName": "Core::Marshal",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 93,
+      "endLine": 93,
+      "startColumn": 1,
+      "endColumn": 31,
+      "signature": "(v any) ([]byte, error)"
+    },
+    {
+      "id": "method:986ed17c71578ba95480bb03b1e130f5",
+      "kind": "method",
+      "name": "Unmarshal",
+      "qualifiedName": "Core::Unmarshal",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 94,
+      "endLine": 94,
+      "startColumn": 1,
+      "endColumn": 29,
+      "signature": "(data []byte) error"
+    },
+    {
+      "id": "interface:a14d440cc55af2f2d18f3b9ad61e9b8e",
+      "kind": "interface",
+      "name": "Repo",
+      "qualifiedName": "Repo",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 99,
+      "endLine": 103,
+      "startColumn": 5,
+      "endColumn": 1,
+      "docstring": "An interface method references the types its signature names, but the\ninterface's own type parameters and the predeclared types.",
+      "isExported": true
+    },
+    {
+      "id": "method:992eca618058bd9e60cbb045825b06f9",
+      "kind": "method",
+      "name": "Find",
+      "qualifiedName": "Repo::Find",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 100,
+      "endLine": 100,
+      "startColumn": 1,
+      "endColumn": 48,
+      "signature": "(ctx pkga.Context, id Dur) (*Widget, error)"
+    },
+    {
+      "id": "method:9a66bbb680a40f4d4f3c87250ff2cb8b",
+      "kind": "method",
+      "name": "Each",
+      "qualifiedName": "Repo::Each",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 101,
+      "endLine": 101,
+      "startColumn": 1,
+      "endColumn": 47,
+      "signature": "(fn func(T, *Stack[int]) bool) []pkga.Item"
+    },
+    {
+      "id": "method:cbddc19672d33f8648e19f03de7a9d35",
+      "kind": "method",
+      "name": "Self",
+      "qualifiedName": "Repo::Self",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 102,
+      "endLine": 102,
+      "startColumn": 1,
+      "endColumn": 15,
+      "signature": "() Repo[T]"
+    },
+    {
+      "id": "interface:fe2c342569f902b36596540d9d076db1",
+      "kind": "interface",
+      "name": "Number",
+      "qualifiedName": "Number",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 105,
+      "endLine": 107,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "interface:cf85d621d3b934cdfa415e34db8cb9d7",
+      "kind": "interface",
+      "name": "Exact",
+      "qualifiedName": "Exact",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 109,
+      "endLine": 109,
+      "startColumn": 5,
+      "endColumn": 29,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:a2c9d27b706193b5507d8aa1000d82da",
+      "kind": "type_alias",
+      "name": "Dur",
+      "qualifiedName": "Dur",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 111,
+      "endLine": 111,
+      "startColumn": 5,
+      "endColumn": 12,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:ceca5ce1f11a6de325195f71083c05de",
+      "kind": "type_alias",
+      "name": "Alias",
+      "qualifiedName": "Alias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 114,
+      "endLine": 114,
+      "startColumn": 5,
+      "endColumn": 24,
+      "docstring": "Aliases (`=`): the types they name are references; a literal makes a struct or interface.",
+      "isExported": true
+    },
+    {
+      "id": "type_alias:9da818eb21422669e91f028dbf071010",
+      "kind": "type_alias",
+      "name": "LocalAlias",
+      "qualifiedName": "LocalAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 117,
+      "endLine": 117,
+      "startColumn": 1,
+      "endColumn": 20,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:14553e52bbdb11ea853a83f757fdf7e6",
+      "kind": "type_alias",
+      "name": "PtrAlias",
+      "qualifiedName": "PtrAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 118,
+      "endLine": 118,
+      "startColumn": 1,
+      "endColumn": 25,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:f4945072cffc3a4272a0707ad70d0568",
+      "kind": "type_alias",
+      "name": "FnAlias",
+      "qualifiedName": "FnAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 119,
+      "endLine": 119,
+      "startColumn": 1,
+      "endColumn": 34,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:d52bce3af616cc7956274bccf80180cc",
+      "kind": "type_alias",
+      "name": "MapAlias",
+      "qualifiedName": "MapAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 120,
+      "endLine": 120,
+      "startColumn": 1,
+      "endColumn": 36,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:10c0324b57e4fa3ff230b49ba8392220",
+      "kind": "type_alias",
+      "name": "Defined",
+      "qualifiedName": "Defined",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 121,
+      "endLine": 121,
+      "startColumn": 1,
+      "endColumn": 18,
+      "isExported": true
+    },
+    {
+      "id": "struct:280613d5980c85f7cdeeb361ec6fe08f",
+      "kind": "struct",
+      "name": "AnonAlias",
+      "qualifiedName": "AnonAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 124,
+      "endLine": 127,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "interface:1427a6244615764a316b702813a0da78",
+      "kind": "interface",
+      "name": "IfaceAlias",
+      "qualifiedName": "IfaceAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 129,
+      "endLine": 131,
+      "startColumn": 5,
+      "endColumn": 1,
+      "isExported": true
+    },
+    {
+      "id": "method:dba88554ebcdb1835a22dbdd853bc279",
+      "kind": "method",
+      "name": "Render",
+      "qualifiedName": "IfaceAlias::Render",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 130,
+      "endLine": 130,
+      "startColumn": 1,
+      "endColumn": 16,
+      "signature": "() string"
+    },
+    {
+      "id": "type_alias:672dd84362f6ae8727ade9447f5d2a6e",
+      "kind": "type_alias",
+      "name": "WordAlias",
+      "qualifiedName": "WordAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 133,
+      "endLine": 133,
+      "startColumn": 5,
+      "endColumn": 21,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:47961e7c19d208a63154c7109ec04f6f",
+      "kind": "type_alias",
+      "name": "HandlerFunc",
+      "qualifiedName": "HandlerFunc",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 137,
+      "endLine": 137,
+      "startColumn": 5,
+      "endColumn": 47,
+      "docstring": "Defined types reference what they are defined from, but their own type\nparameters, predeclared types and their own name written bare.",
+      "isExported": true
+    },
+    {
+      "id": "type_alias:01eecc538ecbc5b419ff521c464cfccf",
+      "kind": "type_alias",
+      "name": "HandlersChain",
+      "qualifiedName": "HandlersChain",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 139,
+      "endLine": 139,
+      "startColumn": 5,
+      "endColumn": 32,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:cdf23a52bd51faf24cbea7cbcc1505da",
+      "kind": "type_alias",
+      "name": "WatchChan",
+      "qualifiedName": "WatchChan",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 141,
+      "endLine": 141,
+      "startColumn": 5,
+      "endColumn": 33,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:6419a6819baa0d20cb197e18ff7f8f4f",
+      "kind": "type_alias",
+      "name": "Lookup",
+      "qualifiedName": "Lookup",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 144,
+      "endLine": 144,
+      "startColumn": 1,
+      "endColumn": 31,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:de11d8e40d9f67c0b581789591ca6693",
+      "kind": "type_alias",
+      "name": "Grid",
+      "qualifiedName": "Grid",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 145,
+      "endLine": 145,
+      "startColumn": 1,
+      "endColumn": 26,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:d23bf995829ea1e6e8800406224f6405",
+      "kind": "type_alias",
+      "name": "Wrapped",
+      "qualifiedName": "Wrapped",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 146,
+      "endLine": 146,
+      "startColumn": 1,
+      "endColumn": 17,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:2d50d57ef2febcc27a32411b5d897037",
+      "kind": "type_alias",
+      "name": "Item",
+      "qualifiedName": "Item",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 147,
+      "endLine": 147,
+      "startColumn": 1,
+      "endColumn": 18,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:8fbb209c59fbcdc614d1649dd452fdf7",
+      "kind": "type_alias",
+      "name": "Nested",
+      "qualifiedName": "Nested",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 148,
+      "endLine": 151,
+      "startColumn": 1,
+      "endColumn": 2,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:7f105694fe82986d2f72abe8331969ea",
+      "kind": "type_alias",
+      "name": "Tree",
+      "qualifiedName": "Tree",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 154,
+      "endLine": 154,
+      "startColumn": 5,
+      "endColumn": 27,
+      "isExported": true
+    },
+    {
+      "id": "type_alias:87ce8ad98d0f552342ef1c78370ba2a4",
+      "kind": "type_alias",
+      "name": "stateFn",
+      "qualifiedName": "stateFn",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 156,
+      "endLine": 156,
+      "startColumn": 5,
+      "endColumn": 34,
+      "isExported": false
+    },
+    {
+      "id": "function:03e235b6194b595043347f2535da04eb",
+      "kind": "function",
+      "name": "useAlias",
+      "qualifiedName": "useAlias",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 158,
+      "endLine": 160,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(a *Alias) LocalAlias",
+      "isExported": false,
+      "returnType": "LocalAlias"
+    },
+    {
+      "id": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "kind": "function",
+      "name": "NewRegistry",
+      "qualifiedName": "NewRegistry",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 162,
+      "endLine": 169,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "() *Registry",
+      "isExported": true,
+      "returnType": "Registry"
+    },
+    {
+      "id": "method:1922509becc42173c60699bcfc367d5d",
+      "kind": "method",
+      "name": "Push",
+      "qualifiedName": "Stack::Push",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 171,
+      "endLine": 173,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "(item T)",
+      "isExported": true
+    },
+    {
+      "id": "method:a04bdc1176cb73231661f8e108f15d72",
+      "kind": "method",
+      "name": "Render",
+      "qualifiedName": "Widget::Render",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 175,
+      "endLine": 177,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "() string",
+      "isExported": true,
+      "returnType": "string"
+    },
+    {
+      "id": "function:d81bc551a0bf5fa77cfb9ded5edec24a",
+      "kind": "function",
+      "name": "TargetCb",
+      "qualifiedName": "TargetCb",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 182,
+      "endLine": 182,
+      "startColumn": 0,
+      "endColumn": 23,
+      "docstring": "TargetCb is documented right above.",
+      "signature": "(n int)",
+      "isExported": true
+    },
+    {
+      "id": "function:666befe2de21119a048ced0ded1779ab",
+      "kind": "function",
+      "name": "shadowed",
+      "qualifiedName": "shadowed",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 184,
+      "endLine": 187,
+      "startColumn": 0,
+      "endColumn": 1,
+      "signature": "()",
+      "isExported": false
+    },
+    {
+      "id": "function:9273e653b325d84eac5b2aba502350f7",
+      "kind": "function",
+      "name": "reads",
+      "qualifiedName": "reads",
+      "filePath": "torture.go",
+      "language": "go",
+      "startLine": 191,
+      "endLine": 193,
+      "startColumn": 0,
+      "endColumn": 1,
+      "docstring": "reads is documented above a directive, which is no part of its doc.",
+      "signature": "() int",
+      "isExported": false,
+      "returnType": "int"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.go",
+      "target": "import:64743408a7371afefc7768c546b83fb2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "import:17cf6081e0b98e781b1b457772f3dd34",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "constant:0558b57204d51fcce0a73629df252447",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "constant:ed7cb3b106fde81b28af2cec98fb76ff",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "constant:fa63b8a70ec94e70d19aa77bb0d8ec74",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "variable:29197c63289561872f574db4ef81b805",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "variable:ebbcd06aadb55168a8b5ea82734f6eae",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "variable:15b11293498b2e4567fcb8045a8f8b28",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "variable:2b35500d382ab3314dc1b7183cb033c2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "struct:f40c718c9819fba2c03363830f20153e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "struct:c5ad6fdcd5df62a879ea7e11ddb91d96",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "struct:f75038b4c506da37518a036f175172d6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "struct:14d3f7bc2568dde06e8d06e86007c4f1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "struct:30e24fa9212fb5ab7e6f735f6e4c68dc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:98f3012837f03cffde08fbfd460ecbc4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:15013d263c87031d124697caeef60a1e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "target": "method:62716f8eb1c95825ea325a5850467459",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "target": "method:986ed17c71578ba95480bb03b1e130f5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "interface:a14d440cc55af2f2d18f3b9ad61e9b8e",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:a14d440cc55af2f2d18f3b9ad61e9b8e",
+      "target": "method:992eca618058bd9e60cbb045825b06f9",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:a14d440cc55af2f2d18f3b9ad61e9b8e",
+      "target": "method:9a66bbb680a40f4d4f3c87250ff2cb8b",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:a14d440cc55af2f2d18f3b9ad61e9b8e",
+      "target": "method:cbddc19672d33f8648e19f03de7a9d35",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "interface:fe2c342569f902b36596540d9d076db1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "interface:cf85d621d3b934cdfa415e34db8cb9d7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:a2c9d27b706193b5507d8aa1000d82da",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:ceca5ce1f11a6de325195f71083c05de",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:9da818eb21422669e91f028dbf071010",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:14553e52bbdb11ea853a83f757fdf7e6",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:f4945072cffc3a4272a0707ad70d0568",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:d52bce3af616cc7956274bccf80180cc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:10c0324b57e4fa3ff230b49ba8392220",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "struct:280613d5980c85f7cdeeb361ec6fe08f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "interface:1427a6244615764a316b702813a0da78",
+      "kind": "contains"
+    },
+    {
+      "source": "interface:1427a6244615764a316b702813a0da78",
+      "target": "method:dba88554ebcdb1835a22dbdd853bc279",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:672dd84362f6ae8727ade9447f5d2a6e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:47961e7c19d208a63154c7109ec04f6f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:01eecc538ecbc5b419ff521c464cfccf",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:cdf23a52bd51faf24cbea7cbcc1505da",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:6419a6819baa0d20cb197e18ff7f8f4f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:de11d8e40d9f67c0b581789591ca6693",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:d23bf995829ea1e6e8800406224f6405",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:2d50d57ef2febcc27a32411b5d897037",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:8fbb209c59fbcdc614d1649dd452fdf7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:7f105694fe82986d2f72abe8331969ea",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "type_alias:87ce8ad98d0f552342ef1c78370ba2a4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "function:03e235b6194b595043347f2535da04eb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "method:1922509becc42173c60699bcfc367d5d",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:c5ad6fdcd5df62a879ea7e11ddb91d96",
+      "target": "method:1922509becc42173c60699bcfc367d5d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "method:a04bdc1176cb73231661f8e108f15d72",
+      "kind": "contains"
+    },
+    {
+      "source": "struct:f40c718c9819fba2c03363830f20153e",
+      "target": "method:a04bdc1176cb73231661f8e108f15d72",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "function:d81bc551a0bf5fa77cfb9ded5edec24a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "function:666befe2de21119a048ced0ded1779ab",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.go",
+      "target": "function:9273e653b325d84eac5b2aba502350f7",
+      "kind": "contains"
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.go",
+      "referenceName": "fmt",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 1
+    },
+    {
+      "fromNodeId": "file:torture.go",
+      "referenceName": "example.com/other/pkga",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 1
+    },
+    {
+      "fromNodeId": "variable:29197c63289561872f574db4ef81b805",
+      "referenceName": "NewRegistry",
+      "referenceKind": "calls",
+      "line": 18,
+      "column": 22
+    },
+    {
+      "fromNodeId": "variable:2b35500d382ab3314dc1b7183cb033c2",
+      "referenceName": "NewRegistry",
+      "referenceKind": "calls",
+      "line": 28,
+      "column": 18
+    },
+    {
+      "fromNodeId": "struct:f40c718c9819fba2c03363830f20153e",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 33,
+      "column": 2
+    },
+    {
+      "fromNodeId": "struct:f40c718c9819fba2c03363830f20153e",
+      "referenceName": "Queryable",
+      "referenceKind": "extends",
+      "line": 34,
+      "column": 1
+    },
+    {
+      "fromNodeId": "struct:f40c718c9819fba2c03363830f20153e",
+      "referenceName": "Embedded",
+      "referenceKind": "extends",
+      "line": 35,
+      "column": 6
+    },
+    {
+      "fromNodeId": "struct:f40c718c9819fba2c03363830f20153e",
+      "referenceName": "Pointer",
+      "referenceKind": "extends",
+      "line": 36,
+      "column": 7
+    },
+    {
+      "fromNodeId": "struct:f40c718c9819fba2c03363830f20153e",
+      "referenceName": "Stack",
+      "referenceKind": "extends",
+      "line": 37,
+      "column": 1
+    },
+    {
+      "fromNodeId": "struct:f40c718c9819fba2c03363830f20153e",
+      "referenceName": "error",
+      "referenceKind": "extends",
+      "line": 38,
+      "column": 1
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Lister",
+      "referenceKind": "extends",
+      "line": 65,
+      "column": 7
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "HandlersChain",
+      "referenceKind": "references",
+      "line": 52,
+      "column": 10
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Dur",
+      "referenceKind": "references",
+      "line": 53,
+      "column": 14
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 53,
+      "column": 21
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 54,
+      "column": 22
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 55,
+      "column": 21
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Context",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 24
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 36
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Stack",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 46
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 57,
+      "column": 10
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 59,
+      "column": 4
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Base",
+      "referenceKind": "references",
+      "line": 60,
+      "column": 3
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 63,
+      "column": 14
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 65,
+      "column": 15
+    },
+    {
+      "fromNodeId": "struct:f75038b4c506da37518a036f175172d6",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 65,
+      "column": 28
+    },
+    {
+      "fromNodeId": "struct:14d3f7bc2568dde06e8d06e86007c4f1",
+      "referenceName": "Stack",
+      "referenceKind": "extends",
+      "line": 73,
+      "column": 1
+    },
+    {
+      "fromNodeId": "struct:14d3f7bc2568dde06e8d06e86007c4f1",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 74,
+      "column": 7
+    },
+    {
+      "fromNodeId": "struct:30e24fa9212fb5ab7e6f735f6e4c68dc",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 78,
+      "column": 3
+    },
+    {
+      "fromNodeId": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "referenceName": "Reader",
+      "referenceKind": "extends",
+      "line": 89,
+      "column": 1
+    },
+    {
+      "fromNodeId": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "referenceName": "Closer",
+      "referenceKind": "extends",
+      "line": 90,
+      "column": 6
+    },
+    {
+      "fromNodeId": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "referenceName": "Lister",
+      "referenceKind": "extends",
+      "line": 91,
+      "column": 1
+    },
+    {
+      "fromNodeId": "interface:5c48adc31288c40ef8c3915369c73bc8",
+      "referenceName": "error",
+      "referenceKind": "extends",
+      "line": 92,
+      "column": 1
+    },
+    {
+      "fromNodeId": "method:992eca618058bd9e60cbb045825b06f9",
+      "referenceName": "Context",
+      "referenceKind": "references",
+      "line": 100,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:992eca618058bd9e60cbb045825b06f9",
+      "referenceName": "Dur",
+      "referenceKind": "references",
+      "line": 100,
+      "column": 27
+    },
+    {
+      "fromNodeId": "method:992eca618058bd9e60cbb045825b06f9",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 100,
+      "column": 34
+    },
+    {
+      "fromNodeId": "method:9a66bbb680a40f4d4f3c87250ff2cb8b",
+      "referenceName": "Stack",
+      "referenceKind": "references",
+      "line": 101,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:9a66bbb680a40f4d4f3c87250ff2cb8b",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 101,
+      "column": 43
+    },
+    {
+      "fromNodeId": "method:cbddc19672d33f8648e19f03de7a9d35",
+      "referenceName": "Repo",
+      "referenceKind": "references",
+      "line": 102,
+      "column": 8
+    },
+    {
+      "fromNodeId": "type_alias:ceca5ce1f11a6de325195f71083c05de",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 114,
+      "column": 18
+    },
+    {
+      "fromNodeId": "type_alias:9da818eb21422669e91f028dbf071010",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 117,
+      "column": 14
+    },
+    {
+      "fromNodeId": "type_alias:14553e52bbdb11ea853a83f757fdf7e6",
+      "referenceName": "Stack",
+      "referenceKind": "references",
+      "line": 118,
+      "column": 15
+    },
+    {
+      "fromNodeId": "type_alias:f4945072cffc3a4272a0707ad70d0568",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 119,
+      "column": 21
+    },
+    {
+      "fromNodeId": "type_alias:d52bce3af616cc7956274bccf80180cc",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 120,
+      "column": 32
+    },
+    {
+      "fromNodeId": "type_alias:10c0324b57e4fa3ff230b49ba8392220",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 121,
+      "column": 12
+    },
+    {
+      "fromNodeId": "struct:280613d5980c85f7cdeeb361ec6fe08f",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 125,
+      "column": 2
+    },
+    {
+      "fromNodeId": "type_alias:47961e7c19d208a63154c7109ec04f6f",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 137,
+      "column": 23
+    },
+    {
+      "fromNodeId": "type_alias:47961e7c19d208a63154c7109ec04f6f",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 137,
+      "column": 36
+    },
+    {
+      "fromNodeId": "type_alias:01eecc538ecbc5b419ff521c464cfccf",
+      "referenceName": "HandlerFunc",
+      "referenceKind": "references",
+      "line": 139,
+      "column": 21
+    },
+    {
+      "fromNodeId": "type_alias:cdf23a52bd51faf24cbea7cbcc1505da",
+      "referenceName": "Stack",
+      "referenceKind": "references",
+      "line": 141,
+      "column": 23
+    },
+    {
+      "fromNodeId": "type_alias:6419a6819baa0d20cb197e18ff7f8f4f",
+      "referenceName": "Dur",
+      "referenceKind": "references",
+      "line": 144,
+      "column": 13
+    },
+    {
+      "fromNodeId": "type_alias:6419a6819baa0d20cb197e18ff7f8f4f",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 144,
+      "column": 25
+    },
+    {
+      "fromNodeId": "type_alias:de11d8e40d9f67c0b581789591ca6693",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 145,
+      "column": 20
+    },
+    {
+      "fromNodeId": "type_alias:d23bf995829ea1e6e8800406224f6405",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 146,
+      "column": 10
+    },
+    {
+      "fromNodeId": "type_alias:2d50d57ef2febcc27a32411b5d897037",
+      "referenceName": "Item",
+      "referenceKind": "references",
+      "line": 147,
+      "column": 14
+    },
+    {
+      "fromNodeId": "type_alias:8fbb209c59fbcdc614d1649dd452fdf7",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 149,
+      "column": 4
+    },
+    {
+      "fromNodeId": "type_alias:8fbb209c59fbcdc614d1649dd452fdf7",
+      "referenceName": "Base",
+      "referenceKind": "references",
+      "line": 150,
+      "column": 3
+    },
+    {
+      "fromNodeId": "type_alias:87ce8ad98d0f552342ef1c78370ba2a4",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 156,
+      "column": 19
+    },
+    {
+      "fromNodeId": "function:03e235b6194b595043347f2535da04eb",
+      "referenceName": "Alias",
+      "referenceKind": "references",
+      "line": 158,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:03e235b6194b595043347f2535da04eb",
+      "referenceName": "LocalAlias",
+      "referenceKind": "references",
+      "line": 158,
+      "column": 24
+    },
+    {
+      "fromNodeId": "function:03e235b6194b595043347f2535da04eb",
+      "referenceName": "LocalAlias",
+      "referenceKind": "instantiates",
+      "line": 159,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "Registry",
+      "referenceKind": "references",
+      "line": 162,
+      "column": 20
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 163,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "pkga.Widget",
+      "referenceKind": "instantiates",
+      "line": 164,
+      "column": 6
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "fmt.Println",
+      "referenceKind": "calls",
+      "line": 165,
+      "column": 1
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "loadConfig",
+      "referenceKind": "calls",
+      "line": 166,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "cfg.conn.Exec",
+      "referenceKind": "calls",
+      "line": 167,
+      "column": 1
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "New().Init",
+      "referenceKind": "calls",
+      "line": 168,
+      "column": 8
+    },
+    {
+      "fromNodeId": "function:64dfb7f941a0f9df8ca6c1e4bad7143f",
+      "referenceName": "New",
+      "referenceKind": "calls",
+      "line": 168,
+      "column": 8
+    },
+    {
+      "fromNodeId": "method:1922509becc42173c60699bcfc367d5d",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 171,
+      "column": 29
+    },
+    {
+      "fromNodeId": "method:1922509becc42173c60699bcfc367d5d",
+      "referenceName": "append",
+      "referenceKind": "calls",
+      "line": 172,
+      "column": 11
+    },
+    {
+      "fromNodeId": "function:666befe2de21119a048ced0ded1779ab",
+      "referenceName": "fmt.Println",
+      "referenceKind": "calls",
+      "line": 186,
+      "column": 1
+    },
+    {
+      "fromNodeId": "variable:ebbcd06aadb55168a8b5ea82734f6eae",
+      "referenceName": "TargetCb",
+      "referenceKind": "function_ref",
+      "line": 21,
+      "column": 9
+    },
+    {
+      "fromNodeId": "variable:15b11293498b2e4567fcb8045a8f8b28",
+      "referenceName": "TargetCb",
+      "referenceKind": "function_ref",
+      "line": 27,
+      "column": 47
+    },
+    {
+      "fromNodeId": "method:1922509becc42173c60699bcfc367d5d",
+      "referenceName": "s.items",
+      "referenceKind": "function_ref",
+      "line": 172,
+      "column": 20
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,491 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "projects": [
+    {
+      "id": "original-fastendpoints",
+      "files": {
+        "src/Web/Contributors/Create.CreateContributorRequest.cs": "namespace Web.Contributors;\n\npublic class CreateContributorRequest\n{\n  public const string Route = \"/Contributors\";\n  public string Name { get; set; } = \"\";\n}\n",
+        "src/Web/Contributors/Create.cs": "namespace Web.Contributors;\n\npublic class Create : Endpoint<CreateContributorRequest, CreateContributorResponse>\n{\n  public override void Configure()\n  {\n    Post(CreateContributorRequest.Route);\n    AllowAnonymous();\n  }\n\n  public override async Task ExecuteAsync(CreateContributorRequest request, CancellationToken ct)\n  {\n  }\n}\n",
+        "src/Web/Contributors/List.cs": "namespace Web.Contributors;\n\npublic class List : EndpointWithoutRequest<ContributorListResponse>\n{\n  public override void Configure()\n  {\n    Get(\"/Contributors\");\n    AllowAnonymous();\n  }\n\n  public override async Task HandleAsync(CancellationToken ct)\n  {\n  }\n}\n",
+        "src/Web/Projects/List.cs": "namespace Web.Projects;\n\npublic class List : EndpointWithoutRequest<ProjectListResponse>\n{\n  public override void Configure()\n  {\n    Get($\"/{nameof(Project)}s\");\n  }\n\n  public override async Task HandleAsync(CancellationToken ct)\n  {\n  }\n}\n",
+        "src/Api/Program.cs": "var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\napp.MapGet(\"api/todos\", GetTodos);\n",
+        "Startup.cs": "",
+        "Web.csproj": "<Project Sdk=\"Microsoft.NET.Sdk.Web\"></Project>"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:src/Api/Program.cs:3:GET:/api/todos",
+            "kind": "route",
+            "name": "GET /api/todos",
+            "qualifiedName": "src/Api/Program.cs::route:/api/todos",
+            "filePath": "src/Api/Program.cs",
+            "language": "csharp",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 29,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": []
+        },
+        {
+          "node": {
+            "id": "route:src/Web/Contributors/Create.cs:7:POST:CreateContributorRequest.Route",
+            "kind": "route",
+            "name": "POST /Contributors",
+            "qualifiedName": "src/Web/Contributors/Create.cs::fastendpoint:POST:const:CreateContributorRequest.Route",
+            "filePath": "src/Web/Contributors/Create.cs",
+            "language": "csharp",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:src/Web/Contributors/Create.cs:7:POST:CreateContributorRequest.Route",
+                "target": "method:6e284ea119dcdd2398100db7fc7a1be6",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.9,
+                  "resolvedBy": "exact-match",
+                  "refName": "ExecuteAsync"
+                },
+                "line": 7,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:6e284ea119dcdd2398100db7fc7a1be6",
+                "kind": "method",
+                "name": "ExecuteAsync",
+                "qualifiedName": "Web.Contributors::Create::ExecuteAsync",
+                "filePath": "src/Web/Contributors/Create.cs",
+                "language": "csharp",
+                "startLine": 11,
+                "endLine": 13,
+                "startColumn": 2,
+                "endColumn": 3,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": true,
+                "isStatic": false,
+                "isAbstract": false,
+                "returnType": "Task"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:src/Web/Contributors/List.cs:7:GET:/Contributors",
+            "kind": "route",
+            "name": "GET /Contributors",
+            "qualifiedName": "src/Web/Contributors/List.cs::fastendpoint:GET:/Contributors",
+            "filePath": "src/Web/Contributors/List.cs",
+            "language": "csharp",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:src/Web/Contributors/List.cs:7:GET:/Contributors",
+                "target": "method:0fc47a604ca29e43ea4ba3e8145ad65e",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.7,
+                  "resolvedBy": "exact-match",
+                  "refName": "HandleAsync"
+                },
+                "line": 7,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:0fc47a604ca29e43ea4ba3e8145ad65e",
+                "kind": "method",
+                "name": "HandleAsync",
+                "qualifiedName": "Web.Contributors::List::HandleAsync",
+                "filePath": "src/Web/Contributors/List.cs",
+                "language": "csharp",
+                "startLine": 11,
+                "endLine": 13,
+                "startColumn": 2,
+                "endColumn": 3,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": true,
+                "isStatic": false,
+                "isAbstract": false,
+                "returnType": "Task"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:src/Web/Projects/List.cs:7:GET:/Projects",
+            "kind": "route",
+            "name": "GET /Projects",
+            "qualifiedName": "src/Web/Projects/List.cs::fastendpoint:GET:/Projects",
+            "filePath": "src/Web/Projects/List.cs",
+            "language": "csharp",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:src/Web/Projects/List.cs:7:GET:/Projects",
+                "target": "method:2b5ccdc9fd93991c3060ba094fdc6782",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.7,
+                  "resolvedBy": "exact-match",
+                  "refName": "HandleAsync"
+                },
+                "line": 7,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:2b5ccdc9fd93991c3060ba094fdc6782",
+                "kind": "method",
+                "name": "HandleAsync",
+                "qualifiedName": "Web.Projects::List::HandleAsync",
+                "filePath": "src/Web/Projects/List.cs",
+                "language": "csharp",
+                "startLine": 10,
+                "endLine": 12,
+                "startColumn": 2,
+                "endColumn": 3,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": true,
+                "isStatic": false,
+                "isAbstract": false,
+                "returnType": "Task"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-prefix-and-override",
+      "files": {
+        "Endpoints/Todos.cs": "public class Todos : IEndpointGroup { void Map(RouteGroupBuilder group){ group.MapGet(List); group.MapPut(Update,\"{id}\"); } public string List() => \"\"; public string Update() => \"\"; }",
+        "Endpoints/Own.cs": "public class Own : IEndpointGroup { public string RoutePrefix => \"/v2/own\"; void Map(RouteGroupBuilder group){ group.MapPost(Create); } public string Create() => \"\"; }",
+        "Extensions.cs": "var group = app.MapGroup($\"/api/{groupName}\");",
+        "Startup.cs": "",
+        "Web.csproj": "<Project Sdk=\"Microsoft.NET.Sdk.Web\"></Project>"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:Endpoints/Own.cs:1:POST:/v2/own",
+            "kind": "route",
+            "name": "POST /v2/own",
+            "qualifiedName": "Endpoints/Own.cs::group:Own:POST:",
+            "filePath": "Endpoints/Own.cs",
+            "language": "csharp",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:Endpoints/Own.cs:1:POST:/v2/own",
+                "target": "method:c1b0d2c3ec90352e51fa3f79ba670d54",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.9,
+                  "resolvedBy": "exact-match",
+                  "refName": "Create"
+                },
+                "line": 1,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:c1b0d2c3ec90352e51fa3f79ba670d54",
+                "kind": "method",
+                "name": "Create",
+                "qualifiedName": "Own::Create",
+                "filePath": "Endpoints/Own.cs",
+                "language": "csharp",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 136,
+                "endColumn": 165,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:Endpoints/Todos.cs:1:GET:/Todos",
+            "kind": "route",
+            "name": "GET /api/Todos",
+            "qualifiedName": "Endpoints/Todos.cs::group:Todos:GET:",
+            "filePath": "Endpoints/Todos.cs",
+            "language": "csharp",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 13,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:Endpoints/Todos.cs:1:GET:/Todos",
+                "target": "method:fd5926144a1c4abdfb0f810999ea187e",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.9,
+                  "resolvedBy": "exact-match",
+                  "refName": "List"
+                },
+                "line": 1,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:fd5926144a1c4abdfb0f810999ea187e",
+                "kind": "method",
+                "name": "List",
+                "qualifiedName": "Todos::List",
+                "filePath": "Endpoints/Todos.cs",
+                "language": "csharp",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 124,
+                "endColumn": 151,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:Endpoints/Todos.cs:1:PUT:/Todos/{id}",
+            "kind": "route",
+            "name": "PUT /api/Todos/{id}",
+            "qualifiedName": "Endpoints/Todos.cs::group:Todos:PUT:{id}",
+            "filePath": "Endpoints/Todos.cs",
+            "language": "csharp",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 22,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:Endpoints/Todos.cs:1:PUT:/Todos/{id}",
+                "target": "method:34c89fd0c13478a50cc30fb3d21b9adb",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.9,
+                  "resolvedBy": "exact-match",
+                  "refName": "Update"
+                },
+                "line": 1,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:34c89fd0c13478a50cc30fb3d21b9adb",
+                "kind": "method",
+                "name": "Update",
+                "qualifiedName": "Todos::Update",
+                "filePath": "Endpoints/Todos.cs",
+                "language": "csharp",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 152,
+                "endColumn": 181,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "constant-variants",
+      "files": {
+        "Request.cs": "public struct Request { public static readonly string Route = \"items/\"; }",
+        "Endpoint.cs": "public class Endpoint : FastEndpoints.Endpoint<Request> { public override void Configure(){ Post(Request.Route); Get(Missing.Route); } public Task HandleAsync() {} }",
+        "Startup.cs": "",
+        "Web.csproj": "<Project Sdk=\"Microsoft.NET.Sdk.Web\"></Project>"
+      },
+      "routes": [
+        {
+          "node": {
+            "id": "route:Endpoint.cs:1:GET:Missing.Route",
+            "kind": "route",
+            "name": "GET Missing.Route",
+            "qualifiedName": "Endpoint.cs::fastendpoint:GET:const:Missing.Route",
+            "filePath": "Endpoint.cs",
+            "language": "csharp",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:Endpoint.cs:1:GET:Missing.Route",
+                "target": "method:8c0906c728c09d7c543eb14a33800950",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.9,
+                  "resolvedBy": "exact-match",
+                  "refName": "HandleAsync"
+                },
+                "line": 1,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:8c0906c728c09d7c543eb14a33800950",
+                "kind": "method",
+                "name": "HandleAsync",
+                "qualifiedName": "Endpoint::HandleAsync",
+                "filePath": "Endpoint.cs",
+                "language": "csharp",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 135,
+                "endColumn": 163,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false,
+                "returnType": "Task"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "id": "route:Endpoint.cs:1:POST:Request.Route",
+            "kind": "route",
+            "name": "POST /items",
+            "qualifiedName": "Endpoint.cs::fastendpoint:POST:const:Request.Route",
+            "filePath": "Endpoint.cs",
+            "language": "csharp",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "visibility": null,
+            "isExported": false,
+            "isAsync": false,
+            "isStatic": false,
+            "isAbstract": false
+          },
+          "targets": [
+            {
+              "edge": {
+                "source": "route:Endpoint.cs:1:POST:Request.Route",
+                "target": "method:8c0906c728c09d7c543eb14a33800950",
+                "kind": "references",
+                "metadata": {
+                  "confidence": 0.9,
+                  "resolvedBy": "exact-match",
+                  "refName": "HandleAsync"
+                },
+                "line": 1,
+                "column": 0,
+                "provenance": null
+              },
+              "node": {
+                "id": "method:8c0906c728c09d7c543eb14a33800950",
+                "kind": "method",
+                "name": "HandleAsync",
+                "qualifiedName": "Endpoint::HandleAsync",
+                "filePath": "Endpoint.cs",
+                "language": "csharp",
+                "startLine": 1,
+                "endLine": 1,
+                "startColumn": 135,
+                "endColumn": 163,
+                "visibility": "public",
+                "isExported": false,
+                "isAsync": false,
+                "isStatic": false,
+                "isAbstract": false,
+                "returnType": "Task"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

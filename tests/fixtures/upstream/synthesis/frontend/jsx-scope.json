@@ -1,0 +1,806 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "source": "                                        \r\nexport function Page({ items }) {\r\n  const re = /        /g, s = '          ', t = `         ${items.map((i) => <Item key={i} />)}`;\r\n  return (\r\n    <Shell title=\"        \">\r\n      {              } Don't <Link to=\"  \">go</Link> to https://a.b/c\r\n    </Shell>\r\n  );\r\n}",
+      "name": "Item",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "                                        \r\nexport function Page({ items }) {\r\n  const re = /        /g, s = '          ', t = `         ${items.map((i) => <Item key={i} />)}`;\r\n  return (\r\n    <Shell title=\"        \">\r\n      {              } Don't <Link to=\"  \">go</Link> to https://a.b/c\r\n    </Shell>\r\n  );\r\n}",
+      "name": "Shell",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "                                        \r\nexport function Page({ items }) {\r\n  const re = /        /g, s = '          ', t = `         ${items.map((i) => <Item key={i} />)}`;\r\n  return (\r\n    <Shell title=\"        \">\r\n      {              } Don't <Link to=\"  \">go</Link> to https://a.b/c\r\n    </Shell>\r\n  );\r\n}",
+      "name": "Link",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "type Fn = <T>(x: T) => T;\ninterface Call { <T>(x: T): T }\nconst first = <T,>(items: T[]) => items[0];\nconst Table = <Entry extends Base>({ rows }) => <Grid rows={rows} label='    ' />;\nconst c = i++ / 2, d = x! < y;",
+      "name": "T",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "type Fn = <T>(x: T) => T;\ninterface Call { <T>(x: T): T }\nconst first = <T,>(items: T[]) => items[0];\nconst Table = <Entry extends Base>({ rows }) => <Grid rows={rows} label='    ' />;\nconst c = i++ / 2, d = x! < y;",
+      "name": "Entry",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "type Fn = <T>(x: T) => T;\ninterface Call { <T>(x: T): T }\nconst first = <T,>(items: T[]) => items[0];\nconst Table = <Entry extends Base>({ rows }) => <Grid rows={rows} label='    ' />;\nconst c = i++ / 2, d = x! < y;",
+      "name": "Grid",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const a = <A><B></A></B>;",
+      "name": "A",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const a = <A><B></A></B>;",
+      "name": "B",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Card } from '           ';\nexport function Grid() { return <div><Card /></div>; }\n",
+      "name": "Card",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Row } from '          ';\nexport function List() { return <ul><Row /></ul>; }\n",
+      "name": "Row",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "function Pill() { return <span>local</span>; }\nexport function Toolbar() { return <div><Pill /></div>; }\n",
+      "name": "Pill",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { CaptureSettings } from '                  ';\nexport function Overlay() { return <div><CaptureSettings /></div>; }\n",
+      "name": "CaptureSettings",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Badge } from '            ';\nexport function Header() { return <h1><Badge /></h1>; }\n",
+      "name": "Badge",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "export function PaginatedList<T>({ items }: { items: T[] }) {\n  return <ul>{items.length}</ul>;\n}\n",
+      "name": "T",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\nimport Document from '                  ';\nimport User from '              ';\nimport { Badge } from '       ';\nimport { PaginatedList } from '               ';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n",
+      "name": "User",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\nimport Document from '                  ';\nimport User from '              ';\nimport { Badge } from '       ';\nimport { PaginatedList } from '               ';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n",
+      "name": "Badge",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\nimport Document from '                  ';\nimport User from '              ';\nimport { Badge } from '       ';\nimport { PaginatedList } from '               ';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n",
+      "name": "PaginatedList",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\nimport Document from '                  ';\nimport User from '              ';\nimport { Badge } from '       ';\nimport { PaginatedList } from '               ';\n\nexport function DocumentList({ items }: { items: Document[] }) {\n  const [owner] = React.useState<User | null>(null);\n  const badge = React.useRef<Badge>(null);\n  return (\n    <div>\n      <PaginatedList<Document> items={items} />\n      <Badge ref={badge} />\n    </div>\n  );\n}\n",
+      "name": "Document",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "type BaseEntity = { id: string };\n\nexport const Table = <Entry extends BaseEntity>({ data }: { data: Entry[] }) => {\n  return <table>{data.length}</table>;\n};\n",
+      "name": "Entry",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as DropdownMenu from '                             ';\nimport * as ContextMenu from '                            ';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === '        ' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === '        '\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n",
+      "name": "Portal",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import * as DropdownMenu from '                             ';\nimport * as ContextMenu from '                            ';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === '        ' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === '        '\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n",
+      "name": "Content",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import * as DropdownMenu from '                             ';\nimport * as ContextMenu from '                            ';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === '        ' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === '        '\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n",
+      "name": "Icon",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import * as DropdownMenu from '                             ';\nimport * as ContextMenu from '                            ';\n\nconst Portal = DropdownMenu.Portal;\n\nexport function SubMenuContent({ variant, children }) {\n  const Portal =\n    variant === '        ' ? DropdownMenu.Portal : ContextMenu.Portal;\n  const Content =\n    variant === '        '\n      ? DropdownMenu.SubContent\n      : ContextMenu.SubContent;\n  return (\n    <Portal>\n      <Content collisionPadding={6}>{children}</Content>\n    </Portal>\n  );\n}\n\nexport function SettingsLinks({ config }) {\n  return (\n    <ul>\n      {config.map((item) => {\n        const Icon = item.icon;\n        return <li key={item.path}><Icon /></li>;\n      })}\n    </ul>\n  );\n}\n\nexport function Widgets({ widgets }) {\n  return <div>{Object.values(widgets).map((Widget, index) => <Widget key={index} />)}</div>;\n}\n",
+      "name": "Widget",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { Icon } from '      ';\n\nfunction Row() {\n  return <tr className=\"     \" />;\n}\n\nexport function Table({ rows }) {\n  const Row = ({ row }) => <tr>{row.name}</tr>;\n  return <table>{rows.map((row) => <Row key={row.id} row={row} />)}</table>;\n}\n\nexport function Toolbar({ actions }) {\n  return (\n    <div>\n      <Icon />\n      {actions.map((action) => {\n        const Icon = action.icon;\n        return <Icon key={action.id} />;\n      })}\n    </div>\n  );\n}\n",
+      "name": "Row",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { Icon } from '      ';\n\nfunction Row() {\n  return <tr className=\"     \" />;\n}\n\nexport function Table({ rows }) {\n  const Row = ({ row }) => <tr>{row.name}</tr>;\n  return <table>{rows.map((row) => <Row key={row.id} row={row} />)}</table>;\n}\n\nexport function Toolbar({ actions }) {\n  return (\n    <div>\n      <Icon />\n      {actions.map((action) => {\n        const Icon = action.icon;\n        return <Icon key={action.id} />;\n      })}\n    </div>\n  );\n}\n",
+      "name": "Icon",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "export default function ExampleApp({ excalidrawLib }) {\n  const { WelcomeScreen, exportToSvg, Sidebar } = excalidrawLib;\n  const renderSidebar = () => {\n    return <Sidebar name=\"      \" />;\n  };\n  return <div><WelcomeScreen />{renderSidebar()}</div>;\n}\n",
+      "name": "Sidebar",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "export default function ExampleApp({ excalidrawLib }) {\n  const { WelcomeScreen, exportToSvg, Sidebar } = excalidrawLib;\n  const renderSidebar = () => {\n    return <Sidebar name=\"      \" />;\n  };\n  return <div><WelcomeScreen />{renderSidebar()}</div>;\n}\n",
+      "name": "WelcomeScreen",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "export const Layout = ({ children, Header, Footer }) => {\n  return (\n    <div>\n      {Header && <Header />}\n      {children}\n      {Footer && <Footer />}\n    </div>\n  );\n};\n",
+      "name": "Header",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "export const Layout = ({ children, Header, Footer }) => {\n  return (\n    <div>\n      {Header && <Header />}\n      {children}\n      {Footer && <Footer />}\n    </div>\n  );\n};\n",
+      "name": "Footer",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\n\nexport function Nav({ items, slots: { Panel } }) {\n  const [Icon] = React.useState(null);\n  return (\n    <ul>\n      {items.map(({ icon: Glyph, label }) => <li key={label}><Glyph /><Icon /></li>)}\n      <Panel />\n    </ul>\n  );\n}\n",
+      "name": "Glyph",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\n\nexport function Nav({ items, slots: { Panel } }) {\n  const [Icon] = React.useState(null);\n  return (\n    <ul>\n      {items.map(({ icon: Glyph, label }) => <li key={label}><Glyph /><Icon /></li>)}\n      <Panel />\n    </ul>\n  );\n}\n",
+      "name": "Icon",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\n\nexport function Nav({ items, slots: { Panel } }) {\n  const [Icon] = React.useState(null);\n  return (\n    <ul>\n      {items.map(({ icon: Glyph, label }) => <li key={label}><Glyph /><Icon /></li>)}\n      <Panel />\n    </ul>\n  );\n}\n",
+      "name": "Panel",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "export function Menu({ items }) {\n  const Icon = items[0].icon;\n  const renderItem = (item) => <li key={item.id}><Icon /></li>;\n  return <ul>{items.map(renderItem)}</ul>;\n}\n\nexport function Tree({ nodes }) {\n  const StyledItem = ({ label }) => <li>{label}</li>;\n  const renderNode = (node) => <StyledItem key={node.id} label={node.label} />;\n  return <ul>{nodes.map(renderNode)}</ul>;\n}\n",
+      "name": "Icon",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "export function Menu({ items }) {\n  const Icon = items[0].icon;\n  const renderItem = (item) => <li key={item.id}><Icon /></li>;\n  return <ul>{items.map(renderItem)}</ul>;\n}\n\nexport function Tree({ nodes }) {\n  const StyledItem = ({ label }) => <li>{label}</li>;\n  const renderNode = (node) => <StyledItem key={node.id} label={node.label} />;\n  return <ul>{nodes.map(renderNode)}</ul>;\n}\n",
+      "name": "StyledItem",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "export function Table({ rows, columns }) {\n  function Cell({ value }) {\n    return <td>{value}</td>;\n  }\n  const titles = columns.map(({ Cell, title }) => title);\n  return <table>{rows.map((row) => <tr key={row.id}><Cell value={row.value} /></tr>)}</table>;\n}\n",
+      "name": "Cell",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "import { Footer } from '        ';\nimport { Fallback } from '          ';\nimport { Badge } from '       ';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n",
+      "name": "Footer",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Footer } from '        ';\nimport { Fallback } from '          ';\nimport { Badge } from '       ';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n",
+      "name": "Fallback",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Footer } from '        ';\nimport { Fallback } from '          ';\nimport { Badge } from '       ';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n",
+      "name": "Slot",
+      "patterns": [],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "import { Footer } from '        ';\nimport { Fallback } from '          ';\nimport { Badge } from '       ';\n\nexport function Card({ parts, Slot = Fallback }) {\n  const { Footer: CustomFooter } = parts;\n  return (\n    <div>\n      <Footer />\n      <Fallback />\n      <Slot />\n    </div>\n  );\n}\n\nexport function Tag({ label }: { label: string, badge: Badge }) {\n  return <Badge>{label}</Badge>;\n}\n\nexport function Note(props: { badge: Badge }) {\n  return <Badge />;\n}\n\nexport function Shell({ render }) {\n  return render({ Footer }) ?? <Footer />;\n}\n",
+      "name": "Badge",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "function LegacyPage() {\n  const { Legacy } = require('        ');\n  return <Legacy />;\n}\n\nasync function renderChart() {\n  const { Chart } = await import('       ');\n  return <Chart />;\n}\n\nmodule.exports = { LegacyPage, renderChart };\n",
+      "name": "Legacy",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "function LegacyPage() {\n  const { Legacy } = require('        ');\n  return <Legacy />;\n}\n\nasync function renderChart() {\n  const { Chart } = await import('       ');\n  return <Chart />;\n}\n\nmodule.exports = { LegacyPage, renderChart };\n",
+      "name": "Chart",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Typography } from '    ';\n\nconst { Title, Text } = Typography;\n\nexport function PostShow({ post }) {\n  return (\n    <div>\n      <Title level={5}>Title</Title>\n      <Text>{post.title}</Text>\n    </div>\n  );\n}\n\nexport function Summary() {\n  function Text({ children }) {\n    return <p>{children}</p>;\n  }\n  return <Text>summary</Text>;\n}\n",
+      "name": "Title",
+      "patterns": [
+        [
+          42,
+          56
+        ]
+      ],
+      "top": true,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "import { Typography } from '    ';\n\nconst { Title, Text } = Typography;\n\nexport function PostShow({ post }) {\n  return (\n    <div>\n      <Title level={5}>Title</Title>\n      <Text>{post.title}</Text>\n    </div>\n  );\n}\n\nexport function Summary() {\n  function Text({ children }) {\n    return <p>{children}</p>;\n  }\n  return <Text>summary</Text>;\n}\n",
+      "name": "Text",
+      "patterns": [
+        [
+          42,
+          56
+        ]
+      ],
+      "top": true,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "const { Legacy } = require('        ');\n\n[1].forEach(({ Badge }) => Badge);\n\nfunction helper(props) {\n  const { Chart } = props;\n  return Chart;\n}\n\nexport function Page() {\n  return <div><Legacy /><Badge /><Chart />{helper}</div>;\n}\n",
+      "name": "Legacy",
+      "patterns": [
+        [
+          6,
+          15
+        ]
+      ],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const { Legacy } = require('        ');\n\n[1].forEach(({ Badge }) => Badge);\n\nfunction helper(props) {\n  const { Chart } = props;\n  return Chart;\n}\n\nexport function Page() {\n  return <div><Legacy /><Badge /><Chart />{helper}</div>;\n}\n",
+      "name": "Badge",
+      "patterns": [
+        [
+          6,
+          15
+        ]
+      ],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "const { Legacy } = require('        ');\n\n[1].forEach(({ Badge }) => Badge);\n\nfunction helper(props) {\n  const { Chart } = props;\n  return Chart;\n}\n\nexport function Page() {\n  return <div><Legacy /><Badge /><Chart />{helper}</div>;\n}\n",
+      "name": "Chart",
+      "patterns": [
+        [
+          6,
+          15
+        ]
+      ],
+      "top": false,
+      "destructures": true,
+      "binds": false
+    },
+    {
+      "source": "type PaginatedItem = { id: string };\n\nconst PaginatedList = <T extends PaginatedItem>({ items }: { items: T[] }) => {\n  return <ul>{items.length}</ul>;\n};\n\nexport default PaginatedList;\n",
+      "name": "T",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "export const RadioSelection = <T extends Object>({ value }: { value: T }) => {\n  return <div>{String(value)}</div>;\n};\n",
+      "name": "T",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "name": "PaginatedList",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "name": "Document",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "name": "RadioSelection",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "name": "Exclude",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import PaginatedList from '               ';\nimport { RadioSelection } from '                ';\nimport { DataTable } from '           ';\nimport Document from '                  ';\nimport { Mode } from '              ';\n\nexport function DocumentList({ documents, mode }: { documents: Document[]; mode: Mode }) {\n  return (\n    <section>\n      <PaginatedList<Document>\n        items={documents}\n      />\n      <RadioSelection<Exclude<Mode, \"auto\"> | false> value={mode} />\n      <DataTable<Document, string> rows={documents} columns={[]}>\n        <p>{documents.length}</p>\n      </DataTable>\n    </section>\n  );\n}\n",
+      "name": "DataTable",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\n\nexport class Grid<Row> extends React.Component<{ rows: Row[] }> {\n  render() {\n    return <table>{this.props.rows.length}</table>;\n  }\n}\n",
+      "name": "Row",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\nimport { Grid } from '      ';\n\nexport function Report({ rows }: { rows: string[] }) {\n  const grid = React.useRef<Grid<string>>(null);\n  const [grids] = React.useState<Array<Grid<string>>>([]);\n  return <section>{rows.length + grids.length}</section>;\n}\n",
+      "name": "Grid",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import * as React from '     ';\nimport { Grid } from '      ';\n\nexport function Report({ rows }: { rows: string[] }) {\n  const grid = React.useRef<Grid<string>>(null);\n  const [grids] = React.useState<Array<Grid<string>>>([]);\n  return <section>{rows.length + grids.length}</section>;\n}\n",
+      "name": "Array",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Select } from '       ';\nimport { Table } from '    ';\n\ntype IPost = { id: number };\n\nexport function PostList({ posts }: { posts: IPost[] }) {\n  return (\n    <div>\n      <Select<number> options={[]} />\n      <Table<IPost> dataSource={posts} />\n    </div>\n  );\n}\n",
+      "name": "Select",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Select } from '       ';\nimport { Table } from '    ';\n\ntype IPost = { id: number };\n\nexport function PostList({ posts }: { posts: IPost[] }) {\n  return (\n    <div>\n      <Select<number> options={[]} />\n      <Table<IPost> dataSource={posts} />\n    </div>\n  );\n}\n",
+      "name": "Table",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Select } from '       ';\nimport { Table } from '    ';\n\ntype IPost = { id: number };\n\nexport function PostList({ posts }: { posts: IPost[] }) {\n  return (\n    <div>\n      <Select<number> options={[]} />\n      <Table<IPost> dataSource={posts} />\n    </div>\n  );\n}\n",
+      "name": "IPost",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { lazy } from '     ';\nimport Loadable from '                      ';\n\nconst RegisterPage = Loadable(lazy(() => import('                      ')));\n\nexport function AuthShell() {\n  return <main><RegisterPage /></main>;\n}\n",
+      "name": "RegisterPage",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { lazy } from '     ';\nimport Loadable from '                      ';\n\n                                                           \nconst LoginPage = Loadable(lazy(() => import('                ')));\n\nexport function AuthShell() {\n  return <main>Sign in <LoginPage /></main>;\n}\n",
+      "name": "LoginPage",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import dynamic from '            ';\n\nconst Excalidraw = dynamic(\n  async () => (await import('                    ')).default,\n  {\n    ssr: false,\n  },\n);\n\nexport default function Page() {\n  return <Excalidraw />;\n}\n",
+      "name": "Excalidraw",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { lazy } from '     ';\nconst LineChart = lazy(() => import('        ').then((m) => ({ default: m.LineChart })));\nexport function Dashboard() {\n  return <LineChart />;\n}\n",
+      "name": "LineChart",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { lazy } from '     ';\nconst Login = lazy(() => import('        '));\nexport function SharedScene() {\n  return <Login />;\n}\n",
+      "name": "Login",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { observer } from '          ';\nimport * as DialogPrimitive from '                      ';\n\nconst DialogPortal = DialogPrimitive.Portal;\n\nconst Application = observer(function Application() {\n  return <div />;\n});\n\nfunction TableViewInner() {\n  return <table />;\n}\n\nconst TableView = observer(TableViewInner) as typeof TableViewInner;\n\nexport function Settings() {\n  return <DialogPortal><Application /><TableView /></DialogPortal>;\n}\n",
+      "name": "DialogPortal",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { observer } from '          ';\nimport * as DialogPrimitive from '                      ';\n\nconst DialogPortal = DialogPrimitive.Portal;\n\nconst Application = observer(function Application() {\n  return <div />;\n});\n\nfunction TableViewInner() {\n  return <table />;\n}\n\nconst TableView = observer(TableViewInner) as typeof TableViewInner;\n\nexport function Settings() {\n  return <DialogPortal><Application /><TableView /></DialogPortal>;\n}\n",
+      "name": "Application",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { observer } from '          ';\nimport * as DialogPrimitive from '                      ';\n\nconst DialogPortal = DialogPrimitive.Portal;\n\nconst Application = observer(function Application() {\n  return <div />;\n});\n\nfunction TableViewInner() {\n  return <table />;\n}\n\nconst TableView = observer(TableViewInner) as typeof TableViewInner;\n\nexport function Settings() {\n  return <DialogPortal><Application /><TableView /></DialogPortal>;\n}\n",
+      "name": "TableView",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "name": "Item",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "name": "HTMLInputElement",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "name": "AuthZDevModal",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "name": "Combobox",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import React, { forwardRef } from '     ';\n\nconst IS_DEV = process.env.NODE_ENV === '           ';\n\nconst AuthZDevModal = IS_DEV\n  ? React.lazy(() =>\n      import('                            ').then((m) => ({\n        default: m.AuthZDevModal,\n      })),\n    )\n  : null;\n\nconst ComboboxWithRef = <Item extends { id: string }>(\n  props: { items: Item[] },\n  ref: React.ForwardedRef<HTMLInputElement>,\n) => {\n  return <input ref={ref} />;\n};\n\nexport const Combobox = forwardRef(ComboboxWithRef) as {\n  <Item extends { id: string }>(props: { items: Item[] }): ReturnType<typeof ComboboxWithRef>;\n  displayName: string;\n};\n\nfunction Rows({ rows }: { rows: string[] }) {\n  return <ul>{rows.map((row) => <li key={row}>{row}</li>)}</ul>;\n}\n\nconst MemoizedRows = React.memo(\n  Rows,\n  (prev, next) => prev.rows === next.rows,\n) as typeof Rows;\n\nexport function Palette() {\n  return <div>{AuthZDevModal && <AuthZDevModal />}<Combobox items={[]} /><MemoizedRows rows={[]} /></div>;\n}\n",
+      "name": "MemoizedRows",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { z } from '   ';\nimport { useForm } from '               ';\nimport { withFallback } from '          ';\n\nconst Schema = z.object({ name: z.string() });\ntype Schema = z.infer<typeof Schema>;\n\nconst Dialog = withFallback('      ', (props) => {\n  const load = () => import('       ');\n  return <div onClick={load} />;\n});\n\nexport function Form() {\n  const form = useForm<Schema>();\n  return <form><Dialog /></form>;\n}\n",
+      "name": "Schema",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import { z } from '   ';\nimport { useForm } from '               ';\nimport { withFallback } from '          ';\n\nconst Schema = z.object({ name: z.string() });\ntype Schema = z.infer<typeof Schema>;\n\nconst Dialog = withFallback('      ', (props) => {\n  const load = () => import('       ');\n  return <div onClick={load} />;\n});\n\nexport function Form() {\n  const form = useForm<Schema>();\n  return <form><Dialog /></form>;\n}\n",
+      "name": "Dialog",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import Sidebar from '         ';\n\nexport function AuthenticatedLayout() {\n  return <main><Sidebar /></main>;\n}\n",
+      "name": "Sidebar",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { StaticCanvas } from '          ';\n\nexport function App() {\n  return <div><StaticCanvas /></div>;\n}\n",
+      "name": "StaticCanvas",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import React from '     ';\n\nexport const Inner = React.forwardRef<HTMLSpanElement, object>((props, ref) => <span ref={ref} {...props} />);\n\nfunction Button(props: object, ref: React.Ref<HTMLButtonElement>) {\n  return <button ref={ref}><Inner /></button>;\n}\n\nexport default React.forwardRef<HTMLButtonElement, object>(Button);\n",
+      "name": "HTMLButtonElement",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import React from '     ';\n\nexport const Inner = React.forwardRef<HTMLSpanElement, object>((props, ref) => <span ref={ref} {...props} />);\n\nfunction Button(props: object, ref: React.Ref<HTMLButtonElement>) {\n  return <button ref={ref}><Inner /></button>;\n}\n\nexport default React.forwardRef<HTMLButtonElement, object>(Button);\n",
+      "name": "Inner",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import ToolbarButton from '        ';\n\nexport function Toolbar() {\n  return <div><ToolbarButton /></div>;\n}\n",
+      "name": "ToolbarButton",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Button } from '                      ';\n\nexport function LoginForm() {\n  return <form><Button /></form>;\n}\n",
+      "name": "Button",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Blurhash } from '          ';\n\nexport function MediaItem() {\n  return <div><Blurhash hash=\" \" /></div>;\n}\n",
+      "name": "Blurhash",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { observer } from '          ';\nimport Avatar from '        ';\n\nfunction AvatarWithHoverCard() {\n  return <div><Avatar /></div>;\n}\n\nexport default observer(AvatarWithHoverCard);\n",
+      "name": "Avatar",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Avatar } from '                   ';\n\nexport function CommentForm() {\n  return <form><Avatar /></form>;\n}\n",
+      "name": "Avatar",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import { Button } from '        ';\n\nexport function Toolbar() {\n  return <div><Button /></div>;\n}\n",
+      "name": "Button",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "export const Link = ({ href }: { href: string }) => <a href={href} />;\n\nexport default ({ url }: { url: string }) => (\n  <footer><Link href={url} /></footer>\n);\n",
+      "name": "Link",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": true
+    },
+    {
+      "source": "import Footer from '                   ';\n\nexport function Welcome() {\n  return <div><Footer url=\" \" /></div>;\n}\n",
+      "name": "Footer",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "import Card from '      ';\n\nexport function Deck() {\n  return <section><Card /></section>;\n}\n",
+      "name": "Card",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "        \r\nconst text = \"        \";\r\nconst el = <Ärea title=\"  \"><Real/></Ärea>;\r\n",
+      "name": "Real",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const x = `  ${<A value=\"  \"/>}     ${`      ${<B/>}`}`;\n",
+      "name": "A",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const x = `  ${<A value=\"  \"/>}     ${`      ${<B/>}`}`;\n",
+      "name": "B",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const x = <A title=\"    \r\n     \"><B/>don't</A>;\n",
+      "name": "A",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const x = <A title=\"    \r\n     \"><B/>don't</A>;\n",
+      "name": "B",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const id = <T,>(value:T)=>value;\nconst el = <List<Item>><Child/></List>;\n",
+      "name": "List",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const id = <T,>(value:T)=>value;\nconst el = <List<Item>><Child/></List>;\n",
+      "name": "Item",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const id = <T,>(value:T)=>value;\nconst el = <List<Item>><Child/></List>;\n",
+      "name": "Child",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const x = <A><B/></C>;\n",
+      "name": "A",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    },
+    {
+      "source": "const x = <A><B/></C>;\n",
+      "name": "B",
+      "patterns": [],
+      "top": false,
+      "destructures": false,
+      "binds": false
+    }
+  ]
+}

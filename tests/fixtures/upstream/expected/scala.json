@@ -1,0 +1,2285 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.scala",
+      "kind": "file",
+      "name": "torture.scala",
+      "qualifiedName": "torture.scala",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 1,
+      "endLine": 185,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:00014f95d514cd4a9297fb78c6d267a7",
+      "kind": "import",
+      "name": "com",
+      "qualifiedName": "com",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 0,
+      "endColumn": 35,
+      "signature": "import com.example.other.OtherClass"
+    },
+    {
+      "id": "import:ed474bc6ee3099836b5c8f1e31127b63",
+      "kind": "import",
+      "name": "com",
+      "qualifiedName": "com",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 38,
+      "signature": "import com.example.multi.{Alpha, Beta}"
+    },
+    {
+      "id": "import:1288c18744e62c47b9b3be49ac81f4a1",
+      "kind": "import",
+      "name": "com",
+      "qualifiedName": "com",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "import com.example.wild._"
+    },
+    {
+      "id": "import:ab6c61e8c52249be510f277068cfc04e",
+      "kind": "import",
+      "name": "com",
+      "qualifiedName": "com",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 6,
+      "endLine": 6,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "import com.example.star.*"
+    },
+    {
+      "id": "import:e1706aa2e260f33b33b831aae0faf845",
+      "kind": "import",
+      "name": "com",
+      "qualifiedName": "com",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 44,
+      "signature": "import com.example.alias.{LongName => Short}"
+    },
+    {
+      "id": "function:e611a10f53cb2352067120211e7632b2",
+      "kind": "function",
+      "name": "topLevel",
+      "qualifiedName": "topLevel",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 46,
+      "docstring": "Scaladoc for topLevel — kept?",
+      "signature": "(a: Int): WidgetS",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetS"
+    },
+    {
+      "id": "function:57e9ef3ac2dd5932a179cf7d34da29fb",
+      "kind": "function",
+      "name": "lineDoc",
+      "qualifiedName": "lineDoc",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 14,
+      "endLine": 14,
+      "startColumn": 0,
+      "endColumn": 22,
+      "docstring": "line one\nline two",
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "function:fd9e1ad6a248dcc467e99c8f7c23127e",
+      "kind": "function",
+      "name": "curried",
+      "qualifiedName": "curried",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 16,
+      "endLine": 16,
+      "startColumn": 0,
+      "endColumn": 68,
+      "signature": "(a: Int): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "function:014e5ac4509fb26b0b2a1c00f6183b50",
+      "kind": "function",
+      "name": "genericDef",
+      "qualifiedName": "genericDef",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 0,
+      "endColumn": 54,
+      "signature": "[A: Numeric, B <: BoundT]: B",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "B"
+    },
+    {
+      "id": "function:4bbe5036cb83df496762a20ac719edcc",
+      "kind": "function",
+      "name": "inferredRet",
+      "qualifiedName": "inferredRet",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 20,
+      "endLine": 20,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "(a: Int)",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "function:33930da2aae55b3cb98b7441073dd36a",
+      "kind": "function",
+      "name": "unitRet",
+      "qualifiedName": "unitRet",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 22,
+      "endLine": 22,
+      "startColumn": 0,
+      "endColumn": 24,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "function:4ebd50cc2fbf98c17587f1065d31ca78",
+      "kind": "function",
+      "name": "genericLeak",
+      "qualifiedName": "genericLeak",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 24,
+      "endLine": 24,
+      "startColumn": 0,
+      "endColumn": 31,
+      "signature": "[T]: T",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "T"
+    },
+    {
+      "id": "function:d1b22ce81e4dcd9f8f6bd5f508ed2535",
+      "kind": "function",
+      "name": "qualRet",
+      "qualifiedName": "qualRet",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 26,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 55,
+      "signature": "(w: WidgetS): com.example.other.Remote",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Remote"
+    },
+    {
+      "id": "function:89d06036d1c2e7cfa65a0e3814b1f84a",
+      "kind": "function",
+      "name": "privTop",
+      "qualifiedName": "privTop",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 28,
+      "endLine": 28,
+      "startColumn": 0,
+      "endColumn": 30,
+      "signature": "(): Int",
+      "visibility": "private",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "function:f42d18d9932ecf98835384d2a581205f",
+      "kind": "function",
+      "name": "entry",
+      "qualifiedName": "entry",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 30,
+      "endLine": 30,
+      "startColumn": 0,
+      "endColumn": 37,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "function:b816fb5ed257d41cc58189ef5c8e00ec",
+      "kind": "function",
+      "name": "old",
+      "qualifiedName": "old",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 32,
+      "endLine": 32,
+      "startColumn": 0,
+      "endColumn": 45,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "constant:52618211962533a2e3131d57d53cd9d4",
+      "kind": "constant",
+      "name": "topVal",
+      "qualifiedName": "topVal",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 34,
+      "endLine": 34,
+      "startColumn": 0,
+      "endColumn": 19,
+      "signature": "val topVal: Int",
+      "visibility": "public"
+    },
+    {
+      "id": "variable:11e6afeefeea23348d79ed6171ed6abf",
+      "kind": "variable",
+      "name": "topVar",
+      "qualifiedName": "topVar",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 35,
+      "endLine": 35,
+      "startColumn": 0,
+      "endColumn": 14,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:342374b797067fd348d243baa5d427dc",
+      "kind": "constant",
+      "name": "topLazy",
+      "qualifiedName": "topLazy",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 36,
+      "endLine": 36,
+      "startColumn": 0,
+      "endColumn": 28,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:a7b667a1dd69f3c1a2e1a4b9f28267b0",
+      "kind": "constant",
+      "name": "tupA",
+      "qualifiedName": "tupA",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 37,
+      "endLine": 37,
+      "startColumn": 0,
+      "endColumn": 25,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:3c38de0e0ed3e748396ac32a56feb99b",
+      "kind": "constant",
+      "name": "extracted",
+      "qualifiedName": "extracted",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 38,
+      "endLine": 38,
+      "startColumn": 0,
+      "endColumn": 31,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:6260e4d373836585ddb7c21a68324634",
+      "kind": "constant",
+      "name": "SHARED_TABLE",
+      "qualifiedName": "SHARED_TABLE",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 39,
+      "endLine": 39,
+      "startColumn": 0,
+      "endColumn": 46,
+      "signature": "val SHARED_TABLE: Map[String, Int]",
+      "visibility": "public"
+    },
+    {
+      "id": "constant:e292a67ba1b65875d0542be5944199ca",
+      "kind": "constant",
+      "name": "topInit",
+      "qualifiedName": "topInit",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 40,
+      "endLine": 40,
+      "startColumn": 0,
+      "endColumn": 30,
+      "visibility": "public"
+    },
+    {
+      "id": "class:54c0d1e485f298b4f9827706f928657f",
+      "kind": "class",
+      "name": "WidgetS",
+      "qualifiedName": "WidgetS",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 42,
+      "endLine": 63,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "field:d7d40dd594cbbf325699317ef25433f0",
+      "kind": "field",
+      "name": "cachedName",
+      "qualifiedName": "WidgetS::cachedName",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 43,
+      "endLine": 43,
+      "startColumn": 2,
+      "endColumn": 30,
+      "signature": "val cachedName: String",
+      "visibility": "public"
+    },
+    {
+      "id": "field:083fea866073b5984cff14ffa32265b2",
+      "kind": "field",
+      "name": "mutable",
+      "qualifiedName": "WidgetS::mutable",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 44,
+      "endLine": 44,
+      "startColumn": 2,
+      "endColumn": 17,
+      "visibility": "public"
+    },
+    {
+      "id": "field:ef30b04e3cb74dc62955346ded1d4e32",
+      "kind": "field",
+      "name": "secret",
+      "qualifiedName": "WidgetS::secret",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 45,
+      "endLine": 45,
+      "startColumn": 2,
+      "endColumn": 24,
+      "visibility": "private"
+    },
+    {
+      "id": "field:5758f6170eed452aa1dab8d05a923d9d",
+      "kind": "field",
+      "name": "annotatedField",
+      "qualifiedName": "WidgetS::annotatedField",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 46,
+      "endLine": 46,
+      "startColumn": 2,
+      "endColumn": 39,
+      "signature": "var annotatedField: Int",
+      "visibility": "public"
+    },
+    {
+      "id": "method:4edc73b268e7bca2ee297f68aa3b5a32",
+      "kind": "method",
+      "name": "this",
+      "qualifiedName": "WidgetS::this",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 48,
+      "endLine": 48,
+      "startColumn": 2,
+      "endColumn": 27,
+      "signature": "()",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false
+    },
+    {
+      "id": "method:f11a1632c933108942e00d3b2c940adc",
+      "kind": "method",
+      "name": "render",
+      "qualifiedName": "WidgetS::render",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 50,
+      "endLine": 54,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(): RenderResult",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "RenderResult"
+    },
+    {
+      "id": "method:2ced81449f6c49cea1753a5e68ef4fa3",
+      "kind": "method",
+      "name": "+",
+      "qualifiedName": "WidgetS::+",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 56,
+      "endLine": 56,
+      "startColumn": 2,
+      "endColumn": 65,
+      "signature": "(other: WidgetS): WidgetS",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetS"
+    },
+    {
+      "id": "method:a7b6861e2ff780d68310f545ca791d3c",
+      "kind": "method",
+      "name": "compare",
+      "qualifiedName": "WidgetS::compare",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 58,
+      "endLine": 58,
+      "startColumn": 2,
+      "endColumn": 52,
+      "signature": "(that: WidgetS): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:1ef9b6f1c835a12c47628cd82674efc7",
+      "kind": "method",
+      "name": "fast",
+      "qualifiedName": "WidgetS::fast",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 60,
+      "endLine": 60,
+      "startColumn": 2,
+      "endColumn": 29,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:77e06442f583b8a728ecb572f6730060",
+      "kind": "method",
+      "name": "hook",
+      "qualifiedName": "WidgetS::hook",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 62,
+      "endLine": 62,
+      "startColumn": 2,
+      "endColumn": 33,
+      "signature": "(): Unit",
+      "visibility": "protected",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "module:3e98a45ef089de69c402c540a05c492e",
+      "kind": "module",
+      "name": "WidgetS",
+      "qualifiedName": "WidgetS",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 65,
+      "endLine": 69,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "constant:8c40c7aa0ee817d211362e5149ec2220",
+      "kind": "constant",
+      "name": "DEFAULT_SIZE",
+      "qualifiedName": "WidgetS::DEFAULT_SIZE",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 66,
+      "endLine": 66,
+      "startColumn": 2,
+      "endColumn": 23,
+      "visibility": "public"
+    },
+    {
+      "id": "method:90c2e7d9608647c254c97e9a9cfea8f0",
+      "kind": "method",
+      "name": "create",
+      "qualifiedName": "WidgetS::create",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 67,
+      "endLine": 67,
+      "startColumn": 2,
+      "endColumn": 56,
+      "signature": "(): WidgetS",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "WidgetS"
+    },
+    {
+      "id": "method:f141417138453a1e069cb41778364534",
+      "kind": "method",
+      "name": "readDefault",
+      "qualifiedName": "WidgetS::readDefault",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 68,
+      "endLine": 68,
+      "startColumn": 2,
+      "endColumn": 43,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:254935e2ae91f81b8a7691679e76b074",
+      "kind": "class",
+      "name": "DataS",
+      "qualifiedName": "DataS",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 71,
+      "endLine": 71,
+      "startColumn": 0,
+      "endColumn": 43,
+      "visibility": "public"
+    },
+    {
+      "id": "module:2d53b588317ed199b74ef6bfa791d388",
+      "kind": "module",
+      "name": "SingletonS",
+      "qualifiedName": "SingletonS",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 73,
+      "endLine": 73,
+      "startColumn": 0,
+      "endColumn": 38,
+      "visibility": "public"
+    },
+    {
+      "id": "class:a05b852b967a5bc3ff44512f23d3082f",
+      "kind": "class",
+      "name": "AbsS",
+      "qualifiedName": "AbsS",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 75,
+      "endLine": 78,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:5cb5474828b4cc5c37cc6b9923904145",
+      "kind": "method",
+      "name": "abstractM",
+      "qualifiedName": "AbsS::abstractM",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 76,
+      "endLine": 76,
+      "startColumn": 2,
+      "endColumn": 22,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:ff133c26e7e7d636b77122b6c9a5cd98",
+      "kind": "method",
+      "name": "concrete",
+      "qualifiedName": "AbsS::concrete",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 77,
+      "endLine": 77,
+      "startColumn": 2,
+      "endColumn": 39,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "trait:f91851c14912462ae9592cb13a51f3b1",
+      "kind": "trait",
+      "name": "Drawable",
+      "qualifiedName": "Drawable",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 80,
+      "endLine": 84,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:fb3814b6e956f06c3746e1758bfb591d",
+      "kind": "method",
+      "name": "draw",
+      "qualifiedName": "Drawable::draw",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 81,
+      "endLine": 81,
+      "startColumn": 2,
+      "endColumn": 18,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "method:ef770437bcc4f4b3a1dbf17b8a1720a6",
+      "kind": "method",
+      "name": "area",
+      "qualifiedName": "Drawable::area",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 82,
+      "endLine": 82,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "(): Double",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Double"
+    },
+    {
+      "id": "field:3ee68904db11f62059a076599040234d",
+      "kind": "field",
+      "name": "traitVal",
+      "qualifiedName": "Drawable::traitVal",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 83,
+      "endLine": 83,
+      "startColumn": 2,
+      "endColumn": 23,
+      "signature": "val traitVal: Int",
+      "visibility": "public"
+    },
+    {
+      "id": "trait:09af11c47861285a512e31fce265f12b",
+      "kind": "trait",
+      "name": "Shape",
+      "qualifiedName": "Shape",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 86,
+      "endLine": 86,
+      "startColumn": 0,
+      "endColumn": 18,
+      "visibility": "public"
+    },
+    {
+      "id": "module:62d09c593067cc591a381d4b61d3c7cc",
+      "kind": "module",
+      "name": "Circle",
+      "qualifiedName": "Circle",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 87,
+      "endLine": 87,
+      "startColumn": 0,
+      "endColumn": 27,
+      "visibility": "public"
+    },
+    {
+      "id": "class:184d52a70ca25ab02246ba53448afd84",
+      "kind": "class",
+      "name": "Square",
+      "qualifiedName": "Square",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 88,
+      "endLine": 88,
+      "startColumn": 0,
+      "endColumn": 26,
+      "visibility": "public"
+    },
+    {
+      "id": "trait:71d0e6299eba545904c73837d68186de",
+      "kind": "trait",
+      "name": "MarkerT",
+      "qualifiedName": "MarkerT",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 0,
+      "endColumn": 13,
+      "visibility": "public"
+    },
+    {
+      "id": "class:65d5c81c60b7d34bc7538930f2e979ac",
+      "kind": "class",
+      "name": "DelegatedImpl",
+      "qualifiedName": "DelegatedImpl",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 92,
+      "endLine": 94,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:3d1787adb831782b4a90413dd941412b",
+      "kind": "method",
+      "name": "draw",
+      "qualifiedName": "DelegatedImpl::draw",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 93,
+      "endLine": 93,
+      "startColumn": 2,
+      "endColumn": 29,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "enum:2301fa8d1a0b010b91450d59386b4020",
+      "kind": "enum",
+      "name": "Http",
+      "qualifiedName": "Http",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 96,
+      "endLine": 100,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:deee4aa06398521412f217f68f895323",
+      "kind": "enum_member",
+      "name": "Ok",
+      "qualifiedName": "Http::Ok",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 97,
+      "endLine": 97,
+      "startColumn": 7,
+      "endColumn": 9
+    },
+    {
+      "id": "enum_member:59c026190f0fd29830d9fbfe89fbd1ac",
+      "kind": "enum_member",
+      "name": "NotFound",
+      "qualifiedName": "Http::NotFound",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 97,
+      "endLine": 97,
+      "startColumn": 11,
+      "endColumn": 19
+    },
+    {
+      "id": "enum_member:6a6c8a0e4bd58124b03fae4ffe006aa5",
+      "kind": "enum_member",
+      "name": "Custom",
+      "qualifiedName": "Http::Custom",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 98,
+      "endLine": 98,
+      "startColumn": 7,
+      "endColumn": 24
+    },
+    {
+      "id": "method:10c928b08e23ec1da3faf8d4a9bbb12e",
+      "kind": "method",
+      "name": "describe",
+      "qualifiedName": "Http::describe",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 99,
+      "endLine": 99,
+      "startColumn": 2,
+      "endColumn": 34,
+      "signature": "(): String",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "String"
+    },
+    {
+      "id": "enum:d8b408f6df16c3327d04add41401c448",
+      "kind": "enum",
+      "name": "Planet",
+      "qualifiedName": "Planet",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 102,
+      "endLine": 105,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "enum_member:f0308e8b86fffb5f60aef07b338ae64a",
+      "kind": "enum_member",
+      "name": "Earth",
+      "qualifiedName": "Planet::Earth",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 103,
+      "endLine": 103,
+      "startColumn": 7,
+      "endColumn": 32
+    },
+    {
+      "id": "enum_member:5ce31bb4f61849d35361e1ca9aa41fbb",
+      "kind": "enum_member",
+      "name": "Mars",
+      "qualifiedName": "Planet::Mars",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 104,
+      "endLine": 104,
+      "startColumn": 7,
+      "endColumn": 31
+    },
+    {
+      "id": "function:fa31a4bba4af75d85403a627a9e62897",
+      "kind": "function",
+      "name": "compare",
+      "qualifiedName": "compare",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 108,
+      "endLine": 108,
+      "startColumn": 2,
+      "endColumn": 60,
+      "signature": "(a: WidgetS, b: WidgetS): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:1092bade09d1c725d7704d87d0bc625f",
+      "kind": "class",
+      "name": "RichIntS",
+      "qualifiedName": "RichIntS",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 119,
+      "endLine": 121,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:c110125aafb6f55fd4ab1f21a2cf37cb",
+      "kind": "method",
+      "name": "twice",
+      "qualifiedName": "RichIntS::twice",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 120,
+      "endLine": 120,
+      "startColumn": 2,
+      "endColumn": 24,
+      "signature": ": Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "type_alias:afe0d22243bb9ac1575ca6df41bf921c",
+      "kind": "type_alias",
+      "name": "WidgetList",
+      "qualifiedName": "WidgetList",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 123,
+      "endLine": 123,
+      "startColumn": 0,
+      "endColumn": 31
+    },
+    {
+      "id": "type_alias:72c3072a93008168a6b815b2218734ab",
+      "kind": "type_alias",
+      "name": "Meters",
+      "qualifiedName": "Meters",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 124,
+      "endLine": 124,
+      "startColumn": 0,
+      "endColumn": 27
+    },
+    {
+      "id": "module:6e9593e56da8abba78b4de05c2093067",
+      "kind": "module",
+      "name": "CallSites",
+      "qualifiedName": "CallSites",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 126,
+      "endLine": 161,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "kind": "method",
+      "name": "run",
+      "qualifiedName": "CallSites::run",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 127,
+      "endLine": 151,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(w: WidgetS): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "method:1dd50f72d18602fd517764d7d7f38d07",
+      "kind": "method",
+      "name": "mine",
+      "qualifiedName": "CallSites::mine",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 152,
+      "endLine": 152,
+      "startColumn": 2,
+      "endColumn": 21,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "method:21bccd402845e4d14582f7b3f06c7f98",
+      "kind": "method",
+      "name": "handler",
+      "qualifiedName": "CallSites::handler",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 153,
+      "endLine": 153,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "kind": "method",
+      "name": "localHost",
+      "qualifiedName": "CallSites::localHost",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 154,
+      "endLine": 160,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "class:4df2c7657f7690146e6546cf5549bca1",
+      "kind": "class",
+      "name": "LocalClass",
+      "qualifiedName": "CallSites::localHost::LocalClass",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 157,
+      "endLine": 157,
+      "startColumn": 4,
+      "endColumn": 42,
+      "visibility": "public"
+    },
+    {
+      "id": "method:08409ee77511a69da8f6417c2412a279",
+      "kind": "method",
+      "name": "lm",
+      "qualifiedName": "CallSites::localHost::LocalClass::lm",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 157,
+      "endLine": 157,
+      "startColumn": 23,
+      "endColumn": 40,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "module:2e2133568bf7e8660ab1968d0f5da1eb",
+      "kind": "module",
+      "name": "LocalObj",
+      "qualifiedName": "CallSites::localHost::LocalObj",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 158,
+      "endLine": 158,
+      "startColumn": 4,
+      "endColumn": 41,
+      "visibility": "public"
+    },
+    {
+      "id": "method:89b4448f370511de4d900d8a1c35164b",
+      "kind": "method",
+      "name": "om",
+      "qualifiedName": "CallSites::localHost::LocalObj::om",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 158,
+      "endLine": 158,
+      "startColumn": 22,
+      "endColumn": 39,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "module:3c0cabd54266d86d9b137ddcf0a0de04",
+      "kind": "module",
+      "name": "StaticReads",
+      "qualifiedName": "StaticReads",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 163,
+      "endLine": 172,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "kind": "method",
+      "name": "reads",
+      "qualifiedName": "StaticReads::reads",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 164,
+      "endLine": 171,
+      "startColumn": 2,
+      "endColumn": 3,
+      "signature": "(): Unit",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Unit"
+    },
+    {
+      "id": "function:1d4452f87de36ad763fb591620a03727",
+      "kind": "function",
+      "name": "pkgHelper",
+      "qualifiedName": "pkgHelper",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 175,
+      "endLine": 175,
+      "startColumn": 2,
+      "endColumn": 26,
+      "signature": "(): Int",
+      "visibility": "public",
+      "isAsync": false,
+      "isStatic": false,
+      "returnType": "Int"
+    },
+    {
+      "id": "constant:de2e0e5fee45c3aa4cd5c186b9e38e59",
+      "kind": "constant",
+      "name": "pkgShared",
+      "qualifiedName": "pkgShared",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 176,
+      "endLine": 176,
+      "startColumn": 2,
+      "endColumn": 19,
+      "visibility": "public"
+    },
+    {
+      "id": "class:eeab9cd89a9ddb36108842814af35d45",
+      "kind": "class",
+      "name": "InitWalk",
+      "qualifiedName": "InitWalk",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 179,
+      "endLine": 184,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public"
+    },
+    {
+      "id": "field:824c617bc848d04ef14b9c1f7da37cb2",
+      "kind": "field",
+      "name": "initLambda",
+      "qualifiedName": "InitWalk::initLambda",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 180,
+      "endLine": 180,
+      "startColumn": 2,
+      "endColumn": 49,
+      "signature": "val initLambda: () => Unit",
+      "visibility": "public"
+    },
+    {
+      "id": "field:6d1b907a93329826291419b3c08cc3ae",
+      "kind": "field",
+      "name": "initDirect",
+      "qualifiedName": "InitWalk::initDirect",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 181,
+      "endLine": 181,
+      "startColumn": 2,
+      "endColumn": 31,
+      "visibility": "public"
+    },
+    {
+      "id": "field:55305a6695b30e242f0899e28f46a2b7",
+      "kind": "field",
+      "name": "initLazy",
+      "qualifiedName": "InitWalk::initLazy",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 182,
+      "endLine": 182,
+      "startColumn": 2,
+      "endColumn": 32,
+      "visibility": "public"
+    },
+    {
+      "id": "field:7ed18c8370f664a2ee6d07e7603abf00",
+      "kind": "field",
+      "name": "initAnon",
+      "qualifiedName": "InitWalk::initAnon",
+      "filePath": "torture.scala",
+      "language": "scala",
+      "startLine": 183,
+      "endLine": 183,
+      "startColumn": 2,
+      "endColumn": 64,
+      "visibility": "public"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.scala",
+      "target": "import:00014f95d514cd4a9297fb78c6d267a7",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "import:ed474bc6ee3099836b5c8f1e31127b63",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "import:1288c18744e62c47b9b3be49ac81f4a1",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "import:ab6c61e8c52249be510f277068cfc04e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "import:e1706aa2e260f33b33b831aae0faf845",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:e611a10f53cb2352067120211e7632b2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:57e9ef3ac2dd5932a179cf7d34da29fb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:fd9e1ad6a248dcc467e99c8f7c23127e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:014e5ac4509fb26b0b2a1c00f6183b50",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:4bbe5036cb83df496762a20ac719edcc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:33930da2aae55b3cb98b7441073dd36a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:4ebd50cc2fbf98c17587f1065d31ca78",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:d1b22ce81e4dcd9f8f6bd5f508ed2535",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:89d06036d1c2e7cfa65a0e3814b1f84a",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:f42d18d9932ecf98835384d2a581205f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:b816fb5ed257d41cc58189ef5c8e00ec",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:52618211962533a2e3131d57d53cd9d4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "variable:11e6afeefeea23348d79ed6171ed6abf",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:342374b797067fd348d243baa5d427dc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:a7b667a1dd69f3c1a2e1a4b9f28267b0",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:3c38de0e0ed3e748396ac32a56feb99b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:6260e4d373836585ddb7c21a68324634",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:e292a67ba1b65875d0542be5944199ca",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:54c0d1e485f298b4f9827706f928657f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "field:d7d40dd594cbbf325699317ef25433f0",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "field:083fea866073b5984cff14ffa32265b2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "field:ef30b04e3cb74dc62955346ded1d4e32",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "field:5758f6170eed452aa1dab8d05a923d9d",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "method:4edc73b268e7bca2ee297f68aa3b5a32",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "method:f11a1632c933108942e00d3b2c940adc",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "method:2ced81449f6c49cea1753a5e68ef4fa3",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "method:a7b6861e2ff780d68310f545ca791d3c",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "method:1ef9b6f1c835a12c47628cd82674efc7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:54c0d1e485f298b4f9827706f928657f",
+      "target": "method:77e06442f583b8a728ecb572f6730060",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "module:3e98a45ef089de69c402c540a05c492e",
+      "kind": "contains"
+    },
+    {
+      "source": "module:3e98a45ef089de69c402c540a05c492e",
+      "target": "constant:8c40c7aa0ee817d211362e5149ec2220",
+      "kind": "contains"
+    },
+    {
+      "source": "module:3e98a45ef089de69c402c540a05c492e",
+      "target": "method:90c2e7d9608647c254c97e9a9cfea8f0",
+      "kind": "contains"
+    },
+    {
+      "source": "module:3e98a45ef089de69c402c540a05c492e",
+      "target": "method:f141417138453a1e069cb41778364534",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:254935e2ae91f81b8a7691679e76b074",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "module:2d53b588317ed199b74ef6bfa791d388",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:a05b852b967a5bc3ff44512f23d3082f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a05b852b967a5bc3ff44512f23d3082f",
+      "target": "method:5cb5474828b4cc5c37cc6b9923904145",
+      "kind": "contains"
+    },
+    {
+      "source": "class:a05b852b967a5bc3ff44512f23d3082f",
+      "target": "method:ff133c26e7e7d636b77122b6c9a5cd98",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "trait:f91851c14912462ae9592cb13a51f3b1",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:f91851c14912462ae9592cb13a51f3b1",
+      "target": "method:fb3814b6e956f06c3746e1758bfb591d",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:f91851c14912462ae9592cb13a51f3b1",
+      "target": "method:ef770437bcc4f4b3a1dbf17b8a1720a6",
+      "kind": "contains"
+    },
+    {
+      "source": "trait:f91851c14912462ae9592cb13a51f3b1",
+      "target": "field:3ee68904db11f62059a076599040234d",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "trait:09af11c47861285a512e31fce265f12b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "module:62d09c593067cc591a381d4b61d3c7cc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:184d52a70ca25ab02246ba53448afd84",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "trait:71d0e6299eba545904c73837d68186de",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:65d5c81c60b7d34bc7538930f2e979ac",
+      "kind": "contains"
+    },
+    {
+      "source": "class:65d5c81c60b7d34bc7538930f2e979ac",
+      "target": "method:3d1787adb831782b4a90413dd941412b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "enum:2301fa8d1a0b010b91450d59386b4020",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:2301fa8d1a0b010b91450d59386b4020",
+      "target": "enum_member:deee4aa06398521412f217f68f895323",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:2301fa8d1a0b010b91450d59386b4020",
+      "target": "enum_member:59c026190f0fd29830d9fbfe89fbd1ac",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:2301fa8d1a0b010b91450d59386b4020",
+      "target": "enum_member:6a6c8a0e4bd58124b03fae4ffe006aa5",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:2301fa8d1a0b010b91450d59386b4020",
+      "target": "method:10c928b08e23ec1da3faf8d4a9bbb12e",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "enum:d8b408f6df16c3327d04add41401c448",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d8b408f6df16c3327d04add41401c448",
+      "target": "enum_member:f0308e8b86fffb5f60aef07b338ae64a",
+      "kind": "contains"
+    },
+    {
+      "source": "enum:d8b408f6df16c3327d04add41401c448",
+      "target": "enum_member:5ce31bb4f61849d35361e1ca9aa41fbb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:fa31a4bba4af75d85403a627a9e62897",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:1092bade09d1c725d7704d87d0bc625f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:1092bade09d1c725d7704d87d0bc625f",
+      "target": "method:c110125aafb6f55fd4ab1f21a2cf37cb",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "type_alias:afe0d22243bb9ac1575ca6df41bf921c",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "type_alias:72c3072a93008168a6b815b2218734ab",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "module:6e9593e56da8abba78b4de05c2093067",
+      "kind": "contains"
+    },
+    {
+      "source": "module:6e9593e56da8abba78b4de05c2093067",
+      "target": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "kind": "contains"
+    },
+    {
+      "source": "module:6e9593e56da8abba78b4de05c2093067",
+      "target": "method:1dd50f72d18602fd517764d7d7f38d07",
+      "kind": "contains"
+    },
+    {
+      "source": "module:6e9593e56da8abba78b4de05c2093067",
+      "target": "method:21bccd402845e4d14582f7b3f06c7f98",
+      "kind": "contains"
+    },
+    {
+      "source": "module:6e9593e56da8abba78b4de05c2093067",
+      "target": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "kind": "contains"
+    },
+    {
+      "source": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "target": "class:4df2c7657f7690146e6546cf5549bca1",
+      "kind": "contains"
+    },
+    {
+      "source": "class:4df2c7657f7690146e6546cf5549bca1",
+      "target": "method:08409ee77511a69da8f6417c2412a279",
+      "kind": "contains"
+    },
+    {
+      "source": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "target": "module:2e2133568bf7e8660ab1968d0f5da1eb",
+      "kind": "contains"
+    },
+    {
+      "source": "module:2e2133568bf7e8660ab1968d0f5da1eb",
+      "target": "method:89b4448f370511de4d900d8a1c35164b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "module:3c0cabd54266d86d9b137ddcf0a0de04",
+      "kind": "contains"
+    },
+    {
+      "source": "module:3c0cabd54266d86d9b137ddcf0a0de04",
+      "target": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "function:1d4452f87de36ad763fb591620a03727",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "constant:de2e0e5fee45c3aa4cd5c186b9e38e59",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.scala",
+      "target": "class:eeab9cd89a9ddb36108842814af35d45",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eeab9cd89a9ddb36108842814af35d45",
+      "target": "field:824c617bc848d04ef14b9c1f7da37cb2",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eeab9cd89a9ddb36108842814af35d45",
+      "target": "field:6d1b907a93329826291419b3c08cc3ae",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eeab9cd89a9ddb36108842814af35d45",
+      "target": "field:55305a6695b30e242f0899e28f46a2b7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:eeab9cd89a9ddb36108842814af35d45",
+      "target": "field:7ed18c8370f664a2ee6d07e7603abf00",
+      "kind": "contains"
+    },
+    {
+      "source": "method:90c2e7d9608647c254c97e9a9cfea8f0",
+      "target": "constant:8c40c7aa0ee817d211362e5149ec2220",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:f141417138453a1e069cb41778364534",
+      "target": "constant:8c40c7aa0ee817d211362e5149ec2220",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "target": "constant:52618211962533a2e3131d57d53cd9d4",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "com",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "com",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "com",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "com",
+      "referenceKind": "imports",
+      "line": 6,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "com",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:e611a10f53cb2352067120211e7632b2",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 10,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:e611a10f53cb2352067120211e7632b2",
+      "referenceName": "WidgetS",
+      "referenceKind": "instantiates",
+      "line": 10,
+      "column": 32
+    },
+    {
+      "fromNodeId": "function:fd9e1ad6a248dcc467e99c8f7c23127e",
+      "referenceName": "Ordering",
+      "referenceKind": "references",
+      "line": 16,
+      "column": 45
+    },
+    {
+      "fromNodeId": "function:014e5ac4509fb26b0b2a1c00f6183b50",
+      "referenceName": "A",
+      "referenceKind": "references",
+      "line": 18,
+      "column": 43
+    },
+    {
+      "fromNodeId": "function:014e5ac4509fb26b0b2a1c00f6183b50",
+      "referenceName": "B",
+      "referenceKind": "references",
+      "line": 18,
+      "column": 47
+    },
+    {
+      "fromNodeId": "function:014e5ac4509fb26b0b2a1c00f6183b50",
+      "referenceName": "Numeric",
+      "referenceKind": "references",
+      "line": 18,
+      "column": 18
+    },
+    {
+      "fromNodeId": "function:014e5ac4509fb26b0b2a1c00f6183b50",
+      "referenceName": "BoundT",
+      "referenceKind": "references",
+      "line": 18,
+      "column": 32
+    },
+    {
+      "fromNodeId": "function:4ebd50cc2fbf98c17587f1065d31ca78",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 24,
+      "column": 22
+    },
+    {
+      "fromNodeId": "function:4ebd50cc2fbf98c17587f1065d31ca78",
+      "referenceName": "T",
+      "referenceKind": "references",
+      "line": 24,
+      "column": 26
+    },
+    {
+      "fromNodeId": "function:d1b22ce81e4dcd9f8f6bd5f508ed2535",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 26,
+      "column": 15
+    },
+    {
+      "fromNodeId": "function:d1b22ce81e4dcd9f8f6bd5f508ed2535",
+      "referenceName": "Remote",
+      "referenceKind": "references",
+      "line": 26,
+      "column": 43
+    },
+    {
+      "fromNodeId": "function:f42d18d9932ecf98835384d2a581205f",
+      "referenceName": "main",
+      "referenceKind": "decorates",
+      "line": 30,
+      "column": 0
+    },
+    {
+      "fromNodeId": "function:f42d18d9932ecf98835384d2a581205f",
+      "referenceName": "topLevel",
+      "referenceKind": "calls",
+      "line": 30,
+      "column": 26
+    },
+    {
+      "fromNodeId": "function:b816fb5ed257d41cc58189ef5c8e00ec",
+      "referenceName": "deprecated",
+      "referenceKind": "decorates",
+      "line": 32,
+      "column": 0
+    },
+    {
+      "fromNodeId": "constant:342374b797067fd348d243baa5d427dc",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 36,
+      "column": 19
+    },
+    {
+      "fromNodeId": "constant:3c38de0e0ed3e748396ac32a56feb99b",
+      "referenceName": "Option",
+      "referenceKind": "calls",
+      "line": 38,
+      "column": 22
+    },
+    {
+      "fromNodeId": "constant:6260e4d373836585ddb7c21a68324634",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 18
+    },
+    {
+      "fromNodeId": "constant:6260e4d373836585ddb7c21a68324634",
+      "referenceName": "Map",
+      "referenceKind": "references",
+      "line": 39,
+      "column": 37
+    },
+    {
+      "fromNodeId": "constant:e292a67ba1b65875d0542be5944199ca",
+      "referenceName": "WidgetS.create",
+      "referenceKind": "calls",
+      "line": 40,
+      "column": 14
+    },
+    {
+      "fromNodeId": "class:54c0d1e485f298b4f9827706f928657f",
+      "referenceName": "BaseW",
+      "referenceKind": "extends",
+      "line": 42,
+      "column": 69
+    },
+    {
+      "fromNodeId": "class:54c0d1e485f298b4f9827706f928657f",
+      "referenceName": "Drawable",
+      "referenceKind": "extends",
+      "line": 42,
+      "column": 86
+    },
+    {
+      "fromNodeId": "class:54c0d1e485f298b4f9827706f928657f",
+      "referenceName": "Ordered",
+      "referenceKind": "extends",
+      "line": 42,
+      "column": 100
+    },
+    {
+      "fromNodeId": "method:4edc73b268e7bca2ee297f68aa3b5a32",
+      "referenceName": "this",
+      "referenceKind": "calls",
+      "line": 48,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:f11a1632c933108942e00d3b2c940adc",
+      "referenceName": "RenderResult",
+      "referenceKind": "references",
+      "line": 50,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:f11a1632c933108942e00d3b2c940adc",
+      "referenceName": "helperR",
+      "referenceKind": "calls",
+      "line": 51,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:f11a1632c933108942e00d3b2c940adc",
+      "referenceName": "Registry.register",
+      "referenceKind": "calls",
+      "line": 52,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:f11a1632c933108942e00d3b2c940adc",
+      "referenceName": "RenderResult",
+      "referenceKind": "instantiates",
+      "line": 53,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:2ced81449f6c49cea1753a5e68ef4fa3",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:2ced81449f6c49cea1753a5e68ef4fa3",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 56,
+      "column": 25
+    },
+    {
+      "fromNodeId": "method:2ced81449f6c49cea1753a5e68ef4fa3",
+      "referenceName": "WidgetS",
+      "referenceKind": "instantiates",
+      "line": 56,
+      "column": 35
+    },
+    {
+      "fromNodeId": "method:a7b6861e2ff780d68310f545ca791d3c",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 58,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:1ef9b6f1c835a12c47628cd82674efc7",
+      "referenceName": "inline",
+      "referenceKind": "decorates",
+      "line": 60,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:90c2e7d9608647c254c97e9a9cfea8f0",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 67,
+      "column": 16
+    },
+    {
+      "fromNodeId": "method:90c2e7d9608647c254c97e9a9cfea8f0",
+      "referenceName": "WidgetS",
+      "referenceKind": "instantiates",
+      "line": 67,
+      "column": 26
+    },
+    {
+      "fromNodeId": "class:254935e2ae91f81b8a7691679e76b074",
+      "referenceName": "mkY",
+      "referenceKind": "calls",
+      "line": 71,
+      "column": 37
+    },
+    {
+      "fromNodeId": "module:2d53b588317ed199b74ef6bfa791d388",
+      "referenceName": "MarkerT",
+      "referenceKind": "extends",
+      "line": 73,
+      "column": 31
+    },
+    {
+      "fromNodeId": "method:ff133c26e7e7d636b77122b6c9a5cd98",
+      "referenceName": "abstractM",
+      "referenceKind": "calls",
+      "line": 77,
+      "column": 24
+    },
+    {
+      "fromNodeId": "module:62d09c593067cc591a381d4b61d3c7cc",
+      "referenceName": "Shape",
+      "referenceKind": "extends",
+      "line": 87,
+      "column": 22
+    },
+    {
+      "fromNodeId": "class:184d52a70ca25ab02246ba53448afd84",
+      "referenceName": "Shape",
+      "referenceKind": "extends",
+      "line": 88,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:65d5c81c60b7d34bc7538930f2e979ac",
+      "referenceName": "Drawable",
+      "referenceKind": "extends",
+      "line": 92,
+      "column": 41
+    },
+    {
+      "fromNodeId": "method:3d1787adb831782b4a90413dd941412b",
+      "referenceName": "d.draw",
+      "referenceKind": "calls",
+      "line": 93,
+      "column": 21
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "Ordering",
+      "referenceKind": "instantiates",
+      "line": 107,
+      "column": 34
+    },
+    {
+      "fromNodeId": "function:fa31a4bba4af75d85403a627a9e62897",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 108,
+      "column": 17
+    },
+    {
+      "fromNodeId": "function:fa31a4bba4af75d85403a627a9e62897",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 108,
+      "column": 29
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "concat",
+      "referenceKind": "calls",
+      "line": 114,
+      "column": 25
+    },
+    {
+      "fromNodeId": "file:torture.scala",
+      "referenceName": "xs.drop",
+      "referenceKind": "calls",
+      "line": 117,
+      "column": 54
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "WidgetS",
+      "referenceKind": "references",
+      "line": 127,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "helper",
+      "referenceKind": "calls",
+      "line": 128,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "w.render",
+      "referenceKind": "calls",
+      "line": 129,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "WidgetS",
+      "referenceKind": "calls",
+      "line": 130,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "WidgetS.create().render",
+      "referenceKind": "calls",
+      "line": 131,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "WidgetS.create",
+      "referenceKind": "calls",
+      "line": 131,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "chain",
+      "referenceKind": "calls",
+      "line": 132,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "lowerFactory",
+      "referenceKind": "calls",
+      "line": 132,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "method3",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "mine",
+      "referenceKind": "calls",
+      "line": 134,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "hashCode",
+      "referenceKind": "calls",
+      "line": 135,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "genericCall[Int]",
+      "referenceKind": "calls",
+      "line": 138,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "Ordering",
+      "referenceKind": "instantiates",
+      "line": 139,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "w.render",
+      "referenceKind": "calls",
+      "line": 140,
+      "column": 35
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "registerCb",
+      "referenceKind": "calls",
+      "line": 141,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "registerCb",
+      "referenceKind": "calls",
+      "line": 143,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "use",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 26
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "combineXY",
+      "referenceKind": "calls",
+      "line": 150,
+      "column": 44
+    },
+    {
+      "fromNodeId": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "referenceName": "innerFn",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "referenceName": "lam",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:6d9dc963c222f94eab797e7bbd0151d3",
+      "referenceName": "helperCall",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 22
+    },
+    {
+      "fromNodeId": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "referenceName": "Registry",
+      "referenceKind": "references",
+      "line": 165,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "referenceName": "Http",
+      "referenceKind": "references",
+      "line": 166,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "referenceName": "Registry",
+      "referenceKind": "references",
+      "line": 168,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "referenceName": "process",
+      "referenceKind": "calls",
+      "line": 169,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "referenceName": "Registry",
+      "referenceKind": "references",
+      "line": 169,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:2596782eaecc1c154a4fdc2334a968a4",
+      "referenceName": "Registry.register",
+      "referenceKind": "calls",
+      "line": 170,
+      "column": 4
+    },
+    {
+      "fromNodeId": "field:824c617bc848d04ef14b9c1f7da37cb2",
+      "referenceName": "helperCall",
+      "referenceKind": "calls",
+      "line": 180,
+      "column": 37
+    },
+    {
+      "fromNodeId": "field:6d1b907a93329826291419b3c08cc3ae",
+      "referenceName": "helperCall",
+      "referenceKind": "calls",
+      "line": 181,
+      "column": 19
+    },
+    {
+      "fromNodeId": "field:55305a6695b30e242f0899e28f46a2b7",
+      "referenceName": "process",
+      "referenceKind": "calls",
+      "line": 182,
+      "column": 22
+    },
+    {
+      "fromNodeId": "field:7ed18c8370f664a2ee6d07e7603abf00",
+      "referenceName": "Runnable",
+      "referenceKind": "instantiates",
+      "line": 183,
+      "column": 17
+    },
+    {
+      "fromNodeId": "field:7ed18c8370f664a2ee6d07e7603abf00",
+      "referenceName": "helperCall",
+      "referenceKind": "calls",
+      "line": 183,
+      "column": 50
+    },
+    {
+      "fromNodeId": "method:b6413f297defffbd1b0f4a1770b3af58",
+      "referenceName": "handler",
+      "referenceKind": "function_ref",
+      "line": 143,
+      "column": 15
+    }
+  ],
+  "errors": []
+}

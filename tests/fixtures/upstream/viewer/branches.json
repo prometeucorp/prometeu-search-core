@@ -1,0 +1,1292 @@
+[
+  {
+    "language": "typescript",
+    "source": "function test(ok, blocked, x) {\n if (blocked) return;\n if (ok) { hit(); } else { hit(); }\n ok && hit();\n ok || hit();\n x ? hit() : hit();\n switch(x) { case 1: hit(); break; default: hit(); }\n for (const item of x) { hit(); }\n try { hit(); } catch(e) { hit(); }\n}",
+    "sites": [
+      {
+        "line": 3,
+        "column": 11,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 3,
+        "column": 27,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 7,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "and",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 7,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "or",
+            "line": 5,
+            "branch": "5:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 6,
+        "column": 5,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x",
+            "negated": false,
+            "form": "ternary",
+            "line": 6,
+            "branch": "6:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 6,
+        "column": 13,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x",
+            "negated": true,
+            "form": "ternary",
+            "line": 6,
+            "branch": "6:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 7,
+        "column": 21,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x === 1",
+            "negated": false,
+            "form": "case",
+            "line": 7,
+            "branch": "7:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 7,
+        "column": 44,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: default",
+            "negated": false,
+            "form": "case",
+            "line": 7,
+            "branch": "7:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 8,
+        "column": 25,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "item of x",
+            "kind": "each",
+            "branch": "8:1"
+          }
+        ]
+      },
+      {
+        "line": 9,
+        "column": 7,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 9,
+        "column": 27,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "on error",
+            "negated": false,
+            "form": "catch",
+            "line": 0,
+            "branch": "9:16"
+          }
+        ],
+        "loops": []
+      }
+    ]
+  },
+  {
+    "language": "typescript",
+    "source": "function test(a,b) { if(a) { if(!b) throw new Error(); hit(); } }",
+    "sites": [
+      {
+        "line": 1,
+        "column": 55,
+        "guards": [
+          {
+            "text": "a",
+            "negated": false,
+            "form": "if",
+            "line": 1,
+            "branch": "1:21"
+          },
+          {
+            "text": "!b",
+            "negated": true,
+            "form": "guard",
+            "line": 1,
+            "branch": "1:29",
+            "exit": "throw"
+          }
+        ],
+        "loops": []
+      }
+    ]
+  },
+  {
+    "language": "typescript",
+    "source": "function test(a) { if(a) { list.forEach(x => hit()); const f = () => hit(); } }",
+    "sites": [
+      {
+        "line": 1,
+        "column": 45,
+        "guards": [
+          {
+            "text": "a",
+            "negated": false,
+            "form": "if",
+            "line": 1,
+            "branch": "1:19"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 1,
+        "column": 69,
+        "guards": [],
+        "loops": []
+      }
+    ]
+  },
+  {
+    "language": "python",
+    "source": "def test(ok, blocked, x):\n    if blocked:\n        return\n    if ok:\n        hit()\n    elif x:\n        hit()\n    else:\n        hit()\n    ok and hit()\n    ok or hit()\n    hit() if ok else hit()\n    for item in x:\n        hit()\n    try:\n        hit()\n    except Exception:\n        hit()\n",
+    "sites": [
+      {
+        "line": 5,
+        "column": 8,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 4,
+            "branch": "4:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 7,
+        "column": 8,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 4,
+            "branch": "4:4"
+          },
+          {
+            "text": "x",
+            "negated": false,
+            "form": "if",
+            "line": 6,
+            "branch": "6:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 9,
+        "column": 8,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "x",
+            "negated": true,
+            "form": "else",
+            "line": 6,
+            "branch": "4:4"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 4,
+            "branch": "4:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 10,
+        "column": 11,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "and",
+            "line": 10,
+            "branch": "10:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 11,
+        "column": 10,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "or",
+            "line": 11,
+            "branch": "11:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 12,
+        "column": 4,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "ternary",
+            "line": 12,
+            "branch": "12:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 12,
+        "column": 21,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "ternary",
+            "line": 12,
+            "branch": "12:4"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 14,
+        "column": 8,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "item in x",
+            "kind": "each",
+            "branch": "13:4"
+          }
+        ]
+      },
+      {
+        "line": 16,
+        "column": 8,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 18,
+        "column": 8,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:4",
+            "exit": "return"
+          },
+          {
+            "text": "on error",
+            "negated": false,
+            "form": "catch",
+            "line": 0,
+            "branch": "17:4"
+          }
+        ],
+        "loops": []
+      }
+    ]
+  },
+  {
+    "language": "go",
+    "source": "package main\nfunc test(ok bool, blocked bool, x int) {\n if blocked { return }\n if ok { hit() } else { hit() }\n switch x { case 1: hit(); default: hit() }\n for i:=0;i<4;i++ { hit() }\n}",
+    "sites": [
+      {
+        "line": 4,
+        "column": 9,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 3,
+            "branch": "3:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 24,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 3,
+            "branch": "3:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 20,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 3,
+            "branch": "3:1",
+            "exit": "return"
+          },
+          {
+            "text": "x == 1",
+            "negated": false,
+            "form": "case",
+            "line": 5,
+            "branch": "5:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 36,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 3,
+            "branch": "3:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: default",
+            "negated": false,
+            "form": "case",
+            "line": 5,
+            "branch": "5:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 6,
+        "column": 20,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 3,
+            "branch": "3:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "i:=0;i<4;i++",
+            "kind": "each",
+            "branch": "6:1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "language": "java",
+    "source": "class App { void test(boolean ok, boolean blocked, int x) {\n if (blocked) return;\n if (ok) { hit(); } else { hit(); }\n switch(x) { case 1: hit(); break; default: hit(); }\n for (int i=0;i<4;i++) { hit(); }\n try { hit(); } catch(Exception e) { hit(); }\n} }",
+    "sites": [
+      {
+        "line": 3,
+        "column": 11,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 3,
+        "column": 27,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 21,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x == 1",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 44,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: default",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 25,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "int i=0;i<4;i++",
+            "kind": "each",
+            "branch": "5:1"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "column": 7,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 6,
+        "column": 37,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "on error",
+            "negated": false,
+            "form": "catch",
+            "line": 0,
+            "branch": "6:16"
+          }
+        ],
+        "loops": []
+      }
+    ]
+  },
+  {
+    "language": "csharp",
+    "source": "class App { void Test(bool ok, bool blocked, int x) {\n if (blocked) return;\n if (ok) { hit(); } else { hit(); }\n switch(x) { case 1: hit(); break; default: hit(); break; }\n for(int i=0;i<4;i++) { hit(); }\n try { hit(); } catch(Exception e) { hit(); }\n} }",
+    "sites": [
+      {
+        "line": 3,
+        "column": 11,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 3,
+        "column": 27,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 21,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x == 1",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 44,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: default",
+            "negated": false,
+            "form": "case",
+            "line": 0,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 24,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "int i=0;i<4;i++",
+            "kind": "each",
+            "branch": "5:1"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "column": 7,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 6,
+        "column": 37,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "on error",
+            "negated": false,
+            "form": "catch",
+            "line": 0,
+            "branch": "6:16"
+          }
+        ],
+        "loops": []
+      }
+    ]
+  },
+  {
+    "language": "c",
+    "source": "void test(int ok,int blocked,int x) {\n if(blocked) return;\n if(ok) { hit(); } else { hit(); }\n switch(x) {case 1: hit();break;default:hit();}\n for(int i=0;i<4;i++) { hit(); }\n}",
+    "sites": [
+      {
+        "line": 3,
+        "column": 10,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 3,
+        "column": 26,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 20,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x == 1",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 40,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: default",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 24,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "int i=0;i<4;i++",
+            "kind": "each",
+            "branch": "5:1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "language": "swift",
+    "source": "func test(ok: Bool, blocked: Bool, x: Int) {\n guard !blocked else { return }\n if ok { hit() } else { hit() }\n switch x { case 1: hit(); default: hit() }\n for i in 0..<4 { hit() }\n}",
+    "sites": [
+      {
+        "line": 3,
+        "column": 9,
+        "guards": [
+          {
+            "text": "!blocked",
+            "negated": false,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 3,
+        "column": 24,
+        "guards": [
+          {
+            "text": "!blocked",
+            "negated": false,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 20,
+        "guards": [
+          {
+            "text": "!blocked",
+            "negated": false,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x == 1",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 36,
+        "guards": [
+          {
+            "text": "!blocked",
+            "negated": false,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: default",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 18,
+        "guards": [
+          {
+            "text": "!blocked",
+            "negated": false,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "i in 0..<4",
+            "kind": "each",
+            "branch": "5:1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "language": "kotlin",
+    "source": "fun test(ok: Boolean, blocked: Boolean, x: Int) {\n if (blocked) return\n if (ok) { hit() } else { hit() }\n when(x) { 1 -> hit(); else -> hit() }\n for(i in 0..4) { hit() }\n}",
+    "sites": [
+      {
+        "line": 3,
+        "column": 11,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": false,
+            "form": "if",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 3,
+        "column": 26,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "ok",
+            "negated": true,
+            "form": "else",
+            "line": 3,
+            "branch": "3:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 16,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x == 1",
+            "negated": false,
+            "form": "case",
+            "line": 4,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 4,
+        "column": 31,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          },
+          {
+            "text": "x: else",
+            "negated": false,
+            "form": "case",
+            "line": 0,
+            "branch": "4:1"
+          }
+        ],
+        "loops": []
+      },
+      {
+        "line": 5,
+        "column": 18,
+        "guards": [
+          {
+            "text": "blocked",
+            "negated": true,
+            "form": "guard",
+            "line": 2,
+            "branch": "2:1",
+            "exit": "return"
+          }
+        ],
+        "loops": [
+          {
+            "text": "i in 0..4",
+            "kind": "each",
+            "branch": "5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": 0,
+      "source": "const exports = { browser: \"global\" };",
+      "expected": "const exports = { browser: \"      \" };",
+      "byteExpected": "const exports = { browser: \"      \" };"
+    },
+    {
+      "id": 1,
+      "source": "const regex = /[\"']/; const text = \"browser\";",
+      "expected": "const regex = /[\"']/; const text = \"       \";",
+      "byteExpected": "const regex = /[\"']/; const text = \"       \";"
+    },
+    {
+      "id": 2,
+      "source": "return /\\\"/; browser;",
+      "expected": "return /\\\"/; browser;",
+      "byteExpected": "return /\\\"/; browser;"
+    },
+    {
+      "id": 3,
+      "source": "const text = `browser ${globalThis}`;",
+      "expected": "const text = `                     `;",
+      "byteExpected": "const text = `                     `;"
+    },
+    {
+      "id": 4,
+      "source": "const division = value / count; \"browser\";",
+      "expected": "const division = value / count; \"       \";",
+      "byteExpected": "const division = value / count; \"       \";"
+    },
+    {
+      "id": 5,
+      "source": "const text = \"unterminated\nbrowser\", next = 'ok';",
+      "expected": "const text = \"            \nbrowser\"              ",
+      "byteExpected": "const text = \"            \nbrowser\"              "
+    },
+    {
+      "id": 6,
+      "source": "const escaped = \"before\\\\after\";",
+      "expected": "const escaped = \"             \";",
+      "byteExpected": "const escaped = \"             \";"
+    },
+    {
+      "id": 7,
+      "source": "const text = \"🌍\n\"; browser;",
+      "expected": "const text = \"  \n\"          ",
+      "byteExpected": "const text = \"    \n\"          "
+    }
+  ]
+}

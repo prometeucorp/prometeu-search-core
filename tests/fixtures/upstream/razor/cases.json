@@ -1,0 +1,2460 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": "razor-1",
+      "origin": "__tests__/razor-script.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "a(); @{ var x = \"}\"; Do(x); } c();",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 34,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-2",
+      "origin": "__tests__/razor-script.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "a(); @{ var x = \"}\"; Do(x); } c();",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 34,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-3",
+      "origin": "__tests__/razor-script.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "a @* <script>x();</script> *@ b",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 31,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-4",
+      "origin": "__tests__/razor-script.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "a @* <script>x();</script> *@ b",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 31,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-5",
+      "origin": "__tests__/razor-script.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@{ var x = Compute(); }\n<script>\n  loadPage();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Compute",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 9,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "loadPage",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-6",
+      "origin": "__tests__/razor-script.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@{ var x = Compute(); }\n<script>\n  loadPage();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "Compute",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 9,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "loadPage",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-7",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@model OrderViewModel\n<div>Order</div>\n<script>\n  import { showToast } from '../site.js';\n  function save() { showToast('saved'); }\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "OrderViewModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "../site.js",
+            "referenceKind": "imports",
+            "line": 4,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "showToast",
+            "referenceKind": "imports",
+            "line": 4,
+            "column": 11,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "showToast",
+            "referenceKind": "calls",
+            "line": 5,
+            "column": 20,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-8",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@model OrderViewModel\n<div>Order</div>\n<script>\n  import { showToast } from '../site.js';\n  function save() { showToast('saved'); }\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "OrderViewModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "../site.js",
+            "referenceKind": "imports",
+            "line": 4,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "showToast",
+            "referenceKind": "imports",
+            "line": 4,
+            "column": 11,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "showToast",
+            "referenceKind": "calls",
+            "line": 5,
+            "column": 20,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-9",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@model CartModel\n<script asp-location=\"Footer\">\n    var id = @Model.Id;\n    var url = '@Url.Action(\"Add\", \"Cart\")';\n    var data = @Html.Raw(Json.Serialize(Model.Items));\n    @* displayNotice(\"a comment\"); *@\n    @if (Model.ShowNotice)\n    {\n        <text>\n        displayNotice(\"@T(\"Added\").Text\");\n        </text>\n    }\n    else\n    {\n        var hidden = Model.Compute();\n    }\n    $(function () { AjaxCart.add(url); });\n</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 9,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CartModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "displayNotice",
+            "referenceKind": "calls",
+            "line": 10,
+            "column": 8,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "$",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 4,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "AjaxCart.add",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 20,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-10",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@model CartModel\n<script asp-location=\"Footer\">\n    var id = @Model.Id;\n    var url = '@Url.Action(\"Add\", \"Cart\")';\n    var data = @Html.Raw(Json.Serialize(Model.Items));\n    @* displayNotice(\"a comment\"); *@\n    @if (Model.ShowNotice)\n    {\n        <text>\n        displayNotice(\"@T(\"Added\").Text\");\n        </text>\n    }\n    else\n    {\n        var hidden = Model.Compute();\n    }\n    $(function () { AjaxCart.add(url); });\n</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 18,
+            "startColumn": 0,
+            "endColumn": 9,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "CartModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "displayNotice",
+            "referenceKind": "calls",
+            "line": 10,
+            "column": 8,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "$",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 4,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "AjaxCart.add",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 20,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-11",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@model CartModel",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CartModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-12",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@model CartModel",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "CartModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-13",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script asp-location=\"Footer\">",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 30,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-14",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script asp-location=\"Footer\">",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 30,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-15",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script type=\"text/html\" id=\"row\"><div onclick=\"fromTemplate()\"></div></script>\n<script type=\"application/json\">{ \"fromTemplate\": 1 }</script>\n<script src=\"~/js/fromSrc.js\"></script>\n@* <script>fromTemplate();</script> *@\n<script>\n  function ownName() { return 1; }\n  ownName();\n</script>\n<script>\n  ownName();\n</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 11,
+            "startColumn": 0,
+            "endColumn": 9,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-16",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script type=\"text/html\" id=\"row\"><div onclick=\"fromTemplate()\"></div></script>\n<script type=\"application/json\">{ \"fromTemplate\": 1 }</script>\n<script src=\"~/js/fromSrc.js\"></script>\n@* <script>fromTemplate();</script> *@\n<script>\n  function ownName() { return 1; }\n  ownName();\n</script>\n<script>\n  ownName();\n</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 11,
+            "startColumn": 0,
+            "endColumn": 9,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-17",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script type=\"text/html\" id=\"row\"><div onclick=\"fromTemplate()\"></div></script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 79,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-18",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script type=\"text/html\" id=\"row\"><div onclick=\"fromTemplate()\"></div></script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 79,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-19",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script type=\"application/json\">{ \"fromTemplate\": 1 }</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 62,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-20",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script type=\"application/json\">{ \"fromTemplate\": 1 }</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 62,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-21",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script src=\"~/js/fromSrc.js\"></script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 39,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-22",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script src=\"~/js/fromSrc.js\"></script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 39,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-23",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@* <script>fromTemplate();</script> *@",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 38,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-24",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@* <script>fromTemplate();</script> *@",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 38,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-25",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 8,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-26",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 8,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-27",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script>\n  setLocation('/x');\n  onlyAdmin();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "setLocation",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "onlyAdmin",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-28",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script>\n  setLocation('/x');\n  onlyAdmin();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "setLocation",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "onlyAdmin",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-29",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script lang=\"ts\">\n  import { typedHelper } from '../helper';\n  const n: number = typedHelper(1);\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "../helper",
+            "referenceKind": "imports",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "typedHelper",
+            "referenceKind": "imports",
+            "line": 2,
+            "column": 11,
+            "filePath": "Views/Probe.razor",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "typedHelper",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 20,
+            "filePath": "Views/Probe.razor",
+            "language": "typescript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-30",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script lang=\"ts\">\n  import { typedHelper } from '../helper';\n  const n: number = typedHelper(1);\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "../helper",
+            "referenceKind": "imports",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "typedHelper",
+            "referenceKind": "imports",
+            "line": 2,
+            "column": 11,
+            "filePath": "Views/Probe.cshtml",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "typedHelper",
+            "referenceKind": "calls",
+            "line": 3,
+            "column": 20,
+            "filePath": "Views/Probe.cshtml",
+            "language": "typescript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-31",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script>\n  firstHelper();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "firstHelper",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-32",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script>\n  firstHelper();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "firstHelper",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-33",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<script>\n  secondHelper();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "secondHelper",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-34",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script>\n  secondHelper();\n</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "secondHelper",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 2,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-35",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "links @model and Blazor component tags to their C# types; ignores HTML elements",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 79,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-36",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "links @model and Blazor component tags to their C# types; ignores HTML elements",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 79,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-37",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@model LoginViewModel\n<div class=\"form\">\n  <input asp-for=\"Email\" />\n</div>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "LoginViewModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-38",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@model LoginViewModel\n<div class=\"form\">\n  <input asp-for=\"Email\" />\n</div>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "LoginViewModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-39",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@model links the view",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 21,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-40",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@model links the view",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 21,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-41",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<h1>List</h1>\n@code {\n  private CatalogBrand _b = new CatalogBrand();\n}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CatalogBrand",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 10,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CatalogBrand",
+            "referenceKind": "instantiates",
+            "line": 3,
+            "column": 28,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-42",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<h1>List</h1>\n@code {\n  private CatalogBrand _b = new CatalogBrand();\n}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "CatalogBrand",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 10,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "CatalogBrand",
+            "referenceKind": "instantiates",
+            "line": 3,
+            "column": 28,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-43",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "delegates Blazor @code block C# to cover types used in component logic",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 70,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-44",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "delegates Blazor @code block C# to cover types used in component logic",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 70,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-45",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "<h1>Catalog</h1>\n\n@code {\n  private CatalogService _svc = new CatalogService();\n  void Refresh() { _svc.Load(); }\n}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CatalogService",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 10,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CatalogService",
+            "referenceKind": "instantiates",
+            "line": 4,
+            "column": 32,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "_svc.Load",
+            "referenceKind": "calls",
+            "line": 5,
+            "column": 19,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-46",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<h1>Catalog</h1>\n\n@code {\n  private CatalogService _svc = new CatalogService();\n  void Refresh() { _svc.Load(); }\n}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "CatalogService",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 10,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "CatalogService",
+            "referenceKind": "instantiates",
+            "line": 4,
+            "column": 32,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "_svc.Load",
+            "referenceKind": "calls",
+            "line": 5,
+            "column": 19,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-47",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@code usage links the component to the service",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 46,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-48",
+      "origin": "__tests__/extraction.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@code usage links the component to the service",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 46,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-49",
+      "origin": "__tests__/csharp-declared-receivers.test.ts",
+      "filePath": "Views/Probe.razor",
+      "source": "@page \"/details\"\n@code {\n    private List<Brand> _members = new List<Brand>();\n}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Brand",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 17,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Brand",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 44,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 12,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Brand",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 17,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "List",
+            "referenceKind": "instantiates",
+            "line": 3,
+            "column": 35,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-50",
+      "origin": "__tests__/csharp-declared-receivers.test.ts",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@page \"/details\"\n@code {\n    private List<Brand> _members = new List<Brand>();\n}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "List",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 12,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "Brand",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 17,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "List",
+            "referenceKind": "instantiates",
+            "line": 3,
+            "column": 35,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-51",
+      "origin": "directives, framework components, C# and script",
+      "filePath": "Views/Probe.razor",
+      "source": "@model App.Models.ViewModel<Item>\n@inject IService svc\n@inherits Base<One, Two>\n<p>é😀 @typeof(App.MainLayout)</p>\n<Router/><Grid TItem=\"App.CatalogItem\"/><InputText/>\n@code { void Load() { var svc = new UserService(); svc.Load(); } }\n<script>var id = @Model.Id; toast(id);</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "ViewModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Item",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "IService",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Base",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "One",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Two",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "MainLayout",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 7,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Item",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 28,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "One",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 15,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "Grid",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 10,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "CatalogItem",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 0,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "UserService",
+            "referenceKind": "instantiates",
+            "line": 6,
+            "column": 25,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "svc.Load",
+            "referenceKind": "calls",
+            "line": 6,
+            "column": 44,
+            "filePath": "Views/Probe.razor",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "toast",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 20,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-52",
+      "origin": "directives, framework components, C# and script",
+      "filePath": "Views/Probe.cshtml",
+      "source": "@model App.Models.ViewModel<Item>\n@inject IService svc\n@inherits Base<One, Two>\n<p>é😀 @typeof(App.MainLayout)</p>\n<Router/><Grid TItem=\"App.CatalogItem\"/><InputText/>\n@code { void Load() { var svc = new UserService(); svc.Load(); } }\n<script>var id = @Model.Id; toast(id);</script>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 0,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "ViewModel",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "Item",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "IService",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "Base",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "One",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "Two",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "MainLayout",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 7,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "UserService",
+            "referenceKind": "instantiates",
+            "line": 6,
+            "column": 25,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "svc.Load",
+            "referenceKind": "calls",
+            "line": 6,
+            "column": 44,
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "toast",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 20,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-53",
+      "origin": "Unicode and nested controls",
+      "filePath": "Views/Probe.razor",
+      "source": "<script>const x = \"😀\"; use(@Model.Id);\r\n</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 9,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "use",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 16,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-54",
+      "origin": "Unicode and nested controls",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script>const x = \"😀\"; use(@Model.Id);\r\n</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 9,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "use",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 16,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "razor-55",
+      "origin": "Unicode and nested controls",
+      "filePath": "Views/Probe.razor",
+      "source": "<script>@if (ok) { <text>call(@value); @if (other) { <text>nested();</text> }</text> }</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:aad915e1662364de4ef116c9b2f510aa",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.razor::Probe",
+            "filePath": "Views/Probe.razor",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 95,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "call",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 17,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:aad915e1662364de4ef116c9b2f510aa",
+            "referenceName": "nested",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 51,
+            "filePath": "Views/Probe.razor",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "cshtml-56",
+      "origin": "Unicode and nested controls",
+      "filePath": "Views/Probe.cshtml",
+      "source": "<script>@if (ok) { <text>call(@value); @if (other) { <text>nested();</text> }</text> }</script>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "kind": "component",
+            "name": "Probe",
+            "qualifiedName": "Views/Probe.cshtml::Probe",
+            "filePath": "Views/Probe.cshtml",
+            "language": "razor",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 95,
+            "isExported": true
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "call",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 17,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "component:5176b62e89a1d53b600e7afa225ed93f",
+            "referenceName": "nested",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 51,
+            "filePath": "Views/Probe.cshtml",
+            "language": "javascript"
+          }
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "scripts": [
+    {
+      "source": "var id = @Model.Id;\r\n@if (Model.Show)\r\n{\r\n    <text>show();</text>\r\n}\r\ndone();",
+      "prepared": "var id = 0        ;\r\n                \r\n \r\n          show();       \r\n \r\ndone();",
+      "comments": "var id = @Model.Id;\r\n@if (Model.Show)\r\n{\r\n    <text>show();</text>\r\n}\r\ndone();"
+    },
+    {
+      "source": "var id = @Model.Id;",
+      "prepared": "var id = 0        ;",
+      "comments": "var id = @Model.Id;"
+    },
+    {
+      "source": "@if (Model.Show)",
+      "prepared": "                ",
+      "comments": "@if (Model.Show)"
+    },
+    {
+      "source": "var sum = @(a + (b * 2));",
+      "prepared": "var sum = 0             ;",
+      "comments": "var sum = @(a + (b * 2));"
+    },
+    {
+      "source": "var one = @Model.Items[0].Name;",
+      "prepared": "var one = 0                   ;",
+      "comments": "var one = @Model.Items[0].Name;"
+    },
+    {
+      "source": "var safe = @Model?.Name;",
+      "prepared": "var safe = 0           ;",
+      "comments": "var safe = @Model?.Name;"
+    },
+    {
+      "source": "var html = @Html.Raw(Json.Serialize(Model.Items));",
+      "prepared": "var html = 0                                     ;",
+      "comments": "var html = @Html.Raw(Json.Serialize(Model.Items));"
+    },
+    {
+      "source": "var part = @await Html.PartialAsync(\"Row\");",
+      "prepared": "var part = 0                              ;",
+      "comments": "var part = @await Html.PartialAsync(\"Row\");"
+    },
+    {
+      "source": "var link = @Url.Action(\"Add\", new { id = 1, name = \")\" });",
+      "prepared": "var link = 0                                             ;",
+      "comments": "var link = @Url.Action(\"Add\", new { id = 1, name = \")\" });"
+    },
+    {
+      "source": "var typed = @Html.Partial<Row>(\"x\");",
+      "prepared": "var typed = 0                      ;",
+      "comments": "var typed = @Html.Partial<Row>(\"x\");"
+    },
+    {
+      "source": "$('#@Html.IdFor(m => m.Id)').hide();",
+      "prepared": "$('#0                     ').hide();",
+      "comments": "$('#@Html.IdFor(m => m.Id)').hide();"
+    },
+    {
+      "source": "alert('@T(\"Saved\")');",
+      "prepared": "alert('0          ');",
+      "comments": "alert('@T(\"Saved\")');"
+    },
+    {
+      "source": "takes an address for text, and an escaped @ for nothing",
+      "prepared": "takes an address for text, and an escaped @ for nothing",
+      "comments": "takes an address for text, and an escaped @ for nothing"
+    },
+    {
+      "source": "var a = 'me@example.com';",
+      "prepared": "var a = 'me@example.com';",
+      "comments": "var a = 'me@example.com';"
+    },
+    {
+      "source": "var b = '@@scope/pkg';",
+      "prepared": "var b = ' @scope/pkg';",
+      "comments": "var b = '@@scope/pkg';"
+    },
+    {
+      "source": "var b = ' @scope/pkg';",
+      "prepared": "var b = ' 0     /pkg';",
+      "comments": "var b = ' @scope/pkg';"
+    },
+    {
+      "source": "a(); @* b(); *@ c();",
+      "prepared": "a();            c();",
+      "comments": "a();            c();"
+    },
+    {
+      "source": "a(); @{ var x = \"}\"; Do(x); } c();",
+      "prepared": "a();                          c();",
+      "comments": "a(); @{ var x = \"}\"; Do(x); } c();"
+    },
+    {
+      "source": "@if (Model.Show) { <text>show();</text> } else { var y = Compute(); }",
+      "prepared": "                         show();                                     ",
+      "comments": "@if (Model.Show) { <text>show();</text> } else { var y = Compute(); }"
+    },
+    {
+      "source": "@if (a) { <text>one();</text> } else if (b) { <text>two();</text> } else { <text>three();</text> } after();",
+      "prepared": "                one();                              two();                       three();          after();",
+      "comments": "@if (a) { <text>one();</text> } else if (b) { <text>two();</text> } else { <text>three();</text> } after();"
+    },
+    {
+      "source": "@foreach (var x in Model.Items) { @:add('@x.Name');\n } after();",
+      "prepared": "                                    add('0      ');\n   after();",
+      "comments": "@foreach (var x in Model.Items) { @:add('@x.Name');\n } after();"
+    },
+    {
+      "source": "@try { Risky(); } catch (Exception e) { <text>failed();</text> } finally { Done(); }",
+      "prepared": "                                              failed();                             ",
+      "comments": "@try { Risky(); } catch (Exception e) { <text>failed();</text> } finally { Done(); }"
+    },
+    {
+      "source": "@if (a) { <text>var id = @Model.Id; @if (b) { <text>nested();</text> } </text> }",
+      "prepared": "                var id = 0        ;                 nested();                   ",
+      "comments": "@if (a) { <text>var id = @Model.Id; @if (b) { <text>nested();</text> } </text> }"
+    },
+    {
+      "source": "a(); @if (open",
+      "prepared": "a();          ",
+      "comments": "a(); @if (open"
+    },
+    {
+      "source": "a(); @(open",
+      "prepared": "a(); @(open",
+      "comments": "a(); @(open"
+    },
+    {
+      "source": "a(); @* open",
+      "prepared": "a();        ",
+      "comments": "a(); @* open"
+    },
+    {
+      "source": "a @* <script>x();</script> *@ b",
+      "prepared": "a                             b",
+      "comments": "a                             b"
+    },
+    {
+      "source": " type=\"@pageType\"",
+      "prepared": " type=\"0        \"",
+      "comments": " type=\"@pageType\""
+    },
+    {
+      "source": "@{ var x = Compute(); }\n<script>\n  loadPage();\n</script>\n",
+      "prepared": "                       \n<script>\n  loadPage();\n</script>\n",
+      "comments": "@{ var x = Compute(); }\n<script>\n  loadPage();\n</script>\n"
+    },
+    {
+      "source": "const x = \"😀\"; use(@Model.Id);\r\n",
+      "prepared": "const x = \"😀\"; use(0        );\r\n",
+      "comments": "const x = \"😀\"; use(@Model.Id);\r\n"
+    },
+    {
+      "source": "@if (ok) { <text>call(@value); @if (other) { <text>nested();</text> }</text> }",
+      "prepared": "                 call(0     );                     nested();                  ",
+      "comments": "@if (ok) { <text>call(@value); @if (other) { <text>nested();</text> }</text> }"
+    }
+  ],
+  "attributes": [
+    {
+      "source": "",
+      "javascript": true
+    },
+    {
+      "source": " type=\"\"",
+      "javascript": true
+    },
+    {
+      "source": " type=\"module\"",
+      "javascript": true
+    },
+    {
+      "source": " TYPE=\"application/javascript\"",
+      "javascript": true
+    },
+    {
+      "source": " type=\"text/x-babel\"",
+      "javascript": true
+    },
+    {
+      "source": " type=\"application/json\"",
+      "javascript": false
+    },
+    {
+      "source": " type=\"text/html\"",
+      "javascript": false
+    },
+    {
+      "source": " type=\"application/typescript\"",
+      "javascript": true
+    },
+    {
+      "source": " type=\"unknown\"",
+      "javascript": false
+    }
+  ]
+}

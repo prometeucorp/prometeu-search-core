@@ -1,0 +1,1756 @@
+{
+  "nodes": [
+    {
+      "id": "file:torture.rb",
+      "kind": "file",
+      "name": "torture.rb",
+      "qualifiedName": "torture.rb",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 1,
+      "endLine": 236,
+      "startColumn": 0,
+      "endColumn": 0,
+      "isExported": false
+    },
+    {
+      "id": "import:9d128e56be07bc941d645549ed7165dc",
+      "kind": "import",
+      "name": "json",
+      "qualifiedName": "json",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 2,
+      "endLine": 2,
+      "startColumn": 0,
+      "endColumn": 14,
+      "signature": "require \"json\""
+    },
+    {
+      "id": "import:4d7df4db86d03df8d74aa37c9b6aca5f",
+      "kind": "import",
+      "name": "sidekiq/fetch",
+      "qualifiedName": "sidekiq/fetch",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 3,
+      "endLine": 3,
+      "startColumn": 0,
+      "endColumn": 23,
+      "signature": "require \"sidekiq/fetch\""
+    },
+    {
+      "id": "import:14e186b67b172b6fb22763ca368c0be9",
+      "kind": "import",
+      "name": "../shared/helper",
+      "qualifiedName": "../shared/helper",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 35,
+      "signature": "require_relative \"../shared/helper\""
+    },
+    {
+      "id": "import:93029aaf6aa7a84a081bd57e109d4488",
+      "kind": "import",
+      "name": "pct/lib",
+      "qualifiedName": "pct/lib",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 5,
+      "endLine": 5,
+      "startColumn": 0,
+      "endColumn": 19,
+      "signature": "require %q(pct/lib)"
+    },
+    {
+      "id": "import:e73dca63ec1ec1817701e5441283b0a5",
+      "kind": "import",
+      "name": "some/lib",
+      "qualifiedName": "some/lib",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 7,
+      "endLine": 7,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "Kernel.require \"some/lib\""
+    },
+    {
+      "id": "import:4d336657120b7caf26b0d80e3f601afd",
+      "kind": "import",
+      "name": "interp/",
+      "qualifiedName": "interp/",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 8,
+      "endLine": 8,
+      "startColumn": 0,
+      "endColumn": 32,
+      "signature": "require \"interp/#{RUBY_VERSION}\""
+    },
+    {
+      "id": "variable:7b3f83bd083d272c56d09652de471592",
+      "kind": "variable",
+      "name": "TOP_LIMIT",
+      "qualifiedName": "TOP_LIMIT",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 10,
+      "endLine": 10,
+      "startColumn": 0,
+      "endColumn": 15,
+      "signature": "= 100"
+    },
+    {
+      "id": "variable:bd3123c2d8b795f8be0ffe79b04b4849",
+      "kind": "variable",
+      "name": "RETRY_MAX",
+      "qualifiedName": "RETRY_MAX",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 11,
+      "endLine": 11,
+      "startColumn": 0,
+      "endColumn": 13,
+      "signature": "= 3"
+    },
+    {
+      "id": "variable:a46e14ba9ba0147ac6e492fcfc75896b",
+      "kind": "variable",
+      "name": "lower_conf",
+      "qualifiedName": "lower_conf",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 12,
+      "endLine": 12,
+      "startColumn": 0,
+      "endColumn": 16,
+      "signature": "= \"x\""
+    },
+    {
+      "id": "variable:016e87e7ea84d651c93fc40b46e09ab5",
+      "kind": "variable",
+      "name": "top_var",
+      "qualifiedName": "top_var",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 13,
+      "endLine": 13,
+      "startColumn": 0,
+      "endColumn": 25,
+      "signature": "= compute_default"
+    },
+    {
+      "id": "variable:56e160aa3dbd02e9b407f1a673a9ef50",
+      "kind": "variable",
+      "name": "X_WITH_NEW",
+      "qualifiedName": "X_WITH_NEW",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 18,
+      "endLine": 18,
+      "startColumn": 0,
+      "endColumn": 23,
+      "signature": "= Widget.new"
+    },
+    {
+      "id": "variable:70c91e2653dfd76bc4981c46af038d9b",
+      "kind": "variable",
+      "name": "WORDS",
+      "qualifiedName": "WORDS",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 19,
+      "endLine": 19,
+      "startColumn": 0,
+      "endColumn": 22,
+      "signature": "= %w[alpha beta]"
+    },
+    {
+      "id": "module:ac981409e1f8413c1a83e150607d75cd",
+      "kind": "module",
+      "name": "Outer",
+      "qualifiedName": "Outer",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 21,
+      "endLine": 28,
+      "startColumn": 0,
+      "endColumn": 3
+    },
+    {
+      "id": "module:c8b1031c9e8300eb67011d38556f386f",
+      "kind": "module",
+      "name": "Inner",
+      "qualifiedName": "Outer::Inner",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 22,
+      "endLine": 27,
+      "startColumn": 2,
+      "endColumn": 5
+    },
+    {
+      "id": "class:866369875b5ab08194147a3ed7db495f",
+      "kind": "class",
+      "name": "Deep",
+      "qualifiedName": "Outer::Inner::Deep",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 23,
+      "endLine": 26,
+      "startColumn": 4,
+      "endColumn": 7,
+      "visibility": "public"
+    },
+    {
+      "id": "method:dfb57d9f10c1f53bc826fd7da9663029",
+      "kind": "method",
+      "name": "greet",
+      "qualifiedName": "Outer::Inner::Deep::greet",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 6,
+      "endColumn": 20,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "module:1d7066ac42ee915d113fc44a23efcae0",
+      "kind": "module",
+      "name": "A::B",
+      "qualifiedName": "A::B",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 30,
+      "endLine": 32,
+      "startColumn": 0,
+      "endColumn": 3
+    },
+    {
+      "id": "variable:e891c0e9e17b31eebb4e60f882c2a520",
+      "kind": "variable",
+      "name": "A_B_CONST",
+      "qualifiedName": "A::B::A_B_CONST",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 31,
+      "endLine": 31,
+      "startColumn": 2,
+      "endColumn": 15,
+      "signature": "= 5"
+    },
+    {
+      "id": "class:3516383c9183cf909f4952a89328d48f",
+      "kind": "class",
+      "name": "TopDoc",
+      "qualifiedName": "TopDoc",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 34,
+      "endLine": 34,
+      "startColumn": 0,
+      "endColumn": 17,
+      "visibility": "public"
+    },
+    {
+      "id": "class:409ca96fc582e5084ccbb6c861537442",
+      "kind": "class",
+      "name": "Bare",
+      "qualifiedName": "Bare",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 36,
+      "endLine": 36,
+      "startColumn": 0,
+      "endColumn": 15,
+      "visibility": "public"
+    },
+    {
+      "id": "class:cbfbe4bcce1afae91632ad45c072d862",
+      "kind": "class",
+      "name": "A::B::C",
+      "qualifiedName": "A::B::C",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 38,
+      "endLine": 40,
+      "startColumn": 0,
+      "endColumn": 3,
+      "visibility": "public"
+    },
+    {
+      "id": "method:447f4e484b5e4bdfd326e287d5616783",
+      "kind": "method",
+      "name": "compact_method",
+      "qualifiedName": "A::B::C::compact_method",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 39,
+      "endLine": 39,
+      "startColumn": 2,
+      "endColumn": 25,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "class:fbcd58714fb59bfafc8917bb8907a34b",
+      "kind": "class",
+      "name": "ExprSuper",
+      "qualifiedName": "ExprSuper",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 42,
+      "endLine": 43,
+      "startColumn": 0,
+      "endColumn": 3,
+      "visibility": "public"
+    },
+    {
+      "id": "class:7c29f314638b00d2c7849316df4336ee",
+      "kind": "class",
+      "name": "ScopedSuper",
+      "qualifiedName": "ScopedSuper",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 45,
+      "endLine": 46,
+      "startColumn": 0,
+      "endColumn": 3,
+      "visibility": "public"
+    },
+    {
+      "id": "class:326854f65c2a15980f69f2865639f179",
+      "kind": "class",
+      "name": "Documented",
+      "qualifiedName": "Documented",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 50,
+      "endLine": 212,
+      "startColumn": 0,
+      "endColumn": 3,
+      "docstring": "Class docs line one.\nClass docs line two.",
+      "visibility": "public"
+    },
+    {
+      "id": "variable:6adfcec1106f14a610956b32cf60e621",
+      "kind": "variable",
+      "name": "CLASS_LIMIT",
+      "qualifiedName": "Documented::CLASS_LIMIT",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 58,
+      "endLine": 58,
+      "startColumn": 2,
+      "endColumn": 17,
+      "signature": "= 9"
+    },
+    {
+      "id": "method:87219976feb420ee1a686ba7a6e03a5e",
+      "kind": "method",
+      "name": "build",
+      "qualifiedName": "Documented::build",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 79,
+      "endLine": 81,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": true
+    },
+    {
+      "id": "method:d184ca889bd8ad4133e9d92370d8c180",
+      "kind": "method",
+      "name": "singleton_style",
+      "qualifiedName": "Documented::singleton_style",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 84,
+      "endLine": 86,
+      "startColumn": 4,
+      "endColumn": 7,
+      "visibility": "public",
+      "isStatic": true
+    },
+    {
+      "id": "method:13c9531613aeb47a53465632e14fde0a",
+      "kind": "method",
+      "name": "done?",
+      "qualifiedName": "Documented::done?",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 89,
+      "endLine": 89,
+      "startColumn": 2,
+      "endColumn": 16,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:497e633467f4ecfd06e7b01406b32d51",
+      "kind": "method",
+      "name": "save!",
+      "qualifiedName": "Documented::save!",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 90,
+      "endLine": 90,
+      "startColumn": 2,
+      "endColumn": 16,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:a7cc4d7d7225c7881f8c9435eb1a5a2e",
+      "kind": "method",
+      "name": "value=",
+      "qualifiedName": "Documented::value=",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 91,
+      "endLine": 91,
+      "startColumn": 2,
+      "endColumn": 20,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:bdfcf96d632ea86a1789dbefec94f2c4",
+      "kind": "method",
+      "name": "visible_before",
+      "qualifiedName": "Documented::visible_before",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 93,
+      "endLine": 93,
+      "startColumn": 2,
+      "endColumn": 25,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:305dd2dc1e62b5d840d215c171ab877b",
+      "kind": "method",
+      "name": "still_public_after_bare_private",
+      "qualifiedName": "Documented::still_public_after_bare_private",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 97,
+      "endLine": 97,
+      "startColumn": 2,
+      "endColumn": 42,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:147793eea51c535cc684f2a3ae4157a7",
+      "kind": "method",
+      "name": "now_private",
+      "qualifiedName": "Documented::now_private",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 101,
+      "endLine": 101,
+      "startColumn": 2,
+      "endColumn": 22,
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "method:752d80de3a19cda3b989df66a7122a7f",
+      "kind": "method",
+      "name": "inner_public",
+      "qualifiedName": "Documented::inner_public",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 103,
+      "endLine": 103,
+      "startColumn": 10,
+      "endColumn": 31,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:8f2eb41d8928256de42108242b10c5f7",
+      "kind": "method",
+      "name": "also_private",
+      "qualifiedName": "Documented::also_private",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 105,
+      "endLine": 105,
+      "startColumn": 2,
+      "endColumn": 23,
+      "visibility": "private",
+      "isStatic": false
+    },
+    {
+      "id": "method:ec83fe16ac1870d3e893570e44255c4f",
+      "kind": "method",
+      "name": "public_again",
+      "qualifiedName": "Documented::public_again",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 107,
+      "endLine": 107,
+      "startColumn": 9,
+      "endColumn": 30,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:0435499dba78d2fd1ad2d6e3a8076916",
+      "kind": "method",
+      "name": "after_public_def",
+      "qualifiedName": "Documented::after_public_def",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 109,
+      "endLine": 109,
+      "startColumn": 2,
+      "endColumn": 27,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:f3fde874549b91346944936e21f1c607",
+      "kind": "method",
+      "name": "bare_protected_is_invisible_so_still_public",
+      "qualifiedName": "Documented::bare_protected_is_invisible_so_still_public",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 113,
+      "endLine": 113,
+      "startColumn": 2,
+      "endColumn": 54,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:c2941fd36a5272d8c67bd8435f681fb0",
+      "kind": "method",
+      "name": "target_cb",
+      "qualifiedName": "Documented::target_cb",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 115,
+      "endLine": 115,
+      "startColumn": 2,
+      "endColumn": 20,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "kind": "method",
+      "name": "wire",
+      "qualifiedName": "Documented::wire",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 117,
+      "endLine": 123,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "kind": "method",
+      "name": "calls_zoo",
+      "qualifiedName": "Documented::calls_zoo",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 125,
+      "endLine": 160,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "kind": "method",
+      "name": "flow_control",
+      "qualifiedName": "Documented::flow_control",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 162,
+      "endLine": 182,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:406f43474d5bd0472fe7702b818cc821",
+      "kind": "method",
+      "name": "body_requires",
+      "qualifiedName": "Documented::body_requires",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 184,
+      "endLine": 187,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:38d0e81e9dc9d2296999d41cf9892c2a",
+      "kind": "method",
+      "name": "container_method",
+      "qualifiedName": "Documented::container_method",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 189,
+      "endLine": 196,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "function:f4175a0ec088921527968e2183a05349",
+      "kind": "function",
+      "name": "nested_def",
+      "qualifiedName": "Documented::container_method::nested_def",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 190,
+      "endLine": 190,
+      "startColumn": 4,
+      "endColumn": 23,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "class:531aab88fab7d09743ddebdb5c2e3004",
+      "kind": "class",
+      "name": "InnerClass",
+      "qualifiedName": "Documented::container_method::InnerClass",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 191,
+      "endLine": 191,
+      "startColumn": 4,
+      "endColumn": 25,
+      "visibility": "public"
+    },
+    {
+      "id": "function:fcb3c4babe7cfee4371d8e472c3bde0b",
+      "kind": "function",
+      "name": "mod_method",
+      "qualifiedName": "Documented::container_method::mod_method",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 193,
+      "endLine": 193,
+      "startColumn": 6,
+      "endColumn": 25,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:57860865154ab9d9c7dc0dd14f5eaa79",
+      "kind": "method",
+      "name": "reader_one",
+      "qualifiedName": "Documented::reader_one",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 198,
+      "endLine": 200,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:60108b3d293a4763b06368be872be2d7",
+      "kind": "method",
+      "name": "reader_two",
+      "qualifiedName": "Documented::reader_two",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 202,
+      "endLine": 206,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "method:5725e0ae1651a9d377cc184a5f890d67",
+      "kind": "method",
+      "name": "shadower",
+      "qualifiedName": "Documented::shadower",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 208,
+      "endLine": 211,
+      "startColumn": 2,
+      "endColumn": 5,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "function:b3acc2cf7d22f273bc07354ae4991ac2",
+      "kind": "function",
+      "name": "documented_fn",
+      "qualifiedName": "documented_fn",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 216,
+      "endLine": 216,
+      "startColumn": 0,
+      "endColumn": 22,
+      "docstring": "Doc for documented_fn.\nSecond line.",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "function:3450ad9f6b73f22cf12ce5118c98c16f",
+      "kind": "function",
+      "name": "block_doc_fn",
+      "qualifiedName": "block_doc_fn",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 223,
+      "endLine": 223,
+      "startColumn": 0,
+      "endColumn": 21,
+      "docstring": "=begin\nBlock comment body.\nstar line\ndash line\n=end",
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "function:e7752219f0cfafbc10f407c038b59102",
+      "kind": "function",
+      "name": "priv_doc_fn",
+      "qualifiedName": "priv_doc_fn",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 226,
+      "endLine": 226,
+      "startColumn": 8,
+      "endColumn": 28,
+      "visibility": "public",
+      "isStatic": false
+    },
+    {
+      "id": "function:4759298ab8dfe6cd0b2c0574d59fdde3",
+      "kind": "function",
+      "name": "top_singleton",
+      "qualifiedName": "top_singleton",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 228,
+      "endLine": 230,
+      "startColumn": 0,
+      "endColumn": 3,
+      "visibility": "private",
+      "isStatic": true
+    },
+    {
+      "id": "function:004e9b066e8a0c7377d6fbe8ed9fa046",
+      "kind": "function",
+      "name": "weird_singleton",
+      "qualifiedName": "weird_singleton",
+      "filePath": "torture.rb",
+      "language": "ruby",
+      "startLine": 232,
+      "endLine": 232,
+      "startColumn": 0,
+      "endColumn": 28,
+      "visibility": "private",
+      "isStatic": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:torture.rb",
+      "target": "import:9d128e56be07bc941d645549ed7165dc",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "import:4d7df4db86d03df8d74aa37c9b6aca5f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "import:14e186b67b172b6fb22763ca368c0be9",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "import:93029aaf6aa7a84a081bd57e109d4488",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "import:e73dca63ec1ec1817701e5441283b0a5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "import:4d336657120b7caf26b0d80e3f601afd",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "variable:7b3f83bd083d272c56d09652de471592",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "variable:bd3123c2d8b795f8be0ffe79b04b4849",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "variable:a46e14ba9ba0147ac6e492fcfc75896b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "variable:016e87e7ea84d651c93fc40b46e09ab5",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "variable:56e160aa3dbd02e9b407f1a673a9ef50",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "variable:70c91e2653dfd76bc4981c46af038d9b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "module:ac981409e1f8413c1a83e150607d75cd",
+      "kind": "contains"
+    },
+    {
+      "source": "module:ac981409e1f8413c1a83e150607d75cd",
+      "target": "module:c8b1031c9e8300eb67011d38556f386f",
+      "kind": "contains"
+    },
+    {
+      "source": "module:c8b1031c9e8300eb67011d38556f386f",
+      "target": "class:866369875b5ab08194147a3ed7db495f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:866369875b5ab08194147a3ed7db495f",
+      "target": "method:dfb57d9f10c1f53bc826fd7da9663029",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "module:1d7066ac42ee915d113fc44a23efcae0",
+      "kind": "contains"
+    },
+    {
+      "source": "module:1d7066ac42ee915d113fc44a23efcae0",
+      "target": "variable:e891c0e9e17b31eebb4e60f882c2a520",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "class:3516383c9183cf909f4952a89328d48f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "class:409ca96fc582e5084ccbb6c861537442",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "class:cbfbe4bcce1afae91632ad45c072d862",
+      "kind": "contains"
+    },
+    {
+      "source": "class:cbfbe4bcce1afae91632ad45c072d862",
+      "target": "method:447f4e484b5e4bdfd326e287d5616783",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "class:fbcd58714fb59bfafc8917bb8907a34b",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "class:7c29f314638b00d2c7849316df4336ee",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "class:326854f65c2a15980f69f2865639f179",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "variable:6adfcec1106f14a610956b32cf60e621",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:87219976feb420ee1a686ba7a6e03a5e",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:d184ca889bd8ad4133e9d92370d8c180",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:13c9531613aeb47a53465632e14fde0a",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:497e633467f4ecfd06e7b01406b32d51",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:a7cc4d7d7225c7881f8c9435eb1a5a2e",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:bdfcf96d632ea86a1789dbefec94f2c4",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:305dd2dc1e62b5d840d215c171ab877b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:147793eea51c535cc684f2a3ae4157a7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:752d80de3a19cda3b989df66a7122a7f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:8f2eb41d8928256de42108242b10c5f7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:ec83fe16ac1870d3e893570e44255c4f",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:0435499dba78d2fd1ad2d6e3a8076916",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:f3fde874549b91346944936e21f1c607",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:c2941fd36a5272d8c67bd8435f681fb0",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:406f43474d5bd0472fe7702b818cc821",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:38d0e81e9dc9d2296999d41cf9892c2a",
+      "kind": "contains"
+    },
+    {
+      "source": "method:38d0e81e9dc9d2296999d41cf9892c2a",
+      "target": "function:f4175a0ec088921527968e2183a05349",
+      "kind": "contains"
+    },
+    {
+      "source": "method:38d0e81e9dc9d2296999d41cf9892c2a",
+      "target": "class:531aab88fab7d09743ddebdb5c2e3004",
+      "kind": "contains"
+    },
+    {
+      "source": "method:38d0e81e9dc9d2296999d41cf9892c2a",
+      "target": "function:fcb3c4babe7cfee4371d8e472c3bde0b",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:57860865154ab9d9c7dc0dd14f5eaa79",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:60108b3d293a4763b06368be872be2d7",
+      "kind": "contains"
+    },
+    {
+      "source": "class:326854f65c2a15980f69f2865639f179",
+      "target": "method:5725e0ae1651a9d377cc184a5f890d67",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "function:b3acc2cf7d22f273bc07354ae4991ac2",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "function:3450ad9f6b73f22cf12ce5118c98c16f",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "function:e7752219f0cfafbc10f407c038b59102",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "function:4759298ab8dfe6cd0b2c0574d59fdde3",
+      "kind": "contains"
+    },
+    {
+      "source": "file:torture.rb",
+      "target": "function:004e9b066e8a0c7377d6fbe8ed9fa046",
+      "kind": "contains"
+    },
+    {
+      "source": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "target": "variable:bd3123c2d8b795f8be0ffe79b04b4849",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:57860865154ab9d9c7dc0dd14f5eaa79",
+      "target": "variable:6adfcec1106f14a610956b32cf60e621",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:57860865154ab9d9c7dc0dd14f5eaa79",
+      "target": "variable:7b3f83bd083d272c56d09652de471592",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:60108b3d293a4763b06368be872be2d7",
+      "target": "variable:7b3f83bd083d272c56d09652de471592",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    },
+    {
+      "source": "method:60108b3d293a4763b06368be872be2d7",
+      "target": "variable:bd3123c2d8b795f8be0ffe79b04b4849",
+      "kind": "references",
+      "metadata": {
+        "valueRef": true
+      }
+    }
+  ],
+  "unresolvedReferences": [
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "json",
+      "referenceKind": "imports",
+      "line": 2,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "sidekiq/fetch",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "sidekiq/fetch.rb",
+      "referenceKind": "imports",
+      "line": 3,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "../shared/helper",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "../shared/helper.rb",
+      "referenceKind": "imports",
+      "line": 4,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "pct/lib",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "pct/lib.rb",
+      "referenceKind": "imports",
+      "line": 5,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "some/lib",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "some/lib.rb",
+      "referenceKind": "imports",
+      "line": 7,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "interp/",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "interp/.rb",
+      "referenceKind": "imports",
+      "line": 8,
+      "column": 0
+    },
+    {
+      "fromNodeId": "class:866369875b5ab08194147a3ed7db495f",
+      "referenceName": "Base",
+      "referenceKind": "extends",
+      "line": 23,
+      "column": 17
+    },
+    {
+      "fromNodeId": "class:fbcd58714fb59bfafc8917bb8907a34b",
+      "referenceName": "Struct.new(:a)",
+      "referenceKind": "extends",
+      "line": 42,
+      "column": 18
+    },
+    {
+      "fromNodeId": "class:7c29f314638b00d2c7849316df4336ee",
+      "referenceName": "A::B::C",
+      "referenceKind": "extends",
+      "line": 45,
+      "column": 20
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "BaseThing",
+      "referenceKind": "extends",
+      "line": 50,
+      "column": 19
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "Comparable",
+      "referenceKind": "implements",
+      "filePath": "torture.rb",
+      "line": 51,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "Helpers",
+      "referenceKind": "implements",
+      "filePath": "torture.rb",
+      "line": 52,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "Sortable",
+      "referenceKind": "implements",
+      "filePath": "torture.rb",
+      "line": 52,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "Memoizer",
+      "referenceKind": "implements",
+      "filePath": "torture.rb",
+      "line": 54,
+      "column": 2
+    },
+    {
+      "fromNodeId": "method:87219976feb420ee1a686ba7a6e03a5e",
+      "referenceName": "helper_build",
+      "referenceKind": "calls",
+      "line": 80,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:d184ca889bd8ad4133e9d92370d8c180",
+      "referenceName": "reset_cache",
+      "referenceKind": "calls",
+      "line": 85,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 118,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "method",
+      "referenceKind": "calls",
+      "line": 118,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 119,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "method",
+      "referenceKind": "calls",
+      "line": 119,
+      "column": 14
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "register",
+      "referenceKind": "calls",
+      "line": 120,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "method",
+      "referenceKind": "calls",
+      "line": 120,
+      "column": 13
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "method",
+      "referenceKind": "calls",
+      "line": 121,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "list.each",
+      "referenceKind": "calls",
+      "line": 122,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "reset",
+      "referenceKind": "calls",
+      "line": 126,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "compute",
+      "referenceKind": "calls",
+      "line": 127,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "puts",
+      "referenceKind": "calls",
+      "line": 128,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "done?",
+      "referenceKind": "calls",
+      "line": 129,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "finished?",
+      "referenceKind": "calls",
+      "line": 130,
+      "column": 18
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "own_method",
+      "referenceKind": "calls",
+      "line": 132,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "@name.upcase",
+      "referenceKind": "calls",
+      "line": 133,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "@@class_var.inspect",
+      "referenceKind": "calls",
+      "line": 134,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "$global.freeze",
+      "referenceKind": "calls",
+      "line": 135,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "\"literal\".upcase",
+      "referenceKind": "calls",
+      "line": 136,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "5.times",
+      "referenceKind": "calls",
+      "line": 137,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "[1, 2].sum",
+      "referenceKind": "calls",
+      "line": 138,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Klass.static_call",
+      "referenceKind": "calls",
+      "line": 139,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Klass",
+      "referenceKind": "references",
+      "line": 139,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "NS::Klass.other_call",
+      "referenceKind": "calls",
+      "line": 140,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "NS::Klass",
+      "referenceKind": "references",
+      "line": 140,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "RETRY_MAX.times",
+      "referenceKind": "calls",
+      "line": 141,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "RETRY_MAX",
+      "referenceKind": "references",
+      "line": 141,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 142,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Widget",
+      "referenceKind": "instantiates",
+      "line": 143,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "lower.new",
+      "referenceKind": "calls",
+      "line": 144,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "chained.first_call.second_call",
+      "referenceKind": "calls",
+      "line": 145,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "chained.first_call",
+      "referenceKind": "calls",
+      "line": 145,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Widget.create(cb).save",
+      "referenceKind": "calls",
+      "line": 146,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Widget.create",
+      "referenceKind": "calls",
+      "line": 146,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "Widget",
+      "referenceKind": "references",
+      "line": 146,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "deep.safe_call",
+      "referenceKind": "calls",
+      "line": 147,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "neg.!=",
+      "referenceKind": "calls",
+      "line": 148,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "obj.attr",
+      "referenceKind": "calls",
+      "line": 149,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "obj.attr2",
+      "referenceKind": "calls",
+      "line": 150,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "puts",
+      "referenceKind": "calls",
+      "line": 152,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "@name.upcase",
+      "referenceKind": "calls",
+      "line": 152,
+      "column": 12
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "col_name.downcase",
+      "referenceKind": "calls",
+      "line": 154,
+      "column": 15
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "lambda",
+      "referenceKind": "calls",
+      "line": 157,
+      "column": 10
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "proc",
+      "referenceKind": "calls",
+      "line": 158,
+      "column": 9
+    },
+    {
+      "fromNodeId": "method:a590c5f459d7f6915b37eb92e75a1d83",
+      "referenceName": "arrow_call",
+      "referenceKind": "calls",
+      "line": 159,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "begin_stmt_call",
+      "referenceKind": "calls",
+      "line": 164,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "rescue_stmt_call",
+      "referenceKind": "calls",
+      "line": 166,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "else_stmt_call",
+      "referenceKind": "calls",
+      "line": 168,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "ensure_stmt_call",
+      "referenceKind": "calls",
+      "line": 170,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "when_then_call",
+      "referenceKind": "calls",
+      "line": 173,
+      "column": 20
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "list.any?",
+      "referenceKind": "calls",
+      "line": 175,
+      "column": 10
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "while_body_call",
+      "referenceKind": "calls",
+      "line": 176,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:773629ccbc9f2957a2e43a4c6e776929",
+      "referenceName": "then_call",
+      "referenceKind": "calls",
+      "line": 180,
+      "column": 6
+    },
+    {
+      "fromNodeId": "method:406f43474d5bd0472fe7702b818cc821",
+      "referenceName": "require",
+      "referenceKind": "calls",
+      "line": 185,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:406f43474d5bd0472fe7702b818cc821",
+      "referenceName": "Kernel.require",
+      "referenceKind": "calls",
+      "line": 186,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:406f43474d5bd0472fe7702b818cc821",
+      "referenceName": "Kernel",
+      "referenceKind": "references",
+      "line": 186,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:38d0e81e9dc9d2296999d41cf9892c2a",
+      "referenceName": "nested_def",
+      "referenceKind": "calls",
+      "line": 195,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:60108b3d293a4763b06368be872be2d7",
+      "referenceName": "lower_conf",
+      "referenceKind": "calls",
+      "line": 205,
+      "column": 4
+    },
+    {
+      "fromNodeId": "method:5725e0ae1651a9d377cc184a5f890d67",
+      "referenceName": "lower_conf.upcase",
+      "referenceKind": "calls",
+      "line": 210,
+      "column": 4
+    },
+    {
+      "fromNodeId": "function:4759298ab8dfe6cd0b2c0574d59fdde3",
+      "referenceName": "singleton_body_call",
+      "referenceKind": "calls",
+      "line": 229,
+      "column": 2
+    },
+    {
+      "fromNodeId": "class:866369875b5ab08194147a3ed7db495f",
+      "referenceName": "this.hooked",
+      "referenceKind": "function_ref",
+      "line": 24,
+      "column": 20
+    },
+    {
+      "fromNodeId": "module:ac981409e1f8413c1a83e150607d75cd",
+      "referenceName": "this.hooked",
+      "referenceKind": "function_ref",
+      "line": 24,
+      "column": 20
+    },
+    {
+      "fromNodeId": "file:torture.rb",
+      "referenceName": "this.hooked",
+      "referenceKind": "function_ref",
+      "line": 24,
+      "column": 20
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.hooked_here",
+      "referenceKind": "function_ref",
+      "line": 70,
+      "column": 16
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.check_thing",
+      "referenceKind": "function_ref",
+      "line": 71,
+      "column": 21
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.wrap_it",
+      "referenceKind": "function_ref",
+      "line": 72,
+      "column": 16
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.render_404",
+      "referenceKind": "function_ref",
+      "line": 73,
+      "column": 35
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.custom_check",
+      "referenceKind": "function_ref",
+      "line": 75,
+      "column": 11
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.help_me",
+      "referenceKind": "function_ref",
+      "line": 76,
+      "column": 16
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.save",
+      "referenceKind": "function_ref",
+      "line": 77,
+      "column": 15
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.before",
+      "referenceKind": "function_ref",
+      "line": 77,
+      "column": 22
+    },
+    {
+      "fromNodeId": "class:326854f65c2a15980f69f2865639f179",
+      "referenceName": "this.cb_sym",
+      "referenceKind": "function_ref",
+      "line": 77,
+      "column": 31
+    },
+    {
+      "fromNodeId": "method:a4d5cdb280703ee014c0dcd82cf09306",
+      "referenceName": "target_cb",
+      "referenceKind": "function_ref",
+      "line": 118,
+      "column": 20
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,2470 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "parse": [
+    {
+      "source": "import { createRouter, createWebHistory } from \"vue-router\"\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    {\n      name: \"home\",\n      path: \"/\",\n      component: () => import(\"@/views/Home\")\n    },\n    {\n      name: \"login\",\n      path: \"/login\",\n      component: () => import(\"@/views/Login\")\n    },\n    {\n      name: \"settings\",\n      path: \"/settings\",\n      component: () => import(\"@/views/Settings\"),\n      meta: { requiresAuth: true }\n    },\n    {\n      name: \"profile\",\n      path: \"/profile/:username\",\n      component: Profile,\n      children: [\n        { path: \"favorites\", component: Favorites }\n      ]\n    }\n  ]\n})\nexport default router\n",
+      "file": "",
+      "expected": [
+        {
+          "path": "/",
+          "name": "home",
+          "component": "Home",
+          "spec": "@/views/Home",
+          "layouts": [],
+          "line": 7
+        },
+        {
+          "path": "/login",
+          "name": "login",
+          "component": "Login",
+          "spec": "@/views/Login",
+          "layouts": [],
+          "line": 12
+        },
+        {
+          "path": "/settings",
+          "name": "settings",
+          "component": "Settings",
+          "spec": "@/views/Settings",
+          "layouts": [],
+          "line": 17
+        },
+        {
+          "path": "/profile/:username/favorites",
+          "name": null,
+          "component": "Favorites",
+          "spec": null,
+          "layouts": [
+            {
+              "component": "Profile",
+              "spec": null
+            }
+          ],
+          "line": 26
+        },
+        {
+          "path": "/profile/:username",
+          "name": "profile",
+          "component": "Profile",
+          "spec": null,
+          "layouts": [],
+          "line": 23
+        }
+      ]
+    },
+    {
+      "source": "export const paths = [{ path: \"/x\" }]\n",
+      "file": "",
+      "expected": []
+    },
+    {
+      "source": "const x = 1\n",
+      "file": "",
+      "expected": []
+    }
+  ],
+  "names": [
+    {
+      "source": "{ name: \"login\" }",
+      "expected": "login"
+    },
+    {
+      "source": "{ name: 'profile', params: { username } }",
+      "expected": "profile"
+    },
+    {
+      "source": "{ path: \"/\", query }",
+      "expected": null
+    },
+    {
+      "source": "'/login'",
+      "expected": null
+    }
+  ],
+  "extraction": [
+    {
+      "path": "src/router/index.js",
+      "source": "import { createRouter, createWebHistory } from \"vue-router\"\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    {\n      name: \"home\",\n      path: \"/\",\n      component: () => import(\"@/views/Home\")\n    },\n    {\n      name: \"login\",\n      path: \"/login\",\n      component: () => import(\"@/views/Login\")\n    },\n    {\n      name: \"settings\",\n      path: \"/settings\",\n      component: () => import(\"@/views/Settings\"),\n      meta: { requiresAuth: true }\n    },\n    {\n      name: \"profile\",\n      path: \"/profile/:username\",\n      component: Profile,\n      children: [\n        { path: \"favorites\", component: Favorites }\n      ]\n    }\n  ]\n})\nexport default router\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/index.js:7:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/router/index.js::route:/",
+            "filePath": "src/router/index.js",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:12:/login:vue",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/router/index.js::route:/login",
+            "filePath": "src/router/index.js",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:17:/settings:vue",
+            "kind": "route",
+            "name": "/settings",
+            "qualifiedName": "src/router/index.js::route:/settings",
+            "filePath": "src/router/index.js",
+            "startLine": 17,
+            "endLine": 17,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:26:/profile/:username/favorites:vue",
+            "kind": "route",
+            "name": "/profile/:username/favorites",
+            "qualifiedName": "src/router/index.js::route:/profile/:username/favorites",
+            "filePath": "src/router/index.js",
+            "startLine": 26,
+            "endLine": 26,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:23:/profile/:username:vue",
+            "kind": "route",
+            "name": "/profile/:username",
+            "qualifiedName": "src/router/index.js::route:/profile/:username",
+            "filePath": "src/router/index.js",
+            "startLine": 23,
+            "endLine": 23,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/index.js:7:/:vue",
+            "referenceName": "import:@/views/Home#Home",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Home"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:12:/login:vue",
+            "referenceName": "import:@/views/Login#Login",
+            "referenceKind": "calls",
+            "line": 12,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Login"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:17:/settings:vue",
+            "referenceName": "import:@/views/Settings#Settings",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Settings"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:26:/profile/:username/favorites:vue",
+            "referenceName": "Favorites",
+            "referenceKind": "calls",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Favorites"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:26:/profile/:username/favorites:vue",
+            "referenceName": "layout:Profile",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:23:/profile/:username:vue",
+            "referenceName": "Profile",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Profile"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "import { createRouter, createWebHistory } from \"vue-router\"\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    {\n      name: \"home\",\n      path: \"/\",\n      component: () => import(\"@/views/Home\")\n    },\n    {\n      name: \"login\",\n      path: \"/login\",\n      component: () => import(\"@/views/Login\")\n    },\n    {\n      name: \"settings\",\n      path: \"/settings\",\n      component: () => import(\"@/views/Settings\"),\n      meta: { requiresAuth: true }\n    },\n    {\n      name: \"profile\",\n      path: \"/profile/:username\",\n      component: Profile,\n      children: [\n        { path: \"favorites\", component: Favorites }\n      ]\n    }\n  ]\n})\nexport default router\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/modules/route.ts:7:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/modules/route.ts::route:/",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:12:/login:vue",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/routes/modules/route.ts::route:/login",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:17:/settings:vue",
+            "kind": "route",
+            "name": "/settings",
+            "qualifiedName": "src/routes/modules/route.ts::route:/settings",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 17,
+            "endLine": 17,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:26:/profile/:username/favorites:vue",
+            "kind": "route",
+            "name": "/profile/:username/favorites",
+            "qualifiedName": "src/routes/modules/route.ts::route:/profile/:username/favorites",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 26,
+            "endLine": 26,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:23:/profile/:username:vue",
+            "kind": "route",
+            "name": "/profile/:username",
+            "qualifiedName": "src/routes/modules/route.ts::route:/profile/:username",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 23,
+            "endLine": 23,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:7:/:vue",
+            "referenceName": "import:@/views/Home#Home",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Home"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:12:/login:vue",
+            "referenceName": "import:@/views/Login#Login",
+            "referenceKind": "calls",
+            "line": 12,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Login"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:17:/settings:vue",
+            "referenceName": "import:@/views/Settings#Settings",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Settings"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:26:/profile/:username/favorites:vue",
+            "referenceName": "Favorites",
+            "referenceKind": "calls",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Favorites"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:26:/profile/:username/favorites:vue",
+            "referenceName": "layout:Profile",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:23:/profile/:username:vue",
+            "referenceName": "Profile",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Profile"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "import { createRouter, createWebHistory } from \"vue-router\"\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    {\n      name: \"home\",\n      path: \"/\",\n      component: () => import(\"@/views/Home\")\n    },\n    {\n      name: \"login\",\n      path: \"/login\",\n      component: () => import(\"@/views/Login\")\n    },\n    {\n      name: \"settings\",\n      path: \"/settings\",\n      component: () => import(\"@/views/Settings\"),\n      meta: { requiresAuth: true }\n    },\n    {\n      name: \"profile\",\n      path: \"/profile/:username\",\n      component: Profile,\n      children: [\n        { path: \"favorites\", component: Favorites }\n      ]\n    }\n  ]\n})\nexport default router\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router.ts:7:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/router.ts::route:/",
+            "filePath": "src/router.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:12:/login:vue",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/router.ts::route:/login",
+            "filePath": "src/router.ts",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:17:/settings:vue",
+            "kind": "route",
+            "name": "/settings",
+            "qualifiedName": "src/router.ts::route:/settings",
+            "filePath": "src/router.ts",
+            "startLine": 17,
+            "endLine": 17,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:26:/profile/:username/favorites:vue",
+            "kind": "route",
+            "name": "/profile/:username/favorites",
+            "qualifiedName": "src/router.ts::route:/profile/:username/favorites",
+            "filePath": "src/router.ts",
+            "startLine": 26,
+            "endLine": 26,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:23:/profile/:username:vue",
+            "kind": "route",
+            "name": "/profile/:username",
+            "qualifiedName": "src/router.ts::route:/profile/:username",
+            "filePath": "src/router.ts",
+            "startLine": 23,
+            "endLine": 23,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router.ts:7:/:vue",
+            "referenceName": "import:@/views/Home#Home",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Home"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:12:/login:vue",
+            "referenceName": "import:@/views/Login#Login",
+            "referenceKind": "calls",
+            "line": 12,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Login"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:17:/settings:vue",
+            "referenceName": "import:@/views/Settings#Settings",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Settings"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:26:/profile/:username/favorites:vue",
+            "referenceName": "Favorites",
+            "referenceKind": "calls",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Favorites"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:26:/profile/:username/favorites:vue",
+            "referenceName": "layout:Profile",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/router.ts:23:/profile/:username:vue",
+            "referenceName": "Profile",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Profile"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "import { createRouter, createWebHistory } from \"vue-router\"\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    {\n      name: \"home\",\n      path: \"/\",\n      component: () => import(\"@/views/Home\")\n    },\n    {\n      name: \"login\",\n      path: \"/login\",\n      component: () => import(\"@/views/Login\")\n    },\n    {\n      name: \"settings\",\n      path: \"/settings\",\n      component: () => import(\"@/views/Settings\"),\n      meta: { requiresAuth: true }\n    },\n    {\n      name: \"profile\",\n      path: \"/profile/:username\",\n      component: Profile,\n      children: [\n        { path: \"favorites\", component: Favorites }\n      ]\n    }\n  ]\n})\nexport default router\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/plain.ts:7:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/plain.ts::route:/",
+            "filePath": "src/plain.ts",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/plain.ts:12:/login:vue",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/plain.ts::route:/login",
+            "filePath": "src/plain.ts",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/plain.ts:17:/settings:vue",
+            "kind": "route",
+            "name": "/settings",
+            "qualifiedName": "src/plain.ts::route:/settings",
+            "filePath": "src/plain.ts",
+            "startLine": 17,
+            "endLine": 17,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/plain.ts:26:/profile/:username/favorites:vue",
+            "kind": "route",
+            "name": "/profile/:username/favorites",
+            "qualifiedName": "src/plain.ts::route:/profile/:username/favorites",
+            "filePath": "src/plain.ts",
+            "startLine": 26,
+            "endLine": 26,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/plain.ts:23:/profile/:username:vue",
+            "kind": "route",
+            "name": "/profile/:username",
+            "qualifiedName": "src/plain.ts::route:/profile/:username",
+            "filePath": "src/plain.ts",
+            "startLine": 23,
+            "endLine": 23,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/plain.ts:7:/:vue",
+            "referenceName": "import:@/views/Home#Home",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "Home"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:12:/login:vue",
+            "referenceName": "import:@/views/Login#Login",
+            "referenceKind": "calls",
+            "line": 12,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "Login"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:17:/settings:vue",
+            "referenceName": "import:@/views/Settings#Settings",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "Settings"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:26:/profile/:username/favorites:vue",
+            "referenceName": "Favorites",
+            "referenceKind": "calls",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "Favorites"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:26:/profile/:username/favorites:vue",
+            "referenceName": "layout:Profile",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:23:/profile/:username:vue",
+            "referenceName": "Profile",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "Profile"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "import { createRouter, createWebHistory } from \"vue-router\"\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [\n    {\n      name: \"home\",\n      path: \"/\",\n      component: () => import(\"@/views/Home\")\n    },\n    {\n      name: \"login\",\n      path: \"/login\",\n      component: () => import(\"@/views/Login\")\n    },\n    {\n      name: \"settings\",\n      path: \"/settings\",\n      component: () => import(\"@/views/Settings\"),\n      meta: { requiresAuth: true }\n    },\n    {\n      name: \"profile\",\n      path: \"/profile/:username\",\n      component: Profile,\n      children: [\n        { path: \"favorites\", component: Favorites }\n      ]\n    }\n  ]\n})\nexport default router\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/View.vue:7:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/router/View.vue::route:/",
+            "filePath": "src/router/View.vue",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:12:/login:vue",
+            "kind": "route",
+            "name": "/login",
+            "qualifiedName": "src/router/View.vue::route:/login",
+            "filePath": "src/router/View.vue",
+            "startLine": 12,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:17:/settings:vue",
+            "kind": "route",
+            "name": "/settings",
+            "qualifiedName": "src/router/View.vue::route:/settings",
+            "filePath": "src/router/View.vue",
+            "startLine": 17,
+            "endLine": 17,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:26:/profile/:username/favorites:vue",
+            "kind": "route",
+            "name": "/profile/:username/favorites",
+            "qualifiedName": "src/router/View.vue::route:/profile/:username/favorites",
+            "filePath": "src/router/View.vue",
+            "startLine": 26,
+            "endLine": 26,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:23:/profile/:username:vue",
+            "kind": "route",
+            "name": "/profile/:username",
+            "qualifiedName": "src/router/View.vue::route:/profile/:username",
+            "filePath": "src/router/View.vue",
+            "startLine": 23,
+            "endLine": 23,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/View.vue:7:/:vue",
+            "referenceName": "import:@/views/Home#Home",
+            "referenceKind": "calls",
+            "line": 7,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Home"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:12:/login:vue",
+            "referenceName": "import:@/views/Login#Login",
+            "referenceKind": "calls",
+            "line": 12,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Login"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:17:/settings:vue",
+            "referenceName": "import:@/views/Settings#Settings",
+            "referenceKind": "calls",
+            "line": 17,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Settings"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:26:/profile/:username/favorites:vue",
+            "referenceName": "Favorites",
+            "referenceKind": "calls",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Favorites"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:26:/profile/:username/favorites:vue",
+            "referenceName": "layout:Profile",
+            "referenceKind": "references",
+            "line": 26,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:23:/profile/:username:vue",
+            "referenceName": "Profile",
+            "referenceKind": "calls",
+            "line": 23,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Profile"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "export const paths = [{ path: \"/x\" }]\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "export const paths = [{ path: \"/x\" }]\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "export const paths = [{ path: \"/x\" }]\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "export const paths = [{ path: \"/x\" }]\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "export const paths = [{ path: \"/x\" }]\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "const x = 1\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "const x = 1\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "const x = 1\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "const x = 1\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "const x = 1\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "import type {RouteRecordRaw} from 'vue-router';\nconst routes: RouteRecordRaw[] = [{path:'/table',component: Layout,redirect:'/table/main',children:[{path:'main',name:'Main',component:()=>import('#/views/main/index.vue')},{path:'',component:Index}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/index.js:2:/table/main:vue",
+            "kind": "route",
+            "name": "/table/main",
+            "qualifiedName": "src/router/index.js::route:/table/main",
+            "filePath": "src/router/index.js",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:2:/table:vue",
+            "kind": "route",
+            "name": "/table",
+            "qualifiedName": "src/router/index.js::route:/table",
+            "filePath": "src/router/index.js",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/index.js:2:/table/main:vue",
+            "referenceName": "import:#/views/main/index.vue#index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:2:/table/main:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:2:/table:vue",
+            "referenceName": "Index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:2:/table:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "import type {RouteRecordRaw} from 'vue-router';\nconst routes: RouteRecordRaw[] = [{path:'/table',component: Layout,redirect:'/table/main',children:[{path:'main',name:'Main',component:()=>import('#/views/main/index.vue')},{path:'',component:Index}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/modules/route.ts:2:/table/main:vue",
+            "kind": "route",
+            "name": "/table/main",
+            "qualifiedName": "src/routes/modules/route.ts::route:/table/main",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:2:/table:vue",
+            "kind": "route",
+            "name": "/table",
+            "qualifiedName": "src/routes/modules/route.ts::route:/table",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/table/main:vue",
+            "referenceName": "import:#/views/main/index.vue#index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/table/main:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/table:vue",
+            "referenceName": "Index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/table:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "import type {RouteRecordRaw} from 'vue-router';\nconst routes: RouteRecordRaw[] = [{path:'/table',component: Layout,redirect:'/table/main',children:[{path:'main',name:'Main',component:()=>import('#/views/main/index.vue')},{path:'',component:Index}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router.ts:2:/table/main:vue",
+            "kind": "route",
+            "name": "/table/main",
+            "qualifiedName": "src/router.ts::route:/table/main",
+            "filePath": "src/router.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:2:/table:vue",
+            "kind": "route",
+            "name": "/table",
+            "qualifiedName": "src/router.ts::route:/table",
+            "filePath": "src/router.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router.ts:2:/table/main:vue",
+            "referenceName": "import:#/views/main/index.vue#index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:2:/table/main:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/router.ts:2:/table:vue",
+            "referenceName": "Index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:2:/table:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "import type {RouteRecordRaw} from 'vue-router';\nconst routes: RouteRecordRaw[] = [{path:'/table',component: Layout,redirect:'/table/main',children:[{path:'main',name:'Main',component:()=>import('#/views/main/index.vue')},{path:'',component:Index}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/plain.ts:2:/table/main:vue",
+            "kind": "route",
+            "name": "/table/main",
+            "qualifiedName": "src/plain.ts::route:/table/main",
+            "filePath": "src/plain.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/plain.ts:2:/table:vue",
+            "kind": "route",
+            "name": "/table",
+            "qualifiedName": "src/plain.ts::route:/table",
+            "filePath": "src/plain.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/plain.ts:2:/table/main:vue",
+            "referenceName": "import:#/views/main/index.vue#index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:2:/table/main:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:2:/table:vue",
+            "referenceName": "Index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "Index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:2:/table:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "import type {RouteRecordRaw} from 'vue-router';\nconst routes: RouteRecordRaw[] = [{path:'/table',component: Layout,redirect:'/table/main',children:[{path:'main',name:'Main',component:()=>import('#/views/main/index.vue')},{path:'',component:Index}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/View.vue:2:/table/main:vue",
+            "kind": "route",
+            "name": "/table/main",
+            "qualifiedName": "src/router/View.vue::route:/table/main",
+            "filePath": "src/router/View.vue",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:2:/table:vue",
+            "kind": "route",
+            "name": "/table",
+            "qualifiedName": "src/router/View.vue::route:/table",
+            "filePath": "src/router/View.vue",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/table/main:vue",
+            "referenceName": "import:#/views/main/index.vue#index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/table/main:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/table:vue",
+            "referenceName": "Index",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Index"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/table:vue",
+            "referenceName": "layout:Layout",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "export const constantRoutes = [{path:'/',component:Root,children:[{path:'users/',name:'users',component:Users,children:[{path:'/absolute',component:Other}]}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/index.js:1:/absolute:vue",
+            "kind": "route",
+            "name": "/absolute",
+            "qualifiedName": "src/router/index.js::route:/absolute",
+            "filePath": "src/router/index.js",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:1:/users:vue",
+            "kind": "route",
+            "name": "/users",
+            "qualifiedName": "src/router/index.js::route:/users",
+            "filePath": "src/router/index.js",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:1:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/router/index.js::route:/",
+            "filePath": "src/router/index.js",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/index.js:1:/absolute:vue",
+            "referenceName": "Other",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Other"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:1:/absolute:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:1:/absolute:vue",
+            "referenceName": "layout:Users",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:1:/users:vue",
+            "referenceName": "Users",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Users"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:1:/users:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:1:/:vue",
+            "referenceName": "Root",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Root"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "export const constantRoutes = [{path:'/',component:Root,children:[{path:'users/',name:'users',component:Users,children:[{path:'/absolute',component:Other}]}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/modules/route.ts:1:/absolute:vue",
+            "kind": "route",
+            "name": "/absolute",
+            "qualifiedName": "src/routes/modules/route.ts::route:/absolute",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:1:/users:vue",
+            "kind": "route",
+            "name": "/users",
+            "qualifiedName": "src/routes/modules/route.ts::route:/users",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:1:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/routes/modules/route.ts::route:/",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/absolute:vue",
+            "referenceName": "Other",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Other"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/absolute:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/absolute:vue",
+            "referenceName": "layout:Users",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/users:vue",
+            "referenceName": "Users",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Users"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/users:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/:vue",
+            "referenceName": "Root",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Root"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "export const constantRoutes = [{path:'/',component:Root,children:[{path:'users/',name:'users',component:Users,children:[{path:'/absolute',component:Other}]}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router.ts:1:/absolute:vue",
+            "kind": "route",
+            "name": "/absolute",
+            "qualifiedName": "src/router.ts::route:/absolute",
+            "filePath": "src/router.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:1:/users:vue",
+            "kind": "route",
+            "name": "/users",
+            "qualifiedName": "src/router.ts::route:/users",
+            "filePath": "src/router.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:1:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/router.ts::route:/",
+            "filePath": "src/router.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router.ts:1:/absolute:vue",
+            "referenceName": "Other",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Other"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:1:/absolute:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/router.ts:1:/absolute:vue",
+            "referenceName": "layout:Users",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/router.ts:1:/users:vue",
+            "referenceName": "Users",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Users"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:1:/users:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/router.ts:1:/:vue",
+            "referenceName": "Root",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Root"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "export const constantRoutes = [{path:'/',component:Root,children:[{path:'users/',name:'users',component:Users,children:[{path:'/absolute',component:Other}]}]}];\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "export const constantRoutes = [{path:'/',component:Root,children:[{path:'users/',name:'users',component:Users,children:[{path:'/absolute',component:Other}]}]}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/View.vue:1:/absolute:vue",
+            "kind": "route",
+            "name": "/absolute",
+            "qualifiedName": "src/router/View.vue::route:/absolute",
+            "filePath": "src/router/View.vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:1:/users:vue",
+            "kind": "route",
+            "name": "/users",
+            "qualifiedName": "src/router/View.vue::route:/users",
+            "filePath": "src/router/View.vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:1:/:vue",
+            "kind": "route",
+            "name": "/",
+            "qualifiedName": "src/router/View.vue::route:/",
+            "filePath": "src/router/View.vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/absolute:vue",
+            "referenceName": "Other",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Other"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/absolute:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/absolute:vue",
+            "referenceName": "layout:Users",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/users:vue",
+            "referenceName": "Users",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Users"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/users:vue",
+            "referenceName": "layout:Root",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/:vue",
+            "referenceName": "Root",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Root"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "const tableRouter = {path:'/same',name:'first',component:First}; const otherRouter = {path:'/same',name:'second',component:Second};\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/index.js:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/router/index.js::route:/same",
+            "filePath": "src/router/index.js",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/router/index.js::route:/same",
+            "filePath": "src/router/index.js",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/index.js:1:/same:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "First"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:1:/same:vue",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "const tableRouter = {path:'/same',name:'first',component:First}; const otherRouter = {path:'/same',name:'second',component:Second};\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/modules/route.ts:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/routes/modules/route.ts::route:/same",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/routes/modules/route.ts::route:/same",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/same:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/same:vue",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "const tableRouter = {path:'/same',name:'first',component:First}; const otherRouter = {path:'/same',name:'second',component:Second};\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router.ts:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/router.ts::route:/same",
+            "filePath": "src/router.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/router.ts::route:/same",
+            "filePath": "src/router.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router.ts:1:/same:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:1:/same:vue",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "const tableRouter = {path:'/same',name:'first',component:First}; const otherRouter = {path:'/same',name:'second',component:Second};\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "const tableRouter = {path:'/same',name:'first',component:First}; const otherRouter = {path:'/same',name:'second',component:Second};\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/View.vue:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/router/View.vue::route:/same",
+            "filePath": "src/router/View.vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:1:/same:vue",
+            "kind": "route",
+            "name": "/same",
+            "qualifiedName": "src/router/View.vue::route:/same",
+            "filePath": "src/router/View.vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/same:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "First"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/same:vue",
+            "referenceName": "Second",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "Second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "const routes = [{path:'/one',path:'/two',name:'one',name:'two',component:First,component:Second}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/index.js:1:/one:vue",
+            "kind": "route",
+            "name": "/one",
+            "qualifiedName": "src/router/index.js::route:/one",
+            "filePath": "src/router/index.js",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/index.js:1:/one:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "const routes = [{path:'/one',path:'/two',name:'one',name:'two',component:First,component:Second}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/modules/route.ts:1:/one:vue",
+            "kind": "route",
+            "name": "/one",
+            "qualifiedName": "src/routes/modules/route.ts::route:/one",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:1:/one:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "const routes = [{path:'/one',path:'/two',name:'one',name:'two',component:First,component:Second}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router.ts:1:/one:vue",
+            "kind": "route",
+            "name": "/one",
+            "qualifiedName": "src/router.ts::route:/one",
+            "filePath": "src/router.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router.ts:1:/one:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "const routes = [{path:'/one',path:'/two',name:'one',name:'two',component:First,component:Second}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/plain.ts:1:/one:vue",
+            "kind": "route",
+            "name": "/one",
+            "qualifiedName": "src/plain.ts::route:/one",
+            "filePath": "src/plain.ts",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/plain.ts:1:/one:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "const routes = [{path:'/one',path:'/two',name:'one',name:'two',component:First,component:Second}];\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/View.vue:1:/one:vue",
+            "kind": "route",
+            "name": "/one",
+            "qualifiedName": "src/router/View.vue::route:/one",
+            "filePath": "src/router/View.vue",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/View.vue:1:/one:vue",
+            "referenceName": "First",
+            "referenceKind": "calls",
+            "line": 1,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "First"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "/* 🌍 */\r\nconst routes = [{path:'/a',component:()=>import('./A.vue'),children:[{path:'b',component:B}]}];\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/index.js:2:/a/b:vue",
+            "kind": "route",
+            "name": "/a/b",
+            "qualifiedName": "src/router/index.js::route:/a/b",
+            "filePath": "src/router/index.js",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          },
+          {
+            "id": "route:src/router/index.js:2:/a:vue",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/router/index.js::route:/a",
+            "filePath": "src/router/index.js",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "javascript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/index.js:2:/a/b:vue",
+            "referenceName": "B",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "B"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:2:/a/b:vue",
+            "referenceName": "layout:import:./A.vue#A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript"
+          },
+          {
+            "fromNodeId": "route:src/router/index.js:2:/a:vue",
+            "referenceName": "import:./A.vue#A",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/index.js",
+            "language": "javascript",
+            "candidates": [
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "/* 🌍 */\r\nconst routes = [{path:'/a',component:()=>import('./A.vue'),children:[{path:'b',component:B}]}];\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/routes/modules/route.ts:2:/a/b:vue",
+            "kind": "route",
+            "name": "/a/b",
+            "qualifiedName": "src/routes/modules/route.ts::route:/a/b",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/routes/modules/route.ts:2:/a:vue",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/routes/modules/route.ts::route:/a",
+            "filePath": "src/routes/modules/route.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/a/b:vue",
+            "referenceName": "B",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "B"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/a/b:vue",
+            "referenceName": "layout:import:./A.vue#A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/routes/modules/route.ts:2:/a:vue",
+            "referenceName": "import:./A.vue#A",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/routes/modules/route.ts",
+            "language": "typescript",
+            "candidates": [
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "/* 🌍 */\r\nconst routes = [{path:'/a',component:()=>import('./A.vue'),children:[{path:'b',component:B}]}];\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router.ts:2:/a/b:vue",
+            "kind": "route",
+            "name": "/a/b",
+            "qualifiedName": "src/router.ts::route:/a/b",
+            "filePath": "src/router.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/router.ts:2:/a:vue",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/router.ts::route:/a",
+            "filePath": "src/router.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router.ts:2:/a/b:vue",
+            "referenceName": "B",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "B"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router.ts:2:/a/b:vue",
+            "referenceName": "layout:import:./A.vue#A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/router.ts:2:/a:vue",
+            "referenceName": "import:./A.vue#A",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router.ts",
+            "language": "typescript",
+            "candidates": [
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "/* 🌍 */\r\nconst routes = [{path:'/a',component:()=>import('./A.vue'),children:[{path:'b',component:B}]}];\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/plain.ts:2:/a/b:vue",
+            "kind": "route",
+            "name": "/a/b",
+            "qualifiedName": "src/plain.ts::route:/a/b",
+            "filePath": "src/plain.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          },
+          {
+            "id": "route:src/plain.ts:2:/a:vue",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/plain.ts::route:/a",
+            "filePath": "src/plain.ts",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "typescript"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/plain.ts:2:/a/b:vue",
+            "referenceName": "B",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "B"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:2:/a/b:vue",
+            "referenceName": "layout:import:./A.vue#A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript"
+          },
+          {
+            "fromNodeId": "route:src/plain.ts:2:/a:vue",
+            "referenceName": "import:./A.vue#A",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/plain.ts",
+            "language": "typescript",
+            "candidates": [
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "/* 🌍 */\r\nconst routes = [{path:'/a',component:()=>import('./A.vue'),children:[{path:'b',component:B}]}];\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "route:src/router/View.vue:2:/a/b:vue",
+            "kind": "route",
+            "name": "/a/b",
+            "qualifiedName": "src/router/View.vue::route:/a/b",
+            "filePath": "src/router/View.vue",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          },
+          {
+            "id": "route:src/router/View.vue:2:/a:vue",
+            "kind": "route",
+            "name": "/a",
+            "qualifiedName": "src/router/View.vue::route:/a",
+            "filePath": "src/router/View.vue",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "language": "vue"
+          }
+        ],
+        "references": [
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/a/b:vue",
+            "referenceName": "B",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "B"
+            ]
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/a/b:vue",
+            "referenceName": "layout:import:./A.vue#A",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue"
+          },
+          {
+            "fromNodeId": "route:src/router/View.vue:2:/a:vue",
+            "referenceName": "import:./A.vue#A",
+            "referenceKind": "calls",
+            "line": 2,
+            "column": 0,
+            "filePath": "src/router/View.vue",
+            "language": "vue",
+            "candidates": [
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "src/router/index.js",
+      "source": "const routes = [{path:'/broken', component:()=>import('./A.vue')\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/routes/modules/route.ts",
+      "source": "const routes = [{path:'/broken', component:()=>import('./A.vue')\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router.ts",
+      "source": "const routes = [{path:'/broken', component:()=>import('./A.vue')\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/plain.ts",
+      "source": "const routes = [{path:'/broken', component:()=>import('./A.vue')\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    },
+    {
+      "path": "src/router/View.vue",
+      "source": "const routes = [{path:'/broken', component:()=>import('./A.vue')\n",
+      "expected": {
+        "nodes": [],
+        "references": []
+      }
+    }
+  ]
+}

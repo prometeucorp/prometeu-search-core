@@ -1,0 +1,3393 @@
+{
+  "revision": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+  "cases": [
+    {
+      "id": "empty-liquid",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "braced-references",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "é😀 {% render 'card', item: product %}{% include \"card\" %}\n{%- section 'hero' -%}\n{% sections 'header-group' %}\n{% render 'card' %}{% render 'card' %}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "import:3db7674f3225406bf3cde8867301bcef",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'card'",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 4,
+            "endColumn": 20
+          },
+          {
+            "id": "component:5024d44b49da1ddc78470cfc6529f9ae",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 4,
+            "endColumn": 20
+          },
+          {
+            "id": "import:3db7674f3225406bf3cde8867301bcef:38",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% include \"card\"",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 38,
+            "endColumn": 55
+          },
+          {
+            "id": "component:90c285151212b0ec2ec95383c67d1b91",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::include:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 38,
+            "endColumn": 55
+          },
+          {
+            "id": "import:9b91d327f32c2f90562706b72e2a00ce",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'card'",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "component:7a3b3af01c23221022b6ba333c26c3c5",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "import:9b91d327f32c2f90562706b72e2a00ce:19",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'card'",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 19,
+            "endColumn": 35
+          },
+          {
+            "id": "component:7a3b3af01c23221022b6ba333c26c3c5:19",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 19,
+            "endColumn": 35
+          },
+          {
+            "id": "import:37a4cac1e4745a0802de94f2ea8bdfe8",
+            "kind": "import",
+            "name": "hero",
+            "qualifiedName": "sections/example.liquid::import:hero",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{%- section 'hero'",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18
+          },
+          {
+            "id": "component:204129085ccaa257eb5e3b19f504b4a1",
+            "kind": "component",
+            "name": "hero",
+            "qualifiedName": "sections/example.liquid::section:hero",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18
+          },
+          {
+            "id": "import:f2aa08a9dd776137efe7af77920addf4",
+            "kind": "import",
+            "name": "header-group",
+            "qualifiedName": "sections/example.liquid::import:header-group",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% sections 'header-group'",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 26
+          },
+          {
+            "id": "component:73b1c8d15eba23667692fe588c2ac7f1",
+            "kind": "component",
+            "name": "header-group",
+            "qualifiedName": "sections/example.liquid::sections:header-group",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 26
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:3db7674f3225406bf3cde8867301bcef",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:5024d44b49da1ddc78470cfc6529f9ae",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:3db7674f3225406bf3cde8867301bcef:38",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:90c285151212b0ec2ec95383c67d1b91",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:9b91d327f32c2f90562706b72e2a00ce",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:7a3b3af01c23221022b6ba333c26c3c5",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:9b91d327f32c2f90562706b72e2a00ce:19",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:7a3b3af01c23221022b6ba333c26c3c5:19",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:37a4cac1e4745a0802de94f2ea8bdfe8",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:204129085ccaa257eb5e3b19f504b4a1",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:f2aa08a9dd776137efe7af77920addf4",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:73b1c8d15eba23667692fe588c2ac7f1",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 4
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 38
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 19
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "sections/hero.liquid",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "sections/header-group.json",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "bare-liquid-block",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% liquid\n  assign heading = section.settings.title\n  render 'card', title: heading\n  include \"price\"\n  section 'hero'\n  sections 'header-group'\n  capture title-text\n  endcapture\n  # render 'not-code'\n  echo 'render \"not-a-tag\"'\n%}\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 12,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "import:c66aedc7b15e2471ebbb8e8257163c66",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "render 'card'",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 2,
+            "endColumn": 15
+          },
+          {
+            "id": "component:5771fbc7136b1ad6d4f8ec084518303f",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 2,
+            "endColumn": 15
+          },
+          {
+            "id": "import:d00d599882c9533effff1341c6aa6f4f",
+            "kind": "import",
+            "name": "price",
+            "qualifiedName": "sections/example.liquid::import:price",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "include \"price\"",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 2,
+            "endColumn": 17
+          },
+          {
+            "id": "component:3f19c0a95e88f0d309e5ef238aca1801",
+            "kind": "component",
+            "name": "price",
+            "qualifiedName": "sections/example.liquid::include:price",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 2,
+            "endColumn": 17
+          },
+          {
+            "id": "import:0b0ce819ec935fcfec021bca48f35383",
+            "kind": "import",
+            "name": "hero",
+            "qualifiedName": "sections/example.liquid::import:hero",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "section 'hero'",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 2,
+            "endColumn": 16
+          },
+          {
+            "id": "component:d1fe50f808dedc56db5c376679702b79",
+            "kind": "component",
+            "name": "hero",
+            "qualifiedName": "sections/example.liquid::section:hero",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 2,
+            "endColumn": 16
+          },
+          {
+            "id": "import:5af5ee727cd1f485724e242fab8b3882",
+            "kind": "import",
+            "name": "header-group",
+            "qualifiedName": "sections/example.liquid::import:header-group",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "sections 'header-group'",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 2,
+            "endColumn": 25
+          },
+          {
+            "id": "component:7b82c55edf49f9052edd3acf1578982f",
+            "kind": "component",
+            "name": "header-group",
+            "qualifiedName": "sections/example.liquid::sections:header-group",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 2,
+            "endColumn": 25
+          },
+          {
+            "id": "variable:c6a8a463eaed712ca2cc3f866e7b4e64",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 2,
+            "endColumn": 18
+          },
+          {
+            "id": "variable:3ed6b344403f64e063b8bd1be694ca52",
+            "kind": "variable",
+            "name": "title-text",
+            "qualifiedName": "sections/example.liquid::title-text",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 2,
+            "endColumn": 20
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:c66aedc7b15e2471ebbb8e8257163c66",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:5771fbc7136b1ad6d4f8ec084518303f",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:d00d599882c9533effff1341c6aa6f4f",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:3f19c0a95e88f0d309e5ef238aca1801",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:0b0ce819ec935fcfec021bca48f35383",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:d1fe50f808dedc56db5c376679702b79",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:5af5ee727cd1f485724e242fab8b3882",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:7b82c55edf49f9052edd3acf1578982f",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:c6a8a463eaed712ca2cc3f866e7b4e64",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:3ed6b344403f64e063b8bd1be694ca52",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 2
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/price.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 2
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "sections/hero.liquid",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 2
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "sections/header-group.json",
+            "referenceKind": "references",
+            "line": 6,
+            "column": 2
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "silent-braced-regions",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% comment %}{% render 'hidden' %}{% assign hidden = 1 %}\n{% schema %}{\"name\":\"Hidden\"}{% endschema %}{% endcomment %}\n{% raw %}{% section 'hidden' %}{% capture hidden %}x{% endcapture %}{% endraw %}\n{% render 'visible' %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 22
+          },
+          {
+            "id": "import:1a51948dda48d090ff518ddaa1be5c07",
+            "kind": "import",
+            "name": "visible",
+            "qualifiedName": "sections/example.liquid::import:visible",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'visible'",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 19
+          },
+          {
+            "id": "component:7e9a571043e1860689060ab634ef3a67",
+            "kind": "component",
+            "name": "visible",
+            "qualifiedName": "sections/example.liquid::render:visible",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 19
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:1a51948dda48d090ff518ddaa1be5c07",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:7e9a571043e1860689060ab634ef3a67",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/visible.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "silent-bare-regions",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% liquid\n  comment\n  render 'hidden'\n  assign hidden = 1\n  endcomment\n  raw\n  capture hidden\n  section 'hidden'\n  endraw\n  render 'visible'\n%}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 11,
+            "startColumn": 0,
+            "endColumn": 2
+          },
+          {
+            "id": "import:2af12ca83ba8cefb4ce1393cc21754ec",
+            "kind": "import",
+            "name": "visible",
+            "qualifiedName": "sections/example.liquid::import:visible",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "render 'visible'",
+            "startLine": 10,
+            "endLine": 10,
+            "startColumn": 2,
+            "endColumn": 18
+          },
+          {
+            "id": "component:b8f66d238e710499aa5a1035839c76fd",
+            "kind": "component",
+            "name": "visible",
+            "qualifiedName": "sections/example.liquid::render:visible",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 10,
+            "endLine": 10,
+            "startColumn": 2,
+            "endColumn": 18
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:2af12ca83ba8cefb4ce1393cc21754ec",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:b8f66d238e710499aa5a1035839c76fd",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/visible.liquid",
+            "referenceKind": "references",
+            "line": 10,
+            "column": 2
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "unterminated-comment",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% render 'before' %}{% comment %}{% render 'after' %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 54
+          },
+          {
+            "id": "import:dcd7a418819df8e212e575c664502251",
+            "kind": "import",
+            "name": "before",
+            "qualifiedName": "sections/example.liquid::import:before",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'before'",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 18
+          },
+          {
+            "id": "component:5eb159fbfd0ec647658c80444859b2a4",
+            "kind": "component",
+            "name": "before",
+            "qualifiedName": "sections/example.liquid::render:before",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 18
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:dcd7a418819df8e212e575c664502251",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:5eb159fbfd0ec647658c80444859b2a4",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/before.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "unterminated-raw",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% raw %}{% render 'hidden' %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 30
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "tag-text-inside-quoted-argument",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% assign text = \"{% render 'fake' %}\" %}\n{% # render 'commented' %}\n{% include 'real' %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 20
+          },
+          {
+            "id": "import:f5945c58c0279e91f02bb5621c693836",
+            "kind": "import",
+            "name": "real",
+            "qualifiedName": "sections/example.liquid::import:real",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% include 'real'",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 17
+          },
+          {
+            "id": "component:d6c502679019a0a179f14f61b688057d",
+            "kind": "component",
+            "name": "real",
+            "qualifiedName": "sections/example.liquid::include:real",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 17
+          },
+          {
+            "id": "variable:7e487e2171679fb723a72fb1ac3c9b89",
+            "kind": "variable",
+            "name": "text",
+            "qualifiedName": "sections/example.liquid::text",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 16
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:f5945c58c0279e91f02bb5621c693836",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:d6c502679019a0a179f14f61b688057d",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:7e487e2171679fb723a72fb1ac3c9b89",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/real.liquid",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "assignment-capture-collisions",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% assign heading = 1 %}{% assign heading = 2 %}{% capture heading %}x{% endcapture %}\n{% capture title-%}trim{% endcapture %}{% capture title-text-%}trim{% endcapture %}\n{% capture 'quoted-name' %}one{% endcapture %}{% capture \"double\" %}two{% endcapture %}\n{% assign invalid.member = 1 %}{% capture invalid.member %}bad{% endcapture %}\n{% assign _ok = 1 %}{% assign value-2 = 2 %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 44
+          },
+          {
+            "id": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 19
+          },
+          {
+            "id": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:24",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 24,
+            "endColumn": 43
+          },
+          {
+            "id": "variable:12156cabe555718f335124dca785ddbc",
+            "kind": "variable",
+            "name": "_ok",
+            "qualifiedName": "sections/example.liquid::_ok",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 15
+          },
+          {
+            "id": "variable:72c44c367d634c86dbcb7fcde4f4dcd0",
+            "kind": "variable",
+            "name": "value-2",
+            "qualifiedName": "sections/example.liquid::value-2",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 20,
+            "endColumn": 39
+          },
+          {
+            "id": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:48",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 48,
+            "endColumn": 66
+          },
+          {
+            "id": "variable:04a86112c92385738623690b205c0ac4",
+            "kind": "variable",
+            "name": "title",
+            "qualifiedName": "sections/example.liquid::title",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "variable:3b8add089dc082cc6df308a808b293c0",
+            "kind": "variable",
+            "name": "title-text",
+            "qualifiedName": "sections/example.liquid::title-text",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 39,
+            "endColumn": 60
+          },
+          {
+            "id": "variable:ab6146b9e1a22c714944e483aee849ab",
+            "kind": "variable",
+            "name": "quoted-name",
+            "qualifiedName": "sections/example.liquid::quoted-name",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 24
+          },
+          {
+            "id": "variable:5403c260089401989f38d816edb5dfd9",
+            "kind": "variable",
+            "name": "double",
+            "qualifiedName": "sections/example.liquid::double",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 46,
+            "endColumn": 65
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:24",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:12156cabe555718f335124dca785ddbc",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:72c44c367d634c86dbcb7fcde4f4dcd0",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:48",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:04a86112c92385738623690b205c0ac4",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:3b8add089dc082cc6df308a808b293c0",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:ab6146b9e1a22c714944e483aee849ab",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:5403c260089401989f38d816edb5dfd9",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "schema-translations",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% schema %}\n{\"name\":{\"fr\":\"Bonjour\",\"en\":\"Hello\"},\"settings\":[{\"id\":\"key\",\"default\":\"do-not-expose\"}]}\n{% endschema %}\n{% schema %}{\"name\":{\"fr\":\"Bonjour\",\"de\":\"Hallo\"}}{% endschema %}\n{% schema %}{bad json}{% endschema %}\n{% schema %}{\"name\":\"Hello\"}{% endschema %}{% schema %}{\"name\":\"Hello\"}{% endschema %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 86
+          },
+          {
+            "id": "constant:94de65642479851b5c2f27f3def0f03e",
+            "kind": "constant",
+            "name": "Hello",
+            "qualifiedName": "sections/example.liquid::schema:Hello",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "constant:f3125bc48c62d142b9feb1f027846e5c",
+            "kind": "constant",
+            "name": "Bonjour",
+            "qualifiedName": "sections/example.liquid::schema:Bonjour",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "constant:570a115bdf80ac4654bab4e0d6b5fb95",
+            "kind": "constant",
+            "name": "schema",
+            "qualifiedName": "sections/example.liquid::schema:schema",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "constant:2b45db2c17a027c0e920e5cb78ee0b9b",
+            "kind": "constant",
+            "name": "Hello",
+            "qualifiedName": "sections/example.liquid::schema:Hello",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "constant:2b45db2c17a027c0e920e5cb78ee0b9b:43",
+            "kind": "constant",
+            "name": "Hello",
+            "qualifiedName": "sections/example.liquid::schema:Hello",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 43,
+            "endColumn": 0
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:94de65642479851b5c2f27f3def0f03e",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:f3125bc48c62d142b9feb1f027846e5c",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:570a115bdf80ac4654bab4e0d6b5fb95",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:2b45db2c17a027c0e920e5cb78ee0b9b",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:2b45db2c17a027c0e920e5cb78ee0b9b:43",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "unicode-columns",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "😀 é {% assign title = 1 %}{% capture title %}雪{% endcapture %}\n{% render \"café\" %}\n{% schema %}{\"name\":\"😀\"}{% endschema %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 40
+          },
+          {
+            "id": "import:8c4e769356c12f00916fbf5b164eb44d",
+            "kind": "import",
+            "name": "café",
+            "qualifiedName": "sections/example.liquid::import:café",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render \"café\"",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "component:98d1c8ae57e0d1f93b22831317dd732b",
+            "kind": "component",
+            "name": "café",
+            "qualifiedName": "sections/example.liquid::render:café",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "constant:a90502f3463bd70bfa9f76edd313a287",
+            "kind": "constant",
+            "name": "😀",
+            "qualifiedName": "sections/example.liquid::schema:😀",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "variable:195946e1f3e01aafd80d24bc503fc967",
+            "kind": "variable",
+            "name": "title",
+            "qualifiedName": "sections/example.liquid::title",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 5,
+            "endColumn": 22
+          },
+          {
+            "id": "variable:195946e1f3e01aafd80d24bc503fc967:27",
+            "kind": "variable",
+            "name": "title",
+            "qualifiedName": "sections/example.liquid::title",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 27,
+            "endColumn": 43
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:8c4e769356c12f00916fbf5b164eb44d",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:98d1c8ae57e0d1f93b22831317dd732b",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:a90502f3463bd70bfa9f76edd313a287",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:195946e1f3e01aafd80d24bc503fc967",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:195946e1f3e01aafd80d24bc503fc967:27",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/café.liquid",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "schema-numeric-translation-keys",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% schema %}{\"name\":{\"10\":\"ten\",\"2\":\"two\",\"fr\":\"French\"}}{% endschema %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 72
+          },
+          {
+            "id": "constant:e231a55ab8c26998b6dfb9918fd6089b",
+            "kind": "constant",
+            "name": "two",
+            "qualifiedName": "sections/example.liquid::schema:two",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:e231a55ab8c26998b6dfb9918fd6089b",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "braced-references-crlf",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "é😀 {% render 'card', item: product %}{% include \"card\" %}\r\n{%- section 'hero' -%}\r\n{% sections 'header-group' %}\r\n{% render 'card' %}{% render 'card' %}\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "import:3db7674f3225406bf3cde8867301bcef",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'card'",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 4,
+            "endColumn": 20
+          },
+          {
+            "id": "component:5024d44b49da1ddc78470cfc6529f9ae",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 4,
+            "endColumn": 20
+          },
+          {
+            "id": "import:3db7674f3225406bf3cde8867301bcef:38",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% include \"card\"",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 38,
+            "endColumn": 55
+          },
+          {
+            "id": "component:90c285151212b0ec2ec95383c67d1b91",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::include:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 38,
+            "endColumn": 55
+          },
+          {
+            "id": "import:9b91d327f32c2f90562706b72e2a00ce",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'card'",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "component:7a3b3af01c23221022b6ba333c26c3c5",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "import:9b91d327f32c2f90562706b72e2a00ce:19",
+            "kind": "import",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::import:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render 'card'",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 19,
+            "endColumn": 35
+          },
+          {
+            "id": "component:7a3b3af01c23221022b6ba333c26c3c5:19",
+            "kind": "component",
+            "name": "card",
+            "qualifiedName": "sections/example.liquid::render:card",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 19,
+            "endColumn": 35
+          },
+          {
+            "id": "import:37a4cac1e4745a0802de94f2ea8bdfe8",
+            "kind": "import",
+            "name": "hero",
+            "qualifiedName": "sections/example.liquid::import:hero",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{%- section 'hero'",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18
+          },
+          {
+            "id": "component:204129085ccaa257eb5e3b19f504b4a1",
+            "kind": "component",
+            "name": "hero",
+            "qualifiedName": "sections/example.liquid::section:hero",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 18
+          },
+          {
+            "id": "import:f2aa08a9dd776137efe7af77920addf4",
+            "kind": "import",
+            "name": "header-group",
+            "qualifiedName": "sections/example.liquid::import:header-group",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% sections 'header-group'",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 26
+          },
+          {
+            "id": "component:73b1c8d15eba23667692fe588c2ac7f1",
+            "kind": "component",
+            "name": "header-group",
+            "qualifiedName": "sections/example.liquid::sections:header-group",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 26
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:3db7674f3225406bf3cde8867301bcef",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:5024d44b49da1ddc78470cfc6529f9ae",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:3db7674f3225406bf3cde8867301bcef:38",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:90c285151212b0ec2ec95383c67d1b91",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:9b91d327f32c2f90562706b72e2a00ce",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:7a3b3af01c23221022b6ba333c26c3c5",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:9b91d327f32c2f90562706b72e2a00ce:19",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:7a3b3af01c23221022b6ba333c26c3c5:19",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:37a4cac1e4745a0802de94f2ea8bdfe8",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:204129085ccaa257eb5e3b19f504b4a1",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:f2aa08a9dd776137efe7af77920addf4",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:73b1c8d15eba23667692fe588c2ac7f1",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 4
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 38
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/card.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 19
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "sections/hero.liquid",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0
+          },
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "sections/header-group.json",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "assignment-capture-collisions-crlf",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "{% assign heading = 1 %}{% assign heading = 2 %}{% capture heading %}x{% endcapture %}\r\n{% capture title-%}trim{% endcapture %}{% capture title-text-%}trim{% endcapture %}\r\n{% capture 'quoted-name' %}one{% endcapture %}{% capture \"double\" %}two{% endcapture %}\r\n{% assign invalid.member = 1 %}{% capture invalid.member %}bad{% endcapture %}\r\n{% assign _ok = 1 %}{% assign value-2 = 2 %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 44
+          },
+          {
+            "id": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 19
+          },
+          {
+            "id": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:24",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 24,
+            "endColumn": 43
+          },
+          {
+            "id": "variable:12156cabe555718f335124dca785ddbc",
+            "kind": "variable",
+            "name": "_ok",
+            "qualifiedName": "sections/example.liquid::_ok",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 15
+          },
+          {
+            "id": "variable:72c44c367d634c86dbcb7fcde4f4dcd0",
+            "kind": "variable",
+            "name": "value-2",
+            "qualifiedName": "sections/example.liquid::value-2",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 20,
+            "endColumn": 39
+          },
+          {
+            "id": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:48",
+            "kind": "variable",
+            "name": "heading",
+            "qualifiedName": "sections/example.liquid::heading",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 48,
+            "endColumn": 66
+          },
+          {
+            "id": "variable:04a86112c92385738623690b205c0ac4",
+            "kind": "variable",
+            "name": "title",
+            "qualifiedName": "sections/example.liquid::title",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "variable:3b8add089dc082cc6df308a808b293c0",
+            "kind": "variable",
+            "name": "title-text",
+            "qualifiedName": "sections/example.liquid::title-text",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 39,
+            "endColumn": 60
+          },
+          {
+            "id": "variable:ab6146b9e1a22c714944e483aee849ab",
+            "kind": "variable",
+            "name": "quoted-name",
+            "qualifiedName": "sections/example.liquid::quoted-name",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 24
+          },
+          {
+            "id": "variable:5403c260089401989f38d816edb5dfd9",
+            "kind": "variable",
+            "name": "double",
+            "qualifiedName": "sections/example.liquid::double",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 46,
+            "endColumn": 65
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:24",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:12156cabe555718f335124dca785ddbc",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:72c44c367d634c86dbcb7fcde4f4dcd0",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:e2a0c3c59a4254737cf6b6a2e78d4eff:48",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:04a86112c92385738623690b205c0ac4",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:3b8add089dc082cc6df308a808b293c0",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:ab6146b9e1a22c714944e483aee849ab",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:5403c260089401989f38d816edb5dfd9",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "unicode-columns-crlf",
+      "path": "sections/example.liquid",
+      "language": "liquid",
+      "source": "😀 é {% assign title = 1 %}{% capture title %}雪{% endcapture %}\r\n{% render \"café\" %}\r\n{% schema %}{\"name\":\"😀\"}{% endschema %}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "kind": "file",
+            "name": "example.liquid",
+            "qualifiedName": "sections/example.liquid",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 40
+          },
+          {
+            "id": "import:8c4e769356c12f00916fbf5b164eb44d",
+            "kind": "import",
+            "name": "café",
+            "qualifiedName": "sections/example.liquid::import:café",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "signature": "{% render \"café\"",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "component:98d1c8ae57e0d1f93b22831317dd732b",
+            "kind": "component",
+            "name": "café",
+            "qualifiedName": "sections/example.liquid::render:café",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 16
+          },
+          {
+            "id": "constant:a90502f3463bd70bfa9f76edd313a287",
+            "kind": "constant",
+            "name": "😀",
+            "qualifiedName": "sections/example.liquid::schema:😀",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "variable:195946e1f3e01aafd80d24bc503fc967",
+            "kind": "variable",
+            "name": "title",
+            "qualifiedName": "sections/example.liquid::title",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 5,
+            "endColumn": 22
+          },
+          {
+            "id": "variable:195946e1f3e01aafd80d24bc503fc967:27",
+            "kind": "variable",
+            "name": "title",
+            "qualifiedName": "sections/example.liquid::title",
+            "filePath": "sections/example.liquid",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 27,
+            "endColumn": 43
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "import:8c4e769356c12f00916fbf5b164eb44d",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "component:98d1c8ae57e0d1f93b22831317dd732b",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "constant:a90502f3463bd70bfa9f76edd313a287",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:195946e1f3e01aafd80d24bc503fc967",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "target": "variable:195946e1f3e01aafd80d24bc503fc967:27",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:2a77d9d2d203ea1f13b80661dea60e37",
+            "referenceName": "snippets/café.liquid",
+            "referenceKind": "references",
+            "line": 2,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "jsonc-sections",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "/* Shopify-generated theme. */\n{\n  \"sections\": {\n    \"main\": {\"type\": \"main-product\",},\n    \"hero\": {\"type\": \"hero\"},\n    \"duplicate\": {\"type\": \"hero\"},\n  },\n  \"order\": [\"main\", \"hero\",],\n}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 9,
+            "startColumn": 0,
+            "endColumn": 1
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/main-product.liquid",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 21
+          },
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/hero.liquid",
+            "referenceKind": "references",
+            "line": 5,
+            "column": 21
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-escaped-types",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"sections\":{\"雪\":{\"type\":\"caf\\u00e9\"},\"😀\":{\"type\":\"x\\\"y\"},\"bad\":{\"type\":42},\"string\":\"hero\"}}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 94
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/café.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 25
+          },
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/x\"y.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 51
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-comments-and-strings",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"comment\":\"/* not a comment */ // still text\", \"sections\": {\"main\": {\"type\": \"hero\"}}} // allowed\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/hero.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 78
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-truncated",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"sections\":{\"main\":{\"type\":\"hero\"}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 35
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-array-root",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "[{\"sections\":{\"main\":{\"type\":\"hero\"}}}]",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 39
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-nonobject-sections",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"sections\":[{\"type\":\"hero\"}]}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 30
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-no-sections",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"name\":\"Nothing\"}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 18
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-duplicate-sections-and-type-keys",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"sections\":{\"main\":{\"type\":\"first\",\"type\":\"second\"},\"main\":{\"type\":\"third\"}},\"sections\":{\"later\":{\"type\":\"fourth\"}}}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 117
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/first.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 28
+          },
+          {
+            "fromNodeId": "file:030c8ccc336a67e020bd347ae546e141",
+            "referenceName": "sections/third.liquid",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 68
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-unterminated-trailing-comment",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"sections\":{\"main\":{\"type\":\"hero\"}}} /* unterminated",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 53
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "json-unterminated-string",
+      "path": "templates/product.json",
+      "language": "liquid",
+      "source": "{\"sections\":{\"main\":{\"type\":\"hero\"}},\"tail\":\"unterminated}",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:030c8ccc336a67e020bd347ae546e141",
+            "kind": "file",
+            "name": "product.json",
+            "qualifiedName": "templates/product.json",
+            "filePath": "templates/product.json",
+            "language": "liquid",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 58
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "mixed-quotes-includes",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace='com.example.Mapper'>\n  <sql id=\"columns\">id, name</sql>\n  <select id='find' resultType='User' parameterType=\"int\">SELECT <include refid='columns'/> FROM t</select>\n  <update id=\"touch\" parameterType='User'>UPDATE t SET x=1</update>\n  <delete id='remove'>DELETE FROM t</delete>\n</mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 9
+          },
+          {
+            "id": "method:6f0ec20af2334eab405ccec97e0d0341",
+            "kind": "method",
+            "name": "columns",
+            "qualifiedName": "com.example.Mapper::columns",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id, name"
+          },
+          {
+            "id": "method:83d52d328413781b5ac0742bda9f240a",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "com.example.Mapper::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT param=int result=User",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT FROM t"
+          },
+          {
+            "id": "method:534246c3f0c4960f18c887c57069f430",
+            "kind": "method",
+            "name": "touch",
+            "qualifiedName": "com.example.Mapper::touch",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "UPDATE param=User",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "UPDATE t SET x=1"
+          },
+          {
+            "id": "method:747a24d22fdbe6874d6bb2e4ec59d928",
+            "kind": "method",
+            "name": "remove",
+            "qualifiedName": "com.example.Mapper::remove",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "DELETE",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "DELETE FROM t"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:6f0ec20af2334eab405ccec97e0d0341",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:83d52d328413781b5ac0742bda9f240a",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:534246c3f0c4960f18c887c57069f430",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:747a24d22fdbe6874d6bb2e4ec59d928",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:83d52d328413781b5ac0742bda9f240a",
+            "referenceName": "com.example.Mapper::columns",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-comments-and-lines",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"com.example.Mapper\">\n<!-- é😀\n<select id=\"hidden\">SELECT 1</select>\n-->\n<select id=\"visible\">SELECT 2 <!-- <include refid=\"hidden\"/> --></select>\n</mapper>\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "method:e9a3bd0fdf7ae37455e417518edbc6c8",
+            "kind": "method",
+            "name": "visible",
+            "qualifiedName": "com.example.Mapper::visible",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 2"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:e9a3bd0fdf7ae37455e417518edbc6c8",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-cdata-markers",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"com.example.Mapper\"><![CDATA[<!--]]><select id=\"visible\">SELECT 1</select><![CDATA[-->]]></mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 117
+          },
+          {
+            "id": "method:691a070a3e469b532b862a18d39be9b5",
+            "kind": "method",
+            "name": "visible",
+            "qualifiedName": "com.example.Mapper::visible",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:691a070a3e469b532b862a18d39be9b5",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-unterminated-comment",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"M\"><select id=\"before\">SELECT 1</select><!-- <select id=\"after\">SELECT 2</select>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 100
+          },
+          {
+            "id": "method:329466db307eadf1c104129a053b475a",
+            "kind": "method",
+            "name": "before",
+            "qualifiedName": "M::before",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:329466db307eadf1c104129a053b475a",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-vendor-duplicates",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"com.example.Mapper\"><select id=\"find\" databaseId=\"oracle\">SELECT 1 FROM dual</select><select id=\"find\" databaseId='mysql'>SELECT 1</select><select id=\"find\">SELECT 2</select></mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 202
+          },
+          {
+            "id": "method:a24d2cd88fc22c6b7a4976c5f0fd4ca0",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "com.example.Mapper::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT databaseId=oracle",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1 FROM dual"
+          },
+          {
+            "id": "method:c7a7f93821eeef32b882cc78d222cc6b",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "com.example.Mapper::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT databaseId=mysql",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          },
+          {
+            "id": "method:17b1682e86a20366623c1df2d60f6395",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "com.example.Mapper::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 2"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:a24d2cd88fc22c6b7a4976c5f0fd4ca0",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:c7a7f93821eeef32b882cc78d222cc6b",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:17b1682e86a20366623c1df2d60f6395",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-qualified-includes",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"com.example.Mapper\"><sql id=\"base\">id</sql><select id=\"all\">SELECT <include refid=\"com.example.Mapper.base\"/> FROM t <include refid=\"external.other.columns\"/></select></mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 195
+          },
+          {
+            "id": "method:2883f778cfe0516d83a3b8757391d3eb",
+            "kind": "method",
+            "name": "base",
+            "qualifiedName": "com.example.Mapper::base",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id"
+          },
+          {
+            "id": "method:e4788c5f64f11ebb064ef852b756e54b",
+            "kind": "method",
+            "name": "all",
+            "qualifiedName": "com.example.Mapper::all",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT FROM t"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:2883f778cfe0516d83a3b8757391d3eb",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:e4788c5f64f11ebb064ef852b756e54b",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:e4788c5f64f11ebb064ef852b756e54b",
+            "referenceName": "com.example.Mapper::base",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0
+          },
+          {
+            "fromNodeId": "method:e4788c5f64f11ebb064ef852b756e54b",
+            "referenceName": "external.other::columns",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-spaced-close-tags",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"M\"><sql id=\"cols\">id</sql><select id=\"a\"><include refid=\"cols\"/></select ><select id=\"b\">SELECT 2</select></mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 134
+          },
+          {
+            "id": "method:96032d7587d200cc74a4ca5f1db11780",
+            "kind": "method",
+            "name": "cols",
+            "qualifiedName": "M::cols",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id"
+          },
+          {
+            "id": "method:649d8ebd1808bf565366b7d7c53d9a97",
+            "kind": "method",
+            "name": "a",
+            "qualifiedName": "M::a",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": ""
+          },
+          {
+            "id": "method:cbd798aa8443f62ee76e288312306257",
+            "kind": "method",
+            "name": "b",
+            "qualifiedName": "M::b",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 2"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:96032d7587d200cc74a4ca5f1db11780",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:649d8ebd1808bf565366b7d7c53d9a97",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:cbd798aa8443f62ee76e288312306257",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:649d8ebd1808bf565366b7d7c53d9a97",
+            "referenceName": "M::cols",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-unicode-positions",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "é😀<mapper namespace=\"M\">雪<select id=\"find\">SELECT '😀'</select></mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 73
+          },
+          {
+            "id": "method:07496ac97f22d559fe7a2094990b2372",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "M::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT '😀'"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:07496ac97f22d559fe7a2094990b2372",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "ibatis-namespaced",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<?xml version=\"1.0\"?>\n<sqlMap namespace=\"Account\">\n<sql id=\"columns\">id, name</sql>\n<select id=\"getById\" resultClass=\"Account\">SELECT <include refid=\"columns\"/> FROM account</select>\n<insert id=\"insert\" parameterClass=\"Account\">INSERT INTO account VALUES (#id#)</insert>\n<statement id=\"runIt\">SELECT 1</statement>\n<procedure id=\"callIt\">{ call do_it() }</procedure>\n</sqlMap>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 9
+          },
+          {
+            "id": "method:e68266dc0c09b2161553f6b004c728c2",
+            "kind": "method",
+            "name": "columns",
+            "qualifiedName": "Account::columns",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id, name"
+          },
+          {
+            "id": "method:808fce687309ac8439d3bf602750bab7",
+            "kind": "method",
+            "name": "getById",
+            "qualifiedName": "Account::getById",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT FROM account"
+          },
+          {
+            "id": "method:61ad4336e2e63422538a52114a0b449c",
+            "kind": "method",
+            "name": "insert",
+            "qualifiedName": "Account::insert",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "INSERT",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "INSERT INTO account VALUES (#id#)"
+          },
+          {
+            "id": "method:44a3cda74f387a543ca6dc149f23eb58",
+            "kind": "method",
+            "name": "runIt",
+            "qualifiedName": "Account::runIt",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "STATEMENT",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          },
+          {
+            "id": "method:c18c5f9b63c85f7eff0c9d433b3d6257",
+            "kind": "method",
+            "name": "callIt",
+            "qualifiedName": "Account::callIt",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "PROCEDURE",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "{ call do_it() }"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:e68266dc0c09b2161553f6b004c728c2",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:808fce687309ac8439d3bf602750bab7",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:61ad4336e2e63422538a52114a0b449c",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:44a3cda74f387a543ca6dc149f23eb58",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:c18c5f9b63c85f7eff0c9d433b3d6257",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:808fce687309ac8439d3bf602750bab7",
+            "referenceName": "Account::columns",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "ibatis-qualified-identifiers",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<sqlMap><select id=\"com.example.Account.getById\">SELECT 1</select><sql id=\"Account.cols\">id</sql><statement id=\"bare\">SELECT <include refid=\"Account.cols\"/></statement></sqlMap>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 177
+          },
+          {
+            "id": "method:5bb65a2de85e5d96840fa069a9066f48",
+            "kind": "method",
+            "name": "getById",
+            "qualifiedName": "com.example.Account::getById",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          },
+          {
+            "id": "method:a704da3e950d028b31c1938d5ccad4c9",
+            "kind": "method",
+            "name": "cols",
+            "qualifiedName": "Account::cols",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id"
+          },
+          {
+            "id": "method:e22e70dd9f20c1caafbac9f794cf6b76",
+            "kind": "method",
+            "name": "bare",
+            "qualifiedName": "bare",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "STATEMENT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:5bb65a2de85e5d96840fa069a9066f48",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:a704da3e950d028b31c1938d5ccad4c9",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:e22e70dd9f20c1caafbac9f794cf6b76",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:e22e70dd9f20c1caafbac9f794cf6b76",
+            "referenceName": "Account::cols",
+            "referenceKind": "references",
+            "line": 1,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "ibatis-config",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<sqlMapConfig><sqlMap resource=\"Account.xml\"/></sqlMapConfig>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 61
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "plain-xml",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<project><name>Sample</name><select id=\"not-a-mapper\">value</select></project>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 78
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "mapper-missing-namespace",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper><select id=\"not-qualified\">SELECT 1</select></mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 61
+          }
+        ],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "mapper-unclosed-root",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"M\"><select id=\"find\">SELECT 1</select>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 57
+          },
+          {
+            "id": "method:f4c57ab217f492ef2434b5c1fd412e51",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "M::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 1,
+            "endLine": 1,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:f4c57ab217f492ef2434b5c1fd412e51",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "mixed-quotes-includes-crlf",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace='com.example.Mapper'>\r\n  <sql id=\"columns\">id, name</sql>\r\n  <select id='find' resultType='User' parameterType=\"int\">SELECT <include refid='columns'/> FROM t</select>\r\n  <update id=\"touch\" parameterType='User'>UPDATE t SET x=1</update>\r\n  <delete id='remove'>DELETE FROM t</delete>\r\n</mapper>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 9
+          },
+          {
+            "id": "method:9c0de349ad2b99dded7a8138e6175e93",
+            "kind": "method",
+            "name": "columns",
+            "qualifiedName": "com.example.Mapper::columns",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 2,
+            "endLine": 2,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id, name"
+          },
+          {
+            "id": "method:4a6895b77af40311b6a1313e764fdd78",
+            "kind": "method",
+            "name": "find",
+            "qualifiedName": "com.example.Mapper::find",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT param=int result=User",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT FROM t"
+          },
+          {
+            "id": "method:95579feaf036d69862cf127dbf074c02",
+            "kind": "method",
+            "name": "touch",
+            "qualifiedName": "com.example.Mapper::touch",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "UPDATE param=User",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "UPDATE t SET x=1"
+          },
+          {
+            "id": "method:67f35ff73dd2f6bbd6007114c755e0fb",
+            "kind": "method",
+            "name": "remove",
+            "qualifiedName": "com.example.Mapper::remove",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "DELETE",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "DELETE FROM t"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:9c0de349ad2b99dded7a8138e6175e93",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:4a6895b77af40311b6a1313e764fdd78",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:95579feaf036d69862cf127dbf074c02",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:67f35ff73dd2f6bbd6007114c755e0fb",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:4a6895b77af40311b6a1313e764fdd78",
+            "referenceName": "com.example.Mapper::columns",
+            "referenceKind": "references",
+            "line": 3,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "xml-comments-and-lines-crlf",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<mapper namespace=\"com.example.Mapper\">\r\n<!-- é😀\r\n<select id=\"hidden\">SELECT 1</select>\r\n-->\r\n<select id=\"visible\">SELECT 2 <!-- <include refid=\"hidden\"/> --></select>\r\n</mapper>\r\n",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0
+          },
+          {
+            "id": "method:639046cfa4ca2898b076ee832288d479",
+            "kind": "method",
+            "name": "visible",
+            "qualifiedName": "com.example.Mapper::visible",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 2"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:639046cfa4ca2898b076ee832288d479",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "ibatis-namespaced-crlf",
+      "path": "mappers/Example.xml",
+      "language": "xml",
+      "source": "<?xml version=\"1.0\"?>\r\n<sqlMap namespace=\"Account\">\r\n<sql id=\"columns\">id, name</sql>\r\n<select id=\"getById\" resultClass=\"Account\">SELECT <include refid=\"columns\"/> FROM account</select>\r\n<insert id=\"insert\" parameterClass=\"Account\">INSERT INTO account VALUES (#id#)</insert>\r\n<statement id=\"runIt\">SELECT 1</statement>\r\n<procedure id=\"callIt\">{ call do_it() }</procedure>\r\n</sqlMap>",
+      "expected": {
+        "nodes": [
+          {
+            "id": "file:2a6c3b895842931e3245719168a78c4b",
+            "kind": "file",
+            "name": "Example.xml",
+            "qualifiedName": "mappers/Example.xml",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "startLine": 1,
+            "endLine": 8,
+            "startColumn": 0,
+            "endColumn": 9
+          },
+          {
+            "id": "method:0d51539a41e671aa397e6ecf7eeb8008",
+            "kind": "method",
+            "name": "columns",
+            "qualifiedName": "Account::columns",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "<sql>",
+            "startLine": 3,
+            "endLine": 3,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "id, name"
+          },
+          {
+            "id": "method:a7f8b23689a57e4648a60fdcc5e56538",
+            "kind": "method",
+            "name": "getById",
+            "qualifiedName": "Account::getById",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "SELECT",
+            "startLine": 4,
+            "endLine": 4,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT FROM account"
+          },
+          {
+            "id": "method:336e81ec9ac6cc1cd7f8d521adf8aa66",
+            "kind": "method",
+            "name": "insert",
+            "qualifiedName": "Account::insert",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "INSERT",
+            "startLine": 5,
+            "endLine": 5,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "INSERT INTO account VALUES (#id#)"
+          },
+          {
+            "id": "method:61d9e70ae9e3fdf36abeb63f9d7b274b",
+            "kind": "method",
+            "name": "runIt",
+            "qualifiedName": "Account::runIt",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "STATEMENT",
+            "startLine": 6,
+            "endLine": 6,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "SELECT 1"
+          },
+          {
+            "id": "method:6187f09b728f97f82455fa1bd6cb29fb",
+            "kind": "method",
+            "name": "callIt",
+            "qualifiedName": "Account::callIt",
+            "filePath": "mappers/Example.xml",
+            "language": "xml",
+            "signature": "PROCEDURE",
+            "startLine": 7,
+            "endLine": 7,
+            "startColumn": 0,
+            "endColumn": 0,
+            "docstring": "{ call do_it() }"
+          }
+        ],
+        "edges": [
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:0d51539a41e671aa397e6ecf7eeb8008",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:a7f8b23689a57e4648a60fdcc5e56538",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:336e81ec9ac6cc1cd7f8d521adf8aa66",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:61d9e70ae9e3fdf36abeb63f9d7b274b",
+            "kind": "contains"
+          },
+          {
+            "source": "file:2a6c3b895842931e3245719168a78c4b",
+            "target": "method:6187f09b728f97f82455fa1bd6cb29fb",
+            "kind": "contains"
+          }
+        ],
+        "unresolvedReferences": [
+          {
+            "fromNodeId": "method:a7f8b23689a57e4648a60fdcc5e56538",
+            "referenceName": "Account::columns",
+            "referenceKind": "references",
+            "line": 4,
+            "column": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "yaml-file-tracking",
+      "path": "config/routes.yml",
+      "language": "yaml",
+      "source": "route:\n  path: /example\n  controller: Sample\n",
+      "expected": {
+        "nodes": [],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "twig-file-tracking",
+      "path": "views/page.twig",
+      "language": "twig",
+      "source": "{% include \"layout.twig\" %}{{ value }}\n",
+      "expected": {
+        "nodes": [],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    },
+    {
+      "id": "properties-file-tracking",
+      "path": "config/application.properties",
+      "language": "properties",
+      "source": "service.url=https://example.test\n",
+      "expected": {
+        "nodes": [],
+        "edges": [],
+        "unresolvedReferences": [],
+        "errors": []
+      }
+    }
+  ]
+}
