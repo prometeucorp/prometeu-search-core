@@ -129,3 +129,17 @@ CLI/MCP retain the transport limits in the table above.
 
 The pure `graph_query` and `hierarchy` modules accept canonical records supplied
 by an embedding host. Their results remain static evidence, not compiler proof.
+
+## Canonical query and analysis APIs
+
+`Engine::graph_query` exposes BFS/DFS, callers/callees, call sites, usages,
+impact, paths, ancestry, children, symbol context, dependencies, exports, modules,
+and filtered canonical nodes. Operation-specific constructors select defaults;
+BFS/DFS default to 1000 results and unbounded depth, with caller overrides.
+
+`Engine::hierarchy` returns type ancestry, descendant fans, and member matches.
+`Engine::context` combines ranked search and graph expansion into task context
+and Markdown. `Engine::metrics` counts resolved graph relationships; `cycles`
+returns circular import groups. Conservative `dead_code` removes candidates
+when exports, source mentions, unresolved names, or framework evidence cast doubt.
+All responses preserve their committed generation and truncation status.

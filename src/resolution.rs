@@ -1664,6 +1664,29 @@ mod tests {
             for query in case["queries"].as_array().unwrap() {
                 let id = query["nodeId"].as_str().unwrap();
                 let index = by_id[id];
+                let metrics = engine.metrics(graph.nodes[index].id, 65536).unwrap();
+                let mut expected_metrics = query["metrics"].clone();
+                for (from, to, kind) in actual
+                    .difference(&expected)
+                    .filter(|edge| uncertain.contains(*edge))
+                {
+                    assert_eq!(kind, "imports");
+                    for (field, applies) in [
+                        ("outgoingEdgeCount", from == id),
+                        ("incomingEdgeCount", to == id),
+                    ] {
+                        if applies {
+                            expected_metrics[field] =
+                                (expected_metrics[field].as_u64().unwrap() + 1).into();
+                        }
+                    }
+                }
+                assert_eq!(
+                    serde_json::to_value(metrics.metrics).unwrap(),
+                    expected_metrics,
+                    "{} {id} metrics",
+                    case["name"]
+                );
                 for (direction, field) in [
                     (Direction::Callers, "callers"),
                     (Direction::Callees, "callees"),

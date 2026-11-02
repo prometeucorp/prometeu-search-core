@@ -1,6 +1,7 @@
 //! Local, worktree-scoped code search. No model, network, or Node runtime is required.
 mod auxiliary_sources;
 mod classify;
+pub mod context;
 mod frameworks;
 mod graph;
 pub mod graph_query;
@@ -16,7 +17,13 @@ mod synthesis;
 mod traversal;
 mod watch;
 
-pub use graph::{ContextFile, ContextSymbol, GraphEdge, GraphMode, GraphOptions, GraphResult};
+pub use graph::{
+    ContextFile, ContextSymbol, CyclesResult, DeadCodeEntry, DeadCodeExclusions, DeadCodeOptions,
+    DeadCodeReport, DeadCodeResult, GraphEdge, GraphMode, GraphOptions, GraphResult, MetricsResult,
+    NodeMetrics,
+};
+pub use graph::{ContextResult, HierarchyResult};
+pub use graph::{GraphOperation, GraphQueryOptions, GraphQueryResult};
 pub use index::*;
 pub use inspect::*;
 pub use watch::WatchHandle;

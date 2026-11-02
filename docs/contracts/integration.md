@@ -122,3 +122,8 @@ The CLI/MCP interfaces retain the limits documented above.
 
 See [project configuration](project-configuration.md) for extension mappings,
 selection, native Git traversal, and atomic settings changes.
+
+`Engine::graph_query`, `hierarchy`, `context`, `metrics`, `cycles`, and `dead_code`
+read a single indexed snapshot without implicit refresh. Their operation-specific
+limits are configurable; explicit byte limits preserve complete serialized JSON
+and truncation metadata. These additions are direct Rust APIs in this layer.

@@ -9,8 +9,23 @@ use std::cell::Cell;
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet, VecDeque};
 use std::path::{Component, Path};
 
+#[path = "analysis.rs"]
+mod analysis;
+#[path = "context_adapter.rs"]
+mod context_adapter;
+pub use context_adapter::ContextResult;
+#[path = "hierarchy_adapter.rs"]
+mod hierarchy_adapter;
+pub use hierarchy_adapter::HierarchyResult;
+#[path = "graph_query_adapter.rs"]
+mod graph_query_adapter;
 #[path = "resolution.rs"]
 mod resolution;
+pub use analysis::{
+    CyclesResult, DeadCodeEntry, DeadCodeExclusions, DeadCodeOptions, DeadCodeReport,
+    DeadCodeResult, MetricsResult, NodeMetrics,
+};
+pub use graph_query_adapter::{GraphOperation, GraphQueryOptions, GraphQueryResult};
 pub(crate) use resolution::{
     ProjectModules, PythonModules, is_project_manifest, js_import_mappings, js_imports,
     type_parameters, workspace_snapshot,
