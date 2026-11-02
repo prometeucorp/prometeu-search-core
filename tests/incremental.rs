@@ -89,6 +89,14 @@ fn targeted_ignore_rules_match_recovery_and_rule_changes_reconcile_all() {
         .collect();
     paths.sort();
     assert_eq!(paths, vec!["nested/allowed.ts", "visible.ts"]);
+    let files = engine.search("kind:file", 10, 12000).unwrap();
+    assert_eq!(files.results.len(), 2);
+    assert!(
+        files
+            .results
+            .iter()
+            .all(|hit| hit.snippet.contains("function present"))
+    );
     let generation = engine.status().unwrap().generation;
     assert_eq!(engine.sync().unwrap().indexed, 0);
     assert_eq!(engine.status().unwrap().generation, generation);

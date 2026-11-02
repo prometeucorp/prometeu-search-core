@@ -69,9 +69,7 @@ transactions. Restart the process and reconcile on workspace reactivation.
 - Stop all clients before deleting its derived database or removing the worktree.
 - If schema compatibility fails, choose a fresh cache path or deliberately remove
   the stopped engine's cache. Never point the engine at Prometeu's application DB.
-- Schema version 4 rejects versions 1, 2, and 3 so unchanged source receives the
-  semantic extraction and signature metadata, including corrected loop binding
-  scopes. Old databases are not modified.
+- Schema version 6 rejects versions 1 through 5 without modification; stop clients and rebuild derived caches before querying.
 
 For direct Rust linking, `Engine::open` owns a connection. `sync` performs full
 content-hash recovery; `sync_paths` reconciles changed paths, falling back to full
@@ -107,20 +105,20 @@ than silently answering from it. The host decides whether agents fall back to
 ordinary search. MCP registration/injection, selection defaults, visible status,
 and automatic reconnect belong in Prometeu, not in this engine.
 
-## Canonical snapshot APIs
 
-Rust hosts can pass canonical node and edge slices to
-`graph_query::GraphSnapshot::new` and the `hierarchy` functions without creating
-an `Engine`. Traversal callers choose work limits through `TraversalOptions`;
-results report truncation when a selected traversal budget is reached. These
-APIs use the supplied records only and do not refresh or access the filesystem.
+## Native library extensions
 
-## Standalone source APIs
+The library indexes all 41 language identifiers through native Rust extraction
+and bundled C grammars. `parser::extract_as` accepts an explicit language;
+`parser::extract_with_frameworks` adds framework declarations and references.
+The engine detects frameworks from committed inputs and resolves and synthesizes
+relationships without an external compiler or runtime.
 
-`parser::LANGUAGES` lists 41 canonical language identifiers. `parser::extract`
-detects the language, and `parser::extract_as` accepts an explicit identifier;
-both return complete canonical records from supplied source text.
-`parser::detect_language` and `parser::parse_with_override` accept an optional
-extension mapping and retain special filename and content detection rules.
-These APIs do not read files or change an index. Existing Engine, CLI, and MCP
-language selection and schema-4 cache behavior remain unchanged in this layer.
+`Engine::search_with_options` defaults to 100 candidates and offset zero, with
+no implicit byte budget. `Engine::files`, `node`, and `file` read committed
+source and metadata; their explicit byte budgets have a 1024-byte minimum and
+no fixed upper ceiling. Paths remain confined to the selected worktree.
+The CLI/MCP interfaces retain the limits documented above.
+
+See [project configuration](project-configuration.md) for extension mappings,
+selection, native Git traversal, and atomic settings changes.

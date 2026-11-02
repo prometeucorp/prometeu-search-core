@@ -13,7 +13,7 @@ fn component_projection_keeps_inline_script_source_spans() {
             "<p>é😀</p><script>\nfunction first() { call(); }\n</script>",
             "<script>function first() { call(); }</script><script>function second() { call(); }</script>",
         ] {
-            let parsed = parser::parse_with_override(Path::new(&path), source, None).unwrap();
+            let parsed = parser::parse(Path::new(&path), source).unwrap();
             assert_eq!(
                 parsed
                     .symbols
@@ -65,12 +65,8 @@ fn component_corpus_projects_valid_declaration_spans() {
         serde_json::from_str(include_str!("fixtures/upstream/components/cases.json")).unwrap();
     for case in corpus["cases"].as_array().unwrap() {
         let source = case["source"].as_str().unwrap();
-        let parsed = parser::parse_with_override(
-            Path::new(case["filePath"].as_str().unwrap()),
-            source,
-            None,
-        )
-        .unwrap_or_else(|error| panic!("{}: {error:#}", case["id"]));
+        let parsed = parser::parse(Path::new(case["filePath"].as_str().unwrap()), source)
+            .unwrap_or_else(|error| panic!("{}: {error:#}", case["id"]));
         for symbol in &parsed.symbols {
             let text = source
                 .get(symbol.start_byte..symbol.end_byte)
@@ -98,6 +94,63 @@ fn component_corpus_projects_valid_declaration_spans() {
                 case["id"]
             );
         }
+    }
+}
+
+#[test]
+fn component_oracle_corpus_reaches_the_persistent_index() {
+    let corpus: Value =
+        serde_json::from_str(include_str!("fixtures/upstream/components/cases.json")).unwrap();
+    let cases = corpus["cases"].as_array().unwrap();
+    let temp = tempfile::tempdir().unwrap();
+    let root = temp.path().join("project");
+    std::fs::create_dir(&root).unwrap();
+    for case in cases {
+        std::fs::write(
+            root.join(format!(
+                "{}.{}",
+                case["id"].as_str().unwrap(),
+                case["language"].as_str().unwrap()
+            )),
+            case["source"].as_str().unwrap(),
+        )
+        .unwrap();
+    }
+    let database = temp.path().join("index.sqlite");
+    let mut engine = prometeu_search::Engine::open(&root, Some(&database)).unwrap();
+    assert_eq!(engine.sync().unwrap().indexed, cases.len());
+    assert_eq!(engine.sync().unwrap().unchanged, cases.len());
+    drop(engine);
+    let engine = prometeu_search::Engine::open(&root, Some(&database)).unwrap();
+    assert_eq!(engine.status().unwrap().files, cases.len());
+}
+
+#[test]
+fn indexed_component_nodes_return_their_original_script_source() {
+    let temp = tempfile::tempdir().unwrap();
+    let root = temp.path().join("project");
+    std::fs::create_dir(&root).unwrap();
+    let mut engine =
+        prometeu_search::Engine::open(&root, Some(&temp.path().join("index.sqlite"))).unwrap();
+    for language in ["vue", "svelte", "astro"] {
+        let name = format!("inline_{language}");
+        std::fs::write(
+            root.join(format!("Inline.{language}")),
+            format!("<p>é😀</p><script>function {name}() {{ return 42; }}</script>"),
+        )
+        .unwrap();
+    }
+    engine.sync().unwrap();
+    for language in ["vue", "svelte", "astro"] {
+        let name = format!("inline_{language}");
+        let found = engine.search(&name, 10, 12000).unwrap();
+        let symbol = found
+            .results
+            .iter()
+            .find(|symbol| symbol.name == name)
+            .unwrap();
+        let node = engine.node(symbol.id, 12000).unwrap().node.unwrap();
+        assert_eq!(node.source, format!("function {name}() {{ return 42; }}"));
     }
 }
 
