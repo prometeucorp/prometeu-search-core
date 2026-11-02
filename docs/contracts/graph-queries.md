@@ -143,3 +143,10 @@ and Markdown. `Engine::metrics` counts resolved graph relationships; `cycles`
 returns circular import groups. Conservative `dead_code` removes candidates
 when exports, source mentions, unresolved names, or framework evidence cast doubt.
 All responses preserve their committed generation and truncation status.
+
+## Embedded viewer
+
+The `viewer` module exposes a loopback HTTP server with bundled browser assets.
+Endpoint-specific limits bound search, traversal, source windows, and displayed
+relationships. Saved trails require same-origin writes and respect read-only mode.
+There is no shared 2 MiB response ceiling and no Node runtime dependency.

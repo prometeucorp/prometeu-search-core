@@ -17,6 +17,7 @@ mod synthesis;
 mod traversal;
 mod watch;
 
+pub use graph::viewer;
 pub use graph::{
     ContextFile, ContextSymbol, CyclesResult, DeadCodeEntry, DeadCodeExclusions, DeadCodeOptions,
     DeadCodeReport, DeadCodeResult, GraphEdge, GraphMode, GraphOptions, GraphResult, MetricsResult,

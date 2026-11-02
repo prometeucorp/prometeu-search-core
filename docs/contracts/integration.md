@@ -127,3 +127,7 @@ selection, native Git traversal, and atomic settings changes.
 read a single indexed snapshot without implicit refresh. Their operation-specific
 limits are configurable; explicit byte limits preserve complete serialized JSON
 and truncation metadata. These additions are direct Rust APIs in this layer.
+
+The optional `viewer::ViewerServer` binds only loopback, validates browser origins,
+and serves bundled assets without Node. The embedding host chooses whether to
+run this listener and owns its shutdown; the stdio MCP contract is unchanged.
