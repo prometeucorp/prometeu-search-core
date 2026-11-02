@@ -83,3 +83,11 @@ of external runtimes.
 `src/graph_query.rs` and `src/hierarchy.rs` operate on caller-owned canonical
 records from `prometeu-extract`. They are pure library boundaries: the current
 SQLite engine, executable, and MCP tools retain their existing contracts.
+
+The standalone parser now preprocesses native sources and extracts component
+and custom formats through `parser::extract` and `parser::parse_with_override`.
+The SQLite engine continues to call the original `parser::parse` projection and
+`parser::supports` selection. New canonical extraction fields are optional when
+reading existing schema-4 analysis records, so this library addition does not
+require rebuilding the current index. Framework additions are not registered in
+this layer.

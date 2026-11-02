@@ -114,3 +114,13 @@ Rust hosts can pass canonical node and edge slices to
 an `Engine`. Traversal callers choose work limits through `TraversalOptions`;
 results report truncation when a selected traversal budget is reached. These
 APIs use the supplied records only and do not refresh or access the filesystem.
+
+## Standalone source APIs
+
+`parser::LANGUAGES` lists 41 canonical language identifiers. `parser::extract`
+detects the language, and `parser::extract_as` accepts an explicit identifier;
+both return complete canonical records from supplied source text.
+`parser::detect_language` and `parser::parse_with_override` accept an optional
+extension mapping and retain special filename and content detection rules.
+These APIs do not read files or change an index. Existing Engine, CLI, and MCP
+language selection and schema-4 cache behavior remain unchanged in this layer.

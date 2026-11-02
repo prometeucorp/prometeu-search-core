@@ -6,7 +6,61 @@ use std::ops::Range;
 use std::path::Path;
 use tree_sitter::{Language, Node, Parser};
 
+mod cfml;
+mod components;
+mod formats;
+pub(crate) mod javascript_regex;
+mod native;
+mod preprocess;
+mod razor;
 mod semantic;
+
+pub use prometeu_extract::ExtractionResult;
+
+/// Source language identifiers accepted by `extract_as` and project extension mappings.
+pub const LANGUAGES: &[&str] = &[
+    "typescript",
+    "tsx",
+    "javascript",
+    "jsx",
+    "python",
+    "go",
+    "rust",
+    "java",
+    "c",
+    "cpp",
+    "csharp",
+    "php",
+    "ruby",
+    "swift",
+    "kotlin",
+    "scala",
+    "dart",
+    "lua",
+    "luau",
+    "r",
+    "arkts",
+    "objc",
+    "solidity",
+    "vbnet",
+    "nix",
+    "erlang",
+    "cobol",
+    "terraform",
+    "pascal",
+    "vue",
+    "svelte",
+    "astro",
+    "liquid",
+    "xml",
+    "yaml",
+    "twig",
+    "properties",
+    "razor",
+    "cfml",
+    "cfscript",
+    "cfquery",
+];
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Symbol {
@@ -23,6 +77,9 @@ pub struct Symbol {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Reference {
+    /// Zero-based canonical UTF-16 column when available.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub column: Option<usize>,
     /// Index into this file's symbols, or `None` outside an indexed scope.
     pub caller: Option<usize>,
     pub target: String,
@@ -52,6 +109,9 @@ pub struct ParsedFile {
     pub references: Vec<Reference>,
     pub imports: Vec<Import>,
     pub has_errors: bool,
+    /// The complete upstream extraction, including metadata not used by graph queries yet.
+    #[serde(default)]
+    pub extraction: Option<ExtractionResult>,
 }
 
 struct RubyBinding {
@@ -86,6 +146,42 @@ pub fn supports(path: &Path) -> bool {
 }
 
 pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
+    parse_legacy(path, source)
+}
+
+/// Detect source using an optional extension mapping, retaining filename and content rules.
+pub fn detect_language(
+    path: &Path,
+    source: &str,
+    extension_override: Option<&str>,
+) -> Result<&'static str> {
+    native::detect_language(path, source, extension_override)
+}
+
+/// Parse with an optional project extension mapping before content-based detection.
+pub fn parse_with_override(
+    path: &Path,
+    source: &str,
+    extension_override: Option<&str>,
+) -> Result<ParsedFile> {
+    if extension_override.is_none() {
+        return native::parse(path, source);
+    }
+    let language = detect_language(path, source, extension_override)?;
+    native::parse_as(path, source, language)
+}
+
+/// Extract the upstream data model without projecting it into search results.
+pub fn extract(path: &Path, source: &str) -> Result<ExtractionResult> {
+    native::extract(path, source)
+}
+
+/// Extract a known language explicitly, for host-owned extension mappings and templates.
+pub fn extract_as(path: &Path, source: &str, language: &str) -> Result<ExtractionResult> {
+    native::extract_as(path, source, language)
+}
+
+fn parse_legacy(path: &Path, source: &str) -> Result<ParsedFile> {
     let Some((name, grammar)) = language(path) else {
         bail!("unsupported language: {}", path.display());
     };
@@ -100,6 +196,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
         references: Vec::new(),
         imports: Vec::new(),
         has_errors: tree.root_node().has_error(),
+        extraction: None,
     };
     let ruby = name == "ruby";
     // Ruby scripts and build files often consist entirely of executable DSL calls.
@@ -154,6 +251,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             }
             call_nodes.push((result.references.len(), node));
             result.references.push(Reference {
+                column: None,
                 caller,
                 target,
                 line: node.start_position().row + 1,
@@ -206,6 +304,7 @@ pub fn parse(path: &Path, source: &str) -> Result<ParsedFile> {
             })
         {
             result.references.push(Reference {
+                column: None,
                 caller,
                 target,
                 line,

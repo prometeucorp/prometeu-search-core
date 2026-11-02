@@ -167,3 +167,12 @@ provides traversal, paths, impact, call sites, dependencies, and symbol context.
 The `hierarchy` module computes declared ancestry, subtype fans, and member
 overrides from the same record types. These pure APIs do not open an index or
 read source files; their independent oracle tests run offline.
+
+## Standalone multilingual source extraction
+
+`parser::extract` and `parser::extract_as` return canonical extraction records
+for all 41 language identifiers. `parser::detect_language` and
+`parser::parse_with_override` support extension mappings, source preprocessing,
+and projections with source spans. These pure APIs accept source text directly.
+The current SQLite index still uses its existing TypeScript, JavaScript, Rust,
+and Ruby projection; multilingual index reconciliation arrives in a later layer.
