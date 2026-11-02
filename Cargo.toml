@@ -6,24 +6,40 @@ description = "Local code search for agents, standalone or bundled with Prometeu
 license = "MIT"
 repository = "https://github.com/prometeucorp/prometeu-search-core"
 
+[workspace]
+members = ["crates/prometeu-extract"]
+default-members = [".", "crates/prometeu-extract"]
+resolver = "3"
+
 [dependencies]
 anyhow = "1"
 blake3 = "1"
 cap-fs-ext = "4"
 cap-std = "4"
 clap = { version = "4", features = ["derive"] }
+prometeu-extract = { path = "crates/prometeu-extract" }
 dirs = "6"
+fancy-regex = "0.16"
 fs2 = "0.4"
 ignore = "0.4"
 notify = "8"
+regex = "1"
 rusqlite = { version = "0.38", features = ["bundled"] }
 serde = { version = "1", features = ["derive"] }
-serde_json = "1"
+serde_json = { version = "1", features = ["preserve_order"] }
 tree-sitter = "0.25"
 tree-sitter-javascript = "0.25"
 tree-sitter-ruby = "0.23"
 tree-sitter-rust = "0.24"
 tree-sitter-typescript = "0.23"
+unicode-normalization = "0.1"
+gix-index = { version = "0.58", features = ["sha1", "sha256"] }
+gix-config = { version = "0.62.2", features = ["sha1", "sha256"] }
+gix-glob = "0.29.1"
+gix-object = "0.66.1"
+gix-odb = { version = "0.87", features = ["sha1", "sha256"] }
+icu_collator = { version = "2.4.0", default-features = false, features = ["compiled_data"] }
+icu_locale_core = { version = "2.4.0", default-features = false }
 
 [dev-dependencies]
 pulldown-cmark = { version = "0.13.6", default-features = false }

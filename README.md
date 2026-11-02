@@ -152,3 +152,10 @@ refresh still enumerates file metadata; unchanged source is not read or hashed.
 The first refresh per connection, explicit `index`, and recovery checks at least
 every 60 seconds hash all eligible files. Only content changes are parsed again.
 See [architecture](ARCHITECTURE.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## Native extraction library
+
+The workspace includes `prometeu-extract`, a reusable Rust library for native
+language extraction without a Node runtime. Its Tree-sitter walkers return
+canonical records and run against independent reference fixtures; the current
+SQLite engine keeps its existing language selection and query contracts.
