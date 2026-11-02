@@ -1,5 +1,6 @@
 use prometeu_search::{DeadCodeOptions, Engine};
 use std::fs;
+use std::process::Command;
 use tempfile::TempDir;
 
 #[test]
@@ -47,6 +48,41 @@ fn measurements_and_cycles_keep_snapshot_bounds_and_survive_reopen() {
     assert!(engine.metrics(i64::MAX, 1024).is_err());
     assert!(engine.cycles(0, 1024).is_err());
     assert!(engine.cycles(1, 1000).is_err());
+    for command in ["cycles", "deadcode"] {
+        let output = Command::new(env!("CARGO_BIN_EXE_prometeu-search"))
+            .args([
+                "--root",
+                root.to_str().unwrap(),
+                "--database",
+                database.to_str().unwrap(),
+                command,
+                "--max-bytes",
+                "1024",
+            ])
+            .output()
+            .unwrap();
+        assert!(
+            output.status.success(),
+            "{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        assert!(output.stdout.len() <= 1025);
+        serde_json::from_slice::<serde_json::Value>(&output.stdout).unwrap();
+    }
+    let output = Command::new(env!("CARGO_BIN_EXE_prometeu-search"))
+        .args([
+            "--root",
+            root.to_str().unwrap(),
+            "--database",
+            database.to_str().unwrap(),
+            "metrics",
+            &id.to_string(),
+            "--max-bytes",
+            "1024",
+        ])
+        .output()
+        .unwrap();
+    assert!(output.status.success());
     assert!(
         engine
             .dead_code(&DeadCodeOptions {

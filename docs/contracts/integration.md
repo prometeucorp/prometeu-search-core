@@ -33,8 +33,10 @@ prometeu-search --root <absolute-worktree-path> --database <absolute-cache-path>
 ```
 
 The executable accepts paths with spaces as ordinary argv entries. `--version`
-returns the engine version. Stdout is exclusively MCP JSON-RPC, one message per
-line. Stderr contains diagnostics. There is no HTTP port or secret to configure.
+returns the engine version. In `serve` mode, stdout is exclusively MCP JSON-RPC,
+one message per line. Stderr contains diagnostics. MCP uses no HTTP port.
+The optional `ui --port 3333` command starts the embedded browser viewer on
+loopback. Its backend and bundled assets require no Node runtime or asset server.
 
 The initial MCP handshake does not explicitly run a full index. Creating a new
 shared database can wait for another initializer; existing WAL readers do not
@@ -47,8 +49,13 @@ return MCP tool errors without terminating the session. A request larger than
 
 The server negotiates `2025-06-18`, `2025-03-26`, or `2024-11-05`. It implements
 initialize, ping, tools/list, and tools/call. Notifications receive no response.
-The tools are `code_search`, `code_explore`, and `code_search_status`. The
+The tools are `code_search`, `code_explore`, `code_graph`, `code_context`, `code_search_status`, `code_files`,
+`code_node`, `code_hierarchy`, and `code_file`. The
 [graph query contract](graph-queries.md) defines exploration and analysis modes.
+The [task context contract](task-context.md) defines ranked context assembly and
+formatted source blocks. The [type hierarchy contract](type-hierarchy.md) defines
+ancestry, subtype fans, and member override matches. The [source inspection contract](source-inspection.md) defines file listing,
+symbol metadata, and inclusive file-line reads.
 Root/database paths are host-controlled and are absent from tool arguments;
 `code_explore.path` only selects a file inside the fixed worktree.
 
@@ -69,10 +76,14 @@ transactions. Restart the process and reconcile on workspace reactivation.
 - Stop all clients before deleting its derived database or removing the worktree.
 - If schema compatibility fails, choose a fresh cache path or deliberately remove
   the stopped engine's cache. Never point the engine at Prometeu's application DB.
-- Schema version 6 rejects versions 1 through 5 without modification; stop clients and rebuild derived caches before querying.
+- Schema version 6 rejects versions 1 through 5 so unchanged source receives
+  canonical extraction records, canonical search fields, and full-file source. Old databases are not modified.
 
-For direct Rust linking, `Engine::open` owns a connection. `sync` performs full
-content-hash recovery; `sync_paths` reconciles changed paths, falling back to full
+For direct Rust linking, `Engine::open` owns a connection.
+`search_with_options(query, &search::SearchOptions)` supports a result count,
+result offset after ranking, and optional response byte budget; its default is 100 results
+and offset zero. It does not impose the MCP count or character limits.
+`sync` performs full content-hash recovery; `sync_paths` reconciles changed paths, falling back to full
 recovery for directory or ignore changes. `refresh` performs full recovery on
 its first call and at least every 60 seconds, otherwise checking metadata and
 hashing changes. Query refresh still enumerates eligible files. `SyncReport.hashed`
@@ -80,16 +91,40 @@ counts files whose contents were hashed. Watcher events retain changed paths;
 overflow and errors request full recovery. Metadata-preserving changes may wait
 until recovery; callers needing a content check can call `sync` explicitly.
 
-`search`, `related`, `explore`, and `analyze` read an indexed snapshot without
+[Lexical search](lexical-search.md) defines field filters, ranking, and fallback limits.
+
+`search`, `related`, `explore`, `context`, `analyze`, `files`, `node`, `file`, `metrics`,
+`cycles`, `hierarchy`, `graph_query`, and `dead_code` read an indexed snapshot without
 implicit refresh. CLI/MCP entry points refresh before queries. `watch` returns
 a handle whose lifetime controls background work; `WatchHandle::is_owner`
 reports watcher ownership.
 
+`parser::extract` returns the complete canonical extraction for supported source;
+`parser::extract_as` accepts an explicit language for host-owned extension mappings.
+`parser::LANGUAGES` lists the 41 accepted identifiers. `parser::detect_language`
+and `parser::parse_with_override` accept an optional extension mapping while
+preserving special filename rules, Flow/header detection, and explicit `.inc`
+mappings. These are pure source APIs and do not read files. `parser::extract_with_frameworks`
+and `parser::parse_with_frameworks` additionally accept framework identifiers for
+framework declarations and references. The engine detects its implemented
+frameworks from committed manifests and source, and re-extracts applicable files
+atomically when detection changes. The reusable
+`prometeu-extract` crate exposes the original strict native boundary separately
+from diagnostic recovery; additional typed walkers retain reference fallback
+semantics for partial trees.
+The [parity evidence](../quality/parity.md) distinguishes extraction coverage from
+the still-incomplete resolver and query migration.
+
 ## Agent context and failure behavior
 
-Keep response budgets small. `max_bytes` caps the serialized result content,
-not MCP envelope/escaping. Search result IDs are internal and can change after
-reindexing; use file paths and line ranges as human references. A generation
+MCP search returns up to 100 results. Ordinary MCP tool content has a 15,000
+UTF-16-code-unit budget, exploration/context uses 25,000, and file reads use
+38,000. File reads default to a 2,000-line window; callers can request another
+inclusive range. Character clipping retains valid JSON and explicit truncation.
+An explicit `max_bytes` applies an additional byte budget to serialized result
+content, excluding MCP envelope/escaping, with no fixed 64 KiB ceiling. CLI and
+direct library calls have no implicit transport character budget. Search result
+IDs are internal and can change after reindexing; use file paths and line ranges as human references. A generation
 identifies a committed index snapshot, not a Git commit.
 
 Relationships are static candidates with resolution evidence and ambiguity.
@@ -104,30 +139,3 @@ previous committed snapshot remains stored but the tool reports failure rather
 than silently answering from it. The host decides whether agents fall back to
 ordinary search. MCP registration/injection, selection defaults, visible status,
 and automatic reconnect belong in Prometeu, not in this engine.
-
-
-## Native library extensions
-
-The library indexes all 41 language identifiers through native Rust extraction
-and bundled C grammars. `parser::extract_as` accepts an explicit language;
-`parser::extract_with_frameworks` adds framework declarations and references.
-The engine detects frameworks from committed inputs and resolves and synthesizes
-relationships without an external compiler or runtime.
-
-`Engine::search_with_options` defaults to 100 candidates and offset zero, with
-no implicit byte budget. `Engine::files`, `node`, and `file` read committed
-source and metadata; their explicit byte budgets have a 1024-byte minimum and
-no fixed upper ceiling. Paths remain confined to the selected worktree.
-The CLI/MCP interfaces retain the limits documented above.
-
-See [project configuration](project-configuration.md) for extension mappings,
-selection, native Git traversal, and atomic settings changes.
-
-`Engine::graph_query`, `hierarchy`, `context`, `metrics`, `cycles`, and `dead_code`
-read a single indexed snapshot without implicit refresh. Their operation-specific
-limits are configurable; explicit byte limits preserve complete serialized JSON
-and truncation metadata. These additions are direct Rust APIs in this layer.
-
-The optional `viewer::ViewerServer` binds only loopback, validates browser origins,
-and serves bundled assets without Node. The embedding host chooses whether to
-run this listener and owns its shutdown; the stdio MCP contract is unchanged.

@@ -2,7 +2,7 @@ use prometeu_search::{
     Engine,
     context::{BuildContextOptions, TaskInput},
 };
-use std::{collections::HashSet, fs};
+use std::{collections::HashSet, fs, process::Command};
 
 #[test]
 fn node_limits_remove_roots_without_a_retained_node() {
@@ -168,4 +168,52 @@ fn context_uses_committed_source_and_preserves_bounds_across_connections() {
             )
             .is_err()
     );
+}
+
+#[test]
+fn context_cli_outputs_json_and_markdown() {
+    let root = tempfile::tempdir().unwrap();
+    let cache = tempfile::tempdir().unwrap();
+    fs::write(
+        root.path().join("auth.py"),
+        "def validate_token():\n    return True\n",
+    )
+    .unwrap();
+    for format in ["json", "markdown"] {
+        let output = Command::new(env!("CARGO_BIN_EXE_prometeu-search"))
+            .arg("--root")
+            .arg(root.path())
+            .arg("--database")
+            .arg(cache.path().join("index.sqlite"))
+            .args([
+                "context",
+                "validate_token",
+                "--format",
+                format,
+                "--max-bytes",
+                "4096",
+            ])
+            .output()
+            .unwrap();
+        assert!(
+            output.status.success(),
+            "{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        assert!(output.stdout.len() <= 4097);
+        let content = String::from_utf8(output.stdout).unwrap();
+        assert!(content.contains("validate_token"));
+        if format == "json" {
+            let result: serde_json::Value = serde_json::from_str(&content).unwrap();
+            assert!(
+                result["context"]["entryPoints"]
+                    .as_array()
+                    .unwrap()
+                    .iter()
+                    .any(|node| node["name"] == "validate_token")
+            );
+        } else {
+            assert!(content.contains("```python"));
+        }
+    }
 }

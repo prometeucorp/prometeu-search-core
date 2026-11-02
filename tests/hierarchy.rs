@@ -163,6 +163,26 @@ fn hierarchy_generations_budgets_and_cli_remain_consistent() {
     let bounded = observer.hierarchy(id, 1024).unwrap();
     assert!(bounded.truncated);
     assert!(serde_json::to_vec(&bounded).unwrap().len() <= 1024);
+    let output = std::process::Command::new(env!("CARGO_BIN_EXE_prometeu-search"))
+        .args([
+            "--root",
+            root.to_str().unwrap(),
+            "--database",
+            database.to_str().unwrap(),
+            "hierarchy",
+            &id.to_string(),
+            "--max-bytes",
+            "65536",
+        ])
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let output: Value = serde_json::from_slice(&output.stdout).unwrap();
+    assert_eq!(output["hierarchy"]["directSubtypes"], 1);
     std::fs::write(root.join("child.ts"), "export class Child { run() {} }\n").unwrap();
     assert_eq!(
         observer.hierarchy(id, 65536).unwrap().generation,
